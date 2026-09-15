@@ -4,6 +4,7 @@ from types import SimpleNamespace
 from unittest.mock import AsyncMock, Mock, patch
 
 from app.models.candidate import AnswerLanguageMode, AnswerLengthMode
+from app.models.question import UtteranceType
 from app.services.live_audio import LiveAudioOrchestrator
 from app.services.transcript_aggregator import TranscriptAggregator
 
@@ -152,22 +153,36 @@ class LiveAudioLatencyRegressionTests(unittest.IsolatedAsyncioTestCase):
 
         orchestrator._send_ws = send
         session = SimpleNamespace(candidate_id="candidate-1", conversation_history=[])
-        classification = SimpleNamespace(model_dump=lambda: {})
+        classification = SimpleNamespace(
+            model_dump=lambda: {},
+            type=UtteranceType.QUESTION,
+            raw_utterance="question",
+            normalized_question="question",
+            confidence=0.9,
+        )
         generated = SimpleNamespace(
             question="question",
             answer_en="answer",
             answer_ar=None,
             validation=SimpleNamespace(is_valid=True),
+            candidate_evidence=[],
+            internal_reasoning=None,
             model_dump=lambda: {"answer_en": "answer"},
         )
 
         classifier = SimpleNamespace(
             classify=AsyncMock(return_value=classification),
             determine_action=Mock(return_value=SimpleNamespace(value="SHOW_ANSWER")),
+            light_lexical_bank_hit=Mock(return_value=False),
         )
-        generator = SimpleNamespace(generate=AsyncMock(return_value=generated))
+        generator = SimpleNamespace(
+            generate=AsyncMock(return_value=generated),
+            _last_bank_lookup_ms=0.0,
+            _last_answer_source="deepseek",
+        )
         manager = SimpleNamespace(
             get_session=Mock(return_value=session),
+            set_current_question=AsyncMock(),
             update_metrics=Mock(),
             publish_live_answer=AsyncMock(side_effect=lambda *_args: events.append("publish_answer")),
             record_answer=AsyncMock(side_effect=record),
@@ -195,6 +210,78 @@ class LiveAudioLatencyRegressionTests(unittest.IsolatedAsyncioTestCase):
         metrics = manager.update_metrics.call_args.args[1]
         self.assertEqual(metrics.transcription_ms, 12.5)
         self.assertGreater(metrics.total_latency_ms, 0)
+
+    async def test_l1_skips_live_bank_when_action_already_show_answer(self):
+        """L1: accepted SHOW_ANSWER must not start live_audio._bank_match."""
+        orchestrator = LiveAudioOrchestrator.__new__(LiveAudioOrchestrator)
+        orchestrator.session_id = "session-l1"
+        orchestrator.suppress_answer = False
+        orchestrator.current_question_id = None
+        orchestrator.length_mode = AnswerLengthMode.QUICK
+        orchestrator.language_mode = AnswerLanguageMode.ALWAYS_ENGLISH
+        orchestrator.aggregator = TranscriptAggregator()
+        orchestrator._last_turns = []
+        orchestrator._last_interviewer_audio_levels = {}
+        orchestrator.current_utterance_id = ""
+        orchestrator._pending_interviewer = []
+        orchestrator._bank_match = AsyncMock(
+            side_effect=AssertionError("L1 must not call _bank_match on SHOW_ANSWER")
+        )
+
+        async def send(_payload):
+            return None
+
+        orchestrator._send_ws = send
+        session = SimpleNamespace(candidate_id="candidate-1", conversation_history=[])
+        classification = SimpleNamespace(
+            model_dump=lambda: {},
+            type=UtteranceType.QUESTION,
+            raw_utterance="What is LLM?",
+            normalized_question="What is LLM?",
+            confidence=0.95,
+        )
+        generated = SimpleNamespace(
+            question="What is LLM?",
+            answer_en="A large language model.",
+            answer_ar=None,
+            validation=SimpleNamespace(is_valid=True),
+            candidate_evidence=[],
+            internal_reasoning="question_bank:llm score=0.9",
+            model_dump=lambda: {"answer_en": "A large language model."},
+        )
+
+        classifier = SimpleNamespace(
+            classify=AsyncMock(return_value=classification),
+            determine_action=Mock(return_value=SimpleNamespace(value="SHOW_ANSWER")),
+            light_lexical_bank_hit=Mock(return_value=False),
+        )
+        generator = SimpleNamespace(
+            generate=AsyncMock(return_value=generated),
+            _last_bank_lookup_ms=42.0,
+            _last_answer_source="bank",
+        )
+        manager = SimpleNamespace(
+            get_session=Mock(return_value=session),
+            set_current_question=AsyncMock(),
+            update_metrics=Mock(),
+            publish_live_answer=AsyncMock(),
+            record_answer=AsyncMock(),
+            clear_live_question=AsyncMock(),
+        )
+        profiles = SimpleNamespace(
+            get_profile=Mock(return_value=SimpleNamespace(id="candidate-1"))
+        )
+
+        with (
+            patch("app.services.live_audio.question_classifier", classifier),
+            patch("app.services.live_audio.answer_generator", generator),
+            patch("app.services.live_audio.session_manager", manager),
+            patch("app.services.live_audio.candidate_profile_service", profiles),
+        ):
+            await orchestrator._handle_utterance("What is LLM?", transcription_ms=10.0)
+
+        orchestrator._bank_match.assert_not_called()
+        generator.generate.assert_awaited_once()
 
 
 if __name__ == "__main__":

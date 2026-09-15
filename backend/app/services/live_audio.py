@@ -773,73 +773,77 @@ class LiveAudioOrchestrator:
         # monotonic clock so system clock adjustments cannot corrupt metrics.
         start_time = time.perf_counter() - (transcription_ms / 1000)
 
-        # Classify first. Heavy bank runs in parallel but is cancelled when the
-        # gate rejects (P2) so non-questions never pay for full recovery.
+        # L1: classify first. Do NOT start _bank_match when the gate already
+        # accepts (SHOW_ANSWER) — answer_generator will bank-match itself.
+        # Full bank runs only for gray STATEMENT override (needs_bank).
         logger.info("QUESTION_CLASSIFICATION_START history_turns=%s", len(history))
         classify_start = time.perf_counter()
-        bank_task = asyncio.create_task(self._bank_match(text, history))
-        try:
-            classification = await question_classifier.classify(
-                text,
-                conversation_history=history,
-                prefer_speed=True,
+        classification = await question_classifier.classify(
+            text,
+            conversation_history=history,
+            prefer_speed=True,
+        )
+        action = question_classifier.determine_action(classification)
+        # Gray STATEMENT only: cheap lexical bank check (no semantic path).
+        if (
+            action.value != "SHOW_ANSWER"
+            and classification.type == UtteranceType.STATEMENT
+            and not is_greeting_or_filler(text)
+            and not has_structural_interview_request(text)
+        ):
+            lexical_hit = await asyncio.to_thread(
+                question_classifier.light_lexical_bank_hit, text
             )
-            action = question_classifier.determine_action(classification)
-            # Gray STATEMENT only: cheap lexical bank check (no semantic path).
-            if (
-                action.value != "SHOW_ANSWER"
-                and classification.type == UtteranceType.STATEMENT
-                and not is_greeting_or_filler(text)
-                and not has_structural_interview_request(text)
-            ):
-                lexical_hit = await asyncio.to_thread(
-                    question_classifier.light_lexical_bank_hit, text
+            if lexical_hit:
+                action = question_classifier.determine_action(
+                    classification, bank_lexical_hit=True
                 )
-                if lexical_hit:
-                    action = question_classifier.determine_action(
-                        classification, bank_lexical_hit=True
-                    )
-            classify_ms = (time.perf_counter() - classify_start) * 1000
+        question_gate_ms = (time.perf_counter() - classify_start) * 1000
 
-            if action.value != "SHOW_ANSWER":
-                bank_task.cancel()
-                try:
-                    await bank_task
-                except asyncio.CancelledError:
-                    pass
-                logger.info(
-                    "QUESTION_CLASSIFIED (action=%s) latency=%.1fms gate=reject",
-                    action.value,
-                    classify_ms,
-                )
-                await self._send_ws({
-                    "type": "NON_QUESTION_IGNORED",
-                    "utterance": text,
-                    "action": action.value,
-                    "reason": classification.type.value if classification.type else "not_a_question",
-                    "latency_ms": round(classify_ms, 1),
-                })
-                # Keep legacy alias for older UI listeners.
-                await self._send_ws({
-                    "type": "QUESTION_IGNORED",
-                    "utterance": text,
-                    "action": action.value,
-                    "reason": classification.type.value if classification.type else "not_a_question",
-                })
-                await self._send_ws({"type": "STATE_CHANGED", "state": "LISTENING"})
-                return
+        bank_match = None
+        gate_bank_lookup_ms = 0.0
+        needs_bank = (
+            action.value != "SHOW_ANSWER"
+            and classification.type == UtteranceType.STATEMENT
+            and not is_greeting_or_filler(text)
+            and not has_structural_interview_request(text)
+        )
+        if needs_bank:
+            bank_start = time.perf_counter()
+            bank_match = await self._bank_match(text, history)
+            gate_bank_lookup_ms = (time.perf_counter() - bank_start) * 1000
+            if bank_match is not None and bank_match.is_strong:
+                action = QuestionAction.SHOW_ANSWER
 
-            bank_match = await bank_task
-        except Exception:
-            if not bank_task.done():
-                bank_task.cancel()
-                try:
-                    await bank_task
-                except asyncio.CancelledError:
-                    pass
-            raise
+        classify_ms = question_gate_ms + gate_bank_lookup_ms
 
-        # Accepted path only: strong bank may still refine classification type.
+        if action.value != "SHOW_ANSWER":
+            logger.info(
+                "QUESTION_CLASSIFIED (action=%s) latency=%.1fms gate=reject "
+                "question_gate_ms=%.0f bank_lookup_ms=%.0f",
+                action.value,
+                classify_ms,
+                question_gate_ms,
+                gate_bank_lookup_ms,
+            )
+            await self._send_ws({
+                "type": "NON_QUESTION_IGNORED",
+                "utterance": text,
+                "action": action.value,
+                "reason": classification.type.value if classification.type else "not_a_question",
+                "latency_ms": round(classify_ms, 1),
+            })
+            # Keep legacy alias for older UI listeners.
+            await self._send_ws({
+                "type": "QUESTION_IGNORED",
+                "utterance": text,
+                "action": action.value,
+                "reason": classification.type.value if classification.type else "not_a_question",
+            })
+            await self._send_ws({"type": "STATE_CHANGED", "state": "LISTENING"})
+            return
+
+        # Strong bank override (gray STATEMENT → accept) may refine type.
         if (
             bank_match is not None
             and bank_match.is_strong
@@ -853,7 +857,14 @@ class LiveAudioOrchestrator:
             classification = classification.model_copy(
                 update={"type": UtteranceType.QUESTION, "confidence": max(classification.confidence, 0.9)}
             )
-        logger.info(f"QUESTION_CLASSIFIED (action={action.value}) latency={classify_ms:.1f}ms")
+        logger.info(
+            "QUESTION_CLASSIFIED (action=%s) latency=%.1fms "
+            "question_gate_ms=%.0f bank_lookup_ms=%.0f",
+            action.value,
+            classify_ms,
+            question_gate_ms,
+            gate_bank_lookup_ms,
+        )
 
         # P0/P1: commit question only after gate accept.
         await session_manager.set_current_question(self.session_id, text)
@@ -878,17 +889,21 @@ class LiveAudioOrchestrator:
         if not self.suppress_answer:
             logger.info("ANSWER_GENERATION_START")
             gen_start = time.perf_counter()
+            first_answer_token_ms: Optional[float] = None
             requested_language = getattr(
                 self,
                 "language_mode",
                 AnswerLanguageMode.ANSWER_IN_QUESTION_LANGUAGE,
             )
             async def on_partial(text: str) -> None:
+                nonlocal first_answer_token_ms
                 cleaned = (text or "").strip()
                 if len(cleaned) < 4:
                     return
                 if self.current_question_id != question_id or self.suppress_answer:
                     return
+                if first_answer_token_ms is None:
+                    first_answer_token_ms = (time.perf_counter() - gen_start) * 1000
                 asked = classification.raw_utterance or classification.normalized_question or ""
                 draft = GeneratedAnswer(
                     question_id=question_id,
@@ -943,12 +958,36 @@ class LiveAudioOrchestrator:
 
             gen_ms = (time.perf_counter() - gen_start) * 1000
             total_ms = (time.perf_counter() - start_time) * 1000
+            if first_answer_token_ms is None:
+                first_answer_token_ms = gen_ms
+            bank_lookup_ms = float(
+                getattr(answer_generator, "_last_bank_lookup_ms", 0.0) or 0.0
+            )
+            answer_source = str(
+                getattr(answer_generator, "_last_answer_source", "") or ""
+            ).strip().lower()
+            if answer_source not in ("bank", "deepseek"):
+                evidence = getattr(generated, "candidate_evidence", None) or []
+                if any(
+                    getattr(e, "source_type", "") == "question_bank" for e in evidence
+                ) or str(getattr(generated, "internal_reasoning", "") or "").startswith(
+                    ("question_bank:", "compound_question")
+                ):
+                    answer_source = "bank"
+                else:
+                    answer_source = "deepseek"
             logger.info(
-                "ANSWER_GENERATION_SUCCESS latency=%.0fms total=%.0fms stt=%.0fms classify=%.0fms",
+                "ANSWER_GENERATION_SUCCESS latency=%.0fms total=%.0fms stt=%.0fms "
+                "classify=%.0fms question_gate_ms=%.0f bank_lookup_ms=%.0f "
+                "answer_source=%s first_answer_token_ms=%.0f",
                 gen_ms,
                 total_ms,
                 transcription_ms,
                 classify_ms,
+                question_gate_ms,
+                bank_lookup_ms,
+                answer_source,
+                first_answer_token_ms,
             )
 
             session_manager.update_metrics(

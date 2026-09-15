@@ -286,6 +286,9 @@ class AnswerGenerator:
         self._specialist_answer_cache: OrderedDict[
             tuple[str, ...], tuple[str, Optional[str]]
         ] = OrderedDict()
+        # Live observability (read by live_audio after generate).
+        self._last_bank_lookup_ms: float = 0.0
+        self._last_answer_source: str = "deepseek"
 
     async def generate(
         self,
@@ -307,6 +310,8 @@ class AnswerGenerator:
         consistency round-trips so the answer appears as soon as generation finishes.
         """
         start_time = time.perf_counter()
+        self._last_bank_lookup_ms = 0.0
+        self._last_answer_source = "deepseek"
         asked = (classification.raw_utterance or classification.normalized_question or "").strip()
         question = classification.normalized_question or asked
 
@@ -323,6 +328,7 @@ class AnswerGenerator:
                 prepared.score,
                 prepared.reason,
             )
+            self._last_answer_source = "bank"
             return self._answer_from_prepared(
                 question=question,
                 asked=classification.raw_utterance or question,
@@ -335,7 +341,14 @@ class AnswerGenerator:
         bank_match: Optional[BankMatch] = None
         reference_answer: Optional[str] = None
         if settings.question_bank_enabled:
+            bank_t0 = time.perf_counter()
             bank_match = await self._match_question_bank(asked or question, conversation_history)
+            self._last_bank_lookup_ms = (time.perf_counter() - bank_t0) * 1000
+            logger.info(
+                "bank_lookup_ms=%.0f strong=%s",
+                self._last_bank_lookup_ms,
+                bool(bank_match is not None and bank_match.is_strong),
+            )
         if bank_match is not None:
             question_bank.remember(asked or question, bank_match.entry.id)
             logger.info(
@@ -358,9 +371,11 @@ class AnswerGenerator:
                 start_time=start_time,
             )
             if compound_answer is not None:
+                self._last_answer_source = "bank"
                 return compound_answer
 
         if bank_match is not None and bank_match.is_strong:
+            self._last_answer_source = "bank"
             return self._answer_from_bank(
                 match=bank_match,
                 question=question,
