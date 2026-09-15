@@ -1,0 +1,151 @@
+sample_id,stt_transcript,meaning_preserved,question_understood,correct_answer_selected,duplicate,confident_wrong,latency_ms,notes
+V5A_001,"Could you walk me through your background, and what brought you into a eyework?",1,1,1,0,0,2462.8,ANSWER_READY
+V5A_002,Give me a quick picture of your experience and how it connects to this AI roll.,1,1,1,0,0,5046.0,ANSWER_READY
+V5A_003,"If you have one minute to introduce yourself for this position, what will you focus on?",1,1,1,0,0,1731.0,ANSWER_READY
+V5A_004,"How will you describe what you actually do in your current role, beyond the dot title?",1,1,1,0,0,1175.5,ANSWER_READY
+V5A_005,What does your data-day work look like when you are supporting BTEC and AI projects?,1,1,0,0,0,2199.5,LOW_CONFIDENCE
+V5A_006,"If I joined your team for a day, what kind of technical work will I see you doing?",1,1,1,0,0,2937.0,ANSWER_READY
+V5A_007,What made you move toward Agenticai instead of staying with normal chatbot solutions?,1,1,1,0,0,1886.5,ANSWER_READY
+V5A_008,Why does this roll around AI agents is the direction you want to fake next?,1,1,1,0,0,2134.0,ANSWER_READY
+V5A_009,What is it about a genetic systems that interests you more than a basic LLM application?,1,0,0,0,0,1691.6,LOW_CONFIDENCE
+V5A_010,Can you explain where retrieval actually fitted into the ministry-beetec solution you worked on?,1,1,0,0,0,2140.7,LOW_CONFIDENCE
+V5A_011,"In your ministry project, how did you make the model use the right BTEC content before answering?",1,1,1,0,0,4179.5,ANSWER_READY
+V5A_012,Walk me through how external VET knowledge reached the language model in your road.,1,0,0,0,0,2939.3,LOW_CONFIDENCE
+V5A_013,Suppose the knowledge changes often. Why might you choose retrieval instead of fine-tuning her model?,1,1,1,0,0,1816.2,ANSWER_READY
+V5A_014,"If the business keeps up paving its documents, how will you decide between RAG and fine-tuning?",1,1,1,0,0,2838.5,ANSWER_READY
+V5A_015,What would push you toward RAG rather than training the model again on company knowledge?,1,1,0,0,0,2064.5,LOW_CONFIDENCE
+V5A_016,"When you say you created embeddings, what problem were those numerical representations solving for you?",1,0,0,0,0,2883.5,LOW_CONFIDENCE
+V5A_017,How with turning the text into vectors help the system finds the right VETEC information.,1,1,1,0,0,1250.7,ANSWER_READY
+V5A_018,Explain what embeddings gave your retrieval system that normal keyword matching did not.,1,1,1,0,0,1724.3,ANSWER_READY
+V5A_019,"Where did a vector database, such as ChromaDB fit into the retrieval pipeline?",1,1,1,0,0,1534.7,ANSWER_READY
+V5A_020,"Why would you store embeddings in ChromaDB, instead of keeping everything in normal SQL tables?",1,1,0,0,0,1604.9,LOW_CONFIDENCE
+V5A_021,What role did the vectors for play between your documents and the language model?,1,0,0,0,0,2297.1,LOW_CONFIDENCE
+V5A_022,"If they're not humans in two long to send to the model, how do you design how can break it into useful pieces?",1,0,0,0,0,4973.6,LOW_CONFIDENCE
+V5A_023,How would you chunk a long policy document without losing the meaning between sections?,1,1,1,0,0,1774.0,ANSWER_READY
+V5A_024,What is your approach when the source material is much larger than the model concept window?,1,0,0,0,0,1926.1,LOW_CONFIDENCE
+V5A_025,How do you know the retriever is bringing back the right information rather than just something similar?,1,1,0,0,0,1842.8,LOW_CONFIDENCE
+V5A_026,What would you measure cut when a retrieval quality is actually known enough for production?,1,1,0,0,0,2165.2,LOW_CONFIDENCE
+V5A_027,"If the final answer looks wrong, how do you separate a retrieval problem from an LLM problem?",1,1,1,0,0,3904.0,ANSWER_READY
+V5A_028,What would you put in place so the model does not confidently invent facts that are not in the source?,1,1,0,0,0,2464.4,LOW_CONFIDENCE
+V5A_029,"If the LLM starts giving unsupported answers, how would you reduce that behavior?",1,0,1,0,0,3758.7,ANSWER_READY
+V5A_030,How do you keep an AI assistance grounded when the available context does not contain the answer?,1,0,0,0,0,2509.7,LOW_CONFIDENCE
+V5A_031,Where would guardrails sit in an A system and what kinds of mistakes are they meant to stop?,1,1,1,0,0,2102.8,ANSWER_READY
+V5A_032,"How would you stop an agent from taking an unsafe action even, if the model suggests it?",1,0,0,0,0,2395.3,LOW_CONFIDENCE
+V5A_033,"If this system were used by a government organization, what controls what you place around the model?",1,0,0,0,0,3159.8,LOW_CONFIDENCE
+V5A_034,"Which decisions would you still lead to the human, instead of letting the agent complete them automatically?",1,0,0,0,0,2428.0,LOW_CONFIDENCE
+V5A_035,Where exactly will you put human approval in a where so that can make action?,1,1,1,0,0,1873.4,ANSWER_READY
+V5A_036,How do you decide when an A agent can continue alone and when it must ask a person?,1,0,1,0,0,3031.7,ANSWER_READY
+V5A_037,What did LangChain give you that you would otherwise have needed to build yourself?,1,1,1,0,0,1379.4,ANSWER_READY
+V5A_038,"In a real project, where would then change it between the model, retrieval, prompts, and tools?",1,0,1,0,0,3150.6,ANSWER_READY
+V5A_039,"Why won't you use LangChain at all, instead of calling the model API directly?",1,1,0,0,0,2000.6,LOW_CONFIDENCE
+V5A_040,When the work flow becomes complex enough that you would prefer and wrap over a simple chain?,1,0,0,0,0,2345.1,LOW_CONFIDENCE
+V5A_041,"How would then draft help when an agent needs state, branching, retries, and several possible paths?",1,0,0,0,0,1642.0,LOW_CONFIDENCE
+V5A_042,What problem does a graph-based workflow solve when the AI process is no longer a straight line?,1,0,0,0,0,2302.0,LOW_CONFIDENCE
+V5A_043,"If several agents are working on one request, how do you stop them from stepping on each other?",1,0,0,0,0,4283.7,LOW_CONFIDENCE
+V5A_044,"How will you coordinate a retriever agent, an analysis agent, and a reporting agent in one workflow?",1,1,1,0,0,1698.3,ANSWER_READY
+V5A_045,What controls the order of work when different AI agents have different responsibilities?,1,1,0,0,0,1915.9,LOW_CONFIDENCE
+V5A_046,"If management asked how you would govern AI agents across the organization, what would you include?",1,1,1,0,0,2585.9,ANSWER_READY
+V5A_047,What has to be controlled when AI agents can access business data and call tools?,1,0,0,0,0,2146.0,LOW_CONFIDENCE
+V5A_048,How will you make AEM's decision on it an older-resulated organization?,0,0,0,0,0,2249.5,LOW_CONFIDENCE
+V5A_049,"Where would a tool, such an NAR can be useful in an AI workflow, and where will you avoid it?",1,1,1,0,0,4440.7,ANSWER_READY
+V5A_050,"If you needed to connect an AI agent to email databases and approvals, how can then hash 10 help.",1,0,1,0,0,4094.1,ANSWER_READY
+V5A_051,What kind of automation will you give to n-hash-10 rather than writing the whole integration in code?,1,0,0,0,0,2478.0,LOW_CONFIDENCE
+V5A_052,What happens when the information you want to send is larger than the model can keep in context?,1,0,0,0,0,2423.7,LOW_CONFIDENCE
+V5A_053,How does the concept window affect the way you design a RAG application?,1,1,0,0,0,2109.0,LOW_CONFIDENCE
+V5A_054,"If a user sends a very long document, what limits do you have to think about before calling the LLM?",1,1,0,0,0,3090.9,LOW_CONFIDENCE
+V5A_055,"Suppose a PDF contains instructions telling the model to ignore your system rules, what would you do?",1,1,1,0,0,2468.8,ANSWER_READY
+V5A_056,How will you protect a ragged system from malicious instructions hidden inside retrieved documents?,1,1,0,0,0,2216.1,LOW_CONFIDENCE
+V5A_057,What controls what you have is untrusted contents could try to manipulate the agent.,1,0,0,0,0,2154.1,LOW_CONFIDENCE
+V5A_058,"If a director ask why this a solution is worth funding, how would you explain the business value?",1,1,1,0,0,4035.3,ANSWER_READY
+V5A_059,How do you connect a technical AI project to a measurable outcome for the ministry?,1,1,0,0,0,2471.4,LOW_CONFIDENCE
+V5A_060,What's what you show management to prove that the AI system is solving a real problem?,1,0,0,0,0,1843.4,LOW_CONFIDENCE
+V5A_061,"Describe your ad architecture, how retrieval works, and what happens before the final answer is produced.",1,1,1,0,0,4550.8,ANSWER_READY
+V5A_062,"RAB architecture, retrieval theft, contest, selection, and final answer flow, walk be through all of it.",1,0,0,0,0,4835.7,NO_QUESTION
+V5A_063,"Can you explain the components of your RAG pipeline, how they connect, and where the LLM comes in?",1,1,1,0,0,2491.1,ANSWER_READY
+V5A_064,"Explain the agents in your workflow, what each one does, and how they pass work between each other.",1,1,1,0,0,4353.7,ANSWER_READY
+V5A_065,"Agent roles, orchestration, handoff, and failure handling, how did you design those pieces?",1,1,1,0,0,4811.6,ANSWER_READY
+V5A_066,"In your multi-agent setup, boomit reads, who analyzes, who reports, and what controls the sequence?",1,1,0,0,0,4810.1,LOW_CONFIDENCE
+V5A_067,"Tell me about the METE question generation system, the source-nator, the RANKTEP, and the output teachers receive.",1,1,1,0,0,1822.9,ANSWER_READY
+V5A_068,"Question Generation Project. BTEC criteria, Retrieval, LLM Generation, and Teacher Review.",1,0,0,0,0,2124.7,NO_QUESTION
+V5A_069,"How did you prepare recap content, retrieve the right criteria, generate questions, and check their quality?",1,1,0,0,0,2124.2,LOW_CONFIDENCE
+V5A_070,"Walk me through automated feedback from student's submission to retrieval, analysis, and final feedback.",1,1,1,0,0,3042.4,ANSWER_READY
+V5A_071,"Student feedback system, input assignments, relevant criteria, analysis, strengths, weaknesses, and improvements.",1,0,0,0,0,2366.6,NO_QUESTION
+V5A_072,"How does the system receive an assignment, find the right V-tech content, analyze them work, and produce useful feedback?",1,1,0,0,0,2322.9,LOW_CONFIDENCE
+V5A_073,"Explain the similarity checker, how you create embeddings, how cosign similarity is used, and what the teacher sees.",1,1,1,0,0,2933.7,ANSWER_READY
+V5A_074,"Assignment similarity project, text preparation, embeddings, cosine score, threshold, and teacher review.",1,0,0,0,0,2292.4,NO_QUESTION
+V5A_075,"How do you compare to student assignments semantically, calculate similarity, and decide what should be flagged?",1,1,1,0,0,4119.9,ANSWER_READY
+V5A_076,"The prize the early warning project, my fugent beta you use, the models, the KDIs, and the expected outcome.",1,0,0,0,0,2994.4,NO_QUESTION
+V5A_077,"Early warning project story, data, features, model, evaluation metric, and business outcome.",1,0,0,0,0,2079.7,NO_QUESTION
+V5A_078,"How did you prepare student data, train the model, identify students needing support, and measure whether it worked?",1,0,0,0,0,2319.5,LOW_CONFIDENCE
+V5A_079,"Explain the help desk classify, text pre-processing, NLP features, model prediction, and ticket routing.",1,1,1,0,0,4095.4,ANSWER_READY
+V5A_080,"help FKI, picket text, cleaning, classification model, category, and department routing.",1,0,0,0,0,2614.5,NO_QUESTION
+V5A_081,How does a support ticket move from raw user text through your model to the correct help desk team?,1,1,0,0,0,2273.2,LOW_CONFIDENCE
+V5A_082,"Tell me about BTEC completion risk monitoring, the SQL data, analysis, model, and how schools are flagged for follow-up.",1,1,1,0,0,2377.6,ANSWER_READY
+V5A_083,"completion monitoring, school data, unit data, SQL, machine learning pattern, and follow-up action.",1,0,0,0,0,1779.2,NO_QUESTION
+V5A_084,"How do you retreat completion data, analyze the patterns, identify two leading attention, and present the remote?",1,0,0,0,0,2494.8,LOW_CONFIDENCE
+V5A_085,"Walk me through the donation kiosk voice flow, Whisper, speaker classification, TTS selection, and final response.",1,1,1,0,0,2445.2,ANSWER_READY
+V5A_086,"Smart donation kiosk, speech recognition, male or female voice classification, text to speech, and integration.",1,0,0,0,0,1783.8,NO_QUESTION
+V5A_087,"What happens from the moment the donor speaks until the kiosk understands the request, and answers by voice?",1,1,0,0,0,1499.3,LOW_CONFIDENCE
+V5A_088,"Production deployment, monitoring, fallback, logging, and recovery, how would you handle all time?",1,1,0,0,0,4630.4,LOW_CONFIDENCE
+V5A_089,"If you deploy an A agent, explain observability tool failures, reach rights, human fault, and audit logs.",1,1,1,0,0,4884.1,ANSWER_READY
+V5A_090,"How would you monitor a production AI workflow, detect failures, recover safely, and keep an audit trail?",1,1,0,0,0,2053.5,LOW_CONFIDENCE
+V5A_091,"Imagine your ragged system retrieves a document that looks semantically close, but actually contains outdated policy information, and the language model starts answering from it. Walk me through how you would detect the issue, where you would fix it, and how you would prevent the same failure from reaching users again.",1,0,0,0,0,7524.3,LOW_CONFIDENCE
+V5A_092,"Suppose the retrieved context is technically related to the question, but is the wrong version of the policy. The answer sounds convincing, so a simple user may trust it. What checks would you add at retrieval, generation, and evaluation time to reduce that risk?",1,0,0,0,0,3140.6,LOW_CONFIDENCE
+V5A_093,"You are running a RAG assistant for the ministry and a user asks about a current rule, but the retriever selects an older document. Explain how you won't trace the problem from the final answer back to the source and improve the pipeline.",1,1,0,0,0,2451.4,LOW_CONFIDENCE
+V5A_094,"Suppose an A agenter, re-doom available and the maker may stool, I'm out halfway through the workflow, the agent from already completed to the steps. How will you be mine retry, state handling, and fall up so it does not repeat work or take the wrong action?",1,1,1,0,0,2316.3,ANSWER_READY
+V5A_095,"Imagine a multi-agent process, where one tool becomes unavailable after the workflow has started. Explain how you would preserve state, prevent duplicate actions, and decide whether to retry, switch tools, or ask a human.",1,1,0,0,0,5806.9,LOW_CONFIDENCE
+V5A_096,"Your agent is processing a business request and an external API suddenly fails. What shall happen to the current state, the completed actions, the retry policy, and the final response to the user?",1,1,0,0,0,2308.4,LOW_CONFIDENCE
+V5A_097,"A government department wants to connect an LLM to internal documents containing sensitive information. Explain how you would control access, reduce unnecessary major exposure, log important actions, and still give users useful answers.",1,0,0,0,0,4785.1,LOW_CONFIDENCE
+V5A_098,"Suppose different employees have different permissions must make all use the same a physician. I will make sure if we will only return documents, the current humor is allowed to see, and I will do all this what happened later.",1,0,0,0,0,2418.6,NO_QUESTION
+V5A_099,"If your RAG system handles confidential ministry data, walk me through authorization, document filtering, model access, logging, and the human controls you would put around risky actions.",1,1,1,0,0,4041.7,ANSWER_READY
+V5A_100,"During a live interview a person asks a very indirect question with several details, but the real request is only about how you evaluated your model. How should your assistant identify the main intent without getting distracted by every word in the sentence?",1,0,0,0,0,3042.3,LOW_CONFIDENCE
+V5A_101,"Imagine the interviewer gives a long introduction, mentions two technologies, and then asks one short question at the end. Explain how your system should keep the important context, but still answer the actual final question.",1,0,0,0,0,2809.5,LOW_CONFIDENCE
+V5A_102,"If a question contains background information, an example, and a final request that is phrased indirectly, how will you design the understanding layer so it responds to the intended question rather than matching the loudest keyword?",1,0,0,0,0,5378.0,LOW_CONFIDENCE
+V5A_103,"Assuma prototype works well for one department, and management now wants to use it across many directorates with much more data and many concurrent users. What would you change in the architecture, monitoring, storage, and access controls before scaling it?",1,1,1,0,0,2638.3,ANSWER_READY
+V5A_104,"Your AI solution moves from a small pilot to organization-wide use. Explain what you would review around performance, cost, data isolation, observability, and failure handling before calling it production ready.",1,0,0,0,0,5632.2,LOW_CONFIDENCE
+V5A_105,"If the ministry wants to scale your AI system nationally, what changes what you consider for infrastructure, database design, retrieval performance, security, and operational support?",1,0,0,0,0,5024.3,LOW_CONFIDENCE
+V5A_106,"A machine learning model performed well when you deployed it, but six months later the student population and behavior had changed and accuracy starts falling. How would you detect that change and decide whether the model needs retraining?",1,1,1,0,0,2571.0,ANSWER_READY
+V5A_107,"Suppose your early warning model slowly becomes less reliable over time even though the code does not change. What data and metrics would you monitor, and what process would you use before retraining or replacing the model?",1,1,1,0,0,3741.7,ANSWER_READY
+V5A_108,"If production predictions degrade because the real world data distribution changes, explain how you would detect drift, investigate the cause, validate a new model, and deploy it safely.",1,1,1,0,0,3456.6,ANSWER_READY
+V5A_109,"Imagine a live interview assistant has to understand English spoken by people with different accents, different speaking speeds, and imperfect microphones. How would you design the speech pipeline so technical words are preserved, and the final question is still understood correctly?",1,1,0,0,0,3163.7,LOW_CONFIDENCE
+V5A_110,"Suppose the interviewer speaks quickly with a strong non-native English accent, and the microphone is a little far away. What should your system do from audio capture through transcription and question understanding to avoid the wrong answer?",1,1,0,0,0,2906.7,LOW_CONFIDENCE
+V5A_111,"You need speech recognition to work with Indian, Jordanian, Gulf, and neutral English speakers. Explain how you will test the audio pipeline, handle uncertain words, and use context without silently changing what the speaker actually said.",1,1,1,0,0,5236.9,ANSWER_READY
+V5A_112,"Your assistant understands the interview question correctly, but did answer arise several seconds after the interviewer finishes speaking. Walk me through how you would measure the delay and decide whether the model neck is speech recognition, retrieval, model inference, or the humor interface.",1,0,0,0,0,3055.5,LOW_CONFIDENCE
+V5A_113,"Suppose accuracy is acceptable, but the live experience feels slow. Explain how you would break down end-to-end latency, what you would optimize first, and what you would refuse to sacrifice just to save a few hundred milliseconds.",1,1,0,0,0,4655.8,LOW_CONFIDENCE
+V5A_114,"If users complain that an AI interview assistant responds too late, how of you profile speech finalization, semantic retrieval, answer selection, and display time before making performance changes?",1,0,1,0,0,3215.2,ANSWER_READY
+V5A_115,"Why, right?",0,0,0,0,0,1276.0,LOW_CONFIDENCE
+V5A_116,Why did YouTube RAG?,1,1,0,0,0,1520.4,LOW_CONFIDENCE
+V5A_117,"Rang, why use it?",0,1,0,0,0,2310.3,LOW_CONFIDENCE
+V5A_118,How do the agents coordinate?,1,1,0,0,0,1399.5,LOW_CONFIDENCE
+V5A_119,Who controls the agents? Who controls the agents?,1,1,0,0,0,1728.6,LOW_CONFIDENCE
+V5A_120,"Pay and panel, I've done it work.",0,0,0,0,0,2473.8,LOW_CONFIDENCE
+V5A_121,Why am bedding?,0,0,0,0,0,1822.0,LOW_CONFIDENCE
+V5A_122,What do embeddings add?,1,1,1,0,0,1099.0,ANSWER_READY
+V5A_123,I'm begging. Why do you need them?,1,0,0,0,0,1860.8,LOW_CONFIDENCE
+V5A_124,When will you use Zundra?,0,0,0,0,0,2263.9,LOW_CONFIDENCE
+V5A_125,White and Rep here.,0,0,0,0,0,1968.4,LOW_CONFIDENCE
+V5A_126,"LangGraph, when is it useful?",1,1,1,0,0,1996.7,ANSWER_READY
+V5A_127,What about guardrails?,1,1,1,0,0,1153.2,ANSWER_READY
+V5A_128,Where do guard rails fit?,1,0,0,0,0,2009.2,LOW_CONFIDENCE
+V5A_129,What are they stopping?,1,0,0,0,0,1801.5,LOW_CONFIDENCE
+V5A_130,I will use not of hallucination.,1,1,1,0,0,1538.6,ANSWER_READY
+V5A_131,What if the model invents an answer?,1,0,0,0,0,1533.4,LOW_CONFIDENCE
+V5A_132,"No context, what shows the LLM do?",1,0,1,0,0,1453.7,ANSWER_READY
+V5A_133,What is RAG?,1,1,1,0,0,1143.1,ANSWER_READY
+V5A_134,The fine retrieval augmented generation.,1,1,1,0,0,1127.7,ANSWER_READY
+V5A_135,Explain RAG in simple terms. Explain RAG in simple terms.,1,1,1,0,0,1204.2,ANSWER_READY
+V5A_136,What is agentic AI?,1,1,1,0,0,1088.9,ANSWER_READY
+V5A_137,Define an AI agent.,1,1,1,0,0,1083.3,ANSWER_READY
+V5A_138,What do you mean by me and big chicken?,0,0,0,0,0,2046.2,LOW_CONFIDENCE
+V5A_139,What are embedding?,1,1,1,0,0,1051.6,ANSWER_READY
+V5A_140,Defider text embedding. Defy the text embedding.,1,1,0,0,0,1870.1,LOW_CONFIDENCE
+V5A_141,What does an embedding represent?,1,1,1,0,0,1073.8,ANSWER_READY
+V5A_142,What is cosine similarity?,1,1,1,0,0,1101.4,ANSWER_READY
+V5A_143,How does cosine similarity compare two vectors?,1,1,1,0,0,1098.2,ANSWER_READY
+V5A_144,Define similarity in the context of embeddings. Define similarity in the context of embeddings.,1,0,0,0,0,1155.6,NO_QUESTION
+V5A_145,What is overfitting?,1,1,1,0,0,1086.2,ANSWER_READY
+V5A_146,How will you be title-fitting in machine learning?,1,0,0,0,0,2109.9,LOW_CONFIDENCE
+V5A_147,Explain overfitting and why it is a problem. Explain over-fitting and why it is a problem.,1,1,1,0,0,4017.5,ANSWER_READY
+V5A_148,"What in a met, a mate, amet, mate?",0,0,0,0,0,2141.3,LOW_CONFIDENCE
+V5A_149,What does affect your database store?,1,0,0,0,0,2119.8,LOW_CONFIDENCE
+V5A_150,Explain what a vector store does in RAG.,1,1,1,0,0,1455.3,ANSWER_READY

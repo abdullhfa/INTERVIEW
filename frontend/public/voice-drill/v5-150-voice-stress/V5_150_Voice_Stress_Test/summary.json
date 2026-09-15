@@ -1,0 +1,35 @@
+{
+  "total_files": 150,
+  "accent_counts": {
+    "indian": 50,
+    "jordanian": 50,
+    "emirati": 50
+  },
+  "style_counts": {
+    "indirect": 60,
+    "compound": 30,
+    "long": 24,
+    "short": 18,
+    "direct": 18
+  },
+  "speed_counts": {
+    "slow": 38,
+    "fast": 37,
+    "normal": 38,
+    "very_fast": 37
+  },
+  "distance_counts": {
+    "close": 50,
+    "medium": 50,
+    "far": 50
+  },
+  "noise_counts": {
+    "clean": 37,
+    "room": 38,
+    "fan": 38,
+    "keyboard": 37
+  },
+  "total_duration_sec": 1132.45,
+  "format": "WAV PCM 16-bit mono 16 kHz",
+  "important_note": "Accent audio is synthetic proxy audio, not recordings of real Indian/Jordanian/Emirati speakers."
+}

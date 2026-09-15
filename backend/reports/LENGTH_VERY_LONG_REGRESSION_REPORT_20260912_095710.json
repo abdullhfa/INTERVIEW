@@ -1,0 +1,1279 @@
+{
+  "created_at": "2026-09-12T09:57:10.214618+00:00",
+  "mode": "e2e_windows_loopback",
+  "suite": "very_long_length",
+  "filters": {
+    "mode": "e2e_windows_loopback",
+    "suite": "very_long_length",
+    "score_name": "Very Long Length Regression Score",
+    "limit": 8,
+    "pre_roll_ms": 600,
+    "post_roll_ms": 250,
+    "hard_questions": [
+      156,
+      173,
+      178,
+      212,
+      275
+    ],
+    "audio_path": "pre_roll+speech+post_roll+stt_second_pass_on_doubt+strong_abstain"
+  },
+  "summary": {
+    "total": 8,
+    "passed": 5,
+    "failed": 3,
+    "pass_rate": 0.625,
+    "stt_success": "8/8",
+    "intent_success": "5/8",
+    "intent_success_rate": 0.625,
+    "recovered_after_stt_error": 0,
+    "intent_recovery_rate": 0.0,
+    "high_confidence_wrong": 0,
+    "first_word_missing": 1,
+    "last_word_missing": 8,
+    "raw_better_than_processed": 0,
+    "fail_buckets": {
+      "intent_only": 3
+    },
+    "acoustic_causes": {
+      "narrowband": 3,
+      "intent_only": 3
+    },
+    "audio_levels": {
+      "avg_rms_before": 0.08559,
+      "avg_rms_after": 0.08504,
+      "avg_snr_db_est": 41.94,
+      "avg_bandwidth_hz_est": 2212.0,
+      "avg_high_freq_energy_ratio": 0.02751,
+      "fail_low_rms_count": 0,
+      "fail_ok_rms_low_snr_count": 0,
+      "fail_narrowband_count": 3,
+      "fail_onset_count": 0
+    },
+    "latency": {
+      "median_total_ms": 42903.3,
+      "p95_total_ms": 44667.2,
+      "avg_total_ms": 42162.7,
+      "median_post_speech_ms": 7813.7,
+      "p95_post_speech_ms": 9226.0,
+      "avg_post_speech_ms": 7928.7,
+      "avg_vad_ms": 30259.0,
+      "avg_stt_ms": 7690.3,
+      "avg_intent_ms": 238.3,
+      "avg_answer_ms": 0.1
+    },
+    "by_condition": {
+      "very_long": {
+        "total": 8,
+        "pass": 5,
+        "intent": 5,
+        "pass_rate": 0.625,
+        "intent_rate": 0.625
+      }
+    },
+    "by_speaker": {
+      "very_long": {
+        "total": 8,
+        "pass": 5,
+        "intent": 5,
+        "pass_rate": 0.625,
+        "intent_rate": 0.625
+      }
+    },
+    "failure_stages": {
+      "QUESTION_UNDERSTANDING": 3
+    },
+    "compound": {
+      "compound_detected": 6,
+      "compound_path_used": 7,
+      "full_compound_success": 4,
+      "partial_compound_success": 3,
+      "avg_intent_coverage_rate": 0.75,
+      "answer_order_correct": 8,
+      "final_answer_ok": 4,
+      "requested_parts_total": 16,
+      "matched_parts_total": 10,
+      "unsupported_parts_total": 5
+    },
+    "targets": {
+      "clean_intent": 0.95,
+      "office_intent": 0.9,
+      "poor_call_intent": 0.85,
+      "far_intent": 0.85,
+      "combined_pass": 0.6,
+      "median_post_speech_ms": 1500,
+      "p95_post_speech_ms": 2500,
+      "high_confidence_wrong": 0
+    },
+    "score_name": "Very Long Length Regression Score",
+    "suite": "very_long_length",
+    "pre_roll_ms": 600
+  },
+  "results": [
+    {
+      "sample_id": 10033,
+      "file": "05_very_long_sentences/very_long_01.wav",
+      "question_id": null,
+      "speaker": "very_long",
+      "condition": "very_long",
+      "expected_question": "I want you to describe one complete example from your BTEC question generation project in detail. Start with how the curriculum document enters the system, how you clean and split the document, how embeddings are created, how the relevant chunks are retrieved, how the language model receives only the selected context, how the question is generated, how the output structure is checked, how you verify that the question is grounded in the source, what happens when validation fails, where human approval happens, what gets logged, and what is finally saved to the question bank. Also explain which parts are RAG, which parts are agentic control, and why you do not allow the model to save an important question by itself.",
+      "transcript": "I want you to describe one complete example from your BTEC question generation project in detail. Start with how the curriculum document enters the system. How you clean and split the document. How embeddings are created. How the relevant chunks are retrieved. How the language model receives only the selected context. How the question is generated. How the output structure is checked. How you verify that the question is grounded in the source. failed.",
+      "stt_ok": true,
+      "stt_score": 0.861,
+      "intent_ok": false,
+      "intent_score": 0.261,
+      "match_id": "tech.embeddings",
+      "match_question": "What are embeddings?",
+      "match_score": 0.66,
+      "answer_en": null,
+      "answer_ok": false,
+      "recovered_after_stt_error": false,
+      "result": "FAIL",
+      "failure_stage": "QUESTION_UNDERSTANDING",
+      "failure_detail": "Transcript usable but wrong intent (intent_only).",
+      "high_confidence_wrong": false,
+      "timings": {
+        "audio_detected_ms": 261.8,
+        "speech_final_ms": 30439.6,
+        "stt_ms": 8839.2,
+        "intent_ms": 386.5,
+        "answer_ms": 0.4,
+        "total_ms": 44667.2,
+        "vad_ms": 30177.8,
+        "post_speech_ms": 9226.0
+      },
+      "notes": "e2e_loopback; realistic_recovery:recovered:margin=0.122; compound:cov=0.5:parts=1/2",
+      "first_word_missing": false,
+      "last_word_missing": true,
+      "speech_duration_ms": 30464.0,
+      "pre_roll_used": true,
+      "raw_transcript": "I want you to describe one complete example from your BTEC question generation project in detail. Start with how the curriculum document enters the system, how you clean and split the document, how embeddings are created, how the relevant chunks are retrieved, how the language model receives only the selected context, how the question is generated, how the output structure is checked, how you verify that the question is grounded in the source, what happens when validation Ails.",
+      "processed_transcript": "I want you to describe one complete example from your BTEC question generation project in detail. Start with how the curriculum document enters the system. How you clean and split the document. How embeddings are created. How the relevant chunks are retrieved. How the language model receives only the selected context. How the question is generated. How the output structure is checked. How you verify that the question is grounded in the source. What happens when valid failed.",
+      "better_audio_source": "processed",
+      "onset": {
+        "pre_roll_ms": 600,
+        "post_roll_ms": 250,
+        "pre_roll_samples_used": 4096,
+        "capture_start_t": 4923.2964389,
+        "vad_speech_start_ms": 261.7,
+        "actual_buffer_start_ms": 5.7,
+        "first_non_silent_offset_ms": 170.0,
+        "stt_start_ms": 35441.0,
+        "capture_to_vad_ms": 261.7,
+        "vad_to_buffer_lead_ms": 256.0
+      },
+      "audio_levels": {
+        "rms_before": 0.08488,
+        "rms_after": 0.08433,
+        "noise_floor": 0.00715,
+        "speech_rms_est": 0.14775,
+        "snr_db_est": 26.3,
+        "spectral_centroid_hz": 767.0,
+        "high_freq_energy_ratio": 0.0093,
+        "bandwidth_hz_est": 1741.0
+      },
+      "fail_bucket": "intent_only",
+      "failure_position": "end",
+      "question_type": "compound",
+      "compound_detected": true,
+      "compound_confidence": 0.82,
+      "requested_parts_count": 2,
+      "matched_parts_count": 1,
+      "unsupported_parts_count": 1,
+      "intent_coverage_rate": 0.5,
+      "full_compound_success": false,
+      "partial_compound_success": true,
+      "answer_order_correct": true,
+      "compound_sub_questions": [
+        "I want you to describe one complete example from your BTEC question generation project in detail. Start with",
+        "How the curriculum document enters question generation. How you clean and split the document. How embeddings are created. How the relevant chunks are retrieved. How the language model receives only the selected context. How the question is generated. How the output structure is checked. How you verify question generation the question is grounded in the source. failed?"
+      ],
+      "compound_selected_intents": [
+        "tech.embeddings"
+      ],
+      "compound_trace": {
+        "question_type": "compound",
+        "compound_confidence": 0.82,
+        "request_count_estimate": 2,
+        "used_compound_path": true,
+        "sub_questions": [
+          "I want you to describe one complete example from your BTEC question generation project in detail. Start with",
+          "How the curriculum document enters question generation. How you clean and split the document. How embeddings are created. How the relevant chunks are retrieved. How the language model receives only the selected context. How the question is generated. How the output structure is checked. How you verify question generation the question is grounded in the source. failed?"
+        ],
+        "candidate_intents": [
+          {
+            "sub_question": "I want you to describe one complete example from your BTEC question generation project in detail. Start with",
+            "intent_id": "moe.what_is_btec",
+            "score": 0.564,
+            "mode": "weak",
+            "runner_up": "moe.question_generation",
+            "margin": 0.044,
+            "accepted": false,
+            "drop_reason": "low_score"
+          },
+          {
+            "sub_question": "How the curriculum document enters question generation. How you clean and split the document. How embeddings are created. How the relevant chunks are retrieved. How the language model receives only the selected context. How the question is generated. How the output structure is checked. How you verify question generation the question is grounded in the source. failed?",
+            "intent_id": "tech.embeddings",
+            "score": 0.663,
+            "mode": "weak",
+            "runner_up": "moe.question_generation.why_steps",
+            "margin": 0.139,
+            "accepted": true,
+            "drop_reason": null
+          }
+        ],
+        "selected_intents": [
+          "tech.embeddings"
+        ],
+        "dropped_intents": [
+          {
+            "sub_question": "I want you to describe one complete example from your BTEC question generation project in detail. Start with",
+            "intent_id": "moe.what_is_btec",
+            "reason": "low_score",
+            "score": 0.564
+          }
+        ],
+        "duplicate_intents": [],
+        "unknown_parts": [
+          "I want you to describe one complete example from your BTEC question generation project in detail. Start with"
+        ],
+        "answer_sources": [
+          "tech.embeddings"
+        ],
+        "final_answer": "An embedding is a long list of numbers that stands for a piece of text. An embedding model places similar meanings close together.",
+        "partial_compound_match": true,
+        "full_compound_success": false,
+        "intent_coverage_rate": 0.5,
+        "matched_parts_count": 1,
+        "requested_parts_count": 2,
+        "unsupported_parts_count": 1,
+        "detection_signals": [
+          "explain_and_explain",
+          "wh_and_wh"
+        ],
+        "decomposition_notes": [],
+        "timings": {
+          "decomposition_ms": 24.6,
+          "matching_ms": 350.5,
+          "answer_merge_ms": 0.1
+        },
+        "total_latency_ms": 375.3
+      }
+    },
+    {
+      "sample_id": 10034,
+      "file": "05_very_long_sentences/very_long_02.wav",
+      "question_id": null,
+      "speaker": "very_long",
+      "condition": "very_long",
+      "expected_question": "Suppose you are asked to build a secure AI assistant for several schools that all use the same platform. Explain how you would keep each school's information isolated while still using one application. Discuss authentication, school identifiers, backend metadata filtering before retrieval, separate vector collections when stronger isolation is required, controlled tools for sensitive actions, audit logs, human approval, and tests that prove School A can never retrieve School B documents. Then explain how you would handle a request when no relevant document is found and how you would prevent the model from inventing an answer.",
+      "transcript": "Question by itself. Suppose you are asked to build a secure AI assistant for several schools that all use the same platform. Explain how you would keep each school's information isolated while still using one application. Discuss authentication, school identifiers, backend metadata filtering before retrieval, separate vector collections when stronger isolation is required, controlled tools for sensitive actions, audit logs, test snap.",
+      "stt_ok": true,
+      "stt_score": 0.963,
+      "intent_ok": true,
+      "intent_score": 0.764,
+      "match_id": "tech.metadata_filtering",
+      "match_question": "What is metadata filtering in RAG?",
+      "match_score": 0.656,
+      "answer_en": null,
+      "answer_ok": false,
+      "recovered_after_stt_error": false,
+      "result": "PASS",
+      "failure_stage": null,
+      "failure_detail": "Intent ok but no bank answer.",
+      "high_confidence_wrong": false,
+      "timings": {
+        "audio_detected_ms": 208.9,
+        "speech_final_ms": 30422.3,
+        "stt_ms": 8087.8,
+        "intent_ms": 1.0,
+        "answer_ms": 0.1,
+        "total_ms": 43513.5,
+        "vad_ms": 30213.4,
+        "post_speech_ms": 8088.9
+      },
+      "notes": "e2e_loopback; realistic_recovery:recovered:margin=0.072",
+      "first_word_missing": true,
+      "last_word_missing": true,
+      "speech_duration_ms": 30432.0,
+      "pre_roll_used": true,
+      "raw_transcript": "question by itself. Suppose you are asked to build a secure AI assistant for several schools that all use the same platform. Explain how you would keep each school's information isolated while still using one application. Discuss authentication, school identifiers, backend metadata filtering before retrieval, separate vector collections when stronger isolation is required, controlled tools for sensitive actions, audit logs, human approval, and test SNAP.",
+      "processed_transcript": "Question by itself. Suppose you are asked to build a secure AI assistant for several schools that all use the same platform. Explain how you would keep each school's information isolated while still using one application. Discuss authentication, school identifiers, backend metadata filtering before retrieval, separate vector collections when stronger isolation is required, controlled tools for sensitive actions, audit logs, human approval, test snap.",
+      "better_audio_source": "processed",
+      "onset": {
+        "pre_roll_ms": 600,
+        "post_roll_ms": 250,
+        "pre_roll_samples_used": 3072,
+        "capture_start_t": 4968.3158877,
+        "vad_speech_start_ms": 208.9,
+        "actual_buffer_start_ms": 16.9,
+        "first_non_silent_offset_ms": 50.0,
+        "stt_start_ms": 35424.5,
+        "capture_to_vad_ms": 208.9,
+        "vad_to_buffer_lead_ms": 192.0
+      },
+      "audio_levels": {
+        "rms_before": 0.08687,
+        "rms_after": 0.08631,
+        "noise_floor": 0.00673,
+        "speech_rms_est": 0.14946,
+        "snr_db_est": 26.93,
+        "spectral_centroid_hz": 860.8,
+        "high_freq_energy_ratio": 0.0216,
+        "bandwidth_hz_est": 2261.0
+      },
+      "fail_bucket": null,
+      "failure_position": "none",
+      "question_type": "single",
+      "compound_detected": false,
+      "compound_confidence": 0.92,
+      "requested_parts_count": 0,
+      "matched_parts_count": 0,
+      "unsupported_parts_count": 0,
+      "intent_coverage_rate": 0.0,
+      "full_compound_success": false,
+      "partial_compound_success": false,
+      "answer_order_correct": true,
+      "compound_sub_questions": [],
+      "compound_selected_intents": [],
+      "compound_trace": {}
+    },
+    {
+      "sample_id": 10035,
+      "file": "05_very_long_sentences/very_long_03.wav",
+      "question_id": null,
+      "speaker": "very_long",
+      "condition": "very_long",
+      "expected_question": "Compare RAG, fine tuning, and agentic AI in one practical explanation. Explain why RAG is useful when curriculum documents change, why fine tuning is better for changing behavior or response style rather than frequently changing facts, and how agentic control can manage steps such as retrieval, generation, validation, retry, pause, and human approval. Use your BTEC question generation work as the example, and make clear that the similarity checker is different because it uses embeddings and cosine similarity without an LLM generation step.",
+      "transcript": "Compare RAG, fine-tuning, and agentic AI in one practical explanation. Explain why RAG is useful when curriculum documents change, why fine-tuning is better for changing behavior or response style rather than frequently changing facts, and how agentic control can manage steps, such as retrieval, generation, validation, retry, pause, and human approval. Use your BTEC Question Generation Work as the example, make clear that.",
+      "stt_ok": true,
+      "stt_score": 0.912,
+      "intent_ok": true,
+      "intent_score": 1.2,
+      "match_id": "tech.rag_vs_finetuning,hard.why_agent_not_rag",
+      "match_question": "When would you use RAG versus fine tuning? | Why do you need an agent here? Why not normal RAG?",
+      "match_score": 1.2,
+      "answer_en": "When a regulation changes, I re-index that file and the system is current the same day. Normal RAG is enough when the path is fixed: question, retrieve, answer, stop. I used that in BTEC question generation.",
+      "answer_ok": true,
+      "recovered_after_stt_error": false,
+      "result": "PASS",
+      "failure_stage": null,
+      "failure_detail": "",
+      "high_confidence_wrong": false,
+      "timings": {
+        "audio_detected_ms": 314.5,
+        "speech_final_ms": 30517.3,
+        "stt_ms": 8399.2,
+        "intent_ms": 192.8,
+        "answer_ms": 0.0,
+        "total_ms": 44111.1,
+        "vad_ms": 30202.9,
+        "post_speech_ms": 8592.0
+      },
+      "notes": "e2e_loopback; realistic_recovery:ambiguous_abstain:margin=0.013; compound:cov=1.0:parts=2/2",
+      "first_word_missing": false,
+      "last_word_missing": true,
+      "speech_duration_ms": 30528.0,
+      "pre_roll_used": true,
+      "raw_transcript": "Compare RAG, fine-tuning, and agentic AI in one practical explanation. Explain why RAG is useful when curriculum documents change, why fine-tuning is better for changing behavior or response style rather than frequently changing facts, and how agentic control can manage steps, such as retrieval, generation, validation, retry, pause, and human approval. Use your BTEC question generation work as the example, earlier.",
+      "processed_transcript": "Compare RAG, fine-tuning, and agentic AI in one practical explanation. Explain why RAG is useful when curriculum documents change, why fine-tuning is better for changing behavior or response style rather than frequently changing facts, and how agentic control can manage steps, such as retrieval, generation, validation, retry, pause, and human approval. Use your BTEC question generation work as the example, make clear that.",
+      "better_audio_source": "processed",
+      "onset": {
+        "pre_roll_ms": 600,
+        "post_roll_ms": 250,
+        "pre_roll_samples_used": 4608,
+        "capture_start_t": 5012.1817979,
+        "vad_speech_start_ms": 314.4,
+        "actual_buffer_start_ms": 26.4,
+        "first_non_silent_offset_ms": 170.0,
+        "stt_start_ms": 35519.0,
+        "capture_to_vad_ms": 314.4,
+        "vad_to_buffer_lead_ms": 288.0
+      },
+      "audio_levels": {
+        "rms_before": 0.08409,
+        "rms_after": 0.08354,
+        "noise_floor": 0.00492,
+        "speech_rms_est": 0.13966,
+        "snr_db_est": 29.06,
+        "spectral_centroid_hz": 1090.5,
+        "high_freq_energy_ratio": 0.0645,
+        "bandwidth_hz_est": 2735.0
+      },
+      "fail_bucket": null,
+      "failure_position": "none",
+      "question_type": "compound",
+      "compound_detected": true,
+      "compound_confidence": 0.97,
+      "requested_parts_count": 2,
+      "matched_parts_count": 2,
+      "unsupported_parts_count": 0,
+      "intent_coverage_rate": 1.0,
+      "full_compound_success": true,
+      "partial_compound_success": false,
+      "answer_order_correct": true,
+      "compound_sub_questions": [
+        "When would you use RAG versus fine tuning?",
+        "Why do you need an agent here? Why not normal RAG?"
+      ],
+      "compound_selected_intents": [
+        "tech.rag_vs_finetuning",
+        "hard.why_agent_not_rag"
+      ],
+      "compound_trace": {
+        "question_type": "compound",
+        "compound_confidence": 0.97,
+        "request_count_estimate": 3,
+        "used_compound_path": true,
+        "sub_questions": [
+          "When would you use RAG versus fine tuning?",
+          "Why do you need an agent here? Why not normal RAG?"
+        ],
+        "candidate_intents": [
+          {
+            "sub_question": "When would you use RAG versus fine tuning?",
+            "intent_id": "tech.rag_vs_finetuning",
+            "score": 1.133,
+            "mode": "weak",
+            "runner_up": "hard.not_finetune_first",
+            "margin": 0.1,
+            "accepted": true,
+            "drop_reason": null
+          },
+          {
+            "sub_question": "Why do you need an agent here? Why not normal RAG?",
+            "intent_id": "hard.why_agent_not_rag",
+            "score": 1.2,
+            "mode": "strong",
+            "runner_up": "hard.multihop_vs_agent",
+            "margin": 0.469,
+            "accepted": true,
+            "drop_reason": null
+          }
+        ],
+        "selected_intents": [
+          "tech.rag_vs_finetuning",
+          "hard.why_agent_not_rag"
+        ],
+        "dropped_intents": [],
+        "duplicate_intents": [],
+        "unknown_parts": [],
+        "answer_sources": [
+          "tech.rag_vs_finetuning",
+          "hard.why_agent_not_rag"
+        ],
+        "final_answer": "When a regulation changes, I re-index that file and the system is current the same day. Normal RAG is enough when the path is fixed: question, retrieve, answer, stop. I used that in BTEC question generation.",
+        "partial_compound_match": false,
+        "full_compound_success": true,
+        "intent_coverage_rate": 1.0,
+        "matched_parts_count": 2,
+        "requested_parts_count": 2,
+        "unsupported_parts_count": 0,
+        "detection_signals": [
+          "wh_requests:2",
+          "connector_second_request",
+          "compare_contrast",
+          "explain_and_explain",
+          "comma_facets:9",
+          "wh_and_wh"
+        ],
+        "decomposition_notes": [
+          "facet:fine tuning",
+          "facet_primary"
+        ],
+        "timings": {
+          "decomposition_ms": 0.1,
+          "matching_ms": 191.1,
+          "answer_merge_ms": 0.2
+        },
+        "total_latency_ms": 191.4
+      }
+    },
+    {
+      "sample_id": 10036,
+      "file": "05_very_long_sentences/very_long_04.wav",
+      "question_id": null,
+      "speaker": "very_long",
+      "condition": "very_long",
+      "expected_question": "Imagine that the interviewer gives you a difficult production incident. Users report that the AI gives fluent but incorrect answers, some retrieval results belong to the wrong unit, and a few requests take too long. Explain how you would debug this systematically by separating audio or input problems, retrieval quality, metadata filtering, chunking, embedding quality, ranking, prompt construction, output validation, latency, and human approval. Describe what evidence you would inspect before changing the model, and explain why a strong model cannot fix missing or incorrect retrieved evidence.",
+      "transcript": "Imagine that the interviewer gives you a difficult production incident. Users report that the AI gives fluent, but incorrect answers, some retrieval results belong to the wrong unit, and a few requests take too long. Explain how you would debug this systematically by separating audio or input problems, retrieval quality, metadata filtering, chunking, embedding quality, ranking, prompt construction, output validation, approval.",
+      "stt_ok": true,
+      "stt_score": 0.99,
+      "intent_ok": false,
+      "intent_score": 0.381,
+      "match_id": "tech.metadata_filtering",
+      "match_question": "What is metadata filtering in RAG?",
+      "match_score": 0.657,
+      "answer_en": null,
+      "answer_ok": false,
+      "recovered_after_stt_error": false,
+      "result": "FAIL",
+      "failure_stage": "QUESTION_UNDERSTANDING",
+      "failure_detail": "Transcript usable but wrong intent (intent_only).",
+      "high_confidence_wrong": false,
+      "timings": {
+        "audio_detected_ms": 254.1,
+        "speech_final_ms": 30424.7,
+        "stt_ms": 7165.2,
+        "intent_ms": 311.3,
+        "answer_ms": 0.1,
+        "total_ms": 42903.3,
+        "vad_ms": 30170.6,
+        "post_speech_ms": 7476.6
+      },
+      "notes": "e2e_loopback; realistic_recovery:recovered:margin=0.073; compound:cov=0.5:parts=1/2",
+      "first_word_missing": false,
+      "last_word_missing": true,
+      "speech_duration_ms": 30432.0,
+      "pre_roll_used": true,
+      "raw_transcript": "Imagine that the interviewer gives you a difficult production incident. Users report that the AI gives fluent, but incorrect answers, some retrieval results belong to the wrong unit, and a few requests take too long. Explain how you would debug this systematically by separating audio or input problems, retrieval quality, metadata filtering, chunking, embedding quality, ranking, prompt construction, output validation, latency, Google.",
+      "processed_transcript": "Imagine that the interviewer gives you a difficult production incident. Users report that the AI gives fluent, but incorrect answers, some retrieval results belong to the wrong unit, and a few requests take too long. Explain how you would debug this systematically by separating audio or input problems, retrieval quality, metadata filtering, chunking, embedding quality, ranking, prompt construction, output validation, approval.",
+      "better_audio_source": "processed",
+      "onset": {
+        "pre_roll_ms": 600,
+        "post_roll_ms": 250,
+        "pre_roll_samples_used": 9216,
+        "capture_start_t": 5056.644096,
+        "vad_speech_start_ms": 41443.7,
+        "actual_buffer_start_ms": 40867.7,
+        "first_non_silent_offset_ms": 130.0,
+        "stt_start_ms": 35426.5,
+        "capture_to_vad_ms": 41443.7,
+        "vad_to_buffer_lead_ms": 576.0
+      },
+      "audio_levels": {
+        "rms_before": 0.0857,
+        "rms_after": 0.08515,
+        "noise_floor": 0.00431,
+        "speech_rms_est": 0.14444,
+        "snr_db_est": 30.5,
+        "spectral_centroid_hz": 888.4,
+        "high_freq_energy_ratio": 0.0112,
+        "bandwidth_hz_est": 2555.0
+      },
+      "fail_bucket": "intent_only",
+      "failure_position": "end",
+      "question_type": "uncertain",
+      "compound_detected": false,
+      "compound_confidence": 0.63,
+      "requested_parts_count": 2,
+      "matched_parts_count": 1,
+      "unsupported_parts_count": 1,
+      "intent_coverage_rate": 0.5,
+      "full_compound_success": false,
+      "partial_compound_success": true,
+      "answer_order_correct": true,
+      "compound_sub_questions": [
+        "Imagine that the interviewer gives you a difficult production incident. Users report that the AI gives fluent, but incorrect answers, some retrieval results belong to the wrong unit",
+        "A few requests take too long. Explain how you would debug this systematically by separating audio or input problems, retrieval quality, metadata filtering, chunking, embedding quality, ranking, prompt construction, output validation, approval"
+      ],
+      "compound_selected_intents": [
+        "tech.metadata_filtering"
+      ],
+      "compound_trace": {
+        "question_type": "uncertain",
+        "compound_confidence": 0.63,
+        "request_count_estimate": 3,
+        "used_compound_path": true,
+        "sub_questions": [
+          "Imagine that the interviewer gives you a difficult production incident. Users report that the AI gives fluent, but incorrect answers, some retrieval results belong to the wrong unit",
+          "A few requests take too long. Explain how you would debug this systematically by separating audio or input problems, retrieval quality, metadata filtering, chunking, embedding quality, ranking, prompt construction, output validation, approval"
+        ],
+        "candidate_intents": [
+          {
+            "sub_question": "Imagine that the interviewer gives you a difficult production incident. Users report that the AI gives fluent, but incorrect answers, some retrieval results belong to the wrong unit",
+            "intent_id": "gen.handle_mistake_in_production",
+            "score": 0.504,
+            "mode": "weak",
+            "runner_up": "hard.wrong_chunk",
+            "margin": 0.085,
+            "accepted": false,
+            "drop_reason": "low_score"
+          },
+          {
+            "sub_question": "A few requests take too long. Explain how you would debug this systematically by separating audio or input problems, retrieval quality, metadata filtering, chunking, embedding quality, ranking, prompt construction, output validation, approval",
+            "intent_id": "tech.metadata_filtering",
+            "score": 0.67,
+            "mode": "weak",
+            "runner_up": "hard.which_rag_layer_failed",
+            "margin": 0.07,
+            "accepted": true,
+            "drop_reason": null
+          }
+        ],
+        "selected_intents": [
+          "tech.metadata_filtering"
+        ],
+        "dropped_intents": [
+          {
+            "sub_question": "Imagine that the interviewer gives you a difficult production incident. Users report that the AI gives fluent, but incorrect answers, some retrieval results belong to the wrong unit",
+            "intent_id": "gen.handle_mistake_in_production",
+            "reason": "low_score",
+            "score": 0.504
+          }
+        ],
+        "duplicate_intents": [],
+        "unknown_parts": [
+          "Imagine that the interviewer gives you a difficult production incident. Users report that the AI gives fluent, but incorrect answers, some retrieval results belong to the wrong unit"
+        ],
+        "answer_sources": [
+          "tech.metadata_filtering"
+        ],
+        "final_answer": "Every chunk is stored with tags: department, year, type, classification. Metadata filtering means I search only inside the matching set, before I rank by meaning.",
+        "partial_compound_match": true,
+        "full_compound_success": false,
+        "intent_coverage_rate": 0.5,
+        "matched_parts_count": 1,
+        "requested_parts_count": 2,
+        "unsupported_parts_count": 1,
+        "detection_signals": [
+          "comma_facets:7"
+        ],
+        "decomposition_notes": [],
+        "timings": {
+          "decomposition_ms": 0.2,
+          "matching_ms": 309.9,
+          "answer_merge_ms": 0.1
+        },
+        "total_latency_ms": 310.5
+      }
+    },
+    {
+      "sample_id": 10037,
+      "file": "05_very_long_sentences/very_long_05.wav",
+      "question_id": null,
+      "speaker": "very_long",
+      "condition": "very_long",
+      "expected_question": "Describe the design of a safe AI agent that can help with government workflows but cannot take uncontrolled actions. Explain the difference between giving the agent a small set of tools and giving it full system access. Discuss permissions, input validation, output validation, idempotency, audit logs, retry limits, timeouts, human approval for sensitive actions, and how the system should stop when confidence is low. Then explain how a framework such as LangGraph could help manage state, checkpoints, pause, resume, and recovery if the workflow becomes more complex.",
+      "transcript": "Describe the design of a safe AI agent that can help with government workflows but cannot take uncontrolled actions. Explain the difference between giving the agent a small set of tools and giving it full system access. Discuss permissions, input validation, output validation, item potency, audit logs, retry limits, timeouts, human approval for sensitive actions, and how the system should stop when confidence is low. Framework.",
+      "stt_ok": true,
+      "stt_score": 0.966,
+      "intent_ok": true,
+      "intent_score": 1.04,
+      "match_id": "hard.agent_loop,hard.teacher_rejects",
+      "match_question": "How do you prevent an agent from looping forever? | The teacher rejects the generated question. What happens next in the system?",
+      "match_score": 1.04,
+      "answer_en": "Hard caps in code, not in the prompt. Max steps, max tokens, max wall-clock time, max cost. We log the reject reason if they give one. We do not save the item.",
+      "answer_ok": true,
+      "recovered_after_stt_error": false,
+      "result": "PASS",
+      "failure_stage": null,
+      "failure_detail": "",
+      "high_confidence_wrong": false,
+      "timings": {
+        "audio_detected_ms": 246.9,
+        "speech_final_ms": 30449.2,
+        "stt_ms": 7237.7,
+        "intent_ms": 190.1,
+        "answer_ms": 0.0,
+        "total_ms": 42878.3,
+        "vad_ms": 30202.3,
+        "post_speech_ms": 7427.8
+      },
+      "notes": "e2e_loopback; realistic_recovery:ambiguous_abstain:margin=0.013; compound:cov=1.0:parts=2/2",
+      "first_word_missing": false,
+      "last_word_missing": true,
+      "speech_duration_ms": 30464.0,
+      "pre_roll_used": true,
+      "raw_transcript": "Describe the design of a safe AI agent that can help with government workflows but cannot take uncontrolled actions. Explain the difference between giving the agent a small set of tools and giving it full system access. Discuss permissions, input validation, output validation, item potency, audit logs, retry limits, timeouts, human approval for sensitive actions, and how the system should stop when confidence is low. Then explain how a framework So.",
+      "processed_transcript": "Describe the design of a safe AI agent that can help with government workflows but cannot take uncontrolled actions. Explain the difference between giving the agent a small set of tools and giving it full system access. Discuss permissions, input validation, output validation, item potency, audit logs, retry limits, timeouts, human approval for sensitive actions, and how the system should stop when confidence is low. Framework.",
+      "better_audio_source": "processed",
+      "onset": {
+        "pre_roll_ms": 600,
+        "post_roll_ms": 250,
+        "pre_roll_samples_used": 3584,
+        "capture_start_t": 5099.8996449,
+        "vad_speech_start_ms": 246.9,
+        "actual_buffer_start_ms": 22.9,
+        "first_non_silent_offset_ms": 150.0,
+        "stt_start_ms": 35450.3,
+        "capture_to_vad_ms": 246.9,
+        "vad_to_buffer_lead_ms": 224.0
+      },
+      "audio_levels": {
+        "rms_before": 0.08692,
+        "rms_after": 0.08636,
+        "noise_floor": 0.00646,
+        "speech_rms_est": 0.14573,
+        "snr_db_est": 27.06,
+        "spectral_centroid_hz": 723.5,
+        "high_freq_energy_ratio": 0.0301,
+        "bandwidth_hz_est": 1691.0
+      },
+      "fail_bucket": null,
+      "failure_position": "none",
+      "question_type": "compound",
+      "compound_detected": true,
+      "compound_confidence": 0.97,
+      "requested_parts_count": 2,
+      "matched_parts_count": 2,
+      "unsupported_parts_count": 0,
+      "intent_coverage_rate": 1.0,
+      "full_compound_success": true,
+      "partial_compound_success": false,
+      "answer_order_correct": true,
+      "compound_sub_questions": [
+        "How do you prevent an agent from looping forever?",
+        "The teacher rejects the generated question. What happens next in the system?"
+      ],
+      "compound_selected_intents": [
+        "hard.agent_loop",
+        "hard.teacher_rejects"
+      ],
+      "compound_trace": {
+        "question_type": "compound",
+        "compound_confidence": 0.97,
+        "request_count_estimate": 3,
+        "used_compound_path": true,
+        "sub_questions": [
+          "How do you prevent an agent from looping forever?",
+          "The teacher rejects the generated question. What happens next in the system?"
+        ],
+        "candidate_intents": [
+          {
+            "sub_question": "How do you prevent an agent from looping forever?",
+            "intent_id": "hard.agent_loop",
+            "score": 1.04,
+            "mode": "strong",
+            "runner_up": "tech.data_leakage_prevent",
+            "margin": 0.491,
+            "accepted": true,
+            "drop_reason": null
+          },
+          {
+            "sub_question": "The teacher rejects the generated question. What happens next in the system?",
+            "intent_id": "hard.teacher_rejects",
+            "score": 1.0,
+            "mode": "strong",
+            "runner_up": "gen.non_technical_stakeholders",
+            "margin": 0.457,
+            "accepted": true,
+            "drop_reason": null
+          }
+        ],
+        "selected_intents": [
+          "hard.agent_loop",
+          "hard.teacher_rejects"
+        ],
+        "dropped_intents": [],
+        "duplicate_intents": [],
+        "unknown_parts": [],
+        "answer_sources": [
+          "hard.agent_loop",
+          "hard.teacher_rejects"
+        ],
+        "final_answer": "Hard caps in code, not in the prompt. Max steps, max tokens, max wall-clock time, max cost. We log the reject reason if they give one. We do not save the item.",
+        "partial_compound_match": false,
+        "full_compound_success": true,
+        "intent_coverage_rate": 1.0,
+        "matched_parts_count": 2,
+        "requested_parts_count": 2,
+        "unsupported_parts_count": 0,
+        "detection_signals": [
+          "connector_second_request",
+          "compare_contrast",
+          "explain_and_explain",
+          "comma_facets:7"
+        ],
+        "decomposition_notes": [
+          "facet:fails validation",
+          "facet_primary"
+        ],
+        "timings": {
+          "decomposition_ms": 0.1,
+          "matching_ms": 188.1,
+          "answer_merge_ms": 0.2
+        },
+        "total_latency_ms": 188.4
+      }
+    },
+    {
+      "sample_id": 10038,
+      "file": "05_very_long_sentences/very_long_06.wav",
+      "question_id": null,
+      "speaker": "very_long",
+      "condition": "very_long",
+      "expected_question": "Please explain how you would test an interview assistant from end to end before relying on it in a real interview. Include system audio capture, pre roll, voice activity detection, speech to text, technical term repair, intent matching, confidence checks, answer retrieval, latency measurement, and abstaining when the system is uncertain. Explain why clean audio, office noise, poor call quality, far audio, fast speech, slow speech, short questions, and very long questions should all be tested separately.",
+      "transcript": "Please explain how you would test an interview assistant from end to end before relying on it in a real interview. Include system audio capture, pre-roll, voice activity detection, speech to text, technical term repair, intent matching, confidence checks, answer retrieval, latency measurement, and abstaining when the system is uncertain. Explain why clean audio, office noise, poor call quality, far audio, fast speech, slow speech, Short quest.",
+      "stt_ok": true,
+      "stt_score": 0.972,
+      "intent_ok": true,
+      "intent_score": 0.94,
+      "match_id": "tech.how_stt_works,tech.transcription_quality",
+      "match_question": "How does speech-to-text work? | How do you know the transcription system is good enough?",
+      "match_score": 0.94,
+      "answer_en": "We capture audio, clean it, and often resample to 16 kHz. I ignore the vendor's clean English number. I label a small set from our rooms, our speakers, our noise.",
+      "answer_ok": true,
+      "recovered_after_stt_error": false,
+      "result": "PASS",
+      "failure_stage": null,
+      "failure_detail": "",
+      "high_confidence_wrong": false,
+      "timings": {
+        "audio_detected_ms": 347.9,
+        "speech_final_ms": 30559.1,
+        "stt_ms": 7278.4,
+        "intent_ms": 155.6,
+        "answer_ms": 0.0,
+        "total_ms": 42266.1,
+        "vad_ms": 30211.2,
+        "post_speech_ms": 7434.1
+      },
+      "notes": "e2e_loopback; realistic_recovery:ambiguous_abstain:margin=0.002; compound:cov=1.0:parts=2/2",
+      "first_word_missing": false,
+      "last_word_missing": true,
+      "speech_duration_ms": 30560.0,
+      "pre_roll_used": true,
+      "raw_transcript": "Please explain how you would test an interview assistant from end to end before relying on it in a real interview. Include system audio capture, pre-roll, voice activity detection, speech to text, technical term repair, intent matching, confidence checks, answer retrieval, latency measurement, and abstaining when the system is uncertain. Explain why clean audio, office noise, poor call quality, far audio, fast speech, slow speech, quest.",
+      "processed_transcript": "Please explain how you would test an interview assistant from end to end before relying on it in a real interview. Include system audio capture, pre-roll, voice activity detection, speech to text, technical term repair, intent matching, confidence checks, answer retrieval, latency measurement, and abstaining when the system is uncertain. Explain why clean audio, office noise, poor call quality, far audio, fast speech, slow speech, Short quest.",
+      "better_audio_source": "processed",
+      "onset": {
+        "pre_roll_ms": 600,
+        "post_roll_ms": 250,
+        "pre_roll_samples_used": 5120,
+        "capture_start_t": 5143.1307767,
+        "vad_speech_start_ms": 347.9,
+        "actual_buffer_start_ms": 27.9,
+        "first_non_silent_offset_ms": 210.0,
+        "stt_start_ms": 34831.9,
+        "capture_to_vad_ms": 347.9,
+        "vad_to_buffer_lead_ms": 320.0
+      },
+      "audio_levels": {
+        "rms_before": 0.08711,
+        "rms_after": 0.08655,
+        "noise_floor": 1e-05,
+        "speech_rms_est": 0.1488,
+        "snr_db_est": 85.84,
+        "spectral_centroid_hz": 929.0,
+        "high_freq_energy_ratio": 0.0421,
+        "bandwidth_hz_est": 2414.0
+      },
+      "fail_bucket": null,
+      "failure_position": "none",
+      "question_type": "compound",
+      "compound_detected": true,
+      "compound_confidence": 0.9400000000000001,
+      "requested_parts_count": 2,
+      "matched_parts_count": 2,
+      "unsupported_parts_count": 0,
+      "intent_coverage_rate": 1.0,
+      "full_compound_success": true,
+      "partial_compound_success": false,
+      "answer_order_correct": true,
+      "compound_sub_questions": [
+        "How does speech-to-text work?",
+        "How do you know the transcription system is good enough?"
+      ],
+      "compound_selected_intents": [
+        "tech.how_stt_works",
+        "tech.transcription_quality"
+      ],
+      "compound_trace": {
+        "question_type": "compound",
+        "compound_confidence": 0.9400000000000001,
+        "request_count_estimate": 3,
+        "used_compound_path": true,
+        "sub_questions": [
+          "How does speech-to-text work?",
+          "How do you know the transcription system is good enough?"
+        ],
+        "candidate_intents": [
+          {
+            "sub_question": "How does speech-to-text work?",
+            "intent_id": "tech.how_stt_works",
+            "score": 0.84,
+            "mode": "strong",
+            "runner_up": "gen.what_do_you_know_about_us",
+            "margin": 0.42,
+            "accepted": true,
+            "drop_reason": null
+          },
+          {
+            "sub_question": "How do you know the transcription system is good enough?",
+            "intent_id": "tech.transcription_quality",
+            "score": 0.94,
+            "mode": "strong",
+            "runner_up": "tech.good_enough_to_launch",
+            "margin": 0.13,
+            "accepted": true,
+            "drop_reason": null
+          }
+        ],
+        "selected_intents": [
+          "tech.how_stt_works",
+          "tech.transcription_quality"
+        ],
+        "dropped_intents": [],
+        "duplicate_intents": [],
+        "unknown_parts": [],
+        "answer_sources": [
+          "tech.how_stt_works",
+          "tech.transcription_quality"
+        ],
+        "final_answer": "We capture audio, clean it, and often resample to 16 kHz. I ignore the vendor's clean English number. I label a small set from our rooms, our speakers, our noise.",
+        "partial_compound_match": false,
+        "full_compound_success": true,
+        "intent_coverage_rate": 1.0,
+        "matched_parts_count": 2,
+        "requested_parts_count": 2,
+        "unsupported_parts_count": 0,
+        "detection_signals": [
+          "explain_and_explain",
+          "comma_facets:6",
+          "wh_and_wh"
+        ],
+        "decomposition_notes": [
+          "facet:interview assistant",
+          "facet_primary"
+        ],
+        "timings": {
+          "decomposition_ms": 0.1,
+          "matching_ms": 154.0,
+          "answer_merge_ms": 0.1
+        },
+        "total_latency_ms": 154.2
+      }
+    },
+    {
+      "sample_id": 10039,
+      "file": "05_very_long_sentences/very_long_07.wav",
+      "question_id": null,
+      "speaker": "very_long",
+      "condition": "very_long",
+      "expected_question": "Explain your approach to reducing hallucination in an AI system that generates BTEC questions. Describe how retrieval grounds the model in approved documents, why the source chunks should be kept with the result, how structured JSON output can be validated, how unsupported claims should be rejected, why empty retrieval should stop generation, and why teacher approval remains necessary. Also explain why lowering temperature alone is not a reliable method for preventing hallucination.",
+      "transcript": "Explain your approach to reducing hallucination in an AI system that generates BTEC questions. Describe how retrieval grounds the model in approved documents, why the source chunks should be kept with the result, how structured JSON output can be validated, how unsupported claims should be rejected, why empty retrieval should stop generation, and why teacher approval remains necessary. Also explain why lowering temperature alone is not a reliable method for preventing Alucination",
+      "stt_ok": true,
+      "stt_score": 0.994,
+      "intent_ok": false,
+      "intent_score": 0.696,
+      "match_id": "tech.hallucination_what",
+      "match_question": "What is hallucination and why does it happen?",
+      "match_score": 0.616,
+      "answer_en": null,
+      "answer_ok": false,
+      "recovered_after_stt_error": false,
+      "result": "FAIL",
+      "failure_stage": "QUESTION_UNDERSTANDING",
+      "failure_detail": "Transcript usable but wrong intent (intent_only).",
+      "high_confidence_wrong": false,
+      "timings": {
+        "audio_detected_ms": 508.1,
+        "speech_final_ms": 30677.8,
+        "stt_ms": 7324.5,
+        "intent_ms": 489.2,
+        "answer_ms": 0.1,
+        "total_ms": 38645.0,
+        "vad_ms": 30169.7,
+        "post_speech_ms": 7813.7
+      },
+      "notes": "e2e_loopback; realistic_recovery:ambiguous_abstain:margin=0.026; compound:cov=0.25:parts=1/4",
+      "first_word_missing": false,
+      "last_word_missing": true,
+      "speech_duration_ms": 30688.0,
+      "pre_roll_used": true,
+      "raw_transcript": "Explain your approach to reducing hallucination in an AI system that generates BTEC questions. Describe how retrieval grounds the model in approved documents, why the source chunks should be kept with the result, how structured JSON output can be validated, how unsupported claims should be rejected, why empty retrieval should stop generation, and why teacher approval remains necessary. Also explain why lowering temperature alone is not a reliable method for preventing station.",
+      "processed_transcript": "Explain your approach to reducing hallucination in an AI system that generates BTEC questions. Describe how retrieval grounds the model in approved documents, why the source chunks should be kept with the result, how structured JSON output can be validated, how unsupported claims should be rejected, why empty retrieval should stop generation, and why teacher approval remains necessary. Also explain why lowering temperature alone is not a reliable method for preventing Alucination",
+      "better_audio_source": "processed",
+      "onset": {
+        "pre_roll_ms": 600,
+        "post_roll_ms": 250,
+        "pre_roll_samples_used": 7680,
+        "capture_start_t": 5185.7492945,
+        "vad_speech_start_ms": 508.1,
+        "actual_buffer_start_ms": 28.1,
+        "first_non_silent_offset_ms": 120.0,
+        "stt_start_ms": 30831.2,
+        "capture_to_vad_ms": 508.1,
+        "vad_to_buffer_lead_ms": 480.0
+      },
+      "audio_levels": {
+        "rms_before": 0.08685,
+        "rms_after": 0.08629,
+        "noise_floor": 0.00853,
+        "speech_rms_est": 0.14501,
+        "snr_db_est": 24.61,
+        "spectral_centroid_hz": 899.4,
+        "high_freq_energy_ratio": 0.0121,
+        "bandwidth_hz_est": 2413.0
+      },
+      "fail_bucket": "intent_only",
+      "failure_position": "end",
+      "question_type": "compound",
+      "compound_detected": true,
+      "compound_confidence": 0.9199999999999999,
+      "requested_parts_count": 4,
+      "matched_parts_count": 1,
+      "unsupported_parts_count": 3,
+      "intent_coverage_rate": 0.25,
+      "full_compound_success": false,
+      "partial_compound_success": true,
+      "answer_order_correct": true,
+      "compound_sub_questions": [
+        "What should the system do when retrieval returns nothing useful?",
+        "Explain your approach to reducing hallucination in an AI system that generates BTEC questions. Describe how retrieval grounds the model in approved documents, why the source chunks should be kept with the result, how structured JSON output can be validated, how unsupported claims should be rejected, why empty retrieval should stop generation?",
+        "Why teacher approval remains necessary?",
+        "Explain why lowering temperature alone is not a reliable method for preventing Alucination?"
+      ],
+      "compound_selected_intents": [
+        "hard.empty_retrieval"
+      ],
+      "compound_trace": {
+        "question_type": "compound",
+        "compound_confidence": 0.9199999999999999,
+        "request_count_estimate": 2,
+        "used_compound_path": true,
+        "sub_questions": [
+          "What should the system do when retrieval returns nothing useful?",
+          "Explain your approach to reducing hallucination in an AI system that generates BTEC questions. Describe how retrieval grounds the model in approved documents, why the source chunks should be kept with the result, how structured JSON output can be validated, how unsupported claims should be rejected, why empty retrieval should stop generation?",
+          "Why teacher approval remains necessary?",
+          "Explain why lowering temperature alone is not a reliable method for preventing Alucination?"
+        ],
+        "candidate_intents": [
+          {
+            "sub_question": "What should the system do when retrieval returns nothing useful?",
+            "intent_id": "hard.empty_retrieval",
+            "score": 0.9,
+            "mode": "strong",
+            "runner_up": "tech.rag_two_phases",
+            "margin": 0.539,
+            "accepted": true,
+            "drop_reason": null
+          },
+          {
+            "sub_question": "Explain your approach to reducing hallucination in an AI system that generates BTEC questions. Describe how retrieval grounds the model in approved documents, why the source chunks should be kept with the result, how structured JSON output can be validated, how unsupported claims should be rejected, why empty retrieval should stop generation?",
+            "intent_id": "tech.hallucination_what",
+            "score": 0.619,
+            "mode": "weak",
+            "runner_up": "cv.hallucination_in_projects",
+            "margin": 0.024,
+            "accepted": false,
+            "drop_reason": "below_answer_threshold"
+          },
+          {
+            "sub_question": "Why teacher approval remains necessary?",
+            "intent_id": "cv.n8n",
+            "score": 0.536,
+            "mode": "weak",
+            "runner_up": "hard.teacher_rejects",
+            "margin": 0.039,
+            "accepted": false,
+            "drop_reason": "low_score"
+          },
+          {
+            "sub_question": "Explain why lowering temperature alone is not a reliable method for preventing Alucination?",
+            "intent_id": "tech.temperature",
+            "score": 0.464,
+            "mode": "weak",
+            "runner_up": "tech.hallucination_prevent",
+            "margin": 0.044,
+            "accepted": false,
+            "drop_reason": "low_score"
+          }
+        ],
+        "selected_intents": [
+          "hard.empty_retrieval"
+        ],
+        "dropped_intents": [
+          {
+            "sub_question": "Explain your approach to reducing hallucination in an AI system that generates BTEC questions. Describe how retrieval grounds the model in approved documents, why the source chunks should be kept with the result, how structured JSON output can be validated, how unsupported claims should be rejected, why empty retrieval should stop generation?",
+            "intent_id": "tech.hallucination_what",
+            "reason": "below_answer_threshold",
+            "score": 0.619
+          },
+          {
+            "sub_question": "Why teacher approval remains necessary?",
+            "intent_id": "cv.n8n",
+            "reason": "low_score",
+            "score": 0.536
+          },
+          {
+            "sub_question": "Explain why lowering temperature alone is not a reliable method for preventing Alucination?",
+            "intent_id": "tech.temperature",
+            "reason": "low_score",
+            "score": 0.464
+          }
+        ],
+        "duplicate_intents": [],
+        "unknown_parts": [
+          "Explain your approach to reducing hallucination in an AI system that generates BTEC questions. Describe how retrieval grounds the model in approved documents, why the source chunks should be kept with the result, how structured JSON output can be validated, how unsupported claims should be rejected, why empty retrieval should stop generation?",
+          "Why teacher approval remains necessary?",
+          "Explain why lowering temperature alone is not a reliable method for preventing Alucination?"
+        ],
+        "answer_sources": [
+          "hard.empty_retrieval"
+        ],
+        "final_answer": "Do not generate from model memory. Say we do not have that in the approved documents, offer to rephrase, or route to a human.",
+        "partial_compound_match": true,
+        "full_compound_success": false,
+        "intent_coverage_rate": 0.25,
+        "matched_parts_count": 1,
+        "requested_parts_count": 4,
+        "unsupported_parts_count": 3,
+        "detection_signals": [
+          "wh_requests:2",
+          "connector_second_request",
+          "explain_and_explain",
+          "wh_and_wh"
+        ],
+        "decomposition_notes": [
+          "facet:empty retrieval"
+        ],
+        "timings": {
+          "decomposition_ms": 0.3,
+          "matching_ms": 487.8,
+          "answer_merge_ms": 0.1
+        },
+        "total_latency_ms": 488.2
+      }
+    },
+    {
+      "sample_id": 10040,
+      "file": "05_very_long_sentences/very_long_08.wav",
+      "question_id": null,
+      "speaker": "very_long",
+      "condition": "very_long",
+      "expected_question": "Walk me through how you would decide whether a new AI problem needs a language model, classical machine learning, embeddings, or a simple deterministic workflow. Use examples from question generation, assignment similarity, early warning, helpdesk classification, and speech recognition. Explain what each technology is good at, what it should not be used for, and why choosing a simpler method can sometimes be safer, faster, cheaper, and easier to evaluate.",
+      "transcript": "Walk me through how you would decide whether a new AI problem needs a language model, classical machine learning, embeddings, or a simple deterministic workflow. Use examples from question generation, assignment similarity, early warning, help desk classification, and speech recognition. Explain what each technology is good at, what it should not be used for, and why choosing a simpler method can sometimes be safer, faster, It.",
+      "stt_ok": true,
+      "stt_score": 0.983,
+      "intent_ok": true,
+      "intent_score": 0.8,
+      "match_id": "proj.early_warning.metric",
+      "match_question": "How do you evaluate an early warning model for students? | Why does recall matter more than accuracy for early warning?",
+      "match_score": 0.8,
+      "answer_en": "Recall on the students who needed support. Most students were fine, so Accuracy looks high even if you miss the ones who matter.",
+      "answer_ok": true,
+      "recovered_after_stt_error": false,
+      "result": "PASS",
+      "failure_stage": null,
+      "failure_detail": "",
+      "high_confidence_wrong": false,
+      "timings": {
+        "audio_detected_ms": 221.4,
+        "speech_final_ms": 30945.3,
+        "stt_ms": 7190.6,
+        "intent_ms": 179.9,
+        "answer_ms": 0.0,
+        "total_ms": 38316.9,
+        "vad_ms": 30723.8,
+        "post_speech_ms": 7370.5
+      },
+      "notes": "e2e_loopback; realistic_recovery:recovered:margin=0.082; compound:cov=1.0:parts=1/2",
+      "first_word_missing": false,
+      "last_word_missing": true,
+      "speech_duration_ms": 30944.0,
+      "pre_roll_used": true,
+      "raw_transcript": "Walk me through how you would decide whether a new AI problem needs a language model, classical machine learning, embeddings, or a simple deterministic workflow. Use examples from question generation, assignment similarity, early warning, help desk classification, and speech recognition. Explain what each technology is good at, what it should not be used for, and why choosing a simpler method can sometimes be safer, faster, cheaper, and easier to evaluate. Thank you.",
+      "processed_transcript": "Walk me through how you would decide whether a new AI problem needs a language model, classical machine learning, embeddings, or a simple deterministic workflow. Use examples from question generation, assignment similarity, early warning, help desk classification, and speech recognition. Explain what each technology is good at, what it should not be used for, and why choosing a simpler method can sometimes be safer, faster, Thank you.",
+      "better_audio_source": "processed",
+      "onset": {
+        "pre_roll_ms": 600,
+        "post_roll_ms": 250,
+        "pre_roll_samples_used": 3072,
+        "capture_start_t": 5224.7461101,
+        "vad_speech_start_ms": 221.4,
+        "actual_buffer_start_ms": 29.4,
+        "first_non_silent_offset_ms": 110.0,
+        "stt_start_ms": 30946.3,
+        "capture_to_vad_ms": 221.4,
+        "vad_to_buffer_lead_ms": 192.0
+      },
+      "audio_levels": {
+        "rms_before": 0.08229,
+        "rms_after": 0.08177,
+        "noise_floor": 1e-05,
+        "speech_rms_est": 0.13794,
+        "snr_db_est": 85.23,
+        "spectral_centroid_hz": 912.4,
+        "high_freq_energy_ratio": 0.0292,
+        "bandwidth_hz_est": 1886.0
+      },
+      "fail_bucket": null,
+      "failure_position": "none",
+      "question_type": "compound",
+      "compound_detected": true,
+      "compound_confidence": 0.9199999999999999,
+      "requested_parts_count": 2,
+      "matched_parts_count": 1,
+      "unsupported_parts_count": 0,
+      "intent_coverage_rate": 1.0,
+      "full_compound_success": true,
+      "partial_compound_success": false,
+      "answer_order_correct": true,
+      "compound_sub_questions": [
+        "How do you evaluate an early warning model for students?",
+        "Why does recall matter more than accuracy for early warning?"
+      ],
+      "compound_selected_intents": [
+        "proj.early_warning.metric"
+      ],
+      "compound_trace": {
+        "question_type": "compound",
+        "compound_confidence": 0.9199999999999999,
+        "request_count_estimate": 2,
+        "used_compound_path": true,
+        "sub_questions": [
+          "How do you evaluate an early warning model for students?",
+          "Why does recall matter more than accuracy for early warning?"
+        ],
+        "candidate_intents": [
+          {
+            "sub_question": "How do you evaluate an early warning model for students?",
+            "intent_id": "proj.early_warning.metric",
+            "score": 0.8,
+            "mode": "strong",
+            "runner_up": "proj.early_warning.tech",
+            "margin": 0.206,
+            "accepted": true,
+            "drop_reason": null
+          },
+          {
+            "sub_question": "Why does recall matter more than accuracy for early warning?",
+            "intent_id": "proj.early_warning.metric",
+            "score": 0.755,
+            "mode": "weak",
+            "runner_up": "tech.precision_recall",
+            "margin": 0.138,
+            "accepted": true,
+            "drop_reason": null
+          }
+        ],
+        "selected_intents": [
+          "proj.early_warning.metric"
+        ],
+        "dropped_intents": [],
+        "duplicate_intents": [
+          "proj.early_warning.metric"
+        ],
+        "unknown_parts": [],
+        "answer_sources": [
+          "proj.early_warning.metric"
+        ],
+        "final_answer": "Recall on the students who needed support. Most students were fine, so Accuracy looks high even if you miss the ones who matter.",
+        "partial_compound_match": false,
+        "full_compound_success": true,
+        "intent_coverage_rate": 1.0,
+        "matched_parts_count": 1,
+        "requested_parts_count": 2,
+        "unsupported_parts_count": 0,
+        "detection_signals": [
+          "wh_requests:2",
+          "connector_second_request",
+          "explain_and_explain",
+          "wh_and_wh"
+        ],
+        "decomposition_notes": [
+          "facet:early warning",
+          "facet_primary"
+        ],
+        "timings": {
+          "decomposition_ms": 0.1,
+          "matching_ms": 178.8,
+          "answer_merge_ms": 0.1
+        },
+        "total_latency_ms": 178.9
+      }
+    }
+  ]
+}

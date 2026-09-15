@@ -1,0 +1,450 @@
+V5A_001 | indian | indirect | slow | close | clean
+Could you walk me through your background and what brought you into AI work?
+
+V5A_002 | jordanian | indirect | fast | medium | room
+Give me a quick picture of your experience and how it connects to this AI role.
+
+V5A_003 | emirati | indirect | slow | far | fan
+If you had one minute to introduce yourself for this position, what would you focus on?
+
+V5A_004 | indian | indirect | normal | far | room
+How would you describe what you actually do in your current role, beyond the job title?
+
+V5A_005 | jordanian | indirect | very_fast | close | fan
+What does your day-to-day work look like when you are supporting BTEC and AI projects?
+
+V5A_006 | emirati | indirect | normal | medium | keyboard
+If I joined your team for a day, what kind of technical work would I see you doing?
+
+V5A_007 | indian | indirect | fast | medium | fan
+What made you move toward agentic AI instead of staying with normal chatbot solutions?
+
+V5A_008 | jordanian | indirect | slow | far | keyboard
+Why does this role around AI agents fit the direction you want to take next?
+
+V5A_009 | emirati | indirect | fast | close | clean
+What is it about agentic systems that interests you more than a basic LLM application?
+
+V5A_010 | indian | indirect | very_fast | close | keyboard
+Can you explain where retrieval actually fitted into the Ministry BTEC solution you worked on?
+
+V5A_011 | jordanian | indirect | normal | medium | clean
+In your Ministry project, how did you make the model use the right BTEC content before answering?
+
+V5A_012 | emirati | indirect | very_fast | far | room
+Walk me through how external BTEC knowledge reached the language model in your project.
+
+V5A_013 | indian | indirect | slow | far | clean
+Suppose the knowledge changes often. Why might you choose retrieval instead of fine-tuning the model?
+
+V5A_014 | jordanian | indirect | fast | close | room
+If the business keeps updating its documents, how would you decide between RAG and fine-tuning?
+
+V5A_015 | emirati | indirect | slow | medium | fan
+What would push you toward RAG rather than training the model again on company knowledge?
+
+V5A_016 | indian | indirect | normal | medium | room
+When you say you created embeddings, what problem were those numerical representations solving for you?
+
+V5A_017 | jordanian | indirect | very_fast | far | fan
+How did turning the text into vectors help the system find the right BTEC information?
+
+V5A_018 | emirati | indirect | normal | close | keyboard
+Explain what embeddings gave your retrieval system that normal keyword matching did not.
+
+V5A_019 | indian | indirect | fast | close | fan
+Where did a vector database such as Chroma fit into the retrieval pipeline?
+
+V5A_020 | jordanian | indirect | slow | medium | keyboard
+Why would you store embeddings in ChromaDB instead of keeping everything in normal SQL tables?
+
+V5A_021 | emirati | indirect | fast | far | clean
+What role did the vector store play between your documents and the language model?
+
+V5A_022 | indian | indirect | very_fast | far | keyboard
+If a document is too large to send to the model, how do you decide how to break it into useful pieces?
+
+V5A_023 | jordanian | indirect | normal | close | clean
+How would you chunk a long policy document without losing the meaning between sections?
+
+V5A_024 | emirati | indirect | very_fast | medium | room
+What is your approach when the source material is much larger than the model context window?
+
+V5A_025 | indian | indirect | slow | medium | clean
+How do you know the retriever is bringing back the right information rather than just something similar?
+
+V5A_026 | jordanian | indirect | fast | far | room
+What would you measure to check whether retrieval quality is actually good enough for production?
+
+V5A_027 | emirati | indirect | slow | close | fan
+If the final answer looks wrong, how do you separate a retrieval problem from an LLM problem?
+
+V5A_028 | indian | indirect | normal | close | room
+What would you put in place so the model does not confidently invent facts that are not in the source?
+
+V5A_029 | jordanian | indirect | very_fast | medium | fan
+If the LLM starts giving unsupported answers, how would you reduce that behavior?
+
+V5A_030 | emirati | indirect | normal | far | keyboard
+How do you keep an AI assistant grounded when the available context does not contain the answer?
+
+V5A_031 | indian | indirect | fast | far | fan
+Where would guardrails sit in an AI system, and what kinds of mistakes are they meant to stop?
+
+V5A_032 | jordanian | indirect | slow | close | keyboard
+How would you stop an agent from taking an unsafe action even if the model suggests it?
+
+V5A_033 | emirati | indirect | fast | medium | clean
+If this system were used by a government organization, what controls would you place around the model?
+
+V5A_034 | indian | indirect | very_fast | medium | keyboard
+Which decisions would you still leave to a human instead of letting the agent complete them automatically?
+
+V5A_035 | jordanian | indirect | normal | far | clean
+Where exactly would you put human approval in a workflow that can take actions?
+
+V5A_036 | emirati | indirect | very_fast | close | room
+How do you decide when an AI agent can continue alone and when it must ask a person?
+
+V5A_037 | indian | indirect | slow | close | clean
+What did LangChain give you that you would otherwise have needed to build yourself?
+
+V5A_038 | jordanian | indirect | fast | medium | room
+In a real project, where would LangChain sit between the model, retrieval, prompts, and tools?
+
+V5A_039 | emirati | indirect | slow | far | fan
+Why would you use LangChain at all instead of calling the model API directly?
+
+V5A_040 | indian | indirect | normal | far | room
+When does a workflow become complex enough that you would prefer LangGraph over a simple chain?
+
+V5A_041 | jordanian | indirect | very_fast | close | fan
+How would LangGraph help when an agent needs state, branching, retries, and several possible paths?
+
+V5A_042 | emirati | indirect | normal | medium | keyboard
+What problem does a graph-based workflow solve when the AI process is no longer a straight line?
+
+V5A_043 | indian | indirect | fast | medium | fan
+If several agents are working on one request, how do you stop them from stepping on each other?
+
+V5A_044 | jordanian | indirect | slow | far | keyboard
+How would you coordinate a retriever agent, an analysis agent, and a reporting agent in one workflow?
+
+V5A_045 | emirati | indirect | fast | close | clean
+What controls the order of work when different AI agents have different responsibilities?
+
+V5A_046 | indian | indirect | very_fast | close | keyboard
+If management asked how you would govern AI agents across the organization, what would you include?
+
+V5A_047 | jordanian | indirect | normal | medium | clean
+What has to be controlled when AI agents can access business data and call tools?
+
+V5A_048 | emirati | indirect | very_fast | far | room
+How would you make agent decisions auditable for a regulated organization?
+
+V5A_049 | indian | indirect | slow | far | clean
+Where would a tool such as n8n be useful in an AI workflow, and where would you avoid it?
+
+V5A_050 | jordanian | indirect | fast | close | room
+If you needed to connect an AI agent to email, databases, and approvals, how could n8n help?
+
+V5A_051 | emirati | indirect | slow | medium | fan
+What kind of automation would you give to n8n rather than writing the whole integration in code?
+
+V5A_052 | indian | indirect | normal | medium | room
+What happens when the information you want to send is larger than the model can keep in context?
+
+V5A_053 | jordanian | indirect | very_fast | far | fan
+How does the context window affect the way you design a RAG application?
+
+V5A_054 | emirati | indirect | normal | close | keyboard
+If a user sends a very long document, what limits do you have to think about before calling the LLM?
+
+V5A_055 | indian | indirect | fast | close | fan
+Suppose a PDF contains instructions telling the model to ignore your system rules. What would you do?
+
+V5A_056 | jordanian | indirect | slow | medium | keyboard
+How would you protect a RAG system from malicious instructions hidden inside retrieved documents?
+
+V5A_057 | emirati | indirect | fast | far | clean
+What controls would you add if untrusted content could try to manipulate the agent?
+
+V5A_058 | indian | indirect | very_fast | far | keyboard
+If a director asked why this AI solution is worth funding, how would you explain the business value?
+
+V5A_059 | jordanian | indirect | normal | close | clean
+How do you connect a technical AI project to a measurable outcome for the Ministry?
+
+V5A_060 | emirati | indirect | very_fast | medium | room
+What would you show management to prove that the AI system is solving a real problem?
+
+V5A_061 | indian | compound | slow | medium | clean
+Describe your RAG architecture, how retrieval works, and what happens before the final answer is produced.
+
+V5A_062 | jordanian | compound | fast | far | room
+RAG architecture, retrieval step, context selection, and final answer flow — walk me through all of it.
+
+V5A_063 | emirati | compound | slow | close | fan
+Can you explain the components of your RAG pipeline, how they connect, and where the LLM comes in?
+
+V5A_064 | indian | compound | normal | close | room
+Explain the agents in your workflow, what each one does, and how they pass work between each other.
+
+V5A_065 | jordanian | compound | very_fast | medium | fan
+Agent roles, orchestration, handoff, and failure handling — how did you design those pieces?
+
+V5A_066 | emirati | compound | normal | far | keyboard
+In your multi-agent setup, who retrieves, who analyzes, who reports, and what controls the sequence?
+
+V5A_067 | indian | compound | fast | far | fan
+Tell me about the BTEC question-generation system, the source data, the RAG step, and the output teachers receive.
+
+V5A_068 | jordanian | compound | slow | close | keyboard
+Question generation project: BTEC criteria, retrieval, LLM generation, and teacher review.
+
+V5A_069 | emirati | compound | fast | medium | clean
+How did you prepare BTEC content, retrieve the right criteria, generate questions, and check their quality?
+
+V5A_070 | indian | compound | very_fast | medium | keyboard
+Walk me through automated feedback from student submission to retrieval, analysis, and final feedback.
+
+V5A_071 | jordanian | compound | normal | far | clean
+Student feedback system: input assignment, relevant criteria, analysis, strengths, weaknesses, and improvements.
+
+V5A_072 | emirati | compound | very_fast | close | room
+How does the system receive an assignment, find the right BTEC content, analyze the work, and produce useful feedback?
+
+V5A_073 | indian | compound | slow | close | clean
+Explain the similarity checker, how you create embeddings, how cosine similarity is used, and what the teacher sees.
+
+V5A_074 | jordanian | compound | fast | medium | room
+Assignment similarity project: text preparation, embeddings, cosine score, threshold, and teacher review.
+
+V5A_075 | emirati | compound | slow | far | fan
+How do you compare two student assignments semantically, calculate similarity, and decide what should be flagged?
+
+V5A_076 | indian | compound | normal | far | room
+Describe the early-warning project, the student data you used, the model, the KPI, and the expected outcome.
+
+V5A_077 | jordanian | compound | very_fast | close | fan
+Early Warning Project Story, data, features, model, evaluation metric, and business outcome.
+
+V5A_078 | emirati | compound | normal | medium | keyboard
+How did you prepare student data, train the model, identify students needing support, and measure whether it worked?
+
+V5A_079 | indian | compound | fast | medium | fan
+Explain the helpdesk classifier, text preprocessing, NLP features, model prediction, and ticket routing.
+
+V5A_080 | jordanian | compound | slow | far | keyboard
+Helpdesk AI: ticket text, cleaning, classification model, category, and department routing.
+
+V5A_081 | emirati | compound | fast | close | clean
+How does a support ticket move from raw user text through your model to the correct helpdesk team?
+
+V5A_082 | indian | compound | very_fast | close | keyboard
+Tell me about BTEC completion-risk monitoring, the SQL data, analysis, model, and how schools are flagged for follow-up.
+
+V5A_083 | jordanian | compound | normal | medium | clean
+Completion monitoring: school data, unit data, SQL, machine learning pattern, and follow-up action.
+
+V5A_084 | emirati | compound | very_fast | far | room
+How do you retrieve completion data, analyze the patterns, identify schools needing attention, and present the result?
+
+V5A_085 | indian | compound | slow | far | clean
+Walk me through the donation kiosk voice flow: Whisper, speaker classification, TTS selection, and final response.
+
+V5A_086 | jordanian | compound | fast | close | room
+Smart donation kiosk: speech recognition, male or female voice classification, text to speech, and integration.
+
+V5A_087 | emirati | compound | slow | medium | fan
+What happens from the moment the donor speaks until the kiosk understands the request and answers by voice?
+
+V5A_088 | indian | compound | normal | medium | room
+Production deployment, monitoring, fallback, logging, and recovery — how would you handle all five?
+
+V5A_089 | jordanian | compound | very_fast | far | fan
+If you deploy an AI agent, explain observability, tool failures, retries, human fallback, and audit logs.
+
+V5A_090 | emirati | compound | normal | close | keyboard
+How would you monitor a production AI workflow, detect failures, recover safely, and keep an audit trail?
+
+V5A_091 | indian | long | fast | close | fan
+Imagine your RAG system retrieves a document that looks semantically close but actually contains outdated policy information, and the language model starts answering from it. Walk me through how you would detect the issue, where you would fix it, and how you would prevent the same failure from reaching users again.
+
+V5A_092 | jordanian | long | slow | medium | keyboard
+Suppose the retrieved context is technically related to the question but is the wrong version of the policy. The answer sounds convincing, so a simple user may trust it. What checks would you add at retrieval, generation, and evaluation time to reduce that risk?
+
+V5A_093 | emirati | long | fast | far | clean
+You are running a RAG assistant for the Ministry and a user asks about a current rule, but the retriever selects an older document. Explain how you would trace the problem from the final answer back to the source and improve the pipeline.
+
+V5A_094 | indian | long | very_fast | far | keyboard
+Suppose an AI agent has three tools available and the database tool times out halfway through a workflow. The agent has already completed two earlier steps. How would you design retries, state handling, and fallback so it does not repeat work or take the wrong action?
+
+V5A_095 | jordanian | long | normal | close | clean
+Imagine a multi-agent process where one tool becomes unavailable after the workflow has started. Explain how you would preserve state, prevent duplicate actions, and decide whether to retry, switch tools, or ask a human.
+
+V5A_096 | emirati | long | very_fast | medium | room
+Your agent is processing a business request and an external API suddenly fails. What should happen to the current state, the completed actions, the retry policy, and the final response to the user?
+
+V5A_097 | indian | long | slow | medium | clean
+A government department wants to connect an LLM to internal documents containing sensitive information. Explain how you would control access, reduce unnecessary data exposure, log important actions, and still give users useful answers.
+
+V5A_098 | jordanian | long | fast | far | room
+Suppose different employees have different permissions but they all use the same AI assistant. How would you make sure retrieval only returns documents the current user is allowed to see, and how would you audit what happened later?
+
+V5A_099 | emirati | long | slow | close | fan
+If your RAG system handles confidential Ministry data, walk me through authorization, document filtering, model access, logging, and the human controls you would put around risky actions.
+
+V5A_100 | indian | long | normal | close | room
+During a live interview a person asks a very indirect question with several details, but the real request is only about how you evaluated your model. How should your assistant identify the main intent without getting distracted by every word in the sentence?
+
+V5A_101 | jordanian | long | very_fast | medium | fan
+Imagine the interviewer gives a long introduction, mentions two technologies, and then asks one short question at the end. Explain how your system should keep the important context but still answer the actual final question.
+
+V5A_102 | emirati | long | normal | far | keyboard
+If a question contains background information, an example, and a final request that is phrased indirectly, how would you design the understanding layer so it responds to the intended question rather than matching the loudest keyword?
+
+V5A_103 | indian | long | fast | far | fan
+Assume a prototype works well for one department and management now wants to use it across many directorates with much more data and many concurrent users. What would you change in the architecture, monitoring, storage, and access controls before scaling it?
+
+V5A_104 | jordanian | long | slow | close | keyboard
+Your AI solution moves from a small pilot to organization-wide use. Explain what you would review around performance, cost, data isolation, observability, and failure handling before calling it production ready.
+
+V5A_105 | emirati | long | fast | medium | clean
+If the Ministry wants to scale your AI system nationally, what changes would you consider for infrastructure, database design, retrieval performance, security, and operational support?
+
+V5A_106 | indian | long | very_fast | medium | keyboard
+A machine-learning model performed well when you deployed it, but six months later the student population and behavior have changed and accuracy starts falling. How would you detect that change and decide whether the model needs retraining?
+
+V5A_107 | jordanian | long | normal | far | clean
+Suppose your early-warning model slowly becomes less reliable over time even though the code has not changed. What data and metrics would you monitor, and what process would you use before retraining or replacing the model?
+
+V5A_108 | emirati | long | very_fast | close | room
+If production predictions degrade because the real-world data distribution changes, explain how you would detect drift, investigate the cause, validate a new model, and deploy it safely.
+
+V5A_109 | indian | long | slow | close | clean
+Imagine a live interview assistant has to understand English spoken by people with different accents, different speaking speeds, and imperfect microphones. How would you design the speech pipeline so technical words are preserved and the final question is still understood correctly?
+
+V5A_110 | jordanian | long | fast | medium | room
+Suppose the interviewer speaks quickly with a strong non-native English accent and the microphone is a little far away. What should your system do from audio capture through transcription and question understanding to avoid a wrong answer?
+
+V5A_111 | emirati | long | slow | far | fan
+You need speech recognition to work with Indian, Jordanian, Gulf, and neutral English speakers. Explain how you would test the audio pipeline, handle uncertain words, and use context without silently changing what the speaker actually said.
+
+V5A_112 | indian | long | normal | far | room
+Your assistant understands the interview question correctly, but the answer arrives several seconds after the interviewer finishes speaking. Walk me through how you would measure the delay and decide whether the bottleneck is speech recognition, retrieval, model inference, or the user interface.
+
+V5A_113 | jordanian | long | very_fast | close | fan
+Suppose accuracy is acceptable but the live experience feels slow. Explain how you would break down end-to-end latency, what you would optimize first, and what you would refuse to sacrifice just to save a few hundred milliseconds.
+
+V5A_114 | emirati | long | normal | medium | keyboard
+If users complain that an AI interview assistant responds too late, how would you profile speech finalization, semantic retrieval, answer selection, and display time before making performance changes?
+
+V5A_115 | indian | short | fast | medium | fan
+Why RAG?
+
+V5A_116 | jordanian | short | slow | far | keyboard
+Why did you choose RAG?
+
+V5A_117 | emirati | short | fast | close | clean
+RAG — why use it?
+
+V5A_118 | indian | short | very_fast | close | keyboard
+How do the agents coordinate?
+
+V5A_119 | jordanian | short | normal | medium | clean
+Who controls the agents?
+
+V5A_120 | emirati | short | very_fast | far | room
+Agent handoff — how does it work?
+
+V5A_121 | indian | short | slow | far | clean
+Why embeddings?
+
+V5A_122 | jordanian | short | fast | close | room
+What do embeddings add?
+
+V5A_123 | emirati | short | slow | medium | fan
+Embeddings — why do you need them?
+
+V5A_124 | indian | short | normal | medium | room
+When would you use LangGraph?
+
+V5A_125 | jordanian | short | very_fast | far | fan
+Why LangGraph here?
+
+V5A_126 | emirati | short | normal | close | keyboard
+LangGraph — when is it useful?
+
+V5A_127 | indian | short | fast | close | fan
+What about guardrails?
+
+V5A_128 | jordanian | short | slow | medium | keyboard
+Where do guardrails fit?
+
+V5A_129 | emirati | short | fast | far | clean
+Guardrails — what are they stopping?
+
+V5A_130 | indian | short | very_fast | far | keyboard
+How do you stop hallucinations?
+
+V5A_131 | jordanian | short | normal | close | clean
+What if the model invents an answer?
+
+V5A_132 | emirati | short | very_fast | medium | room
+No context — what should the LLM do?
+
+V5A_133 | indian | direct | slow | medium | clean
+What is RAG?
+
+V5A_134 | jordanian | direct | fast | far | room
+Define retrieval augmented generation.
+
+V5A_135 | emirati | direct | slow | close | fan
+Explain RAG in simple terms.
+
+V5A_136 | indian | direct | normal | close | room
+What is agentic AI?
+
+V5A_137 | jordanian | direct | very_fast | medium | fan
+Define an AI agent.
+
+V5A_138 | emirati | direct | normal | far | keyboard
+What do you mean by an agentic system?
+
+V5A_139 | indian | direct | fast | far | fan
+What are embeddings?
+
+V5A_140 | jordanian | direct | slow | close | keyboard
+Define a text embedding.
+
+V5A_141 | emirati | direct | fast | medium | clean
+What does an embedding represent?
+
+V5A_142 | indian | direct | very_fast | medium | keyboard
+What is cosine similarity?
+
+V5A_143 | jordanian | direct | normal | far | clean
+How does cosine similarity compare two vectors?
+
+V5A_144 | emirati | direct | very_fast | close | room
+Define cosine similarity in the context of embeddings.
+
+V5A_145 | indian | direct | slow | close | clean
+What is overfitting?
+
+V5A_146 | jordanian | direct | fast | medium | room
+How would you define overfitting in machine learning?
+
+V5A_147 | emirati | direct | slow | far | fan
+Explain overfitting and why it is a problem.
+
+V5A_148 | indian | direct | normal | far | room
+What is a vector database?
+
+V5A_149 | jordanian | direct | very_fast | close | fan
+What does a vector database store?
+
+V5A_150 | emirati | direct | normal | medium | keyboard
+Explain what a vector store does in RAG.
+

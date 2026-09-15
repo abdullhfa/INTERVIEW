@@ -1,0 +1,37 @@
+---
+description: Intent/semantic understanding layer is FROZEN — bug fixes only
+alwaysApply: true
+---
+
+# Intent Understanding Layer — FROZEN (2026-09-12)
+
+Question-understanding for interview readiness is **closed**. Do not reopen for score chasing.
+
+## Allowed
+- True bug fixes (crashes, incorrect wiring, broken imports, regressions that violate HC=0)
+- Observability / logging that does not change match decisions
+- Unseen Final Holdout evaluation **without** changing code based on results (unless a real bug)
+
+## Forbidden without explicit user approval
+- Threshold / weight / margin / agreement-gate tuning
+- New aliases or pack-transcript hard-coding in recovery
+- Lowering global `STRONG_THRESHOLD` / `WEAK_THRESHOLD`
+- Whisper / EQ / Clean-Office-Poor-Far VAD changes “to help intent”
+- Extra LLM calls on the hot path
+
+## Known limitation (tracked, not blocking readiness)
+- Very-long continuation: E2E `last_word_missing=2/8` after segment merge (was 8/8). Intent still 8/8. Do not raise global `MAX_UTTERANCE_DURATION` blindly to “fix” this.
+
+## Frozen baselines (do not regress)
+- Medium 8/8, Short 8/8 (no unnecessary compound), Long accent 40/40, Very long 8/8, Realistic 97/100, **HC wrong = 0**
+- Fast path: strong + agreement OK → skip semantic recovery
+
+## Final adoption gate (Unseen Holdout — eval only)
+Intent ≥ 92% · HC wrong = 0 · meaning_lost ≤ 1% · median post-speech ≤ 1.5s · short fast path intact · compound coverage ≥ 90%
+
+Pack: `frontend/public/voice-drill/final-unseen-holdout/` (120 new scripts; synthesize audio before run)  
+CLI: `python scripts/run_e2e_loopback_tests.py --suite final_unseen_holdout`  
+Report: `FINAL_UNSEEN_HOLDOUT_REPORT.html`  
+If a bug is fixed after seeing this pack → void the sample and build a new Final Holdout.
+
+Canonical freeze record: `backend/reports/INTENT_LAYER_FREEZE.json`

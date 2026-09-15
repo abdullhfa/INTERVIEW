@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/>
+<title>Far Diagnostic Score</title>
+<style>
+body{font-family:Segoe UI,Tahoma,sans-serif;margin:24px;background:#0f1419;color:#e8eef5}
+.card{display:inline-block;background:#1a222d;border:1px solid #2a3544;border-radius:12px;padding:12px;margin:6px;min-width:140px}
+.card b{display:block;font-size:1.25rem}
+table{width:100%;border-collapse:collapse;background:#1a222d}
+th,td{border-bottom:1px solid #2a3544;padding:8px;font-size:.85rem;text-align:left}
+tr.pass td{background:rgba(61,214,140,.06)}
+tr.fail td{background:rgba(240,113,120,.08)}
+.meta{color:#8b9aab}
+</style></head><body>
+<h1>Far Diagnostic Score</h1>
+<p class="meta">Suite: far · Mode: play → WASAPI loopback → VAD → STT → repair → intent → answer</p>
+<p class="meta">Audio path: pre-roll + light denoise + RMS normalize · STT second-pass + strong-answer abstain</p>
+<p class="meta">Generated: 2026-09-11T22:49:17.999608+00:00</p>
+<div>
+  <div class="card"><span>Total</span><b>30</b></div>
+  <div class="card"><span>PASS</span><b>26</b></div>
+  <div class="card"><span>Intent</span><b>26/30</b></div>
+  <div class="card"><span>HC wrong</span><b>0</b></div>
+  <div class="card"><span>Avg RMS before</span><b>0.08577</b></div>
+  <div class="card"><span>Avg SNR dB</span><b>86.86</b></div>
+  <div class="card"><span>Median post-speech</span><b>1100.3 ms</b></div>
+  <div class="card"><span>p95 post-speech</span><b>3101.5 ms</b></div>
+  <div class="card"><span>Median wall</span><b>5338.7 ms</b></div>
+  <div class="card"><span>Avg VAD</span><b>3258.1 ms</b></div>
+  <div class="card"><span>Avg STT</span><b>1814.7 ms</b></div>
+  <div class="card"><span>Avg Intent</span><b>0.0 ms</b></div>
+  <div class="card"><span>Avg Answer</span><b>0.0 ms</b></div>
+</div>
+<p><b>By condition intent:</b> {&quot;far&quot;: {&quot;total&quot;: 30, &quot;pass&quot;: 26, &quot;intent&quot;: 26, &quot;pass_rate&quot;: 0.867, &quot;intent_rate&quot;: 0.867}}</p>
+<p><b>Failure stages:</b> {&quot;QUESTION_UNDERSTANDING&quot;: 1, &quot;STT&quot;: 3}</p>
+<table><thead><tr>
+<th>Audio</th><th>STT</th><th>Intent</th><th>Answer</th>
+<th>VAD ms</th><th>STT ms</th><th>Intent ms</th><th>Answer ms</th><th>Total ms</th>
+<th>Recovered</th><th>Result</th><th>Stage</th>
+</tr></thead><tbody><tr class='pass'><td>Q156 jordanian far</td><td>OK</td><td>OK</td><td>OK</td><td>1980.1</td><td>1070.3</td><td>0.0</td><td>0.0</td><td>3229.4</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q156 kuwaiti far</td><td>OK</td><td>OK</td><td>no</td><td>2120.7</td><td>1003.0</td><td>0.0</td><td>0.0</td><td>3331.7</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q275 kuwaiti far</td><td>OK</td><td>OK</td><td>no</td><td>2398.3</td><td>1006.2</td><td>0.0</td><td>0.0</td><td>3620.7</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q275 jordanian far</td><td>OK</td><td>OK</td><td>no</td><td>2360.4</td><td>1033.3</td><td>0.0</td><td>0.0</td><td>3624.8</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q173 kuwaiti far</td><td>OK</td><td>OK</td><td>no</td><td>2490.2</td><td>1006.5</td><td>0.0</td><td>0.0</td><td>3736.1</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q175 indian far</td><td>OK</td><td>OK</td><td>OK</td><td>2950.5</td><td>1089.6</td><td>0.0</td><td>0.0</td><td>4278.8</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q175 kuwaiti far</td><td>OK</td><td>OK</td><td>OK</td><td>3129.5</td><td>1097.2</td><td>0.0</td><td>0.0</td><td>4490.4</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q239 kuwaiti far</td><td>OK</td><td>OK</td><td>no</td><td>3489.8</td><td>1048.3</td><td>0.0</td><td>0.0</td><td>4815.7</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q160 jordanian far</td><td>OK</td><td>OK</td><td>OK</td><td>3611.5</td><td>1081.7</td><td>0.0</td><td>0.0</td><td>4924.3</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q243 kuwaiti far</td><td>OK</td><td>OK</td><td>no</td><td>3651.2</td><td>1158.8</td><td>0.0</td><td>0.0</td><td>4987.4</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q156 indian far</td><td>OK</td><td>OK</td><td>no</td><td>2209.2</td><td>2698.3</td><td>0.0</td><td>0.0</td><td>5107.3</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q239 indian far</td><td>OK</td><td>OK</td><td>OK</td><td>3900.2</td><td>1068.3</td><td>0.0</td><td>0.0</td><td>5231.8</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q212 indian far</td><td>OK</td><td>OK</td><td>OK</td><td>2180.7</td><td>2839.2</td><td>0.0</td><td>0.0</td><td>5237.7</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q243 jordanian far</td><td>OK</td><td>OK</td><td>no</td><td>4031.8</td><td>1040.7</td><td>0.0</td><td>0.0</td><td>5338.7</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q239 jordanian far</td><td>OK</td><td>OK</td><td>OK</td><td>4060.3</td><td>1100.4</td><td>0.0</td><td>0.0</td><td>5439.3</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q174 jordanian far</td><td>OK</td><td>OK</td><td>OK</td><td>3999.8</td><td>1100.3</td><td>0.0</td><td>0.0</td><td>5489.2</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q160 kuwaiti far</td><td>weak 0.692</td><td>OK</td><td>OK</td><td>2591.7</td><td>2714.6</td><td>0.0</td><td>0.0</td><td>5510.6</td><td>YES</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q275 indian far</td><td>OK</td><td>OK</td><td>no</td><td>4551.1</td><td>1095.3</td><td>0.0</td><td>0.0</td><td>5894.6</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q178 jordanian far</td><td>OK</td><td>OK</td><td>no</td><td>3160.2</td><td>2921.2</td><td>0.0</td><td>0.0</td><td>6308.0</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q160 indian far</td><td>OK</td><td>OK</td><td>no</td><td>5950.9</td><td>1176.4</td><td>0.0</td><td>0.0</td><td>7371.0</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q178 indian far</td><td>OK</td><td>OK</td><td>no</td><td>4090.4</td><td>3101.5</td><td>0.0</td><td>0.0</td><td>7412.7</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q178 kuwaiti far</td><td>OK</td><td>OK</td><td>no</td><td>4219.4</td><td>3100.7</td><td>0.0</td><td>0.0</td><td>7528.2</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q174 kuwaiti far</td><td>OK</td><td>OK</td><td>no</td><td>2881.0</td><td>1010.9</td><td>0.0</td><td>0.0</td><td>4119.3</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q174 indian far</td><td>OK</td><td>OK</td><td>no</td><td>4160.2</td><td>1087.9</td><td>0.0</td><td>0.0</td><td>5490.2</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q173 jordanian far</td><td>weak 0.595</td><td>OK</td><td>no</td><td>2621.2</td><td>2777.6</td><td>0.0</td><td>0.0</td><td>5603.3</td><td>YES</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>Q173 indian far</td><td>weak 0.571</td><td>OK</td><td>no</td><td>2619.6</td><td>2942.8</td><td>0.0</td><td>0.0</td><td>5766.9</td><td>YES</td><td><b>PASS</b></td><td>—</td></tr><tr class='fail'><td>Q243 indian far</td><td>weak 0.602</td><td>wrong 1.0</td><td>no</td><td>4090.1</td><td>3260.3</td><td>0.0</td><td>0.0</td><td>7621.3</td><td>—</td><td><b>FAIL</b></td><td>STT</td></tr><tr class='fail'><td>Q212 jordanian far</td><td>weak 0.667</td><td>wrong 0.667</td><td>no</td><td>2331.9</td><td>2903.4</td><td>0.0</td><td>0.0</td><td>5413.1</td><td>—</td><td><b>FAIL</b></td><td>STT</td></tr><tr class='fail'><td>Q175 jordanian far</td><td>OK</td><td>wrong 0.583</td><td>no</td><td>3130.9</td><td>2854.0</td><td>0.0</td><td>0.0</td><td>6172.8</td><td>—</td><td><b>FAIL</b></td><td>QUESTION_UNDERSTANDING</td></tr><tr class='fail'><td>Q212 kuwaiti far</td><td>weak 0.615</td><td>wrong 0.549</td><td>no</td><td>2781.1</td><td>3053.5</td><td>0.0</td><td>0.0</td><td>6039.7</td><td>—</td><td><b>FAIL</b></td><td>STT</td></tr></tbody></table>
+</body></html>

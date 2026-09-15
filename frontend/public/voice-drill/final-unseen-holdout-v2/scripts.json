@@ -1,0 +1,2027 @@
+[
+  {
+    "id": "fuh2_warm_01",
+    "question_type": "short",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "How are embedding vectors used when searching documents?",
+    "expected_intent_ids": [
+      "tech.embeddings",
+      "tech.cosine_semantic_search"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_warm_01.wav",
+    "warmup": true,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true
+  },
+  {
+    "id": "fuh2_warm_02",
+    "question_type": "short",
+    "condition": "clean",
+    "accent": "emirati",
+    "transcript": "Where does a vector database sit inside a RAG pipeline?",
+    "expected_intent_ids": [
+      "tech.vector_db_choice",
+      "cv.chromadb"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_warm_02.wav",
+    "warmup": true,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true
+  },
+  {
+    "id": "fuh2_001",
+    "question_type": "ultra_short",
+    "condition": "poor",
+    "accent": "jordanian",
+    "transcript": "Why care about precision?",
+    "expected_intent_ids": [
+      "tech.precision_recall"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_001.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_002",
+    "question_type": "ultra_short",
+    "condition": "far",
+    "accent": "emirati",
+    "transcript": "Embeddings — meaning?",
+    "expected_intent_ids": [
+      "tech.embeddings"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_002.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_003",
+    "question_type": "ultra_short",
+    "condition": "fast",
+    "accent": "jordanian",
+    "transcript": "ChromaDB role?",
+    "expected_intent_ids": [
+      "cv.chromadb",
+      "tech.vector_db_choice"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_003.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_004",
+    "question_type": "ultra_short",
+    "condition": "clean",
+    "accent": "emirati",
+    "transcript": "Guardrails purpose?",
+    "expected_intent_ids": [
+      "tech.guardrails_what"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_004.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_005",
+    "question_type": "ultra_short",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "Agent versus RAG?",
+    "expected_intent_ids": [
+      "hard.why_agent_not_rag",
+      "proj.similarity.is_rag"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_005.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_006",
+    "question_type": "ultra_short",
+    "condition": "poor",
+    "accent": "emirati",
+    "transcript": "WER meaning?",
+    "expected_intent_ids": [
+      "tech.wer"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_006.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_007",
+    "question_type": "ultra_short",
+    "condition": "far",
+    "accent": "jordanian",
+    "transcript": "When must we abstain?",
+    "expected_intent_ids": [
+      "hard.empty_retrieval",
+      "tech.hallucination_prevent"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_007.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_008",
+    "question_type": "ultra_short",
+    "condition": "fast",
+    "accent": "emirati",
+    "transcript": "LoRA in one line?",
+    "expected_intent_ids": [
+      "tech.lora"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_008.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_009",
+    "question_type": "ultra_short",
+    "condition": "clean",
+    "accent": "jordanian",
+    "transcript": "HITL meaning?",
+    "expected_intent_ids": [
+      "hard.hitl_where"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_009.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_010",
+    "question_type": "ultra_short",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "Metadata filters — why?",
+    "expected_intent_ids": [
+      "tech.metadata_filtering",
+      "hard.tenant_isolation"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_010.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_011",
+    "question_type": "ultra_short",
+    "condition": "poor",
+    "accent": "jordanian",
+    "transcript": "Pydantic used where?",
+    "expected_intent_ids": [
+      "cv.pydantic"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_011.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_012",
+    "question_type": "ultra_short",
+    "condition": "far",
+    "accent": "emirati",
+    "transcript": "Why rerank results?",
+    "expected_intent_ids": [
+      "tech.rag_two_phases",
+      "tech.rag_debugging"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_012.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_013",
+    "question_type": "ultra_short",
+    "condition": "fast",
+    "accent": "jordanian",
+    "transcript": "Hallucination means?",
+    "expected_intent_ids": [
+      "tech.hallucination_what"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_013.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_014",
+    "question_type": "ultra_short",
+    "condition": "clean",
+    "accent": "emirati",
+    "transcript": "Tenant isolation?",
+    "expected_intent_ids": [
+      "hard.tenant_isolation"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_014.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_015",
+    "question_type": "ultra_short",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "Temperature at zero — why?",
+    "expected_intent_ids": [
+      "tech.temperature",
+      "tech.hallucination_prevent"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_015.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_016",
+    "question_type": "short",
+    "condition": "poor",
+    "accent": "indian",
+    "transcript": "In one sentence, what does retrieval-augmented generation do?",
+    "expected_intent_ids": [
+      "tech.rag_what"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_016.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_017",
+    "question_type": "short",
+    "condition": "far",
+    "accent": "egyptian",
+    "transcript": "Give a short definition of an agentic workflow.",
+    "expected_intent_ids": [
+      "tech.agentic_what"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_017.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_018",
+    "question_type": "short",
+    "condition": "fast",
+    "accent": "indian",
+    "transcript": "What problem are you solving with LangGraph?",
+    "expected_intent_ids": [
+      "tech.what_is_langgraph"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_018.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_019",
+    "question_type": "short",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "When do you refuse to answer from parametric memory alone?",
+    "expected_intent_ids": [
+      "hard.empty_retrieval"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_019.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_020",
+    "question_type": "short",
+    "condition": "office",
+    "accent": "indian",
+    "transcript": "What job does the vector store perform here?",
+    "expected_intent_ids": [
+      "tech.vector_db_choice",
+      "cv.chromadb"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_020.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_021",
+    "question_type": "short",
+    "condition": "poor",
+    "accent": "egyptian",
+    "transcript": "How do you keep personal data out of prompt logs?",
+    "expected_intent_ids": [
+      "tech.pii_redaction"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_021.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_022",
+    "question_type": "short",
+    "condition": "far",
+    "accent": "indian",
+    "transcript": "What makes a chunking choice good enough in practice?",
+    "expected_intent_ids": [
+      "tech.chunk_size"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_022.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_023",
+    "question_type": "short",
+    "condition": "fast",
+    "accent": "egyptian",
+    "transcript": "Why is accuracy alone misleading on imbalanced labels?",
+    "expected_intent_ids": [
+      "tech.precision_recall"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_023.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_024",
+    "question_type": "short",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "What is a post-generation faithfulness check?",
+    "expected_intent_ids": [
+      "tech.hallucination_prevent"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_024.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_025",
+    "question_type": "short",
+    "condition": "office",
+    "accent": "egyptian",
+    "transcript": "How do you decide transcription quality is usable?",
+    "expected_intent_ids": [
+      "tech.transcription_quality",
+      "tech.wer"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_025.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_026",
+    "question_type": "short",
+    "condition": "poor",
+    "accent": "indian",
+    "transcript": "What does cosine similarity measure in retrieval?",
+    "expected_intent_ids": [
+      "tech.cosine_semantic_search"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_026.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_027",
+    "question_type": "short",
+    "condition": "far",
+    "accent": "egyptian",
+    "transcript": "When is fine-tuning the wrong first lever?",
+    "expected_intent_ids": [
+      "tech.rag_vs_finetuning",
+      "hard.not_finetune_first"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_027.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_028",
+    "question_type": "short",
+    "condition": "fast",
+    "accent": "indian",
+    "transcript": "Where do you use structured outputs in the stack?",
+    "expected_intent_ids": [
+      "cv.pydantic",
+      "tech.prompt_engineering"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_028.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_029",
+    "question_type": "short",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "How do you block invented financial figures?",
+    "expected_intent_ids": [
+      "tech.no_wrong_info_finance",
+      "tech.rag_prevent_invented_numbers"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_029.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_030",
+    "question_type": "short",
+    "condition": "office",
+    "accent": "indian",
+    "transcript": "What risk does teacher approval remove?",
+    "expected_intent_ids": [
+      "hard.hitl_where",
+      "hard.teacher_rejects"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_030.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_031",
+    "question_type": "medium",
+    "condition": "poor",
+    "accent": "emirati",
+    "transcript": "Specifically: take me through how retrieved passages become a grounded answer before the model speaks freely.",
+    "expected_intent_ids": [
+      "tech.rag_two_phases",
+      "tech.rag_build"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_031.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_032",
+    "question_type": "medium",
+    "condition": "far",
+    "accent": "jordanian",
+    "transcript": "Answer as if a ministry director asked: In the assignment checker, why prefer embedding similarity over asking an LLM to judge sameness?",
+    "expected_intent_ids": [
+      "proj.similarity.stack",
+      "proj.similarity.is_rag"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_032.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_033",
+    "question_type": "medium",
+    "condition": "fast",
+    "accent": "emirati",
+    "transcript": "Keep the same meaning, but teach it differently: How does question generation stay blocked until a human confirms the draft is safe to save?",
+    "expected_intent_ids": [
+      "hard.teacher_rejects",
+      "hard.hitl_where"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_033.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_034",
+    "question_type": "medium",
+    "condition": "clean",
+    "accent": "jordanian",
+    "transcript": "Panel follow-up style — address: If LangGraph is not in production yet, why still study it for complex ministry workflows?",
+    "expected_intent_ids": [
+      "hard.langgraph_vs_n8n_vs_python",
+      "tech.what_is_langgraph"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_034.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_035",
+    "question_type": "medium",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "For this interview, rewrite your answer around: How do school-level metadata filters prevent one campus from reading another campus files?",
+    "expected_intent_ids": [
+      "hard.tenant_isolation",
+      "tech.metadata_filtering"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_035.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_036",
+    "question_type": "medium",
+    "condition": "poor",
+    "accent": "jordanian",
+    "transcript": "Specifically: what must happen when top-k returns only weak or empty context for a regulation question?",
+    "expected_intent_ids": [
+      "hard.empty_retrieval"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_036.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_037",
+    "question_type": "medium",
+    "condition": "far",
+    "accent": "emirati",
+    "transcript": "Concretely: describe how RAG updates knowledge differently from changing behavior with fine-tuning.",
+    "expected_intent_ids": [
+      "tech.rag_vs_finetuning"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_037.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_038",
+    "question_type": "medium",
+    "condition": "fast",
+    "accent": "jordanian",
+    "transcript": "Carefully: why would human sign-off still required when the draft already looks fluent and complete?",
+    "expected_intent_ids": [
+      "tech.hallucination_prevent",
+      "hard.hitl_where"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_038.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_039",
+    "question_type": "medium",
+    "condition": "clean",
+    "accent": "emirati",
+    "transcript": "Panel follow-up style — address: How would you debug whether the failure is embedding, retrieval, prompt, or the generator?",
+    "expected_intent_ids": [
+      "hard.which_rag_layer_failed",
+      "tech.rag_debugging"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_039.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_040",
+    "question_type": "medium",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "For this interview, rewrite your answer around: What changes in your answer strategy when the user mixes Arabic and English in one query?",
+    "expected_intent_ids": [
+      "hard.mixed_language_query"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_040.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_041",
+    "question_type": "medium",
+    "condition": "poor",
+    "accent": "emirati",
+    "transcript": "Specifically: how would you keep an agent from looping on tools forever without finishing the user task?",
+    "expected_intent_ids": [
+      "hard.agent_stop_tools"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_041.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_042",
+    "question_type": "medium",
+    "condition": "far",
+    "accent": "jordanian",
+    "transcript": "Answer as if a ministry director asked: Why can stuffing many chunks into the prompt still produce a worse answer?",
+    "expected_intent_ids": [
+      "hard.context_stuffing"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_042.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_043",
+    "question_type": "medium",
+    "condition": "fast",
+    "accent": "emirati",
+    "transcript": "Carefully: how would you decide the system is good enough to launch for teachers without chasing a vanity metric?",
+    "expected_intent_ids": [
+      "tech.good_enough_to_launch"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_043.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_044",
+    "question_type": "medium",
+    "condition": "clean",
+    "accent": "jordanian",
+    "transcript": "Panel follow-up style — address: What is the practical difference between LangChain helpers and a LangGraph-style control flow?",
+    "expected_intent_ids": [
+      "tech.langgraph_vs_langchain"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_044.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_045",
+    "question_type": "medium",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "For this interview, rewrite your answer around: How does your BTEC path validate generated JSON before anything is persisted?",
+    "expected_intent_ids": [
+      "hard.teacher_rejects",
+      "cv.pydantic"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_045.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_046",
+    "question_type": "long",
+    "condition": "poor",
+    "accent": "egyptian",
+    "transcript": "Specifically: walk through end to end how a teacher request becomes retrieved unit content, a structured draft, validation, and only then a saved bank item, including where you refuse to invent missing learning outcomes.",
+    "expected_intent_ids": [
+      "moe.question_generation",
+      "hard.teacher_rejects",
+      "tech.rag_build"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_046.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_047",
+    "question_type": "long",
+    "condition": "far",
+    "accent": "indian",
+    "transcript": "Answer as if a ministry director asked: Compare a pure similarity pipeline without generation against a full RAG path, and tell me which ministry tools should stay non-generative and why that boundary matters.",
+    "expected_intent_ids": [
+      "proj.similarity.is_rag",
+      "proj.similarity.stack"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_047.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_048",
+    "question_type": "long",
+    "condition": "fast",
+    "accent": "egyptian",
+    "transcript": "Keep the same meaning, but teach it differently: If regulations change every year, argue whether you would retrain weights, re-index documents, or do both, and what evidence you would show auditors for each choice.",
+    "expected_intent_ids": [
+      "tech.rag_vs_finetuning"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_048.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_049",
+    "question_type": "long",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "Panel follow-up style — address: Describe how you would design access control so retrieval never surfaces another school's assignments even when embeddings are similar across tenants.",
+    "expected_intent_ids": [
+      "hard.tenant_isolation",
+      "tech.rag_access_control"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_049.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_050",
+    "question_type": "long",
+    "condition": "office",
+    "accent": "egyptian",
+    "transcript": "For this interview, rewrite your answer around: Walk through a production incident where retrieval looked fine but answers still hallucinated numbers, and list the checks you would add after generation.",
+    "expected_intent_ids": [
+      "tech.hallucination_prevent",
+      "tech.rag_prevent_invented_numbers"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_050.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_051",
+    "question_type": "long",
+    "condition": "poor",
+    "accent": "indian",
+    "transcript": "Specifically: describe when you would pick plain Python orchestration, when n8n, and when LangGraph, using a ministry workflow that needs interrupts and retries.",
+    "expected_intent_ids": [
+      "hard.langgraph_vs_n8n_vs_python"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_051.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_052",
+    "question_type": "long",
+    "condition": "far",
+    "accent": "egyptian",
+    "transcript": "Concretely: how would you evaluate an early-warning classifier when the positive class is rare, and which error type is more expensive for students and teachers?",
+    "expected_intent_ids": [
+      "proj.early_warning.metric",
+      "tech.precision_recall"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_052.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_053",
+    "question_type": "long",
+    "condition": "fast",
+    "accent": "indian",
+    "transcript": "Keep the same meaning, but teach it differently: Describe a safe interrupt pattern so an agent prepares an email but never sends it twice after a human resumes the graph.",
+    "expected_intent_ids": [
+      "hard.hitl_where",
+      "hard.interrupt_side_effects"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_053.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_054",
+    "question_type": "long",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "Panel follow-up style — address: If a retrieved PDF tries prompt injection and asks to dump all documents, what controls keep the system from following that instruction?",
+    "expected_intent_ids": [
+      "hard.injection_in_pdf"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_054.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_055",
+    "question_type": "long",
+    "condition": "office",
+    "accent": "indian",
+    "transcript": "For this interview, rewrite your answer around: How would you measure whether Whisper transcription quality is good enough for intent matching without pretending word error rate alone is the product metric?",
+    "expected_intent_ids": [
+      "tech.wer",
+      "tech.transcription_quality"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_055.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_056",
+    "question_type": "long",
+    "condition": "poor",
+    "accent": "egyptian",
+    "transcript": "Specifically: show me how chunk overlap, metadata filters, and optional reranking interact at query time, and which part you have actually shipped versus only studied.",
+    "expected_intent_ids": [
+      "tech.rag_two_phases",
+      "tech.chunk_size"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_056.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_057",
+    "question_type": "long",
+    "condition": "far",
+    "accent": "indian",
+    "transcript": "Concretely: describe your approach to personally identifiable information in prompts and logs when teachers discuss student cases near an AI tool.",
+    "expected_intent_ids": [
+      "tech.pii_redaction"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_057.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_058",
+    "question_type": "long",
+    "condition": "fast",
+    "accent": "egyptian",
+    "transcript": "Keep the same meaning, but teach it differently: If the teacher rejects a generated question with a short comment, what does the system do next, and what must never be saved?",
+    "expected_intent_ids": [
+      "hard.teacher_rejects"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_058.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_059",
+    "question_type": "long",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "Honestly: how would you keep streaming tokens from becoming a public answer in a government RAG app before validation and approval complete?",
+    "expected_intent_ids": [
+      "hard.streaming_vs_validate"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_059.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_060",
+    "question_type": "long",
+    "condition": "office",
+    "accent": "egyptian",
+    "transcript": "For this interview, rewrite your answer around: Describe how you would prove to a skeptical director that the tool is decision support, not an automatic grader that marks students alone.",
+    "expected_intent_ids": [
+      "proj.similarity.role",
+      "hard.hitl_where"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_060.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_061",
+    "question_type": "very_long",
+    "condition": "poor",
+    "accent": "jordanian",
+    "transcript": "Specifically: i need a complete narrative of your BTEC RAG system for interview depth: start from authorized login and unit selection, then indexing versus query-time retrieval, prompt construction, JSON validation, teacher approval, empty-retrieval abstain, and finally how you would explain a wrong answer without blaming the model alone. Please keep the order clear and name the failure points you watch in production.",
+    "expected_intent_ids": [
+      "moe.question_generation",
+      "tech.rag_two_phases",
+      "hard.empty_retrieval"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_061.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_062",
+    "question_type": "very_long",
+    "condition": "far",
+    "accent": "emirati",
+    "transcript": "Answer as if a ministry director asked: Compare three architectures for the same ministry need: embeddings-only similarity, classic RAG with citations, and an agent that can call tools and wait for humans. For each, say what it is good at, what it must never do, and which of your projects already matches that pattern in real use rather than in slides.",
+    "expected_intent_ids": [
+      "proj.similarity.is_rag",
+      "hard.why_agent_not_rag",
+      "tech.rag_what"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_062.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_063",
+    "question_type": "very_long",
+    "condition": "fast",
+    "accent": "jordanian",
+    "transcript": "Carefully: imagine auditors ask why you did not fine-tune on every regulation PDF. Provide a careful answer covering knowledge freshness, citation needs, cost, evaluation, and the narrow cases where fine-tuning or adapters might still help behavior without becoming the source of legal facts.",
+    "expected_intent_ids": [
+      "tech.rag_vs_finetuning",
+      "hard.not_finetune_first"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_063.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_064",
+    "question_type": "very_long",
+    "condition": "clean",
+    "accent": "emirati",
+    "transcript": "Panel follow-up style — address: Design a tenant-safe retrieval story for multiple schools sharing one platform: metadata design, filter placement before search, what leaks if you filter too late, how logs should look, and how you would test that school A cannot read school B even when questions are nearly identical.",
+    "expected_intent_ids": [
+      "hard.tenant_isolation",
+      "tech.rag_access_control"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_064.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_065",
+    "question_type": "very_long",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "For this interview, rewrite your answer around: Walk through a LangGraph-style interview answer that stays honest about production experience: what graph features matter for interrupts and retries, what you have not run at scale, and how you would still defend a plain Python agentic flow that is careful with side effects and human gates.",
+    "expected_intent_ids": [
+      "hard.langgraph_vs_n8n_vs_python",
+      "hard.plain_python_still_agentic"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_065.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_066",
+    "question_type": "very_long",
+    "condition": "poor",
+    "accent": "emirati",
+    "transcript": "Specifically: provide a long debugging playbook for a RAG answer that sounds confident but is wrong: how you separate indexing bugs from retrieval bugs from prompt bugs from model bugs, which metrics you look at, and when you force abstain instead of another regenerate.",
+    "expected_intent_ids": [
+      "tech.rag_debugging",
+      "hard.which_rag_layer_failed",
+      "hard.empty_retrieval"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_066.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_067",
+    "question_type": "very_long",
+    "condition": "far",
+    "accent": "jordanian",
+    "transcript": "Concretely: describe a full quality bar for launching an education AI feature: offline test set discipline, confusion-aware metrics, teacher review loops, latency budgets after speech ends, and the difference between a demo that impresses a meeting and a tool teachers still open next month.",
+    "expected_intent_ids": [
+      "tech.good_enough_to_launch",
+      "tech.evaluate_classification"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_067.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_068",
+    "question_type": "very_long",
+    "condition": "fast",
+    "accent": "emirati",
+    "transcript": "Keep the same meaning, but teach it differently: Describe how Whisper, technical term repair, intent matching, and bank answers connect in a live interview coach, including what you freeze versus what you allow to recover under poor or far audio without lowering safety on clean speech.",
+    "expected_intent_ids": [
+      "tech.transcription_quality",
+      "tech.wer"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_068.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_069",
+    "question_type": "very_long",
+    "condition": "clean",
+    "accent": "jordanian",
+    "transcript": "Panel follow-up style — address: Narrate a compound ministry scenario where the interviewer asks for architecture, safety, and personal ownership in one breath, and show how you would answer each part in order without dropping the safety constraints or inventing CV claims.",
+    "expected_intent_ids": [
+      "hard.hitl_where",
+      "tech.hallucination_prevent",
+      "gen.leadership"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_069.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_070",
+    "question_type": "very_long",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "For this interview, rewrite your answer around: Provide an extended explanation of precision, recall, and operational cost in the early-warning student support setting, including why a high accuracy headline can still hide a harmful miss rate and how you would present that to non-technical staff.",
+    "expected_intent_ids": [
+      "proj.early_warning.metric",
+      "tech.precision_recall"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_070.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_071",
+    "question_type": "very_long",
+    "condition": "poor",
+    "accent": "jordanian",
+    "transcript": "Say this in your own words for a technical panel: Detail a safe generation contract for financial or regulatory answers: grounding, I do not know, schema checks, number-in-source rules, human approval, and what you do when retrieval is empty but the user still demands a fluent reply.",
+    "expected_intent_ids": [
+      "tech.no_wrong_info_finance",
+      "tech.hallucination_prevent",
+      "hard.empty_retrieval"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_071.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_072",
+    "question_type": "very_long",
+    "condition": "far",
+    "accent": "emirati",
+    "transcript": "Concretely: provide a thorough comparison of chunking strategy tradeoffs for policy documents: too small, too large, overlap, heading-aware splits, and how those choices show up later as retrieval misses or bloated prompts.",
+    "expected_intent_ids": [
+      "tech.chunk_size",
+      "tech.rag_build"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_072.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_073",
+    "question_type": "very_long",
+    "condition": "fast",
+    "accent": "jordanian",
+    "transcript": "Carefully: describe, at interview length, how you would monitor a live RAG service after launch: latency, abstain rate, teacher reject reasons, retrieval emptiness, citation failures, and when you roll back a prompt change versus a model change.",
+    "expected_intent_ids": [
+      "tech.good_enough_to_launch",
+      "hard.teacher_rejects"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_073.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_074",
+    "question_type": "very_long",
+    "condition": "clean",
+    "accent": "emirati",
+    "transcript": "Panel follow-up style — address: Describe an end-to-end story from microphone speech to a spoken bank answer in this coach app, naming VAD end conditions, transcription risk, semantic recovery triggers, and when the system must stay silent instead of reading the wrong prepared answer.",
+    "expected_intent_ids": [
+      "tech.transcription_quality"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_074.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_075",
+    "question_type": "very_long",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "For this interview, rewrite your answer around: Offer a long-form answer on career judgment: generative work since recent years on top of longer applied ML and payments experience, what senior means for you, and how that shows up as refusing unsafe automation rather than chasing every new framework name.",
+    "expected_intent_ids": [
+      "gen.leadership",
+      "gen.why_ai_field"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_075.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_076",
+    "question_type": "compound",
+    "condition": "poor",
+    "accent": "indian",
+    "transcript": "Say this in your own words for a technical panel: What is RAG, and why did you choose it for question generation instead of fine-tuning the regulations into the model?",
+    "expected_intent_ids": [
+      "tech.rag_what",
+      "tech.rag_vs_finetuning"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_076.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_077",
+    "question_type": "compound",
+    "condition": "far",
+    "accent": "egyptian",
+    "transcript": "Concretely: describe embeddings and cosine similarity, then tell me why the similarity checker is not a RAG system.",
+    "expected_intent_ids": [
+      "tech.cosine_semantic_search",
+      "proj.similarity.is_rag"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_077.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_078",
+    "question_type": "compound",
+    "condition": "fast",
+    "accent": "indian",
+    "transcript": "Keep the same meaning, but teach it differently: What are guardrails, and where exactly do you put a human in the loop before saving a generated question?",
+    "expected_intent_ids": [
+      "tech.guardrails_what",
+      "hard.hitl_where"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_078.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_079",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "Panel follow-up style — address: Define agentic AI briefly, then say when a normal RAG path is enough without tools.",
+    "expected_intent_ids": [
+      "tech.agentic_what",
+      "hard.why_agent_not_rag"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_079.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_080",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "indian",
+    "transcript": "For this interview, rewrite your answer around: What is LangGraph, and would you use it, n8n, or plain Python for a workflow with approval gates?",
+    "expected_intent_ids": [
+      "tech.what_is_langgraph",
+      "hard.langgraph_vs_n8n_vs_python"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_080.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_081",
+    "question_type": "compound",
+    "condition": "poor",
+    "accent": "egyptian",
+    "transcript": "Specifically: describe precision and recall, and which one mattered more in early warning and why.",
+    "expected_intent_ids": [
+      "tech.precision_recall",
+      "proj.early_warning.metric"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_081.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_082",
+    "question_type": "compound",
+    "condition": "far",
+    "accent": "indian",
+    "transcript": "Answer as if a ministry director asked: What is hallucination, and how do you reduce it without pretending temperature alone fixes truth?",
+    "expected_intent_ids": [
+      "tech.hallucination_what",
+      "tech.hallucination_prevent"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_082.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_083",
+    "question_type": "compound",
+    "condition": "fast",
+    "accent": "egyptian",
+    "transcript": "Carefully: what must the system do on empty retrieval, and how do you stop invented numbers in finance-like answers?",
+    "expected_intent_ids": [
+      "hard.empty_retrieval",
+      "tech.no_wrong_info_finance"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_083.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_084",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "Panel follow-up style — address: Describe metadata filtering and how it supports tenant isolation between schools.",
+    "expected_intent_ids": [
+      "tech.metadata_filtering",
+      "hard.tenant_isolation"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_084.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_085",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "egyptian",
+    "transcript": "For this interview, rewrite your answer around: What is chunk size and overlap, and what goes wrong if you stuff twenty chunks into one prompt?",
+    "expected_intent_ids": [
+      "tech.chunk_size",
+      "hard.context_stuffing"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_085.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_086",
+    "question_type": "compound",
+    "condition": "poor",
+    "accent": "indian",
+    "transcript": "Specifically: how would you write a good prompt, and how do you keep retrieved documents from becoming instructions?",
+    "expected_intent_ids": [
+      "tech.prompt_engineering"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_086.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_087",
+    "question_type": "compound",
+    "condition": "far",
+    "accent": "egyptian",
+    "transcript": "Answer as if a ministry director asked: What is WER, and how else do you judge whether transcription is good enough for this interview coach?",
+    "expected_intent_ids": [
+      "tech.wer",
+      "tech.transcription_quality"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_087.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_088",
+    "question_type": "compound",
+    "condition": "fast",
+    "accent": "indian",
+    "transcript": "Keep the same meaning, but teach it differently: Have you used Pydantic, and where does schema validation sit relative to teacher approval?",
+    "expected_intent_ids": [
+      "cv.pydantic",
+      "hard.teacher_rejects"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_088.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_089",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "Panel follow-up style — address: What is LoRA at a high level, and why is it still not your default way to update yearly regulations?",
+    "expected_intent_ids": [
+      "tech.lora",
+      "tech.rag_vs_finetuning"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_089.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_090",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "indian",
+    "transcript": "Notably: describe indexing versus retrieval phases, then say what you check when answers are wrong but retrieval looks populated.",
+    "expected_intent_ids": [
+      "tech.rag_two_phases",
+      "tech.rag_debugging"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_090.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_091",
+    "question_type": "indirect_paraphrase",
+    "condition": "poor",
+    "accent": "emirati",
+    "transcript": "Say this in your own words for a technical panel: When facts move every year, do you bake them into weights or keep them outside the model?",
+    "expected_intent_ids": [
+      "tech.rag_vs_finetuning"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_091.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_092",
+    "question_type": "indirect_paraphrase",
+    "condition": "far",
+    "accent": "jordanian",
+    "transcript": "Concretely: how would you make the model stick to sources instead of finishing a fluent but unsupported sentence?",
+    "expected_intent_ids": [
+      "tech.hallucination_prevent"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_092.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_093",
+    "question_type": "indirect_paraphrase",
+    "condition": "fast",
+    "accent": "emirati",
+    "transcript": "Keep the same meaning, but teach it differently: If search returns junk, should the model still answer from what it remembers?",
+    "expected_intent_ids": [
+      "hard.empty_retrieval"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_093.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_094",
+    "question_type": "indirect_paraphrase",
+    "condition": "clean",
+    "accent": "jordanian",
+    "transcript": "Honestly: how would you keep campus A from quietly reading campus B materials through similarity search?",
+    "expected_intent_ids": [
+      "hard.tenant_isolation"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_094.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_095",
+    "question_type": "indirect_paraphrase",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "For this interview, rewrite your answer around: Why would a checker that only ranks similar text not deserve the RAG label?",
+    "expected_intent_ids": [
+      "proj.similarity.is_rag"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_095.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_096",
+    "question_type": "indirect_paraphrase",
+    "condition": "poor",
+    "accent": "jordanian",
+    "transcript": "Say this in your own words for a technical panel: Where does a person have to see the draft before anything becomes official?",
+    "expected_intent_ids": [
+      "hard.hitl_where"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_096.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_097",
+    "question_type": "indirect_paraphrase",
+    "condition": "far",
+    "accent": "emirati",
+    "transcript": "Answer as if a ministry director asked: If two orchestrators and raw code are options, how do you choose for interrupt-heavy flows?",
+    "expected_intent_ids": [
+      "hard.langgraph_vs_n8n_vs_python"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_097.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_098",
+    "question_type": "indirect_paraphrase",
+    "condition": "fast",
+    "accent": "jordanian",
+    "transcript": "Keep the same meaning, but teach it differently: What metric do you optimize when missing a struggling student is costlier than an extra follow-up?",
+    "expected_intent_ids": [
+      "proj.early_warning.metric",
+      "tech.precision_recall"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_098.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_099",
+    "question_type": "indirect_paraphrase",
+    "condition": "clean",
+    "accent": "emirati",
+    "transcript": "Honestly: how would you know which layer broke when the answer is wrong but the UI still looks healthy?",
+    "expected_intent_ids": [
+      "hard.which_rag_layer_failed"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_099.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_100",
+    "question_type": "indirect_paraphrase",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "For this interview, rewrite your answer around: What happens after a teacher says no to a generated item?",
+    "expected_intent_ids": [
+      "hard.teacher_rejects"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_100.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_101",
+    "question_type": "indirect_paraphrase",
+    "condition": "poor",
+    "accent": "emirati",
+    "transcript": "Specifically: how would you avoid sending the same side effect twice after an approval resume?",
+    "expected_intent_ids": [
+      "hard.interrupt_side_effects",
+      "hard.hitl_where"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_101.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_102",
+    "question_type": "indirect_paraphrase",
+    "condition": "far",
+    "accent": "jordanian",
+    "transcript": "Answer as if a ministry director asked: If a document tells the model to ignore prior rules, what stops that from winning?",
+    "expected_intent_ids": [
+      "hard.injection_in_pdf"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_102.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_103",
+    "question_type": "indirect_paraphrase",
+    "condition": "fast",
+    "accent": "emirati",
+    "transcript": "Keep the same meaning, but teach it differently: Why can adding more context chunks make the answer worse rather than safer?",
+    "expected_intent_ids": [
+      "hard.context_stuffing"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_103.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_104",
+    "question_type": "indirect_paraphrase",
+    "condition": "clean",
+    "accent": "jordanian",
+    "transcript": "Honestly: how would you talk about senior judgment without turning it into a years contest?",
+    "expected_intent_ids": [
+      "gen.leadership"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_104.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_105",
+    "question_type": "indirect_paraphrase",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "For this interview, rewrite your answer around: What is the smallest honest description of what Whisper does versus what an agent does?",
+    "expected_intent_ids": [
+      "tech.wer",
+      "tech.agentic_what"
+    ],
+    "context_prior": null,
+    "file": "audio/fuh2_105.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_106",
+    "question_type": "follow_up_contextual",
+    "condition": "poor",
+    "accent": "egyptian",
+    "transcript": "Say this in your own words for a technical panel: And why that metric instead of accuracy?",
+    "expected_intent_ids": [
+      "proj.early_warning.metric",
+      "tech.precision_recall"
+    ],
+    "context_prior": "Keep the same meaning, but teach it differently: We discussed early-warning classification for students who need support.",
+    "file": "audio/fuh2_106.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_107",
+    "question_type": "follow_up_contextual",
+    "condition": "far",
+    "accent": "indian",
+    "transcript": "Answer as if a ministry director asked: What would you change if retrieval came back empty in that same flow?",
+    "expected_intent_ids": [
+      "hard.empty_retrieval"
+    ],
+    "context_prior": "Panel follow-up style — address: We just walked through BTEC question generation with retrieval and validation.",
+    "file": "audio/fuh2_107.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_108",
+    "question_type": "follow_up_contextual",
+    "condition": "fast",
+    "accent": "egyptian",
+    "transcript": "Keep the same meaning, but teach it differently: Where does the human gate sit in the graph you just described?",
+    "expected_intent_ids": [
+      "hard.hitl_where"
+    ],
+    "context_prior": "For this interview, rewrite your answer around: Candidate explained an agentic workflow with tools and retries.",
+    "file": "audio/fuh2_108.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_109",
+    "question_type": "follow_up_contextual",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "Panel follow-up style — address: Does that make the similarity tool a RAG system?",
+    "expected_intent_ids": [
+      "proj.similarity.is_rag"
+    ],
+    "context_prior": "Say this in your own words for a technical panel: Candidate described embeddings and cosine scoring for assignment similarity.",
+    "file": "audio/fuh2_109.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_110",
+    "question_type": "follow_up_contextual",
+    "condition": "office",
+    "accent": "egyptian",
+    "transcript": "For this interview, rewrite your answer around: Would fine-tuning fix the yearly regulation change problem you mentioned?",
+    "expected_intent_ids": [
+      "tech.rag_vs_finetuning"
+    ],
+    "context_prior": "Answer as if a ministry director asked: Discussion about regulations that change every year.",
+    "file": "audio/fuh2_110.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_111",
+    "question_type": "follow_up_contextual",
+    "condition": "poor",
+    "accent": "indian",
+    "transcript": "Specifically: how would you keep school B out if embeddings still look close?",
+    "expected_intent_ids": [
+      "hard.tenant_isolation"
+    ],
+    "context_prior": "Keep the same meaning, but teach it differently: Talking about multi-school document search.",
+    "file": "audio/fuh2_111.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_112",
+    "question_type": "follow_up_contextual",
+    "condition": "far",
+    "accent": "egyptian",
+    "transcript": "Answer as if a ministry director asked: What do you do with the reject reason after that no?",
+    "expected_intent_ids": [
+      "hard.teacher_rejects"
+    ],
+    "context_prior": "Panel follow-up style — address: Teacher approval path for generated questions.",
+    "file": "audio/fuh2_112.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_113",
+    "question_type": "follow_up_contextual",
+    "condition": "fast",
+    "accent": "indian",
+    "transcript": "Keep the same meaning, but teach it differently: Is LangGraph required for that to still be agentic?",
+    "expected_intent_ids": [
+      "hard.plain_python_still_agentic",
+      "tech.what_is_langgraph"
+    ],
+    "context_prior": "For this interview, rewrite your answer around: Candidate described a Python orchestration with tools and a human gate.",
+    "file": "audio/fuh2_113.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_114",
+    "question_type": "follow_up_contextual",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "Panel follow-up style — address: Which layer would you inspect first if citations looked right but numbers were invented?",
+    "expected_intent_ids": [
+      "tech.rag_debugging",
+      "tech.rag_prevent_invented_numbers"
+    ],
+    "context_prior": "Say this in your own words for a technical panel: Grounded generation with citation requirements.",
+    "file": "audio/fuh2_114.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_115",
+    "question_type": "follow_up_contextual",
+    "condition": "office",
+    "accent": "indian",
+    "transcript": "For this interview, rewrite your answer around: Can you stream that to the user before approval?",
+    "expected_intent_ids": [
+      "hard.streaming_vs_validate"
+    ],
+    "context_prior": "Answer as if a ministry director asked: Government RAG drafting answers for officers.",
+    "file": "audio/fuh2_115.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_116",
+    "question_type": "follow_up_contextual",
+    "condition": "poor",
+    "accent": "egyptian",
+    "transcript": "Say this in your own words for a technical panel: What if the PDF itself contains an injection instruction?",
+    "expected_intent_ids": [
+      "hard.injection_in_pdf"
+    ],
+    "context_prior": "Keep the same meaning, but teach it differently: Retrieval safety and untrusted documents.",
+    "file": "audio/fuh2_116.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_117",
+    "question_type": "follow_up_contextual",
+    "condition": "far",
+    "accent": "indian",
+    "transcript": "Answer as if a ministry director asked: Why not just raise temperature for more creativity there?",
+    "expected_intent_ids": [
+      "tech.hallucination_prevent",
+      "tech.temperature"
+    ],
+    "context_prior": "Panel follow-up style — address: Hallucination controls on factual ministry answers.",
+    "file": "audio/fuh2_117.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_118",
+    "question_type": "follow_up_contextual",
+    "condition": "fast",
+    "accent": "egyptian",
+    "transcript": "Keep the same meaning, but teach it differently: How does metadata filtering help in that isolation story?",
+    "expected_intent_ids": [
+      "tech.metadata_filtering",
+      "hard.tenant_isolation"
+    ],
+    "context_prior": "For this interview, rewrite your answer around: Tenant isolation between schools.",
+    "file": "audio/fuh2_118.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_119",
+    "question_type": "follow_up_contextual",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "Panel follow-up style — address: What is the next step after Pydantic validation fails?",
+    "expected_intent_ids": [
+      "cv.pydantic",
+      "hard.teacher_rejects"
+    ],
+    "context_prior": "Say this in your own words for a technical panel: Structured JSON generation for exam questions.",
+    "file": "audio/fuh2_119.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  },
+  {
+    "id": "fuh2_120",
+    "question_type": "follow_up_contextual",
+    "condition": "office",
+    "accent": "egyptian",
+    "transcript": "For this interview, rewrite your answer around: And how would you explain that failure to a non-technical director?",
+    "expected_intent_ids": [
+      "gen.leadership",
+      "gen.why_ai_field"
+    ],
+    "context_prior": "Answer as if a ministry director asked: A wrong answer reached a teacher review screen.",
+    "file": "audio/fuh2_120.wav",
+    "warmup": false,
+    "pack": "final-unseen-holdout-v2",
+    "eval_only": true,
+    "supersedes": "final-unseen-holdout"
+  }
+]

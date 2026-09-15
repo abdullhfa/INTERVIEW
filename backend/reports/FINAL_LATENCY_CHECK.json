@@ -1,0 +1,836 @@
+{
+  "created_at": "2026-09-13T21:19:52.284542+00:00",
+  "track": "final_latency_check",
+  "evaluator_version": 2,
+  "evaluator_note": "v2 scoring correction: cohort-specific median gates (simple<=1500, compound<=2000). v1 applied gate_ms=1500 to both cohorts, which is not the documented frozen criterion. p95 is a TARGET, never a hard gate.",
+  "a_b_c_frozen": true,
+  "hard_gates": {
+    "simple_median_ms": 1138.6,
+    "simple_median_gate_ms": 1500.0,
+    "simple_median_pass": true,
+    "compound_median_ms": 1187.2,
+    "compound_median_gate_ms": 2000.0,
+    "compound_median_pass": true,
+    "simple_hc_wrong": 0,
+    "simple_hc_pass": true,
+    "compound_hc_wrong": 0,
+    "compound_hc_pass": true,
+    "compound_intent_rate": 1.0,
+    "compound_intent_pass": true,
+    "compound_coverage": 0.9375,
+    "compound_coverage_pass": true,
+    "simple_run_gate_valid": true,
+    "simple_run_gate_valid_pass": true,
+    "compound_run_gate_valid": true,
+    "compound_run_gate_valid_pass": true
+  },
+  "targets": {
+    "simple_p95_ms": 1352.3,
+    "simple_p95_target_ms": 2000.0,
+    "simple_p95_met": true,
+    "compound_p95_ms": 1340.5,
+    "compound_p95_target_ms": 3000.0,
+    "compound_p95_met": true,
+    "simple_intent_rate": 0.875
+  },
+  "verdict": "LATENCY_READY_FOR_V3",
+  "ready": true,
+  "simple": {
+    "label": "simple",
+    "source": "C:\\Users\\aalsa\\OneDrive\\Desktop\\interview (2)\\interview11\\backend\\reports\\LENGTH_SHORT_REGRESSION_REPORT.json",
+    "suite": "short_length",
+    "created_at": "2026-09-13T21:10:31.046455+00:00",
+    "gate_valid": true,
+    "gate_valid_reason": "warm before first clip; alias matrix present for every scored clip",
+    "warm": {
+      "warm_completed": true,
+      "warm_wall_ms": 80784.6,
+      "warm_timeout_s": 900.0,
+      "system_warm": true,
+      "alias_matrix_ready": true,
+      "semantic_index_ready": true,
+      "steps": {
+        "question_bank_load": 0.0,
+        "question_bank_warm": 70228.4,
+        "semantic_intent_index": 9069.6,
+        "embedding_probe": 34.9,
+        "whisper_decode_probe": 1450.4
+      },
+      "errors": {},
+      "gate_valid": true,
+      "per_clip_alias_matrix_ready": "8/8",
+      "warm_mixed_within_run": false
+    },
+    "embed_stats": {
+      "calls": 63,
+      "texts": 2661,
+      "ms": 76644.63149999574,
+      "max_ms": 2431.1,
+      "ms_per_call": 1216.6
+    },
+    "rerank_stats": {
+      "calls": 4,
+      "triggered": 4,
+      "vector_reuse": 4,
+      "embedded": 0,
+      "reranker_trigger_rate": 1.0
+    },
+    "summary": {
+      "n": 8,
+      "vad_ms": {
+        "p50": 2241.8,
+        "p95": 2559.8,
+        "mean": 2214.8,
+        "max": 2559.8
+      },
+      "whisper_ms": {
+        "p50": 926.6,
+        "p95": 1081.9,
+        "mean": 938.7,
+        "max": 1081.9
+      },
+      "match_ms": {
+        "p50": 38.2,
+        "p95": 110.1,
+        "mean": 56.1,
+        "max": 110.1
+      },
+      "semantic_ms": {
+        "p50": 83.1,
+        "p95": 426.3,
+        "mean": 91.1,
+        "max": 426.3
+      },
+      "rerank_ms": {
+        "p50": 23.0,
+        "p95": 48.8,
+        "mean": 16.8,
+        "max": 48.8
+      },
+      "compound_detect_ms": {
+        "p50": 0.1,
+        "p95": 0.4,
+        "mean": 0.1,
+        "max": 0.4
+      },
+      "decomposition_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "matching_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "merge_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "compound_ms": {
+        "p50": 0.1,
+        "p95": 28.4,
+        "mean": 3.6,
+        "max": 28.4
+      },
+      "answer_ms": {
+        "p50": 0.1,
+        "p95": 0.2,
+        "mean": 0.1,
+        "max": 0.2
+      },
+      "intent_ms": {
+        "p50": 120.9,
+        "p95": 436.3,
+        "mean": 150.8,
+        "max": 436.3
+      },
+      "post_speech_ms": {
+        "p50": 1138.6,
+        "p95": 1352.3,
+        "mean": 1089.6,
+        "max": 1352.3
+      }
+    },
+    "trace_summary": {
+      "whisper_pass1_ms": {
+        "p50": 925.3,
+        "p95": 1080.8,
+        "mean": 937.6,
+        "max": 1080.8
+      },
+      "whisper_pass2_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "technical_repair_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "routing_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "base_match_ms": {
+        "p50": 38.2,
+        "p95": 109.4,
+        "mean": 54.7,
+        "max": 109.4
+      },
+      "lexical_match_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "semantic_embedding_ms": {
+        "p50": 28.3,
+        "p95": 35.3,
+        "mean": 15.6,
+        "max": 35.3
+      },
+      "semantic_search_ms": {
+        "p50": 28.5,
+        "p95": 35.3,
+        "mean": 15.8,
+        "max": 35.3
+      },
+      "compound_detect_ms": {
+        "p50": 0.1,
+        "p95": 0.4,
+        "mean": 0.1,
+        "max": 0.4
+      },
+      "decomposition_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "subquestion_match_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "harvest_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "answer_lookup_ms": {
+        "p50": 0.1,
+        "p95": 0.2,
+        "mean": 0.1,
+        "max": 0.2
+      },
+      "unattributed_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      }
+    },
+    "quality": {
+      "n": 8,
+      "intent_ok": 7,
+      "intent_rate": 0.875,
+      "hc_wrong": 0,
+      "gold_part_coverage": 0.0,
+      "whisper_calls_median": 1.0,
+      "whisper_calls_max": 1
+    },
+    "slowest_10": [
+      {
+        "clip": 10059,
+        "file": "08_short_sentences/short_03.wav",
+        "question_type": "single",
+        "transcript": "What is a Y?",
+        "post_ms": 1352.3,
+        "whisper_ms": 915.9,
+        "whisper_calls": 1,
+        "lexical_ms": 0.0,
+        "semantic_ms": 426.3,
+        "rerank_ms": 48.8,
+        "subquestion_count": null,
+        "harvest_ms": 0.0,
+        "harvest_ran": null,
+        "fast_path": false,
+        "semantic_reason": "abstain_low_confidence",
+        "slow_reason": "semantic:abstain_low_confidence",
+        "intent_ok": false,
+        "hc_wrong": false
+      },
+      {
+        "clip": 10057,
+        "file": "08_short_sentences/short_01.wav",
+        "question_type": "single",
+        "transcript": "What is RAG?",
+        "post_ms": 1185.4,
+        "whisper_ms": 1081.9,
+        "whisper_calls": 1,
+        "lexical_ms": 0.0,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": null,
+        "harvest_ms": 0.0,
+        "harvest_ran": null,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "whisper_only",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": 10064,
+        "file": "08_short_sentences/short_08.wav",
+        "question_type": "single",
+        "transcript": "Who approves the result?",
+        "post_ms": 1162.9,
+        "whisper_ms": 923.5,
+        "whisper_calls": 1,
+        "lexical_ms": 0.0,
+        "semantic_ms": 129.2,
+        "rerank_ms": 31.2,
+        "subquestion_count": null,
+        "harvest_ms": 0.0,
+        "harvest_ran": null,
+        "fast_path": false,
+        "semantic_reason": "abstain_low_confidence",
+        "slow_reason": "whisper_only",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": 10061,
+        "file": "08_short_sentences/short_05.wav",
+        "question_type": "single",
+        "transcript": "What is Angraff?",
+        "post_ms": 1138.6,
+        "whisper_ms": 940.1,
+        "whisper_calls": 1,
+        "lexical_ms": 0.0,
+        "semantic_ms": 90.2,
+        "rerank_ms": 23.0,
+        "subquestion_count": null,
+        "harvest_ms": 0.0,
+        "harvest_ran": null,
+        "fast_path": false,
+        "semantic_reason": "abstain_low_confidence",
+        "slow_reason": "whisper_only",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": 10063,
+        "file": "08_short_sentences/short_07.wav",
+        "question_type": "single",
+        "transcript": "What if retrieval fails?",
+        "post_ms": 1033.1,
+        "whisper_ms": 912.1,
+        "whisper_calls": 1,
+        "lexical_ms": 0.0,
+        "semantic_ms": 83.1,
+        "rerank_ms": 31.7,
+        "subquestion_count": null,
+        "harvest_ms": 0.0,
+        "harvest_ran": null,
+        "fast_path": false,
+        "semantic_reason": "recovered:thin_margin",
+        "slow_reason": "whisper_only",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": 10062,
+        "file": "08_short_sentences/short_06.wav",
+        "question_type": "single",
+        "transcript": "Why recall?",
+        "post_ms": 975.9,
+        "whisper_ms": 943.1,
+        "whisper_calls": 1,
+        "lexical_ms": 0.0,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": null,
+        "harvest_ms": 0.0,
+        "harvest_ran": null,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "whisper_only",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": 10060,
+        "file": "08_short_sentences/short_04.wav",
+        "question_type": "single",
+        "transcript": "Why embeddings?",
+        "post_ms": 965.0,
+        "whisper_ms": 926.6,
+        "whisper_calls": 1,
+        "lexical_ms": 0.0,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": null,
+        "harvest_ms": 0.0,
+        "harvest_ran": null,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "whisper_only",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": 10058,
+        "file": "08_short_sentences/short_02.wav",
+        "question_type": "single",
+        "transcript": "What are guardrails?",
+        "post_ms": 903.8,
+        "whisper_ms": 866.3,
+        "whisper_calls": 1,
+        "lexical_ms": 0.0,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": null,
+        "harvest_ms": 0.0,
+        "harvest_ran": null,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "whisper_only",
+        "intent_ok": true,
+        "hc_wrong": false
+      }
+    ]
+  },
+  "compound": {
+    "label": "compound",
+    "source": "C:\\Users\\aalsa\\OneDrive\\Desktop\\interview (2)\\interview11\\backend\\reports\\COMPOUND_DEV_REPORT.json",
+    "suite": "compound_dev",
+    "created_at": "2026-09-13T21:19:51.167460+00:00",
+    "gate_valid": true,
+    "gate_valid_reason": "warm before first clip; alias matrix present for every scored clip",
+    "warm": {
+      "warm_completed": true,
+      "warm_wall_ms": 209244.3,
+      "warm_timeout_s": 900.0,
+      "system_warm": true,
+      "alias_matrix_ready": true,
+      "semantic_index_ready": true,
+      "steps": {
+        "question_bank_load": 0.0,
+        "question_bank_warm": 182718.2,
+        "semantic_intent_index": 25077.6,
+        "embedding_probe": 311.0,
+        "whisper_decode_probe": 1134.8
+      },
+      "errors": {},
+      "gate_valid": true,
+      "per_clip_alias_matrix_ready": "40/40",
+      "warm_mixed_within_run": false
+    },
+    "embed_stats": {
+      "calls": 145,
+      "texts": 2821,
+      "ms": 207526.34550000553,
+      "max_ms": 6466.1,
+      "ms_per_call": 1431.2
+    },
+    "rerank_stats": {
+      "calls": 12,
+      "triggered": 4,
+      "vector_reuse": 4,
+      "embedded": 0,
+      "reranker_trigger_rate": 0.3333
+    },
+    "summary": {
+      "n": 40,
+      "vad_ms": {
+        "p50": 6051.3,
+        "p95": 7420.3,
+        "mean": 6111.3,
+        "max": 7970.9
+      },
+      "whisper_ms": {
+        "p50": 1027.1,
+        "p95": 1137.0,
+        "mean": 1040.1,
+        "max": 1789.7
+      },
+      "match_ms": {
+        "p50": 38.2,
+        "p95": 106.0,
+        "mean": 59.9,
+        "max": 279.5
+      },
+      "semantic_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "rerank_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "compound_detect_ms": {
+        "p50": 0.1,
+        "p95": 0.2,
+        "mean": 0.1,
+        "max": 0.3
+      },
+      "decomposition_ms": {
+        "p50": 0.2,
+        "p95": 0.5,
+        "mean": 0.3,
+        "max": 1.2
+      },
+      "matching_ms": {
+        "p50": 101.1,
+        "p95": 187.4,
+        "mean": 108.4,
+        "max": 231.2
+      },
+      "merge_ms": {
+        "p50": 0.1,
+        "p95": 0.2,
+        "mean": 0.1,
+        "max": 0.2
+      },
+      "compound_ms": {
+        "p50": 102.0,
+        "p95": 187.7,
+        "mean": 108.9,
+        "max": 231.8
+      },
+      "answer_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "intent_ms": {
+        "p50": 158.3,
+        "p95": 266.3,
+        "mean": 168.8,
+        "max": 375.0
+      },
+      "post_speech_ms": {
+        "p50": 1187.2,
+        "p95": 1340.5,
+        "mean": 1208.9,
+        "max": 1894.5
+      }
+    },
+    "trace_summary": {
+      "whisper_pass1_ms": {
+        "p50": 1019.4,
+        "p95": 1112.1,
+        "mean": 1018.1,
+        "max": 1142.2
+      },
+      "whisper_pass2_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 20.8,
+        "max": 830.6
+      },
+      "technical_repair_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "routing_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "base_match_ms": {
+        "p50": 38.2,
+        "p95": 106.0,
+        "mean": 59.9,
+        "max": 279.5
+      },
+      "lexical_match_ms": {
+        "p50": 90.9,
+        "p95": 137.9,
+        "mean": 86.1,
+        "max": 173.0
+      },
+      "semantic_embedding_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "semantic_search_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "compound_detect_ms": {
+        "p50": 0.1,
+        "p95": 0.2,
+        "mean": 0.1,
+        "max": 0.3
+      },
+      "decomposition_ms": {
+        "p50": 0.2,
+        "p95": 0.5,
+        "mean": 0.3,
+        "max": 1.2
+      },
+      "subquestion_match_ms": {
+        "p50": 101.1,
+        "p95": 187.4,
+        "mean": 108.4,
+        "max": 231.2
+      },
+      "harvest_ms": {
+        "p50": 0.0,
+        "p95": 0.5,
+        "mean": 0.7,
+        "max": 24.7
+      },
+      "answer_lookup_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "unattributed_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      }
+    },
+    "quality": {
+      "n": 40,
+      "intent_ok": 40,
+      "intent_rate": 1.0,
+      "hc_wrong": 0,
+      "gold_part_coverage": 0.9375,
+      "whisper_calls_median": 1.0,
+      "whisper_calls_max": 2
+    },
+    "slowest_10": [
+      {
+        "clip": "cdev_022",
+        "file": "audio/cdev_022.wav",
+        "question_type": "compound",
+        "transcript": "How do you debug which RAG layer failed, and when do you abstain instead of regenerating?",
+        "post_ms": 1894.5,
+        "whisper_ms": 1789.7,
+        "whisper_calls": 2,
+        "lexical_ms": 59.7,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": null,
+        "harvest_ms": 0.0,
+        "harvest_ran": null,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "stt_pass2:stt_retry",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": "cdev_019",
+        "file": "audio/cdev_019.wav",
+        "question_type": "compound",
+        "transcript": "Explain temperature in generation, and why zero is safer for factual ministry answers.",
+        "post_ms": 1343.6,
+        "whisper_ms": 968.6,
+        "whisper_calls": 1,
+        "lexical_ms": 95.0,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": null,
+        "harvest_ms": 0.0,
+        "harvest_ran": null,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "whisper_only",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": "cdev_015",
+        "file": "audio/cdev_015.wav",
+        "question_type": "compound",
+        "transcript": "Separate indexing from retrieval, then say what you check when answers are wrong but hits ",
+        "post_ms": 1340.5,
+        "whisper_ms": 1113.1,
+        "whisper_calls": 1,
+        "lexical_ms": 135.3,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": null,
+        "harvest_ms": 0.0,
+        "harvest_ran": null,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "whisper_only",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": "cdev_006",
+        "file": "audio/cdev_006.wav",
+        "question_type": "compound",
+        "transcript": "define precision and recall, and which mattered more for early warning students.",
+        "post_ms": 1338.9,
+        "whisper_ms": 1072.9,
+        "whisper_calls": 1,
+        "lexical_ms": 100.8,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": null,
+        "harvest_ms": 0.3,
+        "harvest_ran": null,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "whisper_only",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": "cdev_002",
+        "file": "audio/cdev_002.wav",
+        "question_type": "compound",
+        "transcript": "What are embeddings and cosine similarity, and why is the similarity checker not called RA",
+        "post_ms": 1321.3,
+        "whisper_ms": 1105.1,
+        "whisper_calls": 1,
+        "lexical_ms": 124.3,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": null,
+        "harvest_ms": 0.0,
+        "harvest_ran": null,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "whisper_only",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": "cdev_004",
+        "file": "audio/cdev_004.wav",
+        "question_type": "compound",
+        "transcript": "Give a short, agentic AI definition, then when plain RAG without tools is enough.",
+        "post_ms": 1301.8,
+        "whisper_ms": 1143.5,
+        "whisper_calls": 1,
+        "lexical_ms": 119.1,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": null,
+        "harvest_ms": 0.0,
+        "harvest_ran": null,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "whisper_only",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": "cdev_029",
+        "file": "audio/cdev_029.wav",
+        "question_type": "compound",
+        "transcript": "What is prompt engineering here and how does structured output with Pidentic help?",
+        "post_ms": 1291.3,
+        "whisper_ms": 1137.0,
+        "whisper_calls": 1,
+        "lexical_ms": 52.3,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": null,
+        "harvest_ms": 0.0,
+        "harvest_ran": null,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "whisper_only",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": "cdev_024",
+        "file": "audio/cdev_024.wav",
+        "question_type": "compound",
+        "transcript": "What role does the similarity toolplay for teachers, and why is it decision support not au",
+        "post_ms": 1256.0,
+        "whisper_ms": 1086.0,
+        "whisper_calls": 1,
+        "lexical_ms": 67.3,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": null,
+        "harvest_ms": 0.0,
+        "harvest_ran": null,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "whisper_only",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": "cdev_025",
+        "file": "audio/cdev_025.wav",
+        "question_type": "compound",
+        "transcript": "Walk indexing versus query time retrieval, then name one faithfulness check after generati",
+        "post_ms": 1255.1,
+        "whisper_ms": 1086.7,
+        "whisper_calls": 1,
+        "lexical_ms": 130.2,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": null,
+        "harvest_ms": 0.0,
+        "harvest_ran": null,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "whisper_only",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": "cdev_038",
+        "file": "audio/cdev_038.wav",
+        "question_type": "compound",
+        "transcript": "How do you judge transcription quality, and what is WR useful for versus not?",
+        "post_ms": 1250.9,
+        "whisper_ms": 1027.1,
+        "whisper_calls": 1,
+        "lexical_ms": 96.4,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": null,
+        "harvest_ms": 0.8,
+        "harvest_ran": null,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "whisper_only",
+        "intent_ok": true,
+        "hc_wrong": false
+      }
+    ]
+  }
+}

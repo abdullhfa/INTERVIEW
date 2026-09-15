@@ -1,0 +1,915 @@
+{
+  "verdict": "SHORT_TECH_RECOVERY_PASS",
+  "target_recovered": 11,
+  "false_normalizations": 0,
+  "passing_cases_broken": 0,
+  "broken_ids": [],
+  "HC_wrong": 0,
+  "short_question_accuracy_before": 0.4,
+  "short_question_accuracy_after": 0.88,
+  "technical_term_recovery_accuracy": 1.0,
+  "latency_delta_ms_avg": 18.28,
+  "KNOWN_LIMITATIONS": [
+    "V5A_124: STT 'Zundra' for LangGraph is phonetically ambiguous (near Chroma/LangGraph) — abstain by design",
+    "V5A_148: heavily garbled vector-DB ask — abstain by design"
+  ],
+  "results": [
+    {
+      "id": "V5A_121",
+      "bucket": "target",
+      "raw_transcript": "Why am bedding?",
+      "normalized_transcript": "Why embeddings?",
+      "recovered_terms": [
+        {
+          "raw": "Why am bedding?",
+          "normalized": "Why embeddings?",
+          "confidence": 0.93
+        }
+      ],
+      "recovery_confidence": 0.93,
+      "old_intent": null,
+      "new_intent": "tech.tfidf_vs_embeddings",
+      "gold_intent": [
+        "tech.embeddings",
+        "tech.tfidf_vs_embeddings"
+      ],
+      "old_correct": false,
+      "new_correct": true,
+      "expect_recovery": true,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 18.82,
+      "latency_after_ms": 2.52,
+      "latency_delta_ms": -16.3,
+      "old_agreement": 0.0,
+      "new_agreement": 0.95,
+      "new_mode": "weak"
+    },
+    {
+      "id": "V5A_124",
+      "bucket": "target",
+      "raw_transcript": "When will you use Zundra?",
+      "normalized_transcript": "When will you use Zundra?",
+      "recovered_terms": [],
+      "recovery_confidence": 0.0,
+      "old_intent": null,
+      "new_intent": null,
+      "gold_intent": [
+        "cv.langgraph",
+        "tech.what_is_langgraph",
+        "hard.langgraph_vs_n8n_vs_python"
+      ],
+      "old_correct": false,
+      "new_correct": false,
+      "expect_recovery": false,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 18.13,
+      "latency_after_ms": 16.57,
+      "latency_delta_ms": -1.55,
+      "old_agreement": 0.0,
+      "new_agreement": 0.0,
+      "new_mode": null
+    },
+    {
+      "id": "V5A_125",
+      "bucket": "target",
+      "raw_transcript": "Whyland draft here.",
+      "normalized_transcript": "Why LangGraph here?",
+      "recovered_terms": [
+        {
+          "raw": "Whyland draft here.",
+          "normalized": "Why LangGraph here?",
+          "confidence": 0.93
+        }
+      ],
+      "recovery_confidence": 0.93,
+      "old_intent": null,
+      "new_intent": "cv.langgraph",
+      "gold_intent": [
+        "cv.langgraph",
+        "tech.what_is_langgraph"
+      ],
+      "old_correct": false,
+      "new_correct": true,
+      "expect_recovery": true,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 18.21,
+      "latency_after_ms": 0.94,
+      "latency_delta_ms": -17.27,
+      "old_agreement": 0.0,
+      "new_agreement": 0.95,
+      "new_mode": "weak"
+    },
+    {
+      "id": "V5A_148",
+      "bucket": "target",
+      "raw_transcript": "What in a me, amet, amma, am.",
+      "normalized_transcript": "What in a me, amet, amma, am.",
+      "recovered_terms": [],
+      "recovery_confidence": 0.0,
+      "old_intent": null,
+      "new_intent": null,
+      "gold_intent": [
+        "cv.vector_db",
+        "tech.vector_db_choice",
+        "tech.what_is_chromadb"
+      ],
+      "old_correct": false,
+      "new_correct": false,
+      "expect_recovery": false,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 18.45,
+      "latency_after_ms": 27.72,
+      "latency_delta_ms": 9.28,
+      "old_agreement": 0.0,
+      "new_agreement": 0.0,
+      "new_mode": null
+    },
+    {
+      "id": "V5A_149",
+      "bucket": "target",
+      "raw_transcript": "What does affect your database store?",
+      "normalized_transcript": "What does a vector database store?",
+      "recovered_terms": [
+        {
+          "raw": "What does affect your database store?",
+          "normalized": "What does a vector database store?",
+          "confidence": 0.93
+        }
+      ],
+      "recovery_confidence": 0.93,
+      "old_intent": null,
+      "new_intent": "cv.vector_db",
+      "gold_intent": [
+        "cv.vector_db",
+        "tech.vector_db_choice"
+      ],
+      "old_correct": false,
+      "new_correct": true,
+      "expect_recovery": true,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 19.71,
+      "latency_after_ms": 1.05,
+      "latency_delta_ms": -18.66,
+      "old_agreement": 0.0,
+      "new_agreement": 0.95,
+      "new_mode": "weak"
+    },
+    {
+      "id": "SYN_why_emb_clean",
+      "bucket": "synthetic",
+      "raw_transcript": "Why embeddings?",
+      "normalized_transcript": "Why embeddings?",
+      "recovered_terms": [],
+      "recovery_confidence": 0.0,
+      "old_intent": "tech.tfidf_vs_embeddings",
+      "new_intent": "tech.tfidf_vs_embeddings",
+      "gold_intent": [
+        "tech.embeddings",
+        "tech.tfidf_vs_embeddings"
+      ],
+      "old_correct": true,
+      "new_correct": true,
+      "expect_recovery": false,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 0.03,
+      "latency_after_ms": 0.27,
+      "latency_delta_ms": 0.24,
+      "old_agreement": 0.95,
+      "new_agreement": 0.95,
+      "new_mode": "weak"
+    },
+    {
+      "id": "SYN_why_emb_dist",
+      "bucket": "synthetic",
+      "raw_transcript": "Why am bedding?",
+      "normalized_transcript": "Why embeddings?",
+      "recovered_terms": [
+        {
+          "raw": "Why am bedding?",
+          "normalized": "Why embeddings?",
+          "confidence": 0.93
+        }
+      ],
+      "recovery_confidence": 0.93,
+      "old_intent": null,
+      "new_intent": "tech.tfidf_vs_embeddings",
+      "gold_intent": [
+        "tech.embeddings",
+        "tech.tfidf_vs_embeddings"
+      ],
+      "old_correct": false,
+      "new_correct": true,
+      "expect_recovery": true,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 0.07,
+      "latency_after_ms": 0.2,
+      "latency_delta_ms": 0.13,
+      "old_agreement": 0.0,
+      "new_agreement": 0.95,
+      "new_mode": "weak"
+    },
+    {
+      "id": "SYN_why_use_emb",
+      "bucket": "synthetic",
+      "raw_transcript": "Why use embeddings?",
+      "normalized_transcript": "Why use embeddings?",
+      "recovered_terms": [],
+      "recovery_confidence": 0.0,
+      "old_intent": "tech.tfidf_vs_embeddings",
+      "new_intent": "tech.tfidf_vs_embeddings",
+      "gold_intent": [
+        "tech.embeddings",
+        "tech.tfidf_vs_embeddings"
+      ],
+      "old_correct": true,
+      "new_correct": true,
+      "expect_recovery": false,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 1.08,
+      "latency_after_ms": 0.28,
+      "latency_delta_ms": -0.81,
+      "old_agreement": 0.95,
+      "new_agreement": 0.95,
+      "new_mode": "weak"
+    },
+    {
+      "id": "SYN_when_chroma",
+      "bucket": "synthetic",
+      "raw_transcript": "When would you use Chroma?",
+      "normalized_transcript": "When would you use Chroma?",
+      "recovered_terms": [],
+      "recovery_confidence": 0.0,
+      "old_intent": "cv.chromadb",
+      "new_intent": "cv.chromadb",
+      "gold_intent": [
+        "tech.what_is_chromadb",
+        "cv.chromadb",
+        "hard.why_not_chroma_prod"
+      ],
+      "old_correct": true,
+      "new_correct": true,
+      "expect_recovery": false,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 1.22,
+      "latency_after_ms": 0.29,
+      "latency_delta_ms": -0.94,
+      "old_agreement": 0.95,
+      "new_agreement": 0.95,
+      "new_mode": "weak"
+    },
+    {
+      "id": "SYN_when_zandra",
+      "bucket": "synthetic",
+      "raw_transcript": "When will you use Zandra?",
+      "normalized_transcript": "When would you use Chroma?",
+      "recovered_terms": [
+        {
+          "raw": "When will you use Zandra?",
+          "normalized": "When would you use Chroma?",
+          "confidence": 0.93
+        }
+      ],
+      "recovery_confidence": 0.93,
+      "old_intent": null,
+      "new_intent": "cv.chromadb",
+      "gold_intent": [
+        "tech.what_is_chromadb",
+        "cv.chromadb",
+        "hard.why_not_chroma_prod"
+      ],
+      "old_correct": false,
+      "new_correct": true,
+      "expect_recovery": true,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 0.8,
+      "latency_after_ms": 0.32,
+      "latency_delta_ms": -0.48,
+      "old_agreement": 0.0,
+      "new_agreement": 0.95,
+      "new_mode": "weak"
+    },
+    {
+      "id": "SYN_why_langgraph",
+      "bucket": "synthetic",
+      "raw_transcript": "Why LangGraph?",
+      "normalized_transcript": "Why LangGraph?",
+      "recovered_terms": [],
+      "recovery_confidence": 0.0,
+      "old_intent": "cv.langgraph",
+      "new_intent": "cv.langgraph",
+      "gold_intent": [
+        "cv.langgraph",
+        "tech.what_is_langgraph",
+        "tech.langgraph_vs_langchain"
+      ],
+      "old_correct": true,
+      "new_correct": true,
+      "expect_recovery": false,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 0.35,
+      "latency_after_ms": 0.25,
+      "latency_delta_ms": -0.1,
+      "old_agreement": 0.95,
+      "new_agreement": 0.95,
+      "new_mode": "weak"
+    },
+    {
+      "id": "SYN_land_graph",
+      "bucket": "synthetic",
+      "raw_transcript": "Why land graph?",
+      "normalized_transcript": "Why LangGraph?",
+      "recovered_terms": [
+        {
+          "raw": "land graph",
+          "normalized": "LangGraph",
+          "confidence": 0.9
+        }
+      ],
+      "recovery_confidence": 0.9,
+      "old_intent": null,
+      "new_intent": "cv.langgraph",
+      "gold_intent": [
+        "cv.langgraph",
+        "tech.what_is_langgraph"
+      ],
+      "old_correct": false,
+      "new_correct": true,
+      "expect_recovery": true,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 25.28,
+      "latency_after_ms": 0.56,
+      "latency_delta_ms": -24.72,
+      "old_agreement": 0.0,
+      "new_agreement": 0.95,
+      "new_mode": "weak"
+    },
+    {
+      "id": "SYN_guardrails",
+      "bucket": "synthetic",
+      "raw_transcript": "What do guardrails prevent?",
+      "normalized_transcript": "What do guardrails prevent?",
+      "recovered_terms": [],
+      "recovery_confidence": 0.0,
+      "old_intent": "tech.guardrails_what",
+      "new_intent": "tech.guardrails_what",
+      "gold_intent": [
+        "tech.guardrails_what",
+        "tech.guardrails_how",
+        "cv.guardrails"
+      ],
+      "old_correct": true,
+      "new_correct": true,
+      "expect_recovery": false,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 0.59,
+      "latency_after_ms": 0.28,
+      "latency_delta_ms": -0.3,
+      "old_agreement": 0.88,
+      "new_agreement": 0.88,
+      "new_mode": "weak"
+    },
+    {
+      "id": "SYN_n8n_clean",
+      "bucket": "synthetic",
+      "raw_transcript": "When would you use n8n?",
+      "normalized_transcript": "When would you use n8n?",
+      "recovered_terms": [],
+      "recovery_confidence": 0.0,
+      "old_intent": "tech.n8n_what",
+      "new_intent": "tech.n8n_what",
+      "gold_intent": [
+        "hard.langgraph_vs_n8n_vs_python"
+      ],
+      "old_correct": true,
+      "new_correct": true,
+      "expect_recovery": false,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 1.02,
+      "latency_after_ms": 0.28,
+      "latency_delta_ms": -0.74,
+      "old_agreement": 0.85,
+      "new_agreement": 0.85,
+      "new_mode": "weak"
+    },
+    {
+      "id": "SYN_n8n_dist",
+      "bucket": "synthetic",
+      "raw_transcript": "When would you use n-hash-n?",
+      "normalized_transcript": "When would you use n8n?",
+      "recovered_terms": [
+        {
+          "raw": "n-hash-n",
+          "normalized": "n8n",
+          "confidence": 0.9
+        }
+      ],
+      "recovery_confidence": 0.9,
+      "old_intent": null,
+      "new_intent": "tech.n8n_what",
+      "gold_intent": [
+        "hard.langgraph_vs_n8n_vs_python"
+      ],
+      "old_correct": false,
+      "new_correct": true,
+      "expect_recovery": true,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 0.92,
+      "latency_after_ms": 0.33,
+      "latency_delta_ms": -0.59,
+      "old_agreement": 0.0,
+      "new_agreement": 0.85,
+      "new_mode": "weak"
+    },
+    {
+      "id": "SYN_vector_store",
+      "bucket": "synthetic",
+      "raw_transcript": "Why vector store?",
+      "normalized_transcript": "Why vector store?",
+      "recovered_terms": [],
+      "recovery_confidence": 0.0,
+      "old_intent": "cv.vector_db",
+      "new_intent": "cv.vector_db",
+      "gold_intent": [
+        "cv.vector_db",
+        "tech.vector_db_choice"
+      ],
+      "old_correct": true,
+      "new_correct": true,
+      "expect_recovery": false,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 0.46,
+      "latency_after_ms": 0.25,
+      "latency_delta_ms": -0.2,
+      "old_agreement": 0.95,
+      "new_agreement": 0.95,
+      "new_mode": "weak"
+    },
+    {
+      "id": "SYN_factor_store",
+      "bucket": "synthetic",
+      "raw_transcript": "Why factor store?",
+      "normalized_transcript": "Why factor store?",
+      "recovered_terms": [],
+      "recovery_confidence": 0.0,
+      "old_intent": null,
+      "new_intent": "cv.vector_db",
+      "gold_intent": [
+        "cv.vector_db",
+        "tech.vector_db_choice"
+      ],
+      "old_correct": false,
+      "new_correct": true,
+      "expect_recovery": true,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 29.96,
+      "latency_after_ms": 23.53,
+      "latency_delta_ms": -6.42,
+      "old_agreement": 0.0,
+      "new_agreement": 0.95,
+      "new_mode": "weak"
+    },
+    {
+      "id": "SYN_how_rag",
+      "bucket": "synthetic",
+      "raw_transcript": "How does RAG help?",
+      "normalized_transcript": "How does RAG help?",
+      "recovered_terms": [],
+      "recovery_confidence": 0.0,
+      "old_intent": "proj.similarity.is_rag",
+      "new_intent": "proj.similarity.is_rag",
+      "gold_intent": [
+        "tech.rag_what",
+        "tech.rag_build",
+        "cv.rag_experience"
+      ],
+      "old_correct": true,
+      "new_correct": true,
+      "expect_recovery": false,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 3.51,
+      "latency_after_ms": 0.52,
+      "latency_delta_ms": -2.99,
+      "old_agreement": 0.85,
+      "new_agreement": 0.85,
+      "new_mode": "weak"
+    },
+    {
+      "id": "SYN_ragged",
+      "bucket": "synthetic",
+      "raw_transcript": "Why ragged?",
+      "normalized_transcript": "Why RAG?",
+      "recovered_terms": [
+        {
+          "raw": "ragged",
+          "normalized": "RAG",
+          "confidence": 0.9
+        }
+      ],
+      "recovery_confidence": 0.9,
+      "old_intent": null,
+      "new_intent": "hard.why_rag_for_btec",
+      "gold_intent": [
+        "tech.rag_what",
+        "cv.rag_experience"
+      ],
+      "old_correct": false,
+      "new_correct": true,
+      "expect_recovery": true,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 20.28,
+      "latency_after_ms": 2.02,
+      "latency_delta_ms": -18.26,
+      "old_agreement": 0.0,
+      "new_agreement": 0.95,
+      "new_mode": "weak"
+    },
+    {
+      "id": "SYN_lankan",
+      "bucket": "synthetic",
+      "raw_transcript": "What did Lankan give you that you would otherwise need to build yourself?",
+      "normalized_transcript": "What did LangChain give you that you would otherwise need to build yourself?",
+      "recovered_terms": [
+        {
+          "raw": "Lankan",
+          "normalized": "LangChain",
+          "confidence": 0.9
+        }
+      ],
+      "recovery_confidence": 0.9,
+      "old_intent": null,
+      "new_intent": "cv.langchain",
+      "gold_intent": [
+        "tech.what_is_langchain",
+        "cv.langchain",
+        "hard.remove_langchain"
+      ],
+      "old_correct": false,
+      "new_correct": true,
+      "expect_recovery": true,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 27.36,
+      "latency_after_ms": 46.35,
+      "latency_delta_ms": 18.99,
+      "old_agreement": 0.0,
+      "new_agreement": 0.95,
+      "new_mode": "weak"
+    },
+    {
+      "id": "SYN_london_no",
+      "bucket": "synthetic",
+      "raw_transcript": "What did London give you that you would otherwise need to build yourself?",
+      "normalized_transcript": "What did London give you that you would otherwise need to build yourself?",
+      "recovered_terms": [],
+      "recovery_confidence": 0.0,
+      "old_intent": null,
+      "new_intent": null,
+      "gold_intent": [],
+      "old_correct": false,
+      "new_correct": false,
+      "expect_recovery": false,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 25.11,
+      "latency_after_ms": 51.29,
+      "latency_delta_ms": 26.18,
+      "old_agreement": 0.0,
+      "new_agreement": 0.0,
+      "new_mode": null
+    },
+    {
+      "id": "SYN_unrecoverable",
+      "bucket": "synthetic",
+      "raw_transcript": "What in a me, amet, amma, am.",
+      "normalized_transcript": "What in a me, amet, amma, am.",
+      "recovered_terms": [],
+      "recovery_confidence": 0.0,
+      "old_intent": null,
+      "new_intent": null,
+      "gold_intent": [],
+      "old_correct": false,
+      "new_correct": true,
+      "expect_recovery": false,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 0.06,
+      "latency_after_ms": 18.7,
+      "latency_delta_ms": 18.64,
+      "old_agreement": 0.0,
+      "new_agreement": 0.0,
+      "new_mode": null
+    },
+    {
+      "id": "SYN_rerank",
+      "bucket": "synthetic",
+      "raw_transcript": "Why reranking?",
+      "normalized_transcript": "Why reranking?",
+      "recovered_terms": [],
+      "recovery_confidence": 0.0,
+      "old_intent": "tech.reranking",
+      "new_intent": "tech.reranking",
+      "gold_intent": [],
+      "old_correct": true,
+      "new_correct": true,
+      "expect_recovery": false,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 17.69,
+      "latency_after_ms": 0.35,
+      "latency_delta_ms": -17.34,
+      "old_agreement": 0.95,
+      "new_agreement": 0.95,
+      "new_mode": "weak"
+    },
+    {
+      "id": "SYN_hybrid",
+      "bucket": "synthetic",
+      "raw_transcript": "When hybrid search?",
+      "normalized_transcript": "When hybrid search?",
+      "recovered_terms": [],
+      "recovery_confidence": 0.0,
+      "old_intent": "tech.hybrid_search",
+      "new_intent": "tech.hybrid_search",
+      "gold_intent": [
+        "tech.hybrid_search"
+      ],
+      "old_correct": true,
+      "new_correct": true,
+      "expect_recovery": false,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 0.4,
+      "latency_after_ms": 16.83,
+      "latency_delta_ms": 16.43,
+      "old_agreement": 0.95,
+      "new_agreement": 0.95,
+      "new_mode": "weak"
+    },
+    {
+      "id": "SYN_whyland",
+      "bucket": "synthetic",
+      "raw_transcript": "Whyland draft here.",
+      "normalized_transcript": "Why LangGraph here?",
+      "recovered_terms": [
+        {
+          "raw": "Whyland draft here.",
+          "normalized": "Why LangGraph here?",
+          "confidence": 0.93
+        }
+      ],
+      "recovery_confidence": 0.93,
+      "old_intent": null,
+      "new_intent": "cv.langgraph",
+      "gold_intent": [
+        "cv.langgraph",
+        "tech.what_is_langgraph"
+      ],
+      "old_correct": false,
+      "new_correct": true,
+      "expect_recovery": true,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 0.08,
+      "latency_after_ms": 0.24,
+      "latency_delta_ms": 0.16,
+      "old_agreement": 0.0,
+      "new_agreement": 0.95,
+      "new_mode": "weak"
+    },
+    {
+      "id": "REG_rag",
+      "bucket": "regression",
+      "raw_transcript": "What is RAG?",
+      "normalized_transcript": "What is RAG?",
+      "recovered_terms": [],
+      "recovery_confidence": 0.0,
+      "old_intent": "tech.rag_what",
+      "new_intent": "tech.rag_what",
+      "gold_intent": [
+        "tech.rag_what"
+      ],
+      "old_correct": true,
+      "new_correct": true,
+      "expect_recovery": false,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 1.49,
+      "latency_after_ms": 0.29,
+      "latency_delta_ms": -1.2,
+      "old_agreement": 1.0,
+      "new_agreement": 1.0,
+      "new_mode": "weak"
+    },
+    {
+      "id": "REG_compound",
+      "bucket": "regression",
+      "raw_transcript": "What is RAG, why did you use it, and how did you implement it?",
+      "normalized_transcript": "What is RAG, why did you use it, and how did you implement it?",
+      "recovered_terms": [],
+      "recovery_confidence": 0.0,
+      "old_intent": "cv.rag_experience",
+      "new_intent": "cv.rag_experience",
+      "gold_intent": [
+        "cv.rag_experience",
+        "tech.rag_what"
+      ],
+      "old_correct": true,
+      "new_correct": true,
+      "expect_recovery": false,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 2.96,
+      "latency_after_ms": 20.31,
+      "latency_delta_ms": 17.35,
+      "old_agreement": 0.85,
+      "new_agreement": 0.85,
+      "new_mode": "weak"
+    },
+    {
+      "id": "REG_long_mre",
+      "bucket": "regression",
+      "raw_transcript": "Your assistant understands the interview question correctly, but the answer arrives several seconds after the interviewer finishes speaking. Walk me through how you would measure the delay and decide whether the bottleneck is speech recognition, retrieval, model inference, or the user interface.",
+      "normalized_transcript": "Your assistant understands the interview question correctly, but the answer arrives several seconds after the interviewer finishes speaking. Walk me through how you would measure the delay and decide whether the bottleneck is speech recognition, retrieval, model difference, or the users interface.",
+      "recovered_terms": [
+        {
+          "raw": "inference",
+          "normalized": "difference",
+          "confidence": 0.8868421052631579
+        },
+        {
+          "raw": "user",
+          "normalized": "users",
+          "confidence": 0.9055555555555557
+        }
+      ],
+      "recovery_confidence": 0.9055555555555557,
+      "old_intent": null,
+      "new_intent": null,
+      "gold_intent": [
+        "tech.latency_p95",
+        "hard.production_monitoring"
+      ],
+      "old_correct": false,
+      "new_correct": false,
+      "expect_recovery": false,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 53.06,
+      "latency_after_ms": 593.75,
+      "latency_delta_ms": 540.69,
+      "old_agreement": 0.0,
+      "new_agreement": 0.0,
+      "new_mode": null
+    },
+    {
+      "id": "REG_tele",
+      "bucket": "regression",
+      "raw_transcript": "vector store?",
+      "normalized_transcript": "vector store?",
+      "recovered_terms": [],
+      "recovery_confidence": 0.0,
+      "old_intent": "cv.vector_db",
+      "new_intent": "cv.vector_db",
+      "gold_intent": [
+        "cv.vector_db"
+      ],
+      "old_correct": true,
+      "new_correct": true,
+      "expect_recovery": false,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 0.86,
+      "latency_after_ms": 0.46,
+      "latency_delta_ms": -0.4,
+      "old_agreement": 0.95,
+      "new_agreement": 0.95,
+      "new_mode": "weak"
+    },
+    {
+      "id": "REG_indirect",
+      "bucket": "regression",
+      "raw_transcript": "How do you handle ambiguous requirements?",
+      "normalized_transcript": "How do you handle ambiguous requirements?",
+      "recovered_terms": [],
+      "recovery_confidence": 0.0,
+      "old_intent": "gen.ambiguity",
+      "new_intent": "gen.ambiguity",
+      "gold_intent": [
+        "gen.ambiguity"
+      ],
+      "old_correct": true,
+      "new_correct": true,
+      "expect_recovery": false,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 0.66,
+      "latency_after_ms": 67.01,
+      "latency_delta_ms": 66.35,
+      "old_agreement": 1.0,
+      "new_agreement": 1.0,
+      "new_mode": "strong"
+    },
+    {
+      "id": "REG_embeddings_def",
+      "bucket": "regression",
+      "raw_transcript": "What are embeddings?",
+      "normalized_transcript": "What are embeddings?",
+      "recovered_terms": [],
+      "recovery_confidence": 0.0,
+      "old_intent": "tech.embeddings",
+      "new_intent": "tech.embeddings",
+      "gold_intent": [
+        "tech.embeddings"
+      ],
+      "old_correct": true,
+      "new_correct": true,
+      "expect_recovery": false,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 0.64,
+      "latency_after_ms": 0.47,
+      "latency_delta_ms": -0.17,
+      "old_agreement": 1.0,
+      "new_agreement": 1.0,
+      "new_mode": "weak"
+    },
+    {
+      "id": "REG_guardrails",
+      "bucket": "regression",
+      "raw_transcript": "What are guardrails?",
+      "normalized_transcript": "What are guardrails?",
+      "recovered_terms": [],
+      "recovery_confidence": 0.0,
+      "old_intent": "tech.guardrails_what",
+      "new_intent": "tech.guardrails_what",
+      "gold_intent": [
+        "tech.guardrails_what"
+      ],
+      "old_correct": true,
+      "new_correct": true,
+      "expect_recovery": false,
+      "false_normalization": false,
+      "HC_status": false,
+      "latency_before_ms": 0.38,
+      "latency_after_ms": 0.41,
+      "latency_delta_ms": 0.03,
+      "old_agreement": 1.0,
+      "new_agreement": 1.0,
+      "new_mode": "weak"
+    }
+  ],
+  "production_validation_150_e2e": {
+    "verdict": "PASS_150_VOICE_STRESS_E2E",
+    "before_post_mre": {
+      "pass_rate": 0.873,
+      "intent_rate": 0.873,
+      "stt_rate": 0.96,
+      "hc_wrong": 0,
+      "short": 0.778,
+      "median_post_speech_ms": 1043
+    },
+    "after": {
+      "pass_rate": 0.9,
+      "intent_rate": 0.9,
+      "stt_rate": 0.9533,
+      "hc_wrong": 0,
+      "short": 0.9444,
+      "direct": 0.9444,
+      "indirect": 0.8,
+      "long": 1.0,
+      "compound": 0.9667,
+      "indian": 0.92,
+      "jordanian": 0.96,
+      "emirati": 0.82,
+      "median_post_speech_ms": 1420.8
+    },
+    "target_e2e": {
+      "V5A_121": "PASS",
+      "V5A_123": "PASS",
+      "V5A_124": "PASS",
+      "V5A_125": "PASS",
+      "V5A_129": "PASS",
+      "V5A_148": "FAIL_unrecoverable",
+      "V5A_149": "PASS"
+    }
+  }
+}

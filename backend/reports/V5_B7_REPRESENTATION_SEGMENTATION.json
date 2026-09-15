@@ -1,0 +1,2203 @@
+{
+  "created_at": "2026-09-14T05:52:47.102789+00:00",
+  "phase": "V5 Phase B7 — representation (P) + segmentation residual (S)",
+  "scope": "measurement only; no production code touched",
+  "valid": true,
+  "validity_note": "warm, semantic term active",
+  "gates": {
+    "coverage_material_gain": 0.02,
+    "wrong_max": 4,
+    "hc": 0,
+    "newly_broken": 0,
+    "target_recovery": "> 0"
+  },
+  "instrument_defect": {
+    "defect": "question_bank.load(force=True) without warm() drops alias_matrix",
+    "effect": "hybrid semantic term (_W_SEM=0.34) = 0; every strong match demoted to weak",
+    "affected_reports": [
+      "V5_B3 (H rows onward)",
+      "V5_B4",
+      "V5_B5",
+      "V5_B6",
+      "V5_B61"
+    ],
+    "proof": "all 120 hybrid_top5 rows in V5_B5_RESIDUAL_MATCHING.json have semantic=0.0 while semantic_intent_index scored 0.57 on the same fragments",
+    "baseline_as_measured": {
+      "coverage": 0.4146,
+      "wrong": 4,
+      "hc": 0
+    },
+    "baseline_repaired": {
+      "coverage": 0.4878,
+      "wrong": 4,
+      "hc": 0
+    },
+    "consequence": "the B5 bucket HYBRID_RANKING and the B6/B6.1 verdict 'ranking path closed' were measured with the bank's semantic term disabled and must be re-qualified before that path is treated as closed"
+  },
+  "targets": [
+    "fuh4_080:tech.evaluate_classification",
+    "fuh4_080:tech.overfitting",
+    "fuh4_080:tech.overfitting_prevent",
+    "fuh4_083:cv.pmp_value",
+    "fuh4_084:hard.injection_in_pdf",
+    "fuh4_084:tech.prompt_injection_what",
+    "fuh4_089:cv.langgraph"
+  ],
+  "target_reachability": [
+    {
+      "clip": "fuh4_080",
+      "gold": "tech.overfitting",
+      "bucket": "SEGMENTATION_RESIDUAL",
+      "fragment": "Define overfitting detection signals in your mitigation playbook.",
+      "verdict": "REACHABLE",
+      "why": "gold tokens present in the utterance",
+      "content_overlap_tokens": [
+        "overfitting"
+      ],
+      "stt_lost": []
+    },
+    {
+      "clip": "fuh4_080",
+      "gold": "tech.overfitting_prevent",
+      "bucket": "SEGMENTATION_RESIDUAL",
+      "fragment": "Define overfitting detection signals in your mitigation playbook.",
+      "verdict": "REACHABLE",
+      "why": "gold tokens present in the utterance",
+      "content_overlap_tokens": [
+        "overfitting"
+      ],
+      "stt_lost": []
+    },
+    {
+      "clip": "fuh4_080",
+      "gold": "tech.evaluate_classification",
+      "bucket": "SEGMENTATION_RESIDUAL",
+      "fragment": "Define overfitting detection signals in your mitigation playbook.",
+      "verdict": "UNREACHABLE_NO_EVIDENCE",
+      "why": "no gold token occurs in the utterance",
+      "content_overlap_tokens": [],
+      "stt_lost": []
+    },
+    {
+      "clip": "fuh4_083",
+      "gold": "cv.pmp_value",
+      "bucket": "CANDIDATE_GENERATION",
+      "fragment": "certification",
+      "verdict": "UNREACHABLE_NO_EVIDENCE",
+      "why": "no gold token occurs in the utterance",
+      "content_overlap_tokens": [],
+      "stt_lost": []
+    },
+    {
+      "clip": "fuh4_084",
+      "gold": "tech.prompt_injection_what",
+      "bucket": "SEMANTIC_PROFILE_QUALITY",
+      "fragment": "What are guardrails?",
+      "verdict": "UNREACHABLE_STT_LOSS",
+      "why": "ASR lost ['prompt']",
+      "content_overlap_tokens": [],
+      "stt_lost": [
+        "prompt"
+      ]
+    },
+    {
+      "clip": "fuh4_084",
+      "gold": "hard.injection_in_pdf",
+      "bucket": "CANDIDATE_GENERATION",
+      "fragment": "What are guardrails?",
+      "verdict": "UNREACHABLE_NO_EVIDENCE",
+      "why": "no gold token occurs in the utterance",
+      "content_overlap_tokens": [],
+      "stt_lost": []
+    },
+    {
+      "clip": "fuh4_089",
+      "gold": "cv.langgraph",
+      "bucket": "CANDIDATE_GENERATION",
+      "fragment": "Nantler versus Lanskings. You use it and surviving without Lanschain.",
+      "verdict": "UNREACHABLE_STT_LOSS",
+      "why": "ASR lost ['langgraph']",
+      "content_overlap_tokens": [],
+      "stt_lost": [
+        "langgraph"
+      ]
+    }
+  ],
+  "reachable_target_count": 2,
+  "alias_generation_stats": {
+    "A_baseline_semantic_restored": {
+      "entries_touched": 0,
+      "aliases_added": 0
+    },
+    "P_representation": {
+      "entries_touched": 202,
+      "aliases_added": 738
+    },
+    "S_segmentation": {
+      "entries_touched": 0,
+      "aliases_added": 0
+    },
+    "PS_representation_plus_segmentation": {
+      "entries_touched": 202,
+      "aliases_added": 738
+    }
+  },
+  "baseline": "A_baseline_semantic_restored",
+  "results": [
+    {
+      "arm": "A0_baseline_as_measured_in_B6 (alias_matrix=None)",
+      "gold_parts": 41,
+      "gold_parts_hit": 17,
+      "coverage_by_part": 0.4146,
+      "wrong_intent": 4,
+      "hc_risk": 0,
+      "recovered_target": 0,
+      "recovered_target_of": 7,
+      "recovered_detail": [],
+      "newly_broken_opened_only": 1,
+      "newly_broken_all_single": 17,
+      "newly_broken_detail": [
+        {
+          "clip": "fuh4_006",
+          "label": "ultra_short",
+          "gold": [
+            "tech.lora"
+          ],
+          "selected": [
+            "tech.fine_tuning_what"
+          ]
+        },
+        {
+          "clip": "fuh4_018",
+          "label": "short",
+          "gold": [
+            "hard.not_finetune_first"
+          ],
+          "selected": [
+            "tech.rag_vs_finetuning"
+          ]
+        },
+        {
+          "clip": "fuh4_024",
+          "label": "short",
+          "gold": [
+            "cv.kuwait_how_long"
+          ],
+          "selected": [
+            "cv.years_experience"
+          ]
+        },
+        {
+          "clip": "fuh4_025",
+          "label": "short",
+          "gold": [
+            "cv.transition_pm_to_ai"
+          ],
+          "selected": [
+            "cv.pmp_value"
+          ]
+        },
+        {
+          "clip": "fuh4_026",
+          "label": "short",
+          "gold": [
+            "proj.early_warning.metric"
+          ],
+          "selected": [
+            "proj.early_warning.tech"
+          ]
+        },
+        {
+          "clip": "fuh4_034",
+          "label": "medium",
+          "gold": [
+            "tech.reindex_embedding_change"
+          ],
+          "selected": [
+            "tech.embeddings"
+          ]
+        },
+        {
+          "clip": "fuh4_053",
+          "label": "long",
+          "gold": [
+            "hard.observability"
+          ],
+          "selected": [
+            "hard.project_architecture_e2e",
+            "hard.rag_debug_steps"
+          ]
+        },
+        {
+          "clip": "fuh4_058",
+          "label": "long",
+          "gold": [
+            "hard.evaluate_rag"
+          ],
+          "selected": [
+            "tech.transcription_quality"
+          ]
+        },
+        {
+          "clip": "fuh4_064",
+          "label": "very_long",
+          "gold": [
+            "tech.prompt_injection_supplier",
+            "tech.guardrails_layers"
+          ],
+          "selected": [
+            "tech.what_is_whisper"
+          ]
+        },
+        {
+          "clip": "fuh4_065",
+          "label": "very_long",
+          "gold": [
+            "hard.rag_arabic_english",
+            "hard.mixed_language_query"
+          ],
+          "selected": [
+            "cv.languages"
+          ]
+        },
+        {
+          "clip": "fuh4_072",
+          "label": "very_long",
+          "gold": [
+            "tech.pii_redaction",
+            "cv.student_pii",
+            "tech.audio_retention"
+          ],
+          "selected": [
+            "hard.prompt_versioning",
+            "hard.observability",
+            "tech.redis_why"
+          ]
+        },
+        {
+          "clip": "fuh4_073",
+          "label": "very_long",
+          "gold": [
+            "hard.agent_terms_difference",
+            "hard.plain_python_still_agentic"
+          ],
+          "selected": [
+            "tech.multi_agent_when"
+          ]
+        },
+        {
+          "clip": "fuh4_095",
+          "label": "indirect_paraphrase",
+          "gold": [
+            "hard.not_finetune_first"
+          ],
+          "selected": [
+            "tech.fine_tuning_what"
+          ]
+        },
+        {
+          "clip": "fuh4_113",
+          "label": "follow_up_contextual",
+          "gold": [
+            "tech.data_leakage_prevent"
+          ],
+          "selected": [
+            "gen.three_words"
+          ]
+        },
+        {
+          "clip": "fuh4_115",
+          "label": "follow_up_contextual",
+          "gold": [
+            "cv.langgraph"
+          ],
+          "selected": [
+            "moe.operational_status"
+          ]
+        },
+        {
+          "clip": "fuh4_116",
+          "label": "follow_up_contextual",
+          "gold": [
+            "tech.vector_db_choice"
+          ],
+          "selected": [
+            "cv.vector_db"
+          ]
+        },
+        {
+          "clip": "fuh4_120",
+          "label": "follow_up_contextual",
+          "gold": [
+            "tech.whisper_vs_cloud"
+          ],
+          "selected": [
+            "tech.hosting_decision"
+          ]
+        }
+      ],
+      "per_clip": [
+        {
+          "clip": "fuh4_076",
+          "gold": [
+            "tech.reranking",
+            "hard.hybrid_when"
+          ],
+          "selected": [
+            "tech.reranking",
+            "hard.hybrid_when"
+          ],
+          "hit": [
+            "hard.hybrid_when",
+            "tech.reranking"
+          ],
+          "wrong": [],
+          "coverage": 1.0
+        },
+        {
+          "clip": "fuh4_077",
+          "gold": [
+            "tech.hallucination_what",
+            "tech.hallucination_prevent"
+          ],
+          "selected": [
+            "tech.hallucination_what",
+            "tech.hallucination_prevent"
+          ],
+          "hit": [
+            "tech.hallucination_prevent",
+            "tech.hallucination_what"
+          ],
+          "wrong": [],
+          "coverage": 1.0
+        },
+        {
+          "clip": "fuh4_078",
+          "gold": [
+            "tech.context_window",
+            "tech.chunk_size"
+          ],
+          "selected": [
+            "tech.context_window",
+            "tech.chunk_size"
+          ],
+          "hit": [
+            "tech.chunk_size",
+            "tech.context_window"
+          ],
+          "wrong": [],
+          "coverage": 1.0
+        },
+        {
+          "clip": "fuh4_079",
+          "gold": [
+            "proj.similarity.describe",
+            "proj.similarity.tech",
+            "proj.similarity.is_rag"
+          ],
+          "selected": [],
+          "hit": [],
+          "wrong": [],
+          "coverage": 0.0
+        },
+        {
+          "clip": "fuh4_080",
+          "gold": [
+            "tech.overfitting",
+            "tech.overfitting_prevent",
+            "tech.evaluate_classification"
+          ],
+          "selected": [],
+          "hit": [],
+          "wrong": [],
+          "coverage": 0.0
+        },
+        {
+          "clip": "fuh4_081",
+          "gold": [
+            "cv.vector_db",
+            "tech.vector_db_choice"
+          ],
+          "selected": [
+            "cv.vector_db"
+          ],
+          "hit": [
+            "cv.vector_db"
+          ],
+          "wrong": [],
+          "coverage": 0.5
+        },
+        {
+          "clip": "fuh4_082",
+          "gold": [
+            "tech.agent_orchestrator",
+            "tech.multi_agent_when"
+          ],
+          "selected": [
+            "hard.agent_terms_difference"
+          ],
+          "hit": [],
+          "wrong": [
+            "hard.agent_terms_difference"
+          ],
+          "coverage": 0.0
+        },
+        {
+          "clip": "fuh4_083",
+          "gold": [
+            "cv.education",
+            "cv.certifications",
+            "cv.pmp_value"
+          ],
+          "selected": [
+            "cv.education",
+            "cv.certifications"
+          ],
+          "hit": [
+            "cv.certifications",
+            "cv.education"
+          ],
+          "wrong": [],
+          "coverage": 0.6667
+        },
+        {
+          "clip": "fuh4_084",
+          "gold": [
+            "tech.prompt_injection_what",
+            "hard.injection_in_pdf",
+            "tech.guardrails_how"
+          ],
+          "selected": [
+            "tech.guardrails_what"
+          ],
+          "hit": [],
+          "wrong": [
+            "tech.guardrails_what"
+          ],
+          "coverage": 0.0
+        },
+        {
+          "clip": "fuh4_085",
+          "gold": [
+            "tech.docker_why",
+            "tech.container_vs_vm",
+            "tech.kubernetes"
+          ],
+          "selected": [
+            "tech.docker_why",
+            "tech.container_vs_vm"
+          ],
+          "hit": [
+            "tech.container_vs_vm",
+            "tech.docker_why"
+          ],
+          "wrong": [],
+          "coverage": 0.6667
+        },
+        {
+          "clip": "fuh4_086",
+          "gold": [
+            "proj.early_warning.describe",
+            "proj.early_warning.metric",
+            "proj.early_warning.result"
+          ],
+          "selected": [
+            "proj.early_warning.result"
+          ],
+          "hit": [
+            "proj.early_warning.result"
+          ],
+          "wrong": [],
+          "coverage": 0.3333
+        },
+        {
+          "clip": "fuh4_087",
+          "gold": [
+            "tech.tool_calling",
+            "hard.tool_schema",
+            "hard.agent_stop_tools"
+          ],
+          "selected": [
+            "tech.tool_calling",
+            "hard.agent_loop"
+          ],
+          "hit": [
+            "tech.tool_calling"
+          ],
+          "wrong": [
+            "hard.agent_loop"
+          ],
+          "coverage": 0.3333
+        },
+        {
+          "clip": "fuh4_088",
+          "gold": [
+            "tech.how_stt_works",
+            "tech.whisper_vs_cloud",
+            "tech.transcription_quality"
+          ],
+          "selected": [
+            "tech.how_stt_works",
+            "tech.what_is_whisper"
+          ],
+          "hit": [
+            "tech.how_stt_works"
+          ],
+          "wrong": [
+            "tech.what_is_whisper"
+          ],
+          "coverage": 0.3333
+        },
+        {
+          "clip": "fuh4_089",
+          "gold": [
+            "tech.langgraph_vs_langchain",
+            "cv.langgraph",
+            "hard.remove_langchain"
+          ],
+          "selected": [],
+          "hit": [],
+          "wrong": [],
+          "coverage": 0.0
+        },
+        {
+          "clip": "fuh4_090",
+          "gold": [
+            "tech.embeddings",
+            "tech.cosine_semantic_search",
+            "tech.metadata_filtering",
+            "tech.hybrid_search"
+          ],
+          "selected": [
+            "tech.embeddings",
+            "tech.cosine_semantic_search",
+            "tech.hybrid_search"
+          ],
+          "hit": [
+            "tech.cosine_semantic_search",
+            "tech.embeddings",
+            "tech.hybrid_search"
+          ],
+          "wrong": [],
+          "coverage": 0.75
+        }
+      ],
+      "alias_matrix_present": false
+    },
+    {
+      "arm": "A_baseline_semantic_restored",
+      "gold_parts": 41,
+      "gold_parts_hit": 20,
+      "coverage_by_part": 0.4878,
+      "wrong_intent": 4,
+      "hc_risk": 0,
+      "recovered_target": 1,
+      "recovered_target_of": 7,
+      "recovered_detail": [
+        {
+          "clip": "fuh4_080",
+          "gold": "tech.overfitting"
+        }
+      ],
+      "newly_broken_opened_only": 1,
+      "newly_broken_all_single": 10,
+      "newly_broken_detail": [
+        {
+          "clip": "fuh4_006",
+          "label": "ultra_short",
+          "gold": [
+            "tech.lora"
+          ],
+          "selected": [
+            "tech.fine_tuning_what"
+          ]
+        },
+        {
+          "clip": "fuh4_026",
+          "label": "short",
+          "gold": [
+            "proj.early_warning.metric"
+          ],
+          "selected": [
+            "proj.early_warning.tech"
+          ]
+        },
+        {
+          "clip": "fuh4_027",
+          "label": "short",
+          "gold": [
+            "cv.student_pii"
+          ],
+          "selected": [
+            "tech.pii_redaction"
+          ]
+        },
+        {
+          "clip": "fuh4_036",
+          "label": "medium",
+          "gold": [
+            "hard.graph_vs_vector"
+          ],
+          "selected": [
+            "tech.knowledge_graph_what"
+          ]
+        },
+        {
+          "clip": "fuh4_053",
+          "label": "long",
+          "gold": [
+            "hard.observability"
+          ],
+          "selected": [
+            "hard.rag_debug_steps",
+            "tech.latency_p95"
+          ]
+        },
+        {
+          "clip": "fuh4_064",
+          "label": "very_long",
+          "gold": [
+            "tech.prompt_injection_supplier",
+            "tech.guardrails_layers"
+          ],
+          "selected": [
+            "tech.what_is_whisper"
+          ]
+        },
+        {
+          "clip": "fuh4_072",
+          "label": "very_long",
+          "gold": [
+            "tech.pii_redaction",
+            "cv.student_pii",
+            "tech.audio_retention"
+          ],
+          "selected": [
+            "tech.prompt_engineering",
+            "hard.observability"
+          ]
+        },
+        {
+          "clip": "fuh4_073",
+          "label": "very_long",
+          "gold": [
+            "hard.agent_terms_difference",
+            "hard.plain_python_still_agentic"
+          ],
+          "selected": [
+            "tech.multi_agent_when"
+          ]
+        },
+        {
+          "clip": "fuh4_116",
+          "label": "follow_up_contextual",
+          "gold": [
+            "tech.vector_db_choice"
+          ],
+          "selected": [
+            "cv.vector_db"
+          ]
+        },
+        {
+          "clip": "fuh4_119",
+          "label": "follow_up_contextual",
+          "gold": [
+            "proj.helpdesk.challenges"
+          ],
+          "selected": [
+            "gen.biggest_challenge_career"
+          ]
+        }
+      ],
+      "per_clip": [
+        {
+          "clip": "fuh4_076",
+          "gold": [
+            "tech.reranking",
+            "hard.hybrid_when"
+          ],
+          "selected": [
+            "tech.reranking",
+            "hard.hybrid_when"
+          ],
+          "hit": [
+            "hard.hybrid_when",
+            "tech.reranking"
+          ],
+          "wrong": [],
+          "coverage": 1.0
+        },
+        {
+          "clip": "fuh4_077",
+          "gold": [
+            "tech.hallucination_what",
+            "tech.hallucination_prevent"
+          ],
+          "selected": [
+            "tech.hallucination_what",
+            "tech.hallucination_prevent"
+          ],
+          "hit": [
+            "tech.hallucination_prevent",
+            "tech.hallucination_what"
+          ],
+          "wrong": [],
+          "coverage": 1.0
+        },
+        {
+          "clip": "fuh4_078",
+          "gold": [
+            "tech.context_window",
+            "tech.chunk_size"
+          ],
+          "selected": [
+            "tech.context_window",
+            "tech.chunk_size"
+          ],
+          "hit": [
+            "tech.chunk_size",
+            "tech.context_window"
+          ],
+          "wrong": [],
+          "coverage": 1.0
+        },
+        {
+          "clip": "fuh4_079",
+          "gold": [
+            "proj.similarity.describe",
+            "proj.similarity.tech",
+            "proj.similarity.is_rag"
+          ],
+          "selected": [
+            "proj.similarity.describe"
+          ],
+          "hit": [
+            "proj.similarity.describe"
+          ],
+          "wrong": [],
+          "coverage": 0.3333
+        },
+        {
+          "clip": "fuh4_080",
+          "gold": [
+            "tech.overfitting",
+            "tech.overfitting_prevent",
+            "tech.evaluate_classification"
+          ],
+          "selected": [
+            "tech.overfitting"
+          ],
+          "hit": [
+            "tech.overfitting"
+          ],
+          "wrong": [],
+          "coverage": 0.3333
+        },
+        {
+          "clip": "fuh4_081",
+          "gold": [
+            "cv.vector_db",
+            "tech.vector_db_choice"
+          ],
+          "selected": [
+            "cv.vector_db"
+          ],
+          "hit": [
+            "cv.vector_db"
+          ],
+          "wrong": [],
+          "coverage": 0.5
+        },
+        {
+          "clip": "fuh4_082",
+          "gold": [
+            "tech.agent_orchestrator",
+            "tech.multi_agent_when"
+          ],
+          "selected": [
+            "hard.agent_terms_difference"
+          ],
+          "hit": [],
+          "wrong": [
+            "hard.agent_terms_difference"
+          ],
+          "coverage": 0.0
+        },
+        {
+          "clip": "fuh4_083",
+          "gold": [
+            "cv.education",
+            "cv.certifications",
+            "cv.pmp_value"
+          ],
+          "selected": [
+            "cv.education",
+            "cv.certifications"
+          ],
+          "hit": [
+            "cv.certifications",
+            "cv.education"
+          ],
+          "wrong": [],
+          "coverage": 0.6667
+        },
+        {
+          "clip": "fuh4_084",
+          "gold": [
+            "tech.prompt_injection_what",
+            "hard.injection_in_pdf",
+            "tech.guardrails_how"
+          ],
+          "selected": [
+            "tech.guardrails_what"
+          ],
+          "hit": [],
+          "wrong": [
+            "tech.guardrails_what"
+          ],
+          "coverage": 0.0
+        },
+        {
+          "clip": "fuh4_085",
+          "gold": [
+            "tech.docker_why",
+            "tech.container_vs_vm",
+            "tech.kubernetes"
+          ],
+          "selected": [
+            "tech.docker_why",
+            "tech.container_vs_vm"
+          ],
+          "hit": [
+            "tech.container_vs_vm",
+            "tech.docker_why"
+          ],
+          "wrong": [],
+          "coverage": 0.6667
+        },
+        {
+          "clip": "fuh4_086",
+          "gold": [
+            "proj.early_warning.describe",
+            "proj.early_warning.metric",
+            "proj.early_warning.result"
+          ],
+          "selected": [
+            "proj.early_warning.result"
+          ],
+          "hit": [
+            "proj.early_warning.result"
+          ],
+          "wrong": [],
+          "coverage": 0.3333
+        },
+        {
+          "clip": "fuh4_087",
+          "gold": [
+            "tech.tool_calling",
+            "hard.tool_schema",
+            "hard.agent_stop_tools"
+          ],
+          "selected": [
+            "hard.tool_schema",
+            "hard.agent_loop"
+          ],
+          "hit": [
+            "hard.tool_schema"
+          ],
+          "wrong": [
+            "hard.agent_loop"
+          ],
+          "coverage": 0.3333
+        },
+        {
+          "clip": "fuh4_088",
+          "gold": [
+            "tech.how_stt_works",
+            "tech.whisper_vs_cloud",
+            "tech.transcription_quality"
+          ],
+          "selected": [
+            "tech.how_stt_works",
+            "tech.what_is_whisper"
+          ],
+          "hit": [
+            "tech.how_stt_works"
+          ],
+          "wrong": [
+            "tech.what_is_whisper"
+          ],
+          "coverage": 0.3333
+        },
+        {
+          "clip": "fuh4_089",
+          "gold": [
+            "tech.langgraph_vs_langchain",
+            "cv.langgraph",
+            "hard.remove_langchain"
+          ],
+          "selected": [],
+          "hit": [],
+          "wrong": [],
+          "coverage": 0.0
+        },
+        {
+          "clip": "fuh4_090",
+          "gold": [
+            "tech.embeddings",
+            "tech.cosine_semantic_search",
+            "tech.metadata_filtering",
+            "tech.hybrid_search"
+          ],
+          "selected": [
+            "tech.embeddings",
+            "tech.cosine_semantic_search",
+            "tech.metadata_filtering",
+            "tech.hybrid_search"
+          ],
+          "hit": [
+            "tech.cosine_semantic_search",
+            "tech.embeddings",
+            "tech.hybrid_search",
+            "tech.metadata_filtering"
+          ],
+          "wrong": [],
+          "coverage": 1.0
+        }
+      ],
+      "alias_matrix_present": true,
+      "aliases_added": {
+        "entries_touched": 0,
+        "aliases_added": 0
+      }
+    },
+    {
+      "arm": "P_representation",
+      "gold_parts": 41,
+      "gold_parts_hit": 18,
+      "coverage_by_part": 0.439,
+      "wrong_intent": 4,
+      "hc_risk": 0,
+      "recovered_target": 1,
+      "recovered_target_of": 7,
+      "recovered_detail": [
+        {
+          "clip": "fuh4_080",
+          "gold": "tech.overfitting"
+        }
+      ],
+      "newly_broken_opened_only": 1,
+      "newly_broken_all_single": 12,
+      "newly_broken_detail": [
+        {
+          "clip": "fuh4_006",
+          "label": "ultra_short",
+          "gold": [
+            "tech.lora"
+          ],
+          "selected": [
+            "tech.fine_tuning_what"
+          ]
+        },
+        {
+          "clip": "fuh4_018",
+          "label": "short",
+          "gold": [
+            "hard.not_finetune_first"
+          ],
+          "selected": [
+            "tech.fine_tuning_what"
+          ]
+        },
+        {
+          "clip": "fuh4_026",
+          "label": "short",
+          "gold": [
+            "proj.early_warning.metric"
+          ],
+          "selected": [
+            "proj.early_warning.tech"
+          ]
+        },
+        {
+          "clip": "fuh4_027",
+          "label": "short",
+          "gold": [
+            "cv.student_pii"
+          ],
+          "selected": [
+            "tech.pii_redaction"
+          ]
+        },
+        {
+          "clip": "fuh4_036",
+          "label": "medium",
+          "gold": [
+            "hard.graph_vs_vector"
+          ],
+          "selected": [
+            "tech.knowledge_graph_what"
+          ]
+        },
+        {
+          "clip": "fuh4_053",
+          "label": "long",
+          "gold": [
+            "hard.observability"
+          ],
+          "selected": [
+            "hard.rag_debug_steps",
+            "tech.latency_p95"
+          ]
+        },
+        {
+          "clip": "fuh4_064",
+          "label": "very_long",
+          "gold": [
+            "tech.prompt_injection_supplier",
+            "tech.guardrails_layers"
+          ],
+          "selected": [
+            "tech.what_is_whisper"
+          ]
+        },
+        {
+          "clip": "fuh4_072",
+          "label": "very_long",
+          "gold": [
+            "tech.pii_redaction",
+            "cv.student_pii",
+            "tech.audio_retention"
+          ],
+          "selected": [
+            "tech.prompt_engineering",
+            "hard.observability"
+          ]
+        },
+        {
+          "clip": "fuh4_073",
+          "label": "very_long",
+          "gold": [
+            "hard.agent_terms_difference",
+            "hard.plain_python_still_agentic"
+          ],
+          "selected": [
+            "tech.multi_agent_when"
+          ]
+        },
+        {
+          "clip": "fuh4_095",
+          "label": "indirect_paraphrase",
+          "gold": [
+            "hard.not_finetune_first"
+          ],
+          "selected": [
+            "tech.fine_tuning_what"
+          ]
+        },
+        {
+          "clip": "fuh4_116",
+          "label": "follow_up_contextual",
+          "gold": [
+            "tech.vector_db_choice"
+          ],
+          "selected": [
+            "cv.vector_db"
+          ]
+        },
+        {
+          "clip": "fuh4_119",
+          "label": "follow_up_contextual",
+          "gold": [
+            "proj.helpdesk.challenges"
+          ],
+          "selected": [
+            "gen.biggest_challenge_career"
+          ]
+        }
+      ],
+      "per_clip": [
+        {
+          "clip": "fuh4_076",
+          "gold": [
+            "tech.reranking",
+            "hard.hybrid_when"
+          ],
+          "selected": [
+            "hard.hybrid_when"
+          ],
+          "hit": [
+            "hard.hybrid_when"
+          ],
+          "wrong": [],
+          "coverage": 0.5
+        },
+        {
+          "clip": "fuh4_077",
+          "gold": [
+            "tech.hallucination_what",
+            "tech.hallucination_prevent"
+          ],
+          "selected": [
+            "tech.hallucination_what",
+            "tech.hallucination_prevent"
+          ],
+          "hit": [
+            "tech.hallucination_prevent",
+            "tech.hallucination_what"
+          ],
+          "wrong": [],
+          "coverage": 1.0
+        },
+        {
+          "clip": "fuh4_078",
+          "gold": [
+            "tech.context_window",
+            "tech.chunk_size"
+          ],
+          "selected": [
+            "tech.context_window",
+            "tech.chunk_size"
+          ],
+          "hit": [
+            "tech.chunk_size",
+            "tech.context_window"
+          ],
+          "wrong": [],
+          "coverage": 1.0
+        },
+        {
+          "clip": "fuh4_079",
+          "gold": [
+            "proj.similarity.describe",
+            "proj.similarity.tech",
+            "proj.similarity.is_rag"
+          ],
+          "selected": [
+            "proj.similarity.describe"
+          ],
+          "hit": [
+            "proj.similarity.describe"
+          ],
+          "wrong": [],
+          "coverage": 0.3333
+        },
+        {
+          "clip": "fuh4_080",
+          "gold": [
+            "tech.overfitting",
+            "tech.overfitting_prevent",
+            "tech.evaluate_classification"
+          ],
+          "selected": [
+            "tech.overfitting"
+          ],
+          "hit": [
+            "tech.overfitting"
+          ],
+          "wrong": [],
+          "coverage": 0.3333
+        },
+        {
+          "clip": "fuh4_081",
+          "gold": [
+            "cv.vector_db",
+            "tech.vector_db_choice"
+          ],
+          "selected": [
+            "cv.vector_db"
+          ],
+          "hit": [
+            "cv.vector_db"
+          ],
+          "wrong": [],
+          "coverage": 0.5
+        },
+        {
+          "clip": "fuh4_082",
+          "gold": [
+            "tech.agent_orchestrator",
+            "tech.multi_agent_when"
+          ],
+          "selected": [
+            "hard.agent_terms_difference"
+          ],
+          "hit": [],
+          "wrong": [
+            "hard.agent_terms_difference"
+          ],
+          "coverage": 0.0
+        },
+        {
+          "clip": "fuh4_083",
+          "gold": [
+            "cv.education",
+            "cv.certifications",
+            "cv.pmp_value"
+          ],
+          "selected": [
+            "cv.education",
+            "cv.certifications"
+          ],
+          "hit": [
+            "cv.certifications",
+            "cv.education"
+          ],
+          "wrong": [],
+          "coverage": 0.6667
+        },
+        {
+          "clip": "fuh4_084",
+          "gold": [
+            "tech.prompt_injection_what",
+            "hard.injection_in_pdf",
+            "tech.guardrails_how"
+          ],
+          "selected": [
+            "tech.guardrails_what"
+          ],
+          "hit": [],
+          "wrong": [
+            "tech.guardrails_what"
+          ],
+          "coverage": 0.0
+        },
+        {
+          "clip": "fuh4_085",
+          "gold": [
+            "tech.docker_why",
+            "tech.container_vs_vm",
+            "tech.kubernetes"
+          ],
+          "selected": [
+            "tech.docker_why",
+            "tech.container_vs_vm"
+          ],
+          "hit": [
+            "tech.container_vs_vm",
+            "tech.docker_why"
+          ],
+          "wrong": [],
+          "coverage": 0.6667
+        },
+        {
+          "clip": "fuh4_086",
+          "gold": [
+            "proj.early_warning.describe",
+            "proj.early_warning.metric",
+            "proj.early_warning.result"
+          ],
+          "selected": [
+            "proj.early_warning.result"
+          ],
+          "hit": [
+            "proj.early_warning.result"
+          ],
+          "wrong": [],
+          "coverage": 0.3333
+        },
+        {
+          "clip": "fuh4_087",
+          "gold": [
+            "tech.tool_calling",
+            "hard.tool_schema",
+            "hard.agent_stop_tools"
+          ],
+          "selected": [
+            "hard.tool_schema",
+            "hard.agent_loop"
+          ],
+          "hit": [
+            "hard.tool_schema"
+          ],
+          "wrong": [
+            "hard.agent_loop"
+          ],
+          "coverage": 0.3333
+        },
+        {
+          "clip": "fuh4_088",
+          "gold": [
+            "tech.how_stt_works",
+            "tech.whisper_vs_cloud",
+            "tech.transcription_quality"
+          ],
+          "selected": [
+            "tech.what_is_whisper"
+          ],
+          "hit": [],
+          "wrong": [
+            "tech.what_is_whisper"
+          ],
+          "coverage": 0.0
+        },
+        {
+          "clip": "fuh4_089",
+          "gold": [
+            "tech.langgraph_vs_langchain",
+            "cv.langgraph",
+            "hard.remove_langchain"
+          ],
+          "selected": [],
+          "hit": [],
+          "wrong": [],
+          "coverage": 0.0
+        },
+        {
+          "clip": "fuh4_090",
+          "gold": [
+            "tech.embeddings",
+            "tech.cosine_semantic_search",
+            "tech.metadata_filtering",
+            "tech.hybrid_search"
+          ],
+          "selected": [
+            "tech.embeddings",
+            "tech.cosine_semantic_search",
+            "tech.metadata_filtering",
+            "tech.hybrid_search"
+          ],
+          "hit": [
+            "tech.cosine_semantic_search",
+            "tech.embeddings",
+            "tech.hybrid_search",
+            "tech.metadata_filtering"
+          ],
+          "wrong": [],
+          "coverage": 1.0
+        }
+      ],
+      "alias_matrix_present": true,
+      "aliases_added": {
+        "entries_touched": 202,
+        "aliases_added": 738
+      }
+    },
+    {
+      "arm": "S_segmentation",
+      "gold_parts": 41,
+      "gold_parts_hit": 20,
+      "coverage_by_part": 0.4878,
+      "wrong_intent": 4,
+      "hc_risk": 0,
+      "recovered_target": 1,
+      "recovered_target_of": 7,
+      "recovered_detail": [
+        {
+          "clip": "fuh4_080",
+          "gold": "tech.overfitting"
+        }
+      ],
+      "newly_broken_opened_only": 1,
+      "newly_broken_all_single": 10,
+      "newly_broken_detail": [
+        {
+          "clip": "fuh4_006",
+          "label": "ultra_short",
+          "gold": [
+            "tech.lora"
+          ],
+          "selected": [
+            "tech.fine_tuning_what"
+          ]
+        },
+        {
+          "clip": "fuh4_026",
+          "label": "short",
+          "gold": [
+            "proj.early_warning.metric"
+          ],
+          "selected": [
+            "proj.early_warning.tech"
+          ]
+        },
+        {
+          "clip": "fuh4_027",
+          "label": "short",
+          "gold": [
+            "cv.student_pii"
+          ],
+          "selected": [
+            "tech.pii_redaction"
+          ]
+        },
+        {
+          "clip": "fuh4_036",
+          "label": "medium",
+          "gold": [
+            "hard.graph_vs_vector"
+          ],
+          "selected": [
+            "tech.knowledge_graph_what"
+          ]
+        },
+        {
+          "clip": "fuh4_053",
+          "label": "long",
+          "gold": [
+            "hard.observability"
+          ],
+          "selected": [
+            "hard.rag_debug_steps",
+            "tech.latency_p95"
+          ]
+        },
+        {
+          "clip": "fuh4_064",
+          "label": "very_long",
+          "gold": [
+            "tech.prompt_injection_supplier",
+            "tech.guardrails_layers"
+          ],
+          "selected": [
+            "tech.what_is_whisper"
+          ]
+        },
+        {
+          "clip": "fuh4_072",
+          "label": "very_long",
+          "gold": [
+            "tech.pii_redaction",
+            "cv.student_pii",
+            "tech.audio_retention"
+          ],
+          "selected": [
+            "tech.prompt_engineering",
+            "hard.observability"
+          ]
+        },
+        {
+          "clip": "fuh4_073",
+          "label": "very_long",
+          "gold": [
+            "hard.agent_terms_difference",
+            "hard.plain_python_still_agentic"
+          ],
+          "selected": [
+            "tech.multi_agent_when"
+          ]
+        },
+        {
+          "clip": "fuh4_116",
+          "label": "follow_up_contextual",
+          "gold": [
+            "tech.vector_db_choice"
+          ],
+          "selected": [
+            "cv.vector_db"
+          ]
+        },
+        {
+          "clip": "fuh4_119",
+          "label": "follow_up_contextual",
+          "gold": [
+            "proj.helpdesk.challenges"
+          ],
+          "selected": [
+            "gen.biggest_challenge_career"
+          ]
+        }
+      ],
+      "per_clip": [
+        {
+          "clip": "fuh4_076",
+          "gold": [
+            "tech.reranking",
+            "hard.hybrid_when"
+          ],
+          "selected": [
+            "tech.reranking",
+            "hard.hybrid_when"
+          ],
+          "hit": [
+            "hard.hybrid_when",
+            "tech.reranking"
+          ],
+          "wrong": [],
+          "coverage": 1.0
+        },
+        {
+          "clip": "fuh4_077",
+          "gold": [
+            "tech.hallucination_what",
+            "tech.hallucination_prevent"
+          ],
+          "selected": [
+            "tech.hallucination_what",
+            "tech.hallucination_prevent"
+          ],
+          "hit": [
+            "tech.hallucination_prevent",
+            "tech.hallucination_what"
+          ],
+          "wrong": [],
+          "coverage": 1.0
+        },
+        {
+          "clip": "fuh4_078",
+          "gold": [
+            "tech.context_window",
+            "tech.chunk_size"
+          ],
+          "selected": [
+            "tech.context_window",
+            "tech.chunk_size"
+          ],
+          "hit": [
+            "tech.chunk_size",
+            "tech.context_window"
+          ],
+          "wrong": [],
+          "coverage": 1.0
+        },
+        {
+          "clip": "fuh4_079",
+          "gold": [
+            "proj.similarity.describe",
+            "proj.similarity.tech",
+            "proj.similarity.is_rag"
+          ],
+          "selected": [
+            "proj.similarity.describe"
+          ],
+          "hit": [
+            "proj.similarity.describe"
+          ],
+          "wrong": [],
+          "coverage": 0.3333
+        },
+        {
+          "clip": "fuh4_080",
+          "gold": [
+            "tech.overfitting",
+            "tech.overfitting_prevent",
+            "tech.evaluate_classification"
+          ],
+          "selected": [
+            "tech.overfitting"
+          ],
+          "hit": [
+            "tech.overfitting"
+          ],
+          "wrong": [],
+          "coverage": 0.3333
+        },
+        {
+          "clip": "fuh4_081",
+          "gold": [
+            "cv.vector_db",
+            "tech.vector_db_choice"
+          ],
+          "selected": [
+            "cv.vector_db"
+          ],
+          "hit": [
+            "cv.vector_db"
+          ],
+          "wrong": [],
+          "coverage": 0.5
+        },
+        {
+          "clip": "fuh4_082",
+          "gold": [
+            "tech.agent_orchestrator",
+            "tech.multi_agent_when"
+          ],
+          "selected": [
+            "hard.agent_terms_difference"
+          ],
+          "hit": [],
+          "wrong": [
+            "hard.agent_terms_difference"
+          ],
+          "coverage": 0.0
+        },
+        {
+          "clip": "fuh4_083",
+          "gold": [
+            "cv.education",
+            "cv.certifications",
+            "cv.pmp_value"
+          ],
+          "selected": [
+            "cv.education",
+            "cv.certifications"
+          ],
+          "hit": [
+            "cv.certifications",
+            "cv.education"
+          ],
+          "wrong": [],
+          "coverage": 0.6667
+        },
+        {
+          "clip": "fuh4_084",
+          "gold": [
+            "tech.prompt_injection_what",
+            "hard.injection_in_pdf",
+            "tech.guardrails_how"
+          ],
+          "selected": [
+            "tech.guardrails_what"
+          ],
+          "hit": [],
+          "wrong": [
+            "tech.guardrails_what"
+          ],
+          "coverage": 0.0
+        },
+        {
+          "clip": "fuh4_085",
+          "gold": [
+            "tech.docker_why",
+            "tech.container_vs_vm",
+            "tech.kubernetes"
+          ],
+          "selected": [
+            "tech.docker_why",
+            "tech.container_vs_vm"
+          ],
+          "hit": [
+            "tech.container_vs_vm",
+            "tech.docker_why"
+          ],
+          "wrong": [],
+          "coverage": 0.6667
+        },
+        {
+          "clip": "fuh4_086",
+          "gold": [
+            "proj.early_warning.describe",
+            "proj.early_warning.metric",
+            "proj.early_warning.result"
+          ],
+          "selected": [
+            "proj.early_warning.result"
+          ],
+          "hit": [
+            "proj.early_warning.result"
+          ],
+          "wrong": [],
+          "coverage": 0.3333
+        },
+        {
+          "clip": "fuh4_087",
+          "gold": [
+            "tech.tool_calling",
+            "hard.tool_schema",
+            "hard.agent_stop_tools"
+          ],
+          "selected": [
+            "hard.tool_schema",
+            "hard.agent_loop"
+          ],
+          "hit": [
+            "hard.tool_schema"
+          ],
+          "wrong": [
+            "hard.agent_loop"
+          ],
+          "coverage": 0.3333
+        },
+        {
+          "clip": "fuh4_088",
+          "gold": [
+            "tech.how_stt_works",
+            "tech.whisper_vs_cloud",
+            "tech.transcription_quality"
+          ],
+          "selected": [
+            "tech.how_stt_works",
+            "tech.what_is_whisper"
+          ],
+          "hit": [
+            "tech.how_stt_works"
+          ],
+          "wrong": [
+            "tech.what_is_whisper"
+          ],
+          "coverage": 0.3333
+        },
+        {
+          "clip": "fuh4_089",
+          "gold": [
+            "tech.langgraph_vs_langchain",
+            "cv.langgraph",
+            "hard.remove_langchain"
+          ],
+          "selected": [],
+          "hit": [],
+          "wrong": [],
+          "coverage": 0.0
+        },
+        {
+          "clip": "fuh4_090",
+          "gold": [
+            "tech.embeddings",
+            "tech.cosine_semantic_search",
+            "tech.metadata_filtering",
+            "tech.hybrid_search"
+          ],
+          "selected": [
+            "tech.embeddings",
+            "tech.cosine_semantic_search",
+            "tech.metadata_filtering",
+            "tech.hybrid_search"
+          ],
+          "hit": [
+            "tech.cosine_semantic_search",
+            "tech.embeddings",
+            "tech.hybrid_search",
+            "tech.metadata_filtering"
+          ],
+          "wrong": [],
+          "coverage": 1.0
+        }
+      ],
+      "alias_matrix_present": true,
+      "aliases_added": {
+        "entries_touched": 0,
+        "aliases_added": 0
+      }
+    },
+    {
+      "arm": "PS_representation_plus_segmentation",
+      "gold_parts": 41,
+      "gold_parts_hit": 18,
+      "coverage_by_part": 0.439,
+      "wrong_intent": 4,
+      "hc_risk": 0,
+      "recovered_target": 1,
+      "recovered_target_of": 7,
+      "recovered_detail": [
+        {
+          "clip": "fuh4_080",
+          "gold": "tech.overfitting"
+        }
+      ],
+      "newly_broken_opened_only": 1,
+      "newly_broken_all_single": 12,
+      "newly_broken_detail": [
+        {
+          "clip": "fuh4_006",
+          "label": "ultra_short",
+          "gold": [
+            "tech.lora"
+          ],
+          "selected": [
+            "tech.fine_tuning_what"
+          ]
+        },
+        {
+          "clip": "fuh4_018",
+          "label": "short",
+          "gold": [
+            "hard.not_finetune_first"
+          ],
+          "selected": [
+            "tech.fine_tuning_what"
+          ]
+        },
+        {
+          "clip": "fuh4_026",
+          "label": "short",
+          "gold": [
+            "proj.early_warning.metric"
+          ],
+          "selected": [
+            "proj.early_warning.tech"
+          ]
+        },
+        {
+          "clip": "fuh4_027",
+          "label": "short",
+          "gold": [
+            "cv.student_pii"
+          ],
+          "selected": [
+            "tech.pii_redaction"
+          ]
+        },
+        {
+          "clip": "fuh4_036",
+          "label": "medium",
+          "gold": [
+            "hard.graph_vs_vector"
+          ],
+          "selected": [
+            "tech.knowledge_graph_what"
+          ]
+        },
+        {
+          "clip": "fuh4_053",
+          "label": "long",
+          "gold": [
+            "hard.observability"
+          ],
+          "selected": [
+            "hard.rag_debug_steps",
+            "tech.latency_p95"
+          ]
+        },
+        {
+          "clip": "fuh4_064",
+          "label": "very_long",
+          "gold": [
+            "tech.prompt_injection_supplier",
+            "tech.guardrails_layers"
+          ],
+          "selected": [
+            "tech.what_is_whisper"
+          ]
+        },
+        {
+          "clip": "fuh4_072",
+          "label": "very_long",
+          "gold": [
+            "tech.pii_redaction",
+            "cv.student_pii",
+            "tech.audio_retention"
+          ],
+          "selected": [
+            "tech.prompt_engineering",
+            "hard.observability"
+          ]
+        },
+        {
+          "clip": "fuh4_073",
+          "label": "very_long",
+          "gold": [
+            "hard.agent_terms_difference",
+            "hard.plain_python_still_agentic"
+          ],
+          "selected": [
+            "tech.multi_agent_when"
+          ]
+        },
+        {
+          "clip": "fuh4_095",
+          "label": "indirect_paraphrase",
+          "gold": [
+            "hard.not_finetune_first"
+          ],
+          "selected": [
+            "tech.fine_tuning_what"
+          ]
+        },
+        {
+          "clip": "fuh4_116",
+          "label": "follow_up_contextual",
+          "gold": [
+            "tech.vector_db_choice"
+          ],
+          "selected": [
+            "cv.vector_db"
+          ]
+        },
+        {
+          "clip": "fuh4_119",
+          "label": "follow_up_contextual",
+          "gold": [
+            "proj.helpdesk.challenges"
+          ],
+          "selected": [
+            "gen.biggest_challenge_career"
+          ]
+        }
+      ],
+      "per_clip": [
+        {
+          "clip": "fuh4_076",
+          "gold": [
+            "tech.reranking",
+            "hard.hybrid_when"
+          ],
+          "selected": [
+            "hard.hybrid_when"
+          ],
+          "hit": [
+            "hard.hybrid_when"
+          ],
+          "wrong": [],
+          "coverage": 0.5
+        },
+        {
+          "clip": "fuh4_077",
+          "gold": [
+            "tech.hallucination_what",
+            "tech.hallucination_prevent"
+          ],
+          "selected": [
+            "tech.hallucination_what",
+            "tech.hallucination_prevent"
+          ],
+          "hit": [
+            "tech.hallucination_prevent",
+            "tech.hallucination_what"
+          ],
+          "wrong": [],
+          "coverage": 1.0
+        },
+        {
+          "clip": "fuh4_078",
+          "gold": [
+            "tech.context_window",
+            "tech.chunk_size"
+          ],
+          "selected": [
+            "tech.context_window",
+            "tech.chunk_size"
+          ],
+          "hit": [
+            "tech.chunk_size",
+            "tech.context_window"
+          ],
+          "wrong": [],
+          "coverage": 1.0
+        },
+        {
+          "clip": "fuh4_079",
+          "gold": [
+            "proj.similarity.describe",
+            "proj.similarity.tech",
+            "proj.similarity.is_rag"
+          ],
+          "selected": [
+            "proj.similarity.describe"
+          ],
+          "hit": [
+            "proj.similarity.describe"
+          ],
+          "wrong": [],
+          "coverage": 0.3333
+        },
+        {
+          "clip": "fuh4_080",
+          "gold": [
+            "tech.overfitting",
+            "tech.overfitting_prevent",
+            "tech.evaluate_classification"
+          ],
+          "selected": [
+            "tech.overfitting"
+          ],
+          "hit": [
+            "tech.overfitting"
+          ],
+          "wrong": [],
+          "coverage": 0.3333
+        },
+        {
+          "clip": "fuh4_081",
+          "gold": [
+            "cv.vector_db",
+            "tech.vector_db_choice"
+          ],
+          "selected": [
+            "cv.vector_db"
+          ],
+          "hit": [
+            "cv.vector_db"
+          ],
+          "wrong": [],
+          "coverage": 0.5
+        },
+        {
+          "clip": "fuh4_082",
+          "gold": [
+            "tech.agent_orchestrator",
+            "tech.multi_agent_when"
+          ],
+          "selected": [
+            "hard.agent_terms_difference"
+          ],
+          "hit": [],
+          "wrong": [
+            "hard.agent_terms_difference"
+          ],
+          "coverage": 0.0
+        },
+        {
+          "clip": "fuh4_083",
+          "gold": [
+            "cv.education",
+            "cv.certifications",
+            "cv.pmp_value"
+          ],
+          "selected": [
+            "cv.education",
+            "cv.certifications"
+          ],
+          "hit": [
+            "cv.certifications",
+            "cv.education"
+          ],
+          "wrong": [],
+          "coverage": 0.6667
+        },
+        {
+          "clip": "fuh4_084",
+          "gold": [
+            "tech.prompt_injection_what",
+            "hard.injection_in_pdf",
+            "tech.guardrails_how"
+          ],
+          "selected": [
+            "tech.guardrails_what"
+          ],
+          "hit": [],
+          "wrong": [
+            "tech.guardrails_what"
+          ],
+          "coverage": 0.0
+        },
+        {
+          "clip": "fuh4_085",
+          "gold": [
+            "tech.docker_why",
+            "tech.container_vs_vm",
+            "tech.kubernetes"
+          ],
+          "selected": [
+            "tech.docker_why",
+            "tech.container_vs_vm"
+          ],
+          "hit": [
+            "tech.container_vs_vm",
+            "tech.docker_why"
+          ],
+          "wrong": [],
+          "coverage": 0.6667
+        },
+        {
+          "clip": "fuh4_086",
+          "gold": [
+            "proj.early_warning.describe",
+            "proj.early_warning.metric",
+            "proj.early_warning.result"
+          ],
+          "selected": [
+            "proj.early_warning.result"
+          ],
+          "hit": [
+            "proj.early_warning.result"
+          ],
+          "wrong": [],
+          "coverage": 0.3333
+        },
+        {
+          "clip": "fuh4_087",
+          "gold": [
+            "tech.tool_calling",
+            "hard.tool_schema",
+            "hard.agent_stop_tools"
+          ],
+          "selected": [
+            "hard.tool_schema",
+            "hard.agent_loop"
+          ],
+          "hit": [
+            "hard.tool_schema"
+          ],
+          "wrong": [
+            "hard.agent_loop"
+          ],
+          "coverage": 0.3333
+        },
+        {
+          "clip": "fuh4_088",
+          "gold": [
+            "tech.how_stt_works",
+            "tech.whisper_vs_cloud",
+            "tech.transcription_quality"
+          ],
+          "selected": [
+            "tech.what_is_whisper"
+          ],
+          "hit": [],
+          "wrong": [
+            "tech.what_is_whisper"
+          ],
+          "coverage": 0.0
+        },
+        {
+          "clip": "fuh4_089",
+          "gold": [
+            "tech.langgraph_vs_langchain",
+            "cv.langgraph",
+            "hard.remove_langchain"
+          ],
+          "selected": [],
+          "hit": [],
+          "wrong": [],
+          "coverage": 0.0
+        },
+        {
+          "clip": "fuh4_090",
+          "gold": [
+            "tech.embeddings",
+            "tech.cosine_semantic_search",
+            "tech.metadata_filtering",
+            "tech.hybrid_search"
+          ],
+          "selected": [
+            "tech.embeddings",
+            "tech.cosine_semantic_search",
+            "tech.metadata_filtering",
+            "tech.hybrid_search"
+          ],
+          "hit": [
+            "tech.cosine_semantic_search",
+            "tech.embeddings",
+            "tech.hybrid_search",
+            "tech.metadata_filtering"
+          ],
+          "wrong": [],
+          "coverage": 1.0
+        }
+      ],
+      "alias_matrix_present": true,
+      "aliases_added": {
+        "entries_touched": 202,
+        "aliases_added": 738
+      }
+    }
+  ],
+  "gate_results": {
+    "P_representation": {
+      "coverage_material_gain": false,
+      "wrong_le_4": true,
+      "hc_zero": true,
+      "newly_broken_opened_zero": false,
+      "newly_broken_opened_le_baseline": true,
+      "newly_broken_all_le_baseline": false,
+      "target_recovery_gt_0": true,
+      "all_pass": false,
+      "all_pass_strict_zero_breakage": false
+    },
+    "S_segmentation": {
+      "coverage_material_gain": false,
+      "wrong_le_4": true,
+      "hc_zero": true,
+      "newly_broken_opened_zero": false,
+      "newly_broken_opened_le_baseline": true,
+      "newly_broken_all_le_baseline": true,
+      "target_recovery_gt_0": true,
+      "all_pass": false,
+      "all_pass_strict_zero_breakage": false
+    },
+    "PS_representation_plus_segmentation": {
+      "coverage_material_gain": false,
+      "wrong_le_4": true,
+      "hc_zero": true,
+      "newly_broken_opened_zero": false,
+      "newly_broken_opened_le_baseline": true,
+      "newly_broken_all_le_baseline": false,
+      "target_recovery_gt_0": true,
+      "all_pass": false,
+      "all_pass_strict_zero_breakage": false
+    }
+  },
+  "winners": [],
+  "verdict": "NO_WINNER_BUT_BASELINE_MOVED — no arm passed the gates, and the repaired baseline differs from the one B6/B6.1 used, so phase 2 cannot be closed on those numbers"
+}

@@ -1,0 +1,2156 @@
+{
+  "created_at": "2026-09-14T08:08:52.215036+00:00",
+  "track": "v5_final_interview_readiness",
+  "warm": {
+    "system_warm": true,
+    "info": {
+      "system_warm": true,
+      "started_at": 1789373013.356346,
+      "finished_at": 1789373273.0835407,
+      "duration_ms": 259725.0,
+      "steps": {
+        "question_bank_load": 406.2,
+        "question_bank_warm": 211757.8,
+        "semantic_intent_index": 27764.1,
+        "embedding_probe": 326.9,
+        "whisper_decode_probe": 19432.1,
+        "audio_loopback_available": true,
+        "audio_loopback_probe": 5.6
+      },
+      "errors": {}
+    }
+  },
+  "pytest": {
+    "passed": true,
+    "log": "reports/V5_FINAL_PYTEST.log",
+    "tail": "_\u0000.\u0000p\u0000y\u0000:\u00008\u0000:\u0000 \u0000D\u0000e\u0000p\u0000r\u0000e\u0000c\u0000a\u0000t\u0000i\u0000o\u0000n\u0000W\u0000a\u0000r\u0000n\u0000i\u0000n\u0000g\u0000:\u0000 \u0000'\u0000a\u0000u\u0000d\u0000i\u0000o\u0000o\u0000p\u0000'\u0000 \u0000i\u0000s\u0000 \u0000d\u0000e\u0000p\u0000r\u0000e\u0000c\u0000a\u0000t\u0000e\u0000d\u0000 \u0000a\u0000n\u0000d\u0000 \u0000s\u0000l\u0000a\u0000t\u0000e\u0000d\u0000 \u0000f\u0000o\u0000r\u0000 \u0000r\u0000e\u0000m\u0000o\u0000v\u0000a\u0000l\u0000 \u0000i\u0000n\u0000 \u0000P\u0000y\u0000t\u0000h\u0000o\u0000n\u0000 \u00003\u0000.\u00001\u00003\u0000\n\u0000\n\u0000 \u0000 \u0000 \u0000 \u0000i\u0000m\u0000p\u0000o\u0000r\u0000t\u0000 \u0000a\u0000u\u0000d\u0000i\u0000o\u0000o\u0000p\u0000\n\u0000\n\u0000\n\u0000\n\u0000-\u0000-\u0000 \u0000D\u0000o\u0000c\u0000s\u0000:\u0000 \u0000h\u0000t\u0000t\u0000p\u0000s\u0000:\u0000/\u0000/\u0000d\u0000o\u0000c\u0000s\u0000.\u0000p\u0000y\u0000t\u0000e\u0000s\u0000t\u0000.\u0000o\u0000r\u0000g\u0000/\u0000e\u0000n\u0000/\u0000s\u0000t\u0000a\u0000b\u0000l\u0000e\u0000/\u0000h\u0000o\u0000w\u0000-\u0000t\u0000o\u0000/\u0000c\u0000a\u0000p\u0000t\u0000u\u0000r\u0000e\u0000-\u0000w\u0000a\u0000r\u0000n\u0000i\u0000n\u0000g\u0000s\u0000.\u0000h\u0000t\u0000m\u0000l\u0000\n\u0000\n\u00002\u00003\u00003\u0000 \u0000p\u0000a\u0000s\u0000s\u0000e\u0000d\u0000,\u0000 \u00002\u0000 \u0000w\u0000a\u0000r\u0000n\u0000i\u0000n\u0000g\u0000s\u0000,\u0000 \u00005\u0000 \u0000s\u0000u\u0000b\u0000t\u0000e\u0000s\u0000t\u0000s\u0000 \u0000p\u0000a\u0000s\u0000s\u0000e\u0000d\u0000 \u0000i\u0000n\u0000 \u00004\u00006\u00002\u0000.\u00001\u00005\u0000s\u0000 \u0000(\u00000\u0000:\u00000\u00007\u0000:\u00004\u00002\u0000)\u0000\n\u0000\n\u0000"
+  },
+  "latency_gate": {
+    "present": true,
+    "verdict": "LATENCY_READY_FOR_V3",
+    "ready": true,
+    "simple_median_ms": 1138.6,
+    "compound_median_ms": 1187.2,
+    "simple_hc_wrong": 0,
+    "compound_hc_wrong": 0
+  },
+  "suites": {
+    "text": {
+      "n": 32,
+      "ok": 32,
+      "ok_rate": 1.0,
+      "understanding_accuracy": 0.8333,
+      "answer_selection_accuracy": 0.5667,
+      "answer_selection_among_ready_attempts": 0.5862,
+      "confident_wrong": 0,
+      "duplicate_count": 0,
+      "timeout_count": 0,
+      "simple_latency_median_ms": 1027.5,
+      "long_latency_median_ms": 1370.3,
+      "compound_latency_median_ms": 875.3,
+      "by_shape": {
+        "business": {
+          "n": 3,
+          "ok": 3,
+          "ok_rate": 1.0,
+          "meaning_ok": 3,
+          "hc_wrong": 0,
+          "median_latency_ms": 1027.5
+        },
+        "compound": {
+          "n": 2,
+          "ok": 2,
+          "ok_rate": 1.0,
+          "meaning_ok": 2,
+          "hc_wrong": 0,
+          "median_latency_ms": 1057.5
+        },
+        "direct": {
+          "n": 7,
+          "ok": 7,
+          "ok_rate": 1.0,
+          "meaning_ok": 7,
+          "hc_wrong": 0,
+          "median_latency_ms": 419.2
+        },
+        "follow_up": {
+          "n": 2,
+          "ok": 2,
+          "ok_rate": 1.0,
+          "meaning_ok": 2,
+          "hc_wrong": 0,
+          "median_latency_ms": 4.0
+        },
+        "indirect": {
+          "n": 4,
+          "ok": 4,
+          "ok_rate": 1.0,
+          "meaning_ok": 4,
+          "hc_wrong": 0,
+          "median_latency_ms": 1082.0
+        },
+        "long": {
+          "n": 1,
+          "ok": 1,
+          "ok_rate": 1.0,
+          "meaning_ok": 1,
+          "hc_wrong": 0,
+          "median_latency_ms": 1370.3
+        },
+        "mispronounced": {
+          "n": 5,
+          "ok": 5,
+          "ok_rate": 1.0,
+          "meaning_ok": 5,
+          "hc_wrong": 0,
+          "median_latency_ms": 826.2
+        },
+        "non_question": {
+          "n": 2,
+          "ok": 2,
+          "ok_rate": 1.0,
+          "meaning_ok": 2,
+          "hc_wrong": 0,
+          "median_latency_ms": 0.1
+        },
+        "scenario": {
+          "n": 2,
+          "ok": 2,
+          "ok_rate": 1.0,
+          "meaning_ok": 2,
+          "hc_wrong": 0,
+          "median_latency_ms": 2125.8
+        },
+        "short": {
+          "n": 1,
+          "ok": 1,
+          "ok_rate": 1.0,
+          "meaning_ok": 1,
+          "hc_wrong": 0,
+          "median_latency_ms": 744.4
+        },
+        "telegraphic": {
+          "n": 2,
+          "ok": 2,
+          "ok_rate": 1.0,
+          "meaning_ok": 2,
+          "hc_wrong": 0,
+          "median_latency_ms": 356.2
+        },
+        "unclear": {
+          "n": 1,
+          "ok": 1,
+          "ok_rate": 1.0,
+          "meaning_ok": 1,
+          "hc_wrong": 0,
+          "median_latency_ms": 0.3
+        }
+      }
+    },
+    "audio": {
+      "n": 13,
+      "ok": 13,
+      "ok_rate": 1.0,
+      "stt_understandable_rate": 1.0,
+      "understanding_accuracy": 0.9231,
+      "answer_selection_accuracy": 0.6154,
+      "confident_wrong": 0,
+      "duplicate_count": 0,
+      "timeout_count": 0,
+      "median_total_ms": 1819.4,
+      "median_stt_ms": 987.9,
+      "accent_breakdown": {
+        "egyptian_non_native": {
+          "n": 1,
+          "ok": 1,
+          "ok_rate": 1.0,
+          "meaning_ok": 1,
+          "hc_wrong": 0,
+          "median_latency_ms": 1772.4
+        },
+        "emirati_gulf": {
+          "n": 1,
+          "ok": 1,
+          "ok_rate": 1.0,
+          "meaning_ok": 1,
+          "hc_wrong": 0,
+          "median_latency_ms": 2749.1
+        },
+        "indian": {
+          "n": 1,
+          "ok": 1,
+          "ok_rate": 1.0,
+          "meaning_ok": 1,
+          "hc_wrong": 0,
+          "median_latency_ms": 3734.9
+        },
+        "jordanian": {
+          "n": 1,
+          "ok": 1,
+          "ok_rate": 1.0,
+          "meaning_ok": 1,
+          "hc_wrong": 0,
+          "median_latency_ms": 1669.8
+        },
+        "mixed": {
+          "n": 9,
+          "ok": 9,
+          "ok_rate": 1.0,
+          "meaning_ok": 9,
+          "hc_wrong": 0,
+          "median_latency_ms": 1819.4
+        }
+      },
+      "speed_breakdown": {
+        "fast": {
+          "n": 2,
+          "ok": 2,
+          "ok_rate": 1.0,
+          "meaning_ok": 2,
+          "hc_wrong": 0,
+          "median_latency_ms": 1689.7
+        },
+        "normal": {
+          "n": 10,
+          "ok": 10,
+          "ok_rate": 1.0,
+          "meaning_ok": 10,
+          "hc_wrong": 0,
+          "median_latency_ms": 2143.6
+        },
+        "slow": {
+          "n": 1,
+          "ok": 1,
+          "ok_rate": 1.0,
+          "meaning_ok": 1,
+          "hc_wrong": 0,
+          "median_latency_ms": 1287.9
+        }
+      },
+      "distance_breakdown": {
+        "far": {
+          "n": 1,
+          "ok": 1,
+          "ok_rate": 1.0,
+          "meaning_ok": 1,
+          "hc_wrong": 0,
+          "median_latency_ms": 2378.4
+        },
+        "near": {
+          "n": 12,
+          "ok": 12,
+          "ok_rate": 1.0,
+          "meaning_ok": 12,
+          "hc_wrong": 0,
+          "median_latency_ms": 1795.9
+        }
+      },
+      "noise_breakdown": {
+        "clean": {
+          "n": 12,
+          "ok": 12,
+          "ok_rate": 1.0,
+          "meaning_ok": 12,
+          "hc_wrong": 0,
+          "median_latency_ms": 1795.9
+        },
+        "room": {
+          "n": 1,
+          "ok": 1,
+          "ok_rate": 1.0,
+          "meaning_ok": 1,
+          "hc_wrong": 0,
+          "median_latency_ms": 1908.8
+        }
+      }
+    },
+    "live_session": {
+      "turns": 9,
+      "ok_turns": 8,
+      "duplicate_flags": 1,
+      "confident_wrong": 0,
+      "answers": 5,
+      "continuity_ok": true
+    }
+  },
+  "results": {
+    "text": [
+      {
+        "id": "t_direct_rag",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 361.7563000007067,
+        "breakdown": {
+          "classify_ms": 0.279499996395316,
+          "match_ms": 360.8648000008543
+        },
+        "transcript": "What is RAG?",
+        "match_id": "tech.rag_what",
+        "match_score": 1.2,
+        "match_mode": "strong",
+        "answer_preview": "RAG means retrieve, then generate. The model does not answer from memory. We search our documents first, then we give those pieces to the model. I used this for BTEC exam questions so the output stays on the unit content.",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "direct",
+          "detection": "single",
+          "topic_must": [
+            "rag",
+            "retrieval"
+          ]
+        }
+      },
+      {
+        "id": "t_direct_agentic",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 419.1646000035689,
+        "breakdown": {
+          "classify_ms": 4.325100002461113,
+          "match_ms": 409.3198999980814
+        },
+        "transcript": "What is agentic AI?",
+        "match_id": "tech.agentic_what",
+        "match_score": 1.24,
+        "match_mode": "strong",
+        "answer_preview": "A chatbot replies in text. An agent is when the model chooses the next tool toward a goal, sees the result, and continues. My code runs the tool after checks. The model never gets a raw database because the prompt mentioned one.",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "direct",
+          "detection": "single",
+          "topic_must": [
+            "agentic",
+            "agent"
+          ]
+        }
+      },
+      {
+        "id": "t_direct_guardrails",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 335.6411999993725,
+        "breakdown": {
+          "classify_ms": 0.4633000062312931,
+          "match_ms": 334.95140000013635
+        },
+        "transcript": "What are guardrails in AI systems?",
+        "match_id": "tech.guardrails_what",
+        "match_score": 1.226370639204979,
+        "match_mode": "strong",
+        "answer_preview": "Guardrails are the checks around the model, before and after it. Before: validate input, catch injection, strip personal data, limit scope. After: force the output shape, check claims against the source, block unsupported answers, require a human for actions. We do not trust the ",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "direct",
+          "detection": "single",
+          "topic_must": [
+            "guardrail"
+          ]
+        }
+      },
+      {
+        "id": "t_direct_embeddings",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 366.9642000022577,
+        "breakdown": {
+          "classify_ms": 0.3282000034232624,
+          "match_ms": 366.44560000422643
+        },
+        "transcript": "What are embeddings?",
+        "match_id": "tech.embeddings",
+        "match_score": 1.04,
+        "match_mode": "strong",
+        "answer_preview": "An embedding is a long list of numbers that stands for a piece of text. An embedding model places similar meanings close together. Invoice and receipt sit near each other; invoice and car sit far. That is how semantic search and my assignment similarity checker work.",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "direct",
+          "detection": "single",
+          "topic_must": [
+            "embed"
+          ]
+        }
+      },
+      {
+        "id": "t_indirect_retrieval_ministry",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 2388.9219999982743,
+        "breakdown": {
+          "classify_ms": 0.2886000002035871,
+          "match_ms": 2388.391699998465
+        },
+        "transcript": "Can you explain how you used retrieval in your Ministry project?",
+        "match_id": "cv.rag_experience",
+        "match_score": 0.594143333741391,
+        "match_mode": "strong",
+        "answer_preview": "Yes, at the Ministry, in question generation. I retrieve BTEC unit content and learning outcomes, then the model writes only from that text. JSON is checked, then a teacher approves. The similarity checker uses embeddings too, but it does not generate, so I do not call it RAG.",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "indirect",
+          "detection": "single",
+          "topic_must": [
+            "rag",
+            "retrieval",
+            "btec",
+            "ministry",
+            "question"
+          ]
+        }
+      },
+      {
+        "id": "t_indirect_btec_retrieval",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 1121.7933000007179,
+        "breakdown": {
+          "classify_ms": 0.32749999809311703,
+          "match_ms": 1121.2498000022606
+        },
+        "transcript": "Tell me how retrieval helped your BTEC system",
+        "match_id": "hard.why_rag_for_btec",
+        "match_score": 0.692323835618823,
+        "match_mode": "weak",
+        "answer_preview": "Because the source of truth is the unit file, and it changes. RAG lets me add or update a unit without retraining. Fine-tuning would bake old content into weights and still would not cite the page. Teachers needed to see that the question came from the outcome text. RAG plus a sc",
+        "status": "LOW_CONFIDENCE",
+        "notes": "",
+        "meta": {
+          "shape": "indirect",
+          "detection": "single",
+          "topic_must": [
+            "rag",
+            "retrieval",
+            "btec",
+            "question"
+          ]
+        }
+      },
+      {
+        "id": "t_indirect_chroma",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 654.9250000025495,
+        "breakdown": {
+          "classify_ms": 0.2753000007942319,
+          "match_ms": 654.4788000028348
+        },
+        "transcript": "How did you use chroma database in the project?",
+        "match_id": "cv.chromadb",
+        "match_score": 1.08225048661232,
+        "match_mode": "strong",
+        "answer_preview": "Yes, for local prototyping. Chroma runs inside Python, so I stored embeddings, text, and metadata and queried top-k with filters while designing retrieval. It is not the Ministry production store. Similarity used a lightweight local store with the same idea: id, vector, text, met",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "indirect",
+          "detection": "single",
+          "topic_must": [
+            "chroma",
+            "vector",
+            "embed",
+            "rag"
+          ]
+        }
+      },
+      {
+        "id": "t_short_why_rag",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 744.4147999995039,
+        "breakdown": {
+          "classify_ms": 0.24780000239843503,
+          "match_ms": 744.0059000000474
+        },
+        "transcript": "Why RAG?",
+        "match_id": "tech.rag_what",
+        "match_score": 1.0979631787538529,
+        "match_mode": "strong",
+        "answer_preview": "RAG means retrieve, then generate. The model does not answer from memory. We search our documents first, then we give those pieces to the model. I used this for BTEC exam questions so the output stays on the unit content.",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "short",
+          "detection": "single",
+          "topic_must": [
+            "rag",
+            "retrieval",
+            "fine"
+          ]
+        }
+      },
+      {
+        "id": "t_short_why",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 6.985799998801667,
+        "breakdown": {
+          "classify_ms": 0.363799998012837,
+          "match_ms": 6.512399995699525
+        },
+        "transcript": "Why?",
+        "match_id": "tech.rag_what",
+        "match_score": 0.56,
+        "match_mode": "weak",
+        "answer_preview": "RAG means retrieve, then generate. The model does not answer from memory. We search our documents first, then we give those pieces to the model. I used this for BTEC exam questions so the output stays on the unit content.",
+        "status": "LOW_CONFIDENCE",
+        "notes": "",
+        "meta": {
+          "shape": "follow_up",
+          "detection": "single",
+          "topic_must": [
+            "rag",
+            "retrieval"
+          ]
+        }
+      },
+      {
+        "id": "t_short_how",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 0.9253999960492365,
+        "breakdown": {
+          "classify_ms": 0.3056999994441867,
+          "match_ms": 0.5571000001509674
+        },
+        "transcript": "How?",
+        "match_id": "tech.rag_what",
+        "match_score": 0.56,
+        "match_mode": "weak",
+        "answer_preview": "RAG means retrieve, then generate. The model does not answer from memory. We search our documents first, then we give those pieces to the model. I used this for BTEC exam questions so the output stays on the unit content.",
+        "status": "LOW_CONFIDENCE",
+        "notes": "",
+        "meta": {
+          "shape": "follow_up",
+          "detection": "single",
+          "topic_must": [
+            "rag",
+            "retrieval",
+            "agent"
+          ]
+        }
+      },
+      {
+        "id": "t_long_pipeline",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 1370.2565999992657,
+        "breakdown": {
+          "classify_ms": 0.47620000259485096,
+          "match_ms": 1369.3895999967935
+        },
+        "transcript": "Please walk me through the full path in your BTEC system from the source document through chunking embeddings retrieval generation validation and teacher approval.",
+        "match_id": "hard.which_rag_layer_failed",
+        "match_score": 0.6765499756350382,
+        "match_mode": "weak",
+        "answer_preview": "I treat it as a pipeline test. If the gold chunk is not in the index, it is ingest or chunking. If it is in the index but not in top-k, it is embedding, filters, or query wording. If it is in the prompt and the model still fails, it is the prompt or the model, not retrieval.",
+        "status": "LOW_CONFIDENCE",
+        "notes": "",
+        "meta": {
+          "shape": "long",
+          "detection": "single",
+          "topic_must": [
+            "rag",
+            "btec",
+            "retrieval",
+            "chunk",
+            "embed",
+            "question"
+          ]
+        }
+      },
+      {
+        "id": "t_scenario_bad_context",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 2368.836299996474,
+        "breakdown": {
+          "classify_ms": 1.7588999980944209,
+          "match_ms": 1581.8550999974832,
+          "compound_ms": 784.9596000014571
+        },
+        "transcript": "If the retrieved context is wrong, what would you do?",
+        "match_id": "hard.wrong_chunk",
+        "match_score": 0.5318507624640635,
+        "match_mode": "weak",
+        "answer_preview": "The model will often still write a fluent answer, which is the danger. I try to prevent it: metadata filters, hybrid search for codes, re-rank, and a minimum similarity. After generation I check that claims are supported. If the chunk is off-topic I drop it or retrieve again once",
+        "status": "LOW_CONFIDENCE",
+        "notes": "",
+        "meta": {
+          "shape": "scenario",
+          "detection": "compound",
+          "topic_must": [
+            "retriev",
+            "rag",
+            "context",
+            "hallucin",
+            "valid",
+            "ground"
+          ]
+        }
+      },
+      {
+        "id": "t_scenario_validation_fail",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": false,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 1882.7329999985523,
+        "breakdown": {
+          "classify_ms": 0.23950000468175858,
+          "match_ms": 1882.2639000063646
+        },
+        "transcript": "What should happen when an AI generated question fails validation more than once?",
+        "match_id": "",
+        "match_score": 0.0,
+        "match_mode": "",
+        "answer_preview": "",
+        "status": "LOW_CONFIDENCE",
+        "notes": "",
+        "meta": {
+          "shape": "scenario",
+          "detection": "single",
+          "topic_must": [
+            "valid",
+            "retry",
+            "teacher",
+            "human",
+            "approval",
+            "question"
+          ]
+        }
+      },
+      {
+        "id": "t_business_ministry",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": false,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 1027.490399996168,
+        "breakdown": {
+          "classify_ms": 0.32140000257641077,
+          "match_ms": 1026.9255000021076
+        },
+        "transcript": "How does this solution help the Ministry?",
+        "match_id": "hard.agentic_rag_design",
+        "match_score": 0.682477900712918,
+        "match_mode": "weak",
+        "answer_preview": "I would not start with agents. Start with the job: staff ask about rules and must get a sourced answer, or 'not in the documents'. Ingest approved files, chunk with metadata, retrieve with permission, then generate only from those chunks. The agent is a gated loop: it can rewrite",
+        "status": "LOW_CONFIDENCE",
+        "notes": "",
+        "meta": {
+          "shape": "business",
+          "detection": "single",
+          "topic_must": [
+            "ministry",
+            "btec",
+            "teacher",
+            "student",
+            "business",
+            "value",
+            "education",
+            "moe"
+          ]
+        }
+      },
+      {
+        "id": "t_business_early_warning",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 1600.6716999982018,
+        "breakdown": {
+          "classify_ms": 0.2815000043483451,
+          "match_ms": 1600.1700999986497
+        },
+        "transcript": "Why does recall matter for the early warning model used by teachers?",
+        "match_id": "proj.early_warning.metric",
+        "match_score": 0.5439106261787117,
+        "match_mode": "weak",
+        "answer_preview": "Recall on the students who needed support. Most students were fine, so Accuracy looks high even if you miss the ones who matter. Missing a struggling student is worse than one extra follow-up. I still watched Precision so the list did not flood teachers.",
+        "status": "LOW_CONFIDENCE",
+        "notes": "",
+        "meta": {
+          "shape": "business",
+          "detection": "single",
+          "topic_must": [
+            "early",
+            "warning",
+            "recall",
+            "student",
+            "risk"
+          ]
+        }
+      },
+      {
+        "id": "t_compound_rag_use_why",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 875.3359999973327,
+        "breakdown": {
+          "classify_ms": 0.3220999933546409,
+          "match_ms": 353.4653000024264,
+          "compound_ms": 521.331600000849
+        },
+        "transcript": "What is RAG, how did you use it, and why did you choose it?",
+        "match_id": "tech.rag_what,tech.rag_build",
+        "match_score": 0.0,
+        "match_mode": "compound",
+        "answer_preview": "RAG means retrieve, then generate. I split documents into chunks, embed them, and store them with metadata.",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "compound",
+          "detection": "compound",
+          "topic_must": [
+            "rag",
+            "retrieval"
+          ]
+        }
+      },
+      {
+        "id": "t_compound_similarity",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 1239.7176000013133,
+        "breakdown": {
+          "classify_ms": 0.23330000112764537,
+          "match_ms": 348.81030000542523,
+          "compound_ms": 890.4951000004075
+        },
+        "transcript": "Explain the assignment similarity checker, why it is not RAG, and who decides at the end.",
+        "match_id": "proj.similarity.stack,proj.similarity.is_rag,proj.similarity.describe",
+        "match_score": 0.0,
+        "match_mode": "compound",
+        "answer_preview": "LLM no, and RAG no, because nothing is generated. No, it is vector search and comparison: embeddings, similarity, and metadata filters. Students can copy and change the words, so exact matching misses that.",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "compound",
+          "detection": "compound",
+          "topic_must": [
+            "similar",
+            "embed",
+            "assign"
+          ]
+        }
+      },
+      {
+        "id": "t_tele_rag_arch",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 711.4787000027718,
+        "breakdown": {
+          "classify_ms": 3.9388000004692003,
+          "match_ms": 707.3544000013499
+        },
+        "transcript": "RAG architecture, risks, and business value.",
+        "match_id": "tech.rag_build",
+        "match_score": 0.7241202658653261,
+        "match_mode": "strong",
+        "answer_preview": "I split documents into chunks, embed them, and store them with metadata. At question time I filter by access, search the nearest chunks, and pass that text to the model. I tell it to answer only from that text. Then I check the answer against the source.",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "telegraphic",
+          "detection": "single",
+          "topic_must": [
+            "rag",
+            "retrieval",
+            "risk",
+            "business",
+            "architect"
+          ]
+        }
+      },
+      {
+        "id": "t_tele_ews",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": false,
+        "understood": false,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 0.8412999959546141,
+        "breakdown": {
+          "classify_ms": 0.810499994258862
+        },
+        "transcript": "Early Warning Project — data, model, KPI, outcome.",
+        "match_id": "",
+        "match_score": 0.0,
+        "match_mode": "",
+        "answer_preview": "",
+        "status": "LOW_CONFIDENCE",
+        "notes": "classifier_non_question",
+        "meta": {
+          "shape": "telegraphic"
+        }
+      },
+      {
+        "id": "t_stt_lang_chain",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 319.6055999942473,
+        "breakdown": {
+          "classify_ms": 0.20290000247769058,
+          "match_ms": 319.197400000121
+        },
+        "transcript": "How did you use lang chain and lang graph together?",
+        "match_id": "tech.langgraph_vs_langchain",
+        "match_score": 1.045757546570243,
+        "match_mode": "strong",
+        "answer_preview": "LangChain is the toolkit: models, prompts, retrievers, tools. LangGraph is a state graph on top: nodes, edges, checkpoints, and a human interrupt. A straight retrieve-then-generate path does not need it. Loops, retries, and a pause do. I used LangChain in a proof of concept. I ha",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "mispronounced",
+          "detection": "single",
+          "topic_must": [
+            "langchain",
+            "langgraph",
+            "lang chain",
+            "lang graph",
+            "orchestr",
+            "agent"
+          ]
+        }
+      },
+      {
+        "id": "t_stt_chroma_db",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 826.2331999940216,
+        "breakdown": {
+          "classify_ms": 0.33070000063162297,
+          "match_ms": 825.6871000048704
+        },
+        "transcript": "Where do you store vectors in chroma DB?",
+        "match_id": "tech.what_is_chromadb",
+        "match_score": 0.7726543354988098,
+        "match_mode": "strong",
+        "answer_preview": "Chroma is an open-source embedding store. A collection holds an id, a vector, the original text, and metadata. At query time I take nearest neighbors, optionally with a where filter. I used it in-process for prototypes. I have not run it as ministry production storage.",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "mispronounced",
+          "detection": "single",
+          "topic_must": [
+            "chroma",
+            "vector"
+          ]
+        }
+      },
+      {
+        "id": "t_stt_cosine",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 397.90269999502925,
+        "breakdown": {
+          "classify_ms": 0.27009999757865444,
+          "match_ms": 397.46459999878425
+        },
+        "transcript": "How does cosine similarity work with your embeddings?",
+        "match_id": "tech.cosine_semantic_search",
+        "match_score": 0.6772439742088319,
+        "match_mode": "strong",
+        "answer_preview": "Cosine similarity is the angle between two vectors, from minus one to one. Closer to one means closer meaning. Semantic search embeds the question, then finds stored chunks with nearby vectors. It can match supplier dues to paying creditors with almost no shared words.",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "mispronounced",
+          "detection": "single",
+          "topic_must": [
+            "cosine",
+            "similar",
+            "embed"
+          ]
+        }
+      },
+      {
+        "id": "t_stt_scikit",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 1123.6699000000954,
+        "breakdown": {
+          "classify_ms": 0.24229999689850956,
+          "match_ms": 1123.2724000001326
+        },
+        "transcript": "Did you use scikit learn in the early warning model?",
+        "match_id": "proj.early_warning.tech",
+        "match_score": 0.754431200027466,
+        "match_mode": "strong",
+        "answer_preview": "Python, Pandas, and sklearn: Pandas to clean and merge grades and attendance, sklearn for a pipeline with scaling and a classifier. I started with a simple model people could explain. I did not use a neural net, and I did not use an LLM or RAG.",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "mispronounced",
+          "detection": "single",
+          "topic_must": [
+            "scikit",
+            "sklearn",
+            "early",
+            "warning",
+            "model",
+            "machine"
+          ]
+        }
+      },
+      {
+        "id": "t_stt_whisper",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 1187.9540999943856,
+        "breakdown": {
+          "classify_ms": 0.21240000205580145,
+          "match_ms": 1187.5295000063488
+        },
+        "transcript": "Why choose Whisper for speech to text in this interview coach?",
+        "match_id": "proj.kiosk.describe",
+        "match_score": 0.5843190961478044,
+        "match_mode": "weak",
+        "answer_preview": "At Al Najat I built a kiosk people could speak to. Whisper did speech-to-text on local machines, so audio stayed inside. I cleaned noise and used voice activity detection instead of recording all the time. A small classifier picked a male or female reply voice, then NLP routed th",
+        "status": "LOW_CONFIDENCE",
+        "notes": "",
+        "meta": {
+          "shape": "mispronounced",
+          "detection": "single",
+          "topic_must": [
+            "whisper",
+            "speech",
+            "stt",
+            "transcri"
+          ]
+        }
+      },
+      {
+        "id": "t_nonq_thanks",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": false,
+        "understood": false,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 0.1564999984111637,
+        "breakdown": {
+          "classify_ms": 0.13439999747788534
+        },
+        "transcript": "Okay thanks, that makes sense.",
+        "match_id": "",
+        "match_score": 0.0,
+        "match_mode": "",
+        "answer_preview": "",
+        "status": "NO_QUESTION",
+        "notes": "STATEMENT",
+        "meta": {
+          "shape": "non_question"
+        }
+      },
+      {
+        "id": "t_nonq_noise",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": false,
+        "understood": false,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 0.07190000178525224,
+        "breakdown": {
+          "classify_ms": 0.0638999990769662
+        },
+        "transcript": "mm hmm yeah",
+        "match_id": "",
+        "match_score": 0.0,
+        "match_mode": "",
+        "answer_preview": "",
+        "status": "NO_QUESTION",
+        "notes": "STATEMENT",
+        "meta": {
+          "shape": "non_question"
+        }
+      },
+      {
+        "id": "t_unclear",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": false,
+        "understood": false,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 0.3041000018129125,
+        "breakdown": {
+          "classify_ms": 0.2908000024035573
+        },
+        "transcript": "uh the thing with the stuff in the project",
+        "match_id": "",
+        "match_score": 0.0,
+        "match_mode": "",
+        "answer_preview": "",
+        "status": "LOW_CONFIDENCE",
+        "notes": "classifier_non_question",
+        "meta": {
+          "shape": "unclear"
+        }
+      },
+      {
+        "id": "t_helpdesk",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 1102.7327999981935,
+        "breakdown": {
+          "classify_ms": 0.16930000128922984,
+          "match_ms": 1102.3178999967058
+        },
+        "transcript": "How did the helpdesk classification model work?",
+        "match_id": "proj.helpdesk.describe",
+        "match_score": 0.7078052490845061,
+        "match_mode": "weak",
+        "answer_preview": "Helpdesk tickets arrived as free text and people routed them by hand. I trained a sklearn classifier on TF-IDF to predict the department, like accounts or network, using tickets staff had already routed. Unclear tickets went to a person, with no LLM. Faster routing, plus simple s",
+        "status": "LOW_CONFIDENCE",
+        "notes": "",
+        "meta": {
+          "shape": "direct",
+          "detection": "single",
+          "topic_must": [
+            "helpdesk",
+            "classif",
+            "ticket"
+          ]
+        }
+      },
+      {
+        "id": "t_donation_kiosk",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 1078.8694000002579,
+        "breakdown": {
+          "classify_ms": 0.33230000553885475,
+          "match_ms": 1078.309700002137
+        },
+        "transcript": "Tell me about the smart donation kiosk project.",
+        "match_id": "cv.knet_role",
+        "match_score": 0.601827177007993,
+        "match_mode": "strong",
+        "answer_preview": "From 2010 to 2017 I was a project manager at Vending Network Company in Kuwait on KNET work. I delivered kiosk and POS e-payment projects for ministries. That meant Python, C#, SQL, APIs, testing, UAT, vendors, and uptime. Payments cannot stop and cannot charge twice. I still car",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "direct",
+          "detection": "single",
+          "topic_must": [
+            "donation",
+            "kiosk"
+          ]
+        }
+      },
+      {
+        "id": "t_governance",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": false,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 848.6435000013444,
+        "breakdown": {
+          "classify_ms": 0.28759999986505136,
+          "match_ms": 848.1535000028089
+        },
+        "transcript": "How do you think about AI governance for government systems?",
+        "match_id": "gen.ai_ethics",
+        "match_score": 0.6274511221430519,
+        "match_mode": "weak",
+        "answer_preview": "For me it is practical, not a speech. The system should show its source, say I do not know instead of guessing, and keep personal data inside the organization. A person must approve anything that affects a person or money. In my BTEC work, the similarity checker showed evidence, ",
+        "status": "LOW_CONFIDENCE",
+        "notes": "",
+        "meta": {
+          "shape": "business",
+          "detection": "single",
+          "topic_must": [
+            "govern",
+            "guardrail",
+            "human",
+            "approval",
+            "safe"
+          ]
+        }
+      },
+      {
+        "id": "t_question_gen",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 1042.1921000015573,
+        "breakdown": {
+          "classify_ms": 0.3219999998691492,
+          "match_ms": 1041.6709999990417
+        },
+        "transcript": "How does automated question generation support student assessment?",
+        "match_id": "moe.question_generation",
+        "match_score": 0.6575886254413924,
+        "match_mode": "strong",
+        "answer_preview": "This is the LLM project at the Ministry. I retrieve the BTEC unit text and learning outcomes, and the model writes questions and feedback only from that text. Output is JSON, checked with Pydantic. A teacher must approve before anything is saved, and I wrote that flow in Python.",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "indirect",
+          "detection": "single",
+          "topic_must": [
+            "question",
+            "generat",
+            "btec",
+            "assess",
+            "teacher"
+          ]
+        }
+      },
+      {
+        "id": "t_completion_risk",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 1052.3018000021693,
+        "breakdown": {
+          "classify_ms": 3.637500005424954,
+          "match_ms": 1048.4818000040832
+        },
+        "transcript": "How do you monitor completion risk for students?",
+        "match_id": "proj.completion_risk.describe",
+        "match_score": 0.6654296723181083,
+        "match_mode": "strong",
+        "answer_preview": "The Ministry needed schools that might miss BTEC unit deadlines. I pulled data with SQL, cleaned it in Pandas, and computed completion from a clear rule. Current percent is math, not a model. Risk of finishing late used sklearn where past terms existed. The output was a follow-up",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "direct",
+          "detection": "single",
+          "topic_must": [
+            "completion",
+            "risk",
+            "early",
+            "warning",
+            "student"
+          ]
+        }
+      }
+    ],
+    "audio": [
+      {
+        "id": "a_indian_long_01",
+        "suite": "audio",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 3734.8653999943053,
+        "breakdown": {
+          "stt_ms": 2073.3491999999387,
+          "classify_ms": 0.3133999998681247,
+          "match_ms": 1661.1475000026985
+        },
+        "transcript": "Please explain the complete path in your BTG system, starting from the source document, then chunking, embeddings, retrieval, generation, validation, teacher approval, and finally saving the approved question.",
+        "match_id": "tech.embeddings",
+        "match_score": 0.6795640722338969,
+        "match_mode": "strong",
+        "answer_preview": "An embedding is a long list of numbers that stands for a piece of text. An embedding model places similar meanings close together. Invoice and receipt sit near each other; invoice and car sit far. That is how semantic search and my assignment similarity checker work.",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "accent": "indian",
+          "speed": "normal",
+          "distance": "near",
+          "noise": "clean",
+          "expected_hint": "BTEC RAG pipeline",
+          "speech_duration_s": 14.407,
+          "stt_confidence": 0.0,
+          "detected_language": "en",
+          "stt_meaning": true
+        }
+      },
+      {
+        "id": "a_jordanian_long_01",
+        "suite": "audio",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 1669.7807000018656,
+        "breakdown": {
+          "stt_ms": 1043.4534999949392,
+          "classify_ms": 0.3240000005462207,
+          "match_ms": 625.9419999987585
+        },
+        "transcript": "Please explain the complete path in your BTG system, starting from the source document, then chunking, embeddings, retrieval, generation, validation, teacher approval, and finally saving the approved question.",
+        "match_id": "tech.embeddings",
+        "match_score": 0.6795640722338969,
+        "match_mode": "strong",
+        "answer_preview": "An embedding is a long list of numbers that stands for a piece of text. An embedding model places similar meanings close together. Invoice and receipt sit near each other; invoice and car sit far. That is how semantic search and my assignment similarity checker work.",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "accent": "jordanian",
+          "speed": "normal",
+          "distance": "near",
+          "noise": "clean",
+          "expected_hint": "BTEC RAG pipeline",
+          "speech_duration_s": 16.612,
+          "stt_confidence": 0.0,
+          "detected_language": "en",
+          "stt_meaning": true
+        }
+      },
+      {
+        "id": "a_emirati_long_01",
+        "suite": "audio",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 2749.1157999975258,
+        "breakdown": {
+          "stt_ms": 991.6085999939241,
+          "classify_ms": 0.4177000009804033,
+          "match_ms": 1757.0296999983839
+        },
+        "transcript": "Please explain the complete path in your BTEC RAG system, starting from the source document, then chunking, embeddings, retrieval, generation, validation, teacher approval, and finally saving the approved question.",
+        "match_id": "tech.rag_two_phases",
+        "match_score": 0.6278331390364753,
+        "match_mode": "weak",
+        "answer_preview": "Indexing is the offline job: chunk, embed, store text plus metadata. Retrieval is the live job: embed the question, filter, search, build the prompt, generate, then check. People mix those two clocks. One runs when files change. The other runs on every question.",
+        "status": "LOW_CONFIDENCE",
+        "notes": "",
+        "meta": {
+          "accent": "emirati_gulf",
+          "speed": "normal",
+          "distance": "near",
+          "noise": "clean",
+          "expected_hint": "BTEC RAG pipeline",
+          "speech_duration_s": 17.691,
+          "stt_confidence": 0.0,
+          "detected_language": "en",
+          "stt_meaning": true
+        }
+      },
+      {
+        "id": "a_egyptian_long_01",
+        "suite": "audio",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 1772.3564999978407,
+        "breakdown": {
+          "stt_ms": 1166.8913999965298,
+          "classify_ms": 0.34020000020973384,
+          "match_ms": 605.0666999944951
+        },
+        "transcript": "Please explain the complete path in your BTG system, starting from the source document, then chunking, embeddings, retrieval, generation, validation, teacher approval, and finally saving the approved question.",
+        "match_id": "tech.embeddings",
+        "match_score": 0.6795640722338969,
+        "match_mode": "strong",
+        "answer_preview": "An embedding is a long list of numbers that stands for a piece of text. An embedding model places similar meanings close together. Invoice and receipt sit near each other; invoice and car sit far. That is how semantic search and my assignment similarity checker work.",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "accent": "egyptian_non_native",
+          "speed": "normal",
+          "distance": "near",
+          "noise": "clean",
+          "expected_hint": "BTEC RAG pipeline",
+          "speech_duration_s": 15.584,
+          "stt_confidence": 0.0,
+          "detected_language": "en",
+          "stt_meaning": true
+        }
+      },
+      {
+        "id": "a_stress_far_01",
+        "suite": "audio",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 2378.3961000008276,
+        "breakdown": {
+          "stt_ms": 840.5707000056282,
+          "classify_ms": 0.2965000021504238,
+          "match_ms": 1537.4631000013324
+        },
+        "transcript": "What is R-A-E, and why did you use it in your BF project?",
+        "match_id": "proj.early_warning.stack",
+        "match_score": 0.505954259945631,
+        "match_mode": "weak",
+        "answer_preview": "No LLM, no RAG, no agent, no LangChain, no Chroma. It is Pandas and a sklearn pipeline on grades and attendance, with Recall as the metric. An LLM could later write a short note for a teacher as a layer on top. The list comes from the classifier.",
+        "status": "LOW_CONFIDENCE",
+        "notes": "",
+        "meta": {
+          "accent": "mixed",
+          "speed": "normal",
+          "distance": "far",
+          "noise": "clean",
+          "expected_hint": "What is RAG, and why did you use it in your BTEC project?",
+          "speech_duration_s": 4.016,
+          "stt_confidence": 0.0,
+          "detected_language": "en",
+          "stt_meaning": true
+        }
+      },
+      {
+        "id": "a_stress_fast_01",
+        "suite": "audio",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 1714.4144999983837,
+        "breakdown": {
+          "stt_ms": 987.9211000006762,
+          "classify_ms": 0.24250000569736585,
+          "match_ms": 726.2129000009736
+        },
+        "transcript": "What is R-EG and why did you use it in your BTEC project?",
+        "match_id": "proj.completion_risk.describe",
+        "match_score": 0.6565315596111359,
+        "match_mode": "strong",
+        "answer_preview": "The Ministry needed schools that might miss BTEC unit deadlines. I pulled data with SQL, cleaned it in Pandas, and computed completion from a clear rule. Current percent is math, not a model. Risk of finishing late used sklearn where past terms existed. The output was a follow-up",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "accent": "mixed",
+          "speed": "fast",
+          "distance": "near",
+          "noise": "clean",
+          "expected_hint": "What is RAG, and why did you use it in your BTEC project?",
+          "speech_duration_s": 2.468,
+          "stt_confidence": 0.0,
+          "detected_language": "en",
+          "stt_meaning": true
+        }
+      },
+      {
+        "id": "a_stress_interrupted_01",
+        "suite": "audio",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 1665.0504999997793,
+        "breakdown": {
+          "stt_ms": 898.4402999994927,
+          "classify_ms": 0.2893999990192242,
+          "match_ms": 766.2830999979633
+        },
+        "transcript": "What is R-G, and why did you use it in your BTEC project?",
+        "match_id": "proj.completion_risk.describe",
+        "match_score": 0.719260563394853,
+        "match_mode": "strong",
+        "answer_preview": "The Ministry needed schools that might miss BTEC unit deadlines. I pulled data with SQL, cleaned it in Pandas, and computed completion from a clear rule. Current percent is math, not a model. Risk of finishing late used sklearn where past terms existed. The output was a follow-up",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "accent": "mixed",
+          "speed": "fast",
+          "distance": "near",
+          "noise": "clean",
+          "expected_hint": "What is RAG, and why did you use it in your BTEC project?",
+          "speech_duration_s": 3.926,
+          "stt_confidence": 0.0,
+          "detected_language": "en",
+          "stt_meaning": true
+        }
+      },
+      {
+        "id": "a_stress_long_01",
+        "suite": "audio",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 1654.2547999997623,
+        "breakdown": {
+          "stt_ms": 1054.944000003161,
+          "classify_ms": 0.3499000013107434,
+          "match_ms": 598.9141000027303
+        },
+        "transcript": "Please explain the complete path in your BTG system, starting from the source document, then chunking, embeddings, retrieval, generation, validation, teacher approval, and finally saving the approved question.",
+        "match_id": "tech.embeddings",
+        "match_score": 0.6795640722338969,
+        "match_mode": "strong",
+        "answer_preview": "An embedding is a long list of numbers that stands for a piece of text. An embedding model places similar meanings close together. Invoice and receipt sit near each other; invoice and car sit far. That is how semantic search and my assignment similarity checker work.",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "accent": "mixed",
+          "speed": "normal",
+          "distance": "near",
+          "noise": "clean",
+          "expected_hint": "Please explain the complete path in your BTEC RAG system, starting from the source document, then chunking, embeddings, retrieval, generation, validation, teacher approval, and finally saving the approved question.",
+          "speech_duration_s": 14.292,
+          "stt_confidence": 0.0,
+          "detected_language": "en",
+          "stt_meaning": true
+        }
+      },
+      {
+        "id": "a_stress_medium_01",
+        "suite": "audio",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 2425.3381000016816,
+        "breakdown": {
+          "stt_ms": 815.741500002332,
+          "classify_ms": 0.3040000010514632,
+          "match_ms": 1609.2397999964305
+        },
+        "transcript": "explain how RAG retrieves information before the language model generates an answer.",
+        "match_id": "hard.wrong_chunk",
+        "match_score": 0.6134610992802515,
+        "match_mode": "weak",
+        "answer_preview": "The model will often still write a fluent answer, which is the danger. I try to prevent it: metadata filters, hybrid search for codes, re-rank, and a minimum similarity. After generation I check that claims are supported. If the chunk is off-topic I drop it or retrieve again once",
+        "status": "LOW_CONFIDENCE",
+        "notes": "",
+        "meta": {
+          "accent": "mixed",
+          "speed": "normal",
+          "distance": "near",
+          "noise": "clean",
+          "expected_hint": "Explain how RAG retrieves information before the language model generates an answer.",
+          "speech_duration_s": 5.385,
+          "stt_confidence": 0.0,
+          "detected_language": "en",
+          "stt_meaning": true
+        }
+      },
+      {
+        "id": "a_stress_noise_01",
+        "suite": "audio",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 1908.841399999801,
+        "breakdown": {
+          "stt_ms": 875.966800005699,
+          "classify_ms": 0.3071000028285198,
+          "match_ms": 1032.5250000023516
+        },
+        "transcript": "What is RAG, and why did you use it in your BTEC project?",
+        "match_id": "hard.why_rag_for_btec",
+        "match_score": 0.7898117118532009,
+        "match_mode": "weak",
+        "answer_preview": "Because the source of truth is the unit file, and it changes. RAG lets me add or update a unit without retraining. Fine-tuning would bake old content into weights and still would not cite the page. Teachers needed to see that the question came from the outcome text. RAG plus a sc",
+        "status": "LOW_CONFIDENCE",
+        "notes": "",
+        "meta": {
+          "accent": "mixed",
+          "speed": "normal",
+          "distance": "near",
+          "noise": "room",
+          "expected_hint": "What is RAG, and why did you use it in your BTEC project?",
+          "speech_duration_s": 3.926,
+          "stt_confidence": 0.0,
+          "detected_language": "en",
+          "stt_meaning": true
+        }
+      },
+      {
+        "id": "a_stress_short_01",
+        "suite": "audio",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": false,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 1819.360500005132,
+        "breakdown": {
+          "stt_ms": 821.7523999992409,
+          "classify_ms": 0.2748000042629428,
+          "match_ms": 997.2835999942617
+        },
+        "transcript": "What is R-E?",
+        "match_id": "",
+        "match_score": 0.0,
+        "match_mode": "",
+        "answer_preview": "",
+        "status": "LOW_CONFIDENCE",
+        "notes": "",
+        "meta": {
+          "accent": "mixed",
+          "speed": "normal",
+          "distance": "near",
+          "noise": "clean",
+          "expected_hint": "What is RAG?",
+          "speech_duration_s": 1.338,
+          "stt_confidence": 0.0,
+          "detected_language": "en",
+          "stt_meaning": true
+        }
+      },
+      {
+        "id": "a_stress_slow_01",
+        "suite": "audio",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 1287.8992000041762,
+        "breakdown": {
+          "stt_ms": 944.3681000047945,
+          "classify_ms": 0.2792000013869256,
+          "match_ms": 343.21239999553654
+        },
+        "transcript": "What is R-G, and why did you use it in your BTEC project?",
+        "match_id": "proj.completion_risk.describe",
+        "match_score": 0.719260563394853,
+        "match_mode": "strong",
+        "answer_preview": "The Ministry needed schools that might miss BTEC unit deadlines. I pulled data with SQL, cleaned it in Pandas, and computed completion from a clear rule. Current percent is math, not a model. Risk of finishing late used sklearn where past terms existed. The output was a follow-up",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "accent": "mixed",
+          "speed": "slow",
+          "distance": "near",
+          "noise": "clean",
+          "expected_hint": "What is RAG, and why did you use it in your BTEC project?",
+          "speech_duration_s": 6.685,
+          "stt_confidence": 0.0,
+          "detected_language": "en",
+          "stt_meaning": true
+        }
+      },
+      {
+        "id": "a_stress_very_long_01",
+        "suite": "audio",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 3504.9720000024536,
+        "breakdown": {
+          "stt_ms": 2298.6333000008017,
+          "classify_ms": 0.5111999998916872,
+          "match_ms": 1205.7745000056457
+        },
+        "transcript": "I want you to describe one complete example from your BTEC question generation project in detail. Start with how the curriculum document enters the system. How you clean and split the document. How embeddings are created. How the relevant chunks are retrieved. How the language model receives only the selected context. How the question is generated. How the output structure is checked. How you verify that the question is grounded in the source? where human approval happens, what gets logged, and what is finally saved to the question bank. Also explain which parts are RAG, which parts are agentic control, and why you do not allow the model to save an important question by itself.",
+        "match_id": "moe.question_generation.stack",
+        "match_score": 0.8769364430416715,
+        "match_mode": "strong",
+        "answer_preview": "LLM yes, it writes the question, and RAG yes, I retrieve unit content first. Agentic yes: multi-step with a teacher pause. LangChain was proof of concept only, production is Python, and LangGraph is not in production. Chroma was a prototype evaluation, not the production store, w",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "accent": "mixed",
+          "speed": "normal",
+          "distance": "near",
+          "noise": "clean",
+          "expected_hint": "I want you to describe one complete example from your BTEC question generation project in detail. Start with how the curriculum document enters the system, how you clean and split the document, how embeddings are created, how the relevant chunks are retrieved, how the language model receives only the selected context, how the question is generated, how the output structure is checked, how you verify that the question is grounded in the source, what happens when validation fails, where human approval happens, what gets logged, and what is finally saved to the question bank. Also explain which parts are RAG, which parts are agentic control, and why you do not allow the model to save an important question by itself.",
+          "speech_duration_s": 46.654,
+          "stt_confidence": 0.0,
+          "detected_language": "en",
+          "stt_meaning": true
+        }
+      }
+    ],
+    "live_session": [
+      {
+        "id": "live_01",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 0.6227999983821064,
+        "breakdown": {
+          "classify_ms": 0.26079999952344224,
+          "match_ms": 0.24659999326104298
+        },
+        "transcript": "What is RAG?",
+        "match_id": "tech.rag_what",
+        "match_score": 1.2,
+        "match_mode": "strong",
+        "answer_preview": "RAG means retrieve, then generate. The model does not answer from memory. We search our documents first, then we give those pieces to the model. I used this for BTEC exam questions so the output stays on the unit content.",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "session",
+          "detection": "single",
+          "topic_must": [
+            "rag",
+            "retriev",
+            "btec",
+            "early",
+            "warning",
+            "risk",
+            "architect"
+          ]
+        }
+      },
+      {
+        "id": "live_02",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 1420.006899999862,
+        "breakdown": {
+          "classify_ms": 0.2884999994421378,
+          "match_ms": 1419.4977000006475
+        },
+        "transcript": "How did you use retrieval in the Ministry BTEC project?",
+        "match_id": "hard.why_rag_for_btec",
+        "match_score": 0.5939438725616726,
+        "match_mode": "weak",
+        "answer_preview": "Because the source of truth is the unit file, and it changes. RAG lets me add or update a unit without retraining. Fine-tuning would bake old content into weights and still would not cite the page. Teachers needed to see that the question came from the outcome text. RAG plus a sc",
+        "status": "LOW_CONFIDENCE",
+        "notes": "",
+        "meta": {
+          "shape": "session",
+          "detection": "single",
+          "topic_must": [
+            "rag",
+            "retriev",
+            "btec",
+            "early",
+            "warning",
+            "risk",
+            "architect"
+          ]
+        }
+      },
+      {
+        "id": "live_03",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 0.7216999947559088,
+        "breakdown": {
+          "classify_ms": 0.3065999990212731,
+          "match_ms": 0.3589999978430569
+        },
+        "transcript": "Why?",
+        "match_id": "hard.why_rag_for_btec",
+        "match_score": 0.56,
+        "match_mode": "weak",
+        "answer_preview": "Because the source of truth is the unit file, and it changes. RAG lets me add or update a unit without retraining. Fine-tuning would bake old content into weights and still would not cite the page. Teachers needed to see that the question came from the outcome text. RAG plus a sc",
+        "status": "LOW_CONFIDENCE",
+        "notes": "",
+        "meta": {
+          "shape": "follow_up",
+          "detection": "single",
+          "topic_must": [
+            "rag",
+            "retriev",
+            "btec",
+            "early",
+            "warning",
+            "risk",
+            "architect"
+          ]
+        }
+      },
+      {
+        "id": "live_04",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 923.6397999993642,
+        "breakdown": {
+          "classify_ms": 0.12579999747686088,
+          "match_ms": 356.7394999990938,
+          "compound_ms": 566.5800999995554
+        },
+        "transcript": "If retrieval returns nothing useful, what do you do?",
+        "match_id": "hard.empty_retrieval,tech.rag_prevent_invented_numbers",
+        "match_score": 0.0,
+        "match_mode": "compound",
+        "answer_preview": "Do not generate from model memory. I tell the model to use only the given text and to say I do not know.",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "session",
+          "detection": "compound",
+          "topic_must": [
+            "rag",
+            "retriev",
+            "btec",
+            "early",
+            "warning",
+            "risk",
+            "architect"
+          ]
+        }
+      },
+      {
+        "id": "live_05",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 736.3314000031096,
+        "breakdown": {
+          "classify_ms": 0.3195999961462803,
+          "match_ms": 735.8887999944272
+        },
+        "transcript": "RAG architecture, risks, business value.",
+        "match_id": "tech.rag_build",
+        "match_score": 0.7554875701904299,
+        "match_mode": "strong",
+        "answer_preview": "I split documents into chunks, embed them, and store them with metadata. At question time I filter by access, search the nearest chunks, and pass that text to the model. I tell it to answer only from that text. Then I check the answer against the source.",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "session",
+          "detection": "single",
+          "topic_must": [
+            "rag",
+            "retriev",
+            "btec",
+            "early",
+            "warning",
+            "risk",
+            "architect"
+          ]
+        }
+      },
+      {
+        "id": "live_06",
+        "suite": "text",
+        "ok": false,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": true,
+        "timeout": false,
+        "latency_ms": 12.23980000213487,
+        "breakdown": {
+          "classify_ms": 0.2528000040911138,
+          "match_ms": 11.883899998792913
+        },
+        "transcript": "What is RAG?",
+        "match_id": "tech.rag_what",
+        "match_score": 1.24,
+        "match_mode": "strong",
+        "answer_preview": "RAG means retrieve, then generate. The model does not answer from memory. We search our documents first, then we give those pieces to the model. I used this for BTEC exam questions so the output stays on the unit content.",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "session",
+          "detection": "single",
+          "topic_must": [
+            "rag",
+            "retriev",
+            "btec",
+            "early",
+            "warning",
+            "risk",
+            "architect"
+          ]
+        }
+      },
+      {
+        "id": "live_07",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": true,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 736.0444000005373,
+        "breakdown": {
+          "classify_ms": 0.2869000018108636,
+          "match_ms": 735.5795999974362
+        },
+        "transcript": "Tell me about the early warning system KPIs.",
+        "match_id": "proj.early_warning.describe",
+        "match_score": 0.6845559978058464,
+        "match_mode": "strong",
+        "answer_preview": "At Al Najat I looked for students who might need help before the term ended. Data was grades and attendance in messy files, which I cleaned in Pandas. I used sklearn, with Recall as the main score. The school got a ranked list and the reasons, and a teacher reviewed each case, wi",
+        "status": "ANSWER_READY",
+        "notes": "",
+        "meta": {
+          "shape": "session",
+          "detection": "single",
+          "topic_must": [
+            "rag",
+            "retriev",
+            "btec",
+            "early",
+            "warning",
+            "risk",
+            "architect"
+          ]
+        }
+      },
+      {
+        "id": "live_08",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": true,
+        "understood": true,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 3.894699999364093,
+        "breakdown": {
+          "classify_ms": 0.29090000316500664,
+          "match_ms": 3.5059000001638196
+        },
+        "transcript": "How?",
+        "match_id": "proj.early_warning.describe",
+        "match_score": 0.56,
+        "match_mode": "weak",
+        "answer_preview": "At Al Najat I looked for students who might need help before the term ended. Data was grades and attendance in messy files, which I cleaned in Pandas. I used sklearn, with Recall as the main score. The school got a ranked list and the reasons, and a teacher reviewed each case, wi",
+        "status": "LOW_CONFIDENCE",
+        "notes": "",
+        "meta": {
+          "shape": "follow_up",
+          "detection": "single",
+          "topic_must": [
+            "rag",
+            "retriev",
+            "btec",
+            "early",
+            "warning",
+            "risk",
+            "architect"
+          ]
+        }
+      },
+      {
+        "id": "live_09",
+        "suite": "text",
+        "ok": true,
+        "meaning_ok": true,
+        "question_detected": false,
+        "understood": false,
+        "answer_selected": false,
+        "confident_wrong": false,
+        "duplicate": false,
+        "timeout": false,
+        "latency_ms": 0.0779999973019585,
+        "breakdown": {
+          "classify_ms": 0.0698000003467314
+        },
+        "transcript": "Okay thanks.",
+        "match_id": "",
+        "match_score": 0.0,
+        "match_mode": "",
+        "answer_preview": "",
+        "status": "NO_QUESTION",
+        "notes": "STATEMENT",
+        "meta": {
+          "shape": "non_question"
+        }
+      }
+    ]
+  },
+  "production_fingerprint": {
+    "app/services/question_bank.py": "4c11beb7b34a48c2c7d0d9913c5061014fcfd73c208030b12d38b5252bf3e5aa",
+    "app/services/compound_question_pipeline.py": "c36852b76cfed6c108809b8ef28a1f2210e497dff64f729e4120abce9901f724",
+    "app/services/semantic_intent_recovery.py": "13c03c698d702f065665542c48d1128e4c9bd70f32aa59e4c9ad22b7682eb2b6",
+    "app/services/answer_generator.py": "cfaa78c5d7c26a23ffda0de586085def672b7a568ea49ac02ca7e51b93e6d139",
+    "app/services/live_audio.py": "a83b1dc7c0adf9cef5d1cc45de0be295d2802fe2366e724fad9c4cfcc1d6c3f5",
+    "app/audio/whisper_stt.py": "a402ef28a85923c6d9a62c6fa61fd8356313cb9e0ccd9f749e1e6dce1f9c10a2",
+    "app/config.py": "2015baaf2facdd762a324f5a085636f1d40d74208d011fe06e15405ce539fb86",
+    "app/services/warm_start.py": "fddae66d9419ff4cd4b4a10b4ebb59a380333db21d6f1d927b37de84215d10c2"
+  },
+  "verdict": "READY_FOR_REAL_INTERVIEW",
+  "blockers": [],
+  "KNOWN_LIMITATIONS": [
+    "Very noisy rooms may reduce STT accuracy.",
+    "Extremely compressed telegraphic questions may require clarification or abstain.",
+    "Compound/telegraphic coverage is practical (meaning + grounded answers), not the v4 academic compound≥0.90 holdout gate.",
+    "Bare Why?/How? follow-ups keep the prior bank intent as weak grounding (not a new strong answer); live generation uses conversation context.",
+    "Vague ministry-value / governance asks may honestly abstain rather than invent a confident business answer."
+  ],
+  "lock": {
+    "path": "C:\\Users\\aalsa\\OneDrive\\Desktop\\interview (2)\\interview11\\backend\\reports\\V5_FINAL_INTERVIEW_READINESS.lock.json",
+    "write": true,
+    "independent_verify_ok": true,
+    "problems": []
+  }
+}

@@ -1,0 +1,278 @@
+{
+  "created_at": "2026-09-11T18:15:44.335673+00:00",
+  "mode": "direct_audio_injection",
+  "filters": {
+    "question_id": 156,
+    "speaker": "jordanian",
+    "condition": null,
+    "limit": 6,
+    "mode": "direct_audio_injection"
+  },
+  "summary": {
+    "total": 6,
+    "passed": 4,
+    "failed": 2,
+    "pass_rate": 0.667,
+    "stt_success": "3/6",
+    "stt_success_rate": 0.5,
+    "intent_success": "4/6",
+    "intent_success_rate": 0.667,
+    "answer_success": "4/6",
+    "answer_success_rate": 0.667,
+    "average_latency_sec": 11.297,
+    "failed_cases": 2,
+    "main_weakness": "none",
+    "failure_stages": {
+      "STT": 2
+    },
+    "by_condition": {
+      "office_noise": {
+        "total": 1,
+        "pass": 0,
+        "pass_rate": 0.0
+      },
+      "poor_call": {
+        "total": 1,
+        "pass": 0,
+        "pass_rate": 0.0
+      },
+      "clean": {
+        "total": 1,
+        "pass": 1,
+        "pass_rate": 1.0
+      },
+      "fast": {
+        "total": 1,
+        "pass": 1,
+        "pass_rate": 1.0
+      },
+      "far": {
+        "total": 1,
+        "pass": 1,
+        "pass_rate": 1.0
+      },
+      "combined": {
+        "total": 1,
+        "pass": 1,
+        "pass_rate": 1.0
+      }
+    },
+    "by_speaker": {
+      "jordanian": {
+        "total": 6,
+        "pass": 4,
+        "pass_rate": 0.667
+      }
+    },
+    "failed_sample_ids": [
+      9,
+      11
+    ]
+  },
+  "results": [
+    {
+      "sample_id": 7,
+      "file": "audio/Q156_jordanian_synthetic_clean.wav",
+      "question_id": 156,
+      "speaker": "jordanian",
+      "condition": "clean",
+      "expected_question": "What is RAG?",
+      "spoken_wording": "What is rag",
+      "expected_answer": "RAG means retrieve, then generate. The model does not answer from memory. We search our documents first, then we give those pieces to the model. I used this for BTEC exam questions so the output stays on the unit content.",
+      "transcript": "What is rag?",
+      "stt_ok": true,
+      "stt_score": 0.98,
+      "intent_ok": true,
+      "intent_score": 1.0,
+      "topic": "rag",
+      "match_id": "tech.rag_what",
+      "match_question": "What is RAG?",
+      "match_score": 1.04,
+      "match_mode": "strong",
+      "answer_en": "RAG means retrieve, then generate. The model does not answer from memory. We search our documents first, then we give those pieces to the model. I used this for BTEC exam questions so the output stays on the unit content.",
+      "answer_ok": true,
+      "answer_score": 1.0,
+      "accuracy": 99.5,
+      "result": "PASS",
+      "failure_stage": null,
+      "failure_detail": "",
+      "timings": {
+        "stt_ms": 30858.4,
+        "understand_ms": 1079.8,
+        "answer_ms": 4160.9,
+        "total_ms": 36102.0
+      },
+      "notes": "Direct audio injection"
+    },
+    {
+      "sample_id": 8,
+      "file": "audio/Q156_jordanian_synthetic_fast.wav",
+      "question_id": 156,
+      "speaker": "jordanian",
+      "condition": "fast",
+      "expected_question": "What is RAG?",
+      "spoken_wording": "What is rag",
+      "expected_answer": "RAG means retrieve, then generate. The model does not answer from memory. We search our documents first, then we give those pieces to the model. I used this for BTEC exam questions so the output stays on the unit content.",
+      "transcript": "What is rag?",
+      "stt_ok": true,
+      "stt_score": 0.98,
+      "intent_ok": true,
+      "intent_score": 1.0,
+      "topic": "rag",
+      "match_id": "tech.rag_what",
+      "match_question": "What is RAG?",
+      "match_score": 1.04,
+      "match_mode": "strong",
+      "answer_en": "RAG means retrieve, then generate. The model does not answer from memory. We search our documents first, then we give those pieces to the model. I used this for BTEC exam questions so the output stays on the unit content.",
+      "answer_ok": true,
+      "answer_score": 1.0,
+      "accuracy": 99.5,
+      "result": "PASS",
+      "failure_stage": null,
+      "failure_detail": "",
+      "timings": {
+        "stt_ms": 1081.6,
+        "understand_ms": 1250.1,
+        "answer_ms": 7946.4,
+        "total_ms": 10279.7
+      },
+      "notes": "Direct audio injection"
+    },
+    {
+      "sample_id": 9,
+      "file": "audio/Q156_jordanian_synthetic_office_noise.wav",
+      "question_id": 156,
+      "speaker": "jordanian",
+      "condition": "office_noise",
+      "expected_question": "What is RAG?",
+      "spoken_wording": "What is rag",
+      "expected_answer": "RAG means retrieve, then generate. The model does not answer from memory. We search our documents first, then we give those pieces to the model. I used this for BTEC exam questions so the output stays on the unit content.",
+      "transcript": "What did drag?",
+      "stt_ok": false,
+      "stt_score": 0.36,
+      "intent_ok": false,
+      "intent_score": 0.0,
+      "topic": null,
+      "match_id": null,
+      "match_question": null,
+      "match_score": 0.0,
+      "match_mode": null,
+      "answer_en": null,
+      "answer_ok": false,
+      "answer_score": 0.0,
+      "accuracy": 9.0,
+      "result": "FAIL",
+      "failure_stage": "STT",
+      "failure_detail": "Poor transcription changed the question meaning.",
+      "timings": {
+        "stt_ms": 1018.6,
+        "understand_ms": 1605.5,
+        "answer_ms": 0.0,
+        "total_ms": 2626.7
+      },
+      "notes": "Direct audio injection"
+    },
+    {
+      "sample_id": 10,
+      "file": "audio/Q156_jordanian_synthetic_far.wav",
+      "question_id": 156,
+      "speaker": "jordanian",
+      "condition": "far",
+      "expected_question": "What is RAG?",
+      "spoken_wording": "What is rag",
+      "expected_answer": "RAG means retrieve, then generate. The model does not answer from memory. We search our documents first, then we give those pieces to the model. I used this for BTEC exam questions so the output stays on the unit content.",
+      "transcript": "What is rag?",
+      "stt_ok": true,
+      "stt_score": 0.98,
+      "intent_ok": true,
+      "intent_score": 1.0,
+      "topic": "rag",
+      "match_id": "tech.rag_what",
+      "match_question": "What is RAG?",
+      "match_score": 1.04,
+      "match_mode": "strong",
+      "answer_en": "RAG means retrieve, then generate. The model does not answer from memory. We search our documents first, then we give those pieces to the model. I used this for BTEC exam questions so the output stays on the unit content.",
+      "answer_ok": true,
+      "answer_score": 1.0,
+      "accuracy": 99.5,
+      "result": "PASS",
+      "failure_stage": null,
+      "failure_detail": "",
+      "timings": {
+        "stt_ms": 1300.9,
+        "understand_ms": 1355.9,
+        "answer_ms": 6524.0,
+        "total_ms": 9182.5
+      },
+      "notes": "Direct audio injection"
+    },
+    {
+      "sample_id": 11,
+      "file": "audio/Q156_jordanian_synthetic_poor_call.wav",
+      "question_id": 156,
+      "speaker": "jordanian",
+      "condition": "poor_call",
+      "expected_question": "What is RAG?",
+      "spoken_wording": "What is rag",
+      "expected_answer": "RAG means retrieve, then generate. The model does not answer from memory. We search our documents first, then we give those pieces to the model. I used this for BTEC exam questions so the output stays on the unit content.",
+      "transcript": "Wapid drag.",
+      "stt_ok": false,
+      "stt_score": 0.286,
+      "intent_ok": false,
+      "intent_score": 0.0,
+      "topic": null,
+      "match_id": null,
+      "match_question": null,
+      "match_score": 0.0,
+      "match_mode": null,
+      "answer_en": null,
+      "answer_ok": false,
+      "answer_score": 0.0,
+      "accuracy": 7.2,
+      "result": "FAIL",
+      "failure_stage": "STT",
+      "failure_detail": "Poor transcription changed the question meaning.",
+      "timings": {
+        "stt_ms": 1023.9,
+        "understand_ms": 1159.3,
+        "answer_ms": 0.0,
+        "total_ms": 2184.9
+      },
+      "notes": "Direct audio injection"
+    },
+    {
+      "sample_id": 12,
+      "file": "audio/Q156_jordanian_synthetic_combined.wav",
+      "question_id": 156,
+      "speaker": "jordanian",
+      "condition": "combined",
+      "expected_question": "What is RAG?",
+      "spoken_wording": "What is rag",
+      "expected_answer": "RAG means retrieve, then generate. The model does not answer from memory. We search our documents first, then we give those pieces to the model. I used this for BTEC exam questions so the output stays on the unit content.",
+      "transcript": "what it rags.",
+      "stt_ok": false,
+      "stt_score": 0.456,
+      "intent_ok": true,
+      "intent_score": 1.0,
+      "topic": "rag",
+      "match_id": "tech.rag_what",
+      "match_question": "What is RAG?",
+      "match_score": 0.913,
+      "match_mode": "strong",
+      "answer_en": "RAG means retrieve, then generate. The model does not answer from memory. We search our documents first, then we give those pieces to the model. I used this for BTEC exam questions so the output stays on the unit content.",
+      "answer_ok": true,
+      "answer_score": 1.0,
+      "accuracy": 86.4,
+      "result": "PASS",
+      "failure_stage": null,
+      "failure_detail": "STT word errors present, but intent and answer remained correct.",
+      "timings": {
+        "stt_ms": 914.0,
+        "understand_ms": 1833.5,
+        "answer_ms": 4654.2,
+        "total_ms": 7403.3
+      },
+      "notes": "Direct audio injection"
+    }
+  ]
+}

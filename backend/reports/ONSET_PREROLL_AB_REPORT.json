@@ -1,0 +1,66 @@
+{
+  "created_at": "2026-09-11T21:21:21.682314+00:00",
+  "mode": "onset_preroll_ab",
+  "rows": [
+    {
+      "pre_roll_ms": 400,
+      "post_roll_ms": 250,
+      "total": 30,
+      "first_word_missing": 8,
+      "last_word_missing": 9,
+      "stt_success": "30/30",
+      "intent_success": "28/30",
+      "intent_success_rate": 0.933,
+      "high_confidence_wrong": 0,
+      "median_post_speech_ms": 2974.7,
+      "report_html": "C:\\Users\\aalsa\\OneDrive\\Desktop\\interview (2)\\interview11\\backend\\reports\\INTERVIEW_E2E_CLEAN_REPORT.html"
+    },
+    {
+      "pre_roll_ms": 600,
+      "post_roll_ms": 250,
+      "total": 30,
+      "first_word_missing": 8,
+      "last_word_missing": 9,
+      "stt_success": "30/30",
+      "intent_success": "28/30",
+      "intent_success_rate": 0.933,
+      "high_confidence_wrong": 0,
+      "median_post_speech_ms": 2913.3,
+      "report_html": "C:\\Users\\aalsa\\OneDrive\\Desktop\\interview (2)\\interview11\\backend\\reports\\INTERVIEW_E2E_CLEAN_REPORT.html"
+    },
+    {
+      "pre_roll_ms": 800,
+      "post_roll_ms": 250,
+      "total": 30,
+      "first_word_missing": 8,
+      "last_word_missing": 9,
+      "stt_success": "30/30",
+      "intent_success": "27/30",
+      "intent_success_rate": 0.9,
+      "high_confidence_wrong": 0,
+      "median_post_speech_ms": 2929.6,
+      "report_html": "C:\\Users\\aalsa\\OneDrive\\Desktop\\interview (2)\\interview11\\backend\\reports\\INTERVIEW_E2E_CLEAN_REPORT.html"
+    },
+    {
+      "pre_roll_ms": 1000,
+      "post_roll_ms": 250,
+      "total": 30,
+      "first_word_missing": 8,
+      "last_word_missing": 9,
+      "stt_success": "30/30",
+      "intent_success": "28/30",
+      "intent_success_rate": 0.933,
+      "high_confidence_wrong": 0,
+      "median_post_speech_ms": 2923.2,
+      "report_html": "C:\\Users\\aalsa\\OneDrive\\Desktop\\interview (2)\\interview11\\backend\\reports\\INTERVIEW_E2E_CLEAN_REPORT.html"
+    }
+  ],
+  "recommended_pre_roll_ms": 600,
+  "gates": {
+    "first_word_missing_max": 1,
+    "clean_stt_min": 0.96,
+    "clean_intent_min": 0.9,
+    "high_confidence_wrong": 0,
+    "median_post_speech_ms_max": 1500
+  }
+}

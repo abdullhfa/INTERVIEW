@@ -1,0 +1,59 @@
+{
+  "status": "FROZEN",
+  "frozen_at": "2026-09-12",
+  "intent_problem": "CLOSED",
+  "policy": {
+    "further_changes": "bug_fix_only",
+    "forbidden": [
+      "threshold_tuning",
+      "weight_tuning",
+      "alias_expansion_for_score_chasing",
+      "global_STRONG_THRESHOLD_lowering",
+      "whisper_eq_vad_changes_for_intent",
+      "tuning_on_final_unseen_holdout"
+    ]
+  },
+  "baselines_e2e": {
+    "medium_intent": "8/8",
+    "short_intent": "8/8",
+    "short_compound_path_used": 0,
+    "very_long_intent": "8/8",
+    "long_accent_intent": "40/40",
+    "realistic_intent": "97/100",
+    "hc_wrong": 0
+  },
+  "known_limitations": [
+    {
+      "id": "very_long_last_word_missing",
+      "severity": "medium",
+      "blocking_readiness": false,
+      "observation": "Very-long E2E last_word_missing=2/8 after continuation/merge (was 8/8). Intent still 8/8.",
+      "do_not": "Raise global MAX_UTTERANCE_DURATION blindly to chase this metric."
+    }
+  ],
+  "final_unseen_holdout": {
+    "status": "scripts_ready_audio_pending",
+    "n_scored": 120,
+    "n_warmup": 2,
+    "pack": "frontend/public/voice-drill/final-unseen-holdout/",
+    "protocol": "backend/reports/FINAL_UNSEEN_HOLDOUT_PROTOCOL.md",
+    "cli": "python scripts/run_e2e_loopback_tests.py --suite final_unseen_holdout",
+    "report": "FINAL_UNSEEN_HOLDOUT_REPORT.html/json",
+    "rules": [
+      "eval_only",
+      "warm_up_excluded_from_metrics",
+      "no_mid_run_retune",
+      "bug_fix_voids_this_sample_build_new_holdout",
+      "last_word_missing_diagnostic_only_on_very_long"
+    ],
+    "adoption_gate": {
+      "intent_rate_min": 0.92,
+      "hc_wrong_max": 0,
+      "meaning_lost_max": 0.01,
+      "median_post_speech_ms_max": 1500,
+      "compound_coverage_min": 0.9,
+      "simple_fast_path": "no_unnecessary_compound"
+    }
+  },
+  "readiness_note": "Dev regression is near READY. Official READY = Final Unseen Holdout passes gate with frozen system and no tuning."
+}

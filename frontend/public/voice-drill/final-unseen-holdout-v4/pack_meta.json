@@ -1,0 +1,85 @@
+{
+  "name": "final-unseen-holdout-v4",
+  "eval_only": true,
+  "run_once": true,
+  "scored_cases": 120,
+  "warmup_cases": 2,
+  "question_types": {
+    "ultra_short": 15,
+    "short": 15,
+    "medium": 15,
+    "long": 15,
+    "very_long": 15,
+    "compound": 15,
+    "indirect_paraphrase": 15,
+    "follow_up_contextual": 15
+  },
+  "conditions": {
+    "clean": 24,
+    "office": 24,
+    "poor": 24,
+    "far": 24,
+    "fast": 24
+  },
+  "accents": {
+    "en-IN": 30,
+    "proxy-ar-JO": 30,
+    "proxy-ar-EG": 30,
+    "proxy-ar-AE": 30
+  },
+  "accent_kinds": {
+    "en-IN": "native_locale",
+    "proxy-ar-JO": "synthetic_proxy",
+    "proxy-ar-EG": "synthetic_proxy",
+    "proxy-ar-AE": "synthetic_proxy"
+  },
+  "accent_note": "en-IN is a genuine English-locale neural voice. proxy-ar-JO / proxy-ar-EG / proxy-ar-AE are Arabic-locale voices reading English: synthetic accent proxies, not recordings of human dialect speakers. Do not report them as Jordanian / Egyptian / Emirati accents.",
+  "voice_spotcheck_required_before_lock": true,
+  "gold_file": "gold.json",
+  "gold_in_runtime_scripts": false,
+  "audio_status": "synthesized",
+  "supersedes": "final-unseen-holdout-v3",
+  "protocol": "backend/reports/FINAL_UNSEEN_HOLDOUT_PROTOCOL.md",
+  "novelty_checked_against": [
+    "final-unseen-holdout-v3",
+    "final-unseen-holdout",
+    "final-unseen-holdout-v2",
+    "compound-dev",
+    "generalization-dev",
+    "long-sentence-accent-pack",
+    "stress-holdout-v2",
+    "stress-pilot",
+    "question bank questions + aliases"
+  ],
+  "tts": {
+    "engine": "edge-tts",
+    "voice_set": "multilingual",
+    "voices": {
+      "en-IN": [
+        "en-IN-NeerjaNeural",
+        "en-IN-PrabhatNeural"
+      ],
+      "proxy-ar-JO": [
+        "en-US-AvaMultilingualNeural",
+        "en-US-AndrewMultilingualNeural"
+      ],
+      "proxy-ar-EG": [
+        "en-US-EmmaMultilingualNeural",
+        "en-US-BrianMultilingualNeural"
+      ],
+      "proxy-ar-AE": [
+        "de-DE-SeraphinaMultilingualNeural",
+        "en-US-AndrewMultilingualNeural"
+      ]
+    },
+    "rate": {
+      "clean": "+0%",
+      "office": "+0%",
+      "poor": "+0%",
+      "far": "+0%",
+      "fast": "+28%"
+    },
+    "sample_rate": 16000,
+    "accent_note": "proxy-ar-* profiles are synthetic accent proxies, not human dialect recordings. Reports must not describe them as real dialects."
+  }
+}

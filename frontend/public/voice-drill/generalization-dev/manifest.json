@@ -1,0 +1,870 @@
+[
+  {
+    "id": "gdev_001",
+    "question_type": "medium",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "Walk me through RAG: how retrieval feeds the model before it writes the final reply.",
+    "expected_intent_ids": [
+      "tech.rag_what",
+      "tech.rag_build",
+      "tech.rag_two_phases",
+      "cv.rag_experience"
+    ],
+    "file": "audio/gdev_001.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_002",
+    "question_type": "medium",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "In the plagiarism helper, why embeddings plus cosine instead of calling a chat model?",
+    "expected_intent_ids": [
+      "proj.similarity.stack",
+      "tech.cosine_semantic_search",
+      "tech.embeddings"
+    ],
+    "file": "audio/gdev_002.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_003",
+    "question_type": "medium",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "Before a draft question is persisted, what validation happens and who can still reject it?",
+    "expected_intent_ids": [
+      "hard.teacher_rejects",
+      "hard.hitl_where",
+      "cv.pydantic"
+    ],
+    "file": "audio/gdev_003.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_004",
+    "question_type": "medium",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "Why keep a human-in-the-loop approval gate even when the generator already sounds fluent?",
+    "expected_intent_ids": [
+      "hard.hitl_where",
+      "hard.teacher_rejects"
+    ],
+    "file": "audio/gdev_004.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_005",
+    "question_type": "medium",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "How do you enforce tenant isolation so one school never reads another school's indexed chunks?",
+    "expected_intent_ids": [
+      "hard.tenant_isolation",
+      "tech.metadata_filtering",
+      "tech.rag_access_control"
+    ],
+    "file": "audio/gdev_005.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_006",
+    "question_type": "medium",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "If top-k comes back empty, what should the product do instead of inventing figures?",
+    "expected_intent_ids": [
+      "hard.empty_retrieval",
+      "tech.rag_prevent_invented_numbers",
+      "tech.no_wrong_info_finance"
+    ],
+    "file": "audio/gdev_006.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_007",
+    "question_type": "medium",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "How do you stop prompt injection when a retrieved PDF tries to become an instruction to the model?",
+    "expected_intent_ids": [
+      "hard.injection_in_pdf",
+      "tech.prompt_engineering",
+      "tech.prompt_injection_what"
+    ],
+    "file": "audio/gdev_007.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_008",
+    "question_type": "medium",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "When answers look wrong but the vector hits are non-empty, how do you debug which layer failed?",
+    "expected_intent_ids": [
+      "hard.which_rag_layer_failed",
+      "tech.rag_debugging",
+      "hard.rag_debug_steps"
+    ],
+    "file": "audio/gdev_008.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_009",
+    "question_type": "medium",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "Why not fine-tune every time a ministry PDF set changes for the year?",
+    "expected_intent_ids": [
+      "hard.not_finetune_first",
+      "tech.rag_vs_finetuning"
+    ],
+    "file": "audio/gdev_009.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_010",
+    "question_type": "medium",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "For early-warning students, which metric mattered more than chasing raw accuracy?",
+    "expected_intent_ids": [
+      "proj.early_warning.metric",
+      "tech.precision_recall",
+      "proj.early_warning.describe"
+    ],
+    "file": "audio/gdev_010.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_011",
+    "question_type": "medium",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "Would you orchestrate approval gates with LangGraph, n8n, or plain Python, and why?",
+    "expected_intent_ids": [
+      "hard.langgraph_vs_n8n_vs_python",
+      "tech.what_is_langgraph",
+      "cv.langgraph"
+    ],
+    "file": "audio/gdev_011.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_012",
+    "question_type": "medium",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "How do you judge that transcription quality is good enough for this interview coach?",
+    "expected_intent_ids": [
+      "tech.transcription_quality",
+      "tech.wer"
+    ],
+    "file": "audio/gdev_012.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_013",
+    "question_type": "ultra_short",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "What is RAG?",
+    "expected_intent_ids": [
+      "tech.rag_what"
+    ],
+    "file": "audio/gdev_013.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_014",
+    "question_type": "ultra_short",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "Define embeddings.",
+    "expected_intent_ids": [
+      "tech.embeddings"
+    ],
+    "file": "audio/gdev_014.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_015",
+    "question_type": "ultra_short",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "What is hallucination?",
+    "expected_intent_ids": [
+      "tech.hallucination_what"
+    ],
+    "file": "audio/gdev_015.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_016",
+    "question_type": "ultra_short",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "Explain LoRA.",
+    "expected_intent_ids": [
+      "tech.lora"
+    ],
+    "file": "audio/gdev_016.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_017",
+    "question_type": "ultra_short",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "What is WER?",
+    "expected_intent_ids": [
+      "tech.wer"
+    ],
+    "file": "audio/gdev_017.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_018",
+    "question_type": "ultra_short",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "What is temperature?",
+    "expected_intent_ids": [
+      "tech.temperature"
+    ],
+    "file": "audio/gdev_018.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_019",
+    "question_type": "ultra_short",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "What is Chroma?",
+    "expected_intent_ids": [
+      "cv.chromadb",
+      "tech.what_is_chromadb",
+      "tech.vector_db_choice"
+    ],
+    "file": "audio/gdev_019.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_020",
+    "question_type": "ultra_short",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "What is human in the loop?",
+    "expected_intent_ids": [
+      "hard.hitl_where"
+    ],
+    "file": "audio/gdev_020.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_021",
+    "question_type": "ultra_short",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "Define guardrails.",
+    "expected_intent_ids": [
+      "tech.guardrails_what",
+      "cv.guardrails"
+    ],
+    "file": "audio/gdev_021.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_022",
+    "question_type": "ultra_short",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "What is LangGraph?",
+    "expected_intent_ids": [
+      "tech.what_is_langgraph",
+      "cv.langgraph"
+    ],
+    "file": "audio/gdev_022.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_023",
+    "question_type": "ultra_short",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "What is chunking?",
+    "expected_intent_ids": [
+      "tech.chunk_size"
+    ],
+    "file": "audio/gdev_023.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_024",
+    "question_type": "ultra_short",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "Explain Pydantic.",
+    "expected_intent_ids": [
+      "cv.pydantic"
+    ],
+    "file": "audio/gdev_024.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_025",
+    "question_type": "indirect",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "If yearly regulation PDFs change, why prefer RAG over fine-tuning instead of baking text into weights?",
+    "expected_intent_ids": [
+      "tech.rag_vs_finetuning",
+      "hard.not_finetune_first",
+      "tech.rag_what"
+    ],
+    "file": "audio/gdev_025.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_026",
+    "question_type": "indirect",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "Suppose retrieval returns nothing useful — what is the safe user-facing behavior?",
+    "expected_intent_ids": [
+      "hard.empty_retrieval",
+      "tech.hallucination_prevent"
+    ],
+    "file": "audio/gdev_026.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_027",
+    "question_type": "indirect",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "How would you keep school A from ever seeing school B's assignment store?",
+    "expected_intent_ids": [
+      "hard.tenant_isolation",
+      "tech.rag_access_control",
+      "tech.metadata_filtering"
+    ],
+    "file": "audio/gdev_027.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_028",
+    "question_type": "indirect",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "When do you need an agent with tools instead of plain RAG retrieval alone?",
+    "expected_intent_ids": [
+      "hard.why_agent_not_rag",
+      "tech.agentic_what"
+    ],
+    "file": "audio/gdev_028.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_029",
+    "question_type": "indirect",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "How do you prevent invented citation numbers and other hallucinations in finance answers?",
+    "expected_intent_ids": [
+      "tech.rag_prevent_invented_numbers",
+      "tech.no_wrong_info_finance",
+      "tech.hallucination_prevent"
+    ],
+    "file": "audio/gdev_029.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_030",
+    "question_type": "indirect",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "Where should a teacher be able to stop a generated item from being saved?",
+    "expected_intent_ids": [
+      "hard.hitl_where",
+      "hard.teacher_rejects"
+    ],
+    "file": "audio/gdev_030.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_031",
+    "question_type": "indirect",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "Is the assignment similarity checker meant to auto-grade, or only support a human decision?",
+    "expected_intent_ids": [
+      "proj.similarity.role",
+      "proj.similarity.is_rag",
+      "proj.similarity.describe",
+      "hard.similarity_vs_qgen_arch"
+    ],
+    "file": "audio/gdev_031.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_032",
+    "question_type": "indirect",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "What goes wrong with context stuffing if you dump twenty retrieved chunks into one prompt?",
+    "expected_intent_ids": [
+      "hard.context_stuffing",
+      "tech.chunk_size",
+      "hard.pii_in_chunks"
+    ],
+    "file": "audio/gdev_032.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_033",
+    "question_type": "indirect",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "How do you keep personal student fields out of logs sent to the model?",
+    "expected_intent_ids": [
+      "tech.pii_redaction",
+      "cv.student_pii",
+      "hard.tenant_isolation"
+    ],
+    "file": "audio/gdev_033.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_034",
+    "question_type": "indirect",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "In a government RAG app, should answers stream to the user before validation finishes?",
+    "expected_intent_ids": [
+      "hard.streaming_vs_validate",
+      "tech.hallucination_prevent",
+      "hard.secure_rag"
+    ],
+    "file": "audio/gdev_034.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_035",
+    "question_type": "indirect",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "What graph control would you still want after starting with plain Python agents?",
+    "expected_intent_ids": [
+      "hard.plain_python_still_agentic",
+      "tech.what_is_langgraph",
+      "cv.langgraph"
+    ],
+    "file": "audio/gdev_035.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_036",
+    "question_type": "indirect",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "How do metadata filters sit on top of a vector collection in practice?",
+    "expected_intent_ids": [
+      "tech.metadata_filtering",
+      "cv.chromadb",
+      "tech.vector_db_choice"
+    ],
+    "file": "audio/gdev_036.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_037",
+    "question_type": "follow_up",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "And why not just fine-tune on those PDFs instead?",
+    "expected_intent_ids": [
+      "tech.rag_vs_finetuning",
+      "hard.not_finetune_first"
+    ],
+    "file": "audio/gdev_037.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true,
+    "context_prior": "We use RAG so yearly regulation PDFs can be re-indexed without retraining weights."
+  },
+  {
+    "id": "gdev_038",
+    "question_type": "follow_up",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "Where does the human-in-the-loop approval step sit in that flow?",
+    "expected_intent_ids": [
+      "hard.hitl_where",
+      "hard.teacher_rejects"
+    ],
+    "file": "audio/gdev_038.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true,
+    "context_prior": "The BTEC path generates a draft question from retrieved passages."
+  },
+  {
+    "id": "gdev_039",
+    "question_type": "follow_up",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "What if retrieval returns nothing useful there?",
+    "expected_intent_ids": [
+      "hard.empty_retrieval",
+      "tech.rag_prevent_invented_numbers"
+    ],
+    "file": "audio/gdev_039.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true,
+    "context_prior": "The finance assistant answers from a private document collection."
+  },
+  {
+    "id": "gdev_040",
+    "question_type": "follow_up",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "Is the similarity checker itself a RAG system?",
+    "expected_intent_ids": [
+      "proj.similarity.is_rag",
+      "proj.similarity.stack"
+    ],
+    "file": "audio/gdev_040.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true,
+    "context_prior": "The assignment similarity checker embeds student work and ranks neighbors with cosine."
+  },
+  {
+    "id": "gdev_041",
+    "question_type": "follow_up",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "Which metric mattered more for those alerts?",
+    "expected_intent_ids": [
+      "proj.early_warning.metric",
+      "tech.precision_recall"
+    ],
+    "file": "audio/gdev_041.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true,
+    "context_prior": "We built an early-warning model for at-risk students."
+  },
+  {
+    "id": "gdev_042",
+    "question_type": "follow_up",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "How do you stop cross-tenant leakage in that setup?",
+    "expected_intent_ids": [
+      "hard.tenant_isolation",
+      "tech.metadata_filtering",
+      "tech.rag_access_control"
+    ],
+    "file": "audio/gdev_042.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true,
+    "context_prior": "Multiple schools share one RAG platform with separate collections."
+  },
+  {
+    "id": "gdev_043",
+    "question_type": "follow_up",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "Would you still pick LangGraph for the approval interrupts?",
+    "expected_intent_ids": [
+      "hard.langgraph_vs_n8n_vs_python",
+      "tech.what_is_langgraph",
+      "cv.langgraph"
+    ],
+    "file": "audio/gdev_043.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true,
+    "context_prior": "Today the agentic workflow is mostly plain Python with explicit stop conditions."
+  },
+  {
+    "id": "gdev_044",
+    "question_type": "follow_up",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "How do you prevent invented numbers and hallucinations in those ministry answers?",
+    "expected_intent_ids": [
+      "tech.rag_prevent_invented_numbers",
+      "tech.hallucination_prevent",
+      "tech.no_wrong_info_finance"
+    ],
+    "file": "audio/gdev_044.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true,
+    "context_prior": "The coach answers factual ministry questions from retrieved passages."
+  },
+  {
+    "id": "gdev_045",
+    "question_type": "follow_up",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "And how do you keep PDF text from becoming instructions?",
+    "expected_intent_ids": [
+      "hard.injection_in_pdf",
+      "tech.prompt_engineering"
+    ],
+    "file": "audio/gdev_045.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true,
+    "context_prior": "Retrieval can pull long policy PDFs into the prompt."
+  },
+  {
+    "id": "gdev_046",
+    "question_type": "follow_up",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "What do you check first when hits look fine but answers are wrong?",
+    "expected_intent_ids": [
+      "tech.rag_debugging",
+      "hard.which_rag_layer_failed",
+      "hard.rag_debug_steps"
+    ],
+    "file": "audio/gdev_046.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true,
+    "context_prior": "Indexing and query-time retrieval are separate phases in our RAG build."
+  },
+  {
+    "id": "gdev_047",
+    "question_type": "follow_up",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "Where does schema validation sit relative to teacher approval?",
+    "expected_intent_ids": [
+      "cv.pydantic",
+      "hard.teacher_rejects",
+      "tech.structured_output"
+    ],
+    "file": "audio/gdev_047.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true,
+    "context_prior": "Generated questions must be valid structured JSON before persistence."
+  },
+  {
+    "id": "gdev_048",
+    "question_type": "follow_up",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "Besides word error rate, how else do you judge transcription quality?",
+    "expected_intent_ids": [
+      "tech.transcription_quality",
+      "tech.wer"
+    ],
+    "file": "audio/gdev_048.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true,
+    "context_prior": "We track word error rate for the interview coach STT path."
+  },
+  {
+    "id": "gdev_049",
+    "question_type": "far",
+    "condition": "far",
+    "accent": "indian",
+    "transcript": "Briefly, what is retrieval augmented generation used for here?",
+    "expected_intent_ids": [
+      "tech.rag_what",
+      "tech.rag_build"
+    ],
+    "file": "audio/gdev_049.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_050",
+    "question_type": "far",
+    "condition": "far",
+    "accent": "jordanian",
+    "transcript": "Why keep a teacher approval gate before saving drafts?",
+    "expected_intent_ids": [
+      "hard.hitl_where",
+      "hard.teacher_rejects"
+    ],
+    "file": "audio/gdev_050.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_051",
+    "question_type": "far",
+    "condition": "far",
+    "accent": "egyptian",
+    "transcript": "How do you isolate tenants when many schools share one index?",
+    "expected_intent_ids": [
+      "hard.tenant_isolation",
+      "tech.metadata_filtering"
+    ],
+    "file": "audio/gdev_051.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_052",
+    "question_type": "far",
+    "condition": "far",
+    "accent": "emirati",
+    "transcript": "What should happen when retrieval finds no useful chunks?",
+    "expected_intent_ids": [
+      "hard.empty_retrieval"
+    ],
+    "file": "audio/gdev_052.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_053",
+    "question_type": "poor",
+    "condition": "poor",
+    "accent": "indian",
+    "transcript": "What is cosine similarity doing in semantic search?",
+    "expected_intent_ids": [
+      "tech.cosine_semantic_search",
+      "tech.embeddings"
+    ],
+    "file": "audio/gdev_053.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_054",
+    "question_type": "poor",
+    "condition": "poor",
+    "accent": "jordanian",
+    "transcript": "How do you reduce hallucination without treating temperature as truth?",
+    "expected_intent_ids": [
+      "tech.hallucination_prevent",
+      "tech.temperature",
+      "tech.hallucination_what"
+    ],
+    "file": "audio/gdev_054.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_055",
+    "question_type": "poor",
+    "condition": "poor",
+    "accent": "egyptian",
+    "transcript": "Why prefer RAG over fine-tuning for changing regulation PDFs?",
+    "expected_intent_ids": [
+      "tech.rag_vs_finetuning",
+      "hard.not_finetune_first"
+    ],
+    "file": "audio/gdev_055.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  },
+  {
+    "id": "gdev_056",
+    "question_type": "poor",
+    "condition": "poor",
+    "accent": "emirati",
+    "transcript": "What is metadata filtering in a vector store?",
+    "expected_intent_ids": [
+      "tech.metadata_filtering"
+    ],
+    "file": "audio/gdev_056.wav",
+    "warmup": false,
+    "pack": "generalization-dev",
+    "eval_only": true
+  }
+]

@@ -1,0 +1,1135 @@
+{
+  "created_at": "2026-09-13T15:03:10.154875+00:00",
+  "track": "final_pre_v3_latency_hardening",
+  "before": {
+    "simple": {
+      "median_ms": 1193.6,
+      "p95_ms": 3947.5,
+      "intent_rate": 0.875,
+      "hc_wrong": 0,
+      "coverage": null
+    },
+    "compound": {
+      "median_ms": 1773.1,
+      "p95_ms": 5027.1,
+      "intent_rate": 1.0,
+      "hc_wrong": 0,
+      "coverage": 0.9313
+    }
+  },
+  "after": {
+    "simple": {
+      "median_ms": 1267.4,
+      "p95_ms": 1536.3,
+      "intent_rate": 1.0,
+      "hc_wrong": 0,
+      "coverage": 0.0
+    },
+    "compound": {
+      "median_ms": 1589.4,
+      "p95_ms": 1911.8,
+      "intent_rate": 1.0,
+      "hc_wrong": 0,
+      "coverage": 0.9375
+    }
+  },
+  "hard_gates": {
+    "simple_median_ms": 1267.4,
+    "simple_median_gate_ms": 1500.0,
+    "simple_median_pass": true,
+    "compound_median_ms": 1589.4,
+    "compound_median_gate_ms": 2000.0,
+    "compound_median_pass": true,
+    "simple_hc_wrong": 0,
+    "simple_hc_pass": true,
+    "compound_hc_wrong": 0,
+    "compound_hc_pass": true,
+    "compound_intent_rate": 1.0,
+    "compound_intent_pass": true,
+    "compound_coverage": 0.9375,
+    "compound_coverage_pass": true,
+    "simple_run_gate_valid": true,
+    "simple_run_gate_valid_pass": true,
+    "compound_run_gate_valid": true,
+    "compound_run_gate_valid_pass": true
+  },
+  "targets": {
+    "simple_p95_ms": 1536.3,
+    "simple_p95_target_ms": 2000.0,
+    "simple_p95_met": true,
+    "compound_p95_ms": 1911.8,
+    "compound_p95_target_ms": 3000.0,
+    "compound_p95_met": true,
+    "simple_intent_rate": 1.0
+  },
+  "verdict": "LATENCY_READY_FOR_V3",
+  "ready": true,
+  "stage_latency": {
+    "simple": {
+      "n": 8,
+      "vad_ms": {
+        "p50": 2210.4,
+        "p95": 2559.6,
+        "mean": 2201.0,
+        "max": 2559.6
+      },
+      "whisper_ms": {
+        "p50": 1061.3,
+        "p95": 1114.1,
+        "mean": 1058.0,
+        "max": 1114.1
+      },
+      "match_ms": {
+        "p50": 151.9,
+        "p95": 236.5,
+        "mean": 128.3,
+        "max": 236.5
+      },
+      "semantic_ms": {
+        "p50": 0.0,
+        "p95": 270.2,
+        "mean": 90.2,
+        "max": 270.2
+      },
+      "rerank_ms": {
+        "p50": 0.0,
+        "p95": 71.6,
+        "mean": 15.8,
+        "max": 71.6
+      },
+      "compound_detect_ms": {
+        "p50": 0.1,
+        "p95": 0.3,
+        "mean": 0.1,
+        "max": 0.3
+      },
+      "decomposition_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "matching_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "merge_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "compound_ms": {
+        "p50": 0.1,
+        "p95": 20.8,
+        "mean": 2.7,
+        "max": 20.8
+      },
+      "answer_ms": {
+        "p50": 0.1,
+        "p95": 0.5,
+        "mean": 0.1,
+        "max": 0.5
+      },
+      "intent_ms": {
+        "p50": 196.8,
+        "p95": 473.5,
+        "mean": 221.2,
+        "max": 473.5
+      },
+      "post_speech_ms": {
+        "p50": 1267.4,
+        "p95": 1536.3,
+        "mean": 1279.3,
+        "max": 1536.3
+      }
+    },
+    "simple_trace": {
+      "whisper_pass1_ms": {
+        "p50": 1060.2,
+        "p95": 1111.9,
+        "mean": 1056.7,
+        "max": 1111.9
+      },
+      "whisper_pass2_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "technical_repair_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "routing_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "base_match_ms": {
+        "p50": 151.6,
+        "p95": 219.3,
+        "mean": 126.1,
+        "max": 219.3
+      },
+      "lexical_match_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "semantic_embedding_ms": {
+        "p50": 0.0,
+        "p95": 100.2,
+        "mean": 30.8,
+        "max": 100.2
+      },
+      "semantic_search_ms": {
+        "p50": 0.0,
+        "p95": 100.4,
+        "mean": 30.9,
+        "max": 100.4
+      },
+      "semantic_rerank_ms": {
+        "p50": 0.0,
+        "p95": 71.6,
+        "mean": 15.8,
+        "max": 71.6
+      },
+      "semantic_total_ms": {
+        "p50": 0.0,
+        "p95": 270.2,
+        "mean": 90.2,
+        "max": 270.2
+      },
+      "compound_detect_ms": {
+        "p50": 0.1,
+        "p95": 0.3,
+        "mean": 0.1,
+        "max": 0.3
+      },
+      "decomposition_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "subquestion_match_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "subquestion_semantic_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "harvest_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "dedupe_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "answer_lookup_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "answer_merge_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "final_validation_ms": {
+        "p50": 0.0,
+        "p95": 0.4,
+        "mean": 0.1,
+        "max": 0.4
+      },
+      "other_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "unattributed_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      }
+    },
+    "compound": {
+      "n": 40,
+      "vad_ms": {
+        "p50": 6038.8,
+        "p95": 7421.6,
+        "mean": 6115.9,
+        "max": 7970.9
+      },
+      "whisper_ms": {
+        "p50": 1217.7,
+        "p95": 1310.6,
+        "mean": 1218.2,
+        "max": 2186.7
+      },
+      "match_ms": {
+        "p50": 91.4,
+        "p95": 210.5,
+        "mean": 113.4,
+        "max": 274.2
+      },
+      "semantic_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "rerank_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "compound_detect_ms": {
+        "p50": 0.1,
+        "p95": 0.3,
+        "mean": 0.2,
+        "max": 4.2
+      },
+      "decomposition_ms": {
+        "p50": 0.3,
+        "p95": 0.5,
+        "mean": 0.3,
+        "max": 2.0
+      },
+      "matching_ms": {
+        "p50": 267.4,
+        "p95": 651.3,
+        "mean": 301.2,
+        "max": 805.2
+      },
+      "merge_ms": {
+        "p50": 0.1,
+        "p95": 0.2,
+        "mean": 0.1,
+        "max": 0.2
+      },
+      "compound_ms": {
+        "p50": 267.9,
+        "p95": 651.9,
+        "mean": 302.0,
+        "max": 805.7
+      },
+      "answer_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "intent_ms": {
+        "p50": 377.2,
+        "p95": 753.3,
+        "mean": 415.3,
+        "max": 874.7
+      },
+      "post_speech_ms": {
+        "p50": 1589.4,
+        "p95": 1911.8,
+        "mean": 1633.6,
+        "max": 2356.2
+      }
+    },
+    "compound_trace": {
+      "whisper_pass1_ms": {
+        "p50": 1216.2,
+        "p95": 1299.2,
+        "mean": 1192.9,
+        "max": 1315.4
+      },
+      "whisper_pass2_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 23.8,
+        "max": 953.6
+      },
+      "technical_repair_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "routing_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "base_match_ms": {
+        "p50": 91.4,
+        "p95": 210.5,
+        "mean": 113.4,
+        "max": 274.2
+      },
+      "lexical_match_ms": {
+        "p50": 215.5,
+        "p95": 382.6,
+        "mean": 230.3,
+        "max": 576.1
+      },
+      "semantic_embedding_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "semantic_search_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "semantic_rerank_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "semantic_total_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "compound_detect_ms": {
+        "p50": 0.1,
+        "p95": 0.3,
+        "mean": 0.2,
+        "max": 4.2
+      },
+      "decomposition_ms": {
+        "p50": 0.3,
+        "p95": 0.5,
+        "mean": 0.3,
+        "max": 2.0
+      },
+      "subquestion_match_ms": {
+        "p50": 267.4,
+        "p95": 651.3,
+        "mean": 301.2,
+        "max": 805.2
+      },
+      "subquestion_semantic_ms": {
+        "p50": 0.0,
+        "p95": 130.4,
+        "mean": 27.4,
+        "max": 193.8
+      },
+      "harvest_ms": {
+        "p50": 0.0,
+        "p95": 188.6,
+        "mean": 22.3,
+        "max": 278.2
+      },
+      "dedupe_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "answer_lookup_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "answer_merge_ms": {
+        "p50": 0.1,
+        "p95": 0.2,
+        "mean": 0.1,
+        "max": 0.2
+      },
+      "final_validation_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "other_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "unattributed_ms": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      }
+    }
+  },
+  "slowest_10": {
+    "simple": [
+      {
+        "clip": 10063,
+        "file": "08_short_sentences/short_07.wav",
+        "question_type": "single",
+        "transcript": "What if retrieval fails?",
+        "post_ms": 1536.3,
+        "whisper_ms": 1114.1,
+        "whisper_calls": 1,
+        "lexical_ms": 0.0,
+        "semantic_ms": 270.2,
+        "rerank_ms": 71.6,
+        "subquestion_count": 0,
+        "harvest_ms": 0.0,
+        "harvest_ran": false,
+        "fast_path": false,
+        "semantic_reason": "recovered:thin_margin",
+        "slow_reason": "semantic:recovered:thin_margin",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": 10059,
+        "file": "08_short_sentences/short_03.wav",
+        "question_type": "single",
+        "transcript": "What is a GENTII? I?",
+        "post_ms": 1486.7,
+        "whisper_ms": 1012.8,
+        "whisper_calls": 1,
+        "lexical_ms": 0.0,
+        "semantic_ms": 236.8,
+        "rerank_ms": 0.0,
+        "subquestion_count": 0,
+        "harvest_ms": 0.0,
+        "harvest_ran": false,
+        "fast_path": false,
+        "semantic_reason": "recovered:weak_match",
+        "slow_reason": "semantic:recovered:weak_match",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": 10064,
+        "file": "08_short_sentences/short_08.wav",
+        "question_type": "single",
+        "transcript": "Who approves the result?",
+        "post_ms": 1470.3,
+        "whisper_ms": 1089.3,
+        "whisper_calls": 1,
+        "lexical_ms": 0.0,
+        "semantic_ms": 214.9,
+        "rerank_ms": 54.7,
+        "subquestion_count": 0,
+        "harvest_ms": 0.0,
+        "harvest_ran": false,
+        "fast_path": false,
+        "semantic_reason": "abstain_low_confidence",
+        "slow_reason": "semantic:abstain_low_confidence",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": 10057,
+        "file": "08_short_sentences/short_01.wav",
+        "question_type": "single",
+        "transcript": "What is RAG?",
+        "post_ms": 1267.4,
+        "whisper_ms": 1070.5,
+        "whisper_calls": 1,
+        "lexical_ms": 0.0,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": 0,
+        "harvest_ms": 0.0,
+        "harvest_ran": false,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "whisper_only",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": 10062,
+        "file": "08_short_sentences/short_06.wav",
+        "question_type": "single",
+        "transcript": "Why recall?",
+        "post_ms": 1130.2,
+        "whisper_ms": 1061.3,
+        "whisper_calls": 1,
+        "lexical_ms": 0.0,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": 0,
+        "harvest_ms": 0.0,
+        "harvest_ran": false,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "whisper_only",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": 10061,
+        "file": "08_short_sentences/short_05.wav",
+        "question_type": "single",
+        "transcript": "What is LangGraph?",
+        "post_ms": 1124.5,
+        "whisper_ms": 1052.1,
+        "whisper_calls": 1,
+        "lexical_ms": 0.0,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": 0,
+        "harvest_ms": 0.0,
+        "harvest_ran": false,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "whisper_only",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": 10058,
+        "file": "08_short_sentences/short_02.wav",
+        "question_type": "single",
+        "transcript": "What are guardrails?",
+        "post_ms": 1111.6,
+        "whisper_ms": 1027.4,
+        "whisper_calls": 1,
+        "lexical_ms": 0.0,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": 0,
+        "harvest_ms": 0.0,
+        "harvest_ran": false,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "whisper_only",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": 10060,
+        "file": "08_short_sentences/short_04.wav",
+        "question_type": "single",
+        "transcript": "Why embeddings?",
+        "post_ms": 1107.4,
+        "whisper_ms": 1036.2,
+        "whisper_calls": 1,
+        "lexical_ms": 0.0,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": 0,
+        "harvest_ms": 0.0,
+        "harvest_ran": false,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "whisper_only",
+        "intent_ok": true,
+        "hc_wrong": false
+      }
+    ],
+    "compound": [
+      {
+        "clip": "cdev_022",
+        "file": "audio/cdev_022.wav",
+        "question_type": "compound",
+        "transcript": "How do you debug which RAG layer failed, and when do you abstain instead of regenerating?",
+        "post_ms": 2356.2,
+        "whisper_ms": 2186.7,
+        "whisper_calls": 2,
+        "lexical_ms": 100.6,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": 2,
+        "harvest_ms": 0.0,
+        "harvest_ran": false,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "stt_pass2:stt_retry",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": "cdev_006",
+        "file": "audio/cdev_006.wav",
+        "question_type": "compound",
+        "transcript": "define precision and recall, and which mattered more for early warning students.",
+        "post_ms": 1961.6,
+        "whisper_ms": 1086.9,
+        "whisper_calls": 1,
+        "lexical_ms": 360.9,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": 3,
+        "harvest_ms": 188.6,
+        "harvest_ran": true,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "compound_lexical",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": "cdev_018",
+        "file": "audio/cdev_018.wav",
+        "question_type": "compound",
+        "transcript": "When should an agent stop calling tools, and how do you avoid double side effects after re",
+        "post_ms": 1911.8,
+        "whisper_ms": 1133.6,
+        "whisper_calls": 1,
+        "lexical_ms": 184.7,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": 2,
+        "harvest_ms": 278.2,
+        "harvest_ran": true,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "harvest",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": "cdev_036",
+        "file": "audio/cdev_036.wav",
+        "question_type": "compound",
+        "transcript": "Explain access control for retrieval and how tenant isolation depends on it.",
+        "post_ms": 1907.8,
+        "whisper_ms": 1251.4,
+        "whisper_calls": 1,
+        "lexical_ms": 213.3,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": 4,
+        "harvest_ms": 266.5,
+        "harvest_ran": true,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "compound_lexical, harvest",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": "cdev_001",
+        "file": "audio/cdev_001.wav",
+        "question_type": "compound",
+        "transcript": "define RAG briefly and say why you prefer it over baking yearly rules into weights.",
+        "post_ms": 1907.4,
+        "whisper_ms": 1234.2,
+        "whisper_calls": 1,
+        "lexical_ms": 576.1,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": 4,
+        "harvest_ms": 0.0,
+        "harvest_ran": false,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "compound_lexical",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": "cdev_037",
+        "file": "audio/cdev_037.wav",
+        "question_type": "compound",
+        "transcript": "What is question generation in the BTC path and where does teacher reject stop persistence",
+        "post_ms": 1854.1,
+        "whisper_ms": 1100.8,
+        "whisper_calls": 1,
+        "lexical_ms": 471.6,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": 2,
+        "harvest_ms": 0.0,
+        "harvest_ran": false,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "compound_lexical",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": "cdev_024",
+        "file": "audio/cdev_024.wav",
+        "question_type": "compound",
+        "transcript": "What role does the similarity tool play for teachers, and why is it decision support not a",
+        "post_ms": 1839.6,
+        "whisper_ms": 1185.2,
+        "whisper_calls": 1,
+        "lexical_ms": 379.5,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": 3,
+        "harvest_ms": 0.0,
+        "harvest_ran": false,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "compound_lexical",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": "cdev_002",
+        "file": "audio/cdev_002.wav",
+        "question_type": "compound",
+        "transcript": "What are embeddings and cosine similarity, and why is the similarity checker not called RA",
+        "post_ms": 1740.1,
+        "whisper_ms": 1248.2,
+        "whisper_calls": 1,
+        "lexical_ms": 321.4,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": 3,
+        "harvest_ms": 0.0,
+        "harvest_ran": false,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "compound_lexical",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": "cdev_005",
+        "file": "audio/cdev_005.wav",
+        "question_type": "compound",
+        "transcript": "What is LangGraph and would you pick it in 8N or plain Python for approval gates?",
+        "post_ms": 1727.4,
+        "whisper_ms": 1235.2,
+        "whisper_calls": 1,
+        "lexical_ms": 382.6,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": 3,
+        "harvest_ms": 0.0,
+        "harvest_ran": false,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "compound_lexical",
+        "intent_ok": true,
+        "hc_wrong": false
+      },
+      {
+        "clip": "cdev_015",
+        "file": "audio/cdev_015.wav",
+        "question_type": "compound",
+        "transcript": "Separate indexing from retrieval, then say what you check when answers are wrong but hits ",
+        "post_ms": 1704.5,
+        "whisper_ms": 1259.0,
+        "whisper_calls": 1,
+        "lexical_ms": 255.9,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "subquestion_count": 3,
+        "harvest_ms": 0.0,
+        "harvest_ran": false,
+        "fast_path": true,
+        "semantic_reason": "strong_agrees_fast_path",
+        "slow_reason": "compound_lexical",
+        "intent_ok": true,
+        "hc_wrong": false
+      }
+    ]
+  },
+  "determinism": {
+    "simple": {
+      "runs": [
+        {
+          "file": "_pre_v3_short_run1.json",
+          "n": 8,
+          "median_post_ms": 0.0,
+          "intent_ok": 2,
+          "hc_wrong": 0,
+          "intents": {
+            "10057": "gen.questions_for_us",
+            "10058": "tech.guardrails_what",
+            "10059": "tech.ragas",
+            "10060": null,
+            "10061": null,
+            "10062": null,
+            "10063": null,
+            "10064": null
+          }
+        },
+        {
+          "file": "_pre_v3_short_run2.json",
+          "n": 8,
+          "median_post_ms": 1305.1,
+          "intent_ok": 6,
+          "hc_wrong": 0,
+          "intents": {
+            "10057": null,
+            "10058": "tech.guardrails_what",
+            "10059": "tech.agentic_what",
+            "10060": "hard.fallback_llm_down",
+            "10061": "tech.what_is_langgraph",
+            "10062": "proj.early_warning.metric",
+            "10063": "hard.empty_retrieval",
+            "10064": "hard.prompt_versioning"
+          }
+        },
+        {
+          "file": "_pre_v3_short_run3.json",
+          "n": 8,
+          "median_post_ms": 1296.3,
+          "intent_ok": 7,
+          "hc_wrong": 0,
+          "intents": {
+            "10057": "tech.rag_what",
+            "10058": "tech.guardrails_what",
+            "10059": "tech.agentic_what",
+            "10060": "hard.why_agent_not_rag",
+            "10061": "tech.what_is_langgraph",
+            "10062": "proj.early_warning.metric",
+            "10063": "hard.empty_retrieval",
+            "10064": "hard.prompt_versioning"
+          }
+        },
+        {
+          "file": "_pre_v3_short_run4.json",
+          "n": 8,
+          "median_post_ms": 1198.8,
+          "intent_ok": 8,
+          "hc_wrong": 0,
+          "intents": {
+            "10057": "tech.rag_what",
+            "10058": "tech.guardrails_what",
+            "10059": "tech.agentic_what",
+            "10060": "tech.tfidf_vs_embeddings",
+            "10061": "tech.what_is_langgraph",
+            "10062": "proj.early_warning.metric",
+            "10063": "hard.empty_retrieval",
+            "10064": "hard.prompt_versioning"
+          }
+        }
+      ],
+      "unstable_clips": [
+        "10057",
+        "10060",
+        "10061",
+        "10062",
+        "10063",
+        "10064"
+      ],
+      "deterministic": false
+    },
+    "compound": {
+      "runs": [
+        {
+          "file": "_pre_v3_compound_run1.json",
+          "n": 40,
+          "median_post_ms": 1614.7,
+          "intent_ok": 39,
+          "hc_wrong": 0,
+          "intents": {
+            "cdev_001": "tech.rag_what,tech.rag_build,tech.rag_vs_finetuning,hard.not_finetune_first",
+            "cdev_002": "proj.similarity.stack,proj.similarity.is_rag,proj.similarity.describe",
+            "cdev_003": "tech.guardrails_what,hard.hitl_where,moe.question_generation",
+            "cdev_004": "tech.agentic_what,hard.why_agent_not_rag,hard.hitl_where",
+            "cdev_005": null,
+            "cdev_006": "proj.early_warning.metric,tech.ragas,tech.precision_recall",
+            "cdev_007": "tech.hallucination_what,tech.hallucination_prevent,tech.rag_prevent_invented_numbers,tech.temperature",
+            "cdev_008": "hard.empty_retrieval,tech.rag_prevent_invented_numbers,tech.hallucination_what,tech.hallucination_prevent",
+            "cdev_009": "hard.tenant_isolation,tech.metadata_filtering",
+            "cdev_010": "tech.chunk_size,hard.context_stuffing",
+            "cdev_011": "tech.prompt_engineering,hard.injection_in_pdf",
+            "cdev_012": "tech.wer,tech.transcription_quality",
+            "cdev_013": "cv.pydantic,hard.teacher_rejects",
+            "cdev_014": "tech.lora,tech.rag_vs_finetuning,tech.rag_what,hard.not_finetune_first",
+            "cdev_015": "tech.rag_two_phases,hard.rag_debug_steps,hard.which_rag_layer_failed",
+            "cdev_016": "cv.vector_db,tech.what_is_chromadb",
+            "cdev_017": "tech.pii_redaction,hard.tenant_isolation",
+            "cdev_018": "hard.agent_stop_tools,hard.interrupt_side_effects",
+            "cdev_019": "tech.temperature,tech.hallucination_prevent",
+            "cdev_020": "hard.hitl_where,hard.teacher_rejects",
+            "cdev_021": "cv.langgraph,hard.langgraph_vs_n8n_vs_python,tech.what_is_langgraph",
+            "cdev_022": "hard.which_rag_layer_failed,hard.empty_retrieval",
+            "cdev_023": "hard.streaming_vs_validate,tech.hallucination_prevent",
+            "cdev_024": "proj.similarity.role,proj.similarity.is_rag,hard.hitl_where",
+            "cdev_025": "tech.rag_two_phases,hard.rag_debug_steps,tech.hallucination_what,tech.hallucination_prevent,tech.rag_prevent_invented_numbers",
+            "cdev_026": "tech.embeddings,tech.cosine_semantic_search",
+            "cdev_027": "tech.fine_tuning_what,hard.change_embedding",
+            "cdev_028": "hard.tenant_isolation,tech.metadata_filtering",
+            "cdev_029": "tech.prompt_engineering,tech.structured_output",
+            "cdev_030": "tech.rag_what,tech.rag_build,tech.agentic_what,hard.why_agent_not_rag,hard.hitl_where",
+            "cdev_031": "hard.empty_retrieval,tech.rag_prevent_invented_numbers",
+            "cdev_032": "tech.agent_vs_workflow,hard.hitl_where,tech.agentic_what,hard.why_agent_not_rag",
+            "cdev_033": "tech.what_is_chromadb,tech.metadata_filtering",
+            "cdev_034": "tech.langgraph_vs_langchain,tech.what_is_langgraph,cv.langgraph,hard.langgraph_vs_n8n_vs_python",
+            "cdev_035": "tech.good_enough_to_launch,tech.evaluate_classification",
+            "cdev_036": "tech.rag_access_control,hard.tenant_isolation,tech.metadata_filtering,hard.secure_rag",
+            "cdev_037": "cv.projects.most_recent,hard.teacher_rejects",
+            "cdev_038": "tech.transcription_quality",
+            "cdev_039": "tech.hallucination_what,hard.empty_retrieval,tech.rag_prevent_invented_numbers,tech.hallucination_prevent",
+            "cdev_040": "tech.rag_what,tech.rag_build,tech.rag_vs_finetuning,hard.empty_retrieval"
+          }
+        },
+        {
+          "file": "_pre_v3_compound_run2.json",
+          "n": 40,
+          "median_post_ms": 1586.0,
+          "intent_ok": 40,
+          "hc_wrong": 0,
+          "intents": {
+            "cdev_001": "tech.rag_what,tech.rag_build,tech.rag_vs_finetuning,hard.not_finetune_first",
+            "cdev_002": "proj.similarity.stack,proj.similarity.is_rag,proj.similarity.describe",
+            "cdev_003": "tech.guardrails_what,hard.hitl_where,moe.question_generation",
+            "cdev_004": "tech.agentic_what,hard.why_agent_not_rag,hard.hitl_where",
+            "cdev_005": "cv.langgraph,hard.langgraph_vs_n8n_vs_python,tech.what_is_langgraph",
+            "cdev_006": "proj.early_warning.metric,tech.ragas,tech.precision_recall",
+            "cdev_007": "tech.hallucination_what,tech.hallucination_prevent,tech.rag_prevent_invented_numbers,tech.temperature",
+            "cdev_008": "hard.empty_retrieval,tech.rag_prevent_invented_numbers,tech.hallucination_what,tech.hallucination_prevent",
+            "cdev_009": "hard.tenant_isolation,tech.metadata_filtering",
+            "cdev_010": "tech.chunk_size,hard.context_stuffing",
+            "cdev_011": "tech.prompt_engineering,hard.injection_in_pdf",
+            "cdev_012": "tech.wer,tech.transcription_quality",
+            "cdev_013": "cv.pydantic,hard.teacher_rejects",
+            "cdev_014": "tech.lora,tech.rag_vs_finetuning,tech.rag_what,hard.not_finetune_first",
+            "cdev_015": "tech.rag_two_phases,hard.rag_debug_steps,hard.which_rag_layer_failed",
+            "cdev_016": "cv.vector_db,tech.what_is_chromadb",
+            "cdev_017": "tech.pii_redaction,hard.tenant_isolation",
+            "cdev_018": "hard.agent_stop_tools,hard.interrupt_side_effects",
+            "cdev_019": "tech.temperature,tech.hallucination_prevent",
+            "cdev_020": "hard.hitl_where,hard.teacher_rejects",
+            "cdev_021": "cv.langgraph,hard.langgraph_vs_n8n_vs_python,tech.what_is_langgraph",
+            "cdev_022": "hard.which_rag_layer_failed,hard.empty_retrieval",
+            "cdev_023": "hard.streaming_vs_validate,tech.hallucination_prevent",
+            "cdev_024": "proj.similarity.role,proj.similarity.is_rag,hard.hitl_where",
+            "cdev_025": "tech.rag_two_phases,hard.rag_debug_steps,tech.hallucination_what,tech.hallucination_prevent,tech.rag_prevent_invented_numbers",
+            "cdev_026": "tech.embeddings,tech.cosine_semantic_search",
+            "cdev_027": "tech.fine_tuning_what,hard.change_embedding",
+            "cdev_028": "hard.tenant_isolation,tech.metadata_filtering",
+            "cdev_029": "tech.prompt_engineering,tech.structured_output",
+            "cdev_030": "tech.rag_what,tech.rag_build,tech.agentic_what,hard.why_agent_not_rag,hard.hitl_where",
+            "cdev_031": "hard.empty_retrieval,tech.rag_prevent_invented_numbers",
+            "cdev_032": "tech.agent_vs_workflow,hard.hitl_where,tech.agentic_what,hard.why_agent_not_rag",
+            "cdev_033": "tech.what_is_chromadb,tech.metadata_filtering",
+            "cdev_034": "tech.langgraph_vs_langchain,tech.what_is_langgraph,cv.langgraph,hard.langgraph_vs_n8n_vs_python",
+            "cdev_035": "tech.good_enough_to_launch,tech.evaluate_classification",
+            "cdev_036": "tech.rag_access_control,hard.tenant_isolation,tech.metadata_filtering,hard.secure_rag",
+            "cdev_037": "cv.projects.most_recent,hard.teacher_rejects",
+            "cdev_038": "tech.transcription_quality",
+            "cdev_039": "tech.hallucination_what,hard.empty_retrieval,tech.rag_prevent_invented_numbers,tech.hallucination_prevent",
+            "cdev_040": "tech.rag_what,tech.rag_build,tech.rag_vs_finetuning,hard.empty_retrieval"
+          }
+        }
+      ],
+      "unstable_clips": [
+        "cdev_005"
+      ],
+      "deterministic": false
+    }
+  },
+  "optimizations": [
+    {
+      "file": "app/services/domain_terms.py",
+      "function": "normalize_for_matching",
+      "reason": "~80 compiled-regex substitutions were re-run for every bank alias, keyword and profile blob on the recovery path (tens of thousands of passes per request).",
+      "measured_effect": "LRU memoization of a pure function.",
+      "quality_impact": "None — identical output string."
+    },
+    {
+      "file": "app/services/technical_term_repair.py",
+      "function": "repair_technical_terms",
+      "reason": "~30 regex passes repeated for the same transcript in match(), prefetch_scores(), should_trigger_semantic_recovery() and recover_semantic_intent().",
+      "measured_effect": "LRU memoization keyed by (text, prior_topic).",
+      "quality_impact": "None — pure function."
+    },
+    {
+      "file": "app/services/question_bank.py",
+      "function": "_content_tokens",
+      "reason": "Tokenization repeated per alias / per candidate.",
+      "measured_effect": "LRU memoization; still returns a fresh list.",
+      "quality_impact": "None."
+    },
+    {
+      "file": "app/services/question_bank.py",
+      "function": "_build_lexical_structures / _score_all",
+      "reason": "Per-alias scoring rebuilt a joined+casefolded entry blob for every distinctive family, plus the keyword blob for the guardrail rule.",
+      "measured_effect": "Per-entry constants hoisted to bank-load time (entry_owned_families / entry_guardrail_penalty / entry_cv_definition_penalty / entry_is_technical / entry_topic).",
+      "quality_impact": "None — same expressions, evaluated once."
+    },
+    {
+      "file": "app/services/question_bank.py",
+      "function": "_score_all (_lexical_batch)",
+      "reason": "Two rapidfuzz calls per alias in a Python loop on full-bank scans.",
+      "measured_effect": "Optional process.cdist batching (same scorers) for pools >= 1200 aliases; QB_FAST_LEXICAL=0 forces the scalar path.",
+      "quality_impact": "None — verified byte-identical scores."
+    },
+    {
+      "file": "app/services/question_bank.py",
+      "function": "_maybe_semantic_rerank / _query_vector",
+      "reason": "Re-embedded the query and the top-3 bank questions although both are already rows of alias_matrix / already embedded by _score_all.",
+      "measured_effect": "Reuse cached vectors; embed only on a cache miss.",
+      "quality_impact": "None — same vectors."
+    },
+    {
+      "file": "app/services/semantic_intent_recovery.py",
+      "function": "recover_semantic_intent (rerank)",
+      "reason": "Re-embedded 5 profile blobs that are exactly the rows of the semantic intent matrix.",
+      "measured_effect": "semantic_intent_index.vector_for() lookup; query embedded once (RAW `repaired`, as before).",
+      "quality_impact": "None — same cosines."
+    },
+    {
+      "file": "app/services/semantic_intent_recovery.py",
+      "function": "_entry_static / _profile_blob_norm / _profile_blob_lower / _profile_owned_terms",
+      "reason": "_lexical_expand_candidates normalized every profile blob on every call (full-bank scan); _alias_lex / _keyword_score / _conflict_penalty normalized aliases and keywords per candidate.",
+      "measured_effect": "Per-entry / per-profile static strings memoized per bank generation.",
+      "quality_impact": "None — same strings, same scores."
+    },
+    {
+      "file": "app/services/semantic_intent_recovery.py",
+      "function": "recover_semantic_intent (precomputed_trigger)",
+      "reason": "should_trigger_semantic_recovery() ran a second time inside recovery, repeating repair + normalize + intent_agreement.",
+      "measured_effect": "Callers pass the decision they already computed.",
+      "quality_impact": "None — same (trigger, reason)."
+    },
+    {
+      "file": "app/services/intent_profile.py",
+      "function": "intent_agreement",
+      "reason": "Rebuilt alias/keyword/blob targets and re-normalized them on every call; called 3-5x per request for the same (entry, spoken) pair.",
+      "measured_effect": "Per-entry statics + (entry, spoken) memo, invalidated on bank reload.",
+      "quality_impact": "None — same max() over the same score list."
+    },
+    {
+      "file": "app/services/compound_question_pipeline.py",
+      "function": "resolve_compound_question (harvest)",
+      "reason": "Harvest scored the raw utterance and each clause separately, repeating identical queries.",
+      "measured_effect": "Dedupe harvest queries and warm the score cache with one batched prefetch_scores() pass.",
+      "quality_impact": "None — same queries, same order, same candidates."
+    },
+    {
+      "file": "app/services/warm_start.py",
+      "function": "warm_system / warm_system_blocking",
+      "reason": "Whisper weights were loaded at startup but never exercised, and the semantic index / ONNX session compiled on the first live question.",
+      "measured_effect": "One tiny decode + one embedding at startup; SYSTEM_WARM flag exposed on /api/health and /api/health/warm.",
+      "quality_impact": "None — moves one-off cost off the live path."
+    },
+    {
+      "file": "scripts/final_latency_check.py",
+      "function": "run",
+      "reason": "EVALUATOR BUG: a single gate_ms = 1500 was applied to both cohorts, so a compliant compound median (1773.1 <= 2000) reported FAIL.",
+      "measured_effect": "Cohort-specific hard gates (simple 1500 / compound 2000); p95 reported as TARGET, not gate.",
+      "quality_impact": "Scoring correction only — no pipeline change."
+    }
+  ]
+}

@@ -1,0 +1,4838 @@
+{
+  "created_at": "2026-09-14T00:13:30.760666+00:00",
+  "phase": "V5 Phase B5 — residual matching/profile analysis",
+  "scope": "measurement only; routing closed; no app/ changes",
+  "candidate": "R1_min8w + evidence 0.4 + I + H (+ >=2-intent guard)",
+  "semantic_index_ready": true,
+  "clip_summaries": [
+    {
+      "clip": "fuh4_076",
+      "path_opened": true,
+      "detector": "compound",
+      "transcript": "Define re-ranking, then say when hybrid search needs it.",
+      "script": "Define re-ranking, then say when hybrid search needs it.",
+      "gold": [
+        "tech.reranking",
+        "hard.hybrid_when"
+      ],
+      "selected": [
+        "tech.reranking",
+        "hard.hybrid_when"
+      ],
+      "hit": [
+        "tech.reranking",
+        "hard.hybrid_when"
+      ],
+      "miss": [],
+      "parts_with_evidence": [
+        "Define re-ranking",
+        "Say when hybrid search needs it"
+      ],
+      "parts_without_evidence": [
+        "Define re-ranking",
+        "Say when hybrid search needs it"
+      ],
+      "fragment_count": 2,
+      "sentence_count": 1,
+      "multi_gold_one_clause": false
+    },
+    {
+      "clip": "fuh4_077",
+      "path_opened": true,
+      "detector": "compound",
+      "transcript": "What is hallucination and which controls reduce it in production?",
+      "script": "What is hallucination, and which controls reduce it in production?",
+      "gold": [
+        "tech.hallucination_what",
+        "tech.hallucination_prevent"
+      ],
+      "selected": [
+        "tech.hallucination_what",
+        "tech.hallucination_prevent"
+      ],
+      "hit": [
+        "tech.hallucination_what",
+        "tech.hallucination_prevent"
+      ],
+      "miss": [],
+      "parts_with_evidence": [
+        "What is hallucination?",
+        "How do you prevent or reduce hallucination?"
+      ],
+      "parts_without_evidence": [
+        "What is hallucination?",
+        "How do you prevent or reduce hallucination?",
+        "How do you stop the system from inventing a number that is not in the documents?"
+      ],
+      "fragment_count": 2,
+      "sentence_count": 1,
+      "multi_gold_one_clause": false
+    },
+    {
+      "clip": "fuh4_078",
+      "path_opened": true,
+      "detector": "compound",
+      "transcript": "Explain context windows, then how you chunk oversized documents.",
+      "script": "Explain context windows, then how you chunk oversize documents.",
+      "gold": [
+        "tech.context_window",
+        "tech.chunk_size"
+      ],
+      "selected": [
+        "tech.context_window",
+        "tech.chunk_size"
+      ],
+      "hit": [
+        "tech.context_window",
+        "tech.chunk_size"
+      ],
+      "miss": [],
+      "parts_with_evidence": [
+        "Explain context windows?",
+        "How you chunk oversized documents?"
+      ],
+      "parts_without_evidence": [
+        "Explain context windows?",
+        "How you chunk oversized documents?"
+      ],
+      "fragment_count": 2,
+      "sentence_count": 1,
+      "multi_gold_one_clause": false
+    },
+    {
+      "clip": "fuh4_079",
+      "path_opened": false,
+      "detector": "single",
+      "transcript": "Summurize the assignment similarity project. It's fact and whether it is R-18.",
+      "script": "Summarise the assignment similarity project, its stack, and whether it is RAG.",
+      "gold": [
+        "proj.similarity.describe",
+        "proj.similarity.tech",
+        "proj.similarity.is_rag"
+      ],
+      "selected": [],
+      "hit": [],
+      "miss": [
+        "proj.similarity.describe",
+        "proj.similarity.tech",
+        "proj.similarity.is_rag"
+      ],
+      "parts_with_evidence": [],
+      "parts_without_evidence": [
+        "Why did you not use an LLM for the assignment similarity checker?",
+        "Is the similarity checker a RAG system?",
+        "Who makes the final decision in the similarity checker?"
+      ],
+      "fragment_count": 2,
+      "sentence_count": 2,
+      "multi_gold_one_clause": false
+    },
+    {
+      "clip": "fuh4_080",
+      "path_opened": false,
+      "detector": "single",
+      "transcript": "Define overfitting detection signals in your mitigation playbook.",
+      "script": "Define overfitting, detection signals, and your mitigation playbook.",
+      "gold": [
+        "tech.overfitting",
+        "tech.overfitting_prevent",
+        "tech.evaluate_classification"
+      ],
+      "selected": [],
+      "hit": [],
+      "miss": [
+        "tech.overfitting",
+        "tech.overfitting_prevent",
+        "tech.evaluate_classification"
+      ],
+      "parts_with_evidence": [
+        "Define overfitting detection signals in your mitigation playbook."
+      ],
+      "parts_without_evidence": [
+        "Define overfitting detection signals in your mitigation playbook."
+      ],
+      "fragment_count": 1,
+      "sentence_count": 1,
+      "multi_gold_one_clause": true
+    },
+    {
+      "clip": "fuh4_081",
+      "path_opened": true,
+      "detector": "single",
+      "transcript": "Your vector DB history, then your pick for our workload and Y.",
+      "script": "Your vector DB history, then your pick for our workload and why.",
+      "gold": [
+        "cv.vector_db",
+        "tech.vector_db_choice"
+      ],
+      "selected": [
+        "cv.vector_db"
+      ],
+      "hit": [
+        "cv.vector_db"
+      ],
+      "miss": [
+        "tech.vector_db_choice"
+      ],
+      "parts_with_evidence": [
+        "Your vector DB history",
+        "Your pick for our workload and Y"
+      ],
+      "parts_without_evidence": [
+        "Your vector DB history",
+        "Your pick for our workload and Y"
+      ],
+      "fragment_count": 3,
+      "sentence_count": 1,
+      "multi_gold_one_clause": false
+    },
+    {
+      "clip": "fuh4_082",
+      "path_opened": false,
+      "detector": "single",
+      "transcript": "Role of an orchestrator versus a lone tool-calling model. When is each enough?",
+      "script": "Role of an orchestrator versus a lone tool-calling model — when is each enough?",
+      "gold": [
+        "tech.agent_orchestrator",
+        "tech.multi_agent_when"
+      ],
+      "selected": [
+        "hard.agent_terms_difference"
+      ],
+      "hit": [],
+      "miss": [
+        "tech.agent_orchestrator",
+        "tech.multi_agent_when"
+      ],
+      "parts_with_evidence": [
+        "Role of an orchestrator versus a lone tool-calling model",
+        "When is each enough?"
+      ],
+      "parts_without_evidence": [
+        "Role of an orchestrator versus a lone tool-calling model",
+        "When is each enough?"
+      ],
+      "fragment_count": 1,
+      "sentence_count": 2,
+      "multi_gold_one_clause": false
+    },
+    {
+      "clip": "fuh4_083",
+      "path_opened": true,
+      "detector": "compound",
+      "transcript": "Education, certification, and how they matter for this role.",
+      "script": "Education, certifications, and how they matter for this role.",
+      "gold": [
+        "cv.education",
+        "cv.certifications",
+        "cv.pmp_value"
+      ],
+      "selected": [
+        "cv.education",
+        "cv.certifications"
+      ],
+      "hit": [
+        "cv.education",
+        "cv.certifications"
+      ],
+      "miss": [
+        "cv.pmp_value"
+      ],
+      "parts_with_evidence": [
+        "Education",
+        "certification",
+        "How they matter for this role?"
+      ],
+      "parts_without_evidence": [
+        "Education",
+        "certification",
+        "How they matter for this role?"
+      ],
+      "fragment_count": 3,
+      "sentence_count": 1,
+      "multi_gold_one_clause": false
+    },
+    {
+      "clip": "fuh4_084",
+      "path_opened": true,
+      "detector": "single",
+      "transcript": "Compt injection sources, PDF risk, and guardrails that's locked.",
+      "script": "Prompt injection sources, PDF risk, and guardrails that block it.",
+      "gold": [
+        "tech.prompt_injection_what",
+        "hard.injection_in_pdf",
+        "tech.guardrails_how"
+      ],
+      "selected": [
+        "tech.guardrails_what"
+      ],
+      "hit": [],
+      "miss": [
+        "tech.prompt_injection_what",
+        "hard.injection_in_pdf",
+        "tech.guardrails_how"
+      ],
+      "parts_with_evidence": [
+        "What are guardrails?"
+      ],
+      "parts_without_evidence": [
+        "What are guardrails?",
+        "Where exactly do you put the human in the loop?",
+        "Who is allowed to save a generated question?"
+      ],
+      "fragment_count": 3,
+      "sentence_count": 1,
+      "multi_gold_one_clause": false
+    },
+    {
+      "clip": "fuh4_085",
+      "path_opened": true,
+      "detector": "single",
+      "transcript": "Docker value, container versus VM, and if we need Cuba needs.",
+      "script": "Docker value, container versus VM, and if we need Kubernetes.",
+      "gold": [
+        "tech.docker_why",
+        "tech.container_vs_vm",
+        "tech.kubernetes"
+      ],
+      "selected": [
+        "tech.docker_why",
+        "tech.container_vs_vm"
+      ],
+      "hit": [
+        "tech.docker_why",
+        "tech.container_vs_vm"
+      ],
+      "miss": [
+        "tech.kubernetes"
+      ],
+      "parts_with_evidence": [
+        "Docker value",
+        "container versus VM",
+        "If we need Cuba needs"
+      ],
+      "parts_without_evidence": [
+        "Docker value",
+        "container versus VM",
+        "If we need Cuba needs"
+      ],
+      "fragment_count": 3,
+      "sentence_count": 1,
+      "multi_gold_one_clause": false
+    },
+    {
+      "clip": "fuh4_086",
+      "path_opened": true,
+      "detector": "single",
+      "transcript": "Early Warning Project Story, KPI, and Ministry Outcome",
+      "script": "Early-warning project story, KPI, and ministry outcome.",
+      "gold": [
+        "proj.early_warning.describe",
+        "proj.early_warning.metric",
+        "proj.early_warning.result"
+      ],
+      "selected": [
+        "proj.early_warning.result"
+      ],
+      "hit": [
+        "proj.early_warning.result"
+      ],
+      "miss": [
+        "proj.early_warning.describe",
+        "proj.early_warning.metric"
+      ],
+      "parts_with_evidence": [
+        "How do you evaluate an early warning model for students?",
+        "Why does recall matter more than accuracy for early warning?"
+      ],
+      "parts_without_evidence": [
+        "How do you evaluate an early warning model for students?",
+        "Why does recall matter more than accuracy for early warning?",
+        "Explain precision",
+        "recall",
+        "F1"
+      ],
+      "fragment_count": 3,
+      "sentence_count": 1,
+      "multi_gold_one_clause": false
+    },
+    {
+      "clip": "fuh4_087",
+      "path_opened": true,
+      "detector": "compound",
+      "transcript": "Tool calling basics schema need and when to halt tool loops.",
+      "script": "Tool calling basics, schema need, and when to halt tool loops.",
+      "gold": [
+        "tech.tool_calling",
+        "hard.tool_schema",
+        "hard.agent_stop_tools"
+      ],
+      "selected": [
+        "tech.tool_calling",
+        "hard.agent_loop"
+      ],
+      "hit": [
+        "tech.tool_calling"
+      ],
+      "miss": [
+        "hard.tool_schema",
+        "hard.agent_stop_tools"
+      ],
+      "parts_with_evidence": [
+        "Tool calling basics schema need",
+        "When to halt tool loops?"
+      ],
+      "parts_without_evidence": [
+        "Tool calling basics schema need",
+        "When to halt tool loops?"
+      ],
+      "fragment_count": 2,
+      "sentence_count": 1,
+      "multi_gold_one_clause": false
+    },
+    {
+      "clip": "fuh4_088",
+      "path_opened": true,
+      "detector": "single",
+      "transcript": "STT internals, local Whisper rationale, and accuracy acceptance test.",
+      "script": "STT internals, local Whisper rationale, and accuracy acceptance tests.",
+      "gold": [
+        "tech.how_stt_works",
+        "tech.whisper_vs_cloud",
+        "tech.transcription_quality"
+      ],
+      "selected": [
+        "tech.how_stt_works",
+        "tech.what_is_whisper"
+      ],
+      "hit": [
+        "tech.how_stt_works"
+      ],
+      "miss": [
+        "tech.whisper_vs_cloud",
+        "tech.transcription_quality"
+      ],
+      "parts_with_evidence": [
+        "STT internals",
+        "local Whisper rationale",
+        "Accuracy acceptance test"
+      ],
+      "parts_without_evidence": [
+        "STT internals",
+        "local Whisper rationale",
+        "Accuracy acceptance test"
+      ],
+      "fragment_count": 3,
+      "sentence_count": 1,
+      "multi_gold_one_clause": false
+    },
+    {
+      "clip": "fuh4_089",
+      "path_opened": false,
+      "detector": "single",
+      "transcript": "Nantler versus Lanskings. You use it and surviving without Lanschain.",
+      "script": "LangGraph versus LangChain, your usage, and surviving without LangChain.",
+      "gold": [
+        "tech.langgraph_vs_langchain",
+        "cv.langgraph",
+        "hard.remove_langchain"
+      ],
+      "selected": [],
+      "hit": [],
+      "miss": [
+        "tech.langgraph_vs_langchain",
+        "cv.langgraph",
+        "hard.remove_langchain"
+      ],
+      "parts_with_evidence": [
+        "Nantler versus Lanskings. You use it and surviving without Lanschain."
+      ],
+      "parts_without_evidence": [
+        "Nantler versus Lanskings. You use it and surviving without Lanschain."
+      ],
+      "fragment_count": 2,
+      "sentence_count": 2,
+      "multi_gold_one_clause": false
+    },
+    {
+      "clip": "fuh4_090",
+      "path_opened": true,
+      "detector": "single",
+      "transcript": "Embedings, cosine search, metadata filters, and hybrid search tradeoffs cover all four.",
+      "script": "Embeddings, cosine search, metadata filters, and hybrid search trade-offs — cover all four.",
+      "gold": [
+        "tech.embeddings",
+        "tech.cosine_semantic_search",
+        "tech.metadata_filtering",
+        "tech.hybrid_search"
+      ],
+      "selected": [
+        "tech.embeddings",
+        "tech.cosine_semantic_search",
+        "tech.hybrid_search"
+      ],
+      "hit": [
+        "tech.embeddings",
+        "tech.cosine_semantic_search",
+        "tech.hybrid_search"
+      ],
+      "miss": [
+        "tech.metadata_filtering"
+      ],
+      "parts_with_evidence": [
+        "Embedings",
+        "cosine search",
+        "metadata filters",
+        "Hybrid search tradeoffs cover all four"
+      ],
+      "parts_without_evidence": [
+        "Embedings",
+        "cosine search",
+        "metadata filters",
+        "Hybrid search tradeoffs cover all four"
+      ],
+      "fragment_count": 4,
+      "sentence_count": 1,
+      "multi_gold_one_clause": false
+    }
+  ],
+  "missing_parts": [
+    {
+      "clip": "fuh4_079",
+      "transcript": "Summurize the assignment similarity project. It's fact and whether it is R-18.",
+      "script": "Summarise the assignment similarity project, its stack, and whether it is RAG.",
+      "path_opened": false,
+      "fragment": "Summurize the assignment similarity project. It's fact and whether it is R-18.",
+      "gold_intent": "proj.similarity.describe",
+      "gold_question": "Tell me about the BTEC Assignment Similarity Checker",
+      "gold_topic": "project:similarity",
+      "gold_action_type": "describe",
+      "selected_intents": [],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "proj.similarity.describe",
+          "topic": "project:similarity",
+          "score": 0.5145,
+          "semantic": 0.0,
+          "lexical": 0.5182,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "proj.similarity.challenges",
+          "runner_up_score": 0.4767,
+          "action_type": "describe"
+        },
+        {
+          "rank": 2,
+          "id": "proj.similarity.challenges",
+          "topic": "project:similarity",
+          "score": 0.4767,
+          "semantic": 0.0,
+          "lexical": 0.5958,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "proj.similarity.describe",
+          "runner_up_score": 0.5145,
+          "action_type": "experience"
+        },
+        {
+          "rank": 3,
+          "id": "tech.cosine_semantic_search",
+          "topic": "rag",
+          "score": 0.4184,
+          "semantic": 0.0,
+          "lexical": 0.3981,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "proj.similarity.describe",
+          "runner_up_score": 0.5145,
+          "action_type": "definition"
+        },
+        {
+          "rank": 4,
+          "id": "proj.similarity.tech",
+          "topic": "project:similarity",
+          "score": 0.4158,
+          "semantic": 0.0,
+          "lexical": 0.5198,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "proj.similarity.describe",
+          "runner_up_score": 0.5145,
+          "action_type": "experience"
+        },
+        {
+          "rank": 5,
+          "id": "proj.similarity.role",
+          "topic": "project:similarity",
+          "score": 0.3988,
+          "semantic": 0.0,
+          "lexical": 0.4985,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "proj.similarity.describe",
+          "runner_up_score": 0.5145,
+          "action_type": "experience"
+        }
+      ],
+      "hybrid_top1_id": "proj.similarity.describe",
+      "hybrid_top1_topic": "project:similarity",
+      "hybrid_top1_action_type": "describe",
+      "hybrid_top1_is_sibling_same_topic": false,
+      "hybrid_gold_rank": 1,
+      "gold_score": 0.5145,
+      "semantic_full_rank": {
+        "rank": 1,
+        "score": 0.5737,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "proj.similarity.describe",
+            "score": 0.5737
+          },
+          {
+            "rank": 2,
+            "id": "proj.similarity.is_rag",
+            "score": 0.4621
+          },
+          {
+            "rank": 3,
+            "id": "proj.similarity.challenges",
+            "score": 0.4574
+          },
+          {
+            "rank": 4,
+            "id": "hard.similarity_vs_qgen_arch",
+            "score": 0.4198
+          },
+          {
+            "rank": 5,
+            "id": "proj.similarity.threshold",
+            "score": 0.4191
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 1,
+      "semantic_gold_score": 0.5737,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "proj.similarity.describe",
+          "score": 0.5737
+        },
+        {
+          "rank": 2,
+          "id": "proj.similarity.is_rag",
+          "score": 0.4621
+        },
+        {
+          "rank": 3,
+          "id": "proj.similarity.challenges",
+          "score": 0.4574
+        },
+        {
+          "rank": 4,
+          "id": "hard.similarity_vs_qgen_arch",
+          "score": 0.4198
+        },
+        {
+          "rank": 5,
+          "id": "proj.similarity.threshold",
+          "score": 0.4191
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": true,
+      "raw_path_gold_hits": [
+        {
+          "fragment": "Who makes the final decision in the similarity checker?",
+          "score": 0.7406,
+          "accepted": true
+        }
+      ],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": "low_score",
+      "accept_margin": 0.0379,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "assignment",
+          "btec",
+          "checker",
+          "proj",
+          "similarity"
+        ],
+        "script_hits": [
+          "assignment",
+          "similarity"
+        ],
+        "asr_hits": [
+          "assignment",
+          "similarity"
+        ],
+        "lost": []
+      },
+      "segmentation_residual": false,
+      "action_granularity": false,
+      "text_carries_meaning": true,
+      "content_overlap_tokens": [
+        "assignment",
+        "similarity"
+      ],
+      "bucket": "EVIDENCE_REJECTED"
+    },
+    {
+      "clip": "fuh4_079",
+      "transcript": "Summurize the assignment similarity project. It's fact and whether it is R-18.",
+      "script": "Summarise the assignment similarity project, its stack, and whether it is RAG.",
+      "path_opened": false,
+      "fragment": "Summurize the assignment similarity project. It's fact and whether it is R-18.",
+      "gold_intent": "proj.similarity.tech",
+      "gold_question": "What technologies did you use in the similarity checker?",
+      "gold_topic": "project:similarity",
+      "gold_action_type": "experience",
+      "selected_intents": [],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "proj.similarity.describe",
+          "topic": "project:similarity",
+          "score": 0.5145,
+          "semantic": 0.0,
+          "lexical": 0.5182,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "proj.similarity.challenges",
+          "runner_up_score": 0.4767,
+          "action_type": "describe"
+        },
+        {
+          "rank": 2,
+          "id": "proj.similarity.challenges",
+          "topic": "project:similarity",
+          "score": 0.4767,
+          "semantic": 0.0,
+          "lexical": 0.5958,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "proj.similarity.describe",
+          "runner_up_score": 0.5145,
+          "action_type": "experience"
+        },
+        {
+          "rank": 3,
+          "id": "tech.cosine_semantic_search",
+          "topic": "rag",
+          "score": 0.4184,
+          "semantic": 0.0,
+          "lexical": 0.3981,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "proj.similarity.describe",
+          "runner_up_score": 0.5145,
+          "action_type": "definition"
+        },
+        {
+          "rank": 4,
+          "id": "proj.similarity.tech",
+          "topic": "project:similarity",
+          "score": 0.4158,
+          "semantic": 0.0,
+          "lexical": 0.5198,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "proj.similarity.describe",
+          "runner_up_score": 0.5145,
+          "action_type": "experience"
+        },
+        {
+          "rank": 5,
+          "id": "proj.similarity.role",
+          "topic": "project:similarity",
+          "score": 0.3988,
+          "semantic": 0.0,
+          "lexical": 0.4985,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "proj.similarity.describe",
+          "runner_up_score": 0.5145,
+          "action_type": "experience"
+        }
+      ],
+      "hybrid_top1_id": "proj.similarity.describe",
+      "hybrid_top1_topic": "project:similarity",
+      "hybrid_top1_action_type": "describe",
+      "hybrid_top1_is_sibling_same_topic": true,
+      "hybrid_gold_rank": 4,
+      "gold_score": 0.4158,
+      "semantic_full_rank": {
+        "rank": 8,
+        "score": 0.3987,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "proj.similarity.describe",
+            "score": 0.5737
+          },
+          {
+            "rank": 2,
+            "id": "proj.similarity.is_rag",
+            "score": 0.4621
+          },
+          {
+            "rank": 3,
+            "id": "proj.similarity.challenges",
+            "score": 0.4574
+          },
+          {
+            "rank": 4,
+            "id": "hard.similarity_vs_qgen_arch",
+            "score": 0.4198
+          },
+          {
+            "rank": 5,
+            "id": "proj.similarity.threshold",
+            "score": 0.4191
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 8,
+      "semantic_gold_score": 0.3987,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "proj.similarity.describe",
+          "score": 0.5737
+        },
+        {
+          "rank": 2,
+          "id": "proj.similarity.is_rag",
+          "score": 0.4621
+        },
+        {
+          "rank": 3,
+          "id": "proj.similarity.challenges",
+          "score": 0.4574
+        },
+        {
+          "rank": 4,
+          "id": "hard.similarity_vs_qgen_arch",
+          "score": 0.4198
+        },
+        {
+          "rank": 5,
+          "id": "proj.similarity.threshold",
+          "score": 0.4191
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": "low_score",
+      "accept_margin": 0.0379,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "checker",
+          "proj",
+          "similarity",
+          "tech",
+          "technologies"
+        ],
+        "script_hits": [
+          "similarity"
+        ],
+        "asr_hits": [
+          "similarity"
+        ],
+        "lost": []
+      },
+      "segmentation_residual": false,
+      "action_granularity": true,
+      "text_carries_meaning": true,
+      "content_overlap_tokens": [
+        "similarity"
+      ],
+      "bucket": "ACTION_GRANULARITY"
+    },
+    {
+      "clip": "fuh4_079",
+      "transcript": "Summurize the assignment similarity project. It's fact and whether it is R-18.",
+      "script": "Summarise the assignment similarity project, its stack, and whether it is RAG.",
+      "path_opened": false,
+      "fragment": "Summurize the assignment similarity project. It's fact and whether it is R-18.",
+      "gold_intent": "proj.similarity.is_rag",
+      "gold_question": "Is the similarity checker a RAG system?",
+      "gold_topic": "project:similarity",
+      "gold_action_type": null,
+      "selected_intents": [],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "proj.similarity.describe",
+          "topic": "project:similarity",
+          "score": 0.5145,
+          "semantic": 0.0,
+          "lexical": 0.5182,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "proj.similarity.challenges",
+          "runner_up_score": 0.4767,
+          "action_type": "describe"
+        },
+        {
+          "rank": 2,
+          "id": "proj.similarity.challenges",
+          "topic": "project:similarity",
+          "score": 0.4767,
+          "semantic": 0.0,
+          "lexical": 0.5958,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "proj.similarity.describe",
+          "runner_up_score": 0.5145,
+          "action_type": "experience"
+        },
+        {
+          "rank": 3,
+          "id": "tech.cosine_semantic_search",
+          "topic": "rag",
+          "score": 0.4184,
+          "semantic": 0.0,
+          "lexical": 0.3981,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "proj.similarity.describe",
+          "runner_up_score": 0.5145,
+          "action_type": "definition"
+        },
+        {
+          "rank": 4,
+          "id": "proj.similarity.tech",
+          "topic": "project:similarity",
+          "score": 0.4158,
+          "semantic": 0.0,
+          "lexical": 0.5198,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "proj.similarity.describe",
+          "runner_up_score": 0.5145,
+          "action_type": "experience"
+        },
+        {
+          "rank": 5,
+          "id": "proj.similarity.role",
+          "topic": "project:similarity",
+          "score": 0.3988,
+          "semantic": 0.0,
+          "lexical": 0.4985,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "proj.similarity.describe",
+          "runner_up_score": 0.5145,
+          "action_type": "experience"
+        }
+      ],
+      "hybrid_top1_id": "proj.similarity.describe",
+      "hybrid_top1_topic": "project:similarity",
+      "hybrid_top1_action_type": "describe",
+      "hybrid_top1_is_sibling_same_topic": true,
+      "hybrid_gold_rank": 8,
+      "gold_score": 0.3527,
+      "semantic_full_rank": {
+        "rank": 2,
+        "score": 0.4621,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "proj.similarity.describe",
+            "score": 0.5737
+          },
+          {
+            "rank": 2,
+            "id": "proj.similarity.is_rag",
+            "score": 0.4621
+          },
+          {
+            "rank": 3,
+            "id": "proj.similarity.challenges",
+            "score": 0.4574
+          },
+          {
+            "rank": 4,
+            "id": "hard.similarity_vs_qgen_arch",
+            "score": 0.4198
+          },
+          {
+            "rank": 5,
+            "id": "proj.similarity.threshold",
+            "score": 0.4191
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 2,
+      "semantic_gold_score": 0.4621,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "proj.similarity.describe",
+          "score": 0.5737
+        },
+        {
+          "rank": 2,
+          "id": "proj.similarity.is_rag",
+          "score": 0.4621
+        },
+        {
+          "rank": 3,
+          "id": "proj.similarity.challenges",
+          "score": 0.4574
+        },
+        {
+          "rank": 4,
+          "id": "hard.similarity_vs_qgen_arch",
+          "score": 0.4198
+        },
+        {
+          "rank": 5,
+          "id": "proj.similarity.threshold",
+          "score": 0.4191
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": true,
+      "raw_path_gold_hits": [
+        {
+          "fragment": "Is the similarity checker a RAG system?",
+          "score": 1.16,
+          "accepted": true
+        }
+      ],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": "low_score",
+      "accept_margin": 0.0379,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "checker",
+          "is_rag",
+          "proj",
+          "similarity",
+          "system"
+        ],
+        "script_hits": [
+          "similarity"
+        ],
+        "asr_hits": [
+          "similarity"
+        ],
+        "lost": []
+      },
+      "segmentation_residual": false,
+      "action_granularity": false,
+      "text_carries_meaning": true,
+      "content_overlap_tokens": [
+        "similarity"
+      ],
+      "bucket": "EVIDENCE_REJECTED"
+    },
+    {
+      "clip": "fuh4_080",
+      "transcript": "Define overfitting detection signals in your mitigation playbook.",
+      "script": "Define overfitting, detection signals, and your mitigation playbook.",
+      "path_opened": false,
+      "fragment": "Define overfitting detection signals in your mitigation playbook.",
+      "gold_intent": "tech.overfitting",
+      "gold_question": "What is overfitting?",
+      "gold_topic": "ml",
+      "gold_action_type": "definition",
+      "selected_intents": [],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "tech.overfitting",
+          "topic": "ml",
+          "score": 0.515,
+          "semantic": 0.0,
+          "lexical": 0.4688,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "tech.what_is_llm",
+          "runner_up_score": 0.4106,
+          "action_type": "definition"
+        },
+        {
+          "rank": 2,
+          "id": "tech.what_is_llm",
+          "topic": "llm",
+          "score": 0.4106,
+          "semantic": 0.0,
+          "lexical": 0.4632,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.overfitting",
+          "runner_up_score": 0.515,
+          "action_type": "definition"
+        },
+        {
+          "rank": 3,
+          "id": "tech.rag_what",
+          "topic": "rag",
+          "score": 0.4106,
+          "semantic": 0.0,
+          "lexical": 0.4632,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.overfitting",
+          "runner_up_score": 0.515,
+          "action_type": "definition"
+        },
+        {
+          "rank": 4,
+          "id": "tech.what_is_ml",
+          "topic": "ml",
+          "score": 0.4034,
+          "semantic": 0.0,
+          "lexical": 0.3293,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "tech.overfitting",
+          "runner_up_score": 0.515,
+          "action_type": "definition"
+        },
+        {
+          "rank": 5,
+          "id": "tech.agentic_what",
+          "topic": "agents",
+          "score": 0.328,
+          "semantic": 0.0,
+          "lexical": 0.36,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.overfitting",
+          "runner_up_score": 0.515,
+          "action_type": "definition"
+        }
+      ],
+      "hybrid_top1_id": "tech.overfitting",
+      "hybrid_top1_topic": "ml",
+      "hybrid_top1_action_type": "definition",
+      "hybrid_top1_is_sibling_same_topic": false,
+      "hybrid_gold_rank": 1,
+      "gold_score": 0.515,
+      "semantic_full_rank": {
+        "rank": 4,
+        "score": 0.3488,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "tech.overfitting_prevent",
+            "score": 0.4543
+          },
+          {
+            "rank": 2,
+            "id": "tech.data_leakage_prevent",
+            "score": 0.3809
+          },
+          {
+            "rank": 3,
+            "id": "tech.imbalanced_data",
+            "score": 0.3706
+          },
+          {
+            "rank": 4,
+            "id": "tech.overfitting",
+            "score": 0.3488
+          },
+          {
+            "rank": 5,
+            "id": "proj.early_warning.leakage",
+            "score": 0.3371
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 4,
+      "semantic_gold_score": 0.3488,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "tech.overfitting_prevent",
+          "score": 0.4543
+        },
+        {
+          "rank": 2,
+          "id": "tech.data_leakage_prevent",
+          "score": 0.3809
+        },
+        {
+          "rank": 3,
+          "id": "tech.imbalanced_data",
+          "score": 0.3706
+        },
+        {
+          "rank": 4,
+          "id": "tech.overfitting",
+          "score": 0.3488
+        },
+        {
+          "rank": 5,
+          "id": "proj.early_warning.leakage",
+          "score": 0.3371
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": "low_score",
+      "accept_margin": 0.1044,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "overfitting",
+          "tech"
+        ],
+        "script_hits": [
+          "overfitting"
+        ],
+        "asr_hits": [
+          "overfitting"
+        ],
+        "lost": []
+      },
+      "segmentation_residual": true,
+      "action_granularity": false,
+      "text_carries_meaning": true,
+      "content_overlap_tokens": [
+        "overfitting"
+      ],
+      "bucket": "SEGMENTATION_RESIDUAL"
+    },
+    {
+      "clip": "fuh4_080",
+      "transcript": "Define overfitting detection signals in your mitigation playbook.",
+      "script": "Define overfitting, detection signals, and your mitigation playbook.",
+      "path_opened": false,
+      "fragment": "Define overfitting detection signals in your mitigation playbook.",
+      "gold_intent": "tech.overfitting_prevent",
+      "gold_question": "How do you prevent overfitting?",
+      "gold_topic": "ml",
+      "gold_action_type": "how",
+      "selected_intents": [],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "tech.overfitting",
+          "topic": "ml",
+          "score": 0.515,
+          "semantic": 0.0,
+          "lexical": 0.4688,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "tech.what_is_llm",
+          "runner_up_score": 0.4106,
+          "action_type": "definition"
+        },
+        {
+          "rank": 2,
+          "id": "tech.what_is_llm",
+          "topic": "llm",
+          "score": 0.4106,
+          "semantic": 0.0,
+          "lexical": 0.4632,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.overfitting",
+          "runner_up_score": 0.515,
+          "action_type": "definition"
+        },
+        {
+          "rank": 3,
+          "id": "tech.rag_what",
+          "topic": "rag",
+          "score": 0.4106,
+          "semantic": 0.0,
+          "lexical": 0.4632,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.overfitting",
+          "runner_up_score": 0.515,
+          "action_type": "definition"
+        },
+        {
+          "rank": 4,
+          "id": "tech.what_is_ml",
+          "topic": "ml",
+          "score": 0.4034,
+          "semantic": 0.0,
+          "lexical": 0.3293,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "tech.overfitting",
+          "runner_up_score": 0.515,
+          "action_type": "definition"
+        },
+        {
+          "rank": 5,
+          "id": "tech.agentic_what",
+          "topic": "agents",
+          "score": 0.328,
+          "semantic": 0.0,
+          "lexical": 0.36,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.overfitting",
+          "runner_up_score": 0.515,
+          "action_type": "definition"
+        }
+      ],
+      "hybrid_top1_id": "tech.overfitting",
+      "hybrid_top1_topic": "ml",
+      "hybrid_top1_action_type": "definition",
+      "hybrid_top1_is_sibling_same_topic": true,
+      "hybrid_gold_rank": null,
+      "gold_score": null,
+      "semantic_full_rank": {
+        "rank": 1,
+        "score": 0.4543,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "tech.overfitting_prevent",
+            "score": 0.4543
+          },
+          {
+            "rank": 2,
+            "id": "tech.data_leakage_prevent",
+            "score": 0.3809
+          },
+          {
+            "rank": 3,
+            "id": "tech.imbalanced_data",
+            "score": 0.3706
+          },
+          {
+            "rank": 4,
+            "id": "tech.overfitting",
+            "score": 0.3488
+          },
+          {
+            "rank": 5,
+            "id": "proj.early_warning.leakage",
+            "score": 0.3371
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 1,
+      "semantic_gold_score": 0.4543,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "tech.overfitting_prevent",
+          "score": 0.4543
+        },
+        {
+          "rank": 2,
+          "id": "tech.data_leakage_prevent",
+          "score": 0.3809
+        },
+        {
+          "rank": 3,
+          "id": "tech.imbalanced_data",
+          "score": 0.3706
+        },
+        {
+          "rank": 4,
+          "id": "tech.overfitting",
+          "score": 0.3488
+        },
+        {
+          "rank": 5,
+          "id": "proj.early_warning.leakage",
+          "score": 0.3371
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": "low_score",
+      "accept_margin": 0.1044,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "overfitting",
+          "overfitting_prevent",
+          "prevent",
+          "tech"
+        ],
+        "script_hits": [
+          "overfitting"
+        ],
+        "asr_hits": [
+          "overfitting"
+        ],
+        "lost": []
+      },
+      "segmentation_residual": true,
+      "action_granularity": false,
+      "text_carries_meaning": true,
+      "content_overlap_tokens": [
+        "overfitting"
+      ],
+      "bucket": "SEGMENTATION_RESIDUAL"
+    },
+    {
+      "clip": "fuh4_080",
+      "transcript": "Define overfitting detection signals in your mitigation playbook.",
+      "script": "Define overfitting, detection signals, and your mitigation playbook.",
+      "path_opened": false,
+      "fragment": "Define overfitting detection signals in your mitigation playbook.",
+      "gold_intent": "tech.evaluate_classification",
+      "gold_question": "How do you evaluate a classification model?",
+      "gold_topic": "ml",
+      "gold_action_type": "how",
+      "selected_intents": [],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "tech.overfitting",
+          "topic": "ml",
+          "score": 0.515,
+          "semantic": 0.0,
+          "lexical": 0.4688,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "tech.what_is_llm",
+          "runner_up_score": 0.4106,
+          "action_type": "definition"
+        },
+        {
+          "rank": 2,
+          "id": "tech.what_is_llm",
+          "topic": "llm",
+          "score": 0.4106,
+          "semantic": 0.0,
+          "lexical": 0.4632,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.overfitting",
+          "runner_up_score": 0.515,
+          "action_type": "definition"
+        },
+        {
+          "rank": 3,
+          "id": "tech.rag_what",
+          "topic": "rag",
+          "score": 0.4106,
+          "semantic": 0.0,
+          "lexical": 0.4632,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.overfitting",
+          "runner_up_score": 0.515,
+          "action_type": "definition"
+        },
+        {
+          "rank": 4,
+          "id": "tech.what_is_ml",
+          "topic": "ml",
+          "score": 0.4034,
+          "semantic": 0.0,
+          "lexical": 0.3293,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "tech.overfitting",
+          "runner_up_score": 0.515,
+          "action_type": "definition"
+        },
+        {
+          "rank": 5,
+          "id": "tech.agentic_what",
+          "topic": "agents",
+          "score": 0.328,
+          "semantic": 0.0,
+          "lexical": 0.36,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.overfitting",
+          "runner_up_score": 0.515,
+          "action_type": "definition"
+        }
+      ],
+      "hybrid_top1_id": "tech.overfitting",
+      "hybrid_top1_topic": "ml",
+      "hybrid_top1_action_type": "definition",
+      "hybrid_top1_is_sibling_same_topic": true,
+      "hybrid_gold_rank": null,
+      "gold_score": null,
+      "semantic_full_rank": {
+        "rank": 49,
+        "score": 0.2139,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "tech.overfitting_prevent",
+            "score": 0.4543
+          },
+          {
+            "rank": 2,
+            "id": "tech.data_leakage_prevent",
+            "score": 0.3809
+          },
+          {
+            "rank": 3,
+            "id": "tech.imbalanced_data",
+            "score": 0.3706
+          },
+          {
+            "rank": 4,
+            "id": "tech.overfitting",
+            "score": 0.3488
+          },
+          {
+            "rank": 5,
+            "id": "proj.early_warning.leakage",
+            "score": 0.3371
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 49,
+      "semantic_gold_score": 0.2139,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "tech.overfitting_prevent",
+          "score": 0.4543
+        },
+        {
+          "rank": 2,
+          "id": "tech.data_leakage_prevent",
+          "score": 0.3809
+        },
+        {
+          "rank": 3,
+          "id": "tech.imbalanced_data",
+          "score": 0.3706
+        },
+        {
+          "rank": 4,
+          "id": "tech.overfitting",
+          "score": 0.3488
+        },
+        {
+          "rank": 5,
+          "id": "proj.early_warning.leakage",
+          "score": 0.3371
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": "low_score",
+      "accept_margin": 0.1044,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "classification",
+          "evaluate",
+          "evaluate_classification",
+          "model",
+          "tech"
+        ],
+        "script_hits": [],
+        "asr_hits": [],
+        "lost": []
+      },
+      "segmentation_residual": true,
+      "action_granularity": false,
+      "text_carries_meaning": false,
+      "content_overlap_tokens": [],
+      "bucket": "SEGMENTATION_RESIDUAL"
+    },
+    {
+      "clip": "fuh4_081",
+      "transcript": "Your vector DB history, then your pick for our workload and Y.",
+      "script": "Your vector DB history, then your pick for our workload and why.",
+      "path_opened": true,
+      "fragment": "Your vector DB history",
+      "gold_intent": "tech.vector_db_choice",
+      "gold_question": "Which vector database would you choose for us?",
+      "gold_topic": "rag",
+      "gold_action_type": null,
+      "selected_intents": [
+        "cv.vector_db"
+      ],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "cv.vector_db",
+          "topic": "skills",
+          "score": 0.9059,
+          "semantic": 0.0,
+          "lexical": 0.8824,
+          "keyword": 1.0,
+          "mode": "strong",
+          "runner_up": "tech.vector_db_choice",
+          "runner_up_score": 0.7486,
+          "action_type": "experience"
+        },
+        {
+          "rank": 2,
+          "id": "tech.vector_db_choice",
+          "topic": "rag",
+          "score": 0.7486,
+          "semantic": 0.0,
+          "lexical": 0.8108,
+          "keyword": 0.5,
+          "mode": "strong",
+          "runner_up": "cv.vector_db",
+          "runner_up_score": 0.9059,
+          "action_type": null
+        },
+        {
+          "rank": 3,
+          "id": "hard.graph_vs_vector",
+          "topic": "rag",
+          "score": 0.7316,
+          "semantic": 0.0,
+          "lexical": 0.7895,
+          "keyword": 0.5,
+          "mode": "strong",
+          "runner_up": "cv.vector_db",
+          "runner_up_score": 0.9059,
+          "action_type": "when"
+        },
+        {
+          "rank": 4,
+          "id": "proj.similarity.tech",
+          "topic": "project:similarity",
+          "score": 0.7316,
+          "semantic": 0.0,
+          "lexical": 0.7895,
+          "keyword": 0.5,
+          "mode": "strong",
+          "runner_up": "cv.vector_db",
+          "runner_up_score": 0.9059,
+          "action_type": "experience"
+        },
+        {
+          "rank": 5,
+          "id": "proj.completion_risk.tech",
+          "topic": "project:completion",
+          "score": 0.6857,
+          "semantic": 0.0,
+          "lexical": 0.8571,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "cv.vector_db",
+          "runner_up_score": 0.9059,
+          "action_type": "experience"
+        }
+      ],
+      "hybrid_top1_id": "cv.vector_db",
+      "hybrid_top1_topic": "skills",
+      "hybrid_top1_action_type": "experience",
+      "hybrid_top1_is_sibling_same_topic": false,
+      "hybrid_gold_rank": 2,
+      "gold_score": 0.7486,
+      "semantic_full_rank": {
+        "rank": 3,
+        "score": 0.4211,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "cv.vector_db",
+            "score": 0.4721
+          },
+          {
+            "rank": 2,
+            "id": "proj.completion_risk.tech",
+            "score": 0.4401
+          },
+          {
+            "rank": 3,
+            "id": "tech.vector_db_choice",
+            "score": 0.4211
+          },
+          {
+            "rank": 4,
+            "id": "proj.similarity.tech",
+            "score": 0.3756
+          },
+          {
+            "rank": 5,
+            "id": "hard.graph_vs_vector",
+            "score": 0.3398
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 3,
+      "semantic_gold_score": 0.4211,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "cv.vector_db",
+          "score": 0.4721
+        },
+        {
+          "rank": 2,
+          "id": "proj.completion_risk.tech",
+          "score": 0.4401
+        },
+        {
+          "rank": 3,
+          "id": "tech.vector_db_choice",
+          "score": 0.4211
+        },
+        {
+          "rank": 4,
+          "id": "proj.similarity.tech",
+          "score": 0.3756
+        },
+        {
+          "rank": 5,
+          "id": "hard.graph_vs_vector",
+          "score": 0.3398
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": null,
+      "accept_margin": 0.1572,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "choose",
+          "database",
+          "tech",
+          "vector",
+          "vector_db_choice"
+        ],
+        "script_hits": [
+          "database",
+          "vector"
+        ],
+        "asr_hits": [
+          "database",
+          "vector"
+        ],
+        "lost": []
+      },
+      "segmentation_residual": false,
+      "action_granularity": false,
+      "text_carries_meaning": true,
+      "content_overlap_tokens": [
+        "database",
+        "vector"
+      ],
+      "bucket": "HYBRID_RANKING"
+    },
+    {
+      "clip": "fuh4_082",
+      "transcript": "Role of an orchestrator versus a lone tool-calling model. When is each enough?",
+      "script": "Role of an orchestrator versus a lone tool-calling model — when is each enough?",
+      "path_opened": false,
+      "fragment": "Role of an orchestrator versus a lone tool-calling model",
+      "gold_intent": "tech.agent_orchestrator",
+      "gold_question": "What is an agent orchestrator?",
+      "gold_topic": "agents",
+      "gold_action_type": "definition",
+      "selected_intents": [
+        "hard.agent_terms_difference"
+      ],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "hard.agent_terms_difference",
+          "topic": "agents",
+          "score": 0.6461,
+          "semantic": 0.0,
+          "lexical": 0.4576,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "tech.tool_calling",
+          "runner_up_score": 0.5429,
+          "action_type": "compare"
+        },
+        {
+          "rank": 2,
+          "id": "tech.tool_calling",
+          "topic": "agents",
+          "score": 0.5429,
+          "semantic": 0.0,
+          "lexical": 0.6786,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "hard.agent_terms_difference",
+          "runner_up_score": 0.6461,
+          "action_type": "definition"
+        },
+        {
+          "rank": 3,
+          "id": "tech.agent_orchestrator",
+          "topic": "agents",
+          "score": 0.5196,
+          "semantic": 0.0,
+          "lexical": 0.2995,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "hard.agent_terms_difference",
+          "runner_up_score": 0.6461,
+          "action_type": "definition"
+        },
+        {
+          "rank": 4,
+          "id": "tech.multi_agent_when",
+          "topic": "agents",
+          "score": 0.4231,
+          "semantic": 0.0,
+          "lexical": 0.3538,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "hard.agent_terms_difference",
+          "runner_up_score": 0.6461,
+          "action_type": "when"
+        },
+        {
+          "rank": 5,
+          "id": "hard.tool_schema",
+          "topic": "agents",
+          "score": 0.3785,
+          "semantic": 0.0,
+          "lexical": 0.3481,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "hard.agent_terms_difference",
+          "runner_up_score": 0.6461,
+          "action_type": "why"
+        }
+      ],
+      "hybrid_top1_id": "hard.agent_terms_difference",
+      "hybrid_top1_topic": "agents",
+      "hybrid_top1_action_type": "compare",
+      "hybrid_top1_is_sibling_same_topic": false,
+      "hybrid_gold_rank": 3,
+      "gold_score": 0.5196,
+      "semantic_full_rank": {
+        "rank": 4,
+        "score": 0.4328,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "tech.multi_agent_when",
+            "score": 0.4589
+          },
+          {
+            "rank": 2,
+            "id": "hard.agent_terms_difference",
+            "score": 0.4552
+          },
+          {
+            "rank": 3,
+            "id": "hard.langgraph_vs_n8n_vs_python",
+            "score": 0.454
+          },
+          {
+            "rank": 4,
+            "id": "tech.agent_orchestrator",
+            "score": 0.4328
+          },
+          {
+            "rank": 5,
+            "id": "tech.tool_calling",
+            "score": 0.39
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 4,
+      "semantic_gold_score": 0.4328,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "tech.multi_agent_when",
+          "score": 0.4589
+        },
+        {
+          "rank": 2,
+          "id": "hard.agent_terms_difference",
+          "score": 0.4552
+        },
+        {
+          "rank": 3,
+          "id": "hard.langgraph_vs_n8n_vs_python",
+          "score": 0.454
+        },
+        {
+          "rank": 4,
+          "id": "tech.agent_orchestrator",
+          "score": 0.4328
+        },
+        {
+          "rank": 5,
+          "id": "tech.tool_calling",
+          "score": 0.39
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": null,
+      "accept_margin": 0.1033,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "agent",
+          "agent_orchestrator",
+          "orchestrator",
+          "tech"
+        ],
+        "script_hits": [
+          "orchestrator"
+        ],
+        "asr_hits": [
+          "orchestrator"
+        ],
+        "lost": []
+      },
+      "segmentation_residual": false,
+      "action_granularity": false,
+      "text_carries_meaning": true,
+      "content_overlap_tokens": [
+        "orchestrator"
+      ],
+      "bucket": "HYBRID_RANKING"
+    },
+    {
+      "clip": "fuh4_082",
+      "transcript": "Role of an orchestrator versus a lone tool-calling model. When is each enough?",
+      "script": "Role of an orchestrator versus a lone tool-calling model — when is each enough?",
+      "path_opened": false,
+      "fragment": "Role of an orchestrator versus a lone tool-calling model",
+      "gold_intent": "tech.multi_agent_when",
+      "gold_question": "When do you need multiple agents instead of one?",
+      "gold_topic": "agents",
+      "gold_action_type": "when",
+      "selected_intents": [
+        "hard.agent_terms_difference"
+      ],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "hard.agent_terms_difference",
+          "topic": "agents",
+          "score": 0.6461,
+          "semantic": 0.0,
+          "lexical": 0.4576,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "tech.tool_calling",
+          "runner_up_score": 0.5429,
+          "action_type": "compare"
+        },
+        {
+          "rank": 2,
+          "id": "tech.tool_calling",
+          "topic": "agents",
+          "score": 0.5429,
+          "semantic": 0.0,
+          "lexical": 0.6786,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "hard.agent_terms_difference",
+          "runner_up_score": 0.6461,
+          "action_type": "definition"
+        },
+        {
+          "rank": 3,
+          "id": "tech.agent_orchestrator",
+          "topic": "agents",
+          "score": 0.5196,
+          "semantic": 0.0,
+          "lexical": 0.2995,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "hard.agent_terms_difference",
+          "runner_up_score": 0.6461,
+          "action_type": "definition"
+        },
+        {
+          "rank": 4,
+          "id": "tech.multi_agent_when",
+          "topic": "agents",
+          "score": 0.4231,
+          "semantic": 0.0,
+          "lexical": 0.3538,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "hard.agent_terms_difference",
+          "runner_up_score": 0.6461,
+          "action_type": "when"
+        },
+        {
+          "rank": 5,
+          "id": "hard.tool_schema",
+          "topic": "agents",
+          "score": 0.3785,
+          "semantic": 0.0,
+          "lexical": 0.3481,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "hard.agent_terms_difference",
+          "runner_up_score": 0.6461,
+          "action_type": "why"
+        }
+      ],
+      "hybrid_top1_id": "hard.agent_terms_difference",
+      "hybrid_top1_topic": "agents",
+      "hybrid_top1_action_type": "compare",
+      "hybrid_top1_is_sibling_same_topic": false,
+      "hybrid_gold_rank": 4,
+      "gold_score": 0.4231,
+      "semantic_full_rank": {
+        "rank": 1,
+        "score": 0.4589,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "tech.multi_agent_when",
+            "score": 0.4589
+          },
+          {
+            "rank": 2,
+            "id": "hard.agent_terms_difference",
+            "score": 0.4552
+          },
+          {
+            "rank": 3,
+            "id": "hard.langgraph_vs_n8n_vs_python",
+            "score": 0.454
+          },
+          {
+            "rank": 4,
+            "id": "tech.agent_orchestrator",
+            "score": 0.4328
+          },
+          {
+            "rank": 5,
+            "id": "tech.tool_calling",
+            "score": 0.39
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 1,
+      "semantic_gold_score": 0.4589,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "tech.multi_agent_when",
+          "score": 0.4589
+        },
+        {
+          "rank": 2,
+          "id": "hard.agent_terms_difference",
+          "score": 0.4552
+        },
+        {
+          "rank": 3,
+          "id": "hard.langgraph_vs_n8n_vs_python",
+          "score": 0.454
+        },
+        {
+          "rank": 4,
+          "id": "tech.agent_orchestrator",
+          "score": 0.4328
+        },
+        {
+          "rank": 5,
+          "id": "tech.tool_calling",
+          "score": 0.39
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": null,
+      "accept_margin": 0.1033,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "agents",
+          "instead",
+          "multi_agent_when",
+          "multiple",
+          "need",
+          "tech"
+        ],
+        "script_hits": [],
+        "asr_hits": [],
+        "lost": []
+      },
+      "segmentation_residual": false,
+      "action_granularity": false,
+      "text_carries_meaning": false,
+      "content_overlap_tokens": [],
+      "bucket": "HYBRID_RANKING"
+    },
+    {
+      "clip": "fuh4_083",
+      "transcript": "Education, certification, and how they matter for this role.",
+      "script": "Education, certifications, and how they matter for this role.",
+      "path_opened": true,
+      "fragment": "certification",
+      "gold_intent": "cv.pmp_value",
+      "gold_question": "How does PMP help you as an AI engineer?",
+      "gold_topic": "certifications",
+      "gold_action_type": "how",
+      "selected_intents": [
+        "cv.education",
+        "cv.certifications"
+      ],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "cv.certifications",
+          "topic": "certifications",
+          "score": 0.7704,
+          "semantic": 0.0,
+          "lexical": 0.963,
+          "keyword": 0.0,
+          "mode": "strong",
+          "runner_up": "proj.kiosk.voice_classifier",
+          "runner_up_score": 0.66,
+          "action_type": null
+        },
+        {
+          "rank": 2,
+          "id": "proj.kiosk.voice_classifier",
+          "topic": "project:kiosk",
+          "score": 0.66,
+          "semantic": 0.0,
+          "lexical": 0.825,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "cv.certifications",
+          "runner_up_score": 0.7704,
+          "action_type": null
+        },
+        {
+          "rank": 3,
+          "id": "cv.prince2",
+          "topic": "certifications",
+          "score": 0.6092,
+          "semantic": 0.0,
+          "lexical": 0.7615,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "cv.certifications",
+          "runner_up_score": 0.7704,
+          "action_type": "definition"
+        },
+        {
+          "rank": 4,
+          "id": "proj.helpdesk.tech",
+          "topic": "project:helpdesk",
+          "score": 0.5891,
+          "semantic": 0.0,
+          "lexical": 0.7364,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "cv.certifications",
+          "runner_up_score": 0.7704,
+          "action_type": "experience"
+        },
+        {
+          "rank": 5,
+          "id": "cv.nlp_experience",
+          "topic": "skills",
+          "score": 0.5891,
+          "semantic": 0.0,
+          "lexical": 0.7364,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "cv.certifications",
+          "runner_up_score": 0.7704,
+          "action_type": "experience"
+        }
+      ],
+      "hybrid_top1_id": "cv.certifications",
+      "hybrid_top1_topic": "certifications",
+      "hybrid_top1_action_type": null,
+      "hybrid_top1_is_sibling_same_topic": true,
+      "hybrid_gold_rank": null,
+      "gold_score": null,
+      "semantic_full_rank": {
+        "rank": 40,
+        "score": 0.2265,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "cv.certifications",
+            "score": 0.4591
+          },
+          {
+            "rank": 2,
+            "id": "cv.ccnp",
+            "score": 0.3755
+          },
+          {
+            "rank": 3,
+            "id": "cv.n8n",
+            "score": 0.3497
+          },
+          {
+            "rank": 4,
+            "id": "cv.langchain",
+            "score": 0.3381
+          },
+          {
+            "rank": 5,
+            "id": "cv.prince2",
+            "score": 0.3368
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 40,
+      "semantic_gold_score": 0.2265,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "cv.certifications",
+          "score": 0.4591
+        },
+        {
+          "rank": 2,
+          "id": "cv.ccnp",
+          "score": 0.3755
+        },
+        {
+          "rank": 3,
+          "id": "cv.n8n",
+          "score": 0.3497
+        },
+        {
+          "rank": 4,
+          "id": "cv.langchain",
+          "score": 0.3381
+        },
+        {
+          "rank": 5,
+          "id": "cv.prince2",
+          "score": 0.3368
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": null,
+      "accept_margin": 0.1104,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "engineer",
+          "help",
+          "pmp_value"
+        ],
+        "script_hits": [],
+        "asr_hits": [],
+        "lost": []
+      },
+      "segmentation_residual": false,
+      "action_granularity": false,
+      "text_carries_meaning": false,
+      "content_overlap_tokens": [],
+      "bucket": "CANDIDATE_GENERATION"
+    },
+    {
+      "clip": "fuh4_084",
+      "transcript": "Compt injection sources, PDF risk, and guardrails that's locked.",
+      "script": "Prompt injection sources, PDF risk, and guardrails that block it.",
+      "path_opened": true,
+      "fragment": "What are guardrails?",
+      "gold_intent": "tech.prompt_injection_what",
+      "gold_question": "What is prompt injection?",
+      "gold_topic": "guardrails",
+      "gold_action_type": "definition",
+      "selected_intents": [
+        "tech.guardrails_what"
+      ],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "tech.guardrails_what",
+          "topic": "guardrails",
+          "score": 1.26,
+          "semantic": 0.0,
+          "lexical": 1.0,
+          "keyword": 1.0,
+          "mode": "strong",
+          "runner_up": "tech.guardrails_how",
+          "runner_up_score": 1.12,
+          "action_type": "definition"
+        },
+        {
+          "rank": 2,
+          "id": "tech.guardrails_how",
+          "topic": "guardrails",
+          "score": 1.12,
+          "semantic": 0.0,
+          "lexical": 1.0,
+          "keyword": 0.5,
+          "mode": "strong",
+          "runner_up": "tech.guardrails_what",
+          "runner_up_score": 1.26,
+          "action_type": "experience"
+        },
+        {
+          "rank": 3,
+          "id": "cv.guardrails",
+          "topic": "skills",
+          "score": 1.12,
+          "semantic": 0.0,
+          "lexical": 1.0,
+          "keyword": 0.5,
+          "mode": "strong",
+          "runner_up": "tech.guardrails_what",
+          "runner_up_score": 1.26,
+          "action_type": "experience"
+        },
+        {
+          "rank": 4,
+          "id": "tech.guardrails_layers",
+          "topic": "guardrails",
+          "score": 1.06,
+          "semantic": 0.0,
+          "lexical": 1.0,
+          "keyword": 0.0,
+          "mode": "strong",
+          "runner_up": "tech.guardrails_what",
+          "runner_up_score": 1.26,
+          "action_type": null
+        },
+        {
+          "rank": 5,
+          "id": "gen.ai_ethics",
+          "topic": "personal",
+          "score": 0.8,
+          "semantic": 0.0,
+          "lexical": 1.0,
+          "keyword": 0.0,
+          "mode": "strong",
+          "runner_up": "tech.guardrails_what",
+          "runner_up_score": 1.26,
+          "action_type": "how"
+        }
+      ],
+      "hybrid_top1_id": "tech.guardrails_what",
+      "hybrid_top1_topic": "guardrails",
+      "hybrid_top1_action_type": "definition",
+      "hybrid_top1_is_sibling_same_topic": true,
+      "hybrid_gold_rank": null,
+      "gold_score": null,
+      "semantic_full_rank": {
+        "rank": 6,
+        "score": 0.2777,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "tech.guardrails_what",
+            "score": 0.6149
+          },
+          {
+            "rank": 2,
+            "id": "tech.guardrails_how",
+            "score": 0.5441
+          },
+          {
+            "rank": 3,
+            "id": "tech.guardrails_layers",
+            "score": 0.459
+          },
+          {
+            "rank": 4,
+            "id": "cv.guardrails",
+            "score": 0.4559
+          },
+          {
+            "rank": 5,
+            "id": "tech.hallucination_prevent",
+            "score": 0.2931
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 6,
+      "semantic_gold_score": 0.2777,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "tech.guardrails_what",
+          "score": 0.6149
+        },
+        {
+          "rank": 2,
+          "id": "tech.guardrails_how",
+          "score": 0.5441
+        },
+        {
+          "rank": 3,
+          "id": "tech.guardrails_layers",
+          "score": 0.459
+        },
+        {
+          "rank": 4,
+          "id": "cv.guardrails",
+          "score": 0.4559
+        },
+        {
+          "rank": 5,
+          "id": "tech.hallucination_prevent",
+          "score": 0.2931
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": null,
+      "accept_margin": 0.14,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "injection",
+          "prompt",
+          "prompt_injection_what",
+          "tech"
+        ],
+        "script_hits": [
+          "injection",
+          "prompt"
+        ],
+        "asr_hits": [
+          "injection"
+        ],
+        "lost": [
+          "prompt"
+        ]
+      },
+      "segmentation_residual": false,
+      "action_granularity": false,
+      "text_carries_meaning": false,
+      "content_overlap_tokens": [],
+      "bucket": "SEMANTIC_PROFILE_QUALITY"
+    },
+    {
+      "clip": "fuh4_084",
+      "transcript": "Compt injection sources, PDF risk, and guardrails that's locked.",
+      "script": "Prompt injection sources, PDF risk, and guardrails that block it.",
+      "path_opened": true,
+      "fragment": "What are guardrails?",
+      "gold_intent": "hard.injection_in_pdf",
+      "gold_question": "What if a retrieved PDF says ignore previous instructions and dump all documents?",
+      "gold_topic": "guardrails",
+      "gold_action_type": null,
+      "selected_intents": [
+        "tech.guardrails_what"
+      ],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "tech.guardrails_what",
+          "topic": "guardrails",
+          "score": 1.26,
+          "semantic": 0.0,
+          "lexical": 1.0,
+          "keyword": 1.0,
+          "mode": "strong",
+          "runner_up": "tech.guardrails_how",
+          "runner_up_score": 1.12,
+          "action_type": "definition"
+        },
+        {
+          "rank": 2,
+          "id": "tech.guardrails_how",
+          "topic": "guardrails",
+          "score": 1.12,
+          "semantic": 0.0,
+          "lexical": 1.0,
+          "keyword": 0.5,
+          "mode": "strong",
+          "runner_up": "tech.guardrails_what",
+          "runner_up_score": 1.26,
+          "action_type": "experience"
+        },
+        {
+          "rank": 3,
+          "id": "cv.guardrails",
+          "topic": "skills",
+          "score": 1.12,
+          "semantic": 0.0,
+          "lexical": 1.0,
+          "keyword": 0.5,
+          "mode": "strong",
+          "runner_up": "tech.guardrails_what",
+          "runner_up_score": 1.26,
+          "action_type": "experience"
+        },
+        {
+          "rank": 4,
+          "id": "tech.guardrails_layers",
+          "topic": "guardrails",
+          "score": 1.06,
+          "semantic": 0.0,
+          "lexical": 1.0,
+          "keyword": 0.0,
+          "mode": "strong",
+          "runner_up": "tech.guardrails_what",
+          "runner_up_score": 1.26,
+          "action_type": null
+        },
+        {
+          "rank": 5,
+          "id": "gen.ai_ethics",
+          "topic": "personal",
+          "score": 0.8,
+          "semantic": 0.0,
+          "lexical": 1.0,
+          "keyword": 0.0,
+          "mode": "strong",
+          "runner_up": "tech.guardrails_what",
+          "runner_up_score": 1.26,
+          "action_type": "how"
+        }
+      ],
+      "hybrid_top1_id": "tech.guardrails_what",
+      "hybrid_top1_topic": "guardrails",
+      "hybrid_top1_action_type": "definition",
+      "hybrid_top1_is_sibling_same_topic": false,
+      "hybrid_gold_rank": null,
+      "gold_score": null,
+      "semantic_full_rank": {
+        "rank": 30,
+        "score": 0.1334,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "tech.guardrails_what",
+            "score": 0.6149
+          },
+          {
+            "rank": 2,
+            "id": "tech.guardrails_how",
+            "score": 0.5441
+          },
+          {
+            "rank": 3,
+            "id": "tech.guardrails_layers",
+            "score": 0.459
+          },
+          {
+            "rank": 4,
+            "id": "cv.guardrails",
+            "score": 0.4559
+          },
+          {
+            "rank": 5,
+            "id": "tech.hallucination_prevent",
+            "score": 0.2931
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 30,
+      "semantic_gold_score": 0.1334,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "tech.guardrails_what",
+          "score": 0.6149
+        },
+        {
+          "rank": 2,
+          "id": "tech.guardrails_how",
+          "score": 0.5441
+        },
+        {
+          "rank": 3,
+          "id": "tech.guardrails_layers",
+          "score": 0.459
+        },
+        {
+          "rank": 4,
+          "id": "cv.guardrails",
+          "score": 0.4559
+        },
+        {
+          "rank": 5,
+          "id": "tech.hallucination_prevent",
+          "score": 0.2931
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": null,
+      "accept_margin": 0.14,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "documents",
+          "dump",
+          "hard",
+          "ignore",
+          "injection_in_pdf",
+          "instructions",
+          "previous",
+          "retrieved",
+          "says"
+        ],
+        "script_hits": [],
+        "asr_hits": [],
+        "lost": []
+      },
+      "segmentation_residual": false,
+      "action_granularity": false,
+      "text_carries_meaning": false,
+      "content_overlap_tokens": [],
+      "bucket": "CANDIDATE_GENERATION"
+    },
+    {
+      "clip": "fuh4_084",
+      "transcript": "Compt injection sources, PDF risk, and guardrails that's locked.",
+      "script": "Prompt injection sources, PDF risk, and guardrails that block it.",
+      "path_opened": true,
+      "fragment": "What are guardrails?",
+      "gold_intent": "tech.guardrails_how",
+      "gold_question": "How do you build guardrails for an LLM?",
+      "gold_topic": "guardrails",
+      "gold_action_type": "experience",
+      "selected_intents": [
+        "tech.guardrails_what"
+      ],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "tech.guardrails_what",
+          "topic": "guardrails",
+          "score": 1.26,
+          "semantic": 0.0,
+          "lexical": 1.0,
+          "keyword": 1.0,
+          "mode": "strong",
+          "runner_up": "tech.guardrails_how",
+          "runner_up_score": 1.12,
+          "action_type": "definition"
+        },
+        {
+          "rank": 2,
+          "id": "tech.guardrails_how",
+          "topic": "guardrails",
+          "score": 1.12,
+          "semantic": 0.0,
+          "lexical": 1.0,
+          "keyword": 0.5,
+          "mode": "strong",
+          "runner_up": "tech.guardrails_what",
+          "runner_up_score": 1.26,
+          "action_type": "experience"
+        },
+        {
+          "rank": 3,
+          "id": "cv.guardrails",
+          "topic": "skills",
+          "score": 1.12,
+          "semantic": 0.0,
+          "lexical": 1.0,
+          "keyword": 0.5,
+          "mode": "strong",
+          "runner_up": "tech.guardrails_what",
+          "runner_up_score": 1.26,
+          "action_type": "experience"
+        },
+        {
+          "rank": 4,
+          "id": "tech.guardrails_layers",
+          "topic": "guardrails",
+          "score": 1.06,
+          "semantic": 0.0,
+          "lexical": 1.0,
+          "keyword": 0.0,
+          "mode": "strong",
+          "runner_up": "tech.guardrails_what",
+          "runner_up_score": 1.26,
+          "action_type": null
+        },
+        {
+          "rank": 5,
+          "id": "gen.ai_ethics",
+          "topic": "personal",
+          "score": 0.8,
+          "semantic": 0.0,
+          "lexical": 1.0,
+          "keyword": 0.0,
+          "mode": "strong",
+          "runner_up": "tech.guardrails_what",
+          "runner_up_score": 1.26,
+          "action_type": "how"
+        }
+      ],
+      "hybrid_top1_id": "tech.guardrails_what",
+      "hybrid_top1_topic": "guardrails",
+      "hybrid_top1_action_type": "definition",
+      "hybrid_top1_is_sibling_same_topic": true,
+      "hybrid_gold_rank": 2,
+      "gold_score": 1.12,
+      "semantic_full_rank": {
+        "rank": 2,
+        "score": 0.5441,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "tech.guardrails_what",
+            "score": 0.6149
+          },
+          {
+            "rank": 2,
+            "id": "tech.guardrails_how",
+            "score": 0.5441
+          },
+          {
+            "rank": 3,
+            "id": "tech.guardrails_layers",
+            "score": 0.459
+          },
+          {
+            "rank": 4,
+            "id": "cv.guardrails",
+            "score": 0.4559
+          },
+          {
+            "rank": 5,
+            "id": "tech.hallucination_prevent",
+            "score": 0.2931
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 2,
+      "semantic_gold_score": 0.5441,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "tech.guardrails_what",
+          "score": 0.6149
+        },
+        {
+          "rank": 2,
+          "id": "tech.guardrails_how",
+          "score": 0.5441
+        },
+        {
+          "rank": 3,
+          "id": "tech.guardrails_layers",
+          "score": 0.459
+        },
+        {
+          "rank": 4,
+          "id": "cv.guardrails",
+          "score": 0.4559
+        },
+        {
+          "rank": 5,
+          "id": "tech.hallucination_prevent",
+          "score": 0.2931
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": null,
+      "accept_margin": 0.14,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "build",
+          "guardrails",
+          "guardrails_how",
+          "tech"
+        ],
+        "script_hits": [
+          "guardrails"
+        ],
+        "asr_hits": [
+          "guardrails"
+        ],
+        "lost": []
+      },
+      "segmentation_residual": false,
+      "action_granularity": true,
+      "text_carries_meaning": true,
+      "content_overlap_tokens": [
+        "guardrails"
+      ],
+      "bucket": "ACTION_GRANULARITY"
+    },
+    {
+      "clip": "fuh4_085",
+      "transcript": "Docker value, container versus VM, and if we need Cuba needs.",
+      "script": "Docker value, container versus VM, and if we need Kubernetes.",
+      "path_opened": true,
+      "fragment": "If we need Cuba needs",
+      "gold_intent": "tech.kubernetes",
+      "gold_question": "Would you use Kubernetes?",
+      "gold_topic": "infra",
+      "gold_action_type": null,
+      "selected_intents": [
+        "tech.docker_why",
+        "tech.container_vs_vm"
+      ],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "tech.sklearn_vs_neural",
+          "topic": "ml",
+          "score": 0.364,
+          "semantic": 0.0,
+          "lexical": 0.455,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.kubernetes",
+          "runner_up_score": 0.36,
+          "action_type": "why"
+        },
+        {
+          "rank": 2,
+          "id": "tech.kubernetes",
+          "topic": "infra",
+          "score": 0.36,
+          "semantic": 0.0,
+          "lexical": 0.45,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.sklearn_vs_neural",
+          "runner_up_score": 0.364,
+          "action_type": null
+        },
+        {
+          "rank": 3,
+          "id": "tech.explain_ai_project_structure",
+          "topic": "general",
+          "score": 0.336,
+          "semantic": 0.0,
+          "lexical": 0.42,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.sklearn_vs_neural",
+          "runner_up_score": 0.364,
+          "action_type": "how"
+        },
+        {
+          "rank": 4,
+          "id": "tech.gpu_sizing",
+          "topic": "hosting",
+          "score": 0.3261,
+          "semantic": 0.0,
+          "lexical": 0.4076,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.sklearn_vs_neural",
+          "runner_up_score": 0.364,
+          "action_type": "how"
+        },
+        {
+          "rank": 5,
+          "id": "hard.supervisor_vs_router",
+          "topic": "agents",
+          "score": 0.312,
+          "semantic": 0.0,
+          "lexical": 0.39,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.sklearn_vs_neural",
+          "runner_up_score": 0.364,
+          "action_type": "when"
+        }
+      ],
+      "hybrid_top1_id": "tech.sklearn_vs_neural",
+      "hybrid_top1_topic": "ml",
+      "hybrid_top1_action_type": "why",
+      "hybrid_top1_is_sibling_same_topic": true,
+      "hybrid_gold_rank": 2,
+      "gold_score": 0.36,
+      "semantic_full_rank": {
+        "rank": null,
+        "score": null,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "gen.anything_else",
+            "score": 0.2181
+          },
+          {
+            "rank": 2,
+            "id": "tech.emirati_dialect",
+            "score": 0.1997
+          },
+          {
+            "rank": 3,
+            "id": "gen.questions_for_us",
+            "score": 0.1932
+          },
+          {
+            "rank": 4,
+            "id": "hard.agent_cannot_delete",
+            "score": 0.1661
+          },
+          {
+            "rank": 5,
+            "id": "hard.empty_retrieval",
+            "score": 0.163
+          }
+        ],
+        "deep_present": false,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": null,
+      "semantic_gold_score": null,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "gen.anything_else",
+          "score": 0.2181
+        },
+        {
+          "rank": 2,
+          "id": "tech.emirati_dialect",
+          "score": 0.1997
+        },
+        {
+          "rank": 3,
+          "id": "gen.questions_for_us",
+          "score": 0.1932
+        },
+        {
+          "rank": 4,
+          "id": "hard.agent_cannot_delete",
+          "score": 0.1661
+        },
+        {
+          "rank": 5,
+          "id": "hard.empty_retrieval",
+          "score": 0.163
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": "low_score",
+      "accept_margin": 0.004,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "kubernetes",
+          "tech"
+        ],
+        "script_hits": [
+          "kubernetes"
+        ],
+        "asr_hits": [],
+        "lost": [
+          "kubernetes"
+        ]
+      },
+      "segmentation_residual": false,
+      "action_granularity": false,
+      "text_carries_meaning": false,
+      "content_overlap_tokens": [],
+      "bucket": "HYBRID_RANKING"
+    },
+    {
+      "clip": "fuh4_086",
+      "transcript": "Early Warning Project Story, KPI, and Ministry Outcome",
+      "script": "Early-warning project story, KPI, and ministry outcome.",
+      "path_opened": true,
+      "fragment": "How do you evaluate an early warning model for students?",
+      "gold_intent": "proj.early_warning.describe",
+      "gold_question": "Tell me about the Student Performance Early-Warning project",
+      "gold_topic": "project:early_warning",
+      "gold_action_type": "describe",
+      "selected_intents": [
+        "proj.early_warning.result"
+      ],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "proj.early_warning.metric",
+          "topic": "project:early_warning",
+          "score": 0.8,
+          "semantic": 0.0,
+          "lexical": 1.0,
+          "keyword": 0.5,
+          "mode": "strong",
+          "runner_up": "proj.early_warning.tech",
+          "runner_up_score": 0.5935,
+          "action_type": "experience"
+        },
+        {
+          "rank": 2,
+          "id": "proj.early_warning.tech",
+          "topic": "project:early_warning",
+          "score": 0.5935,
+          "semantic": 0.0,
+          "lexical": 0.7419,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "proj.early_warning.metric",
+          "runner_up_score": 0.8,
+          "action_type": "experience"
+        },
+        {
+          "rank": 3,
+          "id": "tech.evaluate_classification",
+          "topic": "ml",
+          "score": 0.5405,
+          "semantic": 0.0,
+          "lexical": 0.5006,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "proj.early_warning.metric",
+          "runner_up_score": 0.8,
+          "action_type": "how"
+        },
+        {
+          "rank": 4,
+          "id": "proj.early_warning.stack",
+          "topic": "project:early_warning",
+          "score": 0.5247,
+          "semantic": 0.0,
+          "lexical": 0.5309,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "proj.early_warning.metric",
+          "runner_up_score": 0.8,
+          "action_type": null
+        },
+        {
+          "rank": 5,
+          "id": "tech.good_enough_to_launch",
+          "topic": "evaluation",
+          "score": 0.5185,
+          "semantic": 0.0,
+          "lexical": 0.4731,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "proj.early_warning.metric",
+          "runner_up_score": 0.8,
+          "action_type": "how"
+        }
+      ],
+      "hybrid_top1_id": "proj.early_warning.metric",
+      "hybrid_top1_topic": "project:early_warning",
+      "hybrid_top1_action_type": "experience",
+      "hybrid_top1_is_sibling_same_topic": true,
+      "hybrid_gold_rank": null,
+      "gold_score": null,
+      "semantic_full_rank": {
+        "rank": 2,
+        "score": 0.5807,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "proj.early_warning.result",
+            "score": 0.6195
+          },
+          {
+            "rank": 2,
+            "id": "proj.early_warning.describe",
+            "score": 0.5807
+          },
+          {
+            "rank": 3,
+            "id": "proj.early_warning.metric",
+            "score": 0.5738
+          },
+          {
+            "rank": 4,
+            "id": "proj.early_warning.stack",
+            "score": 0.5302
+          },
+          {
+            "rank": 5,
+            "id": "proj.early_warning.leakage",
+            "score": 0.5302
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 2,
+      "semantic_gold_score": 0.5807,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "proj.early_warning.result",
+          "score": 0.6195
+        },
+        {
+          "rank": 2,
+          "id": "proj.early_warning.describe",
+          "score": 0.5807
+        },
+        {
+          "rank": 3,
+          "id": "proj.early_warning.metric",
+          "score": 0.5738
+        },
+        {
+          "rank": 4,
+          "id": "proj.early_warning.stack",
+          "score": 0.5302
+        },
+        {
+          "rank": 5,
+          "id": "proj.early_warning.leakage",
+          "score": 0.5302
+        }
+      ],
+      "evidence_score_fragment": 0.4,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": null,
+      "accept_margin": 0.2065,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "early",
+          "early_warning",
+          "performance",
+          "proj",
+          "project",
+          "student",
+          "warning"
+        ],
+        "script_hits": [
+          "early",
+          "project",
+          "warning"
+        ],
+        "asr_hits": [
+          "early",
+          "project",
+          "warning"
+        ],
+        "lost": []
+      },
+      "segmentation_residual": false,
+      "action_granularity": false,
+      "text_carries_meaning": true,
+      "content_overlap_tokens": [
+        "early",
+        "warning"
+      ],
+      "bucket": "HYBRID_RANKING"
+    },
+    {
+      "clip": "fuh4_086",
+      "transcript": "Early Warning Project Story, KPI, and Ministry Outcome",
+      "script": "Early-warning project story, KPI, and ministry outcome.",
+      "path_opened": true,
+      "fragment": "Why does recall matter more than accuracy for early warning?",
+      "gold_intent": "proj.early_warning.metric",
+      "gold_question": "Which metric did you use and why?",
+      "gold_topic": "project:early_warning",
+      "gold_action_type": "experience",
+      "selected_intents": [
+        "proj.early_warning.result"
+      ],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "proj.early_warning.metric",
+          "topic": "project:early_warning",
+          "score": 0.7553,
+          "semantic": 0.0,
+          "lexical": 0.6441,
+          "keyword": 1.0,
+          "mode": "strong",
+          "runner_up": "tech.precision_recall",
+          "runner_up_score": 0.5171,
+          "action_type": "experience"
+        },
+        {
+          "rank": 2,
+          "id": "tech.precision_recall",
+          "topic": "ml",
+          "score": 0.5171,
+          "semantic": 0.0,
+          "lexical": 0.5214,
+          "keyword": 1.0,
+          "mode": "weak",
+          "runner_up": "proj.early_warning.metric",
+          "runner_up_score": 0.7553,
+          "action_type": "definition"
+        },
+        {
+          "rank": 3,
+          "id": "proj.early_warning.stack",
+          "topic": "project:early_warning",
+          "score": 0.4774,
+          "semantic": 0.0,
+          "lexical": 0.4717,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "proj.early_warning.metric",
+          "runner_up_score": 0.7553,
+          "action_type": null
+        },
+        {
+          "rank": 4,
+          "id": "proj.early_warning.result",
+          "topic": "project:early_warning",
+          "score": 0.3833,
+          "semantic": 0.0,
+          "lexical": 0.4791,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "proj.early_warning.metric",
+          "runner_up_score": 0.7553,
+          "action_type": null
+        },
+        {
+          "rank": 5,
+          "id": "tech.mcp",
+          "topic": "agents",
+          "score": 0.3795,
+          "semantic": 0.0,
+          "lexical": 0.4244,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "proj.early_warning.metric",
+          "runner_up_score": 0.7553,
+          "action_type": "definition"
+        }
+      ],
+      "hybrid_top1_id": "proj.early_warning.metric",
+      "hybrid_top1_topic": "project:early_warning",
+      "hybrid_top1_action_type": "experience",
+      "hybrid_top1_is_sibling_same_topic": false,
+      "hybrid_gold_rank": 1,
+      "gold_score": 0.7553,
+      "semantic_full_rank": {
+        "rank": 1,
+        "score": 0.4872,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "proj.early_warning.metric",
+            "score": 0.4872
+          },
+          {
+            "rank": 2,
+            "id": "tech.precision_recall",
+            "score": 0.4283
+          },
+          {
+            "rank": 3,
+            "id": "proj.early_warning.stack",
+            "score": 0.4138
+          },
+          {
+            "rank": 4,
+            "id": "gen.failure",
+            "score": 0.366
+          },
+          {
+            "rank": 5,
+            "id": "proj.early_warning.leakage",
+            "score": 0.3493
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 1,
+      "semantic_gold_score": 0.4872,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "proj.early_warning.metric",
+          "score": 0.4872
+        },
+        {
+          "rank": 2,
+          "id": "tech.precision_recall",
+          "score": 0.4283
+        },
+        {
+          "rank": 3,
+          "id": "proj.early_warning.stack",
+          "score": 0.4138
+        },
+        {
+          "rank": 4,
+          "id": "gen.failure",
+          "score": 0.366
+        },
+        {
+          "rank": 5,
+          "id": "proj.early_warning.leakage",
+          "score": 0.3493
+        }
+      ],
+      "evidence_score_fragment": 0.4,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [
+        {
+          "fragment": "How do you evaluate an early warning model for students?",
+          "score": 0.8,
+          "accepted": true
+        },
+        {
+          "fragment": "Why does recall matter more than accuracy for early warning?",
+          "score": 0.7553,
+          "accepted": true
+        },
+        {
+          "fragment": "recall",
+          "score": 0.9,
+          "accepted": true
+        }
+      ],
+      "evid_path_gold_hits": [
+        {
+          "fragment": "How do you evaluate an early warning model for students?",
+          "score": 0.8,
+          "accepted": true
+        },
+        {
+          "fragment": "Why does recall matter more than accuracy for early warning?",
+          "score": 0.7553,
+          "accepted": true
+        }
+      ],
+      "accepted": true,
+      "reject_reason": null,
+      "accept_margin": 0.2382,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "early_warning",
+          "metric",
+          "proj"
+        ],
+        "script_hits": [],
+        "asr_hits": [],
+        "lost": []
+      },
+      "segmentation_residual": false,
+      "action_granularity": false,
+      "text_carries_meaning": false,
+      "content_overlap_tokens": [],
+      "bucket": "HYBRID_RANKING"
+    },
+    {
+      "clip": "fuh4_087",
+      "transcript": "Tool calling basics schema need and when to halt tool loops.",
+      "script": "Tool calling basics, schema need, and when to halt tool loops.",
+      "path_opened": true,
+      "fragment": "Tool calling basics schema need",
+      "gold_intent": "hard.tool_schema",
+      "gold_question": "Why do tool arguments need a schema if the model is smart?",
+      "gold_topic": "agents",
+      "gold_action_type": "why",
+      "selected_intents": [
+        "tech.tool_calling",
+        "hard.agent_loop"
+      ],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "tech.tool_calling",
+          "topic": "agents",
+          "score": 0.684,
+          "semantic": 0.0,
+          "lexical": 0.73,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "hard.tool_schema",
+          "runner_up_score": 0.6466,
+          "action_type": "definition"
+        },
+        {
+          "rank": 2,
+          "id": "hard.tool_schema",
+          "topic": "agents",
+          "score": 0.6466,
+          "semantic": 0.0,
+          "lexical": 0.5583,
+          "keyword": 1.0,
+          "mode": "weak",
+          "runner_up": "tech.tool_calling",
+          "runner_up_score": 0.684,
+          "action_type": "why"
+        },
+        {
+          "rank": 3,
+          "id": "hard.agent_loop",
+          "topic": "agents",
+          "score": 0.3893,
+          "semantic": 0.0,
+          "lexical": 0.4867,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.tool_calling",
+          "runner_up_score": 0.684,
+          "action_type": "how"
+        },
+        {
+          "rank": 4,
+          "id": "hard.wrong_tool",
+          "topic": "agents",
+          "score": 0.3409,
+          "semantic": 0.0,
+          "lexical": 0.3012,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "tech.tool_calling",
+          "runner_up_score": 0.684,
+          "action_type": null
+        },
+        {
+          "rank": 5,
+          "id": "hard.agent_cannot_delete",
+          "topic": "agents",
+          "score": 0.3225,
+          "semantic": 0.0,
+          "lexical": 0.2781,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "tech.tool_calling",
+          "runner_up_score": 0.684,
+          "action_type": null
+        }
+      ],
+      "hybrid_top1_id": "tech.tool_calling",
+      "hybrid_top1_topic": "agents",
+      "hybrid_top1_action_type": "definition",
+      "hybrid_top1_is_sibling_same_topic": false,
+      "hybrid_gold_rank": 2,
+      "gold_score": 0.6466,
+      "semantic_full_rank": {
+        "rank": 1,
+        "score": 0.6331,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "hard.tool_schema",
+            "score": 0.6331
+          },
+          {
+            "rank": 2,
+            "id": "tech.tool_calling",
+            "score": 0.6209
+          },
+          {
+            "rank": 3,
+            "id": "hard.wrong_tool",
+            "score": 0.3979
+          },
+          {
+            "rank": 4,
+            "id": "tech.agent_tools_permissions",
+            "score": 0.3831
+          },
+          {
+            "rank": 5,
+            "id": "tech.guardrails_how",
+            "score": 0.376
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 1,
+      "semantic_gold_score": 0.6331,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "hard.tool_schema",
+          "score": 0.6331
+        },
+        {
+          "rank": 2,
+          "id": "tech.tool_calling",
+          "score": 0.6209
+        },
+        {
+          "rank": 3,
+          "id": "hard.wrong_tool",
+          "score": 0.3979
+        },
+        {
+          "rank": 4,
+          "id": "tech.agent_tools_permissions",
+          "score": 0.3831
+        },
+        {
+          "rank": 5,
+          "id": "tech.guardrails_how",
+          "score": 0.376
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": null,
+      "accept_margin": 0.0374,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "arguments",
+          "hard",
+          "model",
+          "need",
+          "schema",
+          "smart",
+          "tool",
+          "tool_schema"
+        ],
+        "script_hits": [
+          "need",
+          "schema",
+          "tool"
+        ],
+        "asr_hits": [
+          "need",
+          "schema",
+          "tool"
+        ],
+        "lost": []
+      },
+      "segmentation_residual": false,
+      "action_granularity": false,
+      "text_carries_meaning": true,
+      "content_overlap_tokens": [
+        "need",
+        "schema",
+        "tool"
+      ],
+      "bucket": "HYBRID_RANKING"
+    },
+    {
+      "clip": "fuh4_087",
+      "transcript": "Tool calling basics schema need and when to halt tool loops.",
+      "script": "Tool calling basics, schema need, and when to halt tool loops.",
+      "path_opened": true,
+      "fragment": "When to halt tool loops?",
+      "gold_intent": "hard.agent_stop_tools",
+      "gold_question": "When should an agent stop using tools?",
+      "gold_topic": "agents",
+      "gold_action_type": "when",
+      "selected_intents": [
+        "tech.tool_calling",
+        "hard.agent_loop"
+      ],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "hard.agent_loop",
+          "topic": "agents",
+          "score": 0.64,
+          "semantic": 0.0,
+          "lexical": 0.8,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "hard.agent_stop_tools",
+          "runner_up_score": 0.3942,
+          "action_type": "how"
+        },
+        {
+          "rank": 2,
+          "id": "hard.agent_stop_tools",
+          "topic": "agents",
+          "score": 0.3942,
+          "semantic": 0.0,
+          "lexical": 0.4427,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "hard.agent_loop",
+          "runner_up_score": 0.64,
+          "action_type": "when"
+        },
+        {
+          "rank": 3,
+          "id": "hard.agent_cannot_delete",
+          "topic": "agents",
+          "score": 0.3912,
+          "semantic": 0.0,
+          "lexical": 0.364,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "hard.agent_loop",
+          "runner_up_score": 0.64,
+          "action_type": null
+        },
+        {
+          "rank": 4,
+          "id": "hard.tool_schema",
+          "topic": "agents",
+          "score": 0.38,
+          "semantic": 0.0,
+          "lexical": 0.35,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "hard.agent_loop",
+          "runner_up_score": 0.64,
+          "action_type": "why"
+        },
+        {
+          "rank": 5,
+          "id": "tech.classify_or_llm",
+          "topic": "ml",
+          "score": 0.3104,
+          "semantic": 0.0,
+          "lexical": 0.338,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "hard.agent_loop",
+          "runner_up_score": 0.64,
+          "action_type": "when"
+        }
+      ],
+      "hybrid_top1_id": "hard.agent_loop",
+      "hybrid_top1_topic": "agents",
+      "hybrid_top1_action_type": "how",
+      "hybrid_top1_is_sibling_same_topic": true,
+      "hybrid_gold_rank": 2,
+      "gold_score": 0.3942,
+      "semantic_full_rank": {
+        "rank": 1,
+        "score": 0.5859,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "hard.agent_stop_tools",
+            "score": 0.5859
+          },
+          {
+            "rank": 2,
+            "id": "hard.agent_loop",
+            "score": 0.5633
+          },
+          {
+            "rank": 3,
+            "id": "hard.timeout_vs_steps",
+            "score": 0.4261
+          },
+          {
+            "rank": 4,
+            "id": "hard.circuit_breaker",
+            "score": 0.3462
+          },
+          {
+            "rank": 5,
+            "id": "hard.agent_cannot_delete",
+            "score": 0.3442
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 1,
+      "semantic_gold_score": 0.5859,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "hard.agent_stop_tools",
+          "score": 0.5859
+        },
+        {
+          "rank": 2,
+          "id": "hard.agent_loop",
+          "score": 0.5633
+        },
+        {
+          "rank": 3,
+          "id": "hard.timeout_vs_steps",
+          "score": 0.4261
+        },
+        {
+          "rank": 4,
+          "id": "hard.circuit_breaker",
+          "score": 0.3462
+        },
+        {
+          "rank": 5,
+          "id": "hard.agent_cannot_delete",
+          "score": 0.3442
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": null,
+      "accept_margin": 0.2458,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "agent",
+          "agent_stop_tools",
+          "hard",
+          "should",
+          "stop",
+          "tools",
+          "using"
+        ],
+        "script_hits": [],
+        "asr_hits": [],
+        "lost": []
+      },
+      "segmentation_residual": false,
+      "action_granularity": true,
+      "text_carries_meaning": false,
+      "content_overlap_tokens": [],
+      "bucket": "ACTION_GRANULARITY"
+    },
+    {
+      "clip": "fuh4_088",
+      "transcript": "STT internals, local Whisper rationale, and accuracy acceptance test.",
+      "script": "STT internals, local Whisper rationale, and accuracy acceptance tests.",
+      "path_opened": true,
+      "fragment": "local Whisper rationale",
+      "gold_intent": "tech.whisper_vs_cloud",
+      "gold_question": "Why Whisper and not a cloud speech API?",
+      "gold_topic": "speech",
+      "gold_action_type": "why",
+      "selected_intents": [
+        "tech.how_stt_works",
+        "tech.what_is_whisper"
+      ],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "tech.what_is_whisper",
+          "topic": "speech",
+          "score": 0.74,
+          "semantic": 0.0,
+          "lexical": 0.525,
+          "keyword": 1.0,
+          "mode": "strong",
+          "runner_up": "cv.whisper_experience",
+          "runner_up_score": 0.556,
+          "action_type": "definition"
+        },
+        {
+          "rank": 2,
+          "id": "cv.whisper_experience",
+          "topic": "skills",
+          "score": 0.556,
+          "semantic": 0.0,
+          "lexical": 0.42,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "tech.what_is_whisper",
+          "runner_up_score": 0.74,
+          "action_type": "experience"
+        },
+        {
+          "rank": 3,
+          "id": "proj.kiosk.describe",
+          "topic": "project:kiosk",
+          "score": 0.5476,
+          "semantic": 0.0,
+          "lexical": 0.4095,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "tech.what_is_whisper",
+          "runner_up_score": 0.74,
+          "action_type": "describe"
+        },
+        {
+          "rank": 4,
+          "id": "tech.whisper_vs_cloud",
+          "topic": "speech",
+          "score": 0.5197,
+          "semantic": 0.0,
+          "lexical": 0.3746,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "tech.what_is_whisper",
+          "runner_up_score": 0.74,
+          "action_type": "why"
+        },
+        {
+          "rank": 5,
+          "id": "proj.kiosk.stack",
+          "topic": "project:kiosk",
+          "score": 0.5049,
+          "semantic": 0.0,
+          "lexical": 0.3561,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "tech.what_is_whisper",
+          "runner_up_score": 0.74,
+          "action_type": null
+        }
+      ],
+      "hybrid_top1_id": "tech.what_is_whisper",
+      "hybrid_top1_topic": "speech",
+      "hybrid_top1_action_type": "definition",
+      "hybrid_top1_is_sibling_same_topic": true,
+      "hybrid_gold_rank": 4,
+      "gold_score": 0.5197,
+      "semantic_full_rank": {
+        "rank": 3,
+        "score": 0.3394,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "proj.kiosk.describe",
+            "score": 0.4226
+          },
+          {
+            "rank": 2,
+            "id": "proj.kiosk.challenges",
+            "score": 0.3525
+          },
+          {
+            "rank": 3,
+            "id": "tech.whisper_vs_cloud",
+            "score": 0.3394
+          },
+          {
+            "rank": 4,
+            "id": "cv.whisper_experience",
+            "score": 0.3052
+          },
+          {
+            "rank": 5,
+            "id": "tech.voice_assistant_design",
+            "score": 0.294
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 3,
+      "semantic_gold_score": 0.3394,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "proj.kiosk.describe",
+          "score": 0.4226
+        },
+        {
+          "rank": 2,
+          "id": "proj.kiosk.challenges",
+          "score": 0.3525
+        },
+        {
+          "rank": 3,
+          "id": "tech.whisper_vs_cloud",
+          "score": 0.3394
+        },
+        {
+          "rank": 4,
+          "id": "cv.whisper_experience",
+          "score": 0.3052
+        },
+        {
+          "rank": 5,
+          "id": "tech.voice_assistant_design",
+          "score": 0.294
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": null,
+      "accept_margin": 0.184,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "cloud",
+          "speech",
+          "tech",
+          "whisper",
+          "whisper_vs_cloud"
+        ],
+        "script_hits": [
+          "whisper"
+        ],
+        "asr_hits": [
+          "whisper"
+        ],
+        "lost": []
+      },
+      "segmentation_residual": false,
+      "action_granularity": true,
+      "text_carries_meaning": true,
+      "content_overlap_tokens": [
+        "whisper"
+      ],
+      "bucket": "ACTION_GRANULARITY"
+    },
+    {
+      "clip": "fuh4_088",
+      "transcript": "STT internals, local Whisper rationale, and accuracy acceptance test.",
+      "script": "STT internals, local Whisper rationale, and accuracy acceptance tests.",
+      "path_opened": true,
+      "fragment": "STT internals",
+      "gold_intent": "tech.transcription_quality",
+      "gold_question": "How do you know the transcription system is good enough?",
+      "gold_topic": "speech",
+      "gold_action_type": "how",
+      "selected_intents": [
+        "tech.how_stt_works",
+        "tech.what_is_whisper"
+      ],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "tech.how_stt_works",
+          "topic": "speech",
+          "score": 1.0,
+          "semantic": 0.0,
+          "lexical": 1.0,
+          "keyword": 1.0,
+          "mode": "strong",
+          "runner_up": "tech.voice_assistant_design",
+          "runner_up_score": 0.8,
+          "action_type": "how"
+        },
+        {
+          "rank": 2,
+          "id": "tech.voice_assistant_design",
+          "topic": "speech",
+          "score": 0.8,
+          "semantic": 0.0,
+          "lexical": 1.0,
+          "keyword": 0.0,
+          "mode": "strong",
+          "runner_up": "tech.how_stt_works",
+          "runner_up_score": 1.0,
+          "action_type": "experience"
+        },
+        {
+          "rank": 3,
+          "id": "proj.kiosk.describe",
+          "topic": "project:kiosk",
+          "score": 0.6148,
+          "semantic": 0.0,
+          "lexical": 0.5185,
+          "keyword": 1.0,
+          "mode": "weak",
+          "runner_up": "tech.how_stt_works",
+          "runner_up_score": 1.0,
+          "action_type": "describe"
+        },
+        {
+          "rank": 4,
+          "id": "cv.whisper_experience",
+          "topic": "skills",
+          "score": 0.4692,
+          "semantic": 0.0,
+          "lexical": 0.4615,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "tech.how_stt_works",
+          "runner_up_score": 1.0,
+          "action_type": "experience"
+        },
+        {
+          "rank": 5,
+          "id": "tech.transcription_quality",
+          "topic": "speech",
+          "score": 0.448,
+          "semantic": 0.0,
+          "lexical": 0.56,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.how_stt_works",
+          "runner_up_score": 1.0,
+          "action_type": "how"
+        }
+      ],
+      "hybrid_top1_id": "tech.how_stt_works",
+      "hybrid_top1_topic": "speech",
+      "hybrid_top1_action_type": "how",
+      "hybrid_top1_is_sibling_same_topic": true,
+      "hybrid_gold_rank": 5,
+      "gold_score": 0.448,
+      "semantic_full_rank": {
+        "rank": null,
+        "score": null,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "tech.prompt_injection_supplier",
+            "score": 0.2237
+          },
+          {
+            "rank": 2,
+            "id": "tech.air_gapped",
+            "score": 0.203
+          },
+          {
+            "rank": 3,
+            "id": "hard.why_not_chroma_prod",
+            "score": 0.1942
+          },
+          {
+            "rank": 4,
+            "id": "tech.vector_db_choice",
+            "score": 0.1939
+          },
+          {
+            "rank": 5,
+            "id": "tech.hosting_decision",
+            "score": 0.1825
+          }
+        ],
+        "deep_present": false,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": null,
+      "semantic_gold_score": null,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "tech.prompt_injection_supplier",
+          "score": 0.2237
+        },
+        {
+          "rank": 2,
+          "id": "tech.air_gapped",
+          "score": 0.203
+        },
+        {
+          "rank": 3,
+          "id": "hard.why_not_chroma_prod",
+          "score": 0.1942
+        },
+        {
+          "rank": 4,
+          "id": "tech.vector_db_choice",
+          "score": 0.1939
+        },
+        {
+          "rank": 5,
+          "id": "tech.hosting_decision",
+          "score": 0.1825
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": null,
+      "accept_margin": 0.2,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "enough",
+          "good",
+          "system",
+          "tech",
+          "transcription",
+          "transcription_quality"
+        ],
+        "script_hits": [],
+        "asr_hits": [],
+        "lost": []
+      },
+      "segmentation_residual": false,
+      "action_granularity": false,
+      "text_carries_meaning": false,
+      "content_overlap_tokens": [],
+      "bucket": "HYBRID_RANKING"
+    },
+    {
+      "clip": "fuh4_089",
+      "transcript": "Nantler versus Lanskings. You use it and surviving without Lanschain.",
+      "script": "LangGraph versus LangChain, your usage, and surviving without LangChain.",
+      "path_opened": false,
+      "fragment": "Nantler versus Lanskings. You use it and surviving without Lanschain.",
+      "gold_intent": "tech.langgraph_vs_langchain",
+      "gold_question": "What is the difference between LangChain and LangGraph?",
+      "gold_topic": "agents",
+      "gold_action_type": "compare",
+      "selected_intents": [],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "tech.rag_vs_finetuning",
+          "topic": "rag",
+          "score": 0.4114,
+          "semantic": 0.0,
+          "lexical": 0.3393,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "tech.tfidf_vs_embeddings",
+          "runner_up_score": 0.3334,
+          "action_type": null
+        },
+        {
+          "rank": 2,
+          "id": "tech.tfidf_vs_embeddings",
+          "topic": "nlp",
+          "score": 0.3334,
+          "semantic": 0.0,
+          "lexical": 0.3668,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.rag_vs_finetuning",
+          "runner_up_score": 0.4114,
+          "action_type": "compare"
+        },
+        {
+          "rank": 3,
+          "id": "tech.sklearn_vs_neural",
+          "topic": "ml",
+          "score": 0.3319,
+          "semantic": 0.0,
+          "lexical": 0.3648,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.rag_vs_finetuning",
+          "runner_up_score": 0.4114,
+          "action_type": "why"
+        },
+        {
+          "rank": 4,
+          "id": "tech.agent_vs_workflow",
+          "topic": "agents",
+          "score": 0.3269,
+          "semantic": 0.0,
+          "lexical": 0.3586,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.rag_vs_finetuning",
+          "runner_up_score": 0.4114,
+          "action_type": "compare"
+        },
+        {
+          "rank": 5,
+          "id": "hard.remove_langchain",
+          "topic": "frameworks",
+          "score": 0.3259,
+          "semantic": 0.0,
+          "lexical": 0.4074,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.rag_vs_finetuning",
+          "runner_up_score": 0.4114,
+          "action_type": null
+        }
+      ],
+      "hybrid_top1_id": "tech.rag_vs_finetuning",
+      "hybrid_top1_topic": "rag",
+      "hybrid_top1_action_type": null,
+      "hybrid_top1_is_sibling_same_topic": true,
+      "hybrid_gold_rank": null,
+      "gold_score": null,
+      "semantic_full_rank": {
+        "rank": 3,
+        "score": 0.2379,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "hard.langgraph_vs_n8n_vs_python",
+            "score": 0.2578
+          },
+          {
+            "rank": 2,
+            "id": "cv.image_processing",
+            "score": 0.2417
+          },
+          {
+            "rank": 3,
+            "id": "tech.langgraph_vs_langchain",
+            "score": 0.2379
+          },
+          {
+            "rank": 4,
+            "id": "cv.core_skills",
+            "score": 0.2286
+          },
+          {
+            "rank": 5,
+            "id": "hard.why_not_chroma_prod",
+            "score": 0.2271
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 3,
+      "semantic_gold_score": 0.2379,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "hard.langgraph_vs_n8n_vs_python",
+          "score": 0.2578
+        },
+        {
+          "rank": 2,
+          "id": "cv.image_processing",
+          "score": 0.2417
+        },
+        {
+          "rank": 3,
+          "id": "tech.langgraph_vs_langchain",
+          "score": 0.2379
+        },
+        {
+          "rank": 4,
+          "id": "cv.core_skills",
+          "score": 0.2286
+        },
+        {
+          "rank": 5,
+          "id": "hard.why_not_chroma_prod",
+          "score": 0.2271
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": "low_score",
+      "accept_margin": 0.078,
+      "stt_distortion": true,
+      "stt_detail": {
+        "gold_keys": [
+          "between",
+          "difference",
+          "langchain",
+          "langgraph",
+          "langgraph_vs_langchain",
+          "tech"
+        ],
+        "script_hits": [
+          "langchain",
+          "langgraph"
+        ],
+        "asr_hits": [],
+        "lost": [
+          "langchain",
+          "langgraph"
+        ]
+      },
+      "segmentation_residual": false,
+      "action_granularity": false,
+      "text_carries_meaning": false,
+      "content_overlap_tokens": [],
+      "bucket": "STT_DISTORTION"
+    },
+    {
+      "clip": "fuh4_089",
+      "transcript": "Nantler versus Lanskings. You use it and surviving without Lanschain.",
+      "script": "LangGraph versus LangChain, your usage, and surviving without LangChain.",
+      "path_opened": false,
+      "fragment": "Nantler versus Lanskings. You use it and surviving without Lanschain.",
+      "gold_intent": "cv.langgraph",
+      "gold_question": "Have you used LangGraph?",
+      "gold_topic": "skills",
+      "gold_action_type": "experience",
+      "selected_intents": [],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "tech.rag_vs_finetuning",
+          "topic": "rag",
+          "score": 0.4114,
+          "semantic": 0.0,
+          "lexical": 0.3393,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "tech.tfidf_vs_embeddings",
+          "runner_up_score": 0.3334,
+          "action_type": null
+        },
+        {
+          "rank": 2,
+          "id": "tech.tfidf_vs_embeddings",
+          "topic": "nlp",
+          "score": 0.3334,
+          "semantic": 0.0,
+          "lexical": 0.3668,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.rag_vs_finetuning",
+          "runner_up_score": 0.4114,
+          "action_type": "compare"
+        },
+        {
+          "rank": 3,
+          "id": "tech.sklearn_vs_neural",
+          "topic": "ml",
+          "score": 0.3319,
+          "semantic": 0.0,
+          "lexical": 0.3648,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.rag_vs_finetuning",
+          "runner_up_score": 0.4114,
+          "action_type": "why"
+        },
+        {
+          "rank": 4,
+          "id": "tech.agent_vs_workflow",
+          "topic": "agents",
+          "score": 0.3269,
+          "semantic": 0.0,
+          "lexical": 0.3586,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.rag_vs_finetuning",
+          "runner_up_score": 0.4114,
+          "action_type": "compare"
+        },
+        {
+          "rank": 5,
+          "id": "hard.remove_langchain",
+          "topic": "frameworks",
+          "score": 0.3259,
+          "semantic": 0.0,
+          "lexical": 0.4074,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.rag_vs_finetuning",
+          "runner_up_score": 0.4114,
+          "action_type": null
+        }
+      ],
+      "hybrid_top1_id": "tech.rag_vs_finetuning",
+      "hybrid_top1_topic": "rag",
+      "hybrid_top1_action_type": null,
+      "hybrid_top1_is_sibling_same_topic": false,
+      "hybrid_gold_rank": null,
+      "gold_score": null,
+      "semantic_full_rank": {
+        "rank": 33,
+        "score": 0.1728,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "hard.langgraph_vs_n8n_vs_python",
+            "score": 0.2578
+          },
+          {
+            "rank": 2,
+            "id": "cv.image_processing",
+            "score": 0.2417
+          },
+          {
+            "rank": 3,
+            "id": "tech.langgraph_vs_langchain",
+            "score": 0.2379
+          },
+          {
+            "rank": 4,
+            "id": "cv.core_skills",
+            "score": 0.2286
+          },
+          {
+            "rank": 5,
+            "id": "hard.why_not_chroma_prod",
+            "score": 0.2271
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 33,
+      "semantic_gold_score": 0.1728,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "hard.langgraph_vs_n8n_vs_python",
+          "score": 0.2578
+        },
+        {
+          "rank": 2,
+          "id": "cv.image_processing",
+          "score": 0.2417
+        },
+        {
+          "rank": 3,
+          "id": "tech.langgraph_vs_langchain",
+          "score": 0.2379
+        },
+        {
+          "rank": 4,
+          "id": "cv.core_skills",
+          "score": 0.2286
+        },
+        {
+          "rank": 5,
+          "id": "hard.why_not_chroma_prod",
+          "score": 0.2271
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": "low_score",
+      "accept_margin": 0.078,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "langgraph",
+          "used"
+        ],
+        "script_hits": [
+          "langgraph"
+        ],
+        "asr_hits": [],
+        "lost": [
+          "langgraph"
+        ]
+      },
+      "segmentation_residual": false,
+      "action_granularity": false,
+      "text_carries_meaning": false,
+      "content_overlap_tokens": [],
+      "bucket": "CANDIDATE_GENERATION"
+    },
+    {
+      "clip": "fuh4_089",
+      "transcript": "Nantler versus Lanskings. You use it and surviving without Lanschain.",
+      "script": "LangGraph versus LangChain, your usage, and surviving without LangChain.",
+      "path_opened": false,
+      "fragment": "Nantler versus Lanskings. You use it and surviving without Lanschain.",
+      "gold_intent": "hard.remove_langchain",
+      "gold_question": "If I remove LangChain from your system, can it still work?",
+      "gold_topic": "frameworks",
+      "gold_action_type": null,
+      "selected_intents": [],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "tech.rag_vs_finetuning",
+          "topic": "rag",
+          "score": 0.4114,
+          "semantic": 0.0,
+          "lexical": 0.3393,
+          "keyword": 0.5,
+          "mode": "weak",
+          "runner_up": "tech.tfidf_vs_embeddings",
+          "runner_up_score": 0.3334,
+          "action_type": null
+        },
+        {
+          "rank": 2,
+          "id": "tech.tfidf_vs_embeddings",
+          "topic": "nlp",
+          "score": 0.3334,
+          "semantic": 0.0,
+          "lexical": 0.3668,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.rag_vs_finetuning",
+          "runner_up_score": 0.4114,
+          "action_type": "compare"
+        },
+        {
+          "rank": 3,
+          "id": "tech.sklearn_vs_neural",
+          "topic": "ml",
+          "score": 0.3319,
+          "semantic": 0.0,
+          "lexical": 0.3648,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.rag_vs_finetuning",
+          "runner_up_score": 0.4114,
+          "action_type": "why"
+        },
+        {
+          "rank": 4,
+          "id": "tech.agent_vs_workflow",
+          "topic": "agents",
+          "score": 0.3269,
+          "semantic": 0.0,
+          "lexical": 0.3586,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.rag_vs_finetuning",
+          "runner_up_score": 0.4114,
+          "action_type": "compare"
+        },
+        {
+          "rank": 5,
+          "id": "hard.remove_langchain",
+          "topic": "frameworks",
+          "score": 0.3259,
+          "semantic": 0.0,
+          "lexical": 0.4074,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.rag_vs_finetuning",
+          "runner_up_score": 0.4114,
+          "action_type": null
+        }
+      ],
+      "hybrid_top1_id": "tech.rag_vs_finetuning",
+      "hybrid_top1_topic": "rag",
+      "hybrid_top1_action_type": null,
+      "hybrid_top1_is_sibling_same_topic": false,
+      "hybrid_gold_rank": 5,
+      "gold_score": 0.3259,
+      "semantic_full_rank": {
+        "rank": 36,
+        "score": 0.1703,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "hard.langgraph_vs_n8n_vs_python",
+            "score": 0.2578
+          },
+          {
+            "rank": 2,
+            "id": "cv.image_processing",
+            "score": 0.2417
+          },
+          {
+            "rank": 3,
+            "id": "tech.langgraph_vs_langchain",
+            "score": 0.2379
+          },
+          {
+            "rank": 4,
+            "id": "cv.core_skills",
+            "score": 0.2286
+          },
+          {
+            "rank": 5,
+            "id": "hard.why_not_chroma_prod",
+            "score": 0.2271
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 36,
+      "semantic_gold_score": 0.1703,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "hard.langgraph_vs_n8n_vs_python",
+          "score": 0.2578
+        },
+        {
+          "rank": 2,
+          "id": "cv.image_processing",
+          "score": 0.2417
+        },
+        {
+          "rank": 3,
+          "id": "tech.langgraph_vs_langchain",
+          "score": 0.2379
+        },
+        {
+          "rank": 4,
+          "id": "cv.core_skills",
+          "score": 0.2286
+        },
+        {
+          "rank": 5,
+          "id": "hard.why_not_chroma_prod",
+          "score": 0.2271
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": "low_score",
+      "accept_margin": 0.078,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "hard",
+          "langchain",
+          "remove",
+          "remove_langchain",
+          "still",
+          "system",
+          "work"
+        ],
+        "script_hits": [
+          "langchain"
+        ],
+        "asr_hits": [],
+        "lost": [
+          "langchain"
+        ]
+      },
+      "segmentation_residual": false,
+      "action_granularity": false,
+      "text_carries_meaning": false,
+      "content_overlap_tokens": [],
+      "bucket": "HYBRID_RANKING"
+    },
+    {
+      "clip": "fuh4_090",
+      "transcript": "Embedings, cosine search, metadata filters, and hybrid search tradeoffs cover all four.",
+      "script": "Embeddings, cosine search, metadata filters, and hybrid search trade-offs — cover all four.",
+      "path_opened": true,
+      "fragment": "metadata filters",
+      "gold_intent": "tech.metadata_filtering",
+      "gold_question": "What is metadata filtering in RAG?",
+      "gold_topic": "rag",
+      "gold_action_type": "definition",
+      "selected_intents": [
+        "tech.embeddings",
+        "tech.cosine_semantic_search",
+        "tech.hybrid_search"
+      ],
+      "hybrid_top5": [
+        {
+          "rank": 1,
+          "id": "tech.metadata_filtering",
+          "topic": "rag",
+          "score": 0.8059,
+          "semantic": 0.0,
+          "lexical": 0.8824,
+          "keyword": 0.5,
+          "mode": "strong",
+          "runner_up": "cv.chromadb",
+          "runner_up_score": 0.8,
+          "action_type": "definition"
+        },
+        {
+          "rank": 2,
+          "id": "cv.chromadb",
+          "topic": "skills",
+          "score": 0.8,
+          "semantic": 0.0,
+          "lexical": 1.0,
+          "keyword": 0.0,
+          "mode": "strong",
+          "runner_up": "tech.metadata_filtering",
+          "runner_up_score": 0.8059,
+          "action_type": "experience"
+        },
+        {
+          "rank": 3,
+          "id": "tech.guardrails_what",
+          "topic": "guardrails",
+          "score": 0.5184,
+          "semantic": 0.0,
+          "lexical": 0.648,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.metadata_filtering",
+          "runner_up_score": 0.8059,
+          "action_type": "definition"
+        },
+        {
+          "rank": 4,
+          "id": "tech.rag_access_control",
+          "topic": "rag",
+          "score": 0.2534,
+          "semantic": 0.0,
+          "lexical": 0.3168,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.metadata_filtering",
+          "runner_up_score": 0.8059,
+          "action_type": null
+        },
+        {
+          "rank": 5,
+          "id": "hard.agent_cannot_delete",
+          "topic": "agents",
+          "score": 0.2475,
+          "semantic": 0.0,
+          "lexical": 0.3094,
+          "keyword": 0.0,
+          "mode": "weak",
+          "runner_up": "tech.metadata_filtering",
+          "runner_up_score": 0.8059,
+          "action_type": null
+        }
+      ],
+      "hybrid_top1_id": "tech.metadata_filtering",
+      "hybrid_top1_topic": "rag",
+      "hybrid_top1_action_type": "definition",
+      "hybrid_top1_is_sibling_same_topic": false,
+      "hybrid_gold_rank": 1,
+      "gold_score": 0.8059,
+      "semantic_full_rank": {
+        "rank": 1,
+        "score": 0.6585,
+        "top5": [
+          {
+            "rank": 1,
+            "id": "tech.metadata_filtering",
+            "score": 0.6585
+          },
+          {
+            "rank": 2,
+            "id": "cv.chromadb",
+            "score": 0.4656
+          },
+          {
+            "rank": 3,
+            "id": "tech.rag_access_control",
+            "score": 0.3772
+          },
+          {
+            "rank": 4,
+            "id": "tech.rag_build",
+            "score": 0.3664
+          },
+          {
+            "rank": 5,
+            "id": "proj.similarity.stack",
+            "score": 0.3371
+          }
+        ],
+        "deep_present": true,
+        "deep_k": 50
+      },
+      "semantic_gold_rank": 1,
+      "semantic_gold_score": 0.6585,
+      "semantic_top5": [
+        {
+          "rank": 1,
+          "id": "tech.metadata_filtering",
+          "score": 0.6585
+        },
+        {
+          "rank": 2,
+          "id": "cv.chromadb",
+          "score": 0.4656
+        },
+        {
+          "rank": 3,
+          "id": "tech.rag_access_control",
+          "score": 0.3772
+        },
+        {
+          "rank": 4,
+          "id": "tech.rag_build",
+          "score": 0.3664
+        },
+        {
+          "rank": 5,
+          "id": "proj.similarity.stack",
+          "score": 0.3371
+        }
+      ],
+      "evidence_score_fragment": 1.0,
+      "evidence_rejected": false,
+      "raw_path_gold_hits": [],
+      "evid_path_gold_hits": [],
+      "accepted": false,
+      "reject_reason": "ambiguous_margin",
+      "accept_margin": 0.0059,
+      "stt_distortion": false,
+      "stt_detail": {
+        "gold_keys": [
+          "filtering",
+          "metadata",
+          "metadata_filtering",
+          "tech"
+        ],
+        "script_hits": [
+          "metadata"
+        ],
+        "asr_hits": [
+          "metadata"
+        ],
+        "lost": []
+      },
+      "segmentation_residual": false,
+      "action_granularity": false,
+      "text_carries_meaning": true,
+      "content_overlap_tokens": [
+        "metadata"
+      ],
+      "bucket": "ACCEPTANCE_GATE"
+    }
+  ],
+  "decision": {
+    "missing_gold_parts": 24,
+    "bucket_tally": {
+      "EVIDENCE_REJECTED": 2,
+      "ACTION_GRANULARITY": 4,
+      "SEGMENTATION_RESIDUAL": 3,
+      "HYBRID_RANKING": 9,
+      "CANDIDATE_GENERATION": 3,
+      "SEMANTIC_PROFILE_QUALITY": 1,
+      "STT_DISTORTION": 1,
+      "ACCEPTANCE_GATE": 1
+    },
+    "dominant_bucket": "HYBRID_RANKING",
+    "dominant_count": 9,
+    "dominant_share": 0.375,
+    "clear_dominant": true,
+    "next_step": "One counterfactual on ranking / action-type discrimination (measurement only first).",
+    "routing_status": "CLOSED — do not expand unless path_opened=false dominates",
+    "path_closed_misses": 11
+  }
+}

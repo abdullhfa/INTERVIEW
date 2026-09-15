@@ -1,0 +1,976 @@
+{
+  "created_at": "2026-09-13T23:17:57.268918+00:00",
+  "phase": "V5 Phase A — pre-code root cause analysis (measurement only, no production code changed)",
+  "baseline": "v4 unseen holdout, outcome VALID, all_gates_pass false, NO-GO",
+  "v4_measured": {
+    "intent_rate": 0.825,
+    "hc_wrong": 0,
+    "meaning_lost_rate": 0.0,
+    "compound_gold_part_coverage": 0.3944,
+    "simple_median_post_ms": 977.2,
+    "compound_median_post_ms": 1019.3
+  },
+  "compound": {
+    "clips": 15,
+    "gold_parts": 41,
+    "gold_parts_hit": 15,
+    "gold_parts_missing": 26,
+    "coverage_by_part": 0.3659,
+    "bucket_histogram": {
+      "MATCHING_RANKING": 11,
+      "SEGMENTATION_FAILURE": 7,
+      "CANDIDATE_GENERATION": 2,
+      "STT_DISTORTION": 5,
+      "ACCEPTANCE_GATE": 1
+    },
+    "segmentation_adequacy": {
+      "under_split": 7,
+      "equal": 7,
+      "over_split": 1
+    },
+    "non_gold_intents_selected": 12,
+    "part_rows": [
+      {
+        "clip": "fuh4_076",
+        "gold_part": "hard.hybrid_when",
+        "bucket": "MATCHING_RANKING",
+        "sub_cause": "same-topic sibling chosen: tech.hybrid_search",
+        "gold_topic": "rag",
+        "best_sub": "Say when hybrid search needs it",
+        "best_sub_target_score": 88.0,
+        "matched_for_that_sub": "tech.hybrid_search",
+        "matched_topic": "rag",
+        "n_subs": 2,
+        "n_gold": 2,
+        "stt_sim": 100.0,
+        "selected": [
+          "tech.reranking",
+          "tech.hybrid_search"
+        ],
+        "transcript": "Define re-ranking, then say when hybrid search needs it.",
+        "authored": "Define re-ranking, then say when hybrid search needs it."
+      },
+      {
+        "clip": "fuh4_079",
+        "gold_part": "proj.similarity.tech",
+        "bucket": "MATCHING_RANKING",
+        "sub_cause": "same-topic sibling chosen: proj.similarity.stack",
+        "gold_topic": "project:similarity",
+        "best_sub": "Why did you not use an LLM for the assignment similarity checker?",
+        "best_sub_target_score": 76.4,
+        "matched_for_that_sub": "proj.similarity.stack",
+        "matched_topic": "project:similarity",
+        "n_subs": 3,
+        "n_gold": 3,
+        "stt_sim": 84.6,
+        "selected": [
+          "proj.similarity.stack",
+          "proj.similarity.is_rag",
+          "proj.similarity.describe"
+        ],
+        "transcript": "Summurize the assignment similarity project. It's fact and whether it is R-18.",
+        "authored": "Summarise the assignment similarity project, its stack, and whether it is RAG."
+      },
+      {
+        "clip": "fuh4_080",
+        "gold_part": "tech.overfitting_prevent",
+        "bucket": "MATCHING_RANKING",
+        "sub_cause": "same-topic sibling chosen: tech.overfitting",
+        "gold_topic": "ml",
+        "best_sub": "Define overfitting detection signals in your mitigation playbook.",
+        "best_sub_target_score": 88.0,
+        "matched_for_that_sub": "tech.overfitting",
+        "matched_topic": "ml",
+        "n_subs": 1,
+        "n_gold": 3,
+        "stt_sim": 96.2,
+        "selected": [
+          "tech.overfitting"
+        ],
+        "transcript": "Define overfitting detection signals in your mitigation playbook.",
+        "authored": "Define overfitting, detection signals, and your mitigation playbook."
+      },
+      {
+        "clip": "fuh4_080",
+        "gold_part": "tech.evaluate_classification",
+        "bucket": "SEGMENTATION_FAILURE",
+        "sub_cause": "1 parts split for 3 gold parts",
+        "gold_topic": "ml",
+        "best_sub": "Define overfitting detection signals in your mitigation playbook.",
+        "best_sub_target_score": 39.6,
+        "matched_for_that_sub": "tech.overfitting",
+        "matched_topic": "ml",
+        "n_subs": 1,
+        "n_gold": 3,
+        "stt_sim": 96.2,
+        "selected": [
+          "tech.overfitting"
+        ],
+        "transcript": "Define overfitting detection signals in your mitigation playbook.",
+        "authored": "Define overfitting, detection signals, and your mitigation playbook."
+      },
+      {
+        "clip": "fuh4_081",
+        "gold_part": "tech.vector_db_choice",
+        "bucket": "CANDIDATE_GENERATION",
+        "sub_cause": "clause present (score 88) but gold never a candidate",
+        "gold_topic": "rag",
+        "best_sub": "Your vector DB history",
+        "best_sub_target_score": 88.0,
+        "matched_for_that_sub": "cv.vector_db",
+        "matched_topic": "skills",
+        "n_subs": 2,
+        "n_gold": 2,
+        "stt_sim": 98.3,
+        "selected": [
+          "cv.vector_db"
+        ],
+        "transcript": "Your vector DB history, then your pick for our workload and Y.",
+        "authored": "Your vector DB history, then your pick for our workload and why."
+      },
+      {
+        "clip": "fuh4_082",
+        "gold_part": "tech.agent_orchestrator",
+        "bucket": "MATCHING_RANKING",
+        "sub_cause": "same-topic sibling chosen: hard.agent_terms_difference",
+        "gold_topic": "agents",
+        "best_sub": "Role of an orchestrator versus a lone tool-calling model",
+        "best_sub_target_score": 88.0,
+        "matched_for_that_sub": "hard.agent_terms_difference",
+        "matched_topic": "agents",
+        "n_subs": 2,
+        "n_gold": 2,
+        "stt_sim": 98.1,
+        "selected": [
+          "hard.agent_terms_difference"
+        ],
+        "transcript": "Role of an orchestrator versus a lone tool-calling model. When is each enough?",
+        "authored": "Role of an orchestrator versus a lone tool-calling model — when is each enough?"
+      },
+      {
+        "clip": "fuh4_082",
+        "gold_part": "tech.multi_agent_when",
+        "bucket": "MATCHING_RANKING",
+        "sub_cause": "same-topic sibling chosen: hard.agent_terms_difference",
+        "gold_topic": "agents",
+        "best_sub": "Role of an orchestrator versus a lone tool-calling model",
+        "best_sub_target_score": 88.0,
+        "matched_for_that_sub": "hard.agent_terms_difference",
+        "matched_topic": "agents",
+        "n_subs": 2,
+        "n_gold": 2,
+        "stt_sim": 98.1,
+        "selected": [
+          "hard.agent_terms_difference"
+        ],
+        "transcript": "Role of an orchestrator versus a lone tool-calling model. When is each enough?",
+        "authored": "Role of an orchestrator versus a lone tool-calling model — when is each enough?"
+      },
+      {
+        "clip": "fuh4_083",
+        "gold_part": "cv.certifications",
+        "bucket": "SEGMENTATION_FAILURE",
+        "sub_cause": "2 parts split for 3 gold parts",
+        "gold_topic": "certifications",
+        "best_sub": "Education, certification",
+        "best_sub_target_score": 66.7,
+        "matched_for_that_sub": "cv.education",
+        "matched_topic": "education",
+        "n_subs": 2,
+        "n_gold": 3,
+        "stt_sim": 99.2,
+        "selected": [
+          "cv.education",
+          "gen.why_this_role"
+        ],
+        "transcript": "Education, certification, and how they matter for this role.",
+        "authored": "Education, certifications, and how they matter for this role."
+      },
+      {
+        "clip": "fuh4_083",
+        "gold_part": "cv.pmp_value",
+        "bucket": "SEGMENTATION_FAILURE",
+        "sub_cause": "2 parts split for 3 gold parts",
+        "gold_topic": "certifications",
+        "best_sub": "How they matter for this role?",
+        "best_sub_target_score": 54.3,
+        "matched_for_that_sub": "gen.why_this_role",
+        "matched_topic": "personal",
+        "n_subs": 2,
+        "n_gold": 3,
+        "stt_sim": 99.2,
+        "selected": [
+          "cv.education",
+          "gen.why_this_role"
+        ],
+        "transcript": "Education, certification, and how they matter for this role.",
+        "authored": "Education, certifications, and how they matter for this role."
+      },
+      {
+        "clip": "fuh4_084",
+        "gold_part": "tech.prompt_injection_what",
+        "bucket": "STT_DISTORTION",
+        "sub_cause": "clip stt_sim=84",
+        "gold_topic": "guardrails",
+        "best_sub": "Who is allowed to save a generated question?",
+        "best_sub_target_score": 47.4,
+        "matched_for_that_sub": "moe.question_generation",
+        "matched_topic": "project:qgen",
+        "n_subs": 3,
+        "n_gold": 3,
+        "stt_sim": 83.7,
+        "selected": [
+          "tech.guardrails_what",
+          "hard.hitl_where",
+          "moe.question_generation"
+        ],
+        "transcript": "Compt injection sources, PDF risk, and guardrails that's locked.",
+        "authored": "Prompt injection sources, PDF risk, and guardrails that block it."
+      },
+      {
+        "clip": "fuh4_084",
+        "gold_part": "hard.injection_in_pdf",
+        "bucket": "STT_DISTORTION",
+        "sub_cause": "clip stt_sim=84",
+        "gold_topic": "guardrails",
+        "best_sub": "Where exactly do you put the human in the loop?",
+        "best_sub_target_score": 53.7,
+        "matched_for_that_sub": "hard.hitl_where",
+        "matched_topic": "agents",
+        "n_subs": 3,
+        "n_gold": 3,
+        "stt_sim": 83.7,
+        "selected": [
+          "tech.guardrails_what",
+          "hard.hitl_where",
+          "moe.question_generation"
+        ],
+        "transcript": "Compt injection sources, PDF risk, and guardrails that's locked.",
+        "authored": "Prompt injection sources, PDF risk, and guardrails that block it."
+      },
+      {
+        "clip": "fuh4_084",
+        "gold_part": "tech.guardrails_how",
+        "bucket": "MATCHING_RANKING",
+        "sub_cause": "same-topic sibling chosen: tech.guardrails_what",
+        "gold_topic": "guardrails",
+        "best_sub": "What are guardrails?",
+        "best_sub_target_score": 88.2,
+        "matched_for_that_sub": "tech.guardrails_what",
+        "matched_topic": "guardrails",
+        "n_subs": 3,
+        "n_gold": 3,
+        "stt_sim": 83.7,
+        "selected": [
+          "tech.guardrails_what",
+          "hard.hitl_where",
+          "moe.question_generation"
+        ],
+        "transcript": "Compt injection sources, PDF risk, and guardrails that's locked.",
+        "authored": "Prompt injection sources, PDF risk, and guardrails that block it."
+      },
+      {
+        "clip": "fuh4_085",
+        "gold_part": "tech.docker_why",
+        "bucket": "MATCHING_RANKING",
+        "sub_cause": "same-topic sibling chosen: tech.container_vs_vm",
+        "gold_topic": "infra",
+        "best_sub": "Docker value, container versus VM",
+        "best_sub_target_score": 88.0,
+        "matched_for_that_sub": "tech.container_vs_vm",
+        "matched_topic": "infra",
+        "n_subs": 2,
+        "n_gold": 3,
+        "stt_sim": 93.4,
+        "selected": [
+          "tech.container_vs_vm"
+        ],
+        "transcript": "Docker value, container versus VM, and if we need Cuba needs.",
+        "authored": "Docker value, container versus VM, and if we need Kubernetes."
+      },
+      {
+        "clip": "fuh4_085",
+        "gold_part": "tech.kubernetes",
+        "bucket": "SEGMENTATION_FAILURE",
+        "sub_cause": "2 parts split for 3 gold parts",
+        "gold_topic": "infra",
+        "best_sub": "If we need Cuba needs",
+        "best_sub_target_score": 55.6,
+        "matched_for_that_sub": "tech.gpu_sizing",
+        "matched_topic": "hosting",
+        "n_subs": 2,
+        "n_gold": 3,
+        "stt_sim": 93.4,
+        "selected": [
+          "tech.container_vs_vm"
+        ],
+        "transcript": "Docker value, container versus VM, and if we need Cuba needs.",
+        "authored": "Docker value, container versus VM, and if we need Kubernetes."
+      },
+      {
+        "clip": "fuh4_086",
+        "gold_part": "proj.early_warning.describe",
+        "bucket": "MATCHING_RANKING",
+        "sub_cause": "same-topic sibling chosen: proj.early_warning.metric",
+        "gold_topic": "project:early_warning",
+        "best_sub": "How do you evaluate an early warning model for students?",
+        "best_sub_target_score": 88.0,
+        "matched_for_that_sub": "proj.early_warning.metric",
+        "matched_topic": "project:early_warning",
+        "n_subs": 3,
+        "n_gold": 3,
+        "stt_sim": 84.4,
+        "selected": [
+          "proj.early_warning.metric",
+          "tech.ragas",
+          "proj.early_warning.result"
+        ],
+        "transcript": "Early Warning Project Story, KPI, and Ministry Outcome",
+        "authored": "Early-warning project story, KPI, and ministry outcome."
+      },
+      {
+        "clip": "fuh4_087",
+        "gold_part": "tech.tool_calling",
+        "bucket": "MATCHING_RANKING",
+        "sub_cause": "same-topic sibling chosen: hard.tool_schema",
+        "gold_topic": "agents",
+        "best_sub": "Tool calling basics schema need",
+        "best_sub_target_score": 88.0,
+        "matched_for_that_sub": "hard.tool_schema",
+        "matched_topic": "agents",
+        "n_subs": 2,
+        "n_gold": 3,
+        "stt_sim": 98.2,
+        "selected": [
+          "hard.tool_schema",
+          "hard.agent_loop"
+        ],
+        "transcript": "Tool calling basics schema need and when to halt tool loops.",
+        "authored": "Tool calling basics, schema need, and when to halt tool loops."
+      },
+      {
+        "clip": "fuh4_087",
+        "gold_part": "hard.agent_stop_tools",
+        "bucket": "MATCHING_RANKING",
+        "sub_cause": "same-topic sibling chosen: hard.agent_loop",
+        "gold_topic": "agents",
+        "best_sub": "When to halt tool loops?",
+        "best_sub_target_score": 73.1,
+        "matched_for_that_sub": "hard.agent_loop",
+        "matched_topic": "agents",
+        "n_subs": 2,
+        "n_gold": 3,
+        "stt_sim": 98.2,
+        "selected": [
+          "hard.tool_schema",
+          "hard.agent_loop"
+        ],
+        "transcript": "Tool calling basics schema need and when to halt tool loops.",
+        "authored": "Tool calling basics, schema need, and when to halt tool loops."
+      },
+      {
+        "clip": "fuh4_088",
+        "gold_part": "tech.how_stt_works",
+        "bucket": "SEGMENTATION_FAILURE",
+        "sub_cause": "2 parts split for 3 gold parts",
+        "gold_topic": "speech",
+        "best_sub": "STT internals, local Whisper rationale",
+        "best_sub_target_score": 51.4,
+        "matched_for_that_sub": "proj.kiosk.describe",
+        "matched_topic": "project:kiosk",
+        "n_subs": 2,
+        "n_gold": 3,
+        "stt_sim": 99.3,
+        "selected": [
+          "tech.what_is_whisper"
+        ],
+        "transcript": "STT internals, local Whisper rationale, and accuracy acceptance test.",
+        "authored": "STT internals, local Whisper rationale, and accuracy acceptance tests."
+      },
+      {
+        "clip": "fuh4_088",
+        "gold_part": "tech.whisper_vs_cloud",
+        "bucket": "CANDIDATE_GENERATION",
+        "sub_cause": "clause present (score 88) but gold never a candidate",
+        "gold_topic": "speech",
+        "best_sub": "STT internals, local Whisper rationale",
+        "best_sub_target_score": 88.0,
+        "matched_for_that_sub": "proj.kiosk.describe",
+        "matched_topic": "project:kiosk",
+        "n_subs": 2,
+        "n_gold": 3,
+        "stt_sim": 99.3,
+        "selected": [
+          "tech.what_is_whisper"
+        ],
+        "transcript": "STT internals, local Whisper rationale, and accuracy acceptance test.",
+        "authored": "STT internals, local Whisper rationale, and accuracy acceptance tests."
+      },
+      {
+        "clip": "fuh4_088",
+        "gold_part": "tech.transcription_quality",
+        "bucket": "SEGMENTATION_FAILURE",
+        "sub_cause": "2 parts split for 3 gold parts",
+        "gold_topic": "speech",
+        "best_sub": "Accuracy acceptance test",
+        "best_sub_target_score": 52.6,
+        "matched_for_that_sub": "proj.early_warning.metric",
+        "matched_topic": "project:early_warning",
+        "n_subs": 2,
+        "n_gold": 3,
+        "stt_sim": 99.3,
+        "selected": [
+          "tech.what_is_whisper"
+        ],
+        "transcript": "STT internals, local Whisper rationale, and accuracy acceptance test.",
+        "authored": "STT internals, local Whisper rationale, and accuracy acceptance tests."
+      },
+      {
+        "clip": "fuh4_089",
+        "gold_part": "tech.langgraph_vs_langchain",
+        "bucket": "STT_DISTORTION",
+        "sub_cause": "clip stt_sim=79",
+        "gold_topic": "agents",
+        "best_sub": "Nantler versus Lanskings. You use it and surviving without Lanschain.",
+        "best_sub_target_score": 49.0,
+        "matched_for_that_sub": "tech.rag_vs_finetuning",
+        "matched_topic": "rag",
+        "n_subs": 1,
+        "n_gold": 3,
+        "stt_sim": 79.4,
+        "selected": [],
+        "transcript": "Nantler versus Lanskings. You use it and surviving without Lanschain.",
+        "authored": "LangGraph versus LangChain, your usage, and surviving without LangChain."
+      },
+      {
+        "clip": "fuh4_089",
+        "gold_part": "cv.langgraph",
+        "bucket": "STT_DISTORTION",
+        "sub_cause": "clip stt_sim=79",
+        "gold_topic": "skills",
+        "best_sub": "Nantler versus Lanskings. You use it and surviving without Lanschain.",
+        "best_sub_target_score": 51.9,
+        "matched_for_that_sub": "tech.rag_vs_finetuning",
+        "matched_topic": "rag",
+        "n_subs": 1,
+        "n_gold": 3,
+        "stt_sim": 79.4,
+        "selected": [],
+        "transcript": "Nantler versus Lanskings. You use it and surviving without Lanschain.",
+        "authored": "LangGraph versus LangChain, your usage, and surviving without LangChain."
+      },
+      {
+        "clip": "fuh4_089",
+        "gold_part": "hard.remove_langchain",
+        "bucket": "STT_DISTORTION",
+        "sub_cause": "clip stt_sim=79",
+        "gold_topic": "frameworks",
+        "best_sub": "Nantler versus Lanskings. You use it and surviving without Lanschain.",
+        "best_sub_target_score": 56.2,
+        "matched_for_that_sub": "tech.rag_vs_finetuning",
+        "matched_topic": "rag",
+        "n_subs": 1,
+        "n_gold": 3,
+        "stt_sim": 79.4,
+        "selected": [],
+        "transcript": "Nantler versus Lanskings. You use it and surviving without Lanschain.",
+        "authored": "LangGraph versus LangChain, your usage, and surviving without LangChain."
+      },
+      {
+        "clip": "fuh4_090",
+        "gold_part": "tech.embeddings",
+        "bucket": "MATCHING_RANKING",
+        "sub_cause": "same-topic sibling chosen: tech.metadata_filtering",
+        "gold_topic": "rag",
+        "best_sub": "Embedings, cosine search, metadata filters",
+        "best_sub_target_score": 88.0,
+        "matched_for_that_sub": "tech.metadata_filtering",
+        "matched_topic": "rag",
+        "n_subs": 2,
+        "n_gold": 4,
+        "stt_sim": 97.8,
+        "selected": [
+          "hard.hybrid_when",
+          "tech.hybrid_search"
+        ],
+        "transcript": "Embedings, cosine search, metadata filters, and hybrid search tradeoffs cover all four.",
+        "authored": "Embeddings, cosine search, metadata filters, and hybrid search trade-offs — cover all four."
+      },
+      {
+        "clip": "fuh4_090",
+        "gold_part": "tech.cosine_semantic_search",
+        "bucket": "SEGMENTATION_FAILURE",
+        "sub_cause": "2 parts split for 4 gold parts",
+        "gold_topic": "rag",
+        "best_sub": "Embedings, cosine search, metadata filters",
+        "best_sub_target_score": 50.8,
+        "matched_for_that_sub": "tech.metadata_filtering",
+        "matched_topic": "rag",
+        "n_subs": 2,
+        "n_gold": 4,
+        "stt_sim": 97.8,
+        "selected": [
+          "hard.hybrid_when",
+          "tech.hybrid_search"
+        ],
+        "transcript": "Embedings, cosine search, metadata filters, and hybrid search tradeoffs cover all four.",
+        "authored": "Embeddings, cosine search, metadata filters, and hybrid search trade-offs — cover all four."
+      },
+      {
+        "clip": "fuh4_090",
+        "gold_part": "tech.metadata_filtering",
+        "bucket": "ACCEPTANCE_GATE",
+        "sub_cause": "drop=below_answer_threshold",
+        "gold_topic": "rag",
+        "best_sub": "Embedings, cosine search, metadata filters",
+        "best_sub_target_score": 88.0,
+        "matched_for_that_sub": "tech.metadata_filtering",
+        "matched_topic": "rag",
+        "n_subs": 2,
+        "n_gold": 4,
+        "stt_sim": 97.8,
+        "selected": [
+          "hard.hybrid_when",
+          "tech.hybrid_search"
+        ],
+        "transcript": "Embedings, cosine search, metadata filters, and hybrid search tradeoffs cover all four.",
+        "authored": "Embeddings, cosine search, metadata filters, and hybrid search trade-offs — cover all four."
+      }
+    ]
+  },
+  "intent_non_compound": {
+    "failures": 21,
+    "bucket_histogram": {
+      "STT": 5,
+      "SEMANTIC_PROFILE_QUALITY": 9,
+      "HYBRID_RANKING": 5,
+      "APPLY_GATE": 2
+    },
+    "all_failures_were_abstain": true,
+    "detail": [
+      {
+        "clip": "fuh4_004",
+        "type": "ultra_short",
+        "bucket": "STT",
+        "stt_sim": 59.5,
+        "gold": [
+          "tech.p95"
+        ],
+        "applied": null,
+        "mode": null,
+        "score": 0.0,
+        "gold_rank_hybrid": 1,
+        "gold_rank_semantic": 3,
+        "reason": "abstain_low_confidence",
+        "abstain": "score=0.291 agree=0.725",
+        "authored": "Define p95 for me.",
+        "transcript": "dividing 95 for me."
+      },
+      {
+        "clip": "fuh4_010",
+        "type": "ultra_short",
+        "bucket": "SEMANTIC_PROFILE_QUALITY",
+        "stt_sim": 98.9,
+        "gold": [
+          "tech.hybrid_search"
+        ],
+        "applied": "hard.hybrid_when",
+        "mode": "weak",
+        "score": 0.329,
+        "gold_rank_hybrid": null,
+        "gold_rank_semantic": null,
+        "reason": "abstain_low_confidence",
+        "abstain": "score=0.387 agree=0.507",
+        "authored": "When would you blend BM25 with dense vectors?",
+        "transcript": "When would you blend BM-25 with dense vectors?"
+      },
+      {
+        "clip": "fuh4_017",
+        "type": "short",
+        "bucket": "HYBRID_RANKING",
+        "stt_sim": 92.1,
+        "gold": [
+          "hard.conflicting_docs"
+        ],
+        "applied": "hard.mixed_language_query",
+        "mode": "weak",
+        "score": 0.395,
+        "gold_rank_hybrid": 2,
+        "gold_rank_semantic": 1,
+        "reason": "abstain_low_confidence",
+        "abstain": "score=0.429 agree=0.880",
+        "authored": "Two policy memos contradict each other in retrieval — then what?",
+        "transcript": "Do policy memos contradict each other in retrieval? Then what?"
+      },
+      {
+        "clip": "fuh4_028",
+        "type": "short",
+        "bucket": "SEMANTIC_PROFILE_QUALITY",
+        "stt_sim": 100.0,
+        "gold": [
+          "tech.reduce_cost"
+        ],
+        "applied": "hard.agent_loop",
+        "mode": "weak",
+        "score": 0.265,
+        "gold_rank_hybrid": null,
+        "gold_rank_semantic": null,
+        "reason": "abstain_low_confidence",
+        "abstain": "score=0.332 agree=0.770",
+        "authored": "What caps runaway inference spend in your designs?",
+        "transcript": "What caps runaway inference spend in your designs? What caps runaway inference spend in your designs?"
+      },
+      {
+        "clip": "fuh4_029",
+        "type": "short",
+        "bucket": "STT",
+        "stt_sim": 60.0,
+        "gold": [
+          "hard.prompt_versioning"
+        ],
+        "applied": "tech.model_monitoring",
+        "mode": "weak",
+        "score": 0.346,
+        "gold_rank_hybrid": null,
+        "gold_rank_semantic": null,
+        "reason": "abstain_low_confidence",
+        "abstain": "score=0.377 agree=0.512",
+        "authored": "How do you track prompt versions once they are live?",
+        "transcript": "How do you track from conversions one day a day?"
+      },
+      {
+        "clip": "fuh4_062",
+        "type": "very_long",
+        "bucket": "SEMANTIC_PROFILE_QUALITY",
+        "stt_sim": 95.6,
+        "gold": [
+          "hard.production_monitoring",
+          "tech.latency_p95"
+        ],
+        "applied": "hard.first_90_agentic",
+        "mode": "weak",
+        "score": 0.328,
+        "gold_rank_hybrid": null,
+        "gold_rank_semantic": null,
+        "reason": "abstain_low_confidence",
+        "abstain": "score=0.414 agree=0.850",
+        "authored": "Three thousand staff hit the assistant at eight a.m. — what fails first and what capacity would you pre-provision?",
+        "transcript": "3,000 staff hit the assistant at 8 a.m. What fails first and what capacity would you pre-provision?"
+      },
+      {
+        "clip": "fuh4_069",
+        "type": "very_long",
+        "bucket": "STT",
+        "stt_sim": 78.3,
+        "gold": [
+          "tech.production_failure_story"
+        ],
+        "applied": "cv.team_and_collaboration",
+        "mode": "weak",
+        "score": 0.26,
+        "gold_rank_hybrid": null,
+        "gold_rank_semantic": null,
+        "reason": "abstain_low_confidence",
+        "abstain": "score=0.307 agree=0.555",
+        "authored": "Walk through a real outage you owned: user impact, root cause, and the permanent fix.",
+        "transcript": "Walk through a real outfit you own, user is back, root cause and a permanent stick."
+      },
+      {
+        "clip": "fuh4_074",
+        "type": "very_long",
+        "bucket": "STT",
+        "stt_sim": 80.3,
+        "gold": [
+          "tech.i_dont_know_too_often",
+          "tech.no_wrong_info_finance"
+        ],
+        "applied": null,
+        "mode": null,
+        "score": 0.0,
+        "gold_rank_hybrid": 1,
+        "gold_rank_semantic": 1,
+        "reason": "abstain_low_confidence",
+        "abstain": "score=0.423 agree=0.556",
+        "authored": "Ninety-five percent correct but five percent confident finance errors — what should the product do?",
+        "transcript": "95% correct, but 5% confident finance errors. What should the product do?"
+      },
+      {
+        "clip": "fuh4_091",
+        "type": "indirect_paraphrase",
+        "bucket": "SEMANTIC_PROFILE_QUALITY",
+        "stt_sim": 97.6,
+        "gold": [
+          "tech.hallucination_what"
+        ],
+        "applied": "gen.failure",
+        "mode": "weak",
+        "score": 0.37,
+        "gold_rank_hybrid": null,
+        "gold_rank_semantic": null,
+        "reason": "abstain_low_confidence",
+        "abstain": "score=0.415 agree=0.880",
+        "authored": "The director says the bot invents facts — what failure mode is that?",
+        "transcript": "The director says the bot invents facts. What failure mode is that?"
+      },
+      {
+        "clip": "fuh4_092",
+        "type": "indirect_paraphrase",
+        "bucket": "HYBRID_RANKING",
+        "stt_sim": 99.3,
+        "gold": [
+          "tech.reindex_embedding_change"
+        ],
+        "applied": "tech.model_drift",
+        "mode": "weak",
+        "score": 0.392,
+        "gold_rank_hybrid": 4,
+        "gold_rank_semantic": null,
+        "reason": "abstain_low_confidence",
+        "abstain": "score=0.436 agree=0.880",
+        "authored": "Answers shifted after we changed an upstream model and skipped reindexing.",
+        "transcript": "Answers shifted after we changed an upstream model and skipped re-indexing."
+      },
+      {
+        "clip": "fuh4_093",
+        "type": "indirect_paraphrase",
+        "bucket": "APPLY_GATE",
+        "stt_sim": 89.8,
+        "gold": [
+          "hard.cost_spike"
+        ],
+        "applied": "cv.core_skills",
+        "mode": "weak",
+        "score": 0.329,
+        "gold_rank_hybrid": 1,
+        "gold_rank_semantic": 1,
+        "reason": "abstain_low_confidence",
+        "abstain": "score=0.324 agree=0.575",
+        "authored": "Cloud bill jumped threefold overnight with flat traffic.",
+        "transcript": "Cloud will jump threefold overnight with flat traffic. Cloud will jump threefold overnight with flat traffic."
+      },
+      {
+        "clip": "fuh4_094",
+        "type": "indirect_paraphrase",
+        "bucket": "SEMANTIC_PROFILE_QUALITY",
+        "stt_sim": 99.1,
+        "gold": [
+          "hard.wrong_chunk"
+        ],
+        "applied": null,
+        "mode": null,
+        "score": 0.0,
+        "gold_rank_hybrid": null,
+        "gold_rank_semantic": null,
+        "reason": "abstain_low_confidence",
+        "abstain": "score=0.379 agree=0.649",
+        "authored": "Top document is correct but the extracted snippet is not.",
+        "transcript": "Top document is correct, but the extracted snippet is not."
+      },
+      {
+        "clip": "fuh4_096",
+        "type": "indirect_paraphrase",
+        "bucket": "SEMANTIC_PROFILE_QUALITY",
+        "stt_sim": 99.0,
+        "gold": [
+          "hard.citation_lie",
+          "tech.faithfulness_check"
+        ],
+        "applied": "hard.wrong_chunk",
+        "mode": "weak",
+        "score": 0.395,
+        "gold_rank_hybrid": null,
+        "gold_rank_semantic": null,
+        "reason": "abstain_low_confidence",
+        "abstain": "score=0.437 agree=0.532",
+        "authored": "Polished answers with no traceable source sentence.",
+        "transcript": "Polished Answers with No Traceable Source Sentence"
+      },
+      {
+        "clip": "fuh4_097",
+        "type": "indirect_paraphrase",
+        "bucket": "STT",
+        "stt_sim": 70.9,
+        "gold": [
+          "tech.i_dont_know_too_often"
+        ],
+        "applied": "hard.agent_stop_tools",
+        "mode": "weak",
+        "score": 0.368,
+        "gold_rank_hybrid": null,
+        "gold_rank_semantic": null,
+        "reason": "abstain_low_confidence",
+        "abstain": "score=0.428 agree=0.850",
+        "authored": "Users hear “I cannot help” so often they stopped asking.",
+        "transcript": "Users here, I cannot help, so often they stop tasking."
+      },
+      {
+        "clip": "fuh4_098",
+        "type": "indirect_paraphrase",
+        "bucket": "HYBRID_RANKING",
+        "stt_sim": 100.0,
+        "gold": [
+          "tech.rag_access_control"
+        ],
+        "applied": "tech.model_drift",
+        "mode": "weak",
+        "score": 0.328,
+        "gold_rank_hybrid": 2,
+        "gold_rank_semantic": 3,
+        "reason": "abstain_low_confidence",
+        "abstain": "score=0.345 agree=0.564",
+        "authored": "Procurement opened an HR-only policy file yesterday.",
+        "transcript": "Procurement opened an HR-only policy file yesterday."
+      },
+      {
+        "clip": "fuh4_101",
+        "type": "indirect_paraphrase",
+        "bucket": "SEMANTIC_PROFILE_QUALITY",
+        "stt_sim": 98.9,
+        "gold": [
+          "hard.prompt_versioning",
+          "tech.temperature"
+        ],
+        "applied": null,
+        "mode": null,
+        "score": 0.0,
+        "gold_rank_hybrid": null,
+        "gold_rank_semantic": null,
+        "reason": "abstain_low_confidence",
+        "abstain": "score=0.338 agree=0.680",
+        "authored": "Same question, same day, two incompatible answers.",
+        "transcript": "Same question, same question, same day, to incompatible answers."
+      },
+      {
+        "clip": "fuh4_103",
+        "type": "indirect_paraphrase",
+        "bucket": "SEMANTIC_PROFILE_QUALITY",
+        "stt_sim": 100.0,
+        "gold": [
+          "cv.why_leaving"
+        ],
+        "applied": null,
+        "mode": null,
+        "score": 0.0,
+        "gold_rank_hybrid": null,
+        "gold_rank_semantic": null,
+        "reason": "abstain_low_confidence",
+        "abstain": "score=0.358 agree=0.633",
+        "authored": "After three years with us, what would push you toward another employer?",
+        "transcript": "After three years with us, what would push you toward another employer?"
+      },
+      {
+        "clip": "fuh4_104",
+        "type": "indirect_paraphrase",
+        "bucket": "APPLY_GATE",
+        "stt_sim": 93.9,
+        "gold": [
+          "gen.motivation"
+        ],
+        "applied": "gen.hobbies",
+        "mode": "weak",
+        "score": 0.339,
+        "gold_rank_hybrid": 1,
+        "gold_rank_semantic": 1,
+        "reason": "abstain_low_confidence",
+        "abstain": "score=0.343 agree=0.575",
+        "authored": "If the work turned repetitive after hire, would you stay?",
+        "transcript": "If the work turns repetitive after higher, would you stay?"
+      },
+      {
+        "clip": "fuh4_106",
+        "type": "follow_up_contextual",
+        "bucket": "HYBRID_RANKING",
+        "stt_sim": 100.0,
+        "gold": [
+          "proj.similarity.role"
+        ],
+        "applied": "cv.projects.most_recent",
+        "mode": "weak",
+        "score": 0.415,
+        "gold_rank_hybrid": 5,
+        "gold_rank_semantic": null,
+        "reason": "abstain_low_confidence",
+        "abstain": "score=0.387 agree=0.850",
+        "authored": "What was specifically yours in that build?",
+        "transcript": "What was specifically yours in that build?"
+      },
+      {
+        "clip": "fuh4_111",
+        "type": "follow_up_contextual",
+        "bucket": "SEMANTIC_PROFILE_QUALITY",
+        "stt_sim": 100.0,
+        "gold": [
+          "tech.hallucination_prevent"
+        ],
+        "applied": null,
+        "mode": null,
+        "score": 0.0,
+        "gold_rank_hybrid": null,
+        "gold_rank_semantic": null,
+        "reason": "abstain_low_confidence",
+        "abstain": "score=0.377 agree=0.850",
+        "authored": "What practices keep it rare in prod?",
+        "transcript": "What practices keep it rare in prod? What practices keep it rare in prod?"
+      },
+      {
+        "clip": "fuh4_118",
+        "type": "follow_up_contextual",
+        "bucket": "HYBRID_RANKING",
+        "stt_sim": 100.0,
+        "gold": [
+          "tech.guardrails_how"
+        ],
+        "applied": "proj.completion_risk.tech",
+        "mode": "weak",
+        "score": 0.339,
+        "gold_rank_hybrid": 4,
+        "gold_rank_semantic": 5,
+        "reason": "abstain_low_confidence",
+        "abstain": "score=0.339 agree=0.850",
+        "authored": "Which controls block them in your stack?",
+        "transcript": "Which controls block them in your stack?"
+      }
+    ]
+  },
+  "stt_fidelity": {
+    "bands": {
+      ">=95": 87,
+      "85-94": 18,
+      "70-84": 12,
+      "<70": 3
+    },
+    "note": "authored pack text vs Whisper output, rapidfuzz token_set_ratio"
+  },
+  "pack_structure_comparison": {
+    "compound-dev": {
+      "n": 41,
+      "q_marks_per_clip": 0.68,
+      "interrogative_words_per_clip": 2.95,
+      "clauses_per_clip": 2.22,
+      "verbless_clauses": 9,
+      "verbless_pct": 0.099
+    },
+    "holdout-v3-compound": {
+      "n": 15,
+      "q_marks_per_clip": 0.27,
+      "interrogative_words_per_clip": 3.67,
+      "clauses_per_clip": 2.8,
+      "verbless_clauses": 2,
+      "verbless_pct": 0.048
+    },
+    "holdout-v4-compound": {
+      "n": 15,
+      "q_marks_per_clip": 0.13,
+      "interrogative_words_per_clip": 0.8,
+      "clauses_per_clip": 2.73,
+      "verbless_clauses": 25,
+      "verbless_pct": 0.61
+    }
+  },
+  "VERDICT": {
+    "compound_dominant_cause": "MATCHING_RANKING (11/26 missing parts) closely followed by SEGMENTATION_FAILURE (7/26); both are downstream of a pack-level distribution shift — v4 compound clauses are 61% verbless noun phrases vs 10% in compound-dev",
+    "intent_dominant_cause": "SEMANTIC_PROFILE_QUALITY (9/21) — gold reaches neither the semantic nor the hybrid top-5",
+    "explains_0_9375_to_0_3944": "compound-dev and v4 compound are different question styles, not different difficulty of the same style",
+    "safety": "every one of the 21 intent failures and all compound shortfalls were abstentions: HC wrong 0, meaning_lost 0"
+  }
+}

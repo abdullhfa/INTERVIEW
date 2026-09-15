@@ -1,0 +1,32 @@
+{
+  "name": "final-unseen-holdout-v2",
+  "eval_only": true,
+  "scored_cases": 120,
+  "warmup_cases": 2,
+  "question_types": {
+    "ultra_short": 15,
+    "short": 15,
+    "medium": 15,
+    "long": 15,
+    "very_long": 15,
+    "compound": 15,
+    "indirect_paraphrase": 15,
+    "follow_up_contextual": 15
+  },
+  "conditions": [
+    "clean",
+    "office",
+    "poor",
+    "far",
+    "fast"
+  ],
+  "accents": [
+    "indian",
+    "jordanian",
+    "egyptian",
+    "emirati"
+  ],
+  "audio_status": "pending_synthesis",
+  "supersedes": "final-unseen-holdout",
+  "protocol": "backend/reports/FINAL_UNSEEN_HOLDOUT_PROTOCOL.md"
+}

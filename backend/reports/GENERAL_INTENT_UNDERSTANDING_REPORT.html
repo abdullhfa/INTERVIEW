@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>General Intent Understanding</title>
+<style>
+body{font-family:Segoe UI,system-ui,sans-serif;margin:2rem;background:#0f1419;color:#e7ecf1}
+h1{font-size:1.6rem} h2{margin-top:1.8rem;color:#9ecbff}
+table{border-collapse:collapse;width:100%;max-width:920px}
+th,td{border:1px solid #2a3540;padding:.55rem .7rem;text-align:left}
+th{background:#1a2330} .ok{color:#7ddea0} .was{color:#f0b27a} .freeze{color:#7ddea0;font-weight:600}
+code{background:#1a2330;padding:.1rem .35rem;border-radius:4px}
+</style></head><body>
+<h1>General Semantic Intent Understanding — <span class="freeze">FROZEN</span></h1>
+<p>Intent problem <strong>CLOSED</strong> (2026-09-12). Further changes = bug-fix only. See <a href="INTENT_LAYER_FREEZE.html">INTENT_LAYER_FREEZE.html</a>.</p>
+<h2>Before → After (E2E)</h2>
+<table>
+<tr><th>Suite</th><th>Before</th><th>After</th></tr>
+<tr><td>Medium</td><td class="was">1/8</td><td class="ok">8/8</td></tr>
+<tr><td>Short</td><td class="was">5/8</td><td class="ok">8/8</td></tr>
+<tr><td>Very long</td><td class="was">5/8 (last_word_missing 8/8)</td><td class="ok">8/8 (last_word_missing 2/8)</td></tr>
+<tr><td>Long accent</td><td class="was">40/40</td><td class="ok">40/40</td></tr>
+<tr><td>Realistic</td><td class="was">96/100</td><td class="ok">97/100 (HC=0)</td></tr>
+</table>
+<p class="was">Known limitation: very-long tail loss 2/8 — tracked, not blocking. Do not raise global max-utterance duration blindly.</p>
+<p>Next: Unseen Final Holdout (eval-only). Gate: Intent≥92% · HC=0 · meaning_lost≤1% · median post-speech≤1.5s · short fast path · compound coverage≥90%.</p>
+</body></html>

@@ -1,0 +1,54 @@
+{
+  "status": "FROZEN",
+  "frozen_at": "2026-09-12",
+  "intent_problem": "CLOSED",
+  "title": "General Semantic Intent Understanding",
+  "generated_at": "2026-09-12T13:05:00+00:00",
+  "freeze_policy": "bug_fix_only — no threshold/weight/alias chasing",
+  "known_limitations": [
+    {
+      "id": "very_long_last_word_missing",
+      "blocking_readiness": false,
+      "detail": "Very-long E2E last_word_missing=2/8 after continuation (was 8/8). Intent 8/8."
+    }
+  ],
+  "before": {
+    "medium_intent": "1/8 (12.5%)",
+    "medium_fail_gate": "intent_score_gate=7 (canonical bank Q fuzz only)",
+    "short_intent": "5/8",
+    "short_notes": "fast path OK; ultra-short abstain cases",
+    "very_long_intent": "5/8",
+    "very_long_notes": "last_word_missing=8/8; MAX_UTTERANCE ~30s",
+    "long_accent_intent": "40/40 (compound layer)",
+    "realistic_intent": "96/100 (post-compound); prior 93/100",
+    "realistic_hc_wrong": 0
+  },
+  "after_e2e_loopback": {
+    "medium_intent": "8/8 (100%)",
+    "medium_stt": "8/8",
+    "medium_hc_wrong": 0,
+    "medium_compound_path_used": 0,
+    "medium_intent_ms_avg": 5.0,
+    "medium_report": "LENGTH_MEDIUM_REGRESSION_REPORT.html",
+    "short_intent": "8/8 (100%)",
+    "short_stt": "7/8",
+    "short_hc_wrong": 0,
+    "short_compound_path_used": 0,
+    "short_intent_ms_avg": 4.7,
+    "short_report": "LENGTH_SHORT_REGRESSION_REPORT.html",
+    "very_long_intent": "8/8 (100%)",
+    "very_long_stt": "8/8",
+    "very_long_hc_wrong": 0,
+    "very_long_last_word_missing": 2,
+    "very_long_before_last_word_missing": 8,
+    "very_long_report": "LENGTH_VERY_LONG_REGRESSION_REPORT.html",
+    "long_accent_intent": "40/40 (100%)",
+    "long_accent_hc_wrong": 0,
+    "long_accent_report": "LONG_SENTENCE_ACCENT_REPORT.html",
+    "realistic_intent": "97/100 (97%)",
+    "realistic_hc_wrong": 0,
+    "realistic_report": "INTERVIEW_E2E_REALISTIC_REPORT.html"
+  },
+  "next_step": "Unseen Final Holdout (eval-only). Adoption gate: Intent>=92%, HC=0, meaning_lost<=1%, median post-speech<=1.5s, short fast path intact, compound coverage>=90%.",
+  "freeze_doc": "INTENT_LAYER_FREEZE.html"
+}

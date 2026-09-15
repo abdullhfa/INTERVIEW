@@ -1,0 +1,380 @@
+{
+  "summary": {
+    "label": "track_a_beam3",
+    "n": 22,
+    "active": {
+      "model": "distil-large-v3",
+      "device": "cuda",
+      "compute_type": "int8_float16"
+    },
+    "settings": {
+      "whisper_model_size": "distil-large-v3",
+      "whisper_beam_size": 3,
+      "whisper_device": "auto",
+      "whisper_compute_type": "auto"
+    },
+    "first_pass": {
+      "p50_ms": 923.5,
+      "p90_ms": 1052.8,
+      "mean_ms": 888.6,
+      "max_ms": 1060.7
+    },
+    "pack": "stress-holdout-v2 (06/07/08) — latency-dev only",
+    "goal_p50_ms": 1200.0,
+    "pass_goal": true
+  },
+  "rows": [
+    {
+      "file": "08_short_sentences/short_01.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 1.338,
+        "whisper_ms": 792.2,
+        "rtf": 0.592,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "What is R-E?"
+    },
+    {
+      "file": "08_short_sentences/short_02.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 1.393,
+        "whisper_ms": 721.2,
+        "rtf": 0.518,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "What are guardrails?"
+    },
+    {
+      "file": "08_short_sentences/short_03.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 1.675,
+        "whisper_ms": 748.1,
+        "rtf": 0.447,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "What's in a genetic AI?"
+    },
+    {
+      "file": "08_short_sentences/short_04.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 1.252,
+        "whisper_ms": 720.2,
+        "rtf": 0.575,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "Y-M endings."
+    },
+    {
+      "file": "08_short_sentences/short_05.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 1.468,
+        "whisper_ms": 717.6,
+        "rtf": 0.489,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "What is Angraf?"
+    },
+    {
+      "file": "08_short_sentences/short_06.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 1.008,
+        "whisper_ms": 706.1,
+        "rtf": 0.701,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "Why recall?"
+    },
+    {
+      "file": "08_short_sentences/short_07.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 1.8,
+        "whisper_ms": 802.3,
+        "rtf": 0.446,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "What if retrieval fails?"
+    },
+    {
+      "file": "08_short_sentences/short_08.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 1.711,
+        "whisper_ms": 746.1,
+        "rtf": 0.436,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "Who approves the result?"
+    },
+    {
+      "file": "07_medium_sentences/medium_01.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 5.385,
+        "whisper_ms": 878.7,
+        "rtf": 0.163,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "explain how RAG retrieves information before the language model generates an answer."
+    },
+    {
+      "file": "07_medium_sentences/medium_02.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 5.689,
+        "whisper_ms": 932.0,
+        "rtf": 0.164,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "Why do you use embeddings and cosine similarity, instead of an LLM in the similarity checker?"
+    },
+    {
+      "file": "07_medium_sentences/medium_03.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 5.384,
+        "whisper_ms": 929.9,
+        "rtf": 0.173,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "How does your BTEC workflow validate a generated question before a teacher can approve it?"
+    },
+    {
+      "file": "07_medium_sentences/medium_04.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 4.882,
+        "whisper_ms": 934.1,
+        "rtf": 0.191,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "Why is human approval important when an AI system can already generate a good answer?"
+    },
+    {
+      "file": "07_medium_sentences/medium_05.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 5.045,
+        "whisper_ms": 923.5,
+        "rtf": 0.183,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "How would LangGraph help if your Pythonagentic workflow became more complex?"
+    },
+    {
+      "file": "07_medium_sentences/medium_06.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 6.155,
+        "whisper_ms": 941.1,
+        "rtf": 0.153,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "What is the difference between changing model knowledge with RAG and changing behavior with fine tuning?"
+    },
+    {
+      "file": "07_medium_sentences/medium_07.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 6.031,
+        "whisper_ms": 911.6,
+        "rtf": 0.151,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "How do metadata filters stop one school from retrieving documents that belong to another school?"
+    },
+    {
+      "file": "07_medium_sentences/medium_08.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 5.199,
+        "whisper_ms": 926.7,
+        "rtf": 0.178,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "What should the system do when the retrieved context does not contain enough information?"
+    },
+    {
+      "file": "06_long_sentences/long_01.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 14.292,
+        "whisper_ms": 1060.7,
+        "rtf": 0.074,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "Please explain the complete path in your BTG system, starting from the source document, then chunking, embeddings, retri"
+    },
+    {
+      "file": "06_long_sentences/long_02.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 14.491,
+        "whisper_ms": 1057.0,
+        "rtf": 0.073,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "Imagine the interviewer asks why you did not use a large language model for the assignment similarity checker. Explain h"
+    },
+    {
+      "file": "06_long_sentences/long_03.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 13.727,
+        "whisper_ms": 999.5,
+        "rtf": 0.073,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "Describe how you would design safe database access for an AI agent in a government system, including limited permissions"
+    },
+    {
+      "file": "06_long_sentences/long_04.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 14.369,
+        "whisper_ms": 1052.8,
+        "rtf": 0.073,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "Explain why a strong language model can still produce a bad RAG answer when retrieval is weak, and describe how you woul"
+    },
+    {
+      "file": "06_long_sentences/long_05.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 13.559,
+        "whisper_ms": 1027.2,
+        "rtf": 0.076,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "walk me through the difference between a fixed automated workflow and an agentic workflow, and explain how state, tools,"
+    },
+    {
+      "file": "06_long_sentences/long_06.wav",
+      "first": {
+        "pass": "first",
+        "accurate": false,
+        "beam": 3,
+        "best_of": 1,
+        "audio_sec": 12.488,
+        "whisper_ms": 1020.6,
+        "rtf": 0.082,
+        "device": "cuda",
+        "model": "distil-large-v3",
+        "compute_type": "int8_float16"
+      },
+      "transcript": "Tell me how you will evaluate an early warning model for students, why recall matters, why accuracy alone can be mislead"
+    }
+  ]
+}

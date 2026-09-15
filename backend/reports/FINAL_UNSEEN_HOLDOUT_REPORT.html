@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Final Unseen Holdout</title>
+<style>
+body{font-family:Segoe UI,system-ui,sans-serif;margin:2rem;background:#0f1419;color:#e7ecf1}
+table{border-collapse:collapse;width:100%;margin:.8rem 0 1.4rem}
+th,td{border:1px solid #2a3540;padding:.45rem .55rem;text-align:left;font-size:.92rem}
+th{background:#1a2330}.ok{color:#7ddea0}.bad{color:#f07178}.warn{color:#f0b27a}
+</style></head><body>
+<h1>Final Unseen Holdout — <span class="bad">NOT READY</span></h1>
+<p>Eval-only · frozen intent layer · do not tune on this pack.</p>
+<ul>
+<li>Intent: <strong>110/120</strong> (91.7%) — gate ≥92% — FAIL</li>
+<li>HC wrong: <strong>14</strong> — gate 0 — FAIL</li>
+<li>meaning_lost: <strong>1/120</strong> (0.8%) — gate ≤1% — PASS</li>
+<li>median post-speech: <strong>3860.6ms</strong> — gate ≤1500ms — FAIL</li>
+<li>Compound coverage: <strong>16.7%</strong> — gate ≥90% — FAIL</li>
+<li>Simple unnecessary compound: <strong>0</strong> — PASS</li>
+<li class="warn">Very-long last_word_missing (diagnostic): 3/15</li>
+</ul>
+<h2>By question type</h2><table><tr><th>Key</th><th>Intent</th><th>Rate</th><th>HC</th><th>meaning_lost</th></tr><tr><td>compound</td><td>15/15</td><td>100%</td><td>1</td><td>0</td></tr><tr><td>follow_up_contextual</td><td>13/15</td><td>87%</td><td>1</td><td>0</td></tr><tr><td>indirect_paraphrase</td><td>11/15</td><td>73%</td><td>0</td><td>0</td></tr><tr><td>long</td><td>15/15</td><td>100%</td><td>1</td><td>0</td></tr><tr><td>medium</td><td>13/15</td><td>87%</td><td>2</td><td>0</td></tr><tr><td>short</td><td>15/15</td><td>100%</td><td>4</td><td>0</td></tr><tr><td>ultra_short</td><td>14/15</td><td>93%</td><td>1</td><td>0</td></tr><tr><td>very_long</td><td>14/15</td><td>93%</td><td>4</td><td>1</td></tr></table>
+<h2>By audio condition</h2><table><tr><th>Key</th><th>Intent</th><th>Rate</th><th>HC</th><th>meaning_lost</th></tr><tr><td>clean</td><td>21/24</td><td>88%</td><td>3</td><td>0</td></tr><tr><td>far</td><td>20/24</td><td>83%</td><td>0</td><td>1</td></tr><tr><td>fast</td><td>23/24</td><td>96%</td><td>2</td><td>0</td></tr><tr><td>office</td><td>23/24</td><td>96%</td><td>3</td><td>0</td></tr><tr><td>poor</td><td>23/24</td><td>96%</td><td>6</td><td>0</td></tr></table>
+<h2>By accent</h2><table><tr><th>Key</th><th>Intent</th><th>Rate</th><th>HC</th><th>meaning_lost</th></tr><tr><td>egyptian</td><td>25/30</td><td>83%</td><td>3</td><td>1</td></tr><tr><td>emirati</td><td>29/30</td><td>97%</td><td>3</td><td>0</td></tr><tr><td>indian</td><td>27/30</td><td>90%</td><td>4</td><td>0</td></tr><tr><td>jordanian</td><td>29/30</td><td>97%</td><td>4</td><td>0</td></tr></table>
+<h2>FAIL detail</h2>
+<table><tr><th>ID</th><th>Type</th><th>Cond</th><th>Accent</th><th>Transcript</th><th>Expected intent</th><th>Selected/abstain</th><th>Stage</th></tr>
+<tr><td>fuh_009</td><td>ultra_short</td><td>far</td><td>indian</td><td>What is Hitler? What is Hitler?</td><td>hard.hitl_where</td><td>tech.rag_what</td><td>STT</td></tr><tr><td>fuh_031</td><td>medium</td><td>clean</td><td>egyptian</td><td>Walk me through how retrieved passages become a grounded answer before the model speaks freely.</td><td>tech.rag_two_phases,tech.rag_build</td><td>hard.empty_retrieval</td><td>QUESTION_UNDERSTANDING</td></tr><tr><td>fuh_036</td><td>medium</td><td>clean</td><td>indian</td><td>What should happen when top K returns only weak or empty context for a regulation question?</td><td>hard.empty_retrieval</td><td>abstain:score=0.413 agree=0.850</td><td>QUESTION_UNDERSTANDING</td></tr><tr><td>fuh_064</td><td>very_long</td><td>far</td><td>egyptian</td><td>Others might still help behavior without becoming the source of legal facts.</td><td>hard.tenant_isolation,tech.rag_access_control</td><td>hard.llm_as_judge_limits</td><td>STT</td></tr><tr><td>fuh_091</td><td>indirect_paraphrase</td><td>clean</td><td>egyptian</td><td>When facts move every year, do you bake them into weights or keep them outside the model?</td><td>tech.rag_vs_finetuning</td><td>abstain:score=0.348 agree=0.779</td><td>QUESTION_UNDERSTANDING</td></tr><tr><td>fuh_095</td><td>indirect_paraphrase</td><td>fast</td><td>egyptian</td><td>Why would a checker that only rank similar text not deserve the IG label?</td><td>proj.similarity.is_rag</td><td>proj.similarity.stack</td><td>QUESTION_UNDERSTANDING</td></tr><tr><td>fuh_097</td><td>indirect_paraphrase</td><td>office</td><td>egyptian</td><td>If two orchestrators and raw code are options, how do you choose for interrupt heavy flows?</td><td>hard.langgraph_vs_n8n_vs_python</td><td>tech.which_framework</td><td>QUESTION_UNDERSTANDING</td></tr><tr><td>fuh_104</td><td>indirect_paraphrase</td><td>far</td><td>indian</td><td>How do you talk about senior judgment without turning it into a years contest?</td><td>gen.leadership</td><td>abstain:score=0.443 agree=0.880</td><td>QUESTION_UNDERSTANDING</td></tr><tr><td>fuh_108</td><td>follow_up_contextual</td><td>poor</td><td>jordanian</td><td>Where does the human gate sit in the graph you just described?</td><td>hard.hitl_where</td><td>abstain:score=0.388 agree=0.850</td><td>QUESTION_UNDERSTANDING</td></tr><tr><td>fuh_119</td><td>follow_up_contextual</td><td>far</td><td>emirati</td><td>What is the next step after Pidatic validation fails?</td><td>cv.pydantic,hard.teacher_rejects</td><td>hard.tool_schema</td><td>QUESTION_UNDERSTANDING</td></tr>
+</table>
+</body></html>

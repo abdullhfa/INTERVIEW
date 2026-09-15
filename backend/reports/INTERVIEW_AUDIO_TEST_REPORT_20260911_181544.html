@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Interview Audio Test Report</title>
+  <style>
+    body { font-family: Segoe UI, Tahoma, sans-serif; margin: 24px; background:#0f1419; color:#e8eef5; }
+    h1,h2 { margin-bottom: 8px; }
+    .meta { color:#8b9aab; }
+    .cards { display:grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin:16px 0; }
+    .card { background:#1a222d; border:1px solid #2a3544; border-radius:12px; padding:12px; }
+    .card b { font-size:1.3rem; display:block; }
+    table { width:100%; border-collapse: collapse; background:#1a222d; }
+    th, td { border-bottom:1px solid #2a3544; padding:8px; text-align:left; font-size:0.9rem; }
+    tr.pass td { background: rgba(61,214,140,0.06); }
+    tr.fail td { background: rgba(240,113,120,0.08); }
+    .fail-card { background:#2a181c; border:1px solid #5c2a32; border-radius:12px; padding:12px; margin:10px 0; }
+    code { background:#0b1016; padding:2px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <h1>Interview Audio Test Report</h1>
+  <p class="meta">Mode: <code>direct_audio_injection</code> · Generated: 2026-09-11T18:15:44.339935+00:00</p>
+  <p class="meta">Filters: {&quot;question_id&quot;: 156, &quot;speaker&quot;: &quot;jordanian&quot;, &quot;condition&quot;: null, &quot;limit&quot;: 6, &quot;mode&quot;: &quot;direct_audio_injection&quot;}</p>
+
+  <div class="cards">
+    <div class="card"><span>Total</span><b>6</b></div>
+    <div class="card"><span>PASS</span><b>4</b></div>
+    <div class="card"><span>FAIL</span><b>2</b></div>
+    <div class="card"><span>STT success</span><b>3/6</b></div>
+    <div class="card"><span>Intent success</span><b>4/6</b></div>
+    <div class="card"><span>Answer success</span><b>4/6</b></div>
+    <div class="card"><span>Avg latency</span><b>11.297s</b></div>
+  </div>
+
+  <p><b>Main weakness:</b> none</p>
+  <p><b>Failure stages:</b> {&quot;STT&quot;: 2}</p>
+
+  <h2>Results (best → worst)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Audio</th><th>STT</th><th>Intent</th><th>Answer</th>
+        <th>Accuracy</th><th>Latency</th><th>Result</th><th>Failure Stage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class='pass'><td>Q156 jordanian far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>99.5%</td><td>9.18s</td><td><strong>PASS</strong></td><td>—</td></tr><tr class='pass'><td>Q156 jordanian fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>99.5%</td><td>10.28s</td><td><strong>PASS</strong></td><td>—</td></tr><tr class='pass'><td>Q156 jordanian clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>99.5%</td><td>36.1s</td><td><strong>PASS</strong></td><td>—</td></tr><tr class='pass'><td>Q156 jordanian combined</td><td>Weak (0.456)</td><td>Correct</td><td>Correct</td><td>86.4%</td><td>7.4s</td><td><strong>PASS</strong></td><td>—</td></tr><tr class='fail'><td>Q156 jordanian office_noise</td><td>Weak (0.36)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>9.0%</td><td>2.63s</td><td><strong>FAIL</strong></td><td>STT</td></tr><tr class='fail'><td>Q156 jordanian poor_call</td><td>Weak (0.286)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>7.2%</td><td>2.18s</td><td><strong>FAIL</strong></td><td>STT</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Failed cases</h2>
+  
+            <div class="fail-card">
+              <h3>FAIL · audio/Q156_jordanian_synthetic_office_noise.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What is RAG?</p>
+              <p><b>Captured STT:</b> What did drag?</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q156_jordanian_synthetic_poor_call.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What is RAG?</p>
+              <p><b>Captured STT:</b> Wapid drag.</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "compound-dev",
+  "track": "B",
+  "scored_cases": 40,
+  "warmup_cases": 1,
+  "not_final_holdout": true,
+  "audio_status": "pending_synthesis"
+}

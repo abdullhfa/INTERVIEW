@@ -1,0 +1,891 @@
+{
+  "created_at": "2026-09-14T16:07:33.975293+00:00",
+  "mode": "e2e_windows_loopback",
+  "suite": "v5_150_voice",
+  "filters": {
+    "mode": "e2e_windows_loopback",
+    "suite": "v5_150_voice",
+    "score_name": "V5 150 Voice Stress E2E (loopback)",
+    "limit": 2,
+    "pre_roll_ms": 600,
+    "post_roll_ms": 250,
+    "hard_questions": [
+      156,
+      173,
+      178,
+      212,
+      275
+    ],
+    "audio_path": "pre_roll+speech+post_roll+stt_second_pass_on_doubt+strong_abstain",
+    "eval_only": false,
+    "voided_holdout": false,
+    "track_b": false,
+    "track_c": false,
+    "warm": {
+      "warm_completed": true,
+      "warm_wall_ms": 245171.5,
+      "warm_timeout_s": 900.0,
+      "system_warm": true,
+      "alias_matrix_ready": true,
+      "semantic_index_ready": true,
+      "steps": {
+        "question_bank_load": 0.0,
+        "question_bank_warm": 215583.9,
+        "semantic_intent_index": 27396.0,
+        "embedding_probe": 322.4,
+        "whisper_decode_probe": 1867.0
+      },
+      "errors": {},
+      "gate_valid": true
+    },
+    "gate_valid": true,
+    "embed_stats": {
+      "calls": 59,
+      "texts": 2660,
+      "ms": 237137.96520000324,
+      "max_ms": 6473.1,
+      "ms_per_call": 4019.3
+    },
+    "rerank_stats": {
+      "calls": 4,
+      "triggered": 2,
+      "vector_reuse": 2,
+      "embedded": 0,
+      "reranker_trigger_rate": 0.5
+    }
+  },
+  "summary": {
+    "total": 2,
+    "passed": 2,
+    "failed": 0,
+    "pass_rate": 1.0,
+    "stt_success": "2/2",
+    "intent_success": "2/2",
+    "intent_success_rate": 1.0,
+    "recovered_after_stt_error": 0,
+    "intent_recovery_rate": 0.0,
+    "high_confidence_wrong": 0,
+    "first_word_missing": 0,
+    "last_word_missing": 1,
+    "multi_segment_utterances": 0,
+    "truncated_by_max": 0,
+    "raw_better_than_processed": 0,
+    "fail_buckets": {},
+    "acoustic_causes": {},
+    "audio_levels": {
+      "avg_rms_before": 0.05543,
+      "avg_rms_after": 0.05378,
+      "avg_snr_db_est": 82.29,
+      "avg_bandwidth_hz_est": 1142.5,
+      "avg_high_freq_energy_ratio": 0.00445,
+      "fail_low_rms_count": 0,
+      "fail_ok_rms_low_snr_count": 0,
+      "fail_narrowband_count": 0,
+      "fail_onset_count": 0
+    },
+    "latency": {
+      "median_total_ms": 8122.0,
+      "p95_total_ms": 8985.3,
+      "avg_total_ms": 8553.6,
+      "median_post_speech_ms": 1734.1,
+      "p95_post_speech_ms": 2386.5,
+      "avg_post_speech_ms": 2060.3,
+      "avg_vad_ms": 5744.1,
+      "avg_stt_ms": 1143.8,
+      "avg_intent_ms": 915.8,
+      "avg_answer_ms": 0.8
+    },
+    "by_condition": {
+      "slow|close|clean|indirect": {
+        "total": 1,
+        "pass": 1,
+        "intent": 1,
+        "pass_rate": 1.0,
+        "intent_rate": 1.0
+      },
+      "fast|medium|room|indirect": {
+        "total": 1,
+        "pass": 1,
+        "intent": 1,
+        "pass_rate": 1.0,
+        "intent_rate": 1.0
+      }
+    },
+    "by_speaker": {
+      "indian": {
+        "total": 1,
+        "pass": 1,
+        "intent": 1,
+        "pass_rate": 1.0,
+        "intent_rate": 1.0
+      },
+      "jordanian": {
+        "total": 1,
+        "pass": 1,
+        "intent": 1,
+        "pass_rate": 1.0,
+        "intent_rate": 1.0
+      }
+    },
+    "failure_stages": {},
+    "compound": {
+      "compound_detected": 2,
+      "compound_path_used": 2,
+      "full_compound_success": 1,
+      "partial_compound_success": 1,
+      "avg_intent_coverage_rate": 0.75,
+      "answer_order_correct": 2,
+      "final_answer_ok": 1,
+      "requested_parts_total": 4,
+      "matched_parts_total": 3,
+      "unsupported_parts_total": 1
+    },
+    "targets": {
+      "clean_intent": 0.95,
+      "office_intent": 0.9,
+      "poor_call_intent": 0.85,
+      "far_intent": 0.85,
+      "combined_pass": 0.6,
+      "median_post_speech_ms": 1500,
+      "p95_post_speech_ms": 2500,
+      "high_confidence_wrong": 0
+    },
+    "score_name": "V5 150 Voice Stress E2E (loopback)",
+    "suite": "v5_150_voice",
+    "pre_roll_ms": 600
+  },
+  "results": [
+    {
+      "sample_id": "V5A_001",
+      "file": "audio/indian/001_I01_indirect_slow_close_clean.wav",
+      "question_id": "I01",
+      "speaker": "indian",
+      "condition": "slow|close|clean|indirect",
+      "expected_question": "Could you walk me through your background and what brought you into AI work?",
+      "transcript": "Could you walk me through your background, and what brought you into a work?",
+      "stt_ok": true,
+      "stt_score": 0.972,
+      "intent_ok": true,
+      "intent_score": 0.933,
+      "match_id": "intro.tell_me_about_yourself,cv.why_back_to_jordan",
+      "match_question": "Could you walk me through your background? | What brought you into a work?",
+      "match_score": 0.933,
+      "answer_en": "I am Abdullah Al-Sawalmeh from Jordan, with over fifteen years in software and AI. In 2023 I took the Systems Developer and AI Engineer role at the Ministry of Education, on BTEC.",
+      "answer_ok": true,
+      "recovered_after_stt_error": false,
+      "result": "PASS",
+      "failure_stage": null,
+      "failure_detail": "",
+      "high_confidence_wrong": false,
+      "timings": {
+        "audio_detected_ms": 902.0,
+        "speech_final_ms": 7210.1,
+        "stt_ms": 1128.5,
+        "intent_ms": 605.6,
+        "answer_ms": 0.0,
+        "total_ms": 8985.3,
+        "vad_ms": 6308.1,
+        "post_speech_ms": 1734.1,
+        "whisper_ms": 1128.5,
+        "match_ms": 79.4,
+        "semantic_ms": 271.6,
+        "compound_ms": 254.5,
+        "compound_detect_ms": 0.3,
+        "decomposition_ms": 1.7,
+        "matching_ms": 201.3,
+        "rerank_ms": 0.0,
+        "merge_ms": 0.1,
+        "whisper_pass_1_ms": 1127.4,
+        "whisper_pass_2_ms": 0.0,
+        "number_of_stt_passes": 1,
+        "technical_repair_ms": 0.0,
+        "base_match_ms": 64.6,
+        "semantic_embedding_ms": 38.7,
+        "semantic_search_ms": 38.8,
+        "semantic_recovery_used": true
+      },
+      "notes": "e2e_loopback; realistic_recovery:recovered:margin=0.159; semantic_recovery:recovered:weak_match:agree=0.920; compound:cov=1.0:parts=2/2",
+      "first_word_missing": false,
+      "last_word_missing": false,
+      "speech_duration_ms": 6912.0,
+      "pre_roll_used": true,
+      "raw_transcript": null,
+      "processed_transcript": "Could you walk me through your background, and what brought you into a work?",
+      "better_audio_source": "processed",
+      "onset": {
+        "pre_roll_ms": 600,
+        "post_roll_ms": 250,
+        "pre_roll_samples_used": 9216,
+        "capture_start_t": 76915.3323736,
+        "vad_speech_start_ms": 902.0,
+        "actual_buffer_start_ms": 326.0,
+        "first_non_silent_offset_ms": 430.0,
+        "stt_start_ms": 7210.5,
+        "capture_to_vad_ms": 902.0,
+        "vad_to_buffer_lead_ms": 576.0
+      },
+      "audio_levels": {
+        "rms_before": 0.06865,
+        "rms_after": 0.06674,
+        "noise_floor": 1e-05,
+        "speech_rms_est": 0.12236,
+        "snr_db_est": 84.4,
+        "spectral_centroid_hz": 746.8,
+        "high_freq_energy_ratio": 0.0023,
+        "bandwidth_hz_est": 957.0
+      },
+      "fail_bucket": null,
+      "failure_position": "none",
+      "question_type": "compound",
+      "compound_detected": true,
+      "compound_confidence": 0.82,
+      "requested_parts_count": 2,
+      "matched_parts_count": 2,
+      "unsupported_parts_count": 0,
+      "intent_coverage_rate": 1.0,
+      "full_compound_success": true,
+      "partial_compound_success": false,
+      "answer_order_correct": true,
+      "compound_sub_questions": [
+        "Could you walk me through your background?",
+        "What brought you into a work?"
+      ],
+      "compound_selected_intents": [
+        "intro.tell_me_about_yourself",
+        "cv.why_back_to_jordan"
+      ],
+      "compound_trace": {
+        "question_type": "compound",
+        "compound_confidence": 0.82,
+        "request_count_estimate": 2,
+        "used_compound_path": true,
+        "sub_questions": [
+          "Could you walk me through your background?",
+          "What brought you into a work?"
+        ],
+        "candidate_intents": [
+          {
+            "sub_question": "Could you walk me through your background?",
+            "intent_id": "intro.tell_me_about_yourself",
+            "score": 0.933,
+            "mode": "strong",
+            "runner_up": "intro.short_version",
+            "margin": 0.32,
+            "accepted": true,
+            "drop_reason": null,
+            "fast_lexical": true,
+            "semantic_triggered": false
+          },
+          {
+            "sub_question": "What brought you into a work?",
+            "intent_id": "cv.why_back_to_jordan",
+            "score": 0.656,
+            "mode": "strong",
+            "runner_up": "gen.what_do_you_know_about_us",
+            "margin": 0.134,
+            "accepted": true,
+            "drop_reason": null,
+            "fast_lexical": false,
+            "semantic_triggered": true
+          }
+        ],
+        "selected_intents": [
+          "intro.tell_me_about_yourself",
+          "cv.why_back_to_jordan"
+        ],
+        "dropped_intents": [],
+        "duplicate_intents": [],
+        "unknown_parts": [],
+        "answer_sources": [
+          "intro.tell_me_about_yourself",
+          "cv.why_back_to_jordan"
+        ],
+        "final_answer": "I am Abdullah Al-Sawalmeh from Jordan, with over fifteen years in software and AI. In 2023 I took the Systems Developer and AI Engineer role at the Ministry of Education, on BTEC.",
+        "partial_compound_match": false,
+        "full_compound_success": true,
+        "intent_coverage_rate": 1.0,
+        "matched_parts_count": 2,
+        "requested_parts_count": 2,
+        "unsupported_parts_count": 0,
+        "detected_parts_count": 2,
+        "answered_parts_count": 2,
+        "missed_parts": [],
+        "duplicate_parts": [],
+        "final_coverage": 1.0,
+        "failure_code": "OK",
+        "detection_signals": [
+          "connector_second_request",
+          "imperative_second_request"
+        ],
+        "decomposition_notes": [
+          "clause_primary"
+        ],
+        "timings": {
+          "decomposition_ms": 1.7,
+          "matching_ms": 201.3,
+          "lexical_match_ms": 94.6,
+          "batch_embed_ms": 45.3,
+          "semantic_parts_ms": 61.3,
+          "harvest_ms": 0.0,
+          "variant_d_ms": 0.0,
+          "answer_merge_ms": 0.1
+        },
+        "total_latency_ms": 203.1
+      },
+      "semantic_recovery": {
+        "triggered": true,
+        "reason": "recovered:weak_match",
+        "agreement": 0.92,
+        "margin": 0.13978521918238196,
+        "reranker_used": false,
+        "semantic_top5": [
+          {
+            "id": "gen.why_ai_field",
+            "score": 0.401
+          },
+          {
+            "id": "intro.tell_me_about_yourself",
+            "score": 0.4
+          },
+          {
+            "id": "cv.projects.most_recent",
+            "score": 0.394
+          },
+          {
+            "id": "intro.short_version",
+            "score": 0.391
+          },
+          {
+            "id": "cv.nlp_experience",
+            "score": 0.377
+          }
+        ],
+        "hybrid_top5": [
+          {
+            "id": "intro.tell_me_about_yourself",
+            "final": 0.639,
+            "sem": 0.4,
+            "lex": 0.742,
+            "kw": 0.5,
+            "act": 1.0,
+            "dist": 0.4,
+            "exist": 0.676,
+            "penalty": 0.0
+          },
+          {
+            "id": "cv.projects.most_recent",
+            "final": 0.376,
+            "sem": 0.394,
+            "lex": 0.5,
+            "kw": 0.0,
+            "act": 0.7,
+            "dist": 0.4,
+            "exist": 0.0,
+            "penalty": 0.0
+          },
+          {
+            "id": "intro.short_version",
+            "final": 0.37,
+            "sem": 0.391,
+            "lex": 0.587,
+            "kw": 0.0,
+            "act": 0.5,
+            "dist": 0.4,
+            "exist": 0.0,
+            "penalty": 0.0
+          },
+          {
+            "id": "cv.nlp_experience",
+            "final": 0.357,
+            "sem": 0.377,
+            "lex": 0.439,
+            "kw": 0.0,
+            "act": 0.7,
+            "dist": 0.4,
+            "exist": 0.0,
+            "penalty": 0.0
+          },
+          {
+            "id": "gen.why_ai_field",
+            "final": 0.356,
+            "sem": 0.401,
+            "lex": 0.4,
+            "kw": 0.0,
+            "act": 0.7,
+            "dist": 0.4,
+            "exist": 0.0,
+            "penalty": 0.0
+          }
+        ],
+        "abstain_reason": null,
+        "latency_ms": 271.6,
+        "rerank_ms": 0.0,
+        "embedding_ms": 38.7,
+        "search_ms": 38.8
+      },
+      "segment_count": 1,
+      "truncated_by_max": false,
+      "merged_transcript": false,
+      "question_type_label": null,
+      "expected_intent_ids": [],
+      "accent_label": "indian",
+      "holdout_gold_hit": null,
+      "match_mode": "strong",
+      "gold_id_mismatch": false,
+      "gold_part_coverage": 1.0,
+      "detected_parts_count": 2,
+      "answered_parts_count": 2,
+      "missed_parts": [],
+      "duplicate_parts": [],
+      "compound_failure_code": "OK",
+      "final_coverage": 1.0,
+      "post_speech_trace": {
+        "whisper_call_count": 1,
+        "whisper_pass1_ms": 1127.4,
+        "whisper_pass2_ms": 0.0,
+        "whisper_pass3_ms": null,
+        "whisper_pass_1_ms": 1127.4,
+        "whisper_pass_2_ms": 0.0,
+        "whisper_pass_3_ms": null,
+        "number_of_stt_passes": 1,
+        "second_pass_trigger_reason": null,
+        "need_second": false,
+        "first_pass_text": "Could you walk me through your background, and what brought you into a work?",
+        "first_pass_intent": "intro.tell_me_about_yourself",
+        "first_pass_confidence": 0.6763,
+        "strong_agrees": false,
+        "final_text": "Could you walk me through your background, and what brought you into a work?",
+        "total_whisper_ms": 1128.5,
+        "match_ms": 79.4,
+        "base_match_ms": 64.6,
+        "realistic_ms": 14.8,
+        "recovery_ms": 14.9,
+        "outer_semantic_ms": 271.6,
+        "semantic_ms": 271.6,
+        "compound_ms": 254.5,
+        "intent_ms": 605.6,
+        "total_post_ms": 1734.1,
+        "TOTAL_POST_MS": 1734.1,
+        "traced_stages_ms": 1734.1,
+        "unattributed_ms": 0.0,
+        "attribution_note": "post = whisper + match_ms + outer_semantic + compound_ms + answer; compound_ms includes detect/decomp/subq_match/merge; do not sum medians across stages",
+        "simple_stt_budget": true,
+        "max_stt_passes_simple": 2,
+        "max_stt_passes_compound": 2,
+        "max_stt_passes": 2,
+        "stt_device": "cuda",
+        "stt_model": "distil-large-v3",
+        "stt_compute_type": "int8_float16",
+        "decode_passes": [
+          {
+            "pass": "first",
+            "accurate": false,
+            "beam": 3,
+            "best_of": 1,
+            "audio_sec": 7.312,
+            "whisper_ms": 1127.4,
+            "rtf": 0.154,
+            "device": "cuda",
+            "model": "distil-large-v3",
+            "compute_type": "int8_float16"
+          }
+        ],
+        "technical_repair_ms": 0.0,
+        "routing_ms": 0.0,
+        "semantic_embedding_ms": 38.7,
+        "semantic_search_ms": 38.8,
+        "reranker_ms": 0.0,
+        "semantic_recovery_used": true,
+        "fast_path": false,
+        "labeled_compound_fast_path": false,
+        "compound_detect_ms": 0.3,
+        "decomposition_ms": 1.7,
+        "subquestion_match_ms": 201.3,
+        "lexical_match_ms": 94.6,
+        "batch_embed_ms": 45.3,
+        "semantic_parts_ms": 61.3,
+        "harvest_ms": 0.0,
+        "merge_ms": 0.1,
+        "answer_ms": 0.0,
+        "answer_lookup_ms": 0.0,
+        "edge_report_only": {
+          "first_word_missing": false,
+          "last_word_missing": false
+        },
+        "alias_matrix_ready": true,
+        "system_warm": true
+      }
+    },
+    {
+      "sample_id": "V5A_002",
+      "file": "audio/jordanian/002_I01_indirect_fast_medium_room.wav",
+      "question_id": "I01",
+      "speaker": "jordanian",
+      "condition": "fast|medium|room|indirect",
+      "expected_question": "Give me a quick picture of your experience and how it connects to this AI role.",
+      "transcript": "Give me a quick picture of your experience and how it connects to this AI roll.",
+      "stt_ok": true,
+      "stt_score": 0.987,
+      "intent_ok": true,
+      "intent_score": 0.65,
+      "match_id": "cv.llm_experience",
+      "match_question": "What is your experience with LLMs?",
+      "match_score": 0.456,
+      "answer_en": null,
+      "answer_ok": false,
+      "recovered_after_stt_error": false,
+      "result": "PASS",
+      "failure_stage": null,
+      "failure_detail": "Intent ok but no bank answer.",
+      "high_confidence_wrong": false,
+      "timings": {
+        "audio_detected_ms": 551.7,
+        "speech_final_ms": 5731.8,
+        "stt_ms": 1159.1,
+        "intent_ms": 1225.9,
+        "answer_ms": 1.5,
+        "total_ms": 8122.0,
+        "vad_ms": 5180.2,
+        "post_speech_ms": 2386.5,
+        "whisper_ms": 1159.1,
+        "match_ms": 173.9,
+        "semantic_ms": 134.1,
+        "compound_ms": 917.9,
+        "compound_detect_ms": 0.2,
+        "decomposition_ms": 0.3,
+        "matching_ms": 917.1,
+        "rerank_ms": 39.7,
+        "merge_ms": 0.1,
+        "whisper_pass_1_ms": 1158.2,
+        "whisper_pass_2_ms": 0.0,
+        "number_of_stt_passes": 1,
+        "technical_repair_ms": 0.0,
+        "base_match_ms": 173.6,
+        "semantic_embedding_ms": 35.3,
+        "semantic_search_ms": 35.4,
+        "semantic_recovery_used": true
+      },
+      "notes": "e2e_loopback; realistic_recovery:ambiguous_abstain:margin=0.007; semantic_recovery:abstain_low_confidence:agree=0.650; compound:cov=0.5:parts=1/2",
+      "first_word_missing": false,
+      "last_word_missing": true,
+      "speech_duration_ms": 5760.0,
+      "pre_roll_used": true,
+      "raw_transcript": null,
+      "processed_transcript": "Give me a quick picture of your experience and how it connects to this AI roll.",
+      "better_audio_source": "processed",
+      "onset": {
+        "pre_roll_ms": 600,
+        "post_roll_ms": 250,
+        "pre_roll_samples_used": 8704,
+        "capture_start_t": 76924.6716663,
+        "vad_speech_start_ms": 551.6,
+        "actual_buffer_start_ms": 7.6,
+        "first_non_silent_offset_ms": 480.0,
+        "stt_start_ms": 5732.4,
+        "capture_to_vad_ms": 551.6,
+        "vad_to_buffer_lead_ms": 544.0
+      },
+      "audio_levels": {
+        "rms_before": 0.04221,
+        "rms_after": 0.04082,
+        "noise_floor": 1e-05,
+        "speech_rms_est": 0.07667,
+        "snr_db_est": 80.18,
+        "spectral_centroid_hz": 799.7,
+        "high_freq_energy_ratio": 0.0066,
+        "bandwidth_hz_est": 1328.0
+      },
+      "fail_bucket": null,
+      "failure_position": "none",
+      "question_type": "compound",
+      "compound_detected": true,
+      "compound_confidence": 0.82,
+      "requested_parts_count": 2,
+      "matched_parts_count": 1,
+      "unsupported_parts_count": 1,
+      "intent_coverage_rate": 0.5,
+      "full_compound_success": false,
+      "partial_compound_success": true,
+      "answer_order_correct": true,
+      "compound_sub_questions": [
+        "Give me a quick picture of your experience",
+        "How it connects to this AI roll?"
+      ],
+      "compound_selected_intents": [
+        "intro.short_version"
+      ],
+      "compound_trace": {
+        "question_type": "compound",
+        "compound_confidence": 0.82,
+        "request_count_estimate": 2,
+        "used_compound_path": true,
+        "sub_questions": [
+          "Give me a quick picture of your experience",
+          "How it connects to this AI roll?"
+        ],
+        "candidate_intents": [
+          {
+            "sub_question": "Give me a quick picture of your experience",
+            "intent_id": "intro.short_version",
+            "score": 0.736,
+            "mode": "strong",
+            "runner_up": "tech.on_prem_llm_experience",
+            "margin": 0.352,
+            "accepted": true,
+            "drop_reason": null,
+            "fast_lexical": true,
+            "semantic_triggered": false
+          },
+          {
+            "sub_question": "How it connects to this AI roll?",
+            "intent_id": "gen.why_ai_field",
+            "score": 0.448,
+            "mode": "weak",
+            "runner_up": "cv.transition_pm_to_ai",
+            "margin": 0.042,
+            "accepted": false,
+            "drop_reason": "low_score",
+            "fast_lexical": false,
+            "semantic_triggered": true
+          }
+        ],
+        "selected_intents": [
+          "intro.short_version"
+        ],
+        "dropped_intents": [
+          {
+            "sub_question": "How it connects to this AI roll?",
+            "intent_id": "gen.why_ai_field",
+            "reason": "low_score",
+            "score": 0.448
+          }
+        ],
+        "duplicate_intents": [],
+        "unknown_parts": [
+          "How it connects to this AI roll?"
+        ],
+        "answer_sources": [
+          "intro.short_version"
+        ],
+        "final_answer": "Short version: AI engineer, fifteen-plus years.",
+        "partial_compound_match": true,
+        "full_compound_success": false,
+        "intent_coverage_rate": 0.5,
+        "matched_parts_count": 1,
+        "requested_parts_count": 2,
+        "unsupported_parts_count": 1,
+        "detected_parts_count": 2,
+        "answered_parts_count": 1,
+        "missed_parts": [
+          "How it connects to this AI roll?"
+        ],
+        "duplicate_parts": [],
+        "final_coverage": 0.5,
+        "failure_code": "ANSWER_TOO_SHORT",
+        "detection_signals": [
+          "connector_second_request",
+          "imperative_second_request"
+        ],
+        "decomposition_notes": [
+          "clause_primary"
+        ],
+        "timings": {
+          "decomposition_ms": 0.3,
+          "matching_ms": 917.1,
+          "lexical_match_ms": 267.7,
+          "batch_embed_ms": 40.3,
+          "semantic_parts_ms": 88.3,
+          "harvest_ms": 1.3,
+          "variant_d_ms": 519.5,
+          "answer_merge_ms": 0.1
+        },
+        "total_latency_ms": 917.6
+      },
+      "semantic_recovery": {
+        "triggered": true,
+        "reason": "abstain_low_confidence",
+        "agreement": 0.65,
+        "margin": 0.0011489202577790736,
+        "reranker_used": true,
+        "semantic_top5": [
+          {
+            "id": "gen.why_ai_field",
+            "score": 0.335
+          },
+          {
+            "id": "gen.ai_ethics",
+            "score": 0.325
+          },
+          {
+            "id": "hard.project_architecture_e2e",
+            "score": 0.322
+          },
+          {
+            "id": "moe.ai_solutions",
+            "score": 0.318
+          },
+          {
+            "id": "tech.deploy_on_prem",
+            "score": 0.316
+          }
+        ],
+        "hybrid_top5": [
+          {
+            "id": "gen.why_ai_field",
+            "final": 0.413,
+            "sem": 0.335,
+            "lex": 0.5,
+            "kw": 0.0,
+            "act": 0.5,
+            "dist": 0.4,
+            "exist": 0.449,
+            "penalty": 0.0
+          },
+          {
+            "id": "moe.ai_solutions",
+            "final": 0.384,
+            "sem": 0.318,
+            "lex": 0.447,
+            "kw": 0.0,
+            "act": 0.5,
+            "dist": 0.4,
+            "exist": 0.387,
+            "penalty": 0.0
+          },
+          {
+            "id": "intro.short_version",
+            "final": 0.324,
+            "sem": 0.0,
+            "lex": 0.667,
+            "kw": 0.0,
+            "act": 0.5,
+            "dist": 0.4,
+            "exist": 0.387,
+            "penalty": 0.0
+          },
+          {
+            "id": "gen.ai_ethics",
+            "final": 0.32,
+            "sem": 0.325,
+            "lex": 0.46,
+            "kw": 0.0,
+            "act": 0.5,
+            "dist": 0.4,
+            "exist": 0.0,
+            "penalty": 0.0
+          },
+          {
+            "id": "cv.llm_experience",
+            "final": 0.316,
+            "sem": 0.0,
+            "lex": 0.571,
+            "kw": 0.0,
+            "act": 0.5,
+            "dist": 0.4,
+            "exist": 0.456,
+            "penalty": 0.0
+          }
+        ],
+        "abstain_reason": "score=0.402 agree=0.650",
+        "latency_ms": 133.9,
+        "rerank_ms": 39.7,
+        "embedding_ms": 35.3,
+        "search_ms": 35.4
+      },
+      "segment_count": 1,
+      "truncated_by_max": false,
+      "merged_transcript": false,
+      "question_type_label": null,
+      "expected_intent_ids": [],
+      "accent_label": "jordanian",
+      "holdout_gold_hit": null,
+      "match_mode": "weak",
+      "gold_id_mismatch": false,
+      "gold_part_coverage": 0.5,
+      "detected_parts_count": 2,
+      "answered_parts_count": 1,
+      "missed_parts": [
+        "How it connects to this AI roll?"
+      ],
+      "duplicate_parts": [],
+      "compound_failure_code": "ANSWER_TOO_SHORT",
+      "final_coverage": 0.5,
+      "post_speech_trace": {
+        "whisper_call_count": 1,
+        "whisper_pass1_ms": 1158.2,
+        "whisper_pass2_ms": 0.0,
+        "whisper_pass3_ms": null,
+        "whisper_pass_1_ms": 1158.2,
+        "whisper_pass_2_ms": 0.0,
+        "whisper_pass_3_ms": null,
+        "number_of_stt_passes": 1,
+        "second_pass_trigger_reason": null,
+        "need_second": false,
+        "first_pass_text": "Give me a quick picture of your experience and how it connects to this AI roll.",
+        "first_pass_intent": null,
+        "first_pass_confidence": 0.0,
+        "strong_agrees": false,
+        "final_text": "Give me a quick picture of your experience and how it connects to this AI roll.",
+        "total_whisper_ms": 1159.1,
+        "match_ms": 173.9,
+        "base_match_ms": 173.6,
+        "realistic_ms": 0.3,
+        "recovery_ms": 0.3,
+        "outer_semantic_ms": 134.1,
+        "semantic_ms": 134.1,
+        "compound_ms": 917.9,
+        "intent_ms": 1225.9,
+        "total_post_ms": 2386.5,
+        "TOTAL_POST_MS": 2386.5,
+        "traced_stages_ms": 2386.5,
+        "unattributed_ms": 0.0,
+        "attribution_note": "post = whisper + match_ms + outer_semantic + compound_ms + answer; compound_ms includes detect/decomp/subq_match/merge; do not sum medians across stages",
+        "simple_stt_budget": true,
+        "max_stt_passes_simple": 2,
+        "max_stt_passes_compound": 2,
+        "max_stt_passes": 2,
+        "stt_device": "cuda",
+        "stt_model": "distil-large-v3",
+        "stt_compute_type": "int8_float16",
+        "decode_passes": [
+          {
+            "pass": "first",
+            "accurate": false,
+            "beam": 3,
+            "best_of": 1,
+            "audio_sec": 6.16,
+            "whisper_ms": 1158.2,
+            "rtf": 0.188,
+            "device": "cuda",
+            "model": "distil-large-v3",
+            "compute_type": "int8_float16"
+          }
+        ],
+        "technical_repair_ms": 0.0,
+        "routing_ms": 0.0,
+        "semantic_embedding_ms": 35.3,
+        "semantic_search_ms": 35.4,
+        "reranker_ms": 39.7,
+        "semantic_recovery_used": true,
+        "fast_path": false,
+        "labeled_compound_fast_path": false,
+        "compound_detect_ms": 0.2,
+        "decomposition_ms": 0.3,
+        "subquestion_match_ms": 917.1,
+        "lexical_match_ms": 267.7,
+        "batch_embed_ms": 40.3,
+        "semantic_parts_ms": 88.3,
+        "harvest_ms": 1.3,
+        "merge_ms": 0.1,
+        "answer_ms": 1.5,
+        "answer_lookup_ms": 1.5,
+        "edge_report_only": {
+          "first_word_missing": false,
+          "last_word_missing": true
+        },
+        "alias_matrix_ready": true,
+        "system_warm": true
+      }
+    }
+  ]
+}

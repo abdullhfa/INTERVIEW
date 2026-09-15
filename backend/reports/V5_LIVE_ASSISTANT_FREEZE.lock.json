@@ -1,0 +1,67 @@
+{
+  "locked_at": "2026-09-15T08:19:35.598650+00:00",
+  "freeze_id": "V5_LIVE_INTERVIEW_ASSISTANT_2026_09_15",
+  "status": "FROZEN",
+  "snapshot_folder": "interview11_FROZEN_V5_20260915",
+  "fingerprint": {
+    "app/services/question_bank.py": "372860bf94edc58346ca7979cbdcb2fdd1a8a5c817f1436ac8eb23bdbce88161",
+    "app/services/main_request_extraction.py": "26f71d7b2884f88c31f0f97e91d63cf63e2317e3586b52304a697720927090d3",
+    "app/services/short_tech_recovery.py": "84bedd6e21ebba64c5b104c4f45c15277026502debbb22d3fd53194a66f4622f",
+    "app/services/technical_term_repair.py": "0f987c943c01e50a1f046e3b39c9579fd9db47a139bd9ad0195f9925de3b7e78",
+    "app/services/compound_question_pipeline.py": "04aa1cccdeb1b2e01737a16534827f680c12fc00dffe90ac318c6ddfedac31b7",
+    "app/services/semantic_intent_recovery.py": "0b2c89a9cd834dbadeda86e6af63585e83567efaed50c0456a05998fcb89326e",
+    "app/services/answer_generator.py": "254b4cec5446059e24c2289127bc7a92e6e089f1e583b19f7192b49472b2d9f6",
+    "app/services/live_audio.py": "e67f5ab61ee426b06338e9c36217353ceaa8f4f5fcacd859be8b23830a76b138",
+    "app/services/interview_e2e_loopback.py": "caf6027392bc994b89f6883203da2457061b7bdec9f4c5617e35a86c22f3230e",
+    "app/services/domain_terms.py": "7d06d4920fe9fdc9e05f599eaa2846430276d2ed356813082bd5036318ade317",
+    "app/audio/whisper_stt.py": "7bad90283caf2d49da8873f6f7c27e628d10dd1ec3a4ea43c58667cc9b0dfdfc",
+    "app/config.py": "2015baaf2facdd762a324f5a085636f1d40d74208d011fe06e15405ce539fb86",
+    "app/services/warm_start.py": "fddae66d9419ff4cd4b4a10b4ebb59a380333db21d6f1d927b37de84215d10c2",
+    "app/services/question_classifier.py": "db1ca00631d8e9678e3f752f565531d75fbebd14e66e83a75e7a18907072eb87",
+    "app/data/question_bank/cv_abdullah.json": "ecd113f2781d27637957477d27de77fbe1a19ff917eda63a63a3bec878ca3772",
+    "app/data/question_bank/general_personal.json": "4280665dc2527c0fbc121565f4888777f2d79bef7fc46275ff6ec30911ae817c",
+    "app/data/question_bank/technical_ai_senior.json": "68214f151b0edc0a4bb5e6babbf9ada013c14cc247cf6a39d666dc4d5d313896",
+    "app/data/question_bank/hard_scenarios.json": "8ca9d116fd86cc772f3ec1c18c60751fa1e7f5a8ebf557698d3c6fadeb8cf909",
+    "app/services/compound_answer_builder.py": "de58a7020f694e66a291541325e3516ff868defdb2d2fc0e2b9df3b2af8e1697",
+    "app/services/compound_question_decomposer.py": "13f713d6739fdf386cb2a59586f363bebe5b3530775a47ebb504c29219209a0d",
+    "app/services/compound_question_detector.py": "23ff834cdd2fff757aa47fbba55c908c707a8f32f56e3122122f93e5ccdd1ddd",
+    "app/services/realistic_recovery.py": "ed703664eaf3fa160491458036e8e8219e90604d6f66028ed331f793725d94cf",
+    "app/services/intent_profile.py": "38909fa46a2bf000b049fe55e4ad5470bbb1dce90759281f694408a46ed3b5e1",
+    "app/services/semantic_intent_index.py": "6956c360085f9c68f36aaf39e04d86cce1ce82838ca84ea1642a6674c81cb454",
+    "frontend/src/App.tsx": "74d36a06ef9b5463d622f0c4838e50af37ca518d44c1281a0af6381f7cff10db",
+    "frontend/src/main.tsx": "de262ef1344b5df16d35b71229353ad7b4832e435e501477a64e1b2402af8d43",
+    "frontend/src/api/client.ts": "6f16d85ed220d17e8dd3ae67058f3f6e0b304fdccd76ce03fbc8e2fc09d4a85f",
+    "frontend/src/api/websocket.ts": "48f5ea14df055fee0ce15f320fbb5a38b06fa2c90ea25deca6bfa0da07656909",
+    "frontend/src/types/index.ts": "a78c272e6b0a812d2c981e70c08b9c8f74e9952260ac31da255c39484bb82c35",
+    "frontend/src/components/Interview/AudioConfigModal.tsx": "06aed57f0596de62f3326345dfca398ed90bd194c6d30c80dfbfb045bcb4a57f",
+    "frontend/package.json": "cbfab1ccd7bbc3c6c87071e1c4b1b34d8a2bce226eea7e1e21ea421b7eb8c4bd",
+    "frontend/vite.config.ts": "1db1f32f61180804a251f11e9abe3b91fbd688fe3e42da5e3adb67d3bb223e45"
+  },
+  "metrics_snapshot": {
+    "verdict": "PASS_150_VOICE_STRESS_E2E",
+    "n": 150,
+    "pass_rate": 0.9,
+    "intent_rate": 0.9,
+    "stt_rate": 0.9533,
+    "hc_wrong": 0,
+    "audio_fail": 0,
+    "median_post_speech_ms": 1420.8,
+    "by_accent": {
+      "emirati": 0.82,
+      "indian": 0.92,
+      "jordanian": 0.96
+    },
+    "by_style": {
+      "compound": 0.9667,
+      "direct": 0.9444,
+      "indirect": 0.8,
+      "long": 1.0,
+      "short": 0.9444
+    },
+    "report": "reports/V5_150_VOICE_STRESS_E2E_VERDICT.json"
+  },
+  "accepted_improvements": {
+    "MAIN_REQUEST_EXTRACTION": "MAIN_REQUEST_EXTRACTION_PASS",
+    "SHORT_TECH_RECOVERY": "SHORT_TECH_RECOVERY_PASS"
+  }
+}

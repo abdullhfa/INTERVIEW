@@ -1,0 +1,28 @@
+---
+description: V5 live interview assistant is FROZEN — bug fixes only
+alwaysApply: true
+---
+
+# V5 Live Interview Assistant — FROZEN (2026-09-15)
+
+The live interview assistant is **closed**. Do not reopen for score chasing.
+
+Canonical freeze: `backend/reports/V5_LIVE_ASSISTANT_FREEZE.json`  
+Lock fingerprints: `backend/reports/V5_LIVE_ASSISTANT_FREEZE.lock.json`  
+Restorable snapshot: `interview11_FROZEN_V5_20260915` (sibling of `interview11`)
+
+## Allowed
+- True bug fixes (crashes, incorrect wiring, broken imports, regressions that violate HC=0)
+- Observability / logging that does not change match decisions
+- Operational deploy docs
+
+## Forbidden without explicit user approval
+- Threshold / weight / margin / accept-gate / HC-threshold tuning
+- New aliases or pack-transcript hard-coding in recovery
+- Whisper / EQ / VAD changes for metric chasing
+- B8 / B9 / new ranking, compound, or routing research
+- Editing frozen question banks to chase scores
+
+## Frozen baselines (do not regress)
+- V5 150 Voice Stress E2E: pass **0.90**, intent **0.90**, HC wrong **0**
+- SHORT_TECH_RECOVERY_PASS · MAIN_REQUEST_EXTRACTION_PASS

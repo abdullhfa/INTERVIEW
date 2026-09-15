@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Interview Audio Test Report</title>
+  <style>
+    body { font-family: Segoe UI, Tahoma, sans-serif; margin: 24px; background:#0f1419; color:#e8eef5; }
+    h1,h2 { margin-bottom: 8px; }
+    .meta { color:#8b9aab; }
+    .cards { display:grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin:16px 0; }
+    .card { background:#1a222d; border:1px solid #2a3544; border-radius:12px; padding:12px; }
+    .card b { font-size:1.3rem; display:block; }
+    table { width:100%; border-collapse: collapse; background:#1a222d; }
+    th, td { border-bottom:1px solid #2a3544; padding:8px; text-align:left; font-size:0.9rem; }
+    tr.pass td { background: rgba(61,214,140,0.06); }
+    tr.fail td { background: rgba(240,113,120,0.08); }
+    .fail-card { background:#2a181c; border:1px solid #5c2a32; border-radius:12px; padding:12px; margin:10px 0; }
+    code { background:#0b1016; padding:2px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <h1>Interview Audio Test Report</h1>
+  <p class="meta">Mode: <code>direct_audio_injection</code> · Generated: 2026-09-11T19:28:29.240315+00:00</p>
+  <p class="meta">Filters: {&quot;question_id&quot;: null, &quot;speaker&quot;: null, &quot;condition&quot;: null, &quot;limit&quot;: 180, &quot;mode&quot;: &quot;direct_audio_injection&quot;}</p>
+
+  <div class="cards">
+    <div class="card"><span>Total</span><b>180</b></div>
+    <div class="card"><span>PASS</span><b>151</b></div>
+    <div class="card"><span>FAIL</span><b>29</b></div>
+    <div class="card"><span>STT success</span><b>141/180</b></div>
+    <div class="card"><span>Intent success</span><b>151/180</b></div>
+    <div class="card"><span>Answer success</span><b>151/180</b></div>
+    <div class="card"><span>Intent recovery</span><b>0.282</b></div>
+    <div class="card"><span>Recovered after STT</span><b>11</b></div>
+    <div class="card"><span>Avg latency</span><b>1.06s</b></div>
+  </div>
+
+  <p><b>Main weakness:</b> combined + indian (pass 5/10)</p>
+  <p><b>Failure stages:</b> {&quot;STT&quot;: 28, &quot;QUESTION_UNDERSTANDING&quot;: 1}</p>
+
+  <h2>Results (best → worst)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Audio</th><th>STT</th><th>Intent</th><th>Answer</th>
+        <th>Accuracy</th><th>Latency</th><th>Result</th><th>Recovered</th><th>Failure Stage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class='pass'><td>Q212 jordanian clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.86s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q212 jordanian poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.91s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q212 jordanian fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.91s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q212 jordanian far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.91s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q156 jordanian fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.92s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q212 indian poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.92s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q212 jordanian office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.92s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q212 indian far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.92s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q156 jordanian clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.93s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q212 kuwaiti clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.93s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q212 indian clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.93s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q156 indian poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.93s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q156 jordanian far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.93s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q212 kuwaiti poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.93s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q156 jordanian poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.94s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q212 indian fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.94s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q156 indian office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.94s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q212 kuwaiti fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.95s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q156 indian far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.95s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q156 jordanian office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.95s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q156 jordanian combined</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.95s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q212 indian office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.97s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q239 indian far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.98s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q239 jordanian fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.98s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q212 kuwaiti office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.99s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q239 indian clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.99s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q173 indian office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.99s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q243 jordanian clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>0.99s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q239 indian poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>1.0s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q239 jordanian far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>1.0s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q239 jordanian poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>1.0s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q275 indian fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>1.0s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q173 indian fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>1.0s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q239 indian office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>1.0s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q239 jordanian office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>1.0s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q275 indian clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>1.01s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q275 indian office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>1.01s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q239 jordanian clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>1.02s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q173 indian far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>1.02s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q173 indian clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>1.03s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q173 indian poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>1.03s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q243 jordanian fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>1.03s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q239 indian fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>1.04s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q160 jordanian clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>1.04s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q275 indian far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>1.04s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q156 indian fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>1.07s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q275 indian poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>1.08s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q156 indian clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>100.0%</td><td>13.32s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q160 indian fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>99.8%</td><td>1.09s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q160 indian clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>99.8%</td><td>1.1s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q239 kuwaiti fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>99.6%</td><td>1.0s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q239 kuwaiti clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>99.6%</td><td>1.01s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q160 indian poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>99.5%</td><td>1.12s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q275 jordanian office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>99.2%</td><td>0.94s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q275 kuwaiti fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>99.2%</td><td>0.94s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q275 jordanian clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>99.2%</td><td>0.94s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q275 jordanian fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>99.2%</td><td>0.95s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q275 jordanian far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>99.2%</td><td>0.95s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q275 jordanian poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>99.2%</td><td>0.99s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q275 kuwaiti far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>99.2%</td><td>1.0s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q160 indian office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>98.8%</td><td>1.1s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q160 jordanian office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>98.7%</td><td>1.09s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q243 indian office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>98.5%</td><td>1.02s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q243 kuwaiti far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>98.3%</td><td>0.99s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q160 indian far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>98.2%</td><td>1.14s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q239 jordanian combined</td><td>Correct</td><td>Correct</td><td>Correct</td><td>98.0%</td><td>1.01s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q243 jordanian far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>98.0%</td><td>1.03s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q174 jordanian poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>98.0%</td><td>1.04s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q174 kuwaiti fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>97.7%</td><td>0.96s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q178 indian fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>97.2%</td><td>1.0s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q178 kuwaiti combined</td><td>Correct</td><td>Correct</td><td>Correct</td><td>97.2%</td><td>1.01s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q160 jordanian far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>97.2%</td><td>1.09s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q175 kuwaiti clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>97.1%</td><td>0.96s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q175 kuwaiti fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>97.1%</td><td>0.96s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q175 kuwaiti office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>97.1%</td><td>1.0s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q178 kuwaiti office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>97.0%</td><td>1.02s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q178 kuwaiti clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>97.0%</td><td>1.02s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q160 indian combined</td><td>Correct</td><td>Correct</td><td>Correct</td><td>96.9%</td><td>1.07s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q239 kuwaiti office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>96.8%</td><td>1.0s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q160 jordanian fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>96.6%</td><td>1.02s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q178 indian far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>96.6%</td><td>1.03s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q243 kuwaiti office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>96.3%</td><td>1.0s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q243 kuwaiti fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>96.3%</td><td>1.01s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q160 jordanian poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>96.3%</td><td>1.05s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q243 jordanian poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>96.2%</td><td>1.0s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q243 kuwaiti poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>96.1%</td><td>0.99s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q239 kuwaiti far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>96.1%</td><td>1.03s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q178 indian clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>95.9%</td><td>0.87s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q243 kuwaiti clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>95.8%</td><td>1.0s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q239 indian combined</td><td>Correct</td><td>Correct</td><td>Correct</td><td>95.6%</td><td>0.97s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q173 kuwaiti clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>95.5%</td><td>0.99s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q173 kuwaiti fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>95.5%</td><td>1.04s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q173 kuwaiti office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>95.5%</td><td>1.04s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q175 kuwaiti poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>95.4%</td><td>1.03s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q160 kuwaiti fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>95.3%</td><td>1.04s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q178 indian office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>95.2%</td><td>1.01s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q178 kuwaiti fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>94.7%</td><td>1.02s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q178 jordanian clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>94.5%</td><td>0.99s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q178 jordanian office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>94.5%</td><td>1.01s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q156 kuwaiti fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>94.4%</td><td>0.95s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q156 kuwaiti clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>94.4%</td><td>0.96s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q275 kuwaiti clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>94.4%</td><td>0.96s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q156 kuwaiti far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>94.4%</td><td>0.97s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q156 kuwaiti poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>94.4%</td><td>0.97s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q156 kuwaiti office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>94.4%</td><td>0.98s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q156 kuwaiti combined</td><td>Correct</td><td>Correct</td><td>Correct</td><td>94.4%</td><td>1.01s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q178 kuwaiti far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>94.3%</td><td>1.0s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q178 indian poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>94.3%</td><td>1.04s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q243 jordanian office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>94.2%</td><td>1.01s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q275 indian combined</td><td>Correct</td><td>Correct</td><td>Correct</td><td>94.2%</td><td>1.06s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q275 kuwaiti combined</td><td>Correct</td><td>Correct</td><td>Correct</td><td>94.0%</td><td>0.95s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q275 kuwaiti poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>94.0%</td><td>0.96s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q275 kuwaiti office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>94.0%</td><td>0.97s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q178 jordanian poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>93.6%</td><td>0.95s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q178 indian combined</td><td>Correct</td><td>Correct</td><td>Correct</td><td>93.3%</td><td>1.01s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q243 jordanian combined</td><td>Weak (0.717)</td><td>Correct</td><td>Correct</td><td>92.9%</td><td>1.0s</td><td><strong>PASS</strong></td><td>YES</td><td>—</td></tr><tr class='pass'><td>Q243 indian clean</td><td>Weak (0.712)</td><td>Correct</td><td>Correct</td><td>92.8%</td><td>1.04s</td><td><strong>PASS</strong></td><td>YES</td><td>—</td></tr><tr class='pass'><td>Q160 jordanian combined</td><td>Weak (0.698)</td><td>Correct</td><td>Correct</td><td>92.5%</td><td>1.02s</td><td><strong>PASS</strong></td><td>YES</td><td>—</td></tr><tr class='pass'><td>Q243 kuwaiti combined</td><td>Weak (0.69)</td><td>Correct</td><td>Correct</td><td>92.2%</td><td>1.02s</td><td><strong>PASS</strong></td><td>YES</td><td>—</td></tr><tr class='pass'><td>Q175 kuwaiti far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>92.0%</td><td>1.13s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q243 indian poor_call</td><td>Weak (0.673)</td><td>Correct</td><td>Correct</td><td>91.8%</td><td>0.98s</td><td><strong>PASS</strong></td><td>YES</td><td>—</td></tr><tr class='pass'><td>Q175 kuwaiti combined</td><td>Correct</td><td>Correct</td><td>Correct</td><td>91.3%</td><td>0.92s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q173 kuwaiti poor_call</td><td>Weak (0.651)</td><td>Correct</td><td>Correct</td><td>91.3%</td><td>0.99s</td><td><strong>PASS</strong></td><td>YES</td><td>—</td></tr><tr class='pass'><td>Q178 jordanian combined</td><td>Weak (0.645)</td><td>Correct</td><td>Correct</td><td>91.1%</td><td>0.98s</td><td><strong>PASS</strong></td><td>YES</td><td>—</td></tr><tr class='pass'><td>Q160 kuwaiti clean</td><td>Weak (0.64)</td><td>Correct</td><td>Correct</td><td>91.0%</td><td>1.04s</td><td><strong>PASS</strong></td><td>YES</td><td>—</td></tr><tr class='pass'><td>Q212 kuwaiti combined</td><td>Weak (0.588)</td><td>Correct</td><td>Correct</td><td>89.7%</td><td>0.95s</td><td><strong>PASS</strong></td><td>YES</td><td>—</td></tr><tr class='pass'><td>Q174 jordanian office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>87.3%</td><td>1.03s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q174 jordanian fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>87.3%</td><td>1.07s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q174 jordanian far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>87.3%</td><td>1.08s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q174 jordanian clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>87.3%</td><td>1.27s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q174 indian far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>86.9%</td><td>1.03s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q174 indian office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>86.9%</td><td>1.04s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q174 indian poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>86.9%</td><td>1.06s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q174 indian combined</td><td>Correct</td><td>Correct</td><td>Correct</td><td>86.9%</td><td>1.06s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q174 indian fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>86.9%</td><td>1.09s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q174 indian clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>86.7%</td><td>1.05s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q174 kuwaiti office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>85.2%</td><td>0.95s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q174 kuwaiti clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>85.2%</td><td>0.99s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q174 kuwaiti far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>85.2%</td><td>1.02s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q174 kuwaiti poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>85.2%</td><td>1.06s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q175 indian far</td><td>Correct</td><td>Correct</td><td>Correct</td><td>84.0%</td><td>0.95s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q175 indian clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>84.0%</td><td>0.95s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q175 indian fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>84.0%</td><td>1.0s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q175 jordanian clean</td><td>Correct</td><td>Correct</td><td>Correct</td><td>84.0%</td><td>1.01s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q175 indian office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>83.2%</td><td>0.99s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q175 indian poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>83.2%</td><td>1.01s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q178 kuwaiti poor_call</td><td>Correct</td><td>Correct</td><td>Correct</td><td>82.1%</td><td>1.03s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q175 jordanian office_noise</td><td>Correct</td><td>Correct</td><td>Correct</td><td>78.9%</td><td>1.01s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q175 jordanian fast</td><td>Correct</td><td>Correct</td><td>Correct</td><td>77.3%</td><td>1.02s</td><td><strong>PASS</strong></td><td>—</td><td>—</td></tr><tr class='pass'><td>Q175 jordanian poor_call</td><td>Weak (0.71)</td><td>Correct</td><td>Correct</td><td>76.7%</td><td>0.99s</td><td><strong>PASS</strong></td><td>YES</td><td>—</td></tr><tr class='pass'><td>Q160 kuwaiti poor_call</td><td>Weak (0.692)</td><td>Correct</td><td>Correct</td><td>75.3%</td><td>1.05s</td><td><strong>PASS</strong></td><td>YES</td><td>—</td></tr><tr class='fail'><td>Q160 kuwaiti far</td><td>Weak (0.692)</td><td>Wrong (0.632)</td><td>Wrong (0.606)</td><td>63.8%</td><td>1.03s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q178 jordanian fast</td><td>Weak (0.516)</td><td>Wrong (0.588)</td><td>Wrong (0.715)</td><td>61.5%</td><td>1.0s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q239 kuwaiti poor_call</td><td>Weak (0.676)</td><td>Wrong (0.6)</td><td>Wrong (0.211)</td><td>48.3%</td><td>0.98s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q243 indian fast</td><td>Correct</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>20.9%</td><td>0.96s</td><td><strong>FAIL</strong></td><td>—</td><td>QUESTION_UNDERSTANDING</td></tr><tr class='fail'><td>Q239 kuwaiti combined</td><td>Weak (0.667)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>16.7%</td><td>0.93s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q173 jordanian office_noise</td><td>Weak (0.667)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>16.7%</td><td>0.95s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q173 jordanian clean</td><td>Weak (0.667)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>16.7%</td><td>0.95s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q174 kuwaiti combined</td><td>Weak (0.652)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>16.3%</td><td>0.99s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q173 kuwaiti far</td><td>Weak (0.65)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>16.2%</td><td>0.93s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q243 indian far</td><td>Weak (0.635)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>15.9%</td><td>0.99s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q173 jordanian far</td><td>Weak (0.629)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>15.7%</td><td>0.95s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q174 jordanian combined</td><td>Weak (0.62)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>15.5%</td><td>0.96s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q175 indian combined</td><td>Weak (0.59)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>14.8%</td><td>0.94s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q178 jordanian far</td><td>Weak (0.567)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>14.2%</td><td>0.97s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q160 kuwaiti office_noise</td><td>Weak (0.556)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>13.9%</td><td>0.92s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q212 indian combined</td><td>Weak (0.514)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>12.9%</td><td>0.87s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q173 jordanian poor_call</td><td>Weak (0.514)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>12.9%</td><td>0.96s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q175 jordanian combined</td><td>Weak (0.508)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>12.7%</td><td>0.95s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q156 indian combined</td><td>Weak (0.5)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>12.5%</td><td>0.9s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q275 jordanian combined</td><td>Weak (0.5)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>12.5%</td><td>0.95s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q243 indian combined</td><td>Weak (0.465)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>11.6%</td><td>0.98s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q173 kuwaiti combined</td><td>Weak (0.462)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>11.5%</td><td>0.94s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q175 jordanian far</td><td>Weak (0.456)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>11.4%</td><td>0.94s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q212 kuwaiti far</td><td>Weak (0.45)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>11.2%</td><td>0.99s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q160 kuwaiti combined</td><td>Weak (0.432)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>10.8%</td><td>0.92s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q212 jordanian combined</td><td>Weak (0.429)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>10.7%</td><td>0.9s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q173 jordanian fast</td><td>Weak (0.425)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>10.6%</td><td>0.93s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q173 jordanian combined</td><td>Weak (0.4)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>10.0%</td><td>0.91s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr><tr class='fail'><td>Q173 indian combined</td><td>Weak (0.372)</td><td>Wrong (0.0)</td><td>Wrong (0.0)</td><td>9.3%</td><td>0.93s</td><td><strong>FAIL</strong></td><td>—</td><td>STT</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Failed cases</h2>
+  
+            <div class="fail-card">
+              <h3>FAIL · audio/Q160_kuwaiti_synthetic_far.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> Our regulations change every year. Should we fine-tune the model or use RAG?</p>
+              <p><b>Captured STT:</b> fine-tune tubing.</p>
+              <p><b>Matched:</b> What is fine-tuning? (tech.fine_tuning_what)</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q178_jordanian_synthetic_fast.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What is the difference between LangChain and LangGraph?</p>
+              <p><b>Captured STT:</b> while and not LangGraph and not Lengen.</p>
+              <p><b>Matched:</b> Have you used LangGraph? (cv.langgraph)</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q239_kuwaiti_synthetic_poor_call.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> How do you prevent an agent from looping forever?</p>
+              <p><b>Captured STT:</b> How do you stop into a school group?</p>
+              <p><b>Matched:</b> How do you stop school A from retrieving school B&#x27;s assignments? (hard.tenant_isolation)</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q243_indian_synthetic_fast.wav</h3>
+              <p><b>Failure Stage:</b> QUESTION_UNDERSTANDING</p>
+              <p>Transcript was usable, but the matcher chose the wrong question/intent.</p>
+              <p><b>Expected:</b> How would you debug a bad RAG answer step by step?</p>
+              <p><b>Captured STT:</b> How would you be bug a man or regi answer step by step?</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q239_kuwaiti_synthetic_combined.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> How do you prevent an agent from looping forever?</p>
+              <p><b>Captured STT:</b> How do you stop in the data to do?</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q173_jordanian_synthetic_office_noise.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What is agentic AI?</p>
+              <p><b>Captured STT:</b> What&#x27;s in agency K.I.I.</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q173_jordanian_synthetic_clean.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What is agentic AI?</p>
+              <p><b>Captured STT:</b> What&#x27;s in agency K.I.I.</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q174_kuwaiti_synthetic_combined.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What is the difference between an agent and a workflow?</p>
+              <p><b>Captured STT:</b> and convert his workflow.</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q173_kuwaiti_synthetic_far.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What is agentic AI?</p>
+              <p><b>Captured STT:</b> was in a dying agent.</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q243_indian_synthetic_far.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> How would you debug a bad RAG answer step by step?</p>
+              <p><b>Captured STT:</b> How will you be mutter man are radians a step my step?</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q173_jordanian_synthetic_far.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What is agentic AI?</p>
+              <p><b>Captured STT:</b> What in a NKai?I.</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q174_jordanian_synthetic_combined.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What is the difference between an agent and a workflow?</p>
+              <p><b>Captured STT:</b> was in the difference if we can&#x27;t work though.</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q175_indian_synthetic_combined.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What is an agent orchestrator?</p>
+              <p><b>Captured STT:</b> What in an item sword is later?</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q178_jordanian_synthetic_far.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What is the difference between LangChain and LangGraph?</p>
+              <p><b>Captured STT:</b> Why then breath and not then came?</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q160_kuwaiti_synthetic_office_noise.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> Our regulations change every year. Should we fine-tune the model or use RAG?</p>
+              <p><b>Captured STT:</b> Rattle I&#x27;m tuning.</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q212_indian_synthetic_combined.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What are guardrails?</p>
+              <p><b>Captured STT:</b> What on, right?</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q173_jordanian_synthetic_poor_call.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What is agentic AI?</p>
+              <p><b>Captured STT:</b> What in A&amp;BKI.I.</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q175_jordanian_synthetic_combined.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What is an agent orchestrator?</p>
+              <p><b>Captured STT:</b> was in a native orchid slater.</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q156_indian_synthetic_combined.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What is RAG?</p>
+              <p><b>Captured STT:</b> What been already?</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q275_jordanian_synthetic_combined.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What should the system do when retrieval returns nothing useful?</p>
+              <p><b>Captured STT:</b> and be retrieful.</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q243_indian_synthetic_combined.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> How would you debug a bad RAG answer step by step?</p>
+              <p><b>Captured STT:</b> I will you be the other pet my best.</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q173_kuwaiti_synthetic_combined.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What is agentic AI?</p>
+              <p><b>Captured STT:</b> was in a nationwide.</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q175_jordanian_synthetic_far.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What is an agent orchestrator?</p>
+              <p><b>Captured STT:</b> was an Asian darkest raider.</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q212_kuwaiti_synthetic_far.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What are guardrails?</p>
+              <p><b>Captured STT:</b> What R-R-L-L-L.Rail?</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q160_kuwaiti_synthetic_combined.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> Our regulations change every year. Should we fine-tune the model or use RAG?</p>
+              <p><b>Captured STT:</b> Rattle I&#x27;m viewing.</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q212_jordanian_synthetic_combined.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What are guardrails?</p>
+              <p><b>Captured STT:</b> what our daughter made.</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q173_jordanian_synthetic_fast.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What is agentic AI?</p>
+              <p><b>Captured STT:</b> and I was in a young, big ai.</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q173_jordanian_synthetic_combined.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What is agentic AI?</p>
+              <p><b>Captured STT:</b> was in again big guys.</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+            <div class="fail-card">
+              <h3>FAIL · audio/Q173_indian_synthetic_combined.wav</h3>
+              <p><b>Failure Stage:</b> STT</p>
+              <p>Poor transcription changed the question meaning.</p>
+              <p><b>Expected:</b> What is agentic AI?</p>
+              <p><b>Captured STT:</b> One in eight and decade.</p>
+              <p><b>Matched:</b>  ()</p>
+              <p><b>Pipeline:</b> AUDIO → STT → QUESTION UNDERSTANDING → RETRIEVAL → ANSWER GENERATION</p>
+            </div>
+            
+</body>
+</html>

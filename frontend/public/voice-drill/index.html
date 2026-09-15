@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Voice Drill — Interview Audio</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --card: #1a222d;
+      --text: #e8eef5;
+      --muted: #8b9aab;
+      --accent: #3d8bfd;
+      --ok: #3dd68c;
+      --warn: #f5a524;
+      --bad: #f07178;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: radial-gradient(1200px 600px at 20% -10%, #1c2a3d, var(--bg));
+      color: var(--text);
+      min-height: 100vh;
+      padding: 24px;
+    }
+    h1 { margin: 0 0 8px; font-size: 1.35rem; }
+    .sub { color: var(--muted); margin-bottom: 16px; line-height: 1.55; font-size: 0.92rem; }
+    .layout { display: grid; gap: 14px; max-width: 980px; margin: 0 auto; }
+    .card {
+      background: var(--card);
+      border: 1px solid #2a3544;
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .tabs, .filters, .effects, .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    button, select {
+      border: 1px solid #334155;
+      background: #243041;
+      color: var(--text);
+      border-radius: 999px;
+      padding: 8px 14px;
+      cursor: pointer;
+      font-size: 0.88rem;
+    }
+    select { border-radius: 10px; }
+    button.active { background: var(--accent); border-color: var(--accent); }
+    button.play { background: var(--ok); color: #062216; border: none; font-weight: 700; }
+    button.eval { background: var(--accent); border: none; font-weight: 600; }
+    button.report { background: #7c5cff; border: none; font-weight: 700; }
+    button:disabled { opacity: 0.45; cursor: not-allowed; }
+    .clip {
+      display: grid;
+      gap: 6px;
+      padding: 12px 0;
+      border-bottom: 1px solid #2a3544;
+    }
+    .clip:last-child { border-bottom: none; }
+    .meta { color: var(--muted); font-size: 0.82rem; }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #2a3544;
+      color: var(--warn);
+      font-size: 0.72rem;
+    }
+    .grade-A { color: var(--ok); }
+    .grade-B { color: #8fd3ff; }
+    .grade-C { color: var(--warn); }
+    .grade-D, .grade-F { color: var(--bad); }
+    code { background: #0b1016; padding: 2px 6px; border-radius: 6px; }
+    .warn-box {
+      background: #2a2114;
+      border: 1px solid #5c4518;
+      color: #f0d9a8;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+    #list { max-height: 48vh; overflow: auto; }
+    #resultPanel pre {
+      white-space: pre-wrap;
+      background: #0b1016;
+      border-radius: 10px;
+      padding: 12px;
+      font-size: 0.82rem;
+      line-height: 1.45;
+      max-height: 280px;
+      overflow: auto;
+    }
+    .answer-box {
+      background: #132033;
+      border: 1px solid #2d4a6f;
+      border-radius: 10px;
+      padding: 12px;
+      line-height: 1.5;
+      font-size: 0.92rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <div class="card">
+      <h1>تجربة صوت + تقييم + تقرير</h1>
+      <p class="sub">
+        شغّل المقطع، أو اضغط <strong>Evaluate</strong> لتمريره على Whisper وبنك الأسئلة مباشرة
+        (بدون loopback). ستحصل على النص، مطابقة السؤال، الإجابة الجاهزة، والدرجة.
+      </p>
+      <div class="warn-box">
+        الرابط الصحيح: <code>http://127.0.0.1:5175/voice-drill/</code>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="tabs">
+        <button data-tab="stress" class="active">Stress Pilot (180 WAV)</button>
+        <button data-tab="tts">TTS Quick (8 MP3)</button>
+      </div>
+    </div>
+
+    <div class="card" id="stressControls">
+      <div class="filters">
+        <label class="meta">سؤال
+          <select id="fQuestion"><option value="all">الكل</option></select>
+        </label>
+        <label class="meta">متحدث
+          <select id="fSpeaker">
+            <option value="all">الكل</option>
+            <option value="indian">indian</option>
+            <option value="jordanian">jordanian</option>
+            <option value="kuwaiti">kuwaiti</option>
+          </select>
+        </label>
+        <label class="meta">الظرف
+          <select id="fCondition">
+            <option value="all">الكل</option>
+            <option value="clean">clean</option>
+            <option value="fast">fast</option>
+            <option value="office_noise">office_noise</option>
+            <option value="far">far</option>
+            <option value="poor_call">poor_call</option>
+            <option value="combined">combined</option>
+          </select>
+        </label>
+        <label class="meta">حد التقرير
+          <select id="fLimit">
+            <option value="6">6</option>
+                        <option value="12" selected>12</option>
+            <option value="18">18</option>
+            <option value="30">30</option>
+            <option value="180">180 (الكل)</option>
+          </select>
+        </label>
+        <button id="playFilteredFirst" class="play">Play أول نتيجة</button>
+        <button id="runReport" class="report">Test Runner آلي</button>
+        <span class="meta" id="countLabel"></span>
+      </div>
+    </div>
+
+    <div class="card" id="ttsControls" hidden>
+      <div class="effects">
+        <span class="meta">تأثير التشغيل:</span>
+        <button data-effect="clean" class="active">Clean</button>
+        <button data-effect="noise">Noise</button>
+        <button data-effect="distant">Distant</button>
+        <button data-effect="muffled">Muffled</button>
+      </div>
+      <p class="meta">التأثير: <strong id="effectLabel">clean</strong>
+        · الصوت <input id="vol" type="range" min="0.2" max="1.5" step="0.05" value="1" />
+      </p>
+    </div>
+
+    <div class="card" id="resultPanel">
+      <strong>نتيجة التقييم</strong>
+      <p class="meta" id="statusLine">اختر مقطعًا واضغط Evaluate أو شغّل تقريرًا.</p>
+      <div id="gradeLine"></div>
+      <div id="answerBox" class="answer-box" hidden></div>
+      <pre id="resultJson">{}</pre>
+    </div>
+
+    <div class="card" id="list">
+      <p class="meta">جاري التحميل...</p>
+    </div>
+  </div>
+
+  <script>
+    let tab = "stress";
+    let effect = "clean";
+    let audioCtx = null;
+    let currentNodes = [];
+    let stressItems = [];
+    let ttsItems = [];
+    let currentAudio = null;
+
+    const listEl = document.getElementById("list");
+    const countLabel = document.getElementById("countLabel");
+    const fQuestion = document.getElementById("fQuestion");
+    const fSpeaker = document.getElementById("fSpeaker");
+    const fCondition = document.getElementById("fCondition");
+    const fLimit = document.getElementById("fLimit");
+    const effectLabel = document.getElementById("effectLabel");
+    const vol = document.getElementById("vol");
+    const statusLine = document.getElementById("statusLine");
+    const gradeLine = document.getElementById("gradeLine");
+    const answerBox = document.getElementById("answerBox");
+    const resultJson = document.getElementById("resultJson");
+
+    document.querySelectorAll("[data-tab]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("[data-tab]").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        tab = btn.dataset.tab;
+        document.getElementById("stressControls").hidden = tab !== "stress";
+        document.getElementById("ttsControls").hidden = tab !== "tts";
+        render();
+      });
+    });
+
+    document.querySelectorAll("[data-effect]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("[data-effect]").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        effect = btn.dataset.effect;
+        effectLabel.textContent = effect;
+      });
+    });
+
+    [fQuestion, fSpeaker, fCondition].forEach((el) => el.addEventListener("change", render));
+    document.getElementById("playFilteredFirst").addEventListener("click", () => {
+      const first = filteredStress()[0];
+      if (first) playFile("./stress-pilot/" + first.file);
+    });
+    document.getElementById("runReport").addEventListener("click", runReport);
+
+    function stopAll() {
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio = null;
+      }
+      currentNodes.forEach((n) => {
+        try { n.stop?.(); } catch (_) {}
+        try { n.disconnect?.(); } catch (_) {}
+      });
+      currentNodes = [];
+    }
+
+    function playFile(url) {
+      stopAll();
+      currentAudio = new Audio(url);
+      currentAudio.play();
+    }
+
+    function ensureCtx() {
+      if (!audioCtx) audioCtx = new AudioContext();
+      return audioCtx;
+    }
+
+    async function playWithEffect(url) {
+      stopAll();
+      const ctx = ensureCtx();
+      if (ctx.state === "suspended") await ctx.resume();
+      const res = await fetch(url);
+      const buf = await res.arrayBuffer();
+      const audioBuffer = await ctx.decodeAudioData(buf);
+      const source = ctx.createBufferSource();
+      source.buffer = audioBuffer;
+      const gain = ctx.createGain();
+      gain.gain.value = Number(vol.value);
+      let last = source;
+      if (effect === "distant") {
+        gain.gain.value *= 0.28;
+        const filter = ctx.createBiquadFilter();
+        filter.type = "lowpass";
+        filter.frequency.value = 1800;
+        last.connect(filter);
+        last = filter;
+      }
+      if (effect === "muffled") {
+        const filter = ctx.createBiquadFilter();
+        filter.type = "lowpass";
+        filter.frequency.value = 900;
+        gain.gain.value *= 0.7;
+        last.connect(filter);
+        last = filter;
+      }
+      if (effect === "noise") {
+        const noiseBuf = ctx.createBuffer(1, Math.ceil(ctx.sampleRate * audioBuffer.duration), ctx.sampleRate);
+        const data = noiseBuf.getChannelData(0);
+        for (let i = 0; i < data.length; i++) data[i] = (Math.random() * 2 - 1) * 0.08;
+        const noise = ctx.createBufferSource();
+        noise.buffer = noiseBuf;
+        const noiseGain = ctx.createGain();
+        noiseGain.gain.value = 0.55;
+        noise.connect(noiseGain);
+        noiseGain.connect(gain);
+        noise.start();
+        currentNodes.push(noise);
+      }
+      last.connect(gain);
+      gain.connect(ctx.destination);
+      source.start();
+      currentNodes.push(source, gain);
+    }
+
+    function filteredStress() {
+      return stressItems.filter((item) => {
+        const qOk = fQuestion.value === "all" || String(item.question_id) === fQuestion.value;
+        const sOk = fSpeaker.value === "all" || String(item.requested_region_profile) === fSpeaker.value;
+        const cOk = fCondition.value === "all" || String(item.condition) === fCondition.value;
+        return qOk && sOk && cOk;
+      });
+    }
+
+    function showResult(data, title) {
+      statusLine.textContent = title || "تم التقييم";
+      const passTxt = data.result || (data.pass_match ? "PASS" : "FAIL");
+      const gradeClass = passTxt === "PASS" ? "A" : "F";
+      gradeLine.innerHTML = `<p><strong class="grade-${gradeClass}">${passTxt}</strong>
+        · accuracy ${data.accuracy ?? "—"}%
+        · STT ${data.stt_ok ? "OK" : "weak"} (${data.stt_score ?? "—"})
+        · Intent ${data.intent_ok ? "OK" : "wrong"} (${data.intent_score ?? "—"})
+        · Answer ${data.answer_ok ? "OK" : "wrong"} (${data.answer_score ?? "—"})
+        · stage ${data.failure_stage || "—"}</p>
+        <p class="meta">${data.failure_detail || data.notes || ""}</p>`;
+      if (data.answer_en) {
+        answerBox.hidden = false;
+        answerBox.innerHTML = `<div class="meta">الإجابة من بنك الأسئلة</div>${data.answer_en}`;
+      } else {
+        answerBox.hidden = true;
+        answerBox.textContent = "";
+      }
+      resultJson.textContent = JSON.stringify(data, null, 2);
+    }
+
+    async function evaluateClip(file) {
+      statusLine.textContent = "جاري التقييم عبر Whisper + Question Bank...";
+      gradeLine.innerHTML = "";
+      answerBox.hidden = true;
+      const res = await fetch("/api/audio/evaluate-stress-clip", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ file }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.detail || "evaluate failed");
+      showResult(data, `تقييم: ${file}`);
+      return data;
+    }
+
+    async function runReport() {
+      const btn = document.getElementById("runReport");
+      btn.disabled = true;
+      statusLine.textContent = "جاري بناء التقرير... قد يستغرق دقيقة حسب العدد.";
+      gradeLine.innerHTML = "";
+      answerBox.hidden = true;
+      try {
+        const body = {
+          question_id: fQuestion.value === "all" ? null : Number(fQuestion.value),
+          speaker: fSpeaker.value === "all" ? null : fSpeaker.value,
+          condition: fCondition.value === "all" ? null : fCondition.value,
+          limit: Number(fLimit.value),
+        };
+        const res = await fetch("/api/audio/run-audio-tests", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.detail || "report failed");
+        const s = data.summary;
+        statusLine.textContent =
+          `تقرير جاهز · PASS ${s.passed}/${s.total} · STT ${s.stt_success} · Intent ${s.intent_success} · Answer ${s.answer_success} · avg ${s.average_latency_sec}s`;
+        gradeLine.innerHTML = `<p><b>Main weakness:</b> ${s.main_weakness}</p>
+          <p class="meta">Failure stages: ${JSON.stringify(s.failure_stages)}</p>
+          <p class="meta">HTML: ${data.report_html_latest || data.report_html}</p>
+          <p class="meta">JSON: ${data.report_json}</p>
+          <p><a href="/voice-drill/INTERVIEW_AUDIO_TEST_REPORT.html" target="_blank" style="color:#8fd3ff">افتح تقرير HTML</a>
+          · <a href="/api/audio/latest-report" target="_blank" style="color:#8fd3ff">via API</a></p>`;
+        const best = (data.results || []).find((r) => r.result === "PASS" && r.answer_en);
+        if (best) {
+          answerBox.hidden = false;
+          answerBox.innerHTML = `<div class="meta">مثال إجابة من أول نتيجة ناجحة</div>${best.answer_en}`;
+        }
+        resultJson.textContent = JSON.stringify(data, null, 2);
+      } catch (err) {
+        statusLine.textContent = "فشل التقرير: " + err.message;
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    function render() {
+      listEl.innerHTML = "";
+      if (tab === "stress") {
+        const items = filteredStress();
+        countLabel.textContent = `${items.length} / ${stressItems.length}`;
+        items.slice(0, 80).forEach((item) => {
+          const div = document.createElement("div");
+          div.className = "clip";
+          div.innerHTML = `
+            <div class="row">
+              <strong>Q${item.question_id}</strong>
+              <span class="badge">${item.requested_region_profile}</span>
+              <span class="badge">${item.condition}</span>
+              <span class="meta">#${item.sample_id}</span>
+            </div>
+            <div>${item.main_question || item.spoken_wording || ""}</div>
+            <div class="row">
+              <button class="play">Play</button>
+              <button class="eval">Evaluate</button>
+              <span class="meta">${item.file}</span>
+            </div>
+          `;
+          div.querySelector(".play").addEventListener("click", () => playFile("./stress-pilot/" + item.file));
+          div.querySelector(".eval").addEventListener("click", async () => {
+            try {
+              await evaluateClip(item.file);
+            } catch (err) {
+              statusLine.textContent = "فشل التقييم: " + err.message;
+            }
+          });
+          listEl.appendChild(div);
+        });
+        if (items.length > 80) {
+          const more = document.createElement("p");
+          more.className = "meta";
+          more.textContent = `عرض أول 80. استخدم الفلاتر (${items.length}).`;
+          listEl.appendChild(more);
+        }
+        if (!items.length) listEl.innerHTML = `<p class="meta">لا نتائج لهذا الفلتر.</p>`;
+        return;
+      }
+
+      ttsItems.forEach((clip, idx) => {
+        const div = document.createElement("div");
+        div.className = "clip";
+        div.innerHTML = `
+          <div class="row">
+            <strong>${idx + 1}. ${clip.id}</strong>
+            <span class="badge">suggested: ${clip.suggested_effect}</span>
+          </div>
+          <div>${clip.text}</div>
+          <div class="row">
+            <button class="play">Play</button>
+            <button data-suggested>Play + suggested</button>
+            <span class="meta">${clip.file}</span>
+          </div>
+        `;
+        div.querySelector(".play").addEventListener("click", () => playWithEffect("./" + clip.file));
+        div.querySelector("[data-suggested]").addEventListener("click", () => {
+          effect = clip.suggested_effect;
+          effectLabel.textContent = effect;
+          document.querySelectorAll("[data-effect]").forEach((b) => {
+            b.classList.toggle("active", b.dataset.effect === effect);
+          });
+          playWithEffect("./" + clip.file);
+        });
+        listEl.appendChild(div);
+      });
+    }
+
+    async function load() {
+      const [stress, tts] = await Promise.all([
+        fetch("./stress-pilot/metadata.json").then((r) => r.json()),
+        fetch("./manifest.json").then((r) => r.json()),
+      ]);
+      stressItems = stress;
+      ttsItems = tts.clips || [];
+      const qids = [...new Set(stressItems.map((x) => x.question_id))].sort((a, b) => a - b);
+      qids.forEach((qid) => {
+        const opt = document.createElement("option");
+        opt.value = String(qid);
+        const sample = stressItems.find((x) => x.question_id === qid);
+        opt.textContent = `Q${qid} — ${(sample?.main_question || "").slice(0, 48)}`;
+        fQuestion.appendChild(opt);
+      });
+      fQuestion.value = "156";
+      fSpeaker.value = "jordanian";
+      fCondition.value = "all";
+      render();
+    }
+
+    load().catch((err) => {
+      listEl.innerHTML = `<p>فشل التحميل: ${err}</p>`;
+    });
+  </script>
+</body>
+</html>

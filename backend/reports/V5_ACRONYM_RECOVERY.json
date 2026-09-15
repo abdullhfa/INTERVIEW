@@ -1,0 +1,1014 @@
+{
+  "verdict": "ACRONYM_RECOVERY_PASS",
+  "blockers": [],
+  "n": 42,
+  "pass_rate": 1.0,
+  "recover_targets": 27,
+  "recover_hit": 27,
+  "recover_rate": 1.0,
+  "clean_ok": 15,
+  "clean_n": 15,
+  "intent_ok": 13,
+  "intent_n": 13,
+  "false_llama": 0,
+  "hc_wrong": 0,
+  "elapsed_ms": 852.5,
+  "cases": [
+    {
+      "id": "ACR_llm_clean",
+      "raw": "What is LLM?",
+      "recovered": "What is LLM?",
+      "repaired": "What is LLM?",
+      "did_recover": false,
+      "expect_recover": false,
+      "expect_term": "LLM",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.what_is_llm",
+      "acronym_matched_intent": null,
+      "candidates": [
+        [
+          "LLM",
+          0.923
+        ],
+        [
+          "Ollama",
+          0.55
+        ],
+        [
+          "LLaMA",
+          0.516
+        ],
+        [
+          "Llama",
+          0.516
+        ]
+      ],
+      "intent_pass": true,
+      "pass": true,
+      "ms": 57.01
+    },
+    {
+      "id": "ACR_llm_the",
+      "raw": "What is the LLM?",
+      "recovered": "What is the LLM?",
+      "repaired": "What is the LLM?",
+      "did_recover": false,
+      "expect_recover": false,
+      "expect_term": "LLM",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.what_is_llm",
+      "acronym_matched_intent": null,
+      "candidates": [
+        [
+          "LLM",
+          0.923
+        ],
+        [
+          "Ollama",
+          0.55
+        ],
+        [
+          "LLaMA",
+          0.516
+        ],
+        [
+          "Llama",
+          0.516
+        ]
+      ],
+      "intent_pass": true,
+      "pass": true,
+      "ms": 2.44
+    },
+    {
+      "id": "ACR_lalam",
+      "raw": "What is the Lalam?",
+      "recovered": "What is the LLM?",
+      "repaired": "What is the LLM?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "LLM",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.what_is_llm",
+      "acronym_matched_intent": "tech.what_is_llm",
+      "candidates": [
+        [
+          "LLM",
+          0.887
+        ],
+        [
+          "Ollama",
+          0.7
+        ],
+        [
+          "LLaMA",
+          0.55
+        ],
+        [
+          "Llama",
+          0.55
+        ]
+      ],
+      "intent_pass": true,
+      "pass": true,
+      "ms": 6.79
+    },
+    {
+      "id": "ACR_lalam_short",
+      "raw": "What is Lalam?",
+      "recovered": "What is LLM?",
+      "repaired": "What is LLM?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "LLM",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.what_is_llm",
+      "acronym_matched_intent": "tech.what_is_llm",
+      "candidates": [
+        [
+          "LLM",
+          0.887
+        ],
+        [
+          "Ollama",
+          0.7
+        ],
+        [
+          "LLaMA",
+          0.55
+        ],
+        [
+          "Llama",
+          0.55
+        ]
+      ],
+      "intent_pass": true,
+      "pass": true,
+      "ms": 7.95
+    },
+    {
+      "id": "ACR_ellem",
+      "raw": "What is ellem?",
+      "recovered": "What is LLM?",
+      "repaired": "What is LLM?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "LLM",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.what_is_llm",
+      "acronym_matched_intent": "tech.what_is_llm",
+      "candidates": [
+        [
+          "LLM",
+          0.887
+        ],
+        [
+          "Ollama",
+          0.55
+        ],
+        [
+          "LLaMA",
+          0.516
+        ],
+        [
+          "Llama",
+          0.516
+        ]
+      ],
+      "intent_pass": true,
+      "pass": true,
+      "ms": 6.66
+    },
+    {
+      "id": "ACR_el_el_em",
+      "raw": "What is el el em?",
+      "recovered": "What is LLM?",
+      "repaired": "What is LLM?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "LLM",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.what_is_llm",
+      "acronym_matched_intent": "tech.what_is_llm",
+      "candidates": [
+        [
+          "LLM",
+          0.869
+        ],
+        [
+          "Ollama",
+          0.55
+        ],
+        [
+          "LLaMA",
+          0.516
+        ],
+        [
+          "Llama",
+          0.516
+        ]
+      ],
+      "intent_pass": true,
+      "pass": true,
+      "ms": 1.08
+    },
+    {
+      "id": "ACR_l_l_m",
+      "raw": "What is l l m?",
+      "recovered": "What is LLM?",
+      "repaired": "What is LLM?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "LLM",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.what_is_llm",
+      "acronym_matched_intent": "tech.what_is_llm",
+      "candidates": [
+        [
+          "LLM",
+          0.923
+        ],
+        [
+          "Ollama",
+          0.55
+        ],
+        [
+          "LLaMA",
+          0.516
+        ],
+        [
+          "Llama",
+          0.516
+        ]
+      ],
+      "intent_pass": true,
+      "pass": true,
+      "ms": 0.9
+    },
+    {
+      "id": "ACR_why_llm",
+      "raw": "Why LLM?",
+      "recovered": "Why LLM?",
+      "repaired": "Why LLM?",
+      "did_recover": false,
+      "expect_recover": false,
+      "expect_term": "LLM",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.what_is_llm",
+      "acronym_matched_intent": null,
+      "candidates": [
+        [
+          "LLM",
+          0.917
+        ],
+        [
+          "Ollama",
+          0.55
+        ],
+        [
+          "LLaMA",
+          0.51
+        ],
+        [
+          "Llama",
+          0.51
+        ]
+      ],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 2.95
+    },
+    {
+      "id": "ACR_rag_clean",
+      "raw": "What is RAG?",
+      "recovered": "What is RAG?",
+      "repaired": "What is RAG?",
+      "did_recover": false,
+      "expect_recover": false,
+      "expect_term": "RAG",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.rag_what",
+      "acronym_matched_intent": null,
+      "candidates": [],
+      "intent_pass": true,
+      "pass": true,
+      "ms": 3.17
+    },
+    {
+      "id": "ACR_are_a_g",
+      "raw": "What is are a g?",
+      "recovered": "What is RAG?",
+      "repaired": "What is RAG?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "RAG",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.rag_what",
+      "acronym_matched_intent": "tech.rag_what",
+      "candidates": [
+        [
+          "RAG",
+          0.891
+        ],
+        [
+          "RAGAS",
+          0.55
+        ]
+      ],
+      "intent_pass": true,
+      "pass": true,
+      "ms": 3.25
+    },
+    {
+      "id": "ACR_r_a_g",
+      "raw": "What is r a g?",
+      "recovered": "What is RAG?",
+      "repaired": "What is RAG?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "RAG",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.rag_what",
+      "acronym_matched_intent": "tech.rag_what",
+      "candidates": [
+        [
+          "RAG",
+          0.923
+        ],
+        [
+          "RAGAS",
+          0.55
+        ]
+      ],
+      "intent_pass": true,
+      "pass": true,
+      "ms": 0.41
+    },
+    {
+      "id": "ACR_why_rag",
+      "raw": "Why RAG?",
+      "recovered": "Why RAG?",
+      "repaired": "Why RAG?",
+      "did_recover": false,
+      "expect_recover": false,
+      "expect_term": "RAG",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "hard.why_rag_for_btec",
+      "acronym_matched_intent": null,
+      "candidates": [],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 2.07
+    },
+    {
+      "id": "ACR_nlp_clean",
+      "raw": "What is NLP?",
+      "recovered": "What is NLP?",
+      "repaired": "What is NLP?",
+      "did_recover": false,
+      "expect_recover": false,
+      "expect_term": "NLP",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.nlp_vs_llm",
+      "acronym_matched_intent": null,
+      "candidates": [],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 0.55
+    },
+    {
+      "id": "ACR_en_el_pee",
+      "raw": "What is en el pee?",
+      "recovered": "What is NLP?",
+      "repaired": "What is NLP?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "NLP",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.nlp_vs_llm",
+      "acronym_matched_intent": "tech.nlp_vs_llm",
+      "candidates": [
+        [
+          "NLP",
+          0.86
+        ]
+      ],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 8.82
+    },
+    {
+      "id": "ACR_n_l_p",
+      "raw": "What is n l p?",
+      "recovered": "What is NLP?",
+      "repaired": "What is NLP?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "NLP",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.nlp_vs_llm",
+      "acronym_matched_intent": "tech.nlp_vs_llm",
+      "candidates": [
+        [
+          "NLP",
+          0.923
+        ]
+      ],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 0.43
+    },
+    {
+      "id": "ACR_cnn_clean",
+      "raw": "How does CNN work?",
+      "recovered": "How does CNN work?",
+      "repaired": "How does CNN work?",
+      "did_recover": false,
+      "expect_recover": false,
+      "expect_term": "CNN",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": null,
+      "acronym_matched_intent": null,
+      "candidates": [],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 24.7
+    },
+    {
+      "id": "ACR_see_en_en",
+      "raw": "How does see en en work?",
+      "recovered": "How does CNN work?",
+      "repaired": "How does CNN work?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "CNN",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": null,
+      "acronym_matched_intent": null,
+      "candidates": [
+        [
+          "CNN",
+          0.86
+        ]
+      ],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 28.63
+    },
+    {
+      "id": "ACR_rnn",
+      "raw": "What is are en en?",
+      "recovered": "What is RNN?",
+      "repaired": "What is RNN?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "RNN",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": null,
+      "acronym_matched_intent": "tech.what_is_transformer",
+      "candidates": [
+        [
+          "RNN",
+          0.86
+        ]
+      ],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 27.53
+    },
+    {
+      "id": "ACR_lstm",
+      "raw": "What is el es tee em?",
+      "recovered": "What is LSTM?",
+      "repaired": "What is LSTM?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "LSTM",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": null,
+      "acronym_matched_intent": null,
+      "candidates": [
+        [
+          "LSTM",
+          0.86
+        ]
+      ],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 38.32
+    },
+    {
+      "id": "ACR_gpu",
+      "raw": "Why gee pee you?",
+      "recovered": "Why GPU?",
+      "repaired": "Why GPU?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "GPU",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.gpu_sizing",
+      "acronym_matched_intent": "tech.gpu_sizing",
+      "candidates": [
+        [
+          "GPU",
+          0.86
+        ]
+      ],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 12.46
+    },
+    {
+      "id": "ACR_cpu",
+      "raw": "What is see pee you?",
+      "recovered": "What is CPU?",
+      "repaired": "What is CPU?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "CPU",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": null,
+      "acronym_matched_intent": null,
+      "candidates": [
+        [
+          "CPU",
+          0.86
+        ]
+      ],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 44.85
+    },
+    {
+      "id": "ACR_stt",
+      "raw": "What is ess tee tee?",
+      "recovered": "What is STT?",
+      "repaired": "What is STT?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "STT",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.how_stt_works",
+      "acronym_matched_intent": "tech.how_stt_works",
+      "candidates": [
+        [
+          "STT",
+          0.86
+        ]
+      ],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 18.29
+    },
+    {
+      "id": "ACR_tts",
+      "raw": "What is tee tee ess?",
+      "recovered": "What is TTS?",
+      "repaired": "What is TTS?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "TTS",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": null,
+      "acronym_matched_intent": "proj.kiosk.voice_classifier",
+      "candidates": [
+        [
+          "TTS",
+          0.86
+        ]
+      ],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 48.12
+    },
+    {
+      "id": "ACR_vad",
+      "raw": "What is vee ay dee?",
+      "recovered": "What is VAD?",
+      "repaired": "What is VAD?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "VAD",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": null,
+      "acronym_matched_intent": null,
+      "candidates": [
+        [
+          "VAD",
+          0.86
+        ]
+      ],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 42.19
+    },
+    {
+      "id": "ACR_n8n",
+      "raw": "When would you use en eight en?",
+      "recovered": "When would you use n8n?",
+      "repaired": "When would you use n8n?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "n8n",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.n8n_what",
+      "acronym_matched_intent": "tech.n8n_what",
+      "candidates": [
+        [
+          "n8n",
+          0.882
+        ]
+      ],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 11.15
+    },
+    {
+      "id": "ACR_ml",
+      "raw": "What is em el?",
+      "recovered": "What is ML?",
+      "repaired": "What is ML?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "ML",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": null,
+      "acronym_matched_intent": "cv.ml_experience",
+      "candidates": [
+        [
+          "ML",
+          0.86
+        ]
+      ],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 23.84
+    },
+    {
+      "id": "ACR_dl",
+      "raw": "What is dee el?",
+      "recovered": "What is DL?",
+      "repaired": "What is DL?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "DL",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": null,
+      "acronym_matched_intent": "gen.handle_mistake_in_production",
+      "candidates": [
+        [
+          "DL",
+          0.86
+        ]
+      ],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 31.23
+    },
+    {
+      "id": "ACR_ai",
+      "raw": "What is ay eye?",
+      "recovered": "What is AI?",
+      "repaired": "What is AI?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "AI",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": null,
+      "acronym_matched_intent": "tech.agentic_what",
+      "candidates": [
+        [
+          "AI",
+          0.86
+        ]
+      ],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 10.91
+    },
+    {
+      "id": "ACR_api",
+      "raw": "What is ay pee eye?",
+      "recovered": "What is API?",
+      "repaired": "What is API?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "API",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": null,
+      "acronym_matched_intent": "cv.python_fastapi",
+      "candidates": [
+        [
+          "API",
+          0.86
+        ]
+      ],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 12.18
+    },
+    {
+      "id": "ACR_sql",
+      "raw": "What is ess queue el?",
+      "recovered": "What is SQL?",
+      "repaired": "What is SQL?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "SQL",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "cv.sql_experience",
+      "acronym_matched_intent": "proj.completion_risk.tech",
+      "candidates": [
+        [
+          "SQL",
+          0.86
+        ]
+      ],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 12.42
+    },
+    {
+      "id": "ACR_ann",
+      "raw": "What is ay en en?",
+      "recovered": "What is ANN?",
+      "repaired": "What is ANN?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "ANN",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": null,
+      "acronym_matched_intent": "hard.agent_cannot_delete",
+      "candidates": [
+        [
+          "ANN",
+          0.86
+        ]
+      ],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 30.87
+    },
+    {
+      "id": "ACR_london_no",
+      "raw": "What did London give you that you would otherwise need to build yourself?",
+      "recovered": "What did London give you that you would otherwise need to build yourself?",
+      "repaired": "What did London give you that you would otherwise need to build yourself?",
+      "did_recover": false,
+      "expect_recover": false,
+      "expect_term": "",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": null,
+      "acronym_matched_intent": null,
+      "candidates": [],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 95.25
+    },
+    {
+      "id": "ACR_llama_word",
+      "raw": "Have you run llama on your own servers?",
+      "recovered": "Have you run llama on your own servers?",
+      "repaired": "Have you run llama on your own servers?",
+      "did_recover": false,
+      "expect_recover": false,
+      "expect_term": "",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.on_prem_llm_experience",
+      "acronym_matched_intent": null,
+      "candidates": [],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 61.08
+    },
+    {
+      "id": "ACR_embeddings_clean",
+      "raw": "What are embeddings?",
+      "recovered": "What are embeddings?",
+      "repaired": "What are embeddings?",
+      "did_recover": false,
+      "expect_recover": false,
+      "expect_term": "",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.embeddings",
+      "acronym_matched_intent": null,
+      "candidates": [],
+      "intent_pass": true,
+      "pass": true,
+      "ms": 1.16
+    },
+    {
+      "id": "ACR_rag_long",
+      "raw": "Explain how you built the retrieval augmented generation pipeline for BTEC.",
+      "recovered": "Explain how you built the retrieval augmented generation pipeline for BTEC.",
+      "repaired": "Explain how you build the retrieval augmented generation pipeline for BTEC.",
+      "did_recover": false,
+      "expect_recover": false,
+      "expect_term": "",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "moe.ai_solutions",
+      "acronym_matched_intent": null,
+      "candidates": [],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 90.65
+    },
+    {
+      "id": "ACR_llm_dots",
+      "raw": "What is L.L.M?",
+      "recovered": "What is LLM?",
+      "repaired": "What is LLM?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "LLM",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.what_is_llm",
+      "acronym_matched_intent": "tech.what_is_llm",
+      "candidates": [
+        [
+          "LLM",
+          0.923
+        ],
+        [
+          "Ollama",
+          0.55
+        ],
+        [
+          "LLaMA",
+          0.516
+        ],
+        [
+          "Llama",
+          0.516
+        ]
+      ],
+      "intent_pass": true,
+      "pass": true,
+      "ms": 0.82
+    },
+    {
+      "id": "ACR_ragas_keep",
+      "raw": "What is RAGAS?",
+      "recovered": "What is RAGAS?",
+      "repaired": "What is RAGAS?",
+      "did_recover": false,
+      "expect_recover": false,
+      "expect_term": "RAGAS",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.rag_what",
+      "acronym_matched_intent": null,
+      "candidates": [],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 30.52
+    },
+    {
+      "id": "ACR_mcp",
+      "raw": "What is MCP?",
+      "recovered": "What is MCP?",
+      "repaired": "What is MCP?",
+      "did_recover": false,
+      "expect_recover": false,
+      "expect_term": "MCP",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.mcp",
+      "acronym_matched_intent": null,
+      "candidates": [],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 34.64
+    },
+    {
+      "id": "ACR_gpu_clean",
+      "raw": "Do you need a GPU?",
+      "recovered": "Do you need a GPU?",
+      "repaired": "Do you need a GPU?",
+      "did_recover": false,
+      "expect_recover": false,
+      "expect_term": "GPU",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.gpu_sizing",
+      "acronym_matched_intent": null,
+      "candidates": [],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 1.23
+    },
+    {
+      "id": "ACR_stt_clean",
+      "raw": "What is STT?",
+      "recovered": "What is STT?",
+      "repaired": "What is STT?",
+      "did_recover": false,
+      "expect_recover": false,
+      "expect_term": "STT",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.how_stt_works",
+      "acronym_matched_intent": null,
+      "candidates": [],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 0.39
+    },
+    {
+      "id": "ACR_elem",
+      "raw": "Define elem",
+      "recovered": "Define LLM",
+      "repaired": "Define LLM",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "LLM",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "tech.what_is_llm",
+      "acronym_matched_intent": "tech.what_is_llm",
+      "candidates": [
+        [
+          "LLM",
+          0.881
+        ],
+        [
+          "Ollama",
+          0.547
+        ],
+        [
+          "LLaMA",
+          0.507
+        ],
+        [
+          "Llama",
+          0.507
+        ]
+      ],
+      "intent_pass": true,
+      "pass": true,
+      "ms": 13.09
+    },
+    {
+      "id": "ACR_why_are_a_g",
+      "raw": "Why are a g?",
+      "recovered": "Why RAG?",
+      "repaired": "Why RAG?",
+      "did_recover": true,
+      "expect_recover": true,
+      "expect_term": "RAG",
+      "term_ok": true,
+      "forbid_hits": [],
+      "matched_intent": "hard.why_rag_for_btec",
+      "acronym_matched_intent": "tech.rag_what",
+      "candidates": [
+        [
+          "RAG",
+          0.885
+        ],
+        [
+          "RAGAS",
+          0.55
+        ]
+      ],
+      "intent_pass": null,
+      "pass": true,
+      "ms": 0.49
+    }
+  ]
+}

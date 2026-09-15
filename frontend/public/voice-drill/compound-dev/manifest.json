@@ -1,0 +1,807 @@
+[
+  {
+    "id": "cdev_001",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "Define RAG briefly, and say why you prefer it over baking yearly rules into weights.",
+    "expected_intent_ids": [
+      "tech.rag_what",
+      "tech.rag_vs_finetuning",
+      "tech.rag_build"
+    ],
+    "requested_parts": [
+      "RAG definition",
+      "Why RAG vs fine-tune"
+    ],
+    "file": "audio/cdev_001.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_002",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "What are embeddings and cosine similarity, and why is the similarity checker not called RAG?",
+    "expected_intent_ids": [
+      "tech.cosine_semantic_search",
+      "tech.embeddings",
+      "proj.similarity.is_rag",
+      "proj.similarity.stack"
+    ],
+    "requested_parts": [
+      "Embeddings/cosine",
+      "Not RAG"
+    ],
+    "file": "audio/cdev_002.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_003",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "Explain guardrails, then point to where a human must approve before saving a generated item.",
+    "expected_intent_ids": [
+      "tech.guardrails_what",
+      "hard.hitl_where",
+      "hard.agent_terms_difference"
+    ],
+    "requested_parts": [
+      "Guardrails",
+      "HITL gate"
+    ],
+    "file": "audio/cdev_003.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_004",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "Give a short agentic AI definition, then when plain RAG without tools is enough.",
+    "expected_intent_ids": [
+      "tech.agentic_what",
+      "hard.why_agent_not_rag",
+      "tech.rag_vs_finetuning"
+    ],
+    "requested_parts": [
+      "Agentic def",
+      "When RAG enough"
+    ],
+    "file": "audio/cdev_004.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_005",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "What is LangGraph, and would you pick it, n8n, or plain Python for approval gates?",
+    "expected_intent_ids": [
+      "tech.what_is_langgraph",
+      "cv.langgraph",
+      "hard.langgraph_vs_n8n_vs_python"
+    ],
+    "requested_parts": [
+      "LangGraph",
+      "Orchestrator choice"
+    ],
+    "file": "audio/cdev_005.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_006",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "Define precision and recall, and which mattered more for early-warning students.",
+    "expected_intent_ids": [
+      "tech.precision_recall",
+      "proj.early_warning.metric",
+      "proj.early_warning.describe"
+    ],
+    "requested_parts": [
+      "Precision/recall",
+      "Early-warning metric"
+    ],
+    "file": "audio/cdev_006.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_007",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "What is hallucination, and how do you reduce it without treating temperature as a truth switch?",
+    "expected_intent_ids": [
+      "tech.hallucination_what",
+      "tech.hallucination_prevent",
+      "cv.hallucination_in_projects"
+    ],
+    "requested_parts": [
+      "Hallucination def",
+      "Prevention"
+    ],
+    "file": "audio/cdev_007.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_008",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "On empty retrieval, what should happen, and how do you block invented finance numbers?",
+    "expected_intent_ids": [
+      "hard.empty_retrieval",
+      "tech.no_wrong_info_finance",
+      "tech.rag_prevent_invented_numbers"
+    ],
+    "requested_parts": [
+      "Empty retrieval",
+      "No invented numbers"
+    ],
+    "file": "audio/cdev_008.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_009",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "Describe metadata filtering and how it supports isolation between school tenants.",
+    "expected_intent_ids": [
+      "tech.metadata_filtering",
+      "hard.tenant_isolation",
+      "tech.vector_db_choice"
+    ],
+    "requested_parts": [
+      "Metadata filter",
+      "Tenant isolation"
+    ],
+    "file": "audio/cdev_009.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_010",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "What is chunk size with overlap, and what breaks if you stuff twenty chunks into one prompt?",
+    "expected_intent_ids": [
+      "tech.chunk_size",
+      "hard.context_stuffing"
+    ],
+    "requested_parts": [
+      "Chunk size",
+      "Context stuffing"
+    ],
+    "file": "audio/cdev_010.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_011",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "How do you write a solid prompt, and how do you stop retrieved PDFs from becoming instructions?",
+    "expected_intent_ids": [
+      "tech.prompt_engineering",
+      "hard.injection_in_pdf"
+    ],
+    "requested_parts": [
+      "Prompt craft",
+      "Injection control"
+    ],
+    "file": "audio/cdev_011.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_012",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "What is WER, and how else do you judge transcription quality for this coach?",
+    "expected_intent_ids": [
+      "tech.wer",
+      "tech.transcription_quality"
+    ],
+    "requested_parts": [
+      "WER",
+      "Transcription quality"
+    ],
+    "file": "audio/cdev_012.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_013",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "Have you used Pydantic, and where does schema validation sit relative to teacher approval?",
+    "expected_intent_ids": [
+      "cv.pydantic",
+      "hard.teacher_rejects"
+    ],
+    "requested_parts": [
+      "Pydantic",
+      "Teacher approval"
+    ],
+    "file": "audio/cdev_013.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_014",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "What is LoRA at a high level, and why is it not your default for yearly regulation updates?",
+    "expected_intent_ids": [
+      "tech.lora",
+      "tech.rag_vs_finetuning",
+      "hard.not_finetune_first"
+    ],
+    "requested_parts": [
+      "LoRA",
+      "Not default for regs"
+    ],
+    "file": "audio/cdev_014.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_015",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "Separate indexing from retrieval, then say what you check when answers are wrong but hits look populated.",
+    "expected_intent_ids": [
+      "tech.rag_two_phases",
+      "tech.rag_debugging",
+      "hard.which_rag_layer_failed",
+      "hard.rag_debug_steps"
+    ],
+    "requested_parts": [
+      "Two phases",
+      "Debug wrong answers"
+    ],
+    "file": "audio/cdev_015.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_016",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "What is a vector store for, and why did you pick Chroma in practice?",
+    "expected_intent_ids": [
+      "tech.vector_db_choice",
+      "cv.chromadb",
+      "cv.vector_db"
+    ],
+    "requested_parts": [
+      "Vector store role",
+      "Chroma"
+    ],
+    "file": "audio/cdev_016.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_017",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "How do you redact PII in logs, and why does that matter near student cases?",
+    "expected_intent_ids": [
+      "tech.pii_redaction",
+      "hard.tenant_isolation",
+      "cv.student_pii"
+    ],
+    "requested_parts": [
+      "PII redaction",
+      "Student safety"
+    ],
+    "file": "audio/cdev_017.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_018",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "When should an agent stop calling tools, and how do you avoid double side effects after resume?",
+    "expected_intent_ids": [
+      "hard.agent_stop_tools",
+      "hard.interrupt_side_effects"
+    ],
+    "requested_parts": [
+      "Stop tools",
+      "No double side effects"
+    ],
+    "file": "audio/cdev_018.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_019",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "Explain temperature in generation, and why zero is safer for factual ministry answers.",
+    "expected_intent_ids": [
+      "tech.temperature",
+      "tech.hallucination_prevent"
+    ],
+    "requested_parts": [
+      "Temperature",
+      "Safer factual"
+    ],
+    "file": "audio/cdev_019.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_020",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "What is HITL, and what must never be saved after a teacher rejects a draft?",
+    "expected_intent_ids": [
+      "hard.hitl_where",
+      "hard.teacher_rejects",
+      "hard.agent_terms_difference"
+    ],
+    "requested_parts": [
+      "HITL",
+      "Reject path"
+    ],
+    "file": "audio/cdev_020.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_021",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "Is plain Python still agentic without LangGraph, and what graph feature would you still want later?",
+    "expected_intent_ids": [
+      "hard.plain_python_still_agentic",
+      "tech.what_is_langgraph",
+      "cv.langgraph",
+      "hard.langgraph_vs_n8n_vs_python"
+    ],
+    "requested_parts": [
+      "Plain Python agentic",
+      "LangGraph later"
+    ],
+    "file": "audio/cdev_021.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_022",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "How do you debug which RAG layer failed, and when do you abstain instead of regenerating?",
+    "expected_intent_ids": [
+      "hard.which_rag_layer_failed",
+      "hard.empty_retrieval",
+      "tech.rag_debugging",
+      "hard.rag_debug_steps"
+    ],
+    "requested_parts": [
+      "Which layer",
+      "Abstain"
+    ],
+    "file": "audio/cdev_022.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_023",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "Can you stream a government answer before validation, and what is the safer order?",
+    "expected_intent_ids": [
+      "hard.streaming_vs_validate",
+      "tech.hallucination_prevent"
+    ],
+    "requested_parts": [
+      "Streaming vs validate",
+      "Safety order"
+    ],
+    "file": "audio/cdev_023.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_024",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "What role does the similarity tool play for teachers, and why is it decision support not auto-grading?",
+    "expected_intent_ids": [
+      "proj.similarity.role",
+      "hard.hitl_where",
+      "proj.similarity.is_rag",
+      "proj.similarity.describe"
+    ],
+    "requested_parts": [
+      "Similarity role",
+      "Not auto-grader"
+    ],
+    "file": "audio/cdev_024.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_025",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "Walk indexing versus query-time retrieval, then name one faithfulness check after generation.",
+    "expected_intent_ids": [
+      "tech.rag_two_phases",
+      "tech.hallucination_prevent"
+    ],
+    "requested_parts": [
+      "Index vs query",
+      "Faithfulness"
+    ],
+    "file": "audio/cdev_025.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_026",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "Define embeddings simply, and say what cosine similarity gives you in search.",
+    "expected_intent_ids": [
+      "tech.embeddings",
+      "tech.cosine_semantic_search"
+    ],
+    "requested_parts": [
+      "Embeddings",
+      "Cosine"
+    ],
+    "file": "audio/cdev_026.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_027",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "Why not fine-tune first for changing PDFs, and what do you re-index instead?",
+    "expected_intent_ids": [
+      "hard.not_finetune_first",
+      "tech.rag_vs_finetuning",
+      "cv.fine_tuning"
+    ],
+    "requested_parts": [
+      "Not fine-tune first",
+      "Re-index"
+    ],
+    "file": "audio/cdev_027.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_028",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "How do you keep campus A from reading campus B via search, and where do filters apply?",
+    "expected_intent_ids": [
+      "hard.tenant_isolation",
+      "tech.metadata_filtering",
+      "tech.rag_access_control",
+      "tech.vector_db_choice"
+    ],
+    "requested_parts": [
+      "Isolation",
+      "Filter placement"
+    ],
+    "file": "audio/cdev_028.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_029",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "What is prompt engineering here, and how does structured output with Pydantic help?",
+    "expected_intent_ids": [
+      "tech.prompt_engineering",
+      "cv.pydantic",
+      "tech.structured_output",
+      "hard.teacher_rejects"
+    ],
+    "requested_parts": [
+      "Prompting",
+      "Structured output"
+    ],
+    "file": "audio/cdev_029.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_030",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "Explain RAG build briefly, then how two-phase retrieve-then-generate stays grounded.",
+    "expected_intent_ids": [
+      "tech.rag_build",
+      "tech.rag_two_phases",
+      "tech.rag_what"
+    ],
+    "requested_parts": [
+      "RAG build",
+      "Two phases"
+    ],
+    "file": "audio/cdev_030.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_031",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "What happens on weak top-k, and how do you prevent inventing citation numbers?",
+    "expected_intent_ids": [
+      "hard.empty_retrieval",
+      "tech.rag_prevent_invented_numbers",
+      "tech.no_wrong_info_finance"
+    ],
+    "requested_parts": [
+      "Weak/empty top-k",
+      "No invented numbers"
+    ],
+    "file": "audio/cdev_031.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_032",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "Define agentic workflows, then how you interrupt before an email send.",
+    "expected_intent_ids": [
+      "tech.agentic_what",
+      "hard.interrupt_side_effects",
+      "hard.hitl_where"
+    ],
+    "requested_parts": [
+      "Agentic",
+      "Interrupt before send"
+    ],
+    "file": "audio/cdev_032.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_033",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "What is Chroma used for, and how does metadata filtering sit on top of it?",
+    "expected_intent_ids": [
+      "cv.chromadb",
+      "tech.metadata_filtering",
+      "tech.vector_db_choice",
+      "tech.what_is_chromadb"
+    ],
+    "requested_parts": [
+      "Chroma",
+      "Metadata"
+    ],
+    "file": "audio/cdev_033.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_034",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "How do LangChain helpers differ from LangGraph control flow, and when is each enough?",
+    "expected_intent_ids": [
+      "tech.langgraph_vs_langchain",
+      "tech.what_is_langgraph",
+      "cv.langgraph",
+      "hard.langgraph_vs_n8n_vs_python"
+    ],
+    "requested_parts": [
+      "LangChain vs Graph",
+      "When enough"
+    ],
+    "file": "audio/cdev_034.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_035",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "What is good enough to launch for teachers, and which metric would you refuse to vanity-chase?",
+    "expected_intent_ids": [
+      "tech.good_enough_to_launch",
+      "tech.evaluate_classification"
+    ],
+    "requested_parts": [
+      "Launch bar",
+      "No vanity metric"
+    ],
+    "file": "audio/cdev_035.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_036",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "Explain access control for retrieval, and how tenant isolation depends on it.",
+    "expected_intent_ids": [
+      "tech.rag_access_control",
+      "hard.tenant_isolation",
+      "hard.secure_rag",
+      "tech.vector_db_choice"
+    ],
+    "requested_parts": [
+      "Access control",
+      "Tenants"
+    ],
+    "file": "audio/cdev_036.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_037",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "indian",
+    "transcript": "What is question generation in the BTEC path, and where does teacher reject stop persistence?",
+    "expected_intent_ids": [
+      "moe.question_generation",
+      "hard.teacher_rejects",
+      "hard.hitl_where"
+    ],
+    "requested_parts": [
+      "QG path",
+      "Reject"
+    ],
+    "file": "audio/cdev_037.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_038",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "jordanian",
+    "transcript": "How do you judge transcription quality, and what is WER useful for versus not?",
+    "expected_intent_ids": [
+      "tech.transcription_quality",
+      "tech.wer"
+    ],
+    "requested_parts": [
+      "Quality bar",
+      "WER limits"
+    ],
+    "file": "audio/cdev_038.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_039",
+    "question_type": "compound",
+    "condition": "clean",
+    "accent": "egyptian",
+    "transcript": "Define hallucination, empty-retrieval abstain, and one post-generation number check — in that order.",
+    "expected_intent_ids": [
+      "tech.hallucination_what",
+      "hard.empty_retrieval",
+      "tech.rag_prevent_invented_numbers",
+      "tech.hallucination_prevent"
+    ],
+    "requested_parts": [
+      "Hallucination",
+      "Abstain",
+      "Number check"
+    ],
+    "file": "audio/cdev_039.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  },
+  {
+    "id": "cdev_040",
+    "question_type": "compound",
+    "condition": "office",
+    "accent": "emirati",
+    "transcript": "What is RAG, why use it for question generation, what if retrieval fails, and how do you validate JSON output?",
+    "expected_intent_ids": [
+      "tech.rag_what",
+      "tech.rag_vs_finetuning",
+      "hard.empty_retrieval",
+      "cv.pydantic",
+      "tech.rag_build"
+    ],
+    "requested_parts": [
+      "RAG",
+      "Why RAG",
+      "Empty retrieval",
+      "Validate JSON"
+    ],
+    "file": "audio/cdev_040.wav",
+    "warmup": false,
+    "pack": "compound-dev",
+    "eval_only": true
+  }
+]

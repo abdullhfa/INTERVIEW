@@ -1,0 +1,1222 @@
+[
+ {
+  "id": "fuh3_warm_01",
+  "file": "audio/fuh3_warm_01.wav",
+  "transcript": "Does the pipeline handle mixed Arabic and English in one sentence?",
+  "condition": "clean",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "short",
+  "warmup": true
+ },
+ {
+  "id": "fuh3_warm_02",
+  "file": "audio/fuh3_warm_02.wav",
+  "transcript": "Walk me through what happens between a question arriving and an answer leaving.",
+  "condition": "clean",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "medium",
+  "warmup": true
+ },
+ {
+  "id": "fuh3_001",
+  "file": "audio/fuh3_001.wav",
+  "transcript": "Chunk overlap?",
+  "condition": "clean",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "ultra_short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_002",
+  "file": "audio/fuh3_002.wav",
+  "transcript": "Re-ranker — when?",
+  "condition": "office",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "ultra_short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_003",
+  "file": "audio/fuh3_003.wav",
+  "transcript": "Drift, meaning?",
+  "condition": "poor",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "ultra_short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_004",
+  "file": "audio/fuh3_004.wav",
+  "transcript": "p95 — define it.",
+  "condition": "far",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "ultra_short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_005",
+  "file": "audio/fuh3_005.wav",
+  "transcript": "Idempotency?",
+  "condition": "fast",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "ultra_short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_006",
+  "file": "audio/fuh3_006.wav",
+  "transcript": "LoRA, briefly.",
+  "condition": "clean",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "ultra_short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_007",
+  "file": "audio/fuh3_007.wav",
+  "transcript": "Air-gapped site?",
+  "condition": "office",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "ultra_short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_008",
+  "file": "audio/fuh3_008.wav",
+  "transcript": "Your notice period?",
+  "condition": "poor",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "ultra_short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_009",
+  "file": "audio/fuh3_009.wav",
+  "transcript": "Redis — what for?",
+  "condition": "far",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "ultra_short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_010",
+  "file": "audio/fuh3_010.wav",
+  "transcript": "Hybrid search?",
+  "condition": "fast",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "ultra_short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_011",
+  "file": "audio/fuh3_011.wav",
+  "transcript": "Golden dataset?",
+  "condition": "clean",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "ultra_short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_012",
+  "file": "audio/fuh3_012.wav",
+  "transcript": "Canary rollout?",
+  "condition": "office",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "ultra_short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_013",
+  "file": "audio/fuh3_013.wav",
+  "transcript": "Temperature — effect?",
+  "condition": "poor",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "ultra_short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_014",
+  "file": "audio/fuh3_014.wav",
+  "transcript": "MCP, quickly.",
+  "condition": "far",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "ultra_short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_015",
+  "file": "audio/fuh3_015.wav",
+  "transcript": "Circuit breaker?",
+  "condition": "fast",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "ultra_short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_016",
+  "file": "audio/fuh3_016.wav",
+  "transcript": "How do you pick a chunk size?",
+  "condition": "clean",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_017",
+  "file": "audio/fuh3_017.wav",
+  "transcript": "What happens when two retrieved policies disagree?",
+  "condition": "office",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_018",
+  "file": "audio/fuh3_018.wav",
+  "transcript": "Why not simply fine-tune on everything?",
+  "condition": "poor",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_019",
+  "file": "audio/fuh3_019.wav",
+  "transcript": "Who carries the blame when the agent is wrong?",
+  "condition": "far",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_020",
+  "file": "audio/fuh3_020.wav",
+  "transcript": "How many GPUs would we actually need?",
+  "condition": "fast",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_021",
+  "file": "audio/fuh3_021.wav",
+  "transcript": "Can it cope with scanned documents?",
+  "condition": "clean",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_022",
+  "file": "audio/fuh3_022.wav",
+  "transcript": "Do you stream tokens straight to the user?",
+  "condition": "office",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_023",
+  "file": "audio/fuh3_023.wav",
+  "transcript": "Is Kubernetes something you have run?",
+  "condition": "poor",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_024",
+  "file": "audio/fuh3_024.wav",
+  "transcript": "How long were you based in Kuwait?",
+  "condition": "far",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_025",
+  "file": "audio/fuh3_025.wav",
+  "transcript": "What pushed you out of project management?",
+  "condition": "fast",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_026",
+  "file": "audio/fuh3_026.wav",
+  "transcript": "Which metric mattered for the dropout model?",
+  "condition": "clean",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_027",
+  "file": "audio/fuh3_027.wav",
+  "transcript": "Did any student record reach the model?",
+  "condition": "office",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_028",
+  "file": "audio/fuh3_028.wav",
+  "transcript": "What stops the bill from exploding?",
+  "condition": "poor",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_029",
+  "file": "audio/fuh3_029.wav",
+  "transcript": "How do you version a prompt in production?",
+  "condition": "far",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_030",
+  "file": "audio/fuh3_030.wav",
+  "transcript": "What would you build in your first three months?",
+  "condition": "fast",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "short",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_031",
+  "file": "audio/fuh3_031.wav",
+  "transcript": "If retrieval comes back empty, what should the user actually see?",
+  "condition": "clean",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "medium",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_032",
+  "file": "audio/fuh3_032.wav",
+  "transcript": "How would you stop one school from reading another school's assignments?",
+  "condition": "office",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "medium",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_033",
+  "file": "audio/fuh3_033.wav",
+  "transcript": "What tells you the embedding model is the weak link rather than the prompt?",
+  "condition": "poor",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "medium",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_034",
+  "file": "audio/fuh3_034.wav",
+  "transcript": "Suppose we swap the embedding model next quarter — what has to happen?",
+  "condition": "far",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "medium",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_035",
+  "file": "audio/fuh3_035.wav",
+  "transcript": "How would you check that an answer is really supported by its citation?",
+  "condition": "fast",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "medium",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_036",
+  "file": "audio/fuh3_036.wav",
+  "transcript": "What would make you reach for a knowledge graph over plain vector search?",
+  "condition": "clean",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "medium",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_037",
+  "file": "audio/fuh3_037.wav",
+  "transcript": "Talk me through sizing hardware for an on-premise deployment.",
+  "condition": "office",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "medium",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_038",
+  "file": "audio/fuh3_038.wav",
+  "transcript": "How do you keep an agent from running the same action twice?",
+  "condition": "poor",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "medium",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_039",
+  "file": "audio/fuh3_039.wav",
+  "transcript": "What do you watch on a dashboard once this is live?",
+  "condition": "far",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "medium",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_040",
+  "file": "audio/fuh3_040.wav",
+  "transcript": "How did you keep future information out of the early-warning features?",
+  "condition": "fast",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "medium",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_041",
+  "file": "audio/fuh3_041.wav",
+  "transcript": "Which libraries do you actually reach for day to day?",
+  "condition": "clean",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "medium",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_042",
+  "file": "audio/fuh3_042.wav",
+  "transcript": "How would you explain a retrieval failure to a head teacher?",
+  "condition": "office",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "medium",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_043",
+  "file": "audio/fuh3_043.wav",
+  "transcript": "What changes in your design if the users speak Gulf Arabic?",
+  "condition": "poor",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "medium",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_044",
+  "file": "audio/fuh3_044.wav",
+  "transcript": "When is a simple router enough instead of a supervising agent?",
+  "condition": "far",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "medium",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_045",
+  "file": "audio/fuh3_045.wav",
+  "transcript": "How do you decide a system is ready to go live?",
+  "condition": "fast",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "medium",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_046",
+  "file": "audio/fuh3_046.wav",
+  "transcript": "We have twelve years of circulars in PDF, some scanned, some with tables — how would you make them searchable?",
+  "condition": "clean",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_047",
+  "file": "audio/fuh3_047.wav",
+  "transcript": "If a retrieved file contains a line telling the system to ignore its instructions, what does your pipeline do about it?",
+  "condition": "office",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_048",
+  "file": "audio/fuh3_048.wav",
+  "transcript": "Our regulations are rewritten every academic year, so what is the argument for retrieval instead of retraining the model?",
+  "condition": "poor",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_049",
+  "file": "audio/fuh3_049.wav",
+  "transcript": "Imagine the answer quotes a paragraph that does not actually contain the claim — how does the system notice?",
+  "condition": "far",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_050",
+  "file": "audio/fuh3_050.wav",
+  "transcript": "Describe how you would roll a new retriever into production without anyone noticing a regression.",
+  "condition": "fast",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_051",
+  "file": "audio/fuh3_051.wav",
+  "transcript": "Explain what you would put in front of the model as protection layers before anything reaches a citizen.",
+  "condition": "clean",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_052",
+  "file": "audio/fuh3_052.wav",
+  "transcript": "If the language model provider goes offline in the middle of the working day, what does the user still get?",
+  "condition": "office",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_053",
+  "file": "audio/fuh3_053.wav",
+  "transcript": "Tell me how you would trace a single slow request across retrieval, the model, and the tools it called.",
+  "condition": "poor",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_054",
+  "file": "audio/fuh3_054.wav",
+  "transcript": "You inherit a system that answers confidently but wrongly about one department — how do you find the cause?",
+  "condition": "far",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_055",
+  "file": "audio/fuh3_055.wav",
+  "transcript": "Walk me through the decision between calling a hosted model and running one inside our own data centre.",
+  "condition": "fast",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_056",
+  "file": "audio/fuh3_056.wav",
+  "transcript": "Talk me through the voice kiosk you built and what made the audio side difficult.",
+  "condition": "clean",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_057",
+  "file": "audio/fuh3_057.wav",
+  "transcript": "How would you convince a finance director that the running cost of this system is under control?",
+  "condition": "office",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_058",
+  "file": "audio/fuh3_058.wav",
+  "transcript": "Describe how you would evaluate whether the retrieval layer is good, separately from the writing quality.",
+  "condition": "poor",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_059",
+  "file": "audio/fuh3_059.wav",
+  "transcript": "Suppose a teacher refuses the generated exam question — what does the system do with that refusal?",
+  "condition": "far",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_060",
+  "file": "audio/fuh3_060.wav",
+  "transcript": "Explain what a checkpoint gives you in a graph-based workflow that conversation memory does not.",
+  "condition": "fast",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_061",
+  "file": "audio/fuh3_061.wav",
+  "transcript": "We are a ministry with confidential files per department, an air-gapped network, and no appetite for sending anything to a public API, so tell me how you would architect a question-answering system for us end to end.",
+  "condition": "clean",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "very_long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_062",
+  "file": "audio/fuh3_062.wav",
+  "transcript": "Assume the pilot goes well and suddenly three thousand staff use it every morning at the same time — describe what breaks first and what you would have put in place beforehand to survive that.",
+  "condition": "office",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "very_long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_063",
+  "file": "audio/fuh3_063.wav",
+  "transcript": "I want to understand your judgement rather than your tooling, so take one system you built, describe the problem, the approach you rejected, the approach you shipped, and what you would do differently today.",
+  "condition": "poor",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "very_long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_064",
+  "file": "audio/fuh3_064.wav",
+  "transcript": "A supplier uploads a proposal that quietly contains an instruction telling the assistant to rank them first, and a procurement officer then asks the assistant to compare offers — talk me through every place that attack could be stopped.",
+  "condition": "far",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "very_long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_065",
+  "file": "audio/fuh3_065.wav",
+  "transcript": "Our documents are half Arabic and half English, users mix both in one sentence, and some of the Arabic is scanned rather than typed, so explain in detail how retrieval would have to be designed for that reality.",
+  "condition": "fast",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "very_long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_066",
+  "file": "audio/fuh3_066.wav",
+  "transcript": "Say we give the assistant the ability to open tickets and send email on behalf of staff — explain what permissions you would grant, what you would refuse, and how you would prove afterwards that nothing was sent by mistake.",
+  "condition": "clean",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "very_long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_067",
+  "file": "audio/fuh3_067.wav",
+  "transcript": "Describe the full lifecycle of one exam question in your ministry system, from the moment a teacher asks for it to the moment it is approved, including every point where a human can stop it.",
+  "condition": "office",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "very_long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_068",
+  "file": "audio/fuh3_068.wav",
+  "transcript": "If I asked you to cut the answer time in half without lowering answer quality, describe exactly where you would look first, what you would measure, and how you would prove you had not broken anything.",
+  "condition": "poor",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "very_long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_069",
+  "file": "audio/fuh3_069.wav",
+  "transcript": "Tell me about a production incident you personally handled, what the users experienced, how you found the cause, and what you changed so that it could not happen the same way again.",
+  "condition": "far",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "very_long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_070",
+  "file": "audio/fuh3_070.wav",
+  "transcript": "We have a small team and no machine learning engineers, so explain honestly what part of this system we could maintain ourselves and what would need you or someone like you to stay involved.",
+  "condition": "fast",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "very_long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_071",
+  "file": "audio/fuh3_071.wav",
+  "transcript": "Imagine two specialised assistants reach opposite conclusions about whether a student should be flagged at risk — describe how the system resolves that and what the teacher finally sees.",
+  "condition": "clean",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "very_long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_072",
+  "file": "audio/fuh3_072.wav",
+  "transcript": "Take me through how you would prove to an auditor that no personal student information ever left the building, covering storage, prompts, logs, and anything cached along the way.",
+  "condition": "office",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "very_long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_073",
+  "file": "audio/fuh3_073.wav",
+  "transcript": "Explain the difference between a plain automation chain, a single tool-using assistant, and a group of coordinating assistants, and tell me which one your ministry work actually was.",
+  "condition": "poor",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "very_long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_074",
+  "file": "audio/fuh3_074.wav",
+  "transcript": "Suppose the model answers correctly ninety-five percent of the time but the remaining five percent are confidently wrong in a financial context — argue for what the product should do about that.",
+  "condition": "far",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "very_long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_075",
+  "file": "audio/fuh3_075.wav",
+  "transcript": "Describe how you would set up evaluation for this before launch: what examples you would collect, who writes the expected answers, and how you would keep the set honest over time.",
+  "condition": "fast",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "very_long",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_076",
+  "file": "audio/fuh3_076.wav",
+  "transcript": "What is re-ranking, and when would you bother adding one?",
+  "condition": "clean",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "compound",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_077",
+  "file": "audio/fuh3_077.wav",
+  "transcript": "Explain hallucination, and then tell me how you hold it down in practice.",
+  "condition": "office",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "compound",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_078",
+  "file": "audio/fuh3_078.wav",
+  "transcript": "Tell me what a context window is, and say what you do when a document will not fit inside one.",
+  "condition": "poor",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "compound",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_079",
+  "file": "audio/fuh3_079.wav",
+  "transcript": "Describe the similarity checker, name the technologies behind it, and say whether it is a retrieval system at all.",
+  "condition": "far",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "compound",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_080",
+  "file": "audio/fuh3_080.wav",
+  "transcript": "What is overfitting, how do you spot it, and what do you do about it?",
+  "condition": "fast",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "compound",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_081",
+  "file": "audio/fuh3_081.wav",
+  "transcript": "Point me to your vector database experience, then say which one you would pick for us and why.",
+  "condition": "clean",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "compound",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_082",
+  "file": "audio/fuh3_082.wav",
+  "transcript": "Explain what an orchestrator does, and when a single tool-using model is already enough.",
+  "condition": "office",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "compound",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_083",
+  "file": "audio/fuh3_083.wav",
+  "transcript": "Give me your education background, your certificates, and how any of that helps you here.",
+  "condition": "poor",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "compound",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_084",
+  "file": "audio/fuh3_084.wav",
+  "transcript": "What is prompt injection, where does it come from, and what stops it reaching the model?",
+  "condition": "far",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "compound",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_085",
+  "file": "audio/fuh3_085.wav",
+  "transcript": "Tell me what Docker solves, how a container differs from a virtual machine, and whether you would add Kubernetes here.",
+  "condition": "fast",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "compound",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_086",
+  "file": "audio/fuh3_086.wav",
+  "transcript": "Describe the early-warning work, the metric you optimised, and what the ministry got out of it.",
+  "condition": "clean",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "compound",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_087",
+  "file": "audio/fuh3_087.wav",
+  "transcript": "Explain tool calling, say why the arguments need a schema, and tell me when an agent should stop calling tools.",
+  "condition": "office",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "compound",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_088",
+  "file": "audio/fuh3_088.wav",
+  "transcript": "What is speech to text doing under the hood, why did you run it locally, and how do you judge whether it is accurate enough?",
+  "condition": "poor",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "compound",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_089",
+  "file": "audio/fuh3_089.wav",
+  "transcript": "Give me the difference between the two graph libraries, say which you used, and tell me whether the flow still works without them.",
+  "condition": "far",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "compound",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_090",
+  "file": "audio/fuh3_090.wav",
+  "transcript": "Cover four things for me: what embeddings are, how similarity search uses them, what metadata filtering adds, and when hybrid search earns its place.",
+  "condition": "fast",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "compound",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_091",
+  "file": "audio/fuh3_091.wav",
+  "transcript": "Our head of department keeps saying the assistant 'makes things up'. What is he actually describing?",
+  "condition": "clean",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "indirect_paraphrase",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_092",
+  "file": "audio/fuh3_092.wav",
+  "transcript": "Staff complain the answers changed after we swapped something last month, and nobody reindexed anything.",
+  "condition": "office",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "indirect_paraphrase",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_093",
+  "file": "audio/fuh3_093.wav",
+  "transcript": "Finance noticed the invoice tripled between Tuesday and Wednesday with no new users.",
+  "condition": "poor",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "indirect_paraphrase",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_094",
+  "file": "audio/fuh3_094.wav",
+  "transcript": "We keep getting the right document but the wrong paragraph out of it.",
+  "condition": "far",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "indirect_paraphrase",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_095",
+  "file": "audio/fuh3_095.wav",
+  "transcript": "A colleague insists we should train the model on our archive instead of all this retrieval machinery.",
+  "condition": "fast",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "indirect_paraphrase",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_096",
+  "file": "audio/fuh3_096.wav",
+  "transcript": "The assistant answers beautifully but nobody can tell where the sentence came from.",
+  "condition": "clean",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "indirect_paraphrase",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_097",
+  "file": "audio/fuh3_097.wav",
+  "transcript": "It keeps saying it cannot help, and the staff have started ignoring it entirely.",
+  "condition": "office",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "indirect_paraphrase",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_098",
+  "file": "audio/fuh3_098.wav",
+  "transcript": "Somebody from procurement was able to read a file that belongs to human resources.",
+  "condition": "poor",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "indirect_paraphrase",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_099",
+  "file": "audio/fuh3_099.wav",
+  "transcript": "The assistant went round in circles for four minutes and then gave up on its own.",
+  "condition": "far",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "indirect_paraphrase",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_100",
+  "file": "audio/fuh3_100.wav",
+  "transcript": "We ran a pilot and everyone liked it, but I have no idea how to say whether it is actually good.",
+  "condition": "fast",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "indirect_paraphrase",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_101",
+  "file": "audio/fuh3_101.wav",
+  "transcript": "Two people ask the same thing and get two different answers on the same afternoon.",
+  "condition": "clean",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "indirect_paraphrase",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_102",
+  "file": "audio/fuh3_102.wav",
+  "transcript": "Our lawyers are nervous about anything leaving the building, including the recordings.",
+  "condition": "office",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "indirect_paraphrase",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_103",
+  "file": "audio/fuh3_103.wav",
+  "transcript": "You have been at the ministry three years — what would make you pack up and go somewhere else?",
+  "condition": "poor",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "indirect_paraphrase",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_104",
+  "file": "audio/fuh3_104.wav",
+  "transcript": "If we hired you and then stopped giving you interesting problems, what would happen?",
+  "condition": "far",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "indirect_paraphrase",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_105",
+  "file": "audio/fuh3_105.wav",
+  "transcript": "I want to know what you are not good at, and I would rather not hear a disguised strength.",
+  "condition": "fast",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "indirect_paraphrase",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_106",
+  "file": "audio/fuh3_106.wav",
+  "transcript": "And what exactly was your part in it?",
+  "condition": "clean",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "follow_up_contextual",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_107",
+  "file": "audio/fuh3_107.wav",
+  "transcript": "Alright, so how would you actually put one together?",
+  "condition": "office",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "follow_up_contextual",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_108",
+  "file": "audio/fuh3_108.wav",
+  "transcript": "And how does the search itself work on top of those?",
+  "condition": "poor",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "follow_up_contextual",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_109",
+  "file": "audio/fuh3_109.wav",
+  "transcript": "So where does that differ from an ordinary workflow?",
+  "condition": "far",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "follow_up_contextual",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_110",
+  "file": "audio/fuh3_110.wav",
+  "transcript": "How do you actually build those?",
+  "condition": "fast",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "follow_up_contextual",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_111",
+  "file": "audio/fuh3_111.wav",
+  "transcript": "And what do you do to keep it down?",
+  "condition": "clean",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "follow_up_contextual",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_112",
+  "file": "audio/fuh3_112.wav",
+  "transcript": "Which technologies sat behind that one?",
+  "condition": "office",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "follow_up_contextual",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_113",
+  "file": "audio/fuh3_113.wav",
+  "transcript": "So how do you keep it out of a model?",
+  "condition": "poor",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "follow_up_contextual",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_114",
+  "file": "audio/fuh3_114.wav",
+  "transcript": "And your usual way of preventing it?",
+  "condition": "far",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "follow_up_contextual",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_115",
+  "file": "audio/fuh3_115.wav",
+  "transcript": "Have you shipped anything with it yourself?",
+  "condition": "fast",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "follow_up_contextual",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_116",
+  "file": "audio/fuh3_116.wav",
+  "transcript": "Would you still choose it for us?",
+  "condition": "clean",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "follow_up_contextual",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_117",
+  "file": "audio/fuh3_117.wav",
+  "transcript": "And where would you draw the line against retrieval?",
+  "condition": "office",
+  "accent": "en-IN",
+  "accent_kind": "native_locale",
+  "question_type": "follow_up_contextual",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_118",
+  "file": "audio/fuh3_118.wav",
+  "transcript": "What stops it in your own design?",
+  "condition": "poor",
+  "accent": "proxy-ar-JO",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "follow_up_contextual",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_119",
+  "file": "audio/fuh3_119.wav",
+  "transcript": "What was the hard part there?",
+  "condition": "far",
+  "accent": "proxy-ar-EG",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "follow_up_contextual",
+  "warmup": false
+ },
+ {
+  "id": "fuh3_120",
+  "file": "audio/fuh3_120.wav",
+  "transcript": "Why run that locally rather than a cloud service?",
+  "condition": "fast",
+  "accent": "proxy-ar-AE",
+  "accent_kind": "synthetic_proxy",
+  "question_type": "follow_up_contextual",
+  "warmup": false
+ }
+]

@@ -1,0 +1,16 @@
+{
+  "name": "generalization-dev",
+  "track": "C",
+  "scored_cases": 56,
+  "warmup_cases": 1,
+  "not_final_holdout": true,
+  "slices": [
+    "medium",
+    "ultra_short",
+    "indirect",
+    "follow_up",
+    "far",
+    "poor"
+  ],
+  "audio_status": "synthesized"
+}

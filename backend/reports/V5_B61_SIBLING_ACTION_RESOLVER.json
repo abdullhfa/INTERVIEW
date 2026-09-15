@@ -1,0 +1,770 @@
+{
+  "created_at": "2026-09-14T03:49:26.763098+00:00",
+  "phase": "V5 Phase B6.1 — same-topic sibling action resolver",
+  "scope": "measurement only; LAST ranking experiment",
+  "semantic_index_ready": true,
+  "eligibility_probe_on_b5_fragments": [
+    {
+      "clip": "fuh4_079",
+      "gold": "proj.similarity.tech",
+      "bucket": "ACTION_GRANULARITY",
+      "would_fire": false,
+      "reason": "no_clear_query_action",
+      "query_action": null,
+      "top1": "proj.similarity.describe",
+      "alternate": null,
+      "sem_rank_alt": null
+    },
+    {
+      "clip": "fuh4_081",
+      "gold": "tech.vector_db_choice",
+      "bucket": "HYBRID_RANKING",
+      "would_fire": false,
+      "reason": "no_clear_query_action",
+      "query_action": null,
+      "top1": "cv.vector_db",
+      "alternate": null,
+      "sem_rank_alt": null
+    },
+    {
+      "clip": "fuh4_082",
+      "gold": "tech.agent_orchestrator",
+      "bucket": "HYBRID_RANKING",
+      "would_fire": false,
+      "reason": "top1_already_matches_action",
+      "query_action": "compare",
+      "top1": "hard.agent_terms_difference",
+      "alternate": null,
+      "sem_rank_alt": null
+    },
+    {
+      "clip": "fuh4_082",
+      "gold": "tech.multi_agent_when",
+      "bucket": "HYBRID_RANKING",
+      "would_fire": false,
+      "reason": "top1_already_matches_action",
+      "query_action": "compare",
+      "top1": "hard.agent_terms_difference",
+      "alternate": null,
+      "sem_rank_alt": null
+    },
+    {
+      "clip": "fuh4_084",
+      "gold": "tech.guardrails_how",
+      "bucket": "ACTION_GRANULARITY",
+      "would_fire": false,
+      "reason": "top1_already_matches_action",
+      "query_action": "definition",
+      "top1": "tech.guardrails_what",
+      "alternate": null,
+      "sem_rank_alt": null
+    },
+    {
+      "clip": "fuh4_085",
+      "gold": "tech.kubernetes",
+      "bucket": "HYBRID_RANKING",
+      "would_fire": false,
+      "reason": "no_clear_query_action",
+      "query_action": null,
+      "top1": "tech.sklearn_vs_neural",
+      "alternate": null,
+      "sem_rank_alt": null
+    },
+    {
+      "clip": "fuh4_086",
+      "gold": "proj.early_warning.describe",
+      "bucket": "HYBRID_RANKING",
+      "would_fire": false,
+      "reason": "no_eligible_same_topic_alt",
+      "query_action": "how",
+      "top1": "proj.early_warning.metric",
+      "alternate": null,
+      "sem_rank_alt": null
+    },
+    {
+      "clip": "fuh4_086",
+      "gold": "proj.early_warning.metric",
+      "bucket": "HYBRID_RANKING",
+      "would_fire": false,
+      "reason": "no_eligible_same_topic_alt",
+      "query_action": "why",
+      "top1": "proj.early_warning.metric",
+      "alternate": null,
+      "sem_rank_alt": null
+    },
+    {
+      "clip": "fuh4_087",
+      "gold": "hard.tool_schema",
+      "bucket": "HYBRID_RANKING",
+      "would_fire": false,
+      "reason": "no_clear_query_action",
+      "query_action": null,
+      "top1": "tech.tool_calling",
+      "alternate": null,
+      "sem_rank_alt": null
+    },
+    {
+      "clip": "fuh4_087",
+      "gold": "hard.agent_stop_tools",
+      "bucket": "ACTION_GRANULARITY",
+      "would_fire": false,
+      "reason": "alt_failed_accept_gate_fallback_top1",
+      "query_action": "when",
+      "top1": "hard.agent_loop",
+      "alternate": "hard.agent_stop_tools",
+      "sem_rank_alt": 1
+    },
+    {
+      "clip": "fuh4_088",
+      "gold": "tech.whisper_vs_cloud",
+      "bucket": "ACTION_GRANULARITY",
+      "would_fire": false,
+      "reason": "no_clear_query_action",
+      "query_action": null,
+      "top1": "tech.what_is_whisper",
+      "alternate": null,
+      "sem_rank_alt": null
+    },
+    {
+      "clip": "fuh4_088",
+      "gold": "tech.transcription_quality",
+      "bucket": "HYBRID_RANKING",
+      "would_fire": false,
+      "reason": "no_clear_query_action",
+      "query_action": null,
+      "top1": "tech.how_stt_works",
+      "alternate": null,
+      "sem_rank_alt": null
+    },
+    {
+      "clip": "fuh4_089",
+      "gold": "hard.remove_langchain",
+      "bucket": "HYBRID_RANKING",
+      "would_fire": false,
+      "reason": "no_eligible_same_topic_alt",
+      "query_action": "compare",
+      "top1": "tech.rag_vs_finetuning",
+      "alternate": null,
+      "sem_rank_alt": null
+    }
+  ],
+  "baseline": {
+    "variant": "A_baseline",
+    "gold_parts": 41,
+    "gold_parts_hit": 17,
+    "coverage_by_part": 0.4146,
+    "wrong_intent": 4,
+    "hc_risk": 0,
+    "recovered_target_13": 0,
+    "recovered_target_of": 13,
+    "recovered_detail": [],
+    "resolver_fires": 0,
+    "newly_broken_non_compound": 1
+  },
+  "sibling": {
+    "variant": "B61_sibling_action",
+    "gold_parts": 41,
+    "gold_parts_hit": 17,
+    "coverage_by_part": 0.4146,
+    "wrong_intent": 4,
+    "hc_risk": 0,
+    "recovered_target_13": 0,
+    "recovered_target_of": 13,
+    "recovered_detail": [],
+    "resolver_fires": 0,
+    "newly_broken_non_compound": 1,
+    "per_clip": [
+      {
+        "clip": "fuh4_076",
+        "gold": [
+          "tech.reranking",
+          "hard.hybrid_when"
+        ],
+        "selected": [
+          "tech.reranking",
+          "hard.hybrid_when"
+        ],
+        "hit": [
+          "hard.hybrid_when",
+          "tech.reranking"
+        ],
+        "wrong": [],
+        "coverage": 1.0
+      },
+      {
+        "clip": "fuh4_077",
+        "gold": [
+          "tech.hallucination_what",
+          "tech.hallucination_prevent"
+        ],
+        "selected": [
+          "tech.hallucination_what",
+          "tech.hallucination_prevent"
+        ],
+        "hit": [
+          "tech.hallucination_prevent",
+          "tech.hallucination_what"
+        ],
+        "wrong": [],
+        "coverage": 1.0
+      },
+      {
+        "clip": "fuh4_078",
+        "gold": [
+          "tech.context_window",
+          "tech.chunk_size"
+        ],
+        "selected": [
+          "tech.context_window",
+          "tech.chunk_size"
+        ],
+        "hit": [
+          "tech.chunk_size",
+          "tech.context_window"
+        ],
+        "wrong": [],
+        "coverage": 1.0
+      },
+      {
+        "clip": "fuh4_079",
+        "gold": [
+          "proj.similarity.describe",
+          "proj.similarity.tech",
+          "proj.similarity.is_rag"
+        ],
+        "selected": [],
+        "hit": [],
+        "wrong": [],
+        "coverage": 0.0
+      },
+      {
+        "clip": "fuh4_080",
+        "gold": [
+          "tech.overfitting",
+          "tech.overfitting_prevent",
+          "tech.evaluate_classification"
+        ],
+        "selected": [],
+        "hit": [],
+        "wrong": [],
+        "coverage": 0.0
+      },
+      {
+        "clip": "fuh4_081",
+        "gold": [
+          "cv.vector_db",
+          "tech.vector_db_choice"
+        ],
+        "selected": [
+          "cv.vector_db"
+        ],
+        "hit": [
+          "cv.vector_db"
+        ],
+        "wrong": [],
+        "coverage": 0.5
+      },
+      {
+        "clip": "fuh4_082",
+        "gold": [
+          "tech.agent_orchestrator",
+          "tech.multi_agent_when"
+        ],
+        "selected": [
+          "hard.agent_terms_difference"
+        ],
+        "hit": [],
+        "wrong": [
+          "hard.agent_terms_difference"
+        ],
+        "coverage": 0.0
+      },
+      {
+        "clip": "fuh4_083",
+        "gold": [
+          "cv.education",
+          "cv.certifications",
+          "cv.pmp_value"
+        ],
+        "selected": [
+          "cv.education",
+          "cv.certifications"
+        ],
+        "hit": [
+          "cv.certifications",
+          "cv.education"
+        ],
+        "wrong": [],
+        "coverage": 0.6667
+      },
+      {
+        "clip": "fuh4_084",
+        "gold": [
+          "tech.prompt_injection_what",
+          "hard.injection_in_pdf",
+          "tech.guardrails_how"
+        ],
+        "selected": [
+          "tech.guardrails_what"
+        ],
+        "hit": [],
+        "wrong": [
+          "tech.guardrails_what"
+        ],
+        "coverage": 0.0
+      },
+      {
+        "clip": "fuh4_085",
+        "gold": [
+          "tech.docker_why",
+          "tech.container_vs_vm",
+          "tech.kubernetes"
+        ],
+        "selected": [
+          "tech.docker_why",
+          "tech.container_vs_vm"
+        ],
+        "hit": [
+          "tech.container_vs_vm",
+          "tech.docker_why"
+        ],
+        "wrong": [],
+        "coverage": 0.6667
+      },
+      {
+        "clip": "fuh4_086",
+        "gold": [
+          "proj.early_warning.describe",
+          "proj.early_warning.metric",
+          "proj.early_warning.result"
+        ],
+        "selected": [
+          "proj.early_warning.result"
+        ],
+        "hit": [
+          "proj.early_warning.result"
+        ],
+        "wrong": [],
+        "coverage": 0.3333
+      },
+      {
+        "clip": "fuh4_087",
+        "gold": [
+          "tech.tool_calling",
+          "hard.tool_schema",
+          "hard.agent_stop_tools"
+        ],
+        "selected": [
+          "tech.tool_calling",
+          "hard.agent_loop"
+        ],
+        "hit": [
+          "tech.tool_calling"
+        ],
+        "wrong": [
+          "hard.agent_loop"
+        ],
+        "coverage": 0.3333
+      },
+      {
+        "clip": "fuh4_088",
+        "gold": [
+          "tech.how_stt_works",
+          "tech.whisper_vs_cloud",
+          "tech.transcription_quality"
+        ],
+        "selected": [
+          "tech.how_stt_works",
+          "tech.what_is_whisper"
+        ],
+        "hit": [
+          "tech.how_stt_works"
+        ],
+        "wrong": [
+          "tech.what_is_whisper"
+        ],
+        "coverage": 0.3333
+      },
+      {
+        "clip": "fuh4_089",
+        "gold": [
+          "tech.langgraph_vs_langchain",
+          "cv.langgraph",
+          "hard.remove_langchain"
+        ],
+        "selected": [],
+        "hit": [],
+        "wrong": [],
+        "coverage": 0.0
+      },
+      {
+        "clip": "fuh4_090",
+        "gold": [
+          "tech.embeddings",
+          "tech.cosine_semantic_search",
+          "tech.metadata_filtering",
+          "tech.hybrid_search"
+        ],
+        "selected": [
+          "tech.embeddings",
+          "tech.cosine_semantic_search",
+          "tech.hybrid_search"
+        ],
+        "hit": [
+          "tech.cosine_semantic_search",
+          "tech.embeddings",
+          "tech.hybrid_search"
+        ],
+        "wrong": [],
+        "coverage": 0.75
+      }
+    ]
+  },
+  "sibling_traces": [
+    {
+      "clip": "fuh4_076",
+      "traces": [
+        {
+          "fragment": "Define re-ranking",
+          "fired": false,
+          "reason": "top1_already_matches_action",
+          "query_action": "definition",
+          "top1": "tech.reranking",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        },
+        {
+          "fragment": "Say when hybrid search needs it",
+          "fired": false,
+          "reason": "top1_already_matches_action",
+          "query_action": "when",
+          "top1": "hard.hybrid_when",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        }
+      ]
+    },
+    {
+      "clip": "fuh4_077",
+      "traces": [
+        {
+          "fragment": "What is hallucination?",
+          "fired": false,
+          "reason": "top1_already_matches_action",
+          "query_action": "definition",
+          "top1": "tech.hallucination_what",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        },
+        {
+          "fragment": "How do you prevent or reduce hallucination?",
+          "fired": false,
+          "reason": "top1_already_matches_action",
+          "query_action": "how",
+          "top1": "tech.hallucination_prevent",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        }
+      ]
+    },
+    {
+      "clip": "fuh4_078",
+      "traces": [
+        {
+          "fragment": "Explain context windows?",
+          "fired": false,
+          "reason": "top1_already_matches_action",
+          "query_action": "definition",
+          "top1": "tech.context_window",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        },
+        {
+          "fragment": "How you chunk oversized documents?",
+          "fired": false,
+          "reason": "no_eligible_same_topic_alt",
+          "query_action": "how",
+          "top1": "tech.chunk_size",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        }
+      ]
+    },
+    {
+      "clip": "fuh4_079",
+      "traces": []
+    },
+    {
+      "clip": "fuh4_080",
+      "traces": []
+    },
+    {
+      "clip": "fuh4_081",
+      "traces": [
+        {
+          "fragment": "Your vector DB history",
+          "fired": false,
+          "reason": "no_clear_query_action",
+          "query_action": null,
+          "top1": "cv.vector_db",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        },
+        {
+          "fragment": "Your pick for our workload and Y",
+          "fired": false,
+          "reason": "no_clear_query_action",
+          "query_action": null,
+          "top1": "proj.similarity.threshold",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        }
+      ]
+    },
+    {
+      "clip": "fuh4_082",
+      "traces": []
+    },
+    {
+      "clip": "fuh4_083",
+      "traces": [
+        {
+          "fragment": "Education",
+          "fired": false,
+          "reason": "no_clear_query_action",
+          "query_action": null,
+          "top1": "cv.education",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        },
+        {
+          "fragment": "certification",
+          "fired": false,
+          "reason": "no_clear_query_action",
+          "query_action": null,
+          "top1": "cv.certifications",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        },
+        {
+          "fragment": "How they matter for this role?",
+          "fired": false,
+          "reason": "no_eligible_same_topic_alt",
+          "query_action": "how",
+          "top1": "gen.why_this_role",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        }
+      ]
+    },
+    {
+      "clip": "fuh4_084",
+      "traces": [
+        {
+          "fragment": "What are guardrails?",
+          "fired": false,
+          "reason": "top1_already_matches_action",
+          "query_action": "definition",
+          "top1": "tech.guardrails_what",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        }
+      ]
+    },
+    {
+      "clip": "fuh4_085",
+      "traces": [
+        {
+          "fragment": "Docker value",
+          "fired": false,
+          "reason": "no_clear_query_action",
+          "query_action": null,
+          "top1": "tech.docker_why",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        },
+        {
+          "fragment": "container versus VM",
+          "fired": false,
+          "reason": "no_eligible_same_topic_alt",
+          "query_action": "compare",
+          "top1": "tech.container_vs_vm",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        },
+        {
+          "fragment": "If we need Cuba needs",
+          "fired": false,
+          "reason": "no_clear_query_action",
+          "query_action": null,
+          "top1": "tech.sklearn_vs_neural",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        }
+      ]
+    },
+    {
+      "clip": "fuh4_086",
+      "traces": [
+        {
+          "fragment": "How do you evaluate an early warning model for students?",
+          "fired": false,
+          "reason": "no_eligible_same_topic_alt",
+          "query_action": "how",
+          "top1": "proj.early_warning.metric",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        },
+        {
+          "fragment": "Why does recall matter more than accuracy for early warning?",
+          "fired": false,
+          "reason": "no_eligible_same_topic_alt",
+          "query_action": "why",
+          "top1": "proj.early_warning.metric",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        }
+      ]
+    },
+    {
+      "clip": "fuh4_087",
+      "traces": [
+        {
+          "fragment": "Tool calling basics schema need",
+          "fired": false,
+          "reason": "no_clear_query_action",
+          "query_action": null,
+          "top1": "tech.tool_calling",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        },
+        {
+          "fragment": "When to halt tool loops?",
+          "fired": false,
+          "reason": "alt_failed_accept_gate_fallback_top1",
+          "query_action": "when",
+          "top1": "hard.agent_loop",
+          "chosen": null,
+          "alternate": "hard.agent_stop_tools",
+          "sem_rank_alt": 1,
+          "top1_action": "how",
+          "alt_action": "when",
+          "family": "agents"
+        }
+      ]
+    },
+    {
+      "clip": "fuh4_088",
+      "traces": [
+        {
+          "fragment": "STT internals",
+          "fired": false,
+          "reason": "no_clear_query_action",
+          "query_action": null,
+          "top1": "tech.how_stt_works",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        },
+        {
+          "fragment": "local Whisper rationale",
+          "fired": false,
+          "reason": "no_clear_query_action",
+          "query_action": null,
+          "top1": "tech.what_is_whisper",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        },
+        {
+          "fragment": "Accuracy acceptance test",
+          "fired": false,
+          "reason": "no_clear_query_action",
+          "query_action": null,
+          "top1": "tech.overfitting",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        }
+      ]
+    },
+    {
+      "clip": "fuh4_089",
+      "traces": []
+    },
+    {
+      "clip": "fuh4_090",
+      "traces": [
+        {
+          "fragment": "Embedings",
+          "fired": false,
+          "reason": "no_clear_query_action",
+          "query_action": null,
+          "top1": "tech.embeddings",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        },
+        {
+          "fragment": "cosine search",
+          "fired": false,
+          "reason": "no_clear_query_action",
+          "query_action": null,
+          "top1": "tech.cosine_semantic_search",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        },
+        {
+          "fragment": "metadata filters",
+          "fired": false,
+          "reason": "no_clear_query_action",
+          "query_action": null,
+          "top1": "tech.metadata_filtering",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        },
+        {
+          "fragment": "Hybrid search tradeoffs cover all four",
+          "fired": false,
+          "reason": "no_clear_query_action",
+          "query_action": null,
+          "top1": "tech.hybrid_search",
+          "chosen": null,
+          "alternate": null,
+          "sem_rank_alt": null
+        }
+      ]
+    }
+  ],
+  "hard_gate": {
+    "recovered_target_ge_3": false,
+    "wrong_le_4": true,
+    "wrong_le_baseline": true,
+    "newly_broken_le_baseline": true,
+    "hc_le_baseline": true,
+    "coverage_ge_baseline": true,
+    "all_pass": false
+  },
+  "close_ranking_path": true,
+  "verdict": "CLOSE_RANKING_PATH — B6.1 failed hard gate; stop ranking/action reranking; reclassify the 13 toward profile/candidate + segmentation"
+}

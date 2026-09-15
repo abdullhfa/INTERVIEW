@@ -1,0 +1,4228 @@
+{
+  "created_at": "2026-09-13T21:31:12.152960+00:00",
+  "step": "v4 step 3 — score floor includes current.score for identical-id recovery",
+  "change": "semantic_intent_recovery: max(exist, current.score, best) when recovered id == current.id (SCORE_FLOOR_INCLUDE_CURRENT=1).",
+  "untouched": [
+    "apply gate",
+    "thresholds",
+    "_MIN_ANSWER_SCORE",
+    "L2 / compound",
+    "aliases",
+    "weights"
+  ],
+  "verdict": "STEP3_PASS",
+  "synthetic": {
+    "exist": 0.5,
+    "current": 0.6,
+    "best": 0.55,
+    "before": 0.55,
+    "after": 0.6,
+    "ok": true
+  },
+  "primary": {
+    "lowered_identical_id_before": [],
+    "lowered_identical_id_after": [],
+    "score_lifts": [],
+    "invariant_after_ok": true
+  },
+  "ranking_failing": {
+    "before": {
+      "gold_in_hybrid_top5": 13,
+      "gold_at_hybrid_1": 6,
+      "applied_and_gold": 1
+    },
+    "after": {
+      "gold_in_hybrid_top5": 13,
+      "gold_at_hybrid_1": 6,
+      "applied_and_gold": 1
+    }
+  },
+  "guards": {
+    "changed_applied": [],
+    "changed_on_currently_passing": [],
+    "hc_risk_new": []
+  },
+  "note": "Live v3 re-score may already have exist_m.score >= current.score after step 2; the synthetic case proves the deferred bug class is closed.",
+  "per_clip": {
+    "before": {
+      "fuh3_001": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.chunk_size",
+        "current_score": 0.915088,
+        "applied_id": "tech.chunk_size",
+        "applied_mode": "strong",
+        "applied_score": 0.915088,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_002": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.reranking",
+          "gen.biggest_achievement",
+          "gen.first_90_days",
+          "hard.hybrid_when",
+          "tech.wer"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_003": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.model_drift",
+        "current_score": 0.763126,
+        "applied_id": "tech.model_drift",
+        "applied_mode": "strong",
+        "applied_score": 0.763126,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_004": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.p95",
+        "current_score": 0.805695,
+        "applied_id": "tech.p95",
+        "applied_mode": "strong",
+        "applied_score": 0.805695,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_005": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.idempotency",
+          "cv.hallucination_in_projects",
+          "hard.context_stuffing",
+          "hard.idempotent_tools",
+          "cv.core_skills"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_006": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.lora",
+        "current_score": 0.839879,
+        "applied_id": "tech.lora",
+        "applied_mode": "strong",
+        "applied_score": 0.839879,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_007": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "gen.weaknesses",
+          "cv.image_processing",
+          "hard.empty_retrieval",
+          "cv.python_fastapi",
+          "tech.rag_debugging"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_008": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "cv.notice_period",
+        "current_score": 0.808919,
+        "applied_id": "cv.notice_period",
+        "applied_mode": "strong",
+        "applied_score": 0.808919,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_009": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.redis_why",
+        "current_score": 0.838546,
+        "applied_id": "tech.redis_why",
+        "applied_mode": "strong",
+        "applied_score": 0.838546,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_010": {
+        "reason": "recovered:thin_margin",
+        "hybrid_top5": [
+          "tech.hybrid_search",
+          "hard.hybrid_when",
+          "tech.conflict_of_interest_scenario",
+          "hard.empty_retrieval",
+          "tech.rag_build"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "tech.hybrid_search",
+        "current_score": 0.870793,
+        "applied_id": "tech.hybrid_search",
+        "applied_mode": "strong",
+        "applied_score": 0.870793,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_011": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.golden_dataset",
+        "current_score": 0.902804,
+        "applied_id": "tech.golden_dataset",
+        "applied_mode": "strong",
+        "applied_score": 0.902804,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_012": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "hard.canary_rag",
+          "gen.handle_mistake_in_production",
+          "hard.context_stuffing",
+          "hard.remove_langchain",
+          "tech.agent_mistake"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "hard.canary_rag",
+        "applied_mode": "strong",
+        "applied_score": 0.574074,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_013": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.temperature",
+        "current_score": 0.663063,
+        "applied_id": "tech.temperature",
+        "applied_mode": "strong",
+        "applied_score": 0.663063,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_014": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "gen.pressure",
+          "gen.first_90_days",
+          "tech.mcp",
+          "intro.short_version",
+          "tech.latency_p95"
+        ],
+        "gold_rank_hybrid": 3,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "gen.pressure",
+        "applied_mode": "weak",
+        "applied_score": 0.597666,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_015": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "hard.circuit_breaker",
+        "current_score": 0.808926,
+        "applied_id": "hard.circuit_breaker",
+        "applied_mode": "strong",
+        "applied_score": 0.808926,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_016": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.chunk_size",
+        "current_score": 0.853276,
+        "applied_id": "tech.chunk_size",
+        "applied_mode": "strong",
+        "applied_score": 0.853276,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_017": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "hard.conflicting_docs",
+        "current_score": 0.789673,
+        "applied_id": "hard.conflicting_docs",
+        "applied_mode": "strong",
+        "applied_score": 0.789673,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_018": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.lora",
+        "current_score": 0.787424,
+        "applied_id": "tech.lora",
+        "applied_mode": "strong",
+        "applied_score": 0.787424,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_019": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.accountability",
+          "hard.agents_disagree",
+          "tech.react_reasoning",
+          "tech.agentic_what",
+          "cv.agentic_experience"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_020": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.gpu_sizing",
+        "current_score": 0.929215,
+        "applied_id": "tech.gpu_sizing",
+        "applied_mode": "strong",
+        "applied_score": 0.929215,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_021": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.rag_pdfs_tables_scans",
+          "hard.not_finetune_first",
+          "hard.injection_in_pdf",
+          "hard.empty_retrieval",
+          "tech.conflict_of_interest_scenario"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_022": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "hard.streaming_vs_validate",
+        "current_score": 0.748731,
+        "applied_id": "hard.streaming_vs_validate",
+        "applied_mode": "strong",
+        "applied_score": 0.748731,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_023": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "cv.kubernetes",
+        "current_score": 0.828912,
+        "applied_id": "cv.kubernetes",
+        "applied_mode": "strong",
+        "applied_score": 0.828912,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_024": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.hallucination_prevent",
+          "hard.tenant_isolation",
+          "hard.agent_memory_privacy",
+          "tech.data_leakage_prevent",
+          "tech.rag_prevent_invented_numbers"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_025": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "cv.transition_pm_to_ai",
+          "gen.why_ai_field",
+          "gen.leadership",
+          "cv.pmp_value",
+          "gen.motivation"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "cv.transition_pm_to_ai",
+        "current_score": 0.614241,
+        "applied_id": "cv.pmp_value",
+        "applied_mode": "weak",
+        "applied_score": 0.660666,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_026": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "proj.early_warning.metric",
+          "hard.fallback_llm_down",
+          "proj.similarity.threshold",
+          "hard.empty_retrieval",
+          "proj.completion_risk.describe"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_027": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "cv.student_pii",
+          "proj.early_warning.describe",
+          "cv.hallucination_in_projects",
+          "moe.question_generation.llm_used",
+          "hard.agent_write_db"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "hard.agent_write_db",
+        "applied_mode": "strong",
+        "applied_score": 0.619234,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_028": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.cost_spike",
+          "hard.agent_stop_tools",
+          "tech.idempotency",
+          "hard.timeout_vs_steps",
+          "hard.context_stuffing"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_029": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "moe.operational_status",
+        "current_score": 0.556187,
+        "applied_id": "moe.operational_status",
+        "applied_mode": "strong",
+        "applied_score": 0.556187,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_030": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "gen.first_90_days",
+        "current_score": 0.733242,
+        "applied_id": "gen.first_90_days",
+        "applied_mode": "strong",
+        "applied_score": 0.733242,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_031": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "hard.empty_retrieval",
+        "current_score": 0.723382,
+        "applied_id": "hard.empty_retrieval",
+        "applied_mode": "strong",
+        "applied_score": 0.723382,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_032": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "hard.tenant_isolation",
+        "current_score": 0.741117,
+        "applied_id": "hard.tenant_isolation",
+        "applied_mode": "strong",
+        "applied_score": 0.741117,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_033": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "hard.which_rag_layer_failed",
+          "tech.reindex_embedding_change",
+          "hard.change_embedding",
+          "tech.tfidf_vs_embeddings",
+          "tech.embeddings"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "hard.which_rag_layer_failed",
+        "current_score": 0.611707,
+        "applied_id": "hard.which_rag_layer_failed",
+        "applied_mode": "strong",
+        "applied_score": 0.690348,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_034": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "hard.change_embedding",
+          "tech.reindex_embedding_change",
+          "tech.embeddings",
+          "hard.which_rag_layer_failed",
+          "proj.similarity.tech"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": "tech.reindex_embedding_change",
+        "current_score": 0.655467,
+        "applied_id": "tech.embeddings",
+        "applied_mode": "strong",
+        "applied_score": 0.711492,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_035": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "hard.citation_lie",
+        "current_score": 0.722851,
+        "applied_id": "hard.citation_lie",
+        "applied_mode": "strong",
+        "applied_score": 0.722851,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_036": {
+        "reason": "recovered:thin_margin",
+        "hybrid_top5": [
+          "tech.knowledge_graph_what",
+          "hard.graph_vs_vector",
+          "tech.conflict_of_interest_scenario",
+          "cv.vector_db",
+          "proj.similarity.tech"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": "tech.knowledge_graph_what",
+        "current_score": 0.751329,
+        "applied_id": "tech.knowledge_graph_what",
+        "applied_mode": "strong",
+        "applied_score": 0.751329,
+        "applied_is_gold": false,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_037": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.deploy_on_prem",
+          "tech.on_prem_llm_experience",
+          "tech.gpu_sizing",
+          "tech.kubernetes",
+          "gen.weaknesses"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.deploy_on_prem",
+        "applied_mode": "weak",
+        "applied_score": 0.561947,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_038": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "hard.agent_loop",
+          "tech.agent_mistake",
+          "hard.multihop_vs_agent",
+          "hard.idempotent_tools",
+          "hard.wrong_tool"
+        ],
+        "gold_rank_hybrid": 4,
+        "current_id": "tech.agent_mistake",
+        "current_score": 0.574468,
+        "applied_id": "hard.agent_loop",
+        "applied_mode": "strong",
+        "applied_score": 0.574363,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_039": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.model_monitoring",
+          "hard.production_monitoring",
+          "moe.operational_status",
+          "proj.completion_risk.tech",
+          "hard.streaming_vs_validate"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_040": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "proj.early_warning.leakage",
+          "proj.early_warning.stack",
+          "proj.early_warning.tech",
+          "proj.early_warning.result",
+          "proj.early_warning.metric"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "proj.early_warning.leakage",
+        "current_score": 0.581172,
+        "applied_id": "proj.early_warning.leakage",
+        "applied_mode": "weak",
+        "applied_score": 0.585549,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_041": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "tech.python_libraries",
+          "proj.early_warning.tech",
+          "proj.similarity.tech",
+          "cv.projects.most_recent",
+          "cv.projects.most_proud"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "tech.python_libraries",
+        "current_score": 0.583443,
+        "applied_id": "tech.python_libraries",
+        "applied_mode": "weak",
+        "applied_score": 0.583443,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_042": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "hard.which_rag_layer_failed",
+          "hard.empty_retrieval",
+          "hard.wrong_chunk",
+          "hard.rag_debug_steps",
+          "hard.evaluate_rag"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "hard.rag_debug_steps",
+        "applied_mode": "weak",
+        "applied_score": 0.535699,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_043": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "tech.emirati_dialect",
+          "cv.languages",
+          "tech.reindex_embedding_change",
+          "hard.rag_arabic_english",
+          "hard.mixed_language_query"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "tech.emirati_dialect",
+        "current_score": 0.594242,
+        "applied_id": "tech.emirati_dialect",
+        "applied_mode": "strong",
+        "applied_score": 0.646358,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_044": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "hard.supervisor_vs_router",
+        "current_score": 0.732065,
+        "applied_id": "hard.supervisor_vs_router",
+        "applied_mode": "strong",
+        "applied_score": 0.732065,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_045": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "gen.handle_mistake_in_production",
+          "tech.good_enough_to_launch",
+          "moe.operational_status",
+          "hard.production_monitoring",
+          "tech.latency_p95"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_046": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "hard.rag_pdfs_tables_scans",
+          "hard.secure_rag",
+          "tech.metadata_filtering",
+          "tech.rag_access_control",
+          "tech.conflict_of_interest_scenario"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "hard.rag_pdfs_tables_scans",
+        "applied_mode": "strong",
+        "applied_score": 0.613264,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_047": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "hard.injection_in_pdf",
+          "tech.prompt_injection_supplier",
+          "tech.prompt_injection_what",
+          "hard.empty_retrieval",
+          "tech.rag_access_control"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "hard.injection_in_pdf",
+        "applied_mode": "weak",
+        "applied_score": 0.495933,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_048": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.rag_vs_finetuning",
+          "hard.remove_llm_from_rag",
+          "hard.empty_retrieval",
+          "hard.not_finetune_first",
+          "hard.which_rag_layer_failed"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_049": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.citation_lie",
+          "tech.faithfulness_check",
+          "tech.rag_prevent_invented_numbers",
+          "tech.rag_what",
+          "tech.knowledge_graph_what"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_050": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "hard.canary_rag",
+        "current_score": 0.767055,
+        "applied_id": "hard.canary_rag",
+        "applied_mode": "strong",
+        "applied_score": 0.767055,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_051": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.guardrails_layers",
+          "tech.guardrails_how",
+          "cv.python_fastapi",
+          "cv.guardrails",
+          "tech.tool_calling"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.guardrails_layers",
+        "applied_mode": "strong",
+        "applied_score": 0.625648,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_052": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "cv.student_pii",
+          "hard.fallback_llm_down",
+          "hard.remove_langchain",
+          "tech.reindex_embedding_change",
+          "moe.ai_solutions"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_053": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "hard.empty_retrieval",
+          "tech.rag_two_phases",
+          "hard.wrong_chunk",
+          "hard.which_rag_layer_failed",
+          "tech.rag_build"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "hard.observability",
+        "applied_mode": "weak",
+        "applied_score": 0.507825,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_054": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.responsibility",
+          "tech.no_wrong_info_finance",
+          "proj.helpdesk.challenges",
+          "tech.conflict_of_interest_scenario",
+          "tech.rag_access_control"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.rag_access_control",
+        "applied_mode": "weak",
+        "applied_score": 0.532965,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_055": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.hosting_decision",
+          "tech.core42",
+          "tech.on_prem_llm_experience",
+          "tech.deploy_on_prem",
+          "tech.sagemaker"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_056": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "proj.kiosk.describe",
+          "tech.voice_assistant_design",
+          "proj.kiosk.challenges",
+          "proj.kiosk.stack",
+          "cv.whisper_experience"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "proj.kiosk.challenges",
+        "current_score": 0.594747,
+        "applied_id": "proj.kiosk.describe",
+        "applied_mode": "strong",
+        "applied_score": 0.694273,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_057": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "tech.reduce_cost",
+          "tech.no_wrong_info_finance",
+          "tech.agent_design_finance",
+          "gen.what_do_you_know_about_us",
+          "tech.agent_mistake"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "tech.reduce_cost",
+        "current_score": 0.615693,
+        "applied_id": "tech.reduce_cost",
+        "applied_mode": "strong",
+        "applied_score": 0.61642,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_058": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "hard.evaluate_rag",
+          "hard.which_rag_layer_failed",
+          "tech.good_enough_to_launch",
+          "hard.empty_retrieval",
+          "cv.rag_experience"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "hard.evaluate_rag",
+        "current_score": 0.671618,
+        "applied_id": "hard.evaluate_rag",
+        "applied_mode": "weak",
+        "applied_score": 0.671618,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_059": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "hard.teacher_rejects",
+        "current_score": 0.695638,
+        "applied_id": "hard.teacher_rejects",
+        "applied_mode": "strong",
+        "applied_score": 0.695638,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_060": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "hard.checkpoint_vs_memory",
+        "current_score": 0.62217,
+        "applied_id": "hard.checkpoint_vs_memory",
+        "applied_mode": "strong",
+        "applied_score": 0.62217,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_061": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "moe.ai_solutions",
+          "hard.project_architecture_e2e",
+          "tech.rag_access_control",
+          "moe.question_generation",
+          "cv.csharp_dotnet"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.rag_access_control",
+        "applied_mode": "weak",
+        "applied_score": 0.536668,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_062": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.first_90_agentic",
+          "gen.handle_mistake_in_production",
+          "gen.failure",
+          "gen.first_90_days",
+          "gen.prioritize"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_063": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "cv.what_would_you_improve",
+          "proj.helpdesk.challenges",
+          "proj.helpdesk.tech",
+          "gen.failure",
+          "gen.disagree_manager"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "cv.what_would_you_improve",
+        "applied_mode": "weak",
+        "applied_score": 0.488437,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_064": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.prompt_injection_supplier",
+          "hard.wrong_tool",
+          "tech.no_wrong_info_finance",
+          "tech.responsibility",
+          "hard.secure_rag"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_065": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "hard.mixed_language_query",
+          "hard.rag_arabic_english",
+          "tech.emirati_dialect",
+          "hard.wrong_chunk",
+          "cv.languages"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "hard.mixed_language_query",
+        "current_score": 0.656329,
+        "applied_id": "hard.mixed_language_query",
+        "applied_mode": "strong",
+        "applied_score": 0.775755,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_066": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "proj.helpdesk.describe",
+          "tech.agent_mistake",
+          "tech.responsibility",
+          "tech.agent_tools_permissions",
+          "tech.rag_access_control"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_067": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "moe.question_generation",
+          "moe.question_generation.stack",
+          "moe.question_generation.why_steps",
+          "hard.teacher_rejects",
+          "hard.why_rag_for_btec"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "moe.question_generation",
+        "applied_mode": "strong",
+        "applied_score": 0.574056,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_068": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "gen.failure",
+          "tech.transcription_quality",
+          "hard.rag_debug_steps",
+          "tech.good_enough_to_launch",
+          "proj.helpdesk.challenges"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_069": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "gen.handle_mistake_in_production",
+          "tech.production_failure_story",
+          "gen.failure",
+          "hard.production_monitoring",
+          "gen.conflict"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "gen.handle_mistake_in_production",
+        "applied_mode": "weak",
+        "applied_score": 0.51822,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_070": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.what_is_ml",
+          "intro.current_role",
+          "cv.team_and_collaboration",
+          "tech.ai_ml_dl_difference",
+          "cv.ml_experience"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.what_is_ml",
+        "applied_mode": "weak",
+        "applied_score": 0.482205,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_071": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.prompt_injection_supplier",
+          "hard.agents_disagree",
+          "tech.responsibility",
+          "hard.conflicting_docs",
+          "proj.early_warning.describe"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "proj.early_warning.describe",
+        "applied_mode": "weak",
+        "applied_score": 0.501773,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_072": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.pii_redaction",
+          "cv.student_pii",
+          "hard.tenant_isolation",
+          "hard.pii_in_chunks",
+          "hard.first_90_agentic"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.pii_redaction",
+        "applied_mode": "weak",
+        "applied_score": 0.51517,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_073": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "cv.team_and_collaboration",
+          "tech.agent_vs_workflow",
+          "moe.ai_solutions",
+          "moe.operational_status",
+          "hard.agent_terms_difference"
+        ],
+        "gold_rank_hybrid": 5,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_074": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.no_wrong_info_finance",
+          "tech.transcription_quality",
+          "hard.citation_lie",
+          "tech.wer",
+          "tech.faithfulness_check"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_075": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.good_enough_to_launch",
+          "hard.evaluate_rag",
+          "tech.no_wrong_info_finance",
+          "tech.transcription_quality",
+          "tech.overfitting_prevent"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.good_enough_to_launch",
+        "applied_mode": "strong",
+        "applied_score": 0.583489,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_076": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.reranking",
+        "current_score": 0.828283,
+        "applied_id": "tech.reranking",
+        "applied_mode": "weak",
+        "applied_score": 0.828283,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_077": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.hallucination_what",
+        "current_score": 0.735816,
+        "applied_id": "tech.hallucination_what",
+        "applied_mode": "strong",
+        "applied_score": 0.735816,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_078": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.context_window",
+        "current_score": 0.714848,
+        "applied_id": "tech.context_window",
+        "applied_mode": "strong",
+        "applied_score": 0.714848,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_079": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "proj.similarity.tech",
+        "current_score": 0.719232,
+        "applied_id": "proj.similarity.tech",
+        "applied_mode": "strong",
+        "applied_score": 0.719232,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_080": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.overfitting",
+        "current_score": 0.870571,
+        "applied_id": "tech.overfitting",
+        "applied_mode": "weak",
+        "applied_score": 0.870571,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_081": {
+        "reason": "recovered:thin_margin",
+        "hybrid_top5": [
+          "tech.vector_db_choice",
+          "cv.vector_db",
+          "hard.graph_vs_vector",
+          "hard.why_not_chroma_prod",
+          "hard.checkpoint_vs_memory"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "tech.vector_db_choice",
+        "current_score": 0.746695,
+        "applied_id": "tech.vector_db_choice",
+        "applied_mode": "strong",
+        "applied_score": 0.749296,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_082": {
+        "reason": "recovered:thin_margin",
+        "hybrid_top5": [
+          "tech.agent_orchestrator",
+          "tech.multi_agent_when",
+          "hard.agent_terms_difference",
+          "hard.langgraph_vs_n8n_vs_python",
+          "tech.tool_calling"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "tech.agent_orchestrator",
+        "current_score": 0.723084,
+        "applied_id": "tech.agent_orchestrator",
+        "applied_mode": "strong",
+        "applied_score": 0.723084,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_083": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "cv.education",
+          "intro.tell_me_about_yourself",
+          "cv.why_leaving",
+          "cv.education.why_diploma",
+          "cv.why_hire_you"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "cv.education",
+        "current_score": 0.56836,
+        "applied_id": "cv.education",
+        "applied_mode": "weak",
+        "applied_score": 0.56836,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_084": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.prompt_injection_what",
+        "current_score": 0.861472,
+        "applied_id": "tech.prompt_injection_what",
+        "applied_mode": "weak",
+        "applied_score": 0.861472,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_085": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "tech.container_vs_vm",
+          "tech.docker_why",
+          "tech.deploy_on_prem",
+          "cv.kubernetes",
+          "tech.on_prem_llm_experience"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "tech.container_vs_vm",
+        "current_score": 0.695279,
+        "applied_id": "tech.container_vs_vm",
+        "applied_mode": "strong",
+        "applied_score": 0.713254,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_086": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "proj.early_warning.metric",
+          "proj.completion_risk.describe",
+          "proj.early_warning.result",
+          "proj.early_warning.describe",
+          "gen.failure"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "proj.early_warning.describe",
+        "applied_mode": "weak",
+        "applied_score": 0.538964,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_087": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "tech.tool_calling",
+          "hard.tool_schema",
+          "hard.agent_stop_tools",
+          "tech.agent_tools_permissions",
+          "hard.wrong_tool"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "hard.tool_schema",
+        "current_score": 0.660915,
+        "applied_id": "tech.tool_calling",
+        "applied_mode": "strong",
+        "applied_score": 0.70956,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_088": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "proj.kiosk.describe",
+          "cv.whisper_experience",
+          "tech.voice_assistant_design",
+          "tech.whisper_vs_cloud",
+          "cv.hallucination_in_projects"
+        ],
+        "gold_rank_hybrid": 4,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "proj.kiosk.describe",
+        "applied_mode": "weak",
+        "applied_score": 0.57029,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_089": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.agent_vs_workflow",
+          "tech.langgraph_vs_langchain",
+          "tech.library_framework_platform",
+          "tech.ai_ml_dl_difference",
+          "hard.similarity_vs_qgen_arch"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.agent_vs_workflow",
+        "applied_mode": "weak",
+        "applied_score": 0.467375,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_090": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "tech.embeddings",
+          "tech.metadata_filtering",
+          "hard.hybrid_when",
+          "tech.hybrid_search",
+          "tech.tfidf_vs_embeddings"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "hard.hybrid_when",
+        "current_score": 0.562284,
+        "applied_id": "tech.embeddings",
+        "applied_mode": "weak",
+        "applied_score": 0.672049,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_091": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.rag_access_control",
+          "hard.accountability",
+          "tech.responsibility",
+          "hard.agentic_rag_design",
+          "tech.prompt_injection_supplier"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_092": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.change_embedding",
+          "tech.rag_vs_finetuning",
+          "hard.streaming_vs_validate",
+          "tech.model_drift",
+          "tech.rag_two_phases"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_093": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.cost_spike",
+          "hard.least_privilege_example",
+          "hard.idempotent_tools",
+          "cv.csharp_dotnet",
+          "gen.what_do_you_know_about_us"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_094": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.conflicting_docs",
+          "hard.wrong_chunk",
+          "tech.rag_what",
+          "hard.citation_lie",
+          "tech.rag_vs_finetuning"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_095": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "hard.empty_retrieval",
+          "hard.remove_llm_from_rag",
+          "tech.rag_vs_finetuning",
+          "hard.not_finetune_first",
+          "hard.which_rag_layer_failed"
+        ],
+        "gold_rank_hybrid": 4,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "hard.empty_retrieval",
+        "applied_mode": "weak",
+        "applied_score": 0.524335,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_096": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.accountability",
+          "tech.what_is_ml",
+          "tech.voice_assistant_design",
+          "tech.transcription_quality",
+          "tech.responsibility"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_097": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "proj.early_warning.result",
+          "proj.helpdesk.challenges",
+          "gen.feedback",
+          "tech.i_dont_know_too_often",
+          "tech.responsibility"
+        ],
+        "gold_rank_hybrid": 4,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_098": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.rag_access_control",
+          "tech.conflict_of_interest_scenario",
+          "tech.prompt_injection_supplier",
+          "hard.secure_rag",
+          "cv.csharp_dotnet"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_099": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.hitl_where",
+          "tech.agent_mistake",
+          "hard.agent_loop",
+          "tech.responsibility",
+          "hard.timeout_vs_steps"
+        ],
+        "gold_rank_hybrid": 3,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_100": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.wer",
+          "tech.transcription_quality",
+          "proj.early_warning.metric",
+          "tech.good_enough_to_launch",
+          "proj.helpdesk.challenges"
+        ],
+        "gold_rank_hybrid": 4,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_101": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.i_dont_know_too_often",
+          "hard.faithfulness_vs_relevance",
+          "cv.why_hire_you",
+          "hard.similarity_vs_qgen_arch",
+          "tech.temperature"
+        ],
+        "gold_rank_hybrid": 5,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_102": {
+        "reason": "recovered:conservative_rank:no_match",
+        "hybrid_top5": [
+          "tech.audio_retention",
+          "proj.kiosk.challenges",
+          "cv.why_leaving",
+          "gen.anything_else",
+          "proj.kiosk.describe"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.audio_retention",
+        "applied_mode": "weak",
+        "applied_score": 0.454786,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_103": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "cv.team_and_collaboration",
+          "cv.notice_period",
+          "cv.why_back_to_jordan",
+          "cv.guardrails",
+          "cv.why_leaving"
+        ],
+        "gold_rank_hybrid": 5,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_104": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "gen.biggest_challenge_career",
+          "cv.why_hire_you",
+          "proj.similarity.challenges",
+          "proj.helpdesk.challenges",
+          "gen.questions_for_us"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_105": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "gen.strengths",
+          "gen.weaknesses",
+          "gen.feedback",
+          "gen.three_words",
+          "tech.i_dont_know_too_often"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": "gen.weaknesses",
+        "current_score": 0.592085,
+        "applied_id": "gen.strengths",
+        "applied_mode": "weak",
+        "applied_score": 0.551371,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_106": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "proj.similarity.role",
+          "cv.years_experience",
+          "proj.kiosk.challenges",
+          "cv.nlp_experience",
+          "intro.short_version"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "cv.years_experience",
+        "applied_mode": "strong",
+        "applied_score": 0.707272,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_107": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.rag_build",
+          "tech.air_gapped",
+          "hard.agentic_rag_design",
+          "cv.projects.most_proud",
+          "hard.first_90_agentic"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_108": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.secure_rag",
+          "hard.hybrid_when",
+          "tech.rag_access_control",
+          "hard.similarity_vs_qgen_arch",
+          "proj.similarity.describe"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.cosine_semantic_search",
+        "current_score": 0.571136,
+        "applied_id": "tech.cosine_semantic_search",
+        "applied_mode": "weak",
+        "applied_score": 0.571136,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_109": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.agent_vs_workflow",
+          "hard.langgraph_vs_n8n_vs_python",
+          "hard.when_n8n_wrong",
+          "hard.agent_terms_difference",
+          "cv.n8n"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.agent_vs_workflow",
+        "applied_mode": "weak",
+        "applied_score": 0.515427,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_110": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "intro.current_role",
+        "current_score": 0.676654,
+        "applied_id": "intro.current_role",
+        "applied_mode": "strong",
+        "applied_score": 0.676654,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_111": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "gen.learning_new_tech",
+          "hard.fallback_llm_down",
+          "tech.overfitting_prevent",
+          "cv.rag_experience",
+          "hard.empty_retrieval"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_112": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "gen.learning_new_tech",
+          "proj.early_warning.tech",
+          "proj.completion_risk.tech",
+          "proj.similarity.tech",
+          "cv.core_skills"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_113": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.hallucination_prevent",
+          "tech.rag_prevent_invented_numbers",
+          "hard.agent_memory_privacy",
+          "tech.overfitting_prevent",
+          "cv.pmp_value"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "cv.student_pii",
+        "applied_mode": "weak",
+        "applied_score": 0.634,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_114": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.overfitting_prevent",
+          "tech.hallucination_prevent",
+          "tech.pii_redaction",
+          "hard.secure_rag",
+          "tech.rag_prevent_invented_numbers"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_115": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "cv.llm_experience",
+          "gen.leadership",
+          "tech.on_prem_llm_experience",
+          "proj.similarity.role",
+          "cv.najat_role"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_116": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "cv.what_would_you_improve",
+          "hard.why_rag_for_btec",
+          "hard.langgraph_vs_n8n_vs_python",
+          "gen.why_ai_field",
+          "tech.vector_db_choice"
+        ],
+        "gold_rank_hybrid": 5,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_117": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "hard.empty_retrieval",
+          "tech.rag_two_phases",
+          "hard.evaluate_rag",
+          "hard.wrong_chunk",
+          "hard.remove_llm_from_rag"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "hard.empty_retrieval",
+        "applied_mode": "weak",
+        "applied_score": 0.545884,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_118": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "gen.feedback",
+          "cv.hallucination_in_projects",
+          "hard.agent_stop_tools",
+          "cv.what_would_you_improve",
+          "hard.agentic_rag_design"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "hard.agentic_rag_design",
+        "applied_mode": "weak",
+        "applied_score": 0.504223,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_119": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "proj.kiosk.challenges",
+        "current_score": 0.73356,
+        "applied_id": "proj.kiosk.challenges",
+        "applied_mode": "strong",
+        "applied_score": 0.73356,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_120": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.whisper_vs_cloud",
+          "tech.vllm_ollama",
+          "tech.deploy_on_prem",
+          "tech.hosting_decision",
+          "tech.docker_why"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.whisper_vs_cloud",
+        "applied_mode": "weak",
+        "applied_score": 0.471794,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      }
+    },
+    "after": {
+      "fuh3_001": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.chunk_size",
+        "current_score": 0.915088,
+        "applied_id": "tech.chunk_size",
+        "applied_mode": "strong",
+        "applied_score": 0.915088,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_002": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.reranking",
+          "gen.biggest_achievement",
+          "gen.first_90_days",
+          "hard.hybrid_when",
+          "tech.wer"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_003": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.model_drift",
+        "current_score": 0.763126,
+        "applied_id": "tech.model_drift",
+        "applied_mode": "strong",
+        "applied_score": 0.763126,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_004": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.p95",
+        "current_score": 0.805695,
+        "applied_id": "tech.p95",
+        "applied_mode": "strong",
+        "applied_score": 0.805695,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_005": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.idempotency",
+          "cv.hallucination_in_projects",
+          "hard.context_stuffing",
+          "hard.idempotent_tools",
+          "cv.core_skills"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_006": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.lora",
+        "current_score": 0.839879,
+        "applied_id": "tech.lora",
+        "applied_mode": "strong",
+        "applied_score": 0.839879,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_007": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "gen.weaknesses",
+          "cv.image_processing",
+          "hard.empty_retrieval",
+          "cv.python_fastapi",
+          "tech.rag_debugging"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_008": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "cv.notice_period",
+        "current_score": 0.808919,
+        "applied_id": "cv.notice_period",
+        "applied_mode": "strong",
+        "applied_score": 0.808919,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_009": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.redis_why",
+        "current_score": 0.838546,
+        "applied_id": "tech.redis_why",
+        "applied_mode": "strong",
+        "applied_score": 0.838546,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_010": {
+        "reason": "recovered:thin_margin",
+        "hybrid_top5": [
+          "tech.hybrid_search",
+          "hard.hybrid_when",
+          "tech.conflict_of_interest_scenario",
+          "hard.empty_retrieval",
+          "tech.rag_build"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "tech.hybrid_search",
+        "current_score": 0.870793,
+        "applied_id": "tech.hybrid_search",
+        "applied_mode": "strong",
+        "applied_score": 0.870793,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_011": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.golden_dataset",
+        "current_score": 0.902804,
+        "applied_id": "tech.golden_dataset",
+        "applied_mode": "strong",
+        "applied_score": 0.902804,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_012": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "hard.canary_rag",
+          "gen.handle_mistake_in_production",
+          "hard.context_stuffing",
+          "hard.remove_langchain",
+          "tech.agent_mistake"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "hard.canary_rag",
+        "applied_mode": "strong",
+        "applied_score": 0.574074,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_013": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.temperature",
+        "current_score": 0.663063,
+        "applied_id": "tech.temperature",
+        "applied_mode": "strong",
+        "applied_score": 0.663063,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_014": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "gen.pressure",
+          "gen.first_90_days",
+          "tech.mcp",
+          "intro.short_version",
+          "tech.latency_p95"
+        ],
+        "gold_rank_hybrid": 3,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "gen.pressure",
+        "applied_mode": "weak",
+        "applied_score": 0.597666,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_015": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "hard.circuit_breaker",
+        "current_score": 0.808926,
+        "applied_id": "hard.circuit_breaker",
+        "applied_mode": "strong",
+        "applied_score": 0.808926,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_016": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.chunk_size",
+        "current_score": 0.853276,
+        "applied_id": "tech.chunk_size",
+        "applied_mode": "strong",
+        "applied_score": 0.853276,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_017": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "hard.conflicting_docs",
+        "current_score": 0.789673,
+        "applied_id": "hard.conflicting_docs",
+        "applied_mode": "strong",
+        "applied_score": 0.789673,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_018": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.lora",
+        "current_score": 0.787424,
+        "applied_id": "tech.lora",
+        "applied_mode": "strong",
+        "applied_score": 0.787424,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_019": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.accountability",
+          "hard.agents_disagree",
+          "tech.react_reasoning",
+          "tech.agentic_what",
+          "cv.agentic_experience"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_020": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.gpu_sizing",
+        "current_score": 0.929215,
+        "applied_id": "tech.gpu_sizing",
+        "applied_mode": "strong",
+        "applied_score": 0.929215,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_021": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.rag_pdfs_tables_scans",
+          "hard.not_finetune_first",
+          "hard.injection_in_pdf",
+          "hard.empty_retrieval",
+          "tech.conflict_of_interest_scenario"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_022": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "hard.streaming_vs_validate",
+        "current_score": 0.748731,
+        "applied_id": "hard.streaming_vs_validate",
+        "applied_mode": "strong",
+        "applied_score": 0.748731,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_023": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "cv.kubernetes",
+        "current_score": 0.828912,
+        "applied_id": "cv.kubernetes",
+        "applied_mode": "strong",
+        "applied_score": 0.828912,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_024": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.hallucination_prevent",
+          "hard.tenant_isolation",
+          "hard.agent_memory_privacy",
+          "tech.data_leakage_prevent",
+          "tech.rag_prevent_invented_numbers"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_025": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "cv.transition_pm_to_ai",
+          "gen.why_ai_field",
+          "gen.leadership",
+          "cv.pmp_value",
+          "gen.motivation"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "cv.transition_pm_to_ai",
+        "current_score": 0.614241,
+        "applied_id": "cv.pmp_value",
+        "applied_mode": "weak",
+        "applied_score": 0.660666,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_026": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "proj.early_warning.metric",
+          "hard.fallback_llm_down",
+          "proj.similarity.threshold",
+          "hard.empty_retrieval",
+          "proj.completion_risk.describe"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_027": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "cv.student_pii",
+          "proj.early_warning.describe",
+          "cv.hallucination_in_projects",
+          "moe.question_generation.llm_used",
+          "hard.agent_write_db"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "hard.agent_write_db",
+        "applied_mode": "strong",
+        "applied_score": 0.619234,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_028": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.cost_spike",
+          "hard.agent_stop_tools",
+          "tech.idempotency",
+          "hard.timeout_vs_steps",
+          "hard.context_stuffing"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_029": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "moe.operational_status",
+        "current_score": 0.556187,
+        "applied_id": "moe.operational_status",
+        "applied_mode": "strong",
+        "applied_score": 0.556187,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_030": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "gen.first_90_days",
+        "current_score": 0.733242,
+        "applied_id": "gen.first_90_days",
+        "applied_mode": "strong",
+        "applied_score": 0.733242,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_031": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "hard.empty_retrieval",
+        "current_score": 0.723382,
+        "applied_id": "hard.empty_retrieval",
+        "applied_mode": "strong",
+        "applied_score": 0.723382,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_032": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "hard.tenant_isolation",
+        "current_score": 0.741117,
+        "applied_id": "hard.tenant_isolation",
+        "applied_mode": "strong",
+        "applied_score": 0.741117,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_033": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "hard.which_rag_layer_failed",
+          "tech.reindex_embedding_change",
+          "hard.change_embedding",
+          "tech.tfidf_vs_embeddings",
+          "tech.embeddings"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "hard.which_rag_layer_failed",
+        "current_score": 0.611707,
+        "applied_id": "hard.which_rag_layer_failed",
+        "applied_mode": "strong",
+        "applied_score": 0.690348,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_034": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "hard.change_embedding",
+          "tech.reindex_embedding_change",
+          "tech.embeddings",
+          "hard.which_rag_layer_failed",
+          "proj.similarity.tech"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": "tech.reindex_embedding_change",
+        "current_score": 0.655467,
+        "applied_id": "tech.embeddings",
+        "applied_mode": "strong",
+        "applied_score": 0.711492,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_035": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "hard.citation_lie",
+        "current_score": 0.722851,
+        "applied_id": "hard.citation_lie",
+        "applied_mode": "strong",
+        "applied_score": 0.722851,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_036": {
+        "reason": "recovered:thin_margin",
+        "hybrid_top5": [
+          "tech.knowledge_graph_what",
+          "hard.graph_vs_vector",
+          "tech.conflict_of_interest_scenario",
+          "cv.vector_db",
+          "proj.similarity.tech"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": "tech.knowledge_graph_what",
+        "current_score": 0.751329,
+        "applied_id": "tech.knowledge_graph_what",
+        "applied_mode": "strong",
+        "applied_score": 0.751329,
+        "applied_is_gold": false,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_037": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.deploy_on_prem",
+          "tech.on_prem_llm_experience",
+          "tech.gpu_sizing",
+          "tech.kubernetes",
+          "gen.weaknesses"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.deploy_on_prem",
+        "applied_mode": "weak",
+        "applied_score": 0.561947,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_038": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "hard.agent_loop",
+          "tech.agent_mistake",
+          "hard.multihop_vs_agent",
+          "hard.idempotent_tools",
+          "hard.wrong_tool"
+        ],
+        "gold_rank_hybrid": 4,
+        "current_id": "tech.agent_mistake",
+        "current_score": 0.574468,
+        "applied_id": "hard.agent_loop",
+        "applied_mode": "strong",
+        "applied_score": 0.574363,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_039": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.model_monitoring",
+          "hard.production_monitoring",
+          "moe.operational_status",
+          "proj.completion_risk.tech",
+          "hard.streaming_vs_validate"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_040": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "proj.early_warning.leakage",
+          "proj.early_warning.stack",
+          "proj.early_warning.tech",
+          "proj.early_warning.result",
+          "proj.early_warning.metric"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "proj.early_warning.leakage",
+        "current_score": 0.581172,
+        "applied_id": "proj.early_warning.leakage",
+        "applied_mode": "weak",
+        "applied_score": 0.585549,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_041": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "tech.python_libraries",
+          "proj.early_warning.tech",
+          "proj.similarity.tech",
+          "cv.projects.most_recent",
+          "cv.projects.most_proud"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "tech.python_libraries",
+        "current_score": 0.583443,
+        "applied_id": "tech.python_libraries",
+        "applied_mode": "weak",
+        "applied_score": 0.583443,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_042": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "hard.which_rag_layer_failed",
+          "hard.empty_retrieval",
+          "hard.wrong_chunk",
+          "hard.rag_debug_steps",
+          "hard.evaluate_rag"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "hard.rag_debug_steps",
+        "applied_mode": "weak",
+        "applied_score": 0.535699,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_043": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "tech.emirati_dialect",
+          "cv.languages",
+          "tech.reindex_embedding_change",
+          "hard.rag_arabic_english",
+          "hard.mixed_language_query"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "tech.emirati_dialect",
+        "current_score": 0.594242,
+        "applied_id": "tech.emirati_dialect",
+        "applied_mode": "strong",
+        "applied_score": 0.646358,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_044": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "hard.supervisor_vs_router",
+        "current_score": 0.732065,
+        "applied_id": "hard.supervisor_vs_router",
+        "applied_mode": "strong",
+        "applied_score": 0.732065,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_045": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "gen.handle_mistake_in_production",
+          "tech.good_enough_to_launch",
+          "moe.operational_status",
+          "hard.production_monitoring",
+          "tech.latency_p95"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_046": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "hard.rag_pdfs_tables_scans",
+          "hard.secure_rag",
+          "tech.metadata_filtering",
+          "tech.rag_access_control",
+          "tech.conflict_of_interest_scenario"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "hard.rag_pdfs_tables_scans",
+        "applied_mode": "strong",
+        "applied_score": 0.613264,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_047": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "hard.injection_in_pdf",
+          "tech.prompt_injection_supplier",
+          "tech.prompt_injection_what",
+          "hard.empty_retrieval",
+          "tech.rag_access_control"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "hard.injection_in_pdf",
+        "applied_mode": "weak",
+        "applied_score": 0.495933,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_048": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.rag_vs_finetuning",
+          "hard.remove_llm_from_rag",
+          "hard.empty_retrieval",
+          "hard.not_finetune_first",
+          "hard.which_rag_layer_failed"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_049": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.citation_lie",
+          "tech.faithfulness_check",
+          "tech.rag_prevent_invented_numbers",
+          "tech.rag_what",
+          "tech.knowledge_graph_what"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_050": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "hard.canary_rag",
+        "current_score": 0.767055,
+        "applied_id": "hard.canary_rag",
+        "applied_mode": "strong",
+        "applied_score": 0.767055,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_051": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.guardrails_layers",
+          "tech.guardrails_how",
+          "cv.python_fastapi",
+          "cv.guardrails",
+          "tech.tool_calling"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.guardrails_layers",
+        "applied_mode": "strong",
+        "applied_score": 0.625648,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_052": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "cv.student_pii",
+          "hard.fallback_llm_down",
+          "hard.remove_langchain",
+          "tech.reindex_embedding_change",
+          "moe.ai_solutions"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_053": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "hard.empty_retrieval",
+          "tech.rag_two_phases",
+          "hard.wrong_chunk",
+          "hard.which_rag_layer_failed",
+          "tech.rag_build"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "hard.observability",
+        "applied_mode": "weak",
+        "applied_score": 0.507825,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_054": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.responsibility",
+          "tech.no_wrong_info_finance",
+          "proj.helpdesk.challenges",
+          "tech.conflict_of_interest_scenario",
+          "tech.rag_access_control"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.rag_access_control",
+        "applied_mode": "weak",
+        "applied_score": 0.532965,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_055": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.hosting_decision",
+          "tech.core42",
+          "tech.on_prem_llm_experience",
+          "tech.deploy_on_prem",
+          "tech.sagemaker"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_056": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "proj.kiosk.describe",
+          "tech.voice_assistant_design",
+          "proj.kiosk.challenges",
+          "proj.kiosk.stack",
+          "cv.whisper_experience"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "proj.kiosk.challenges",
+        "current_score": 0.594747,
+        "applied_id": "proj.kiosk.describe",
+        "applied_mode": "strong",
+        "applied_score": 0.694273,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_057": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "tech.reduce_cost",
+          "tech.no_wrong_info_finance",
+          "tech.agent_design_finance",
+          "gen.what_do_you_know_about_us",
+          "tech.agent_mistake"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "tech.reduce_cost",
+        "current_score": 0.615693,
+        "applied_id": "tech.reduce_cost",
+        "applied_mode": "strong",
+        "applied_score": 0.61642,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_058": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "hard.evaluate_rag",
+          "hard.which_rag_layer_failed",
+          "tech.good_enough_to_launch",
+          "hard.empty_retrieval",
+          "cv.rag_experience"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "hard.evaluate_rag",
+        "current_score": 0.671618,
+        "applied_id": "hard.evaluate_rag",
+        "applied_mode": "weak",
+        "applied_score": 0.671618,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_059": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "hard.teacher_rejects",
+        "current_score": 0.695638,
+        "applied_id": "hard.teacher_rejects",
+        "applied_mode": "strong",
+        "applied_score": 0.695638,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_060": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "hard.checkpoint_vs_memory",
+        "current_score": 0.62217,
+        "applied_id": "hard.checkpoint_vs_memory",
+        "applied_mode": "strong",
+        "applied_score": 0.62217,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_061": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "moe.ai_solutions",
+          "hard.project_architecture_e2e",
+          "tech.rag_access_control",
+          "moe.question_generation",
+          "cv.csharp_dotnet"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.rag_access_control",
+        "applied_mode": "weak",
+        "applied_score": 0.536668,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_062": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.first_90_agentic",
+          "gen.handle_mistake_in_production",
+          "gen.failure",
+          "gen.first_90_days",
+          "gen.prioritize"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_063": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "cv.what_would_you_improve",
+          "proj.helpdesk.challenges",
+          "proj.helpdesk.tech",
+          "gen.failure",
+          "gen.disagree_manager"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "cv.what_would_you_improve",
+        "applied_mode": "weak",
+        "applied_score": 0.488437,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_064": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.prompt_injection_supplier",
+          "hard.wrong_tool",
+          "tech.no_wrong_info_finance",
+          "tech.responsibility",
+          "hard.secure_rag"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_065": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "hard.mixed_language_query",
+          "hard.rag_arabic_english",
+          "tech.emirati_dialect",
+          "hard.wrong_chunk",
+          "cv.languages"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "hard.mixed_language_query",
+        "current_score": 0.656329,
+        "applied_id": "hard.mixed_language_query",
+        "applied_mode": "strong",
+        "applied_score": 0.775755,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_066": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "proj.helpdesk.describe",
+          "tech.agent_mistake",
+          "tech.responsibility",
+          "tech.agent_tools_permissions",
+          "tech.rag_access_control"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_067": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "moe.question_generation",
+          "moe.question_generation.stack",
+          "moe.question_generation.why_steps",
+          "hard.teacher_rejects",
+          "hard.why_rag_for_btec"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "moe.question_generation",
+        "applied_mode": "strong",
+        "applied_score": 0.574056,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_068": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "gen.failure",
+          "tech.transcription_quality",
+          "hard.rag_debug_steps",
+          "tech.good_enough_to_launch",
+          "proj.helpdesk.challenges"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_069": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "gen.handle_mistake_in_production",
+          "tech.production_failure_story",
+          "gen.failure",
+          "hard.production_monitoring",
+          "gen.conflict"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "gen.handle_mistake_in_production",
+        "applied_mode": "weak",
+        "applied_score": 0.51822,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_070": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.what_is_ml",
+          "intro.current_role",
+          "cv.team_and_collaboration",
+          "tech.ai_ml_dl_difference",
+          "cv.ml_experience"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.what_is_ml",
+        "applied_mode": "weak",
+        "applied_score": 0.482205,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_071": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.prompt_injection_supplier",
+          "hard.agents_disagree",
+          "tech.responsibility",
+          "hard.conflicting_docs",
+          "proj.early_warning.describe"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "proj.early_warning.describe",
+        "applied_mode": "weak",
+        "applied_score": 0.501773,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_072": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.pii_redaction",
+          "cv.student_pii",
+          "hard.tenant_isolation",
+          "hard.pii_in_chunks",
+          "hard.first_90_agentic"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.pii_redaction",
+        "applied_mode": "weak",
+        "applied_score": 0.51517,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_073": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "cv.team_and_collaboration",
+          "tech.agent_vs_workflow",
+          "moe.ai_solutions",
+          "moe.operational_status",
+          "hard.agent_terms_difference"
+        ],
+        "gold_rank_hybrid": 5,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_074": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.no_wrong_info_finance",
+          "tech.transcription_quality",
+          "hard.citation_lie",
+          "tech.wer",
+          "tech.faithfulness_check"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_075": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.good_enough_to_launch",
+          "hard.evaluate_rag",
+          "tech.no_wrong_info_finance",
+          "tech.transcription_quality",
+          "tech.overfitting_prevent"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.good_enough_to_launch",
+        "applied_mode": "strong",
+        "applied_score": 0.583489,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_076": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.reranking",
+        "current_score": 0.828283,
+        "applied_id": "tech.reranking",
+        "applied_mode": "weak",
+        "applied_score": 0.828283,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_077": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.hallucination_what",
+        "current_score": 0.735816,
+        "applied_id": "tech.hallucination_what",
+        "applied_mode": "strong",
+        "applied_score": 0.735816,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_078": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.context_window",
+        "current_score": 0.714848,
+        "applied_id": "tech.context_window",
+        "applied_mode": "strong",
+        "applied_score": 0.714848,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_079": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "proj.similarity.tech",
+        "current_score": 0.719232,
+        "applied_id": "proj.similarity.tech",
+        "applied_mode": "strong",
+        "applied_score": 0.719232,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_080": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.overfitting",
+        "current_score": 0.870571,
+        "applied_id": "tech.overfitting",
+        "applied_mode": "weak",
+        "applied_score": 0.870571,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_081": {
+        "reason": "recovered:thin_margin",
+        "hybrid_top5": [
+          "tech.vector_db_choice",
+          "cv.vector_db",
+          "hard.graph_vs_vector",
+          "hard.why_not_chroma_prod",
+          "hard.checkpoint_vs_memory"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "tech.vector_db_choice",
+        "current_score": 0.746695,
+        "applied_id": "tech.vector_db_choice",
+        "applied_mode": "strong",
+        "applied_score": 0.749296,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_082": {
+        "reason": "recovered:thin_margin",
+        "hybrid_top5": [
+          "tech.agent_orchestrator",
+          "tech.multi_agent_when",
+          "hard.agent_terms_difference",
+          "hard.langgraph_vs_n8n_vs_python",
+          "tech.tool_calling"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "tech.agent_orchestrator",
+        "current_score": 0.723084,
+        "applied_id": "tech.agent_orchestrator",
+        "applied_mode": "strong",
+        "applied_score": 0.723084,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_083": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "cv.education",
+          "intro.tell_me_about_yourself",
+          "cv.why_leaving",
+          "cv.education.why_diploma",
+          "cv.why_hire_you"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "cv.education",
+        "current_score": 0.56836,
+        "applied_id": "cv.education",
+        "applied_mode": "weak",
+        "applied_score": 0.56836,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_084": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.prompt_injection_what",
+        "current_score": 0.861472,
+        "applied_id": "tech.prompt_injection_what",
+        "applied_mode": "weak",
+        "applied_score": 0.861472,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_085": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "tech.container_vs_vm",
+          "tech.docker_why",
+          "tech.deploy_on_prem",
+          "cv.kubernetes",
+          "tech.on_prem_llm_experience"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "tech.container_vs_vm",
+        "current_score": 0.695279,
+        "applied_id": "tech.container_vs_vm",
+        "applied_mode": "strong",
+        "applied_score": 0.713254,
+        "applied_is_gold": true,
+        "same_id_recovered": true,
+        "lowered_identical_id": false
+      },
+      "fuh3_086": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "proj.early_warning.metric",
+          "proj.completion_risk.describe",
+          "proj.early_warning.result",
+          "proj.early_warning.describe",
+          "gen.failure"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "proj.early_warning.describe",
+        "applied_mode": "weak",
+        "applied_score": 0.538964,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_087": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "tech.tool_calling",
+          "hard.tool_schema",
+          "hard.agent_stop_tools",
+          "tech.agent_tools_permissions",
+          "hard.wrong_tool"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "hard.tool_schema",
+        "current_score": 0.660915,
+        "applied_id": "tech.tool_calling",
+        "applied_mode": "strong",
+        "applied_score": 0.70956,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_088": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "proj.kiosk.describe",
+          "cv.whisper_experience",
+          "tech.voice_assistant_design",
+          "tech.whisper_vs_cloud",
+          "cv.hallucination_in_projects"
+        ],
+        "gold_rank_hybrid": 4,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "proj.kiosk.describe",
+        "applied_mode": "weak",
+        "applied_score": 0.57029,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_089": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.agent_vs_workflow",
+          "tech.langgraph_vs_langchain",
+          "tech.library_framework_platform",
+          "tech.ai_ml_dl_difference",
+          "hard.similarity_vs_qgen_arch"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.agent_vs_workflow",
+        "applied_mode": "weak",
+        "applied_score": 0.467375,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_090": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "tech.embeddings",
+          "tech.metadata_filtering",
+          "hard.hybrid_when",
+          "tech.hybrid_search",
+          "tech.tfidf_vs_embeddings"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": "hard.hybrid_when",
+        "current_score": 0.562284,
+        "applied_id": "tech.embeddings",
+        "applied_mode": "weak",
+        "applied_score": 0.672049,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_091": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.rag_access_control",
+          "hard.accountability",
+          "tech.responsibility",
+          "hard.agentic_rag_design",
+          "tech.prompt_injection_supplier"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_092": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.change_embedding",
+          "tech.rag_vs_finetuning",
+          "hard.streaming_vs_validate",
+          "tech.model_drift",
+          "tech.rag_two_phases"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_093": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.cost_spike",
+          "hard.least_privilege_example",
+          "hard.idempotent_tools",
+          "cv.csharp_dotnet",
+          "gen.what_do_you_know_about_us"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_094": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.conflicting_docs",
+          "hard.wrong_chunk",
+          "tech.rag_what",
+          "hard.citation_lie",
+          "tech.rag_vs_finetuning"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_095": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "hard.empty_retrieval",
+          "hard.remove_llm_from_rag",
+          "tech.rag_vs_finetuning",
+          "hard.not_finetune_first",
+          "hard.which_rag_layer_failed"
+        ],
+        "gold_rank_hybrid": 4,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "hard.empty_retrieval",
+        "applied_mode": "weak",
+        "applied_score": 0.524335,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_096": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.accountability",
+          "tech.what_is_ml",
+          "tech.voice_assistant_design",
+          "tech.transcription_quality",
+          "tech.responsibility"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_097": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "proj.early_warning.result",
+          "proj.helpdesk.challenges",
+          "gen.feedback",
+          "tech.i_dont_know_too_often",
+          "tech.responsibility"
+        ],
+        "gold_rank_hybrid": 4,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_098": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.rag_access_control",
+          "tech.conflict_of_interest_scenario",
+          "tech.prompt_injection_supplier",
+          "hard.secure_rag",
+          "cv.csharp_dotnet"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_099": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.hitl_where",
+          "tech.agent_mistake",
+          "hard.agent_loop",
+          "tech.responsibility",
+          "hard.timeout_vs_steps"
+        ],
+        "gold_rank_hybrid": 3,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_100": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.wer",
+          "tech.transcription_quality",
+          "proj.early_warning.metric",
+          "tech.good_enough_to_launch",
+          "proj.helpdesk.challenges"
+        ],
+        "gold_rank_hybrid": 4,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_101": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.i_dont_know_too_often",
+          "hard.faithfulness_vs_relevance",
+          "cv.why_hire_you",
+          "hard.similarity_vs_qgen_arch",
+          "tech.temperature"
+        ],
+        "gold_rank_hybrid": 5,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_102": {
+        "reason": "recovered:conservative_rank:no_match",
+        "hybrid_top5": [
+          "tech.audio_retention",
+          "proj.kiosk.challenges",
+          "cv.why_leaving",
+          "gen.anything_else",
+          "proj.kiosk.describe"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.audio_retention",
+        "applied_mode": "weak",
+        "applied_score": 0.454786,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_103": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "cv.team_and_collaboration",
+          "cv.notice_period",
+          "cv.why_back_to_jordan",
+          "cv.guardrails",
+          "cv.why_leaving"
+        ],
+        "gold_rank_hybrid": 5,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_104": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "gen.biggest_challenge_career",
+          "cv.why_hire_you",
+          "proj.similarity.challenges",
+          "proj.helpdesk.challenges",
+          "gen.questions_for_us"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_105": {
+        "reason": "recovered:weak_match",
+        "hybrid_top5": [
+          "gen.strengths",
+          "gen.weaknesses",
+          "gen.feedback",
+          "gen.three_words",
+          "tech.i_dont_know_too_often"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": "gen.weaknesses",
+        "current_score": 0.592085,
+        "applied_id": "gen.strengths",
+        "applied_mode": "weak",
+        "applied_score": 0.551371,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_106": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "proj.similarity.role",
+          "cv.years_experience",
+          "proj.kiosk.challenges",
+          "cv.nlp_experience",
+          "intro.short_version"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "cv.years_experience",
+        "applied_mode": "strong",
+        "applied_score": 0.707272,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_107": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.rag_build",
+          "tech.air_gapped",
+          "hard.agentic_rag_design",
+          "cv.projects.most_proud",
+          "hard.first_90_agentic"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_108": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "hard.secure_rag",
+          "hard.hybrid_when",
+          "tech.rag_access_control",
+          "hard.similarity_vs_qgen_arch",
+          "proj.similarity.describe"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": "tech.cosine_semantic_search",
+        "current_score": 0.571136,
+        "applied_id": "tech.cosine_semantic_search",
+        "applied_mode": "weak",
+        "applied_score": 0.571136,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_109": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.agent_vs_workflow",
+          "hard.langgraph_vs_n8n_vs_python",
+          "hard.when_n8n_wrong",
+          "hard.agent_terms_difference",
+          "cv.n8n"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.agent_vs_workflow",
+        "applied_mode": "weak",
+        "applied_score": 0.515427,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_110": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "intro.current_role",
+        "current_score": 0.676654,
+        "applied_id": "intro.current_role",
+        "applied_mode": "strong",
+        "applied_score": 0.676654,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_111": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "gen.learning_new_tech",
+          "hard.fallback_llm_down",
+          "tech.overfitting_prevent",
+          "cv.rag_experience",
+          "hard.empty_retrieval"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_112": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "gen.learning_new_tech",
+          "proj.early_warning.tech",
+          "proj.completion_risk.tech",
+          "proj.similarity.tech",
+          "cv.core_skills"
+        ],
+        "gold_rank_hybrid": 2,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_113": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.hallucination_prevent",
+          "tech.rag_prevent_invented_numbers",
+          "hard.agent_memory_privacy",
+          "tech.overfitting_prevent",
+          "cv.pmp_value"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "cv.student_pii",
+        "applied_mode": "weak",
+        "applied_score": 0.634,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_114": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "tech.overfitting_prevent",
+          "tech.hallucination_prevent",
+          "tech.pii_redaction",
+          "hard.secure_rag",
+          "tech.rag_prevent_invented_numbers"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_115": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "cv.llm_experience",
+          "gen.leadership",
+          "tech.on_prem_llm_experience",
+          "proj.similarity.role",
+          "cv.najat_role"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_116": {
+        "reason": "abstain_low_confidence",
+        "hybrid_top5": [
+          "cv.what_would_you_improve",
+          "hard.why_rag_for_btec",
+          "hard.langgraph_vs_n8n_vs_python",
+          "gen.why_ai_field",
+          "tech.vector_db_choice"
+        ],
+        "gold_rank_hybrid": 5,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_117": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "hard.empty_retrieval",
+          "tech.rag_two_phases",
+          "hard.evaluate_rag",
+          "hard.wrong_chunk",
+          "hard.remove_llm_from_rag"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "hard.empty_retrieval",
+        "applied_mode": "weak",
+        "applied_score": 0.545884,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_118": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "gen.feedback",
+          "cv.hallucination_in_projects",
+          "hard.agent_stop_tools",
+          "cv.what_would_you_improve",
+          "hard.agentic_rag_design"
+        ],
+        "gold_rank_hybrid": null,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "hard.agentic_rag_design",
+        "applied_mode": "weak",
+        "applied_score": 0.504223,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_119": {
+        "reason": "strong_agrees",
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "current_id": "proj.kiosk.challenges",
+        "current_score": 0.73356,
+        "applied_id": "proj.kiosk.challenges",
+        "applied_mode": "strong",
+        "applied_score": 0.73356,
+        "applied_is_gold": false,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      },
+      "fuh3_120": {
+        "reason": "recovered:no_match",
+        "hybrid_top5": [
+          "tech.whisper_vs_cloud",
+          "tech.vllm_ollama",
+          "tech.deploy_on_prem",
+          "tech.hosting_decision",
+          "tech.docker_why"
+        ],
+        "gold_rank_hybrid": 1,
+        "current_id": null,
+        "current_score": null,
+        "applied_id": "tech.whisper_vs_cloud",
+        "applied_mode": "weak",
+        "applied_score": 0.471794,
+        "applied_is_gold": true,
+        "same_id_recovered": false,
+        "lowered_identical_id": false
+      }
+    }
+  }
+}

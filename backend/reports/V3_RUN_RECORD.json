@@ -1,0 +1,12 @@
+{
+  "started_at": "2026-09-13T17:25:00.262006+00:00",
+  "first_scored_at": "2026-09-13T17:30:42.081505+00:00",
+  "first_clip_id": "fuh3_001",
+  "finished_at": "2026-09-13T17:49:54.387418+00:00",
+  "outcome": "VALID",
+  "scoring_started": true,
+  "scored_completed": 120,
+  "expected_scored": 120,
+  "all_gates_pass": false,
+  "report": "C:\\Users\\aalsa\\OneDrive\\Desktop\\interview (2)\\interview11\\backend\\reports\\FINAL_UNSEEN_HOLDOUT_V3_REPORT.json"
+}

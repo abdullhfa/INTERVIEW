@@ -1,0 +1,800 @@
+{
+  "cases": [
+    {
+      "n": 1,
+      "result_e2e": "FAIL",
+      "transcript": "Explain how RAG retrieves information before the language model generates an answer.",
+      "expected_question": "Explain how RAG retrieves information before the language model generates an answer.",
+      "detector": {
+        "type": "single",
+        "confidence": 0.92,
+        "signals": [
+          "no_multi_request_signal"
+        ]
+      },
+      "top5": [
+        {
+          "id": "tech.rag_what",
+          "question": "What is RAG?",
+          "score": 0.728,
+          "mode": "strong",
+          "semantic": 0.0,
+          "lexical": 0.459,
+          "runner_up": "proj.similarity.is_rag",
+          "margin": 0.104,
+          "intent_vs_spoken": 0.208
+        },
+        {
+          "id": "proj.similarity.is_rag",
+          "question": "Is the similarity checker a RAG system?",
+          "score": 0.624,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.455,
+          "runner_up": "tech.rag_what",
+          "margin": -0.104,
+          "intent_vs_spoken": 0.39
+        },
+        {
+          "id": "moe.ai_solutions",
+          "question": "What AI solutions did you build at the Ministry of Education?",
+          "score": 0.59,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.412,
+          "runner_up": "tech.rag_what",
+          "margin": -0.138,
+          "intent_vs_spoken": 0.372
+        },
+        {
+          "id": "hard.why_rag_for_btec",
+          "question": "Why did you choose RAG for the question generator?",
+          "score": 0.589,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.411,
+          "runner_up": "tech.rag_what",
+          "margin": -0.139,
+          "intent_vs_spoken": 0.463
+        },
+        {
+          "id": "hard.mixed_language_query",
+          "question": "The user asks in English about an Arabic regulation. What does retrieval do?",
+          "score": 0.584,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.53,
+          "runner_up": "tech.rag_what",
+          "margin": -0.144,
+          "intent_vs_spoken": 0.45
+        }
+      ],
+      "raw_match": {
+        "id": "tech.rag_what",
+        "score": 0.728,
+        "mode": "weak"
+      },
+      "selected": {
+        "id": "tech.rag_what",
+        "score": 0.728,
+        "mode": "weak",
+        "intent_score_e2e": 0.208,
+        "intent_ok_e2e": false,
+        "hc_wrong_e2e": false,
+        "match_id_e2e": "tech.rag_what",
+        "match_mode_e2e": null,
+        "match_score_e2e": 0.728
+      },
+      "selected_or_abstain_reason": "risk:reason=ok | realistic_recovery:recovered:margin=0.104",
+      "fail_gate": "intent_score_gate: semantic(bankQ,spoken)=0.208 < 0.70 (paraphrase vs short bank question)",
+      "best_top5_by_intent_vs_spoken": {
+        "id": "hard.why_rag_for_btec",
+        "question": "Why did you choose RAG for the question generator?",
+        "score": 0.589,
+        "mode": "weak",
+        "semantic": 0.0,
+        "lexical": 0.411,
+        "runner_up": "tech.rag_what",
+        "margin": -0.139,
+        "intent_vs_spoken": 0.463
+      },
+      "e2e_notes": "e2e_loopback; realistic_recovery:recovered:margin=0.104"
+    },
+    {
+      "n": 2,
+      "result_e2e": "FAIL",
+      "transcript": "Why do you use embeddings and cosine similarity instead of an LLM in the similarity checker?",
+      "expected_question": "Why do you use embeddings and cosine similarity instead of an LLM in the similarity checker?",
+      "detector": {
+        "type": "single",
+        "confidence": 0.92,
+        "signals": [
+          "no_multi_request_signal"
+        ]
+      },
+      "top5": [
+        {
+          "id": "proj.similarity.stack",
+          "question": "Does the similarity checker use LLM, RAG, agentic AI, LangChain, or ChromaDB?",
+          "score": 0.82,
+          "mode": "strong",
+          "semantic": 0.0,
+          "lexical": 0.775,
+          "runner_up": "proj.similarity.describe",
+          "margin": 0.126,
+          "intent_vs_spoken": 0.494
+        },
+        {
+          "id": "proj.similarity.describe",
+          "question": "Tell me about the BTEC Assignment Similarity Checker",
+          "score": 0.694,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.568,
+          "runner_up": "proj.similarity.stack",
+          "margin": -0.126,
+          "intent_vs_spoken": 0.421
+        },
+        {
+          "id": "hard.which_rag_layer_failed",
+          "question": "How do you know whether the problem is the embedding model, retrieval, prompt, or LLM?",
+          "score": 0.63,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.663,
+          "runner_up": "proj.similarity.stack",
+          "margin": -0.19,
+          "intent_vs_spoken": 0.466
+        },
+        {
+          "id": "tech.cosine_semantic_search",
+          "question": "What is cosine similarity and how does semantic search work?",
+          "score": 0.63,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.663,
+          "runner_up": "proj.similarity.stack",
+          "margin": -0.19,
+          "intent_vs_spoken": 0.596
+        },
+        {
+          "id": "proj.similarity.is_rag",
+          "question": "Is the similarity checker a RAG system?",
+          "score": 0.627,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.659,
+          "runner_up": "proj.similarity.stack",
+          "margin": -0.193,
+          "intent_vs_spoken": 0.528
+        }
+      ],
+      "raw_match": {
+        "id": "proj.similarity.stack",
+        "score": 0.82,
+        "mode": "weak"
+      },
+      "selected": {
+        "id": "proj.similarity.stack",
+        "score": 0.82,
+        "mode": "weak",
+        "intent_score_e2e": 0.494,
+        "intent_ok_e2e": false,
+        "hc_wrong_e2e": false,
+        "match_id_e2e": "proj.similarity.stack",
+        "match_mode_e2e": null,
+        "match_score_e2e": 0.82
+      },
+      "selected_or_abstain_reason": "risk:reason=ok | realistic_recovery:recovered:margin=0.126",
+      "fail_gate": "intent_score_gate: semantic(bankQ,spoken)=0.494 < 0.70 (paraphrase vs short bank question)",
+      "best_top5_by_intent_vs_spoken": {
+        "id": "tech.cosine_semantic_search",
+        "question": "What is cosine similarity and how does semantic search work?",
+        "score": 0.63,
+        "mode": "weak",
+        "semantic": 0.0,
+        "lexical": 0.663,
+        "runner_up": "proj.similarity.stack",
+        "margin": -0.19,
+        "intent_vs_spoken": 0.596
+      },
+      "e2e_notes": "e2e_loopback; realistic_recovery:recovered:margin=0.126"
+    },
+    {
+      "n": 3,
+      "result_e2e": "FAIL",
+      "transcript": "How does your BTEC workflow validate a generated question before a teacher can approve it?",
+      "expected_question": "How does your BTEC workflow validate a generated question before a teacher can approve it?",
+      "detector": {
+        "type": "single",
+        "confidence": 0.92,
+        "signals": [
+          "no_multi_request_signal"
+        ]
+      },
+      "top5": [
+        {
+          "id": "hard.teacher_rejects",
+          "question": "The teacher rejects the generated question. What happens next in the system?",
+          "score": 0.598,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.623,
+          "runner_up": "moe.what_is_btec",
+          "margin": 0.135,
+          "intent_vs_spoken": 0.55
+        },
+        {
+          "id": "moe.what_is_btec",
+          "question": "What is BTEC?",
+          "score": 0.464,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.455,
+          "runner_up": "hard.teacher_rejects",
+          "margin": -0.135,
+          "intent_vs_spoken": 0.198
+        },
+        {
+          "id": "hard.streaming_vs_validate",
+          "question": "Do you stream the LLM tokens to the user in a government RAG app?",
+          "score": 0.43,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.537,
+          "runner_up": "hard.teacher_rejects",
+          "margin": -0.169,
+          "intent_vs_spoken": 0.443
+        },
+        {
+          "id": "hard.hitl_where",
+          "question": "Where exactly do you put the human in the loop?",
+          "score": 0.418,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.523,
+          "runner_up": "hard.teacher_rejects",
+          "margin": -0.18,
+          "intent_vs_spoken": 0.366
+        },
+        {
+          "id": "cv.pydantic",
+          "question": "Have you used Pydantic?",
+          "score": 0.397,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.321,
+          "runner_up": "hard.teacher_rejects",
+          "margin": -0.202,
+          "intent_vs_spoken": 0.342
+        }
+      ],
+      "raw_match": {
+        "id": "hard.teacher_rejects",
+        "score": 0.598,
+        "mode": "weak"
+      },
+      "selected": {
+        "id": "hard.teacher_rejects",
+        "score": 0.598,
+        "mode": "weak",
+        "intent_score_e2e": 0.55,
+        "intent_ok_e2e": false,
+        "hc_wrong_e2e": false,
+        "match_id_e2e": "hard.teacher_rejects",
+        "match_mode_e2e": null,
+        "match_score_e2e": 0.598
+      },
+      "selected_or_abstain_reason": "risk:reason=ok | realistic_recovery:recovered:margin=0.135",
+      "fail_gate": "intent_score_gate: semantic(bankQ,spoken)=0.550 < 0.70 (paraphrase vs short bank question)",
+      "best_top5_by_intent_vs_spoken": {
+        "id": "hard.teacher_rejects",
+        "question": "The teacher rejects the generated question. What happens next in the system?",
+        "score": 0.598,
+        "mode": "weak",
+        "semantic": 0.0,
+        "lexical": 0.623,
+        "runner_up": "moe.what_is_btec",
+        "margin": 0.135,
+        "intent_vs_spoken": 0.55
+      },
+      "e2e_notes": "e2e_loopback; realistic_recovery:recovered:margin=0.135"
+    },
+    {
+      "n": 4,
+      "result_e2e": "FAIL",
+      "transcript": "Why is human approval important when an AI system can already generate a good answer?",
+      "expected_question": "Why is human approval important when an AI system can already generate a good answer?",
+      "detector": {
+        "type": "single",
+        "confidence": 0.92,
+        "signals": [
+          "no_multi_request_signal"
+        ]
+      },
+      "top5": [
+        {
+          "id": "hard.hitl_where",
+          "question": "Where exactly do you put the human in the loop?",
+          "score": 0.506,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.382,
+          "runner_up": "tech.wer",
+          "margin": 0.1,
+          "intent_vs_spoken": 0.422
+        },
+        {
+          "id": "tech.wer",
+          "question": "What is word error rate?",
+          "score": 0.406,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.257,
+          "runner_up": "hard.hitl_where",
+          "margin": -0.1,
+          "intent_vs_spoken": 0.349
+        },
+        {
+          "id": "gen.why_ai_field",
+          "question": "Why did you choose AI as a career?",
+          "score": 0.4,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.45,
+          "runner_up": "hard.hitl_where",
+          "margin": -0.106,
+          "intent_vs_spoken": 0.403
+        },
+        {
+          "id": "tech.transcription_quality",
+          "question": "How do you know the transcription system is good enough?",
+          "score": 0.389,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.237,
+          "runner_up": "hard.hitl_where",
+          "margin": -0.117,
+          "intent_vs_spoken": 0.468
+        },
+        {
+          "id": "hard.why_agent_not_rag",
+          "question": "Why do you need an agent here? Why not normal RAG?",
+          "score": 0.361,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.276,
+          "runner_up": "hard.hitl_where",
+          "margin": -0.145,
+          "intent_vs_spoken": 0.458
+        }
+      ],
+      "raw_match": null,
+      "selected": {
+        "id": "hard.hitl_where",
+        "score": 0.506,
+        "mode": "weak",
+        "intent_score_e2e": 0.422,
+        "intent_ok_e2e": false,
+        "hc_wrong_e2e": false,
+        "match_id_e2e": "hard.hitl_where",
+        "match_mode_e2e": null,
+        "match_score_e2e": 0.506
+      },
+      "selected_or_abstain_reason": "risk:reason=no_match | realistic_recovery:recovered:margin=0.100",
+      "fail_gate": "intent_score_gate: semantic(bankQ,spoken)=0.422 < 0.70 (paraphrase vs short bank question)",
+      "best_top5_by_intent_vs_spoken": {
+        "id": "tech.transcription_quality",
+        "question": "How do you know the transcription system is good enough?",
+        "score": 0.389,
+        "mode": "weak",
+        "semantic": 0.0,
+        "lexical": 0.237,
+        "runner_up": "hard.hitl_where",
+        "margin": -0.117,
+        "intent_vs_spoken": 0.468
+      },
+      "e2e_notes": "e2e_loopback; realistic_recovery:recovered:margin=0.100"
+    },
+    {
+      "n": 5,
+      "result_e2e": "FAIL",
+      "transcript": "How would LangGraph help if your Pythonagentic workflow became more complex?",
+      "expected_question": "How would LangGraph help if your Python agentic workflow became more complex?",
+      "detector": {
+        "type": "single",
+        "confidence": 0.92,
+        "signals": [
+          "no_multi_request_signal"
+        ]
+      },
+      "top5": [
+        {
+          "id": "tech.what_is_langgraph",
+          "question": "What is LangGraph?",
+          "score": 0.735,
+          "mode": "strong",
+          "semantic": 0.0,
+          "lexical": 0.469,
+          "runner_up": "hard.langgraph_vs_n8n_vs_python",
+          "margin": 0.006,
+          "intent_vs_spoken": 0.319
+        },
+        {
+          "id": "hard.langgraph_vs_n8n_vs_python",
+          "question": "Would you use LangGraph, n8n, or plain Python for this workflow? Why?",
+          "score": 0.729,
+          "mode": "strong",
+          "semantic": 0.0,
+          "lexical": 0.462,
+          "runner_up": "tech.what_is_langgraph",
+          "margin": -0.006,
+          "intent_vs_spoken": 0.548
+        },
+        {
+          "id": "cv.langgraph",
+          "question": "Have you used LangGraph?",
+          "score": 0.683,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.404,
+          "runner_up": "tech.what_is_langgraph",
+          "margin": -0.052,
+          "intent_vs_spoken": 0.38
+        },
+        {
+          "id": "tech.langgraph_vs_langchain",
+          "question": "What is the difference between LangChain and LangGraph?",
+          "score": 0.68,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.4,
+          "runner_up": "tech.what_is_langgraph",
+          "margin": -0.055,
+          "intent_vs_spoken": 0.409
+        },
+        {
+          "id": "hard.plain_python_still_agentic",
+          "question": "If you did not use LangGraph, was your BTEC flow still agentic?",
+          "score": 0.632,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.34,
+          "runner_up": "tech.what_is_langgraph",
+          "margin": -0.103,
+          "intent_vs_spoken": 0.518
+        }
+      ],
+      "raw_match": {
+        "id": "tech.what_is_langgraph",
+        "score": 0.735,
+        "mode": "weak"
+      },
+      "selected": {
+        "id": "tech.what_is_langgraph",
+        "score": 0.735,
+        "mode": "weak",
+        "intent_score_e2e": 0.316,
+        "intent_ok_e2e": false,
+        "hc_wrong_e2e": false,
+        "match_id_e2e": "tech.what_is_langgraph",
+        "match_mode_e2e": null,
+        "match_score_e2e": 0.735
+      },
+      "selected_or_abstain_reason": "risk:needs_stt_retry=True,reason=ambiguous_top2 | realistic_recovery:ambiguous_abstain:margin=0.006",
+      "fail_gate": "intent_score_gate: semantic(bankQ,spoken)=0.319 < 0.70 (paraphrase vs short bank question)",
+      "best_top5_by_intent_vs_spoken": {
+        "id": "hard.langgraph_vs_n8n_vs_python",
+        "question": "Would you use LangGraph, n8n, or plain Python for this workflow? Why?",
+        "score": 0.729,
+        "mode": "strong",
+        "semantic": 0.0,
+        "lexical": 0.462,
+        "runner_up": "tech.what_is_langgraph",
+        "margin": -0.006,
+        "intent_vs_spoken": 0.548
+      },
+      "e2e_notes": "e2e_loopback; realistic_recovery:ambiguous_abstain:margin=0.006"
+    },
+    {
+      "n": 6,
+      "result_e2e": "FAIL",
+      "transcript": "What is the difference between changing model knowledge with RAG and changing behavior with fine tuning?",
+      "expected_question": "What is the difference between changing model knowledge with RAG and changing behavior with fine tuning?",
+      "detector": {
+        "type": "uncertain",
+        "confidence": 0.58,
+        "signals": [
+          "compare_contrast"
+        ]
+      },
+      "top5": [
+        {
+          "id": "tech.rag_vs_finetuning",
+          "question": "Our regulations change every year. Should we fine-tune the model or use RAG?",
+          "score": 1.02,
+          "mode": "strong",
+          "semantic": 0.0,
+          "lexical": 0.775,
+          "runner_up": "hard.not_finetune_first",
+          "margin": 0.342,
+          "intent_vs_spoken": 0.47
+        },
+        {
+          "id": "hard.not_finetune_first",
+          "question": "Why not fine-tune a model on all our documents instead of Agentic RAG?",
+          "score": 0.678,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.523,
+          "runner_up": "tech.rag_vs_finetuning",
+          "margin": -0.342,
+          "intent_vs_spoken": 0.45
+        },
+        {
+          "id": "cv.fine_tuning",
+          "question": "Have you done fine-tuning?",
+          "score": 0.633,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.541,
+          "runner_up": "tech.rag_vs_finetuning",
+          "margin": -0.387,
+          "intent_vs_spoken": 0.345
+        },
+        {
+          "id": "tech.rag_what",
+          "question": "What is RAG?",
+          "score": 0.621,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.451,
+          "runner_up": "tech.rag_vs_finetuning",
+          "margin": -0.399,
+          "intent_vs_spoken": 0.737
+        },
+        {
+          "id": "proj.similarity.is_rag",
+          "question": "Is the similarity checker a RAG system?",
+          "score": 0.617,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.446,
+          "runner_up": "tech.rag_vs_finetuning",
+          "margin": -0.403,
+          "intent_vs_spoken": 0.372
+        }
+      ],
+      "raw_match": {
+        "id": "tech.rag_vs_finetuning",
+        "score": 1.02,
+        "mode": "weak"
+      },
+      "selected": {
+        "id": "tech.rag_vs_finetuning",
+        "score": 1.02,
+        "mode": "strong",
+        "intent_score_e2e": 0.47,
+        "intent_ok_e2e": false,
+        "hc_wrong_e2e": true,
+        "match_id_e2e": "tech.rag_vs_finetuning",
+        "match_mode_e2e": null,
+        "match_score_e2e": 1.02
+      },
+      "selected_or_abstain_reason": "risk:reason=ok | realistic_recovery:recovered:margin=0.342",
+      "fail_gate": "intent_score_gate: semantic(bankQ,spoken)=0.470 < 0.70 (paraphrase vs short bank question)",
+      "best_top5_by_intent_vs_spoken": {
+        "id": "tech.rag_what",
+        "question": "What is RAG?",
+        "score": 0.621,
+        "mode": "weak",
+        "semantic": 0.0,
+        "lexical": 0.451,
+        "runner_up": "tech.rag_vs_finetuning",
+        "margin": -0.399,
+        "intent_vs_spoken": 0.737
+      },
+      "e2e_notes": "e2e_loopback; realistic_recovery:recovered:margin=0.342; compound_skipped:uncertain"
+    },
+    {
+      "n": 7,
+      "result_e2e": "PASS",
+      "transcript": "How do metadata filters stop one school from retrieving documents that belong to another school?",
+      "expected_question": "How do metadata filters stop one school from retrieving documents that belong to another school?",
+      "detector": {
+        "type": "single",
+        "confidence": 0.92,
+        "signals": [
+          "no_multi_request_signal"
+        ]
+      },
+      "top5": [
+        {
+          "id": "hard.tenant_isolation",
+          "question": "How do you stop school A from retrieving school B's assignments?",
+          "score": 0.58,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.55,
+          "runner_up": "cv.chromadb",
+          "margin": 0.174,
+          "intent_vs_spoken": 0.747
+        },
+        {
+          "id": "cv.chromadb",
+          "question": "Have you used ChromaDB?",
+          "score": 0.406,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.507,
+          "runner_up": "hard.tenant_isolation",
+          "margin": -0.174,
+          "intent_vs_spoken": 0.185
+        },
+        {
+          "id": "hard.agent_stop_tools",
+          "question": "When should an agent stop using tools?",
+          "score": 0.358,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.273,
+          "runner_up": "hard.tenant_isolation",
+          "margin": -0.222,
+          "intent_vs_spoken": 0.388
+        },
+        {
+          "id": "gen.leadership",
+          "question": "Do you have leadership experience?",
+          "score": 0.333,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.367,
+          "runner_up": "hard.tenant_isolation",
+          "margin": -0.247,
+          "intent_vs_spoken": 0.323
+        },
+        {
+          "id": "tech.metadata_filtering",
+          "question": "What is metadata filtering in RAG?",
+          "score": 0.324,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.405,
+          "runner_up": "hard.tenant_isolation",
+          "margin": -0.256,
+          "intent_vs_spoken": 0.385
+        }
+      ],
+      "raw_match": {
+        "id": "hard.tenant_isolation",
+        "score": 0.58,
+        "mode": "weak"
+      },
+      "selected": {
+        "id": "hard.tenant_isolation",
+        "score": 0.58,
+        "mode": "weak",
+        "intent_score_e2e": 0.747,
+        "intent_ok_e2e": true,
+        "hc_wrong_e2e": false,
+        "match_id_e2e": "hard.tenant_isolation",
+        "match_mode_e2e": null,
+        "match_score_e2e": 0.58
+      },
+      "selected_or_abstain_reason": "risk:reason=ok | realistic_recovery:recovered:margin=0.174",
+      "fail_gate": "would_pass_current_gate",
+      "best_top5_by_intent_vs_spoken": {
+        "id": "hard.tenant_isolation",
+        "question": "How do you stop school A from retrieving school B's assignments?",
+        "score": 0.58,
+        "mode": "weak",
+        "semantic": 0.0,
+        "lexical": 0.55,
+        "runner_up": "cv.chromadb",
+        "margin": 0.174,
+        "intent_vs_spoken": 0.747
+      },
+      "e2e_notes": "e2e_loopback; realistic_recovery:recovered:margin=0.174"
+    },
+    {
+      "n": 8,
+      "result_e2e": "FAIL",
+      "transcript": "What should the system do when the retrieved context does not contain enough information?",
+      "expected_question": "What should the system do when the retrieved context does not contain enough information?",
+      "detector": {
+        "type": "single",
+        "confidence": 0.92,
+        "signals": [
+          "no_multi_request_signal"
+        ]
+      },
+      "top5": [
+        {
+          "id": "tech.no_wrong_info_finance",
+          "question": "How do you make sure the system does not give wrong information in a financial context?",
+          "score": 0.433,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.541,
+          "runner_up": "hard.empty_retrieval",
+          "margin": 0.045,
+          "intent_vs_spoken": 0.651
+        },
+        {
+          "id": "hard.empty_retrieval",
+          "question": "What should the system do when retrieval returns nothing useful?",
+          "score": 0.388,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.484,
+          "runner_up": "tech.no_wrong_info_finance",
+          "margin": -0.045,
+          "intent_vs_spoken": 0.638
+        },
+        {
+          "id": "tech.good_enough_to_launch",
+          "question": "How do you know the system is good enough to launch?",
+          "score": 0.363,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.453,
+          "runner_up": "tech.no_wrong_info_finance",
+          "margin": -0.07,
+          "intent_vs_spoken": 0.556
+        },
+        {
+          "id": "hard.context_stuffing",
+          "question": "What if you stuff twenty chunks into the prompt to be safe?",
+          "score": 0.355,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.318,
+          "runner_up": "tech.no_wrong_info_finance",
+          "margin": -0.078,
+          "intent_vs_spoken": 0.458
+        },
+        {
+          "id": "tech.pii_redaction",
+          "question": "How do you handle personal data in prompts and logs?",
+          "score": 0.335,
+          "mode": "weak",
+          "semantic": 0.0,
+          "lexical": 0.418,
+          "runner_up": "tech.no_wrong_info_finance",
+          "margin": -0.098,
+          "intent_vs_spoken": 0.38
+        }
+      ],
+      "raw_match": null,
+      "selected": {
+        "id": "tech.no_wrong_info_finance",
+        "score": 0.433,
+        "mode": "weak",
+        "intent_score_e2e": 0.651,
+        "intent_ok_e2e": false,
+        "hc_wrong_e2e": false,
+        "match_id_e2e": "tech.no_wrong_info_finance",
+        "match_mode_e2e": null,
+        "match_score_e2e": 0.433
+      },
+      "selected_or_abstain_reason": "risk:reason=no_match | realistic_recovery:ambiguous_abstain:margin=0.045",
+      "fail_gate": "intent_score_gate: semantic(bankQ,spoken)=0.651 < 0.70 (paraphrase vs short bank question)",
+      "best_top5_by_intent_vs_spoken": {
+        "id": "tech.no_wrong_info_finance",
+        "question": "How do you make sure the system does not give wrong information in a financial context?",
+        "score": 0.433,
+        "mode": "weak",
+        "semantic": 0.0,
+        "lexical": 0.541,
+        "runner_up": "hard.empty_retrieval",
+        "margin": 0.045,
+        "intent_vs_spoken": 0.651
+      },
+      "e2e_notes": "e2e_loopback; realistic_recovery:ambiguous_abstain:margin=0.045"
+    }
+  ],
+  "gate_counts": {
+    "intent_score_gate": 7,
+    "would_pass_current_gate": 1
+  }
+}

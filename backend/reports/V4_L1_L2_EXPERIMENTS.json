@@ -1,0 +1,1050 @@
+{
+  "created_at": "2026-09-13T18:59:51.028083+00:00",
+  "note": "measurement only — no threshold, weight, alias or pipeline change; does not touch _MIN_ANSWER_SCORE / margin rules",
+  "l1": {
+    "VERDICT": {
+      "VERDICT": "HYBRID_RANKING",
+      "next_step": "Gold demoted out of hybrid on 5/12 clips (semantic hit, hybrid miss) — ranking before depth.",
+      "n_failures": 12,
+      "semantic_rank_buckets": {
+        "6-25": 1,
+        ">25": 4,
+        "1-5": 7
+      },
+      "counts": {
+        "rank_1_5": 7,
+        "rank_6_25": 1,
+        "rank_gt_25_or_absent": 4,
+        "gold_in_semantic_top5": 7,
+        "gold_in_hybrid_top5": 5,
+        "gold_at_hybrid_1": 3,
+        "semantic_hit_hybrid_demote": 5,
+        "hybrid_present_still_failed": 5
+      },
+      "decision_tree": {
+        "if_majority_6_25": "raise retrieval depth/top_k",
+        "if_majority_gt_25": "profile/embedding quality track",
+        "if_in_pool_but_loses": "hybrid ranking",
+        "if_hyb1_but_not_applied": "apply gates later — not now"
+      }
+    },
+    "depth": {
+      "deep_k": 295,
+      "per_clip": [
+        {
+          "id": "fuh3_091",
+          "gold": [
+            "tech.hallucination_what"
+          ],
+          "semantic_rank": 8,
+          "semantic_bucket": "6-25",
+          "gold_in_semantic_top5": false,
+          "gold_in_hybrid_top5": false,
+          "hybrid_rank": null,
+          "abstain_reason": "score=0.371 agree=0.880",
+          "hyb_top1": "tech.rag_access_control",
+          "transcript": "Our head of department keeps saying the assistant makes things up. What is he actually describing?"
+        },
+        {
+          "id": "fuh3_092",
+          "gold": [
+            "tech.reindex_embedding_change"
+          ],
+          "semantic_rank": 27,
+          "semantic_bucket": ">25",
+          "gold_in_semantic_top5": false,
+          "gold_in_hybrid_top5": false,
+          "hybrid_rank": null,
+          "abstain_reason": "score=0.388 agree=0.880",
+          "hyb_top1": "hard.change_embedding",
+          "transcript": "Staff complained the answers changed after we swapped something last month, and nobody re-indexed anything."
+        },
+        {
+          "id": "fuh3_093",
+          "gold": [
+            "hard.cost_spike"
+          ],
+          "semantic_rank": 1,
+          "semantic_bucket": "1-5",
+          "gold_in_semantic_top5": true,
+          "gold_in_hybrid_top5": false,
+          "hybrid_rank": null,
+          "abstain_reason": "score=0.350 agree=0.880",
+          "hyb_top1": "hard.least_privilege_example",
+          "transcript": "Finance notice the invoice tripled between Tuesday and Wednesday with no new users. Finance notice, they invoice tripled"
+        },
+        {
+          "id": "fuh3_094",
+          "gold": [
+            "hard.wrong_chunk"
+          ],
+          "semantic_rank": 2,
+          "semantic_bucket": "1-5",
+          "gold_in_semantic_top5": true,
+          "gold_in_hybrid_top5": false,
+          "hybrid_rank": null,
+          "abstain_reason": "score=0.555 agree=0.583",
+          "hyb_top1": "tech.rag_what",
+          "transcript": "We keep in the right document, but the wrong paragraph out of it."
+        },
+        {
+          "id": "fuh3_096",
+          "gold": [
+            "hard.citation_lie",
+            "tech.faithfulness_check"
+          ],
+          "semantic_rank": 53,
+          "semantic_bucket": ">25",
+          "gold_in_semantic_top5": false,
+          "gold_in_hybrid_top5": true,
+          "hybrid_rank": 2,
+          "abstain_reason": "score=0.313 agree=0.615",
+          "hyb_top1": "tech.what_is_ml",
+          "transcript": "The assistant answers beautifully, but nobody can tell where the sentence came from."
+        },
+        {
+          "id": "fuh3_097",
+          "gold": [
+            "tech.i_dont_know_too_often"
+          ],
+          "semantic_rank": 5,
+          "semantic_bucket": "1-5",
+          "gold_in_semantic_top5": true,
+          "gold_in_hybrid_top5": false,
+          "hybrid_rank": null,
+          "abstain_reason": "score=0.376 agree=0.850",
+          "hyb_top1": "proj.early_warning.result",
+          "transcript": "It keeps saying it cannot help, and the staff have started ignoring it entirely."
+        },
+        {
+          "id": "fuh3_098",
+          "gold": [
+            "tech.rag_access_control"
+          ],
+          "semantic_rank": 1,
+          "semantic_bucket": "1-5",
+          "gold_in_semantic_top5": true,
+          "gold_in_hybrid_top5": true,
+          "hybrid_rank": 1,
+          "abstain_reason": "score=0.418 agree=0.556",
+          "hyb_top1": "tech.rag_access_control",
+          "transcript": "Somebody from procurement was able to read a file that belongs to human resources."
+        },
+        {
+          "id": "fuh3_099",
+          "gold": [
+            "hard.agent_loop",
+            "hard.timeout_vs_steps"
+          ],
+          "semantic_rank": 2,
+          "semantic_bucket": "1-5",
+          "gold_in_semantic_top5": true,
+          "gold_in_hybrid_top5": false,
+          "hybrid_rank": null,
+          "abstain_reason": "score=0.337 agree=0.556",
+          "hyb_top1": "hard.agent_stop_tools",
+          "transcript": "The assistant went round in circles for four minutes and they gave up on its own."
+        },
+        {
+          "id": "fuh3_100",
+          "gold": [
+            "hard.evaluate_rag",
+            "tech.good_enough_to_launch"
+          ],
+          "semantic_rank": 1,
+          "semantic_bucket": "1-5",
+          "gold_in_semantic_top5": true,
+          "gold_in_hybrid_top5": false,
+          "hybrid_rank": null,
+          "abstain_reason": "score=0.337 agree=0.556",
+          "hyb_top1": "tech.wer",
+          "transcript": "We were in a pilot, and everyone liked it, but I have no idea how to say whether it is actually good."
+        },
+        {
+          "id": "fuh3_101",
+          "gold": [
+            "hard.prompt_versioning",
+            "tech.temperature"
+          ],
+          "semantic_rank": 38,
+          "semantic_bucket": ">25",
+          "gold_in_semantic_top5": false,
+          "gold_in_hybrid_top5": true,
+          "hybrid_rank": 1,
+          "abstain_reason": "score=0.337 agree=0.629",
+          "hyb_top1": "tech.temperature",
+          "transcript": "Do people ask the same thing and get to different answers on the same afternoon?"
+        },
+        {
+          "id": "fuh3_102",
+          "gold": [
+            "tech.audio_retention",
+            "tech.external_api_risks"
+          ],
+          "semantic_rank": 1,
+          "semantic_bucket": "1-5",
+          "gold_in_semantic_top5": true,
+          "gold_in_hybrid_top5": true,
+          "hybrid_rank": 1,
+          "abstain_reason": "score=0.410 agree=0.880",
+          "hyb_top1": "tech.audio_retention",
+          "transcript": "Our lawyers are nervous about anything leaving the building, including the recordings."
+        },
+        {
+          "id": "fuh3_104",
+          "gold": [
+            "gen.motivation"
+          ],
+          "semantic_rank": 35,
+          "semantic_bucket": ">25",
+          "gold_in_semantic_top5": false,
+          "gold_in_hybrid_top5": true,
+          "hybrid_rank": 5,
+          "abstain_reason": "score=0.399 agree=0.880",
+          "hyb_top1": "proj.similarity.challenges",
+          "transcript": "If we hired you, then you stop giving you interesting problems, what would happen?"
+        }
+      ]
+    },
+    "variants": {
+      "A_current": {
+        "n_failures": 12,
+        "gold_in_hybrid_top5": 5,
+        "gold_at_hybrid_1": 3,
+        "applied_and_gold": 0
+      },
+      "B_no_blob_proxy": {
+        "n_failures": 12,
+        "gold_in_hybrid_top5": 8,
+        "gold_at_hybrid_1": 4,
+        "applied_and_gold": 0
+      },
+      "C_score_floor_observation": {
+        "clips_where_apply_would_lower_identical_id": 1,
+        "of_those_currently_passing": 1,
+        "examples": [
+          {
+            "clip": "fuh3_083",
+            "was": 0.597,
+            "would_be": 0.568,
+            "intent_ok": true
+          }
+        ]
+      }
+    },
+    "per_clip_rescore": {
+      "A_current": {
+        "fuh3_091": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.371 agree=0.880",
+          "hybrid": [
+            "tech.rag_access_control",
+            "gen.non_technical_stakeholders",
+            "hard.agent_loop",
+            "cv.agentic_experience",
+            "proj.helpdesk.challenges"
+          ],
+          "gold_rank_hybrid": null,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_092": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.388 agree=0.880",
+          "hybrid": [
+            "hard.change_embedding",
+            "hard.streaming_vs_validate",
+            "gen.anything_else",
+            "tech.model_drift",
+            "gen.handle_mistake_in_production"
+          ],
+          "gold_rank_hybrid": null,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_093": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.350 agree=0.880",
+          "hybrid": [
+            "hard.least_privilege_example",
+            "cv.csharp_dotnet",
+            "cv.kuwait_projects_and_llm",
+            "gen.why_this_role",
+            "tech.supervised_unsupervised"
+          ],
+          "gold_rank_hybrid": null,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_094": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.555 agree=0.583",
+          "hybrid": [
+            "tech.rag_what",
+            "tech.knowledge_graph_what",
+            "tech.rag_vs_finetuning",
+            "hard.conflicting_docs",
+            "tech.rag_prevent_invented_numbers"
+          ],
+          "gold_rank_hybrid": null,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_096": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.313 agree=0.615",
+          "hybrid": [
+            "tech.what_is_ml",
+            "hard.citation_lie",
+            "hard.wrong_chunk",
+            "tech.transcription_quality",
+            "tech.wer"
+          ],
+          "gold_rank_hybrid": 2,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_097": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.376 agree=0.850",
+          "hybrid": [
+            "proj.early_warning.result",
+            "hard.agent_loop",
+            "hard.citation_lie",
+            "proj.similarity.challenges",
+            "cv.notice_period"
+          ],
+          "gold_rank_hybrid": null,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_098": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.418 agree=0.556",
+          "hybrid": [
+            "tech.rag_access_control",
+            "cv.csharp_dotnet",
+            "tech.conflict_of_interest_scenario",
+            "hard.hitl_where",
+            "hard.multihop_vs_agent"
+          ],
+          "gold_rank_hybrid": 1,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_099": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.337 agree=0.556",
+          "hybrid": [
+            "hard.agent_stop_tools",
+            "hard.wrong_tool",
+            "hard.accountability",
+            "proj.early_warning.result",
+            "proj.early_warning.stack"
+          ],
+          "gold_rank_hybrid": null,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_100": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.337 agree=0.556",
+          "hybrid": [
+            "tech.wer",
+            "tech.transcription_quality",
+            "gen.feedback",
+            "proj.helpdesk.challenges",
+            "gen.strengths"
+          ],
+          "gold_rank_hybrid": null,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_101": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.337 agree=0.629",
+          "hybrid": [
+            "tech.temperature",
+            "cv.why_hire_you",
+            "hard.streaming_vs_validate",
+            "gen.leadership",
+            "gen.ambiguity"
+          ],
+          "gold_rank_hybrid": 1,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_102": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.410 agree=0.880",
+          "hybrid": [
+            "tech.audio_retention",
+            "proj.kiosk.describe",
+            "tech.whisper_vs_cloud",
+            "tech.guardrails_how",
+            "gen.remote_onsite"
+          ],
+          "gold_rank_hybrid": 1,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_104": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.399 agree=0.880",
+          "hybrid": [
+            "proj.similarity.challenges",
+            "gen.why_this_role",
+            "gen.weaknesses",
+            "hard.agent_stop_tools",
+            "gen.motivation"
+          ],
+          "gold_rank_hybrid": 5,
+          "applied_id": null,
+          "applied_is_gold": false
+        }
+      },
+      "B_no_blob_proxy": {
+        "fuh3_091": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.428 agree=0.880",
+          "hybrid": [
+            "tech.rag_access_control",
+            "hard.accountability",
+            "tech.responsibility",
+            "hard.agentic_rag_design",
+            "tech.prompt_injection_supplier"
+          ],
+          "gold_rank_hybrid": null,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_092": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.427 agree=0.880",
+          "hybrid": [
+            "hard.change_embedding",
+            "tech.rag_vs_finetuning",
+            "hard.streaming_vs_validate",
+            "tech.model_drift",
+            "tech.rag_two_phases"
+          ],
+          "gold_rank_hybrid": null,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_093": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.344 agree=0.545",
+          "hybrid": [
+            "hard.cost_spike",
+            "hard.idempotent_tools",
+            "gen.what_do_you_know_about_us",
+            "hard.least_privilege_example",
+            "cv.csharp_dotnet"
+          ],
+          "gold_rank_hybrid": 1,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_094": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.404 agree=0.629",
+          "hybrid": [
+            "hard.conflicting_docs",
+            "hard.wrong_chunk",
+            "hard.citation_lie",
+            "tech.rag_vs_finetuning",
+            "tech.rag_what"
+          ],
+          "gold_rank_hybrid": 2,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_096": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.296 agree=0.524",
+          "hybrid": [
+            "hard.accountability",
+            "tech.responsibility",
+            "tech.voice_assistant_design",
+            "tech.what_is_ml",
+            "tech.transcription_quality"
+          ],
+          "gold_rank_hybrid": null,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_097": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.327 agree=0.500",
+          "hybrid": [
+            "proj.helpdesk.challenges",
+            "gen.feedback",
+            "tech.responsibility",
+            "proj.early_warning.result",
+            "tech.i_dont_know_too_often"
+          ],
+          "gold_rank_hybrid": 5,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_098": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.418 agree=0.556",
+          "hybrid": [
+            "tech.rag_access_control",
+            "tech.conflict_of_interest_scenario",
+            "tech.prompt_injection_supplier",
+            "hard.secure_rag",
+            "cv.csharp_dotnet"
+          ],
+          "gold_rank_hybrid": 1,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_099": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.329 agree=0.500",
+          "hybrid": [
+            "hard.hitl_where",
+            "hard.agent_loop",
+            "tech.agent_mistake",
+            "hard.timeout_vs_steps",
+            "tech.responsibility"
+          ],
+          "gold_rank_hybrid": 2,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_100": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.271 agree=0.556",
+          "hybrid": [
+            "tech.good_enough_to_launch",
+            "proj.early_warning.metric",
+            "tech.transcription_quality",
+            "tech.wer",
+            "proj.helpdesk.challenges"
+          ],
+          "gold_rank_hybrid": 1,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_101": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.329 agree=0.564",
+          "hybrid": [
+            "tech.i_dont_know_too_often",
+            "hard.faithfulness_vs_relevance",
+            "hard.similarity_vs_qgen_arch",
+            "tech.temperature",
+            "cv.why_hire_you"
+          ],
+          "gold_rank_hybrid": 4,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_102": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.455 agree=0.880",
+          "hybrid": [
+            "tech.audio_retention",
+            "proj.kiosk.challenges",
+            "cv.why_leaving",
+            "gen.anything_else",
+            "proj.kiosk.describe"
+          ],
+          "gold_rank_hybrid": 1,
+          "applied_id": null,
+          "applied_is_gold": false
+        },
+        "fuh3_104": {
+          "reason": "abstain_low_confidence",
+          "abstain_reason": "score=0.393 agree=0.544",
+          "hybrid": [
+            "gen.biggest_challenge_career",
+            "cv.why_hire_you",
+            "gen.questions_for_us",
+            "proj.helpdesk.challenges",
+            "proj.similarity.challenges"
+          ],
+          "gold_rank_hybrid": null,
+          "applied_id": null,
+          "applied_is_gold": false
+        }
+      }
+    }
+  },
+  "l2": {
+    "summary": {
+      "A_alone": {
+        "accepted": 0,
+        "new_gold_part": 0,
+        "duplicate": 0,
+        "wrong": 0
+      },
+      "B_topic_hint": {
+        "accepted": 0,
+        "new_gold_part": 0,
+        "duplicate": 0,
+        "wrong": 0
+      },
+      "C_subject_carry": {
+        "accepted": 5,
+        "new_gold_part": 1,
+        "duplicate": 4,
+        "wrong": 0
+      },
+      "D_embed_exclude_parent": {
+        "accepted": 0,
+        "new_gold_part": 0,
+        "duplicate": 0,
+        "wrong": 0,
+        "surfaced_correct_rank1": 1,
+        "n": 7
+      },
+      "n_cases": 7,
+      "D_VERDICT": "SURFACES_GOLD_WEAKLY_ACCEPT_BLOCKED — promising direction, not yet base",
+      "D_NOTE": "C accepts often but mostly duplicate_of_parent (4/5); D keeps wrong=0 and surfaces 1/7 via real cosine+exclude — too thin to adopt; do not touch accept thresholds yet."
+    },
+    "cases": [
+      {
+        "clip": "fuh3_076",
+        "parent_text": "What is re-ranking?",
+        "parent_id": "tech.reranking",
+        "clause": "When would you bother adding one?",
+        "gold": [
+          "tech.reranking",
+          "hard.hybrid_when"
+        ],
+        "already_selected": [
+          "tech.reranking"
+        ],
+        "gold_still_missing": [
+          "hard.hybrid_when"
+        ],
+        "trailing": true,
+        "parent_topic": "rag",
+        "resolved_clause": "When would you bother adding re-ranking?",
+        "A_alone": {
+          "id": null,
+          "score": 0.0,
+          "mode": null,
+          "accepted": false,
+          "drop": "no_match",
+          "margin": 0.0
+        },
+        "B_topic_hint": {
+          "id": null,
+          "score": 0.0,
+          "mode": null,
+          "accepted": false,
+          "drop": "no_match",
+          "margin": 0.0
+        },
+        "C_subject_carry": {
+          "id": "tech.reranking",
+          "score": 0.774,
+          "mode": "strong",
+          "accepted": true,
+          "drop": null,
+          "margin": 0.237
+        },
+        "D_embed_exclude_parent": {
+          "id": "hard.hybrid_when",
+          "score": 0.396,
+          "mode": "weak",
+          "accepted": false,
+          "drop": "low_score",
+          "surfaced_correct_rank1": false,
+          "rank1_id": "hard.why_not_chroma_prod",
+          "cosine": 0.2212,
+          "margin": 0.023
+        },
+        "A_hit": false,
+        "B_hit": false,
+        "C_hit": false,
+        "D_hit": true,
+        "A_dup": false,
+        "B_dup": false,
+        "C_dup": true,
+        "D_dup": false
+      },
+      {
+        "clip": "fuh3_078",
+        "parent_text": "Tell me what a context window is?",
+        "parent_id": "tech.context_window",
+        "clause": "Say what you do when a document will not fit inside one",
+        "gold": [
+          "tech.context_window",
+          "tech.chunk_size"
+        ],
+        "already_selected": [
+          "tech.context_window"
+        ],
+        "gold_still_missing": [
+          "tech.chunk_size"
+        ],
+        "trailing": false,
+        "parent_topic": "llm",
+        "resolved_clause": "Say what you do when a document will not fit inside context window",
+        "A_alone": {
+          "id": null,
+          "score": 0.0,
+          "mode": null,
+          "accepted": false,
+          "drop": "no_match",
+          "margin": 0.0
+        },
+        "B_topic_hint": {
+          "id": null,
+          "score": 0.0,
+          "mode": null,
+          "accepted": false,
+          "drop": "no_match",
+          "margin": 0.0
+        },
+        "C_subject_carry": {
+          "id": "tech.context_window",
+          "score": 0.603,
+          "mode": "weak",
+          "accepted": true,
+          "drop": null,
+          "margin": 0.067
+        },
+        "D_embed_exclude_parent": {
+          "id": "tech.prompt_injection_supplier",
+          "score": 0.444,
+          "mode": "weak",
+          "accepted": false,
+          "drop": "low_score",
+          "surfaced_correct_rank1": false,
+          "rank1_id": "hard.rag_pdfs_tables_scans",
+          "cosine": 0.3546,
+          "margin": 0.017
+        },
+        "A_hit": false,
+        "B_hit": false,
+        "C_hit": false,
+        "D_hit": false,
+        "A_dup": false,
+        "B_dup": false,
+        "C_dup": true,
+        "D_dup": false
+      },
+      {
+        "clip": "fuh3_080",
+        "parent_text": "What is overfitting? How do you spot it?",
+        "parent_id": "tech.overfitting",
+        "clause": "What do you do about it?",
+        "gold": [
+          "tech.overfitting",
+          "tech.overfitting_prevent",
+          "tech.evaluate_classification"
+        ],
+        "already_selected": [
+          "tech.overfitting"
+        ],
+        "gold_still_missing": [
+          "tech.evaluate_classification",
+          "tech.overfitting_prevent"
+        ],
+        "trailing": true,
+        "parent_topic": "ml",
+        "resolved_clause": "What do you do about overfitting?",
+        "A_alone": {
+          "id": null,
+          "score": 0.0,
+          "mode": null,
+          "accepted": false,
+          "drop": "no_match",
+          "margin": 0.0
+        },
+        "B_topic_hint": {
+          "id": null,
+          "score": 0.0,
+          "mode": null,
+          "accepted": false,
+          "drop": "no_match",
+          "margin": 0.0
+        },
+        "C_subject_carry": {
+          "id": "tech.overfitting_prevent",
+          "score": 0.903,
+          "mode": "strong",
+          "accepted": true,
+          "drop": null,
+          "margin": 0.064
+        },
+        "D_embed_exclude_parent": {
+          "id": "tech.imbalanced_data",
+          "score": 0.1789,
+          "mode": "semantic_cosine",
+          "accepted": false,
+          "drop": "no_match_after_exclude",
+          "surfaced_correct_rank1": false,
+          "rank1_id": "tech.imbalanced_data",
+          "cosine": 0.1789
+        },
+        "A_hit": false,
+        "B_hit": false,
+        "C_hit": true,
+        "D_hit": false,
+        "A_dup": false,
+        "B_dup": false,
+        "C_dup": false,
+        "D_dup": false
+      },
+      {
+        "clip": "fuh3_081",
+        "parent_text": "Point me to your vector database experience",
+        "parent_id": "cv.vector_db",
+        "clause": "Say which one you would pick for us",
+        "gold": [
+          "cv.vector_db",
+          "tech.vector_db_choice"
+        ],
+        "already_selected": [
+          "cv.vector_db"
+        ],
+        "gold_still_missing": [
+          "tech.vector_db_choice"
+        ],
+        "trailing": true,
+        "parent_topic": "skills",
+        "resolved_clause": "Say which Which vector database have you used you would pick for us",
+        "A_alone": {
+          "id": null,
+          "score": 0.0,
+          "mode": null,
+          "accepted": false,
+          "drop": "no_match",
+          "margin": 0.0
+        },
+        "B_topic_hint": {
+          "id": null,
+          "score": 0.0,
+          "mode": null,
+          "accepted": false,
+          "drop": "no_match",
+          "margin": 0.0
+        },
+        "C_subject_carry": {
+          "id": "cv.vector_db",
+          "score": 0.942,
+          "mode": "strong",
+          "accepted": true,
+          "drop": null,
+          "margin": 0.163
+        },
+        "D_embed_exclude_parent": {
+          "id": "gen.strengths",
+          "score": 0.493,
+          "mode": "weak",
+          "accepted": false,
+          "drop": "low_score",
+          "surfaced_correct_rank1": false,
+          "rank1_id": "gen.questions_for_us",
+          "cosine": 0.2727,
+          "margin": 0.037
+        },
+        "A_hit": false,
+        "B_hit": false,
+        "C_hit": false,
+        "D_hit": false,
+        "A_dup": false,
+        "B_dup": false,
+        "C_dup": true,
+        "D_dup": false
+      },
+      {
+        "clip": "fuh3_082",
+        "parent_text": "Explain what an orchestrator does?",
+        "parent_id": "tech.agent_orchestrator",
+        "clause": "When a single tool-using model is already enough?",
+        "gold": [
+          "tech.agent_orchestrator",
+          "tech.multi_agent_when"
+        ],
+        "already_selected": [
+          "tech.agent_orchestrator",
+          "tech.multi_agent_when"
+        ],
+        "gold_still_missing": [],
+        "trailing": true,
+        "parent_topic": "agents",
+        "resolved_clause": "When a single tool-using model is already enough?",
+        "A_alone": {
+          "id": null,
+          "score": 0.0,
+          "mode": null,
+          "accepted": false,
+          "drop": "no_match",
+          "margin": 0.0
+        },
+        "B_topic_hint": {
+          "id": null,
+          "score": 0.0,
+          "mode": null,
+          "accepted": false,
+          "drop": "no_match",
+          "margin": 0.0
+        },
+        "C_subject_carry": {
+          "id": null,
+          "score": 0.0,
+          "mode": null,
+          "accepted": false,
+          "drop": "no_match",
+          "margin": 0.0
+        },
+        "D_embed_exclude_parent": {
+          "id": "hard.tool_schema",
+          "score": 0.527,
+          "mode": "weak",
+          "accepted": false,
+          "drop": "below_answer_threshold",
+          "surfaced_correct_rank1": false,
+          "rank1_id": "hard.tool_schema",
+          "cosine": 0.4748,
+          "margin": -0.015
+        },
+        "A_hit": false,
+        "B_hit": false,
+        "C_hit": false,
+        "D_hit": false,
+        "A_dup": false,
+        "B_dup": false,
+        "C_dup": false,
+        "D_dup": false
+      },
+      {
+        "clip": "fuh3_083",
+        "parent_text": "Give me your education background, your certificate",
+        "parent_id": "cv.education",
+        "clause": "How any of that helps you hear?",
+        "gold": [
+          "cv.education",
+          "cv.certifications",
+          "cv.pmp_value"
+        ],
+        "already_selected": [
+          "cv.education"
+        ],
+        "gold_still_missing": [
+          "cv.certifications",
+          "cv.pmp_value"
+        ],
+        "trailing": true,
+        "parent_topic": "education",
+        "resolved_clause": "How any of Tell me about your education helps you hear?",
+        "A_alone": {
+          "id": null,
+          "score": 0.0,
+          "mode": null,
+          "accepted": false,
+          "drop": "no_match",
+          "margin": 0.0
+        },
+        "B_topic_hint": {
+          "id": null,
+          "score": 0.0,
+          "mode": null,
+          "accepted": false,
+          "drop": "no_match",
+          "margin": 0.0
+        },
+        "C_subject_carry": {
+          "id": "cv.education",
+          "score": 0.701,
+          "mode": "strong",
+          "accepted": true,
+          "drop": null,
+          "margin": 0.33
+        },
+        "D_embed_exclude_parent": {
+          "id": "cv.certifications",
+          "score": 0.366,
+          "mode": "weak",
+          "accepted": false,
+          "drop": "low_score",
+          "surfaced_correct_rank1": false,
+          "rank1_id": "proj.kiosk.challenges",
+          "cosine": 0.3045,
+          "margin": 0.015
+        },
+        "A_hit": false,
+        "B_hit": false,
+        "C_hit": false,
+        "D_hit": true,
+        "A_dup": false,
+        "B_dup": false,
+        "C_dup": true,
+        "D_dup": false
+      },
+      {
+        "clip": "fuh3_089",
+        "parent_text": "Give me the difference between the two draft libraries, save which you use",
+        "parent_id": "tech.library_framework_platform",
+        "clause": "Tell me whether the flow still works without stairs?",
+        "gold": [
+          "tech.langgraph_vs_langchain",
+          "cv.langgraph",
+          "hard.remove_langchain"
+        ],
+        "already_selected": [],
+        "gold_still_missing": [
+          "cv.langgraph",
+          "hard.remove_langchain",
+          "tech.langgraph_vs_langchain"
+        ],
+        "trailing": true,
+        "parent_topic": "frameworks",
+        "resolved_clause": "Tell me whether the flow still works without stairs?",
+        "A_alone": {
+          "id": null,
+          "score": 0.0,
+          "mode": null,
+          "accepted": false,
+          "drop": "no_match",
+          "margin": 0.0
+        },
+        "B_topic_hint": {
+          "id": null,
+          "score": 0.0,
+          "mode": null,
+          "accepted": false,
+          "drop": "no_match",
+          "margin": 0.0
+        },
+        "C_subject_carry": {
+          "id": null,
+          "score": 0.0,
+          "mode": null,
+          "accepted": false,
+          "drop": "no_match",
+          "margin": 0.0
+        },
+        "D_embed_exclude_parent": {
+          "id": "hard.remove_llm_from_rag",
+          "score": 0.319,
+          "mode": "weak",
+          "accepted": false,
+          "drop": "low_score",
+          "surfaced_correct_rank1": true,
+          "rank1_id": "hard.remove_langchain",
+          "cosine": 0.1757,
+          "margin": 0.025
+        },
+        "A_hit": false,
+        "B_hit": false,
+        "C_hit": false,
+        "D_hit": false,
+        "A_dup": false,
+        "B_dup": false,
+        "C_dup": false,
+        "D_dup": false
+      }
+    ]
+  }
+}

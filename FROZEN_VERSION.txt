@@ -1,0 +1,10 @@
+FROZEN
+Freeze ID: V5_LIVE_INTERVIEW_ASSISTANT_2026_09_15
+Frozen at: 2026-09-15T08:19:35.598650+00:00
+Snapshot folder: ..\interview11_FROZEN_V5_20260915
+
+Policy: bug-fix only.
+Do not chase thresholds, weights, aliases, STT/VAD, B8/B9, ranking, compound, or routing.
+
+Restore: copy the snapshot folder over interview11, then keep the live
+backend\.venv and frontend\node_modules (those are not in the snapshot).

@@ -1,0 +1,3096 @@
+{
+  "bank": "cv",
+  "description": "Questions grounded in Abdullah Al-Sawalmeh's AI Engineer CV (cv_eng.abdulah.pdf) and the two interview-preparation guides. One question -> one answer. Easy spoken English.",
+  "entries": [
+    {
+      "id": "intro.tell_me_about_yourself",
+      "category": "introduction",
+      "topic": "intro",
+      "question": "Tell me about yourself",
+      "aliases": [
+        "tell me about yourself",
+        "introduce yourself",
+        "please introduce yourself",
+        "could you please introduce yourself briefly",
+        "walk me through your background",
+        "who are you and what do you do",
+        "so, a little bit about yourself",
+        "give me a brief introduction about yourself",
+        "tell me a little about your background",
+        "tell me about your journey so far",
+        "what should I know about you before we start",
+        "you have a long CV, can you make it simple for me",
+        "start from the beginning, how did you end up in AI",
+        "how did you get to this role",
+        "if I only remember one thing about your career, what is it"
+      ],
+      "keywords": [
+        "yourself",
+        "introduce",
+        "background",
+        "overview",
+        "journey",
+        "profile"
+      ],
+      "answer_en": "I am Abdullah Al-Sawalmeh from Jordan, with over fifteen years in software and AI. I work at the Ministry of Education on BTEC as a Systems Developer and AI Engineer. I build LLM and RAG tools for exam questions and feedback. Before that: applied AI in Kuwait, and government payment systems before that.",
+      "followup_en": "The Ministry work started in 2023. That is where LLM, RAG, and the question-generation flow live. Production orchestration is Python. LangChain was only a proof of concept, and LangGraph is not in production. At Al Najat from 2017 to 2023 I built a Whisper kiosk, student early-warning with Pandas and sklearn, and helpdesk classification with TF-IDF. From 2010 to 2017 at VNC I managed KNET payment kiosks and POS. I am PMP certified.",
+      "listen_for": [
+        "fifteen years",
+        "Ministry of Education",
+        "BTEC",
+        "LLM and RAG",
+        "Kuwait",
+        "payment systems",
+        "Jordan",
+        "from 2023"
+      ],
+      "answer_ar": "يعرّف نفسه كمهندس أردني بخبرة طويلة. عمله الحالي في الوزارة على BTEC، وقبله ذكاء اصطناعي تطبيقي في الكويت ثم أنظمة دفع حكومية."
+    },
+    {
+      "id": "intro.short_version",
+      "category": "introduction",
+      "topic": "intro",
+      "question": "Give me a one-minute summary of who you are",
+      "aliases": [
+        "give me a one-minute summary of who you are",
+        "in one minute, who are you",
+        "give me the short version of your background",
+        "quick summary of your experience",
+        "elevator pitch",
+        "sum yourself up in thirty seconds",
+        "if we only have one minute, what should I know",
+        "skip the long story, who are you today",
+        "compress your CV for me"
+      ],
+      "keywords": [
+        "one minute",
+        "short version",
+        "quick summary",
+        "briefly",
+        "elevator"
+      ],
+      "answer_en": "Short version: AI engineer, fifteen-plus years. I build LLM and RAG systems for BTEC at Jordan's Ministry of Education. Before that I did applied AI at Al Najat in Kuwait, including a Whisper voice kiosk. I started by managing government payment systems on KNET for seven years.",
+      "followup_en": "Generative AI is since 2023 only. The Kuwait years were Whisper, Pandas, sklearn, and TF-IDF, not LLMs. The payment years taught me logging, recovery, and audit. PMP sits on top of that. So I am not a person who only started coding when ChatGPT arrived.",
+      "listen_for": [
+        "fifteen years",
+        "Ministry",
+        "BTEC",
+        "Whisper",
+        "KNET",
+        "seven years",
+        "Al Najat"
+      ],
+      "answer_ar": "ملخص سريع: خبرة طويلة، عمل حالي على نماذج لغوية في الوزارة، وقبله كشك صوتي وتعلم آلة في الكويت، وأصله أنظمة دفع."
+    },
+    {
+      "id": "intro.current_role",
+      "category": "cv.experience",
+      "topic": "moe",
+      "question": "What do you do in your current role?",
+      "aliases": [
+        "what do you do in your current role",
+        "what is your current job",
+        "what are your responsibilities at the ministry of education",
+        "what does your day to day look like",
+        "so you are at the ministry of education, what do you do there",
+        "if I sat next to you for a week, what would I see",
+        "who do you actually build things for right now",
+        "are you more systems or more AI in this job",
+        "what does systems developer and AI engineer mean in practice"
+      ],
+      "keywords": [
+        "current role",
+        "current job",
+        "ministry of education",
+        "btec",
+        "responsibilities",
+        "day to day"
+      ],
+      "answer_en": "Since 2023 I am a Systems Developer and AI Engineer for BTEC at Jordan's Ministry of Education. I maintain the software that supports BTEC processes. I also build LLM, RAG, and agentic tools for exam questions and feedback. Day to day that is Python, FastAPI, SQL, embeddings, and teacher review before save.",
+      "followup_en": "The generation flow retrieves unit content, generates only from that text, checks JSON with Pydantic, then waits for a teacher. Student personal data does not go to the model. Similarity checking is a separate system: embeddings and cosine similarity, no LLM. Completion risk is SQL and Pandas, with sklearn where history existed. I own the AI design and work with Ministry IT on access and deployment.",
+      "listen_for": [
+        "since 2023",
+        "BTEC",
+        "exam questions",
+        "teacher",
+        "Python",
+        "FastAPI",
+        "Ministry of Education",
+        "systems developer"
+      ],
+      "answer_ar": "عمله الحالي مزيج: صيانة أنظمة BTEC، وبناء أدوات توليد أسئلة وتغذية راجعة بالنماذج اللغوية، مع مراجعة المعلم قبل الحفظ."
+    },
+    {
+      "id": "moe.what_is_btec",
+      "category": "cv.experience",
+      "topic": "moe",
+      "question": "What is BTEC?",
+      "aliases": [
+        "what is btec",
+        "can you explain what btec is",
+        "what does btec mean",
+        "what is the btec program",
+        "tell me about btec",
+        "I do not know btec, explain it like I am not in education",
+        "why does btec even need software",
+        "what are students actually doing in btec",
+        "is btec an exam board or a school system"
+      ],
+      "keywords": [
+        "btec"
+      ],
+      "answer_en": "BTEC is a vocational program in Jordanian schools under the Ministry of Education. Students finish units and assignments. Teachers mark them against learning outcomes. My job is the software around that: admin systems, plus AI tools that help teachers with questions, feedback, and review.",
+      "followup_en": "A unit has content and learning outcomes. Questions and feedback must stay inside that content, not general internet knowledge. That is why generation uses retrieval first. Teachers still own the mark and the question bank. The software helps them move faster. It does not replace assessment.",
+      "listen_for": [
+        "vocational",
+        "units",
+        "assignments",
+        "learning outcomes",
+        "teachers",
+        "Jordan",
+        "Ministry"
+      ],
+      "answer_ar": "BTEC برنامج مهني في المدارس. الطالب ينجز وحدات، والمعلم يقيّم حسب نواتج التعلم، وأنظمة عبدالله تدعم هذا العمل."
+    },
+    {
+      "id": "moe.ai_solutions",
+      "category": "cv.experience",
+      "topic": "moe",
+      "question": "What AI solutions did you build at the Ministry of Education?",
+      "aliases": [
+        "what ai solutions did you build at the ministry of education",
+        "what did you build with llm and rag at btec",
+        "what problems did you solve with llms",
+        "how is ai used in your current work",
+        "if I open your ministry portfolio, what are the products",
+        "did you build one AI system or several",
+        "which of those tools actually uses a language model",
+        "walk me through the AI work without the buzzwords",
+        "what went live for teachers"
+      ],
+      "keywords": [
+        "ai solutions",
+        "llm",
+        "rag",
+        "agentic",
+        "btec",
+        "ministry",
+        "generative"
+      ],
+      "answer_en": "Three Ministry systems. Exam question generation and automated feedback uses an LLM, RAG, and an agentic workflow. The similarity checker uses embeddings and cosine similarity, not an LLM. Completion risk uses SQL and Pandas, and sklearn where the history was enough. Only generation is agentic.",
+      "followup_en": "For generation I retrieve unit content, generate only from it, validate JSON with Pydantic, and wait for teacher approval. Similarity splits assignments into chunks, compares vectors, and flags pairs. Completion computes rates in SQL, then a risk score if past terms exist. LangChain was a proof of concept. Production glue is Python. I do not put an LLM inside similarity, early-warning, or helpdesk.",
+      "listen_for": [
+        "question generation",
+        "similarity checker",
+        "completion risk",
+        "not an LLM",
+        "embeddings",
+        "SQL",
+        "teacher approval",
+        "three systems"
+      ],
+      "answer_ar": "ثلاثة أنظمة: توليد أسئلة بنموذج لغوي، ومدقق تشابه بالـ embeddings فقط، ومخاطر الإنجاز بـ SQL وتحليل بيانات. الوكيل الذكي في التوليد فقط."
+    },
+    {
+      "id": "moe.operational_status",
+      "category": "cv.experience",
+      "topic": "moe",
+      "question": "Are these systems operational at the Ministry?",
+      "aliases": [
+        "are these systems operational at the ministry",
+        "are your systems in production",
+        "is it live or a prototype",
+        "is this actually used by teachers",
+        "did it go into production",
+        "if I asked a teacher tomorrow, would they know this tool",
+        "is this a demo you showed once",
+        "what is live versus what is still a lab",
+        "do people depend on this or is it optional"
+      ],
+      "keywords": [
+        "operational",
+        "production",
+        "live",
+        "deployed",
+        "in use",
+        "prototype"
+      ],
+      "answer_en": "Yes, the systems support real BTEC work at the Ministry, so they are in use. Teachers review similarity flags, and generated questions enter the bank only after a teacher approves them. They are decision support and do not mark students on their own.",
+      "followup_en": "I am careful with the word production. Teachers use the tools in the real process, with a human still deciding. Chroma was a prototype store, not the production vector store. LangChain stayed in the proof of concept. LangGraph is not running. If something is only a lab test, I say that. I do not call a notebook a live system.",
+      "listen_for": [
+        "yes",
+        "in use",
+        "teachers",
+        "approves",
+        "decision support",
+        "not automatic",
+        "real BTEC"
+      ],
+      "answer_ar": "نعم، الأدوات مستخدمة في عمل BTEC الحقيقي. المعلم يراجع ويوافق. ليست قراراً آلياً على الطالب."
+    },
+    {
+      "id": "moe.question_generation",
+      "category": "cv.project",
+      "topic": "project:qgen",
+      "question": "Tell me about the exam question generation and feedback system",
+      "aliases": [
+        "tell me about the exam question generation and feedback system",
+        "how did you build the question generation with llm",
+        "how does the ai generate exam questions",
+        "walk me through the question generator",
+        "a teacher needs twenty questions by tomorrow, what does your system do",
+        "how do you stop the model inventing a topic that is not in the unit",
+        "is this one prompt or a workflow",
+        "who is allowed to save a generated question",
+        "show me the path from unit text to a saved question"
+      ],
+      "keywords": [
+        "question generation",
+        "exam questions",
+        "automated feedback",
+        "generate questions",
+        "feedback"
+      ],
+      "answer_en": "This is the LLM project at the Ministry. I retrieve the BTEC unit text and learning outcomes, and the model writes questions and feedback only from that text. Output is JSON, checked with Pydantic. A teacher must approve before anything is saved, and I wrote that flow in Python.",
+      "followup_en": "I did not send one giant prompt. Retrieval, generation, schema check, then a pause. That is agentic in the practical sense: a goal, tools, state between steps, and a stop for a person. LangChain helped the proof of concept. LangGraph would fit the pause and checkpoints, but it is not what runs today. Student names never go to the model. Curriculum text does.",
+      "listen_for": [
+        "retrieve",
+        "unit content",
+        "JSON",
+        "Pydantic",
+        "teacher approve",
+        "Python",
+        "only from that text",
+        "not one prompt"
+      ],
+      "answer_ar": "النظام يجلب محتوى الوحدة أولاً، ثم يولّد أسئلة منها فقط بشكل JSON، ولا يحفظ شيئاً إلا بعد موافقة المعلم."
+    },
+    {
+      "id": "moe.question_generation.why_steps",
+      "category": "cv.project",
+      "topic": "project:qgen",
+      "question": "Why did you split question generation into steps?",
+      "aliases": [
+        "why did you split question generation into steps",
+        "why did you split the task into steps",
+        "why not one prompt for everything",
+        "why the multi step design",
+        "why separate retrieval from generation",
+        "what breaks if you just chat with the model",
+        "could a single prompt have been enough",
+        "where does a one-shot prompt fail in an exam setting",
+        "why is the pause after generation, not before"
+      ],
+      "keywords": [
+        "split",
+        "steps",
+        "one prompt",
+        "multi step"
+      ],
+      "answer_en": "Because one giant prompt gives me output I cannot check. First, retrieval shows exactly which unit text went in. Second, a fixed JSON shape lets me validate every field. Third, teacher approval keeps the exam decision with a human. Each step is small and testable, which matters for official questions.",
+      "followup_en": "If retrieval is empty, I stop. I do not let the model fill gaps from memory. If JSON fails Pydantic, I retry or send it to review, I do not save a broken record. Logs show the retrieved chunks, the raw model text, and who approved. In an exam bank that trail is the point. Speed is not the point.",
+      "listen_for": [
+        "cannot check",
+        "retrieval",
+        "JSON",
+        "validate",
+        "teacher",
+        "testable",
+        "official",
+        "one prompt"
+      ],
+      "answer_ar": "تقسيم الخطوات حتى يمكن فحص المصدر والشكل والموافقة. السؤال الرسمي لا يُحفظ من رد حر للنموذج."
+    },
+    {
+      "id": "moe.question_generation.llm_used",
+      "category": "cv.project",
+      "topic": "project:qgen",
+      "question": "Which LLM did you use for that and how did you handle student data?",
+      "aliases": [
+        "which llm did you use for that and how did you handle student data",
+        "which model did you use for generation",
+        "did you use openai or an open model",
+        "did you send student data to an external api",
+        "what model powers the question generator",
+        "whose API is behind this",
+        "if the vendor changes, do you rewrite the app",
+        "what is allowed to leave your network",
+        "how do you swap the model later"
+      ],
+      "keywords": [
+        "which llm",
+        "which model",
+        "openai",
+        "student data",
+        "external api"
+      ],
+      "answer_en": "I started with an external LLM API for a fast proof of concept. Student personal data never went to the model. Curriculum text can go in. Names stay inside our system, linked by internal IDs. Every model call goes through one internal interface, so we can change the model later.",
+      "followup_en": "I split content by sensitivity. Unit text is low sensitivity. Student identity is high. After the model returns, our system maps the ID back to a name for the teacher screen. The interface is one setting, not a rewrite. That is also how I would move to a self-hosted model. I do not hard-code a vendor into the business logic.",
+      "listen_for": [
+        "external API",
+        "never sent",
+        "student data",
+        "internal IDs",
+        "one interface",
+        "curriculum",
+        "change the model",
+        "proof of concept"
+      ],
+      "answer_ar": "بدأ بواجهة نموذج خارجية للتجربة. بيانات الطالب الشخصية لا تُرسل للنموذج، والاستدعاء يمر من طبقة داخلية واحدة حتى يمكن تبديل النموذج."
+    },
+    {
+      "id": "proj.similarity.describe",
+      "category": "cv.project",
+      "topic": "project:similarity",
+      "question": "Tell me about the BTEC Assignment Similarity Checker",
+      "aliases": [
+        "tell me about the BTEC Assignment Similarity Checker",
+        "how does the assignment similarity checker work",
+        "how did you detect copied assignments",
+        "you built a similarity checker, tell me about it",
+        "students rewrite the same essay in new words, how do you catch that",
+        "is this plagiarism software",
+        "what does the teacher see when two assignments look close",
+        "why not just compare the files as text",
+        "walk me through one flagged case"
+      ],
+      "keywords": [
+        "similarity checker",
+        "similarity",
+        "assignments",
+        "plagiarism",
+        "copied",
+        "compared assignments"
+      ],
+      "answer_en": "Students can copy and change the words, so exact matching misses that. I turn assignments into embeddings and compare meaning. I split the text into chunks, because one vector for a whole paper hides a copied paragraph. The tool flags two close passages, and the teacher decides.",
+      "followup_en": "Each chunk has metadata: school, subject, term, assignment number. I filter on that before comparing, so I am not mixing the wrong sets. I tuned the cutoff on real teacher-reviewed pairs. This is not an LLM and not RAG. There is no generation step. A local vector store holds id, vector, text, and metadata. Chroma was a prototype evaluation only.",
+      "listen_for": [
+        "embeddings",
+        "chunks",
+        "meaning",
+        "flags",
+        "teacher decides",
+        "not word matching",
+        "metadata",
+        "not an LLM"
+      ],
+      "answer_ar": "المدقق يحوّل الواجب إلى متجهات ويقارن المعنى على مستوى فقرات. يُظهر التشابه للمعلم، ولا يحكم على الطالب."
+    },
+    {
+      "id": "proj.similarity.tech",
+      "category": "cv.project",
+      "topic": "project:similarity",
+      "question": "What technologies did you use in the similarity checker?",
+      "aliases": [
+        "what technologies did you use in the similarity checker",
+        "what was the tech stack for the similarity project",
+        "which embedding model did you use",
+        "which vector database did you use for similarity",
+        "if I opened the repo, what libraries would I see",
+        "did this need a GPU",
+        "how did you store the vectors",
+        "was hugging face in this project",
+        "did you call an LLM to compare the two texts"
+      ],
+      "keywords": [
+        "technologies",
+        "tech stack",
+        "embedding model",
+        "tools",
+        "vector database"
+      ],
+      "answer_en": "Python, a sentence-embedding model from Hugging Face, and cosine similarity. I stored vectors in a lightweight local store. I tried Chroma for a prototype. I did not use an LLM here. The rest is text extraction, chunking, metadata filters, and a teacher review screen.",
+      "followup_en": "I would pick Qdrant or pgvector for a heavier production store, because filtering, backup, and on-premise ops matter. I have not run Qdrant in production. I know how collections and payload filters work. Pinecone is a poor fit if data must stay inside the country. No LangChain in this project. No agent.",
+      "listen_for": [
+        "Python",
+        "Hugging Face",
+        "cosine",
+        "local store",
+        "Chroma prototype",
+        "no LLM",
+        "chunking",
+        "Qdrant"
+      ],
+      "answer_ar": "التقنية: بايثون وembeddings وتشابه جيب التمام وتخزين محلي خفيف. كروما للتجربة فقط، بلا نموذج لغوي."
+    },
+    {
+      "id": "proj.similarity.threshold",
+      "category": "cv.project",
+      "topic": "project:similarity",
+      "question": "How did you choose the similarity threshold?",
+      "aliases": [
+        "how did you choose the similarity threshold",
+        "how did you pick the threshold",
+        "how did you decide when two assignments are similar",
+        "how did you tune the cutoff",
+        "what number did you use, 0.8 or something",
+        "who said a match is high enough to show a teacher",
+        "what happens if the cutoff is too low",
+        "did you guess the threshold or test it",
+        "how did teachers change the cutoff"
+      ],
+      "keywords": [
+        "threshold",
+        "cutoff",
+        "tune",
+        "similar"
+      ],
+      "answer_en": "I did not pick a textbook number. Teachers had already reviewed some pairs: real follow-up cases, and expected overlap like shared question text. I tried different cutoffs and looked at misses and false alarms. Too low and teachers ignore the tool; too high and we miss copies, so they still decide.",
+      "followup_en": "Shared assignment instructions score high even when the student work is honest. Metadata filters reduce that noise before the score. I cared more about a list teachers would actually open than about a pretty chart. The cutoff can move by subject if needed. I would not freeze one global number forever.",
+      "listen_for": [
+        "not a textbook number",
+        "teachers reviewed",
+        "false alarms",
+        "misses",
+        "shared question text",
+        "balance",
+        "teacher decides"
+      ],
+      "answer_ar": "الحدّ اختُبر على حالات راجعها المعلمون. المنخفض يزعجهم، والمرتفع يُفلت النسخ. القرار النهائي يبقى للمعلم."
+    },
+    {
+      "id": "proj.similarity.is_rag",
+      "category": "cv.project",
+      "topic": "project:similarity",
+      "question": "Is the similarity checker a RAG system?",
+      "aliases": [
+        "is the similarity checker a RAG system",
+        "is that rag",
+        "does the similarity checker use rag",
+        "how is this related to rag",
+        "people call every embedding project RAG, is this one",
+        "where is the generation step then",
+        "so you retrieve similar text, is that RAG already",
+        "would adding an LLM summary make it RAG",
+        "why do you refuse to call it RAG"
+      ],
+      "keywords": [
+        "rag",
+        "similarity"
+      ],
+      "answer_en": "No, it is vector search and comparison: embeddings, similarity, and metadata filters. Those blocks also appear in RAG. It becomes RAG when a language model writes from the retrieved text. We did not do that; the teacher reads the two passages.",
+      "followup_en": "An LLM summary of the match would start to look like RAG. We avoided that because the case is about a student. I wanted the evidence on screen, not a generated accusation. Retrieval without generation is still useful. I keep the names clean so the interview and the architecture stay honest.",
+      "listen_for": [
+        "no",
+        "not RAG",
+        "embeddings",
+        "no generation",
+        "teacher reads",
+        "vector search",
+        "same building blocks"
+      ],
+      "answer_ar": "ليس RAG. هو بحث متجهات ومقارنة بلا توليد. RAG يبدأ عندما يكتب النموذج من النصوص المسترجعة."
+    },
+    {
+      "id": "proj.similarity.challenges",
+      "category": "cv.project",
+      "topic": "project:similarity",
+      "question": "What challenges did you face in the similarity checker?",
+      "aliases": [
+        "what challenges did you face in the similarity checker",
+        "what was hard about the similarity project",
+        "what problems did you hit comparing assignments",
+        "what almost made teachers stop using it",
+        "where did the first version fail",
+        "why did whole-document vectors not work",
+        "how do you handle the shared exam question at the top of every file",
+        "what was the trust problem"
+      ],
+      "keywords": [
+        "challenges",
+        "hard",
+        "difficulties",
+        "problems"
+      ],
+      "answer_en": "Long papers were a problem, because one vector per assignment hid a copied paragraph, so I moved to chunks. Shared question text also looks similar even when work is honest, so filters and a tuned cutoff helped. Trust was the last issue: if the tool accuses students, teachers walk away.",
+      "followup_en": "I show the two passages side by side with the score. I never write a guilt label. Arabic and English mix in some assignments, which makes naive word matching worse and is another reason embeddings helped. I also had to extract text cleanly from messy files before any vector was computed. Garbage in still beats a fancy model.",
+      "listen_for": [
+        "long documents",
+        "chunks",
+        "false alarms",
+        "shared question",
+        "trust",
+        "flags",
+        "side by side"
+      ],
+      "answer_ar": "الصعوبة في المستندات الطويلة والإنذارات الكاذبة من نص السؤال المشترك، والثقة: الأداة تُظهر الدليل ولا تتهم."
+    },
+    {
+      "id": "proj.similarity.role",
+      "category": "cv.project",
+      "topic": "project:similarity",
+      "question": "What was your role in the similarity checker project?",
+      "aliases": [
+        "what was your role in the similarity checker project",
+        "did you build the similarity checker yourself",
+        "what exactly did you do on that project",
+        "was this a team of ten or mostly you",
+        "who chose embeddings over an LLM",
+        "did you only write the model part",
+        "were you the designer or just the coder",
+        "who sat with the teachers to tune it"
+      ],
+      "keywords": [
+        "your role",
+        "yourself",
+        "exactly did you do"
+      ],
+      "answer_en": "I designed it and built it. I chose embeddings, wrote the chunking and comparison in Python, added metadata filters, and tuned the cutoff with teachers on real cases. I also built the review screen with the two passages side by side. The tool flags. The teacher decides.",
+      "followup_en": "I coordinated with Ministry IT for data access and deployment. Teachers were testers, not passengers. I did not outsource the core logic. There is no LLM in the matching path, and that was my call. If someone else had forced a chatbot on top, I would have pushed back because of student cases.",
+      "listen_for": [
+        "I designed",
+        "I built",
+        "Python",
+        "chunking",
+        "tuned with teachers",
+        "review screen",
+        "flags"
+      ],
+      "answer_ar": "صمّمه وبناه بنفسه: المتجهات، التقطيع، الفلترة، وضبط الحد مع المعلمين، وشاشة المراجعة."
+    },
+    {
+      "id": "proj.early_warning.describe",
+      "category": "cv.project",
+      "topic": "project:early_warning",
+      "question": "Tell me about the Student Performance Early-Warning project",
+      "aliases": [
+        "tell me about the Student Performance Early-Warning project",
+        "how did you predict students at risk",
+        "tell me about the machine learning project at al najat schools",
+        "you analyzed grades and attendance, tell me about that",
+        "how did the school know who to help before the final exam",
+        "was this an LLM reading report cards",
+        "what data did you actually have",
+        "what did a flagged student look like in the output",
+        "when in the term did the model run"
+      ],
+      "keywords": [
+        "early warning",
+        "student performance",
+        "at risk",
+        "grades",
+        "attendance",
+        "najat schools"
+      ],
+      "answer_en": "At Al Najat I looked for students who might need help before the term ended. Data was grades and attendance in messy files, which I cleaned in Pandas. I used sklearn, with Recall as the main score. The school got a ranked list and the reasons, and a teacher reviewed each case, with no LLM.",
+      "followup_en": "I kept student IDs as text so leading zeros were not lost. Missing attendance was a signal, so I added a missing flag instead of filling the average. Scaling sat inside a sklearn pipeline to avoid leakage. I respected time: the model only saw features available at that point in the term, not final grades. Most students were fine, so Accuracy would have lied.",
+      "listen_for": [
+        "Al Najat",
+        "grades and attendance",
+        "Pandas",
+        "sklearn",
+        "Recall",
+        "ranked list",
+        "no LLM",
+        "teacher reviewed"
+      ],
+      "answer_ar": "مشروع كويتي كلاسيكي: درجات وغياب، تنظيف بـ Pandas، وتصنيف بـ sklearn حسب الاستدعاء. ليس نموذجاً لغوياً."
+    },
+    {
+      "id": "proj.early_warning.tech",
+      "category": "cv.project",
+      "topic": "project:early_warning",
+      "question": "What technologies did you use in the early-warning project?",
+      "aliases": [
+        "what technologies did you use in the early-warning project",
+        "which model did you use for early warning",
+        "what was the stack for the student performance project",
+        "which libraries did you use for that",
+        "was this XGBoost or a neural net",
+        "why sklearn and not deep learning",
+        "did you put this on a GPU",
+        "what would I import at the top of the file",
+        "any RAG in the early warning tool"
+      ],
+      "keywords": [
+        "technologies",
+        "algorithm",
+        "model",
+        "stack",
+        "libraries"
+      ],
+      "answer_en": "Python, Pandas, and sklearn: Pandas to clean and merge grades and attendance, sklearn for a pipeline with scaling and a classifier. I started with a simple model people could explain. I did not use a neural net, and I did not use an LLM or RAG.",
+      "followup_en": "Tabular school data of this size does not need a deep network. Teachers asked why a name was on the list. A black box would have died in the first meeting. A baseline that always predicts the majority class was there so I knew I was beating something real. LangChain and Chroma are not in this project at all.",
+      "listen_for": [
+        "Python",
+        "Pandas",
+        "sklearn",
+        "pipeline",
+        "no neural net",
+        "no LLM",
+        "explain"
+      ],
+      "answer_ar": "التقنية جدولية: بايثون وPandas وsklearn. بدون شبكة عصبية وبدون نموذج لغوي، حتى يفهم المعلم سبب الإشارة."
+    },
+    {
+      "id": "proj.early_warning.metric",
+      "category": "cv.project",
+      "topic": "project:early_warning",
+      "question": "Which metric did you use and why?",
+      "aliases": [
+        "which metric did you use and why",
+        "why recall and not accuracy",
+        "how did you evaluate the early warning model",
+        "what was the accuracy of the model",
+        "how do you know the model was any good",
+        "what if I told you accuracy was 95 percent",
+        "did you care about precision at all",
+        "which error is worse, missing a student or extra follow-up",
+        "how imbalanced was the data"
+      ],
+      "keywords": [
+        "metric",
+        "evaluate",
+        "recall",
+        "accuracy",
+        "measure"
+      ],
+      "answer_en": "Recall on the students who needed support. Most students were fine, so Accuracy looks high even if you miss the ones who matter. Missing a struggling student is worse than one extra follow-up. I still watched Precision so the list did not flood teachers.",
+      "followup_en": "I looked at errors per class, not only the average. A confusion matrix tells you if you are only good at the majority class. If Precision collapsed, teachers would ignore the list and the whole tool would fail. The metric has to match the cost in the school, not a Kaggle leaderboard.",
+      "listen_for": [
+        "Recall",
+        "Accuracy looks good",
+        "imbalanced",
+        "missing a student",
+        "Precision",
+        "teachers",
+        "per class"
+      ],
+      "answer_ar": "المعيار الاستدعاء لأن معظم الطلاب بخير، والدقة العامة تخدع. إغفال طالب أخطر من متابعة زائدة."
+    },
+    {
+      "id": "proj.early_warning.leakage",
+      "category": "cv.project",
+      "topic": "project:early_warning",
+      "question": "How did you avoid data leakage in the early-warning model?",
+      "aliases": [
+        "how did you avoid data leakage in the early-warning model",
+        "did you face data leakage",
+        "how did you split the data for training",
+        "how did you make sure the model did not see future data",
+        "could final grades leak into an early warning score",
+        "did you scale before or after the split",
+        "why not a random 80 20 split",
+        "give me one leakage bug you actually blocked",
+        "what would a junior do wrong on this dataset"
+      ],
+      "keywords": [
+        "leakage",
+        "split",
+        "future data",
+        "training"
+      ],
+      "answer_en": "Scaling lived inside a sklearn pipeline, so it fitted on training data only. Time also mattered. I was predicting early in the term, so the model could not see final grades. A random split would have leaked the future. I split in time order.",
+      "followup_en": "A missing-attendance flag is fine. Filling missing values with the global mean before the split is not. Any column that only exists after the outcome is known has to stay out. I treated IDs as text, not numbers, which is not leakage but it is the same careful data handling. If a score looks too good, I assume leakage first.",
+      "listen_for": [
+        "pipeline",
+        "training only",
+        "time",
+        "not final grades",
+        "not random split",
+        "early in the term",
+        "leakage"
+      ],
+      "answer_ar": "منع التسريب بوضع التحويل داخل Pipeline، وبالتقسيم حسب الزمن حتى لا يرى النموذج درجات نهاية الفصل."
+    },
+    {
+      "id": "proj.early_warning.result",
+      "category": "cv.project",
+      "topic": "project:early_warning",
+      "question": "What was the result of the early-warning project?",
+      "aliases": [
+        "what was the result of the early-warning project",
+        "what was the outcome",
+        "what impact did it have",
+        "did it help the schools",
+        "did anyone actually call a parent because of this list",
+        "what changed in the school after you shipped it",
+        "did the model prove why a student was failing",
+        "what did success look like for you",
+        "was there a lift in grades"
+      ],
+      "keywords": [
+        "result",
+        "outcome",
+        "impact",
+        "help"
+      ],
+      "answer_en": "Schools got a ranked follow-up list during the term, with the factors behind each score. They did not wait until final results. A teacher still reviewed the case and chose the support. The model pointed to who to look at first. It did not prove why a student struggled.",
+      "followup_en": "I am honest about impact. I did not run a big causal study that grades rose by X percent. The operational win was earlier attention and a shared list instead of scattered files. If a teacher disagreed, that was allowed. That is why I did not hide the features that pushed the score up.",
+      "listen_for": [
+        "ranked list",
+        "during the term",
+        "teacher reviewed",
+        "who to look at",
+        "did not prove why",
+        "factors",
+        "support"
+      ],
+      "answer_ar": "النتيجة قائمة متابعة مبكرة مع أسباب الدرجة. المعلم يراجع. النموذج لا يثبت سبب التعثر، بل يحدد من يُنظر إليه أولاً."
+    },
+    {
+      "id": "proj.helpdesk.describe",
+      "category": "cv.project",
+      "topic": "project:helpdesk",
+      "question": "Tell me about the Helpdesk Request Classification project",
+      "aliases": [
+        "tell me about the Helpdesk Request Classification project",
+        "how did you classify helpdesk tickets",
+        "tell me about the nlp project at al najat",
+        "you classified support requests, how",
+        "tickets arrive as messy email, what did you do",
+        "how did a ticket find the right department",
+        "was this an AI agent reading the inbox",
+        "what happened to tickets the model was unsure about",
+        "did routing get faster"
+      ],
+      "keywords": [
+        "helpdesk",
+        "ticket",
+        "classification",
+        "support requests",
+        "routing"
+      ],
+      "answer_en": "Helpdesk tickets arrived as free text and people routed them by hand. I trained a sklearn classifier on TF-IDF to predict the department, like accounts or network, using tickets staff had already routed. Unclear tickets went to a person, with no LLM. Faster routing, plus simple stats for reporting.",
+      "followup_en": "I cleaned duplicates and sensitive details first. I split train and test before learning the text features, so IDF could not peek at the test set. Ambiguous tickets were a review category, not a forced high-confidence label. If two problems sat in one ticket, forcing one department would have been worse than asking a human.",
+      "listen_for": [
+        "TF-IDF",
+        "sklearn",
+        "department",
+        "free text",
+        "review",
+        "no LLM",
+        "Al Najat",
+        "routing"
+      ],
+      "answer_ar": "تصنيف تذاكر الدعم بنصوص حرة باستخدام TF-IDF وsklearn. التذكرة الغامضة تذهب لشخص، بلا نموذج لغوي."
+    },
+    {
+      "id": "proj.helpdesk.tech",
+      "category": "cv.project",
+      "topic": "project:helpdesk",
+      "question": "What approach and tools did you use for ticket classification?",
+      "aliases": [
+        "what approach and tools did you use for ticket classification",
+        "which algorithm did you use for the helpdesk classifier",
+        "did you use an llm for ticket classification",
+        "how did you represent the ticket text",
+        "why not just send every ticket to GPT",
+        "TF-IDF or embeddings, which one",
+        "what was your baseline",
+        "would you still start simple if you rebuilt it today",
+        "when would you upgrade this to an LLM"
+      ],
+      "keywords": [
+        "approach",
+        "algorithm",
+        "nlp techniques",
+        "represent",
+        "llm"
+      ],
+      "answer_en": "Classic NLP: TF-IDF for the ticket text, then a sklearn classifier. I compared it to a most-common-class baseline so I knew the model beat a dummy. I did not use an LLM and would still start simple today. Only after per-department errors would I try embeddings or an LLM.",
+      "followup_en": "Helpdesk language repeats. TF-IDF is strong there. An LLM would cost more and still need a human for mixed tickets. If hardware tickets were clean and accounts tickets were a mess, I would fix that slice, not replace the whole stack. No RAG, because nothing is being generated from a knowledge base.",
+      "listen_for": [
+        "TF-IDF",
+        "sklearn",
+        "baseline",
+        "no LLM",
+        "start simple",
+        "per department",
+        "embeddings later"
+      ],
+      "answer_ar": "تمثيل TF-IDF ثم مصنّف sklearn، مع خط أساس بسيط. لا يستخدم LLM إلا إذا قاس خطأ الأقسام وبرر الترقية."
+    },
+    {
+      "id": "proj.helpdesk.challenges",
+      "category": "cv.project",
+      "topic": "project:helpdesk",
+      "question": "What was difficult in the helpdesk classification project?",
+      "aliases": [
+        "what was difficult in the helpdesk classification project",
+        "how did you handle tickets with two problems",
+        "how did you handle ambiguous tickets",
+        "what if the printer and the network are both broken",
+        "what did you do with tickets that fit no team",
+        "how did you stop fixing one department and breaking another",
+        "was the label quality any good",
+        "what was harder, the model or the data"
+      ],
+      "keywords": [
+        "difficult",
+        "challenges",
+        "two problems",
+        "ambiguous"
+      ],
+      "answer_en": "Ambiguity was the hard part: some tickets had two problems at once, and some fitted no department. I did not force one label. Low-confidence or mixed tickets went to review. I also kept a fixed test set, so cleaning the training data did not secretly break categories that already worked.",
+      "followup_en": "Staff labels are noisy. Two people route the same ticket differently. That caps how good the model can look. I stripped personal details before training. Multi-label would have been a next step if mixed tickets stayed common. I did not pretend a single softmax was the truth of the world.",
+      "listen_for": [
+        "two problems",
+        "no department",
+        "review",
+        "low confidence",
+        "fixed test set",
+        "not force",
+        "ambiguous"
+      ],
+      "answer_ar": "الصعوبة في التذاكر المختلطة أو بلا قسم. لا يُفرض تصنيف واثق، وتُثبت مجموعة اختبار حتى لا ينكسر ما كان يعمل."
+    },
+    {
+      "id": "proj.completion_risk.describe",
+      "category": "cv.project",
+      "topic": "project:completion",
+      "question": "Tell me about the BTEC Completion Risk Monitoring project",
+      "aliases": [
+        "tell me about the BTEC Completion Risk Monitoring project",
+        "how did you identify schools that need follow up",
+        "tell me about the unit completion monitoring",
+        "which schools will miss the deadline, how did you know",
+        "is completion percent a model or just math",
+        "what does the ministry follow-up list contain",
+        "did you use an LLM to write warning letters",
+        "how is this different from the student early warning project",
+        "what is complete, according to your code"
+      ],
+      "keywords": [
+        "completion risk",
+        "completion",
+        "schools",
+        "follow up",
+        "unit completion"
+      ],
+      "answer_en": "The Ministry needed schools that might miss BTEC unit deadlines. I pulled data with SQL, cleaned it in Pandas, and computed completion from a clear rule. Current percent is math, not a model. Risk of finishing late used sklearn where past terms existed. The output was a follow-up list with indicators.",
+      "followup_en": "I kept those two ideas apart on purpose. Seventy percent complete is a query. Will they finish on time is a forecast, and it needs history. If history was thin, I did not fake a clever model. No LLM and no RAG in the live path. An LLM could draft a note from the numbers later, with a human sending it. I did not put generation in the core.",
+      "listen_for": [
+        "SQL",
+        "Pandas",
+        "completion percent",
+        "not a model",
+        "sklearn",
+        "schools",
+        "follow-up list",
+        "history"
+      ],
+      "answer_ar": "مراقبة إنجاز وحدات BTEC: الحساب من SQL، والخطر من التاريخ عبر sklearn إن وُجد. النسبة الحالية ليست نموذجاً لغوياً."
+    },
+    {
+      "id": "proj.completion_risk.tech",
+      "category": "cv.project",
+      "topic": "project:completion",
+      "question": "What technologies did you use for completion risk monitoring?",
+      "aliases": [
+        "what technologies did you use for completion risk monitoring",
+        "what was the stack for the completion project",
+        "how did you use sql in that project",
+        "is this a dashboard or a classifier",
+        "where does pandas stop and sklearn start",
+        "did you need a vector database here",
+        "could the LLM just read the spreadsheet",
+        "what is calculated versus what is predicted",
+        "show me the boring part of the stack"
+      ],
+      "keywords": [
+        "technologies",
+        "stack",
+        "sql"
+      ],
+      "answer_en": "Python, Pandas, sklearn, and SQL. SQL pulls school and unit records and the exact counts, Pandas cleans the tables, and sklearn is only for the risk side when history supports it. If a number can be calculated, I calculate it. I do not ask a model to guess it.",
+      "followup_en": "Joins and definitions live in SQL so two people get the same count. That matters in a ministry. sklearn does not replace those counts. There is no embedding index and no agent. FastAPI can serve the list later, but the thinking is still queries plus a small classifier. Keep the stack boring on purpose.",
+      "listen_for": [
+        "SQL",
+        "Pandas",
+        "sklearn",
+        "calculate",
+        "not guess",
+        "history",
+        "Python"
+      ],
+      "answer_ar": "SQL للعدّ، وPandas للتنظيف، وsklearn للخطر فقط عند وجود تاريخ. الرقم القابل للحساب لا يُخمَّن بنموذج."
+    },
+    {
+      "id": "proj.kiosk.describe",
+      "category": "cv.project",
+      "topic": "project:kiosk",
+      "question": "Tell me about the voice kiosk with Whisper",
+      "aliases": [
+        "tell me about the voice kiosk with Whisper",
+        "how did you use whisper at al najat",
+        "what did you build with whisper",
+        "tell me about your experience with speech to text",
+        "someone walks up and talks to a machine, what did you build",
+        "did the audio leave the building",
+        "was this ChatGPT with a microphone",
+        "how did the kiosk know when to start listening",
+        "what happened after Whisper gave you text"
+      ],
+      "keywords": [
+        "kiosk",
+        "whisper",
+        "voice",
+        "speech",
+        "speech recognition",
+        "speech to text"
+      ],
+      "answer_en": "At Al Najat I built a kiosk people could speak to. Whisper did speech-to-text on local machines, so audio stayed inside. I cleaned noise and used voice activity detection instead of recording all the time. A small classifier picked a male or female reply voice, then NLP routed the request, with no LLM.",
+      "followup_en": "This was 2017 to 2023, before my LLM work. After the text came out, request classification sent people to the right service. Image-processing functions sat on the same kiosk. Privacy was simple: keep the text, do not store the audio. A hall is noisy, so clean audio helped more than a bigger speech model.",
+      "listen_for": [
+        "Al Najat",
+        "Whisper",
+        "local",
+        "audio never left",
+        "voice activity",
+        "no LLM",
+        "male or female",
+        "kiosk"
+      ],
+      "answer_ar": "كشك صوتي في الكويت بـ Whisper محلياً حتى لا يخرج الصوت. بعده توجيه الطلب، بلا نموذج لغوي توليدي."
+    },
+    {
+      "id": "proj.kiosk.challenges",
+      "category": "cv.project",
+      "topic": "project:kiosk",
+      "question": "What challenges did you face in the voice kiosk?",
+      "aliases": [
+        "what challenges did you face in the voice kiosk",
+        "how did you handle noise in the kiosk",
+        "how did you deal with background noise",
+        "the lobby is loud, how did Whisper still work",
+        "how did you know the person finished talking",
+        "what did you keep on disk, audio or text",
+        "what failed first in the real hall",
+        "was the model the hard part or the room",
+        "how did you stop recording empty noise"
+      ],
+      "keywords": [
+        "challenges",
+        "noise",
+        "hard",
+        "background"
+      ],
+      "answer_en": "Noise and timing. A hall has other voices, so I cleaned audio before Whisper and used voice activity detection to capture real speech. Most accuracy came from clean audio, not a bigger model. I also had to know when the person finished. For privacy I kept text and did not store audio.",
+      "followup_en": "Continuous recording would have filled disks and captured other people in the queue. Voice activity detection cuts that. Short answers and Arabic-English mix made transcripts messy, so the next NLP step had to tolerate imperfect text. I would still start with the microphone and the room before I blame Whisper.",
+      "listen_for": [
+        "noise",
+        "clean audio",
+        "voice activity",
+        "when they finished",
+        "did not store audio",
+        "privacy",
+        "not a bigger model"
+      ],
+      "answer_ar": "التحدي الضجيج ومعرفة نهاية الكلام. تنظيف الصوت أهم من تكبير النموذج، والنص يُحفظ لا التسجيل."
+    },
+    {
+      "id": "proj.kiosk.voice_classifier",
+      "category": "cv.project",
+      "topic": "project:kiosk",
+      "question": "How did the voice classifier work?",
+      "aliases": [
+        "how did the voice classifier work",
+        "how did you choose the tts voice",
+        "was that voice biometrics",
+        "did you identify people by their voice",
+        "male female voice, is that security",
+        "could this unlock an account",
+        "what features did you use on the audio",
+        "is this speaker verification",
+        "why match the reply voice at all"
+      ],
+      "keywords": [
+        "voice classifier",
+        "male",
+        "female",
+        "tts voice",
+        "biometrics"
+      ],
+      "answer_en": "It was a simple classifier on audio features. It predicted a speaker category so the kiosk could reply with a matching male or female voice. That is a category, not an identity. I never used voice to recognize a person. I would not use voice alone for any approval.",
+      "followup_en": "Speaker classification says male or female style. Speaker verification says this is Ahmed. Those are different problems. Mixing them in a government setting is dangerous. The kiosk used the label only to pick TTS. Access and records stayed on other controls. No LLM picked the voice either.",
+      "listen_for": [
+        "category",
+        "not identity",
+        "male or female",
+        "TTS",
+        "not verification",
+        "not biometrics for login",
+        "would not approve"
+      ],
+      "answer_ar": "مصنّف بسيط لاختيار صوت الرد. هذا فئة وليس تحققاً من هوية، ولا يُستخدم للموافقة أو الدخول."
+    },
+    {
+      "id": "cv.projects_overview",
+      "category": "cv.project",
+      "topic": "projects",
+      "question": "What projects have you worked on?",
+      "aliases": [
+        "what projects have you worked on",
+        "what are the main projects in your cv",
+        "give me an overview of your ai projects",
+        "walk me through a project",
+        "walk me through your project",
+        "explain your project",
+        "explain your projects",
+        "tell me about your project",
+        "tell me about your projects",
+        "describe your project",
+        "name the AI projects without the sales language",
+        "which ones are ministry and which ones are Kuwait",
+        "do you have more than chatbots on this CV",
+        "pick the ones that shipped, not the tutorials",
+        "if I only hear five names, which five"
+      ],
+      "keywords": [
+        "projects",
+        "machine learning project",
+        "ai projects"
+      ],
+      "answer_en": "At the Ministry: assignment similarity with embeddings, completion risk with SQL and Pandas, and LLM question generation with RAG. At Al Najat: student early-warning, helpdesk classification with TF-IDF, and a Whisper kiosk. Only the question tool is LLM plus RAG plus an agentic flow.",
+      "followup_en": "KNET work was payment kiosks and POS, not AI. I mention it because delivery and audit come from there. I do not fold Whisper or sklearn into generative AI. If you want depth, pick similarity or question generation. Those two show the line I care about: retrieve and compare versus generate with a human stop.",
+      "listen_for": [
+        "similarity",
+        "completion risk",
+        "question generation",
+        "early-warning",
+        "helpdesk",
+        "Whisper",
+        "only generation is LLM",
+        "Ministry and Kuwait"
+      ],
+      "answer_ar": "مشاريع الوزارة: تشابه وتوليد أسئلة ومخاطر إنجاز. في الكويت: إنذار مبكر وتصنيف تذاكر وكشك Whisper. التوليد وحده LLM وRAG."
+    },
+    {
+      "id": "cv.projects.most_recent",
+      "category": "cv.project",
+      "topic": "projects",
+      "question": "What is your most recent project?",
+      "aliases": [
+        "what is your most recent project",
+        "what are you working on right now",
+        "what is the latest thing you built",
+        "what did you ship this year",
+        "open your last month of work for me",
+        "is the similarity checker still the live one",
+        "are you still on question generation",
+        "what would I see if I visited the ministry this week",
+        "what is on your desk today"
+      ],
+      "keywords": [
+        "recent project",
+        "latest",
+        "right now"
+      ],
+      "answer_en": "The recent work is at the Ministry on BTEC. Similarity checking with embeddings is in use for teacher review. Completion risk uses SQL and Pandas. Alongside that I build the LLM and RAG tools for exam questions and feedback, with teacher approval before save.",
+      "followup_en": "If you mean the generative piece, question generation is the one with retrieval, JSON, and the pause. If you mean the last production-style tool teachers touch every week, similarity is the clearer daily object. I work on both. I do not call the Kuwait kiosk recent. That ended when I left in 2023.",
+      "listen_for": [
+        "Ministry",
+        "BTEC",
+        "similarity",
+        "completion",
+        "question generation",
+        "teacher approval",
+        "right now"
+      ],
+      "answer_ar": "الأحدث في الوزارة: مدقق التشابه ومخاطر الإنجاز، ومعهما توليد الأسئلة بالـ LLM مع موافقة المعلم."
+    },
+    {
+      "id": "cv.projects.most_proud",
+      "category": "cv.project",
+      "topic": "projects",
+      "question": "Which project are you most proud of and why?",
+      "aliases": [
+        "which project are you most proud of and why",
+        "what is your favorite project",
+        "what project had the biggest impact",
+        "which achievement stands out in your career",
+        "if you could put one project on the table, which one",
+        "what would you show a skeptical director",
+        "which project taught you the most",
+        "not the flashiest, the one you trust",
+        "why that one and not the LLM tool"
+      ],
+      "keywords": [
+        "most proud",
+        "favorite",
+        "biggest impact",
+        "stands out"
+      ],
+      "answer_en": "The BTEC similarity checker caught copied work after students changed the words, using embeddings. Teachers could see the two passages and kept control. I like it because it is useful without pretending to be a judge. The LLM question tool is important, but this one taught me restraint.",
+      "followup_en": "Impact here means teachers review a short list instead of every paper. I am proud of saying no to an LLM in the core. Generation would have sounded smarter in a meeting and weaker in a student case. Question generation is the project I would discuss for agents. Pride for me is the boundary, not the buzzword.",
+      "listen_for": [
+        "similarity checker",
+        "embeddings",
+        "changed the words",
+        "two passages",
+        "teacher",
+        "not a judge",
+        "restraint"
+      ],
+      "answer_ar": "يفتخر بمدقق التشابه لأنه حل نسخ المعنى دون أن يتحول لقاضٍ، والمعلم يرى الدليل ويقرر."
+    },
+    {
+      "id": "cv.najat_role",
+      "category": "cv.experience",
+      "topic": "najat",
+      "question": "Tell me about your role at Al Najat",
+      "aliases": [
+        "tell me about your role at Al Najat",
+        "what did you do at al najat charity",
+        "what was your job from 2017 to 2023",
+        "tell me about the applied ai and automation engineer role",
+        "six years in Kuwait after payments, what changed in the work",
+        "were you building products or running IT",
+        "who were your users at Al Najat",
+        "was there any generative AI in that job",
+        "name the three things you actually shipped there"
+      ],
+      "keywords": [
+        "al najat",
+        "najat",
+        "2017",
+        "2023",
+        "applied ai",
+        "automation engineer"
+      ],
+      "answer_en": "From 2017 to 2023 I was an Applied AI and Intelligent Automation Engineer at Al Najat in Kuwait. I built tools for schools and admin teams. That included a Whisper kiosk with some image-processing functions, helpdesk classification with TF-IDF, and student early-warning with Pandas and sklearn. No LLM work there.",
+      "followup_en": "The organization is charity and education, so the users were school staff and families at the kiosk. I moved back to hands-on engineering after the KNET project-manager years. Speech, tabular ML, and classic NLP. When I left in 2023 it was to do LLM and RAG at the Ministry, not because Al Najat had a generative stack.",
+      "listen_for": [
+        "2017 to 2023",
+        "Kuwait",
+        "Whisper",
+        "helpdesk",
+        "early-warning",
+        "no LLM",
+        "applied AI",
+        "schools"
+      ],
+      "answer_ar": "في النجاة 2017–2023 بنى كشك Whisper وتصنيف تذاكر وإنذاراً مبكراً. عمل تطبيقي كلاسيكي، بلا نماذج توليد."
+    },
+    {
+      "id": "cv.knet_role",
+      "category": "cv.experience",
+      "topic": "knet",
+      "question": "Tell me about your project management experience at VNC / KNET",
+      "aliases": [
+        "tell me about your project management experience at VNC / KNET",
+        "what did you do at vnc",
+        "tell me about the knet projects",
+        "you were a project manager, tell me about that",
+        "what does a payment kiosk project actually involve",
+        "were you writing code or only managing vendors",
+        "what happens if a kiosk charges twice",
+        "which ministries were you delivering to",
+        "how does that job help an AI engineer"
+      ],
+      "keywords": [
+        "project manager",
+        "vnc",
+        "knet",
+        "payment",
+        "pos",
+        "kiosk",
+        "2010",
+        "2017"
+      ],
+      "answer_en": "From 2010 to 2017 I was a project manager at Vending Network Company in Kuwait on KNET work. I delivered kiosk and POS e-payment projects for ministries. That meant Python, C#, SQL, APIs, testing, UAT, vendors, and uptime. Payments cannot stop and cannot charge twice. I still carry that habit.",
+      "followup_en": "I was not a slide-only manager. I lived in integration, logs, and recovery. Service continuity was the job. That is why I like an internal model interface and teacher approval later: you design as if someone will replay the day. There was no LLM on those kiosks. The AI years start after this.",
+      "listen_for": [
+        "2010 to 2017",
+        "KNET",
+        "project manager",
+        "kiosk and POS",
+        "cannot charge twice",
+        "Python",
+        "C#",
+        "ministries"
+      ],
+      "answer_ar": "سبع سنوات مدير مشاريع دفع حكومي على كيه نت: أكشاك ونقاط بيع، تكامل واختبار واستمرارية، بلا ذكاء توليدي."
+    },
+    {
+      "id": "cv.what_is_knet",
+      "category": "cv.experience",
+      "topic": "knet",
+      "question": "What is KNET?",
+      "aliases": [
+        "what is KNET",
+        "what does knet mean",
+        "can you explain knet",
+        "is knet a bank or a network",
+        "why do Kuwait payments go through knet",
+        "how is knet different from visa",
+        "what was your company doing on top of knet",
+        "if I am not from Kuwait, why should I care",
+        "was knet your employer"
+      ],
+      "keywords": [
+        "knet"
+      ],
+      "answer_en": "KNET is Kuwait's national card and e-payment network. Banks and government use it. My company built kiosk and POS systems for ministries on top of that network. I managed those projects: integration, testing, go-live, and keeping the service up. KNET was the rails, not my employer.",
+      "followup_en": "Think of it as shared payment infrastructure. Your kiosk must speak to it correctly or the transaction fails or, worse, repeats. That is why logging and reconciliation mattered more than a fancy UI. VNC was the vendor. Ministries were the clients. I left that world in 2017 for Al Najat.",
+      "listen_for": [
+        "Kuwait",
+        "payment network",
+        "banks and government",
+        "kiosk",
+        "POS",
+        "not my employer",
+        "ministries"
+      ],
+      "answer_ar": "كيه نت شبكة الدفع الوطنية في الكويت. شركته بنت أكشاك الدفع عليها، وهو أدار التسليم لا الشبكة نفسها."
+    },
+    {
+      "id": "cv.transition_pm_to_ai",
+      "category": "cv.career",
+      "topic": "career",
+      "question": "Why did you move from project management to AI engineering?",
+      "aliases": [
+        "why did you move from project management to AI engineering",
+        "how did you transition from pm to ai engineer",
+        "you were a project manager, why ai now",
+        "why did you go back to a technical role",
+        "how did you get into ai",
+        "was this a mid-career panic",
+        "did you stop managing because you failed at it",
+        "why not stay a PM and hire AI people",
+        "when did the technical work become the main job again"
+      ],
+      "keywords": [
+        "project management",
+        "transition",
+        "career change",
+        "technical role",
+        "into ai"
+      ],
+      "answer_en": "I never fully left the technical side. On payment projects I was in Python, .NET, SQL, and APIs every day. In 2017 at Al Najat I went back to building: speech, ML, NLP. Generative AI came next at the Ministry in 2023. The PM years still help with delivery and risk.",
+      "followup_en": "I did not wake up and become an AI person after a bootcamp. The 2017 move was toward problems I wanted to code. Whisper, sklearn, TF-IDF. Then the Ministry role made LLM and RAG the center. PMP is still useful when a demo is not a system. I can talk to stakeholders without hiding in jargon.",
+      "listen_for": [
+        "never left technical",
+        "2017",
+        "Al Najat",
+        "2023",
+        "Ministry",
+        "delivery",
+        "Python",
+        "not a bootcamp story"
+      ],
+      "answer_ar": "الانتقال ليس هروباً من الإدارة. بقي قريباً من الكود، ثم عاد للبناء في 2017، والنماذج التوليدية بدأت 2023."
+    },
+    {
+      "id": "cv.years_experience",
+      "category": "cv.career",
+      "topic": "career",
+      "question": "How many years of experience do you have?",
+      "aliases": [
+        "how many years of experience do you have",
+        "how many years in ai",
+        "how much experience do you have with llms",
+        "how long have you worked with generative ai",
+        "be honest, how new is the LLM part",
+        "fifteen years of what exactly",
+        "when did you first train a model",
+        "is the senior title from payments or from AI",
+        "how long have you been hands-on with sklearn"
+      ],
+      "keywords": [
+        "years of experience",
+        "how long",
+        "how many years"
+      ],
+      "answer_en": "More than fifteen years in software, systems, and delivery. Hands-on applied AI and machine learning since 2017, about eight years. Generative AI, LLMs, RAG, and agentic flows since 2023 at the Ministry. I do not count the Kuwait years as LLM years.",
+      "followup_en": "2010 to 2017 is payment systems and project delivery. 2017 to 2023 is Whisper, Pandas, sklearn, TF-IDF. 2023 to now is LLM, RAG, embeddings, FastAPI. If you need three years of LangGraph production, that is not me. If you need someone who has shipped constrained AI on real users, that clock is longer than 2023.",
+      "listen_for": [
+        "fifteen years",
+        "since 2017",
+        "since 2023",
+        "not LLM in Kuwait",
+        "eight years",
+        "Ministry",
+        "applied AI"
+      ],
+      "answer_ar": "أكثر من خمس عشرة سنة إجمالاً. تعلم آلة تطبيقي منذ 2017، ونماذج توليد منذ 2023 فقط."
+    },
+    {
+      "id": "cv.rag_experience",
+      "category": "cv.skills",
+      "topic": "skills",
+      "question": "Have you used RAG in your projects?",
+      "aliases": [
+        "have you used RAG in your projects",
+        "have you built a rag pipeline",
+        "did you implement rag at the ministry",
+        "where did you apply rag",
+        "show me RAG on your CV, not the definition",
+        "what do you retrieve before the model writes",
+        "is similarity checker RAG in your mouth",
+        "did RAG exist in Kuwait",
+        "how do you keep the answer inside the unit"
+      ],
+      "keywords": [
+        "rag",
+        "retrieval augmented",
+        "retrieval"
+      ],
+      "answer_en": "Yes, at the Ministry, in question generation. I retrieve BTEC unit content and learning outcomes, then the model writes only from that text. JSON is checked, then a teacher approves. The similarity checker uses embeddings too, but it does not generate, so I do not call it RAG.",
+      "followup_en": "Chunking, embeddings, metadata filters, and grounding are the parts I have actually wired. RAG started in 2023 with this job, not in Kuwait. LangChain appeared in the proof of concept. Production retrieval and generation are Python. I have not run a formal RAGAS loop in production. I still think in those metrics when I debug retrieval versus generation.",
+      "listen_for": [
+        "yes",
+        "question generation",
+        "retrieve unit content",
+        "only from that text",
+        "not similarity",
+        "Ministry",
+        "2023",
+        "teacher"
+      ],
+      "answer_ar": "نعم في توليد الأسئلة بالوزارة: استرجاع محتوى الوحدة ثم التوليد منه. مدقق التشابه ليس RAG لأنه بلا توليد."
+    },
+    {
+      "id": "cv.llm_experience",
+      "category": "cv.skills",
+      "topic": "skills",
+      "question": "What is your experience with LLMs?",
+      "aliases": [
+        "what is your experience with LLMs",
+        "have you worked with large language models",
+        "tell me about your generative ai experience",
+        "how have you used large language models",
+        "what have you actually shipped with an LLM",
+        "are you an API caller or an engineer around the model",
+        "which problems did the LLM solve for you",
+        "did you fine-tune, or only prompt",
+        "since when, really"
+      ],
+      "keywords": [
+        "llms",
+        "large language models",
+        "generative ai"
+      ],
+      "answer_en": "Since 2023 at the Ministry I have built LLM tools for BTEC: exam questions, feedback, and assessment support. Calls go through one internal interface. I care about retrieval, prompts, JSON with Pydantic, cost, and teacher approval. I have done basic fine-tuning. I have not trained a large model from scratch.",
+      "followup_en": "The model is a component. The system is the product. Student PII stays out. I started on an external API for speed, with the option to move. LangChain was POC. Production flow is Python. Whisper in Kuwait was speech, not an LLM. I will say that in the interview if someone mixes them.",
+      "listen_for": [
+        "since 2023",
+        "Ministry",
+        "questions and feedback",
+        "internal interface",
+        "Pydantic",
+        "basic fine-tuning",
+        "not from scratch",
+        "teacher approval"
+      ],
+      "answer_ar": "خبرته التوليدية منذ 2023: أسئلة وتغذية راجعة مع استرجاع وتحقق JSON وموافقة معلم. ضبط دقيق أساسي فقط."
+    },
+    {
+      "id": "cv.agentic_experience",
+      "category": "cv.skills",
+      "topic": "skills",
+      "question": "What is your experience with Agentic AI?",
+      "aliases": [
+        "what is your experience with Agentic AI",
+        "have you built an agent",
+        "have you used agentic ai in production",
+        "which of your projects is agentic",
+        "is an agent just a for-loop in your case",
+        "did you use langgraph for the agent",
+        "where does the human sit in your agent",
+        "are all your AI projects agents",
+        "what tools does the agent actually call"
+      ],
+      "keywords": [
+        "agentic",
+        "agent",
+        "agents"
+      ],
+      "answer_en": "The question-generation system is agentic: retrieve unit content, generate, validate schema, stop for the teacher, then save. I wrote that in Python with state and logs. Similarity is not an agent, and early-warning and helpdesk are classic ML. LangGraph is not in production; I would use it next for the pause.",
+      "followup_en": "Agentic for me means a goal, tools, state between steps, and a stop you cannot skip. It does not mean a chatbot that sounds independent. I have not run a multi-agent swarm. I have run a workflow that can refuse to save. That is the production experience I will claim, nothing more.",
+      "listen_for": [
+        "question generation",
+        "retrieve generate validate",
+        "teacher stop",
+        "Python",
+        "not similarity",
+        "not LangGraph in production",
+        "classic ML"
+      ],
+      "answer_ar": "الوكيل في توليد الأسئلة فقط: استرجاع ثم توليد ثم تحقق ثم توقف للمعلم. باقي المشاريع ليست وكلاء، وLangGraph غير إنتاجي."
+    },
+    {
+      "id": "cv.langchain",
+      "category": "cv.skills",
+      "topic": "skills",
+      "question": "Have you used LangChain?",
+      "aliases": [
+        "have you used LangChain",
+        "have you used langchain in production",
+        "do you use langchain",
+        "did you build with langchain",
+        "is langchain in production for you",
+        "why did you take langchain back out",
+        "can you live without langchain",
+        "was it the whole app or just the prototype",
+        "do you like langchain or tolerate it",
+        "what did langchain hide from you"
+      ],
+      "keywords": [
+        "langchain",
+        "lang chain"
+      ],
+      "answer_en": "Yes, in proof of concept work. It is fast for wiring a model, a retriever, and a prompt. For production question generation I wrote the path in Python. I needed to see what went to the model, what came back, and what it cost. I would still prototype in LangChain.",
+      "followup_en": "Hidden chains make debugging painful when a teacher asks why a question appeared. Python made logs boring and clear. I am not against libraries. I prefer a design that is easy to understand and debug in an exam bank. LangGraph is a different discussion: I know it, I have not shipped it. LangChain is the POC tool on this CV.",
+      "listen_for": [
+        "proof of concept",
+        "not production",
+        "Python",
+        "see the calls",
+        "cost",
+        "would still prototype",
+        "retriever and prompt"
+      ],
+      "answer_ar": "استخدم LangChain في التجربة السريعة فقط. المسار الإنتاجي بايثون حتى تظهر الاستدعاءات والتكلفة بوضوح."
+    },
+    {
+      "id": "cv.vector_db",
+      "category": "cv.skills",
+      "topic": "skills",
+      "question": "Which vector database have you used?",
+      "aliases": [
+        "which vector database have you used",
+        "have you used qdrant or pinecone",
+        "what vector store did you use",
+        "do you have experience with vector databases",
+        "chroma or qdrant in real life",
+        "where do your embeddings live",
+        "have you run a vector DB as a server",
+        "why not pinecone for a ministry",
+        "is pgvector on the table"
+      ],
+      "keywords": [
+        "vector database",
+        "chromadb",
+        "qdrant",
+        "pinecone",
+        "vector store"
+      ],
+      "answer_en": "I have used embeddings and vector search hands-on. I evaluated Chroma for local prototyping because it runs inside Python, and production similarity used a lightweight local store. I have not run Qdrant in production, though I know collections, payload filters, and HNSW. For a ministry I would look at Qdrant or pgvector.",
+      "followup_en": "Pinecone is awkward if data must stay in-country. Chroma is a lab convenience, not my production recommendation. Filters matter as much as nearest-neighbor search, because school and term must not mix. If PostgreSQL is already there, pgvector means one less system to secure. I will not pretend I operated a Qdrant cluster.",
+      "listen_for": [
+        "Chroma prototype",
+        "local store",
+        "not Qdrant in production",
+        "pgvector",
+        "filters",
+        "on-premise",
+        "embeddings"
+      ],
+      "answer_ar": "تعامل مع البحث المتجهي عملياً. كروما للتجربة، وتخزين محلي خفيف في المشروع. قدورانت يفهمه ولم يشغّله إنتاجياً."
+    },
+    {
+      "id": "cv.fine_tuning",
+      "category": "cv.skills",
+      "topic": "skills",
+      "question": "Have you done fine-tuning?",
+      "aliases": [
+        "have you done fine-tuning",
+        "your cv says fine tuning basics, what does that mean",
+        "did you fine tune any models",
+        "did you train your own LLM",
+        "LoRA or full fine-tune",
+        "when would you fine-tune instead of RAG",
+        "are you overselling fine-tuning on the CV",
+        "what behavior were you trying to change",
+        "have you done continued pretraining"
+      ],
+      "keywords": [
+        "fine tuning",
+        "fine-tune",
+        "fine tuned"
+      ],
+      "answer_en": "Basics only, and I say that clearly. At the Ministry I used light fine-tuning so outputs followed BTEC style and format, and I have not trained a large model from scratch. RAG is for knowledge that changes; fine-tuning is for behavior. If facts change, I re-index rather than retrain first.",
+      "followup_en": "I would not fine-tune to stuff new unit PDFs into weights. That goes stale. I would fine-tune if JSON shape or Arabic exam tone stayed wrong after prompting and retrieval. I do not claim LoRA factories or custom base models. If the job needs that as year-one ownership, I would learn it with a specialist, not bluff it.",
+      "listen_for": [
+        "basics",
+        "not from scratch",
+        "BTEC style",
+        "RAG for knowledge",
+        "fine-tune for behavior",
+        "re-index",
+        "honest"
+      ],
+      "answer_ar": "ضبط دقيق أساسي لأسلوب أسئلة BTEC فقط. لم يدرّب نموذجاً كبيراً من الصفر، والمعرفة تُحدَّث بالاسترجاع لا بالأوزان."
+    },
+    {
+      "id": "cv.whisper_experience",
+      "category": "cv.skills",
+      "topic": "skills",
+      "question": "Have you used Whisper?",
+      "aliases": [
+        "have you used Whisper",
+        "have you worked with speech recognition",
+        "do you have speech ai experience",
+        "was whisper a tutorial or a kiosk",
+        "did you run whisper locally",
+        "why whisper and not a cloud speech API",
+        "can you still work with audio systems",
+        "is whisper an LLM in your story",
+        "what broke in real rooms"
+      ],
+      "keywords": [
+        "whisper",
+        "speech recognition",
+        "speech ai"
+      ],
+      "answer_en": "Yes, in a real kiosk at Al Najat, not a laptop demo. Whisper ran locally so audio stayed inside. I dealt with noise, voice activity detection, and privacy, and a small classifier picked the reply voice. Whisper is speech-to-text, not an LLM project.",
+      "followup_en": "Open weights mattered because schools and families were the users. A cloud speech API would have sent voices out. After transcription, classic NLP routed the request. I would use Whisper again in a sovereign setting. I would still fight the room acoustics before I fight the model card.",
+      "listen_for": [
+        "yes",
+        "kiosk",
+        "local",
+        "audio stayed",
+        "noise",
+        "not an LLM",
+        "Al Najat",
+        "voice activity"
+      ],
+      "answer_ar": "نعم في كشك حقيقي محلياً حتى لا يخرج الصوت. Whisper تحويل كلام لنص، وليس مشروع نموذج توليدي."
+    },
+    {
+      "id": "cv.ml_experience",
+      "category": "cv.skills",
+      "topic": "skills",
+      "question": "What is your machine learning experience?",
+      "aliases": [
+        "what is your machine learning experience",
+        "which ml algorithms have you used",
+        "have you used scikit learn",
+        "tell me about your experience with pandas and scikit learn",
+        "classical ML, have you actually shipped it",
+        "are you only generative now",
+        "what kind of labels did you train on",
+        "classification or regression in your past",
+        "what ML mistakes have you already made"
+      ],
+      "keywords": [
+        "machine learning",
+        "scikit learn",
+        "sklearn",
+        "pandas",
+        "algorithms",
+        "classical"
+      ],
+      "answer_en": "Practical sklearn and Pandas. Classification mostly: students at risk from grades and attendance, helpdesk tickets with TF-IDF, and school completion risk. I watch leakage, imbalanced classes, Recall versus Accuracy, time splits, and whether a person can understand the score. No LLM in those cores.",
+      "followup_en": "I start with a baseline, then a pipeline, then error slices. Deep learning was not the default on tables. Hugging Face appears for embeddings and Whisper, which is a different bucket. If a job is only Kaggle notebooks, that is not my story. If a job is a list a teacher or clerk will use, that is my story.",
+      "listen_for": [
+        "sklearn",
+        "Pandas",
+        "classification",
+        "Recall",
+        "leakage",
+        "TF-IDF",
+        "no LLM in those",
+        "explainable"
+      ],
+      "answer_ar": "تعلم آلة عملي بـ sklearn وPandas: تصنيف خطر الطلاب والتذاكر ومخاطر الإنجاز، مع الانتباه للتسريب وعدم التوازن."
+    },
+    {
+      "id": "cv.nlp_experience",
+      "category": "cv.skills",
+      "topic": "skills",
+      "question": "What NLP tasks have you worked on?",
+      "aliases": [
+        "what NLP tasks have you worked on",
+        "have you done text classification",
+        "tell me about your natural language processing work",
+        "beyond LLMs, what NLP have you done",
+        "classification, similarity, or generation",
+        "did you do named entity recognition",
+        "is speech part of your NLP story",
+        "which NLP project had users",
+        "Arabic text, have you dealt with it"
+      ],
+      "keywords": [
+        "nlp",
+        "text classification",
+        "natural language processing"
+      ],
+      "answer_en": "Text classification at Al Najat: TF-IDF and sklearn on helpdesk tickets. Semantic similarity at the Ministry: embeddings on assignments. Generation at the Ministry: questions and feedback with RAG. Speech sits next to that: Whisper turned voice into text on the kiosk.",
+      "followup_en": "I have not built a production NER factory or a translation engine. I have shipped classification, similarity, and constrained generation. Mixed Arabic and English showed up in tickets and assignments, which is why embeddings beat naive word overlap. I keep those three tasks separate so I do not call everything an LLM.",
+      "listen_for": [
+        "classification",
+        "TF-IDF",
+        "similarity",
+        "embeddings",
+        "generation",
+        "RAG",
+        "Whisper",
+        "tickets"
+      ],
+      "answer_ar": "ثلاث مهام: تصنيف نصوص، وتشابه دلالي بالـ embeddings، وتوليد مقيد بالـ RAG. الكلام يتحول لنص بـ Whisper."
+    },
+    {
+      "id": "cv.python_fastapi",
+      "category": "cv.skills",
+      "topic": "skills",
+      "question": "Tell me about your Python and FastAPI experience",
+      "aliases": [
+        "tell me about your Python and FastAPI experience",
+        "how do you use fastapi",
+        "have you built apis",
+        "how strong is your python",
+        "is python your daily language",
+        "what sits in front of the model",
+        "do you write services or only notebooks",
+        "how do you validate requests",
+        "git as well, or only local scripts"
+      ],
+      "keywords": [
+        "python",
+        "fastapi",
+        "backend",
+        "apis",
+        "rest"
+      ],
+      "answer_en": "Python is my main language for data, ML, and AI services. I build REST APIs with FastAPI and Pydantic models on requests and responses. I use SQL for data, and GitHub for version control. At the Ministry the AI services sit behind FastAPI, with model calls behind one internal interface.",
+      "followup_en": "Validation happens before business logic. That is why FastAPI fits me. I am not a frontend specialist. I can ship a review screen, but the craft is services, pipelines, and clear contracts. C# showed up in the payment years. Python is where I build now. I do not treat notebooks as production.",
+      "listen_for": [
+        "Python",
+        "FastAPI",
+        "Pydantic",
+        "SQL",
+        "GitHub",
+        "internal interface",
+        "REST",
+        "main language"
+      ],
+      "answer_ar": "بايثون لغته الأساسية، وFastAPI للخدمات مع التحقق بـ Pydantic. الاستدعاء للنموذج يمر من واجهة داخلية."
+    },
+    {
+      "id": "cv.pydantic",
+      "category": "cv.skills",
+      "topic": "skills",
+      "question": "Have you used Pydantic?",
+      "aliases": [
+        "have you used Pydantic",
+        "how do you validate llm output",
+        "how do you validate model outputs",
+        "what happens if the JSON is missing a field",
+        "do you trust the model to return schema",
+        "is pydantic only for FastAPI",
+        "structured output, how do you enforce it",
+        "can a bad JSON still hit the database",
+        "why not regex the response"
+      ],
+      "keywords": [
+        "pydantic",
+        "validate"
+      ],
+      "answer_en": "Yes, every day, because FastAPI sits on it. I also use it on LLM output. I ask for JSON with fixed fields, then Pydantic checks types and required fields. I treat model text as untrusted. Nothing reaches a user or the database until that check passes.",
+      "followup_en": "If validation fails I retry or send the case to a teacher. I do not parse with hope. Source fields matter in question generation so we know which unit chunk was used. This is boring on purpose. In an exam bank, boring saves you. I would do the same in finance.",
+      "listen_for": [
+        "yes",
+        "FastAPI",
+        "JSON",
+        "untrusted",
+        "required fields",
+        "not to the database",
+        "teacher",
+        "every day"
+      ],
+      "answer_ar": "يستخدم Pydantic يومياً للطلبات ولرد النموذج. النص غير موثوق حتى ينجح الشكل، وإلا لا يُحفظ."
+    },
+    {
+      "id": "cv.pytorch_tensorflow",
+      "category": "cv.skills",
+      "topic": "skills",
+      "question": "Have you used PyTorch or TensorFlow?",
+      "aliases": [
+        "have you used PyTorch or TensorFlow",
+        "do you have deep learning experience",
+        "have you trained neural networks",
+        "pytorch or tensorflow, which one",
+        "have you written a training loop",
+        "keras, yes or no",
+        "are you a research DL engineer",
+        "how do you load hugging face models",
+        "would you train a new architecture here"
+      ],
+      "keywords": [
+        "pytorch",
+        "tensorflow",
+        "deep learning",
+        "neural networks",
+        "keras"
+      ],
+      "answer_en": "Hands-on PyTorch through Hugging Face: loading pretrained models, embeddings, Whisper, batches. I have not trained a new architecture from scratch. TensorFlow and Keras I know as concepts. Tabular work was sklearn on purpose, because people needed to understand the score.",
+      "followup_en": "I will not role-play as a person who invents transformers. I can read a model card, run inference, and manage memory at a basic level. If this job is custom CUDA kernels, that is not my last five years. If this job is putting pretrained models into a checked system, that is me.",
+      "listen_for": [
+        "PyTorch",
+        "Hugging Face",
+        "embeddings",
+        "Whisper",
+        "not from scratch",
+        "sklearn for tables",
+        "TensorFlow conceptually"
+      ],
+      "answer_ar": "بايتورش عبر Hugging Face للتحميل والاستدلال. لم يبنِ معمارية من الصفر، والجداول بـ sklearn للوضوح."
+    },
+    {
+      "id": "cv.hallucination_in_projects",
+      "category": "cv.skills",
+      "topic": "skills",
+      "question": "How did you handle hallucination in your own projects?",
+      "aliases": [
+        "how did you handle hallucination in your own projects",
+        "how did you make sure the llm did not invent content",
+        "how did you keep the generated questions accurate",
+        "a model just made up a learning outcome, then what",
+        "can you stop hallucination or only catch it",
+        "what is your first control, prompt or retrieval",
+        "who is the last check before a student sees it",
+        "did you measure faithfulness",
+        "empty retrieval, do you still generate"
+      ],
+      "keywords": [
+        "hallucination",
+        "invent",
+        "accurate",
+        "quality"
+      ],
+      "answer_en": "In BTEC generation I ground the model in retrieved unit text. I force a JSON shape and validate it with Pydantic. If retrieval is empty, I do not let it invent. A teacher still approves before save, and I check the model rather than hoping it is honest.",
+      "followup_en": "Similarity did not have this problem because it does not generate. That is a design choice, not luck. I have not run RAGAS as a production gate. I still separate retrieval failure from generation failure when I debug. Logging the chunks next to the output is what lets a teacher argue with the system.",
+      "listen_for": [
+        "retrieved unit text",
+        "JSON",
+        "Pydantic",
+        "empty retrieval",
+        "teacher approves",
+        "check it",
+        "do not invent"
+      ],
+      "answer_ar": "يقلل الاختلاق بتقييد التوليد على النص المسترجع، والتحقق من JSON، وموافقة المعلم. لا يُعتمد على أمانة النموذج."
+    },
+    {
+      "id": "cv.education",
+      "category": "cv.education",
+      "topic": "education",
+      "question": "Tell me about your education",
+      "aliases": [
+        "tell me about your education",
+        "what did you study",
+        "what is your degree",
+        "where did you study",
+        "do you have a degree in computer science",
+        "are you a computer engineer or self-taught only",
+        "when did you graduate",
+        "any postgraduate study",
+        "is there an education degree on the CV"
+      ],
+      "keywords": [
+        "education",
+        "study",
+        "degree",
+        "university",
+        "studied"
+      ],
+      "answer_en": "I have a Bachelor of Science in Computer Engineering from Philadelphia University in Jordan, in 2010. In 2024 I finished a Higher Diploma in Educational Administration from Jadara University. I work inside education, so I wanted the admin side, not only the code side.",
+      "followup_en": "The bachelor is the engineering base. The diploma is not an AI certificate. It helped me talk to school people without treating them as obstacles. I am not claiming a master's in machine learning. If you need that title, I do not have it. I have shipped systems in that sector instead.",
+      "listen_for": [
+        "Computer Engineering",
+        "2010",
+        "Philadelphia University",
+        "Higher Diploma",
+        "Educational Administration",
+        "2024",
+        "Jordan"
+      ],
+      "answer_ar": "بكالوريوس هندسة حاسوب 2010، ودبلوم عالٍ في الإدارة التربوية 2024 لأنه يعمل داخل التعليم."
+    },
+    {
+      "id": "cv.education.why_diploma",
+      "category": "cv.education",
+      "topic": "education",
+      "question": "Why did you do a diploma in Educational Administration?",
+      "aliases": [
+        "why did you do a diploma in Educational Administration",
+        "why educational administration",
+        "how does the education diploma relate to ai",
+        "was the diploma a backup career",
+        "does that diploma make you a better engineer",
+        "why study management of schools at all",
+        "was this for promotion at the ministry",
+        "how does it change the way you design tools",
+        "could you have skipped it"
+      ],
+      "keywords": [
+        "diploma",
+        "educational administration"
+      ],
+      "answer_en": "Because I build tools for schools and a ministry. The hard part is the process and the people, not only the model. The diploma showed me how administration actually runs. My systems fit the workflow instead of fighting it. It also helps me speak with non-technical staff.",
+      "followup_en": "A teacher approval step is easier to defend when you understand who is accountable for a mark. I did not take the diploma to leave engineering. I took it so AI does not land as a foreign object. In a finance job I would still study the business process first. Same habit, different domain.",
+      "listen_for": [
+        "schools",
+        "process",
+        "people",
+        "workflow",
+        "non-technical",
+        "not only the model",
+        "ministry"
+      ],
+      "answer_ar": "الدبلوم لفهم إجراءات التعليم والناس، حتى تلائم الأنظمة العمل الحقيقي لا العكس."
+    },
+    {
+      "id": "cv.certifications",
+      "category": "cv.certifications",
+      "topic": "certifications",
+      "question": "What certifications do you have?",
+      "aliases": [
+        "what certifications do you have",
+        "are you certified",
+        "tell me about your certifications",
+        "PMP, is that on your CV",
+        "any networking certs",
+        "do you have prince2 as well",
+        "are you AWS certified",
+        "which cert still helps you this year",
+        "is there an official LLM certificate"
+      ],
+      "keywords": [
+        "certifications",
+        "certified",
+        "pmp",
+        "prince2",
+        "ccnp",
+        "cisco"
+      ],
+      "answer_en": "I have three: PMP from PMI, from the payment-project years; PRINCE2 Foundation, which is common in government; and Cisco CCNP from the systems and networking side. CCNP still helps when AI runs on-premise. I do not hold a cloud-vendor AI certificate.",
+      "followup_en": "I will not add certs I do not have. No Kubernetes exam, no AWS ML specialty. PMP is about defining done, risk, and handover. PRINCE2 is stage thinking. CCNP is routing, switching, isolation. Together they support sober delivery more than a model-name badge.",
+      "listen_for": [
+        "PMP",
+        "PRINCE2",
+        "CCNP",
+        "three",
+        "on-premise",
+        "no cloud AI cert",
+        "government"
+      ],
+      "answer_ar": "ثلاث شهادات: PMP وPRINCE2 وCCNP. لا يدّعي شهادات سحابية للذكاء الاصطناعي."
+    },
+    {
+      "id": "cv.pmp_value",
+      "category": "cv.certifications",
+      "topic": "certifications",
+      "question": "How does PMP help you as an AI engineer?",
+      "aliases": [
+        "how does PMP help you as an AI engineer",
+        "why does project management matter for ai",
+        "how do you use your pm skills in ai work",
+        "you have pmp, tell me about that",
+        "is PMP just padding on an AI CV",
+        "how do you define done for a model",
+        "who signs off in your AI projects",
+        "what risk habit did PMP give you",
+        "would you drop PMP from the CV"
+      ],
+      "keywords": [
+        "pmp",
+        "project management",
+        "pm skills"
+      ],
+      "answer_en": "AI work often fails on delivery, not on the algorithm. PMP pushed me to define what done means, test with real users, and plan for failure. In a ministry that is the gap between a demo and something people rely on. I still write acceptance in human language.",
+      "followup_en": "Vendors, UAT, and handover come from the KNET years and from PMP. For question generation, done means a teacher can approve a valid JSON item into the bank, not that a notebook printed a question. Risk includes sending student data out, which we blocked. That is project thinking inside engineering.",
+      "listen_for": [
+        "delivery",
+        "what done means",
+        "real users",
+        "failure",
+        "ministry",
+        "demo versus real",
+        "acceptance"
+      ],
+      "answer_ar": "PMP يساعده على تعريف الإنجاز والاختبار مع المستخدم وإدارة المخاطر. هذا ما يحوّل التجربة إلى نظام يُعتمد عليه."
+    },
+    {
+      "id": "cv.prince2",
+      "category": "cv.certifications",
+      "topic": "certifications",
+      "question": "What is PRINCE2?",
+      "aliases": [
+        "what is PRINCE2",
+        "prince2 versus pmp",
+        "why prince2",
+        "is prince2 still used",
+        "did you apply prince2 at the ministry",
+        "stages and gates, do you actually work that way",
+        "foundation or practitioner",
+        "why would a government like prince2",
+        "is it just a certificate on the wall"
+      ],
+      "keywords": [
+        "prince2"
+      ],
+      "answer_en": "PRINCE2 is a structured project method, common in government. Work goes in stages, with roles, a business case, and defined products. PMP is a wider body of knowledge, while PRINCE2 is a method, and I hold Foundation. The useful bit is stopping to check the case before you spend more.",
+      "followup_en": "I do not run a full PRINCE2 office for a Python service. I do steal the habit: do not keep spending when the use case died. In AI that happens when retrieval quality is poor and people want a bigger model anyway. I would pause. Foundation is not Practitioner. I will not overclaim the badge.",
+      "listen_for": [
+        "government",
+        "stages",
+        "business case",
+        "PMP is broader",
+        "Foundation",
+        "check before spending",
+        "method"
+      ],
+      "answer_ar": "PRINCE2 منهج مراحل حكومي. شهادته Foundation. الفائدة أن تراجع مبرر العمل قبل زيادة الصرف، خاصة في الذكاء الاصطناعي."
+    },
+    {
+      "id": "cv.ccnp",
+      "category": "cv.certifications",
+      "topic": "certifications",
+      "question": "Why do you have a Cisco CCNP?",
+      "aliases": [
+        "why do you have a Cisco CCNP",
+        "do you have networking experience",
+        "what is ccnp",
+        "are you a network engineer or an AI engineer",
+        "can you talk to the infra team",
+        "does ccnp help on-prem LLM hosting",
+        "did you design datacenter networks",
+        "is this leftover from an old career",
+        "firewall rules, can you follow them"
+      ],
+      "keywords": [
+        "ccnp",
+        "cisco",
+        "networking"
+      ],
+      "answer_en": "It comes from my systems background before AI. CCNP is Cisco professional networking: routing, switching, security. It still helps when we host models on-premise, because I understand isolation and firewalls, not only prompts. I have not run Kubernetes; this is the network side, not a cluster badge.",
+      "followup_en": "In a sovereign setup the model server is still a machine on a network. If that part is magic to the AI person, security people will not trust the design. I can sit in that meeting. I will not pretend I am your full-time network architect today. My daily craft is Python and AI systems.",
+      "listen_for": [
+        "systems background",
+        "routing",
+        "on-premise",
+        "isolation",
+        "not Kubernetes",
+        "security",
+        "not only prompts"
+      ],
+      "answer_ar": "CCNP من خلفية الشبكات. تفيده عند تشغيل النماذج داخلياً وفهم العزل، وهو ليس مهندس شبكات بدوام كامل اليوم."
+    },
+    {
+      "id": "cv.why_leaving",
+      "category": "cv.career",
+      "topic": "career",
+      "question": "Why are you looking to leave the Ministry of Education?",
+      "aliases": [
+        "why are you looking to leave the Ministry of Education",
+        "why are you looking for a new role",
+        "why change jobs now",
+        "what is your reason for leaving",
+        "are you running from a problem",
+        "is the ministry blocking AI work",
+        "why finance after education",
+        "what is missing in the current job",
+        "would you stay if they promoted you"
+      ],
+      "keywords": [
+        "leave",
+        "leaving",
+        "new role",
+        "change jobs",
+        "reason for leaving"
+      ],
+      "answer_en": "I am proud of the BTEC work. I am not running away. I want a senior AI role where generative systems are central, at larger scale and higher stakes. A financial environment that needs sources and audit matches how I already design, and it matches the old payment-systems background.",
+      "followup_en": "Education taught me human approval and grounded generation. Payments taught me that duplicates and silence are failures. I want those two together. I will hand over documentation properly. I am not speaking badly about the Ministry. I am aiming at harder constraints, not at a trendier title only.",
+      "listen_for": [
+        "not running",
+        "proud",
+        "senior AI",
+        "scale",
+        "audit",
+        "payment background",
+        "finance"
+      ],
+      "answer_ar": "لا يغادر هرباً. يريد دوراً أوسع للذكاء التوليدي بقيود أعلى، خاصة بيئة مالية تشبه صرامة أنظمة الدفع."
+    },
+    {
+      "id": "cv.why_uae",
+      "category": "cv.career",
+      "topic": "career",
+      "question": "Why the UAE, and are you willing to relocate?",
+      "aliases": [
+        "why the UAE, and are you willing to relocate",
+        "are you willing to relocate to the uae",
+        "can you move to abu dhabi or dubai",
+        "would you relocate for this job",
+        "family, can they move",
+        "have you lived in the gulf already",
+        "why not stay in jordan",
+        "onsite from day one, yes or no",
+        "is this only about salary"
+      ],
+      "keywords": [
+        "relocate",
+        "uae",
+        "abu dhabi",
+        "dubai",
+        "move"
+      ],
+      "answer_en": "Yes, I can relocate. I lived and worked in Kuwait for about thirteen years, so the Gulf is familiar. The UAE is investing in sovereign AI. A government financial team is a place where the Ministry AI work and the payment-systems years can sit together.",
+      "followup_en": "I already work in English. Arabic is native, which helps with local stakeholders. I am not treating the UAE as a tourist move. I know the pace of Gulf government delivery from Kuwait. Timing I can align after a proper handover at the Ministry.",
+      "listen_for": [
+        "yes",
+        "relocate",
+        "thirteen years",
+        "Kuwait",
+        "Gulf",
+        "sovereign AI",
+        "government financial"
+      ],
+      "answer_ar": "مستعد للانتقال. عاش في الخليج ثلاث عشرة سنة بالكويت، ويرى الإمارات مناسبة لجمع خبرة الذكاء والدفع الحكومي."
+    },
+    {
+      "id": "cv.notice_period",
+      "category": "cv.career",
+      "topic": "career",
+      "question": "What is your notice period and when can you start?",
+      "aliases": [
+        "what is your notice period and when can you start",
+        "when can you start",
+        "how soon can you join",
+        "what is your availability",
+        "can you join next month",
+        "do you need to handover systems",
+        "is there a garden leave",
+        "can you start after Eid or a school term",
+        "how long to leave the ministry cleanly"
+      ],
+      "keywords": [
+        "notice period",
+        "start",
+        "join",
+        "availability"
+      ],
+      "answer_en": "I can start after a standard Ministry notice period. I would document the current systems and hand them over properly. I am flexible on the exact week. I would rather leave the tools in a safe state than disappear overnight.",
+      "followup_en": "Question generation and similarity both need a named owner and logs. I will not promise a magic start date that skips handover. If your onboarding is fixed, tell me the target week and I will map notice to it. Relocation can run in parallel with notice, not after a long gap.",
+      "listen_for": [
+        "notice period",
+        "handover",
+        "document",
+        "flexible",
+        "Ministry",
+        "not overnight",
+        "start"
+      ],
+      "answer_ar": "يبدأ بعد إشعار وظيفي معتاد مع تسليم موثّق للأنظمة. المرونة موجودة، والاختفاء المفاجئ غير مقبول."
+    },
+    {
+      "id": "cv.languages",
+      "category": "cv.career",
+      "topic": "career",
+      "question": "What languages do you speak?",
+      "aliases": [
+        "what languages do you speak",
+        "how is your english",
+        "are you comfortable working in english",
+        "do you speak arabic and english",
+        "can you write technical docs in english",
+        "will meetings in english be a problem",
+        "code comments, which language",
+        "can you present to a mixed room",
+        "is arabic only for home"
+      ],
+      "keywords": [
+        "languages",
+        "english",
+        "arabic",
+        "speak"
+      ],
+      "answer_en": "Arabic is my native language. I work in English every day. Code, documentation, and technical discussion are in English. I can take an interview and a design meeting in English. I still think clearly in Arabic with local users when that helps.",
+      "followup_en": "BTEC content and teacher conversations can be Arabic, English, or mixed. That showed up in text similarity and in kiosk speech. I am not claiming native-level English idiom. I am claiming I already ship in English. That is the working language I expect in this role.",
+      "listen_for": [
+        "Arabic native",
+        "work in English",
+        "documentation",
+        "code",
+        "interview",
+        "comfortable",
+        "mixed"
+      ],
+      "answer_ar": "العربية لغته الأم، والإنجليزية لغة العمل اليومي في الكود والوثائق والاجتماعات."
+    },
+    {
+      "id": "cv.senior_justification",
+      "category": "cv.career",
+      "topic": "career",
+      "question": "What makes you a senior AI engineer?",
+      "aliases": [
+        "what makes you a senior AI engineer",
+        "you have been a project manager for a long time, why do you think you are a senior AI engineer",
+        "you only have a few years in generative ai, why senior",
+        "your llm experience is recent, how do you justify a senior role",
+        "why senior and not mid level",
+        "is senior just a salary word for you",
+        "what judgment do you have that a junior does not",
+        "who have you mentored",
+        "when did you last say we should not use an LLM",
+        "are you senior in ML, in LLM, or in delivery"
+      ],
+      "keywords": [
+        "senior",
+        "few years",
+        "recent",
+        "justify"
+      ],
+      "answer_en": "Senior is judgment, not years on one library. Generative work is since 2023, on eight years of applied ML and seven years of government payments. I know when not to use a model, how to keep a human in the loop, and how to log a decision. That is what keeps a system safe.",
+      "followup_en": "A mid-level person can call an API. A senior person can refuse the API for similarity matching, or refuse student PII in a prompt. I have done both. I have not managed a huge AI department. I have owned design, build, and the talk with non-technical users. I will not fake LangGraph production to sound senior.",
+      "listen_for": [
+        "judgment",
+        "since 2023",
+        "eight years",
+        "payments",
+        "when not to use",
+        "human in the loop",
+        "logs",
+        "not one library"
+      ],
+      "answer_ar": "الأقدمية في الحكم: متى لا يُستخدم النموذج، وكيف يبقى الإنسان في القرار، وكيف يُسجَّل الأثر. ليست سنوات مكتبة واحدة."
+    },
+    {
+      "id": "cv.why_hire_you",
+      "category": "cv.career",
+      "topic": "career",
+      "question": "Why should we hire you?",
+      "aliases": [
+        "why should we hire you",
+        "what makes you different from other candidates",
+        "why are you the right person for this role",
+        "why not hire a younger LLM specialist",
+        "what do you bring on week one",
+        "give me a reason that is not enthusiasm",
+        "how are you cheaper than a mistake in production",
+        "what overlap do you have with finance",
+        "if we have two similar CVs, why yours"
+      ],
+      "keywords": [
+        "hire you",
+        "different",
+        "bring",
+        "right person",
+        "unique"
+      ],
+      "answer_en": "I have built LLM, RAG, and embeddings tools for a ministry with real users. I also spent seven years on government payment systems, where everything is audited. I can say no to an LLM when sklearn or SQL is enough. I log, I validate, and I keep a human on the last step.",
+      "followup_en": "A lot of candidates only have chat demos. A lot of PMs cannot open the code. I sit in the middle on purpose. Internal model interface, Pydantic, teacher approval, no student PII to the model. That package is what I would reuse in finance, with stricter data classes. I am not selling slogans. I am selling those habits.",
+      "listen_for": [
+        "ministry users",
+        "payment systems",
+        "say no to an LLM",
+        "audit",
+        "validate",
+        "human last step",
+        "RAG",
+        "seven years"
+      ],
+      "answer_ar": "يجمع بناء أنظمة توليد واسترجاع لمستخدمين حقيقيين مع خلفية دفع حكومي. يعرف متى لا يستخدم النموذج وكيف يُراجع القرار."
+    },
+    {
+      "id": "cv.kuwait_did_you_work",
+      "category": "cv.career",
+      "topic": "career",
+      "question": "Did you work in Kuwait?",
+      "aliases": [
+        "did you work in Kuwait",
+        "have you worked in the gulf",
+        "were you in kuwait",
+        "is the gulf experience real or a visit",
+        "which city were you in",
+        "two employers or one",
+        "did you hold a Kuwait job or consult remotely",
+        "can you work in a Gulf government culture",
+        "was Kuwait your first job"
+      ],
+      "keywords": [
+        "kuwait",
+        "gulf"
+      ],
+      "answer_en": "Yes. I worked in Kuwait for thirteen years, from 2010 to 2023. First at VNC on KNET payment projects as a project manager. Then at Al Najat as an applied AI and automation engineer. It was on-the-ground work, not a short visit.",
+      "followup_en": "Those years matter if you worry I only know Jordan's Ministry. I already delivered inside Gulf public-sector constraints: approvals, vendors, uptime. LLM work did not happen there. If you need Gulf living experience plus AI, this is the Gulf living part.",
+      "listen_for": [
+        "yes",
+        "thirteen years",
+        "2010 to 2023",
+        "VNC",
+        "Al Najat",
+        "project manager",
+        "applied AI"
+      ],
+      "answer_ar": "نعم، ثلاث عشرة سنة في الكويت: مشاريع دفع ثم ذكاء تطبيقي. عمل ميداني لا زيارة قصيرة."
+    },
+    {
+      "id": "cv.kuwait_how_long",
+      "category": "cv.career",
+      "topic": "career",
+      "question": "How long did you work in Kuwait?",
+      "aliases": [
+        "how long did you work in Kuwait",
+        "how many years were you in kuwait",
+        "what years were you in kuwait",
+        "was it closer to five years or fifteen",
+        "when did you leave kuwait",
+        "how was the time split between the two jobs",
+        "did you go back and forth to jordan",
+        "2010 to 2023, is that continuous",
+        "how long in payments versus AI"
+      ],
+      "keywords": [
+        "kuwait",
+        "how long",
+        "years"
+      ],
+      "answer_en": "Thirteen years, from 2010 to 2023. Seven years at VNC on KNET payment systems, 2010 to 2017. Six years at Al Najat on applied AI and automation, 2017 to 2023. Then I moved to the Ministry role in Jordan.",
+      "followup_en": "I do not round it to fifteen. Fifteen is the whole career including Jordan. Kuwait stops in 2023, when I joined the Ministry. If an interviewer mixes those dates with LLM experience, I correct it immediately: those thirteen years include zero production LLM work, only payments, Whisper, and sklearn.",
+      "listen_for": [
+        "thirteen years",
+        "2010 to 2023",
+        "seven years",
+        "six years",
+        "2017",
+        "then Jordan",
+        "two jobs"
+      ],
+      "answer_ar": "ثلاث عشرة سنة: سبع في الدفع حتى 2017، وست في الذكاء التطبيقي حتى 2023."
+    },
+    {
+      "id": "cv.kuwait_experience",
+      "category": "cv.career",
+      "topic": "career",
+      "question": "Tell me about your time in Kuwait",
+      "aliases": [
+        "tell me about your time in Kuwait",
+        "what did you do in kuwait",
+        "you worked in kuwait and jordan, tell me about that",
+        "what was daily life of the work there",
+        "public sector in Kuwait, how did that feel",
+        "did you like working there",
+        "what did Kuwait teach you that Jordan did not",
+        "two very different jobs, connect them",
+        "start with payments, then AI"
+      ],
+      "keywords": [
+        "kuwait",
+        "time in kuwait"
+      ],
+      "answer_en": "I was in Kuwait from 2010 to 2023 in two jobs. At VNC I managed ministry payment kiosks and POS, with Python, C#, SQL, and APIs. At Al Najat I built a Whisper kiosk, early-warning, and helpdesk classification. Both were public-sector environments. That shaped how I treat data and approvals.",
+      "followup_en": "The first job trained me on continuity and audit. The second trained me on messy school data and speech in a noisy hall. Neither job was LLM. When I talk about Gulf experience, I mean these years, not a conference. Jordan is where generation and RAG started.",
+      "listen_for": [
+        "two jobs",
+        "payments",
+        "Whisper",
+        "early-warning",
+        "helpdesk",
+        "public sector",
+        "approvals",
+        "2010 to 2023"
+      ],
+      "answer_ar": "فترة الكويت وظيفتان: دفع حكومي ثم أدوات ذكاء للمدارس. البيئة عامة، والتوليد لم يبدأ هناك."
+    },
+    {
+      "id": "cv.kuwait_projects",
+      "category": "cv.career",
+      "topic": "career",
+      "question": "What projects did you work on in Kuwait?",
+      "aliases": [
+        "what projects did you work on in Kuwait",
+        "what did you build in kuwait",
+        "your kuwait projects",
+        "list only the Kuwait box on the CV",
+        "any exam-question tool in Kuwait",
+        "payment projects, how many kinds",
+        "which AI projects are Kuwait-only",
+        "did image processing count as a project",
+        "what would a Kuwait reference confirm"
+      ],
+      "keywords": [
+        "kuwait",
+        "projects"
+      ],
+      "answer_en": "On KNET: ministry kiosk, POS, and e-payment systems, with integration, testing, and go-live. At Al Najat: Whisper voice kiosk with image-processing functions, student early-warning, and helpdesk ticket classification. Those are the Kuwait projects. No exam-question LLM there.",
+      "followup_en": "If you want names of stacks: Python, C#, SQL, APIs on the payment side. Pandas, sklearn, TF-IDF, Whisper on the AI side. I can go deep on any one of those. I will stop you if the question slides into RAG, because that is Jordan 2023.",
+      "listen_for": [
+        "kiosk POS e-payment",
+        "Whisper",
+        "early-warning",
+        "helpdesk",
+        "image-processing",
+        "no LLM",
+        "KNET",
+        "Al Najat"
+      ],
+      "answer_ar": "في الكويت: أنظمة دفع، وكشك Whisper مع معالجة صور، وإنذار مبكر، وتصنيف تذاكر. بلا توليد أسئلة."
+    },
+    {
+      "id": "cv.kuwait_llm",
+      "category": "cv.career",
+      "topic": "career",
+      "question": "Did you work on LLMs in Kuwait?",
+      "aliases": [
+        "did you work on LLMs in Kuwait",
+        "did you do generative ai in kuwait",
+        "any llm work in kuwait",
+        "was whisper an LLM project in Kuwait",
+        "when did ChatGPT-style work start for you",
+        "could Al Najat have used GPT for tickets",
+        "are you backdating LLM experience",
+        "RAG in 2019, yes or no",
+        "say the year LLM work started"
+      ],
+      "keywords": [
+        "kuwait",
+        "llm"
+      ],
+      "answer_en": "No. Kuwait was classical ML, NLP, and Whisper speech, not LLMs. Early-warning, helpdesk, and the kiosk had no generation step. My LLM, RAG, and agentic work started in 2023 at the Ministry of Education in Jordan.",
+      "followup_en": "I am strict on this because CVs get inflated. Whisper converts speech to text. sklearn classifies rows or tickets. Neither is an agent. If a job advert wants five years of RAG, I do not have that. I have three years of grounded generation on a national program, plus a longer ML base.",
+      "listen_for": [
+        "no",
+        "not LLMs",
+        "Whisper",
+        "classical ML",
+        "2023",
+        "Jordan",
+        "Ministry"
+      ],
+      "answer_ar": "لا. الكويت تعلم آلة كلاسيكي وWhisper. العمل على النماذج التوليدية بدأ 2023 في الوزارة بالأردن."
+    },
+    {
+      "id": "cv.kuwait_projects_and_llm",
+      "category": "cv.career",
+      "topic": "career",
+      "question": "What projects do you have in Kuwait, and has any work been done on LLM for them?",
+      "aliases": [
+        "what projects do you have in Kuwait, and has any work been done on LLM for them",
+        "what did you work on in kuwait and was any of it llm based",
+        "tell me about your kuwait projects and whether they used llms",
+        "same question in one go, projects plus LLM yes or no",
+        "did you later add an LLM on top of the Kuwait tools",
+        "could you retrofit RAG onto the helpdesk now",
+        "I saw Kuwait and AI on the CV, is that GPT",
+        "split the timeline for me in one answer",
+        "payments, kiosk, warning, tickets, any generation"
+      ],
+      "keywords": [
+        "kuwait",
+        "projects",
+        "llm"
+      ],
+      "answer_en": "Kuwait had payment kiosks and POS on KNET, then at Al Najat a Whisper kiosk, early-warning, and helpdesk classification. None of those used an LLM. No RAG there. Generation work started in 2023 at the Ministry in Jordan, on BTEC questions and feedback.",
+      "followup_en": "I could imagine an LLM drafting a helpdesk reply today, with a human sending it. That would be new work, not history. I did not do it. I also would not drop an LLM into early-warning scores. The list comes from sklearn. Mixing the timeline is the fastest way to fail this interview, so I keep it boring and dated.",
+      "listen_for": [
+        "payments",
+        "Whisper kiosk",
+        "early-warning",
+        "helpdesk",
+        "none used an LLM",
+        "2023",
+        "Jordan",
+        "BTEC"
+      ],
+      "answer_ar": "مشاريع الكويت بلا LLM. التوليد والاسترجاع بدأ لاحقاً في الأردن 2023 على أسئلة BTEC."
+    },
+    {
+      "id": "cv.why_back_to_jordan",
+      "category": "cv.career",
+      "topic": "career",
+      "question": "Why did you move back to Jordan?",
+      "aliases": [
+        "why did you move back to Jordan",
+        "why did you leave kuwait",
+        "what brought you back to jordan",
+        "was it family or the job",
+        "did Kuwait end badly",
+        "why the ministry specifically",
+        "was BTEC the pull",
+        "could you have done LLM work in Kuwait",
+        "was 2023 a planned move"
+      ],
+      "keywords": [
+        "jordan",
+        "move back",
+        "leave kuwait"
+      ],
+      "answer_en": "In 2023 I took the Systems Developer and AI Engineer role at the Ministry of Education, on BTEC. It was a chance to focus on LLM, RAG, and the question-generation flow for a national program. That was the pull. I wanted that work, not an escape story.",
+      "followup_en": "Al Najat was real engineering, but generative systems were not the center. The Ministry job made them the center. I still respect the Kuwait years. I do not rewrite them as LLM. If I leave the Ministry later, it will be for a larger constrained-AI problem, same pattern.",
+      "listen_for": [
+        "2023",
+        "Ministry",
+        "BTEC",
+        "LLM",
+        "RAG",
+        "national program",
+        "not an escape"
+      ],
+      "answer_ar": "عاد للأردن 2023 من أجل دور الوزارة على BTEC، حيث صار التوليد والاسترجاع مركز العمل."
+    },
+    {
+      "id": "cv.team_and_collaboration",
+      "category": "cv.experience",
+      "topic": "moe",
+      "question": "Do you work alone or in a team at the Ministry?",
+      "aliases": [
+        "do you work alone or in a team at the Ministry",
+        "how big is your team",
+        "who do you work with at the ministry",
+        "who are the users of your systems",
+        "are you a one-man AI team",
+        "who tests your work",
+        "how do you deal with ministry IT",
+        "do teachers sit with you",
+        "can you work with people who are not engineers"
+      ],
+      "keywords": [
+        "team",
+        "alone",
+        "work with",
+        "users"
+      ],
+      "answer_en": "I work with BTEC teachers, coordinators, and admin staff. They are users and testers. I own the AI design and build. I coordinate with Ministry IT on data access, deployment, and security. I can be the hands-on engineer and the person who explains the tool in plain language.",
+      "followup_en": "It is not a large AI department. That is honest. Teachers still change the product: thresholds, approval, what a useful flag looks like. I do not disappear into a model and throw a demo over the wall. If your team is bigger, I am used to aligning with IT and with non-technical owners.",
+      "listen_for": [
+        "teachers",
+        "I own the AI",
+        "Ministry IT",
+        "users and testers",
+        "plain language",
+        "not a huge team",
+        "deployment"
+      ],
+      "answer_ar": "يعمل مع المعلمين وIT الوزارة. يملك تصميم الذكاء الاصطناعي ويبنيه، والفريق ليس قسماً كبيراً."
+    },
+    {
+      "id": "cv.what_would_you_improve",
+      "category": "cv.project",
+      "topic": "projects",
+      "question": "If you could redo one of your projects, what would you change?",
+      "aliases": [
+        "if you could redo one of your projects, what would you change",
+        "what would you do differently",
+        "looking back, what would you change",
+        "what technical debt are you ashamed of",
+        "where were you too hand-rolled",
+        "evaluation, did you start too late",
+        "would you still skip langgraph",
+        "if you had another three months",
+        "what would you tell your past self"
+      ],
+      "keywords": [
+        "redo",
+        "improve",
+        "differently",
+        "looking back"
+      ],
+      "answer_en": "On question generation I would use LangGraph for state and the approval pause, instead of hand-rolled Python. I would also start evaluation earlier. I would keep a small golden set of real questions and sources, plus RAGAS-style scores, to see if retrieval or generation is the weak part.",
+      "followup_en": "I know LangGraph. I have not run it in production. That is why this is a redo, not a current fact. RAGAS I understand and have not used as a live gate. Manual checks with teachers carried us. A golden set would have caught retrieval misses faster than impression. I would not redo similarity into an LLM.",
+      "listen_for": [
+        "LangGraph",
+        "approval pause",
+        "golden set",
+        "RAGAS",
+        "retrieval versus generation",
+        "not in production today",
+        "question generation"
+      ],
+      "answer_ar": "لو أعاد توليد الأسئلة لاستخدم LangGraph للتوقف والموافقة، ولقياس الاسترجاع مبكراً. هذا تحسين مستقبلي لا واقع إنتاج حالي."
+    },
+    {
+      "id": "cv.core_skills",
+      "category": "cv.skills",
+      "topic": "skills",
+      "question": "What are your core technical skills?",
+      "aliases": [
+        "what are your core technical skills",
+        "what is your tech stack",
+        "which technologies are you strongest in",
+        "list your main skills",
+        "if I only write five bullets, which five",
+        "what do you not want me to think you are",
+        "where are you hands-on versus only aware",
+        "python plus what",
+        "skip the buzzword cloud"
+      ],
+      "keywords": [
+        "core skills",
+        "tech stack",
+        "strongest",
+        "main skills",
+        "tools"
+      ],
+      "answer_en": "Python, FastAPI, SQL, and Git are the daily tools. At the Ministry I use LLMs, RAG, embeddings, and a Python agentic flow. sklearn, Pandas, and Whisper cover classic ML and speech. LangChain was POC, fine-tuning is basic, and LangGraph, n8n, Qdrant, and Kubernetes I understand but have not shipped.",
+      "followup_en": "The honest split matters. Production: Python services, Pydantic, retrieval for questions, local vectors for similarity, sklearn where the data is tabular. Not production: LangGraph, n8n, Qdrant clusters, Kubernetes, vLLM, RAGAS, knowledge graphs. I would rather lose a buzzword than fail a reference check.",
+      "listen_for": [
+        "Python",
+        "RAG",
+        "embeddings",
+        "sklearn",
+        "Whisper",
+        "LangChain POC",
+        "not shipped Kubernetes",
+        "FastAPI"
+      ],
+      "answer_ar": "القوة في بايثون والخدمات والاسترجاع والمتجهات وsklearn وWhisper. مكتبات مثل LangGraph وقدورانت يفهمها ولم يُشغّلها إنتاجياً."
+    },
+    {
+      "id": "cv.langgraph",
+      "category": "cv.skills",
+      "topic": "skills",
+      "question": "Have you used LangGraph?",
+      "aliases": [
+        "have you used LangGraph",
+        "did you use langgraph in production",
+        "do you use langgraph",
+        "checkpoints and interrupts, have you used theirs",
+        "would you rewrite your python flow in langgraph",
+        "nodes and edges, can you talk through it",
+        "is langgraph on the CV as production",
+        "why not langgraph from day one",
+        "what problem of yours does langgraph solve"
+      ],
+      "keywords": [
+        "langgraph"
+      ],
+      "answer_en": "I know LangGraph: state, nodes, edges, checkpoints, interrupt for a human. I have not run it in production. At the Ministry I built retrieve, generate, validate, pause in Python. That is the same shape. If I started today I would use LangGraph for durable state after approval.",
+      "followup_en": "The pain I hit by hand is exactly why the library exists: resume after a teacher comes back tomorrow, without losing the retrieved chunks. I will not say I deployed it. I will say I am ready to. n8n is a different tool and also not my production orchestrator.",
+      "listen_for": [
+        "know it",
+        "not production",
+        "Python instead",
+        "pause",
+        "checkpoints",
+        "would use it now",
+        "same shape"
+      ],
+      "answer_ar": "يفهم LangGraph ولم يشغّله إنتاجياً. بنى نفس فكرة التوقف والموافقة ببايثون، ويستخدمه لو بدأ اليوم."
+    },
+    {
+      "id": "cv.n8n",
+      "category": "cv.skills",
+      "topic": "skills",
+      "question": "Have you used n8n?",
+      "aliases": [
+        "have you used n8n",
+        "did you automate workflows with n8n",
+        "do you use n8n",
+        "visual agents, is that you",
+        "would you put exam rules in n8n",
+        "self-hosted automation, any production use",
+        "n8n versus python services",
+        "can an auditor read an n8n graph",
+        "why not n8n for teacher approval"
+      ],
+      "keywords": [
+        "n8n"
+      ],
+      "answer_en": "I have not used n8n in production at the Ministry. I know it is a self-hosted visual workflow tool, and it can host AI nodes. I would use it to connect systems, but I would not hide exam rules only in a graph. Those stay in tested code, and my orchestration is Python.",
+      "followup_en": "Visual flows help when operations people must see the path. They hurt when a condition should have a unit test. Question JSON validation belongs in Pydantic, not in a clickable node that someone can edit on Friday. I am open to n8n at the edges, not as the brain of an exam bank.",
+      "listen_for": [
+        "not in production",
+        "visual workflow",
+        "not exam rules",
+        "tested code",
+        "Python",
+        "know what it is",
+        "self-hosted"
+      ],
+      "answer_ar": "لم يستخدم n8n إنتاجياً. يفهمه للربط البصري، لكن قواعد الأسئلة تبقى في كود مختبر لا في الرسم فقط."
+    },
+    {
+      "id": "cv.chromadb",
+      "category": "cv.skills",
+      "topic": "skills",
+      "question": "Have you used ChromaDB?",
+      "aliases": [
+        "have you used ChromaDB",
+        "did you use chroma",
+        "was chromadb in your projects",
+        "is chroma your production vector DB",
+        "why chroma in a ministry",
+        "did similarity run on chroma",
+        "chroma versus the local store",
+        "can chroma do metadata filters",
+        "would you keep chroma if we scaled"
+      ],
+      "keywords": [
+        "chromadb",
+        "chroma"
+      ],
+      "answer_en": "Yes, for local prototyping. Chroma runs inside Python, so I stored embeddings, text, and metadata and queried top-k with filters while designing retrieval. It is not the Ministry production store. Similarity used a lightweight local store with the same idea: id, vector, text, metadata.",
+      "followup_en": "I like Chroma because there is no extra server on day one. I do not like it as the long-term store when backup, concurrent writers, and access rules get serious. That is why I also studied Qdrant and pgvector. I tested Chroma for prototyping, but I would choose the production database based on the real requirements.",
+      "listen_for": [
+        "prototyping",
+        "inside Python",
+        "not production store",
+        "local store",
+        "top-k",
+        "metadata",
+        "Qdrant"
+      ],
+      "answer_ar": "كروما للتجربة المحلية فقط. الإنتاج استخدم تخزيناً محلياً خفيفاً، ولم يعتمد كروما كقاعدة إنتاج."
+    },
+    {
+      "id": "moe.question_generation.stack",
+      "category": "cv.project",
+      "topic": "project:qgen",
+      "question": "Does the question generation system use LLM, RAG, agentic AI, LangChain, and ChromaDB?",
+      "aliases": [
+        "does the question generation system use LLM, RAG, agentic AI, LangChain, and ChromaDB",
+        "what stack did you use for question generation",
+        "is the exam question generator rag or agentic",
+        "tick the boxes for me, LLM RAG agent langchain chroma",
+        "production versus POC in that generator",
+        "langgraph in the exam tool, yes or no",
+        "where is pydantic in that stack",
+        "did chroma serve the unit chunks in production",
+        "one sentence per technology please"
+      ],
+      "keywords": [
+        "question generation",
+        "llm",
+        "rag",
+        "agentic",
+        "langchain",
+        "chromadb"
+      ],
+      "answer_en": "LLM yes, it writes the question, and RAG yes, I retrieve unit content first. Agentic yes: multi-step with a teacher pause. LangChain was proof of concept only, production is Python, and LangGraph is not in production. Chroma was a prototype evaluation, not the production store, with schema check and teacher approval before save.",
+      "followup_en": "If you need a map: generator is the LLM, retriever is RAG, orchestrator is Python, guardrail is Pydantic plus a human. I will not tick LangChain or Chroma as production. I will not tick LangGraph at all. Student PII is out of the prompt. That is the stack I will defend.",
+      "listen_for": [
+        "LLM yes",
+        "RAG yes",
+        "agentic yes",
+        "LangChain POC",
+        "Python production",
+        "not LangGraph",
+        "Chroma prototype",
+        "teacher approval"
+      ],
+      "answer_ar": "التوليد: نعم LLM وRAG ووكيل بخطوات. LangChain وكروما تجربة. الإنتاج بايثون مع تحقق وموافقة معلم."
+    },
+    {
+      "id": "proj.similarity.stack",
+      "category": "cv.project",
+      "topic": "project:similarity",
+      "question": "Does the similarity checker use LLM, RAG, agentic AI, LangChain, or ChromaDB?",
+      "aliases": [
+        "does the similarity checker use LLM, RAG, agentic AI, LangChain, or ChromaDB",
+        "does the similarity checker use an llm",
+        "is the similarity checker agentic",
+        "tick the boxes for similarity",
+        "any generation in the matcher",
+        "langchain hidden in similarity",
+        "chroma production for assignments",
+        "why did you refuse an LLM judge",
+        "embeddings only, confirm"
+      ],
+      "keywords": [
+        "similarity",
+        "llm",
+        "rag",
+        "agentic",
+        "langchain",
+        "chromadb"
+      ],
+      "answer_en": "LLM no, and RAG no, because nothing is generated. It is embeddings, chunks, cosine similarity, and metadata filters, with no agent and no LangChain. Chroma was a prototype, and production used a lightweight local vector store. The teacher reads the two passages.",
+      "followup_en": "People hear vector search and say RAG. I stop them. RAG needs a generation step. An LLM summary of a match would drag this toward RAG and toward a generated accusation. We did not do that. Qdrant would be a later store choice. It is not what ran.",
+      "listen_for": [
+        "LLM no",
+        "RAG no",
+        "embeddings",
+        "cosine",
+        "not agentic",
+        "LangChain no",
+        "Chroma prototype",
+        "local store"
+      ],
+      "answer_ar": "مدقق التشابه بلا LLM وبلا RAG وبلا وكيل. متجهات وتشابه جيب التمام، وكروما للتجربة فقط."
+    },
+    {
+      "id": "proj.early_warning.stack",
+      "category": "cv.project",
+      "topic": "project:early_warning",
+      "question": "Does the early-warning project use LLM, RAG, or agentic AI?",
+      "aliases": [
+        "does the early-warning project use LLM, RAG, or agentic AI",
+        "did the student early warning use rag",
+        "did you use langchain or chromadb in early warning",
+        "confirm this is sklearn not GPT",
+        "any embeddings in the risk list",
+        "could an LLM explain the score",
+        "Al Najat stack in three words",
+        "was there an agent watching attendance",
+        "tabular ML, yes"
+      ],
+      "keywords": [
+        "early warning",
+        "llm",
+        "rag",
+        "agentic"
+      ],
+      "answer_en": "No LLM, no RAG, no agent, no LangChain, no Chroma. It is Pandas and a sklearn pipeline on grades and attendance, with Recall as the metric. An LLM could later write a short note for a teacher as a layer on top. The list comes from the classifier.",
+      "followup_en": "This project is Kuwait, 2017 to 2023. Mixing it with Ministry generation is a factual error. I keep the story clean even if the interviewer wants one AI buzzword for everything. Leakage care and time splits matter more here than prompts.",
+      "listen_for": [
+        "no LLM",
+        "no RAG",
+        "sklearn",
+        "Pandas",
+        "grades and attendance",
+        "Recall",
+        "classifier",
+        "Kuwait"
+      ],
+      "answer_ar": "الإنذار المبكر جدولي: Pandas وsklearn. ليس LLM ولا RAG ولا وكيلاً."
+    },
+    {
+      "id": "proj.helpdesk.stack",
+      "category": "cv.project",
+      "topic": "project:helpdesk",
+      "question": "Does the helpdesk classifier use LLM, RAG, or agentic AI?",
+      "aliases": [
+        "does the helpdesk classifier use LLM, RAG, or agentic AI",
+        "did ticket classification use rag or agents",
+        "did you use langchain for helpdesk",
+        "TF-IDF era, not GPT era, confirm",
+        "would you wrap this with an LLM today",
+        "any vector DB for tickets",
+        "agent routing the inbox, yes or no",
+        "stack in one breath",
+        "classic NLP, right"
+      ],
+      "keywords": [
+        "helpdesk",
+        "llm",
+        "rag",
+        "agentic"
+      ],
+      "answer_en": "No. TF-IDF and sklearn, trained on tickets staff had already routed. No LLM, no RAG, no agents, no LangChain, no Chroma. If department errors justified it, I would try embeddings or an LLM after measuring, not by default.",
+      "followup_en": "RAG would mean retrieving policy text and writing an answer. We predicted a department label. Different job. An agent would take actions in other systems. We did not give it that power. Unclear tickets went to a person. That is the whole architecture.",
+      "listen_for": [
+        "no",
+        "TF-IDF",
+        "sklearn",
+        "no LLM",
+        "no RAG",
+        "no agents",
+        "measure first"
+      ],
+      "answer_ar": "تصنيف التذاكر TF-IDF وsklearn فقط. لا توليد ولا استرجاع توليدي ولا وكيل."
+    },
+    {
+      "id": "proj.completion.stack",
+      "category": "cv.project",
+      "topic": "project:completion",
+      "question": "Does completion risk monitoring use LLM, RAG, or agentic AI?",
+      "aliases": [
+        "does completion risk monitoring use LLM, RAG, or agentic AI",
+        "did completion monitoring use rag",
+        "is the completion risk system agentic",
+        "SQL or GPT for completion",
+        "any generation in the ministry school list",
+        "sklearn where, SQL where",
+        "would you let an agent email the school",
+        "confirm no vector search here",
+        "dashboard math versus a model"
+      ],
+      "keywords": [
+        "completion",
+        "llm",
+        "rag",
+        "agentic"
+      ],
+      "answer_en": "The core is SQL, Pandas, and sklearn where history existed. Completion percent is a calculation. No RAG and no agent in the live path. An LLM could draft a follow-up note from the numbers, with a human sending it. I did not put generation in the core.",
+      "followup_en": "This is Ministry work, but it is not the generative work. I say that so question generation does not swallow the whole CV. If history was missing, I did not invent a deep model. Counts stay in SQL. That is intentional, not a lack of ambition.",
+      "listen_for": [
+        "SQL",
+        "Pandas",
+        "sklearn",
+        "calculation",
+        "no RAG",
+        "no agent",
+        "not generation in the core"
+      ],
+      "answer_ar": "مراقبة الإنجاز SQL وPandas وsklearn. ليست RAG وليست وكيلاً، والنسبة تُحسب ولا تُولَّد."
+    },
+    {
+      "id": "proj.kiosk.stack",
+      "category": "cv.project",
+      "topic": "project:kiosk",
+      "question": "Does the voice kiosk use an LLM or RAG?",
+      "aliases": [
+        "does the voice kiosk use an LLM or RAG",
+        "is the voice kiosk an llm project",
+        "did the whisper kiosk use rag or agentic ai",
+        "speech to ChatGPT, was that you",
+        "confirm whisper is not generative AI on this CV",
+        "any retrieval after the transcript",
+        "vision plus speech, still no LLM",
+        "years of the kiosk versus years of RAG",
+        "stack: whisper, classifier, NLP"
+      ],
+      "keywords": [
+        "kiosk",
+        "llm",
+        "rag",
+        "whisper"
+      ],
+      "answer_en": "No LLM and no RAG. The kiosk is Whisper for speech-to-text, a voice classifier for male or female TTS, plus image-processing functions. Applied AI at Al Najat, 2017 to 2023. LLM and RAG started in 2023 at the Ministry. Different years, different stack.",
+      "followup_en": "After text, request classification was classic NLP, in the same spirit as helpdesk. I will not upgrade this story into an agent in the lobby. Local Whisper was a privacy choice. If we rebuilt it now, someone might add an LLM. That would be a new project, and I would still keep audio on-premise.",
+      "listen_for": [
+        "no LLM",
+        "no RAG",
+        "Whisper",
+        "TTS",
+        "image-processing",
+        "2017 to 2023",
+        "Ministry later"
+      ],
+      "answer_ar": "الكشك Whisper وتصنيف صوت ومعالجة صور. بلا LLM وبلا RAG. التوليد جاء لاحقاً في الوزارة."
+    },
+    {
+      "id": "cv.projects_stack_overview",
+      "category": "cv.projects",
+      "topic": "projects",
+      "question": "Which of your projects use LLM, RAG, agentic AI, LangChain, or ChromaDB?",
+      "aliases": [
+        "which of your projects use LLM, RAG, agentic AI, LangChain, or ChromaDB",
+        "do all your ai projects use llms",
+        "map your projects to llm rag and agents",
+        "draw the line for me across the CV",
+        "where is langchain really",
+        "which one is allowed to generate",
+        "chroma on which project",
+        "I will quiz you project by project",
+        "one table in your head, say it out loud"
+      ],
+      "keywords": [
+        "projects",
+        "llm",
+        "rag",
+        "agentic",
+        "langchain",
+        "chromadb"
+      ],
+      "answer_en": "Only Ministry question generation is LLM plus RAG plus agentic. Similarity is embeddings, not generation, while early-warning, helpdesk, and completion risk are classic ML or SQL. The Kuwait kiosk is Whisper, not an LLM. LangChain was POC on generation, Chroma was vector prototyping, and LangGraph and n8n are not in production.",
+      "followup_en": "I repeat this map because interviewers blend projects. I will not call every AI project an LLM project. If they want depth, I go into generation or similarity, not into a fake shared stack. Fine-tuning is basic on BTEC style only. Qdrant, Kubernetes, vLLM, RAGAS, knowledge graphs: I understand them. I have not shipped them.",
+      "listen_for": [
+        "only question generation",
+        "similarity not generation",
+        "classic ML",
+        "Whisper not LLM",
+        "LangChain POC",
+        "Chroma prototype",
+        "not LangGraph production"
+      ],
+      "answer_ar": "خريطة واضحة: التوليد وحده LLM وRAG ووكيل. الباقي متجهات أو sklearn أو Whisper. مكتبات كثيرة للفهم لا للإنتاج."
+    },
+    {
+      "id": "cv.guardrails",
+      "category": "cv.skills",
+      "topic": "skills",
+      "question": "How did you apply guardrails in your projects?",
+      "aliases": [
+        "how did you apply guardrails in your projects",
+        "what guardrails did you use at the ministry",
+        "how do you stop the model inventing exam content",
+        "what is the actual safety net, not the slide",
+        "pii, schema, human, what else",
+        "can a teacher skip the check",
+        "is there a library named guardrails in your stack",
+        "how do you block a prompt that asks for a student name",
+        "where do you log the decision"
+      ],
+      "keywords": [
+        "guardrails",
+        "ministry"
+      ],
+      "answer_en": "For generation I retrieve approved unit content, keep the prompt on that text, validate JSON with Pydantic, and require teacher approval before save. Student personal data never goes to the model. For similarity the tool flags and does not judge. One internal model interface keeps the rules in one place.",
+      "followup_en": "Guardrails here are engineering, not a sticker. Empty retrieval stops generation. Failed schema does not enter the bank. I log chunks, output, and approver. I have not installed a fancy policy product as the main control. If we needed regex redaction later, it would sit in front of the interface. The human step is still there for exam items.",
+      "listen_for": [
+        "unit content",
+        "Pydantic",
+        "teacher approval",
+        "no student PII",
+        "flags",
+        "internal interface",
+        "JSON"
+      ],
+      "answer_ar": "القيود عملية: استرجاع المحتوى المعتمد، تحقق JSON، موافقة المعلم، ومنع بيانات الطالب من الوصول للنموذج."
+    },
+    {
+      "id": "cv.image_processing",
+      "category": "cv.project",
+      "topic": "project:kiosk",
+      "question": "Tell me about the image-processing work at Al Najat",
+      "aliases": [
+        "tell me about the image-processing work at Al Najat",
+        "your CV mentions image processing on the kiosk, what was that",
+        "did you do computer vision in Kuwait",
+        "was there a camera on the kiosk",
+        "is the vision part an LLM reading images",
+        "how big was the image-processing piece versus Whisper",
+        "did you train a detector",
+        "OpenCV or something else",
+        "was vision a separate product"
+      ],
+      "keywords": [
+        "image processing",
+        "computer vision",
+        "kiosk",
+        "al najat"
+      ],
+      "answer_en": "At Al Najat the kiosk had image-processing functions beside the Whisper voice path. It was applied computer vision for the kiosk flow, not a standalone vision platform. It was not an LLM reading pictures. I do not want to oversell it. Speech with Whisper was the larger AI piece.",
+      "followup_en": "I will not invent YOLO production stories. The CV groups image processing with voice interaction on the same kiosk. Users were school and family visitors. No RAG, no agent. If we discussed vision in depth I would stay at that boundary. The detailed production story I can defend end to end is Whisper, noise, and routing after text.",
+      "listen_for": [
+        "kiosk",
+        "Al Najat",
+        "not an LLM",
+        "beside Whisper",
+        "not a platform",
+        "applied",
+        "Kuwait"
+      ],
+      "answer_ar": "معالجة الصور كانت وظائف على نفس الكشك مع الصوت، ليست منصة رؤية ولا نموذجاً توليدياً. Whisper هو الجزء الأوضح."
+    },
+    {
+      "id": "cv.csharp_dotnet",
+      "category": "cv.skills",
+      "topic": "knet",
+      "question": "Have you used C# or .NET?",
+      "aliases": [
+        "have you used C# or .NET",
+        "your CV lists C sharp, how hands-on were you",
+        "can you read a dot net payment service",
+        "python or C#, which one is you now",
+        "did the kiosk software sit on .NET",
+        "were you only managing C# people",
+        "SQL and APIs plus C#, is that KNET",
+        "could you pair with a .NET team this year",
+        "when did you last write C#"
+      ],
+      "keywords": [
+        "csharp",
+        "c#",
+        ".net",
+        "dotnet",
+        "knet"
+      ],
+      "answer_en": "Yes, in the KNET years, 2010 to 2017. Payment kiosks and POS used Python, C#, SQL, and APIs. I was the project manager, but I worked inside the integrations, not only on slides. Python is my main language now. I can still read C# services and talk with a .NET team.",
+      "followup_en": "I am not applying as a senior C# developer. I am applying as an AI engineer who has already shipped with that stack in government payments. Duplicate transactions and API contracts were the pain, not language syntax. If a service today is .NET and the AI layer is Python, I have lived that split.",
+      "listen_for": [
+        "KNET",
+        "2010 to 2017",
+        "C#",
+        ".NET",
+        "project manager",
+        "Python now",
+        "APIs",
+        "payments"
+      ],
+      "answer_ar": "استخدم C# و.NET في سنوات الدفع، مع إدارة المشروع والتكامل. بايثون هي لغته اليومية الآن."
+    },
+    {
+      "id": "cv.student_pii",
+      "category": "cv.skills",
+      "topic": "moe",
+      "question": "Did student personal data go to the language model?",
+      "aliases": [
+        "did student personal data go to the language model",
+        "do you send names to the LLM",
+        "how do you keep PII out of prompts",
+        "what if a teacher pastes a student report into the tool",
+        "can the vendor see your students",
+        "anonymization, how did you do it",
+        "is curriculum data treated the same as identity",
+        "where is the mapping from id to name",
+        "would you send grades to an external API"
+      ],
+      "keywords": [
+        "pii",
+        "student data",
+        "privacy",
+        "names",
+        "anonymized"
+      ],
+      "answer_en": "No. Student names and personal data never went to the model. Unit content can go in. I used internal IDs, then mapped names back inside our system for the teacher screen. All calls go through one internal interface, so that rule is not scattered.",
+      "followup_en": "Curriculum is low sensitivity. Identity is high. Similarity compares assignment text for teachers, but that path is not an LLM. Early-warning used school data inside sklearn, also not a model vendor. If a teacher tried to paste a full student file into generation, the design is still: do not send identity fields. I would rather fail the request than leak a child record.",
+      "listen_for": [
+        "never",
+        "no names",
+        "internal IDs",
+        "unit content ok",
+        "one interface",
+        "map back inside",
+        "not to the vendor"
+      ],
+      "answer_ar": "بيانات الطالب الشخصية لا تُرسل للنموذج. يُستخدم معرّف داخلي، والاسم يظهر داخل نظامنا بعد العودة."
+    },
+    {
+      "id": "cv.kubernetes",
+      "category": "cv.skills",
+      "topic": "skills",
+      "question": "Have you used Kubernetes?",
+      "aliases": [
+        "have you used Kubernetes",
+        "did you run k8s in production",
+        "docker compose or kubernetes for your ministry apps",
+        "can you write helm charts",
+        "would you start our GPU boxes on kubernetes",
+        "are you an infra engineer",
+        "self-healing pods, have you operated that",
+        "what would you use instead of k8s on day one",
+        "is kubernetes on your CV as experience or as knowledge"
+      ],
+      "keywords": [
+        "kubernetes",
+        "k8s",
+        "docker",
+        "orchestration"
+      ],
+      "answer_en": "I have not run Kubernetes in production. I understand scaling, restarts, and rolling updates. For one or two servers I would start simpler, with Docker. Kubernetes is a later choice, when you have more machines and you need that operations layer. I will not claim I am a cluster operator.",
+      "followup_en": "CCNP helps me talk about networks and isolation. It does not equal kubeadm. If this role needs someone who already ran GPU nodes on Kubernetes, that is a gap. If this role needs someone who knows when Kubernetes is extra cost, that is me. I would partner with infra on the first serious deploy.",
+      "listen_for": [
+        "not in production",
+        "understand it",
+        "Docker first",
+        "later choice",
+        "not a cluster operator",
+        "one or two servers",
+        "honest"
+      ],
+      "answer_ar": "لم يشغّل كوبيرنيتس إنتاجياً. يفهم الغرض منه، ويبدأ بأبسط نشر، ويصرّح أن تشغيل العنقود ليس خبرته."
+    },
+    {
+      "id": "cv.sql_experience",
+      "category": "cv.skills",
+      "topic": "skills",
+      "question": "How have you used SQL in your work?",
+      "aliases": [
+        "how have you used SQL in your work",
+        "are you strong in SQL",
+        "did completion risk really use SQL",
+        "joins and counts, can you do them",
+        "ORM or raw SQL",
+        "payment systems, was SQL in that too",
+        "would you let an LLM write the ministry reports",
+        "how do you define complete in a query",
+        "SQL versus pandas, when"
+      ],
+      "keywords": [
+        "sql",
+        "database",
+        "queries",
+        "joins"
+      ],
+      "answer_en": "I use SQL in real systems, not only in courses. At the Ministry I pull school and unit records for completion monitoring and compute counts there. At KNET I worked with SQL inside payment systems for years. If a number can be calculated in SQL, I do not ask a model to guess it.",
+      "followup_en": "Pandas is for messy files and feature work. SQL is for the definition of complete, joins across school and unit, and numbers two people can repeat. Early-warning was more file-based. Helpdesk was text. I am not a DBA tuning clusters. I am the person who refuses to replace a count with an LLM.",
+      "listen_for": [
+        "Ministry",
+        "completion",
+        "counts",
+        "KNET",
+        "not a model guess",
+        "joins",
+        "real systems"
+      ],
+      "answer_ar": "SQL في العمل الحقيقي: عدّ إنجاز الوحدات في الوزارة، وأنظمة الدفع سابقاً. الرقم القابل للحساب لا يُترك للنموذج."
+    }
+  ]
+}

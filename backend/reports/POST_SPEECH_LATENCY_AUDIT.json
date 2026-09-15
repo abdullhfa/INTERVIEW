@@ -1,0 +1,291 @@
+{
+  "e2e_compound_dev": {
+    "source": "C:\\Users\\aalsa\\OneDrive\\Desktop\\interview (2)\\interview11\\backend\\reports\\COMPOUND_DEV_REPORT.json",
+    "summary": {
+      "n": 40,
+      "whisper_ms": {
+        "p50": 1605.6,
+        "p90": 3199.0,
+        "mean": 2157.5,
+        "max": 4326.6
+      },
+      "match_ms": {
+        "p50": 528.0,
+        "p90": 953.9,
+        "mean": 586.5,
+        "max": 1236.7
+      },
+      "compound_detect_ms": {
+        "p50": 0.6,
+        "p90": 0.7,
+        "mean": 0.7,
+        "max": 3.6
+      },
+      "decomposition_ms": {
+        "p50": 0.3,
+        "p90": 0.4,
+        "mean": 0.4,
+        "max": 2.4
+      },
+      "matching_ms": {
+        "p50": 1001.4,
+        "p90": 2140.7,
+        "mean": 1121.1,
+        "max": 2770.6
+      },
+      "semantic_ms": {
+        "p50": 711.6,
+        "p90": 1193.7,
+        "mean": 586.7,
+        "max": 1996.1
+      },
+      "rerank_ms": {
+        "p50": 0.0,
+        "p90": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "merge_ms": {
+        "p50": 0.1,
+        "p90": 0.2,
+        "mean": 0.1,
+        "max": 0.2
+      },
+      "compound_ms": {
+        "p50": 1002.3,
+        "p90": 2141.6,
+        "mean": 1122.3,
+        "max": 2771.5
+      },
+      "intent_ms": {
+        "p50": 2304.3,
+        "p90": 3430.7,
+        "mean": 2295.5,
+        "max": 4283.9
+      },
+      "total_post_ms": {
+        "p50": 4608.0,
+        "p90": 6347.5,
+        "mean": 4453.0,
+        "max": 7360.4
+      }
+    },
+    "sample_rows": [
+      {
+        "id": "cdev_001",
+        "whisper_ms": 1552.3,
+        "match_ms": 223.3,
+        "compound_detect_ms": 0.6,
+        "decomposition_ms": 1.5,
+        "matching_ms": 1271.2,
+        "semantic_ms": 4.9,
+        "rerank_ms": 0.0,
+        "merge_ms": 0.2,
+        "compound_ms": 1273.5,
+        "intent_ms": 1501.6,
+        "total_post_ms": 3054.0
+      },
+      {
+        "id": "cdev_002",
+        "whisper_ms": 1566.4,
+        "match_ms": 243.1,
+        "compound_detect_ms": 3.6,
+        "decomposition_ms": 2.3,
+        "matching_ms": 604.8,
+        "semantic_ms": 804.9,
+        "rerank_ms": 0.0,
+        "merge_ms": 0.2,
+        "compound_ms": 610.9,
+        "intent_ms": 1658.8,
+        "total_post_ms": 3225.2
+      },
+      {
+        "id": "cdev_003",
+        "whisper_ms": 1508.7,
+        "match_ms": 281.1,
+        "compound_detect_ms": 0.6,
+        "decomposition_ms": 0.3,
+        "matching_ms": 504.1,
+        "semantic_ms": 5.6,
+        "rerank_ms": 0.0,
+        "merge_ms": 0.2,
+        "compound_ms": 505.2,
+        "intent_ms": 791.9,
+        "total_post_ms": 2300.6
+      },
+      {
+        "id": "cdev_004",
+        "whisper_ms": 1594.0,
+        "match_ms": 206.6,
+        "compound_detect_ms": 0.6,
+        "decomposition_ms": 0.3,
+        "matching_ms": 810.1,
+        "semantic_ms": 1996.1,
+        "rerank_ms": 0.0,
+        "merge_ms": 0.2,
+        "compound_ms": 811.2,
+        "intent_ms": 3013.9,
+        "total_post_ms": 4608.0
+      },
+      {
+        "id": "cdev_005",
+        "whisper_ms": 1380.3,
+        "match_ms": 222.8,
+        "compound_detect_ms": 0.7,
+        "decomposition_ms": 2.4,
+        "matching_ms": 793.5,
+        "semantic_ms": 1357.4,
+        "rerank_ms": 0.0,
+        "merge_ms": 0.2,
+        "compound_ms": 796.8,
+        "intent_ms": 2376.9,
+        "total_post_ms": 3757.3
+      }
+    ]
+  },
+  "offline_compound_dev": {
+    "source": "offline_text_compound_dev",
+    "note": "No Whisper/VAD — compound stages only, bank warmed",
+    "summary": {
+      "n": 40,
+      "whisper_ms": {
+        "p50": 0.0,
+        "p90": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "match_ms": {
+        "p50": 0.0,
+        "p90": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "compound_detect_ms": {
+        "p50": 0.5,
+        "p90": 0.7,
+        "mean": 0.5,
+        "max": 0.8
+      },
+      "decomposition_ms": {
+        "p50": 0.3,
+        "p90": 0.4,
+        "mean": 0.3,
+        "max": 0.5
+      },
+      "matching_ms": {
+        "p50": 723.5,
+        "p90": 1409.7,
+        "mean": 817.5,
+        "max": 2575.4
+      },
+      "semantic_ms": {
+        "p50": 0.0,
+        "p90": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "rerank_ms": {
+        "p50": 0.0,
+        "p90": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "merge_ms": {
+        "p50": 0.1,
+        "p90": 0.3,
+        "mean": 0.2,
+        "max": 0.3
+      },
+      "compound_ms": {
+        "p50": 724.1,
+        "p90": 1410.2,
+        "mean": 818.0,
+        "max": 2576.0
+      },
+      "intent_ms": {
+        "p50": 724.7,
+        "p90": 1410.8,
+        "mean": 818.5,
+        "max": 2576.4
+      },
+      "total_post_ms": {
+        "p50": 724.7,
+        "p90": 1410.8,
+        "mean": 818.5,
+        "max": 2576.4
+      }
+    },
+    "sample_rows": [
+      {
+        "id": "cdev_001",
+        "whisper_ms": 0.0,
+        "match_ms": 0.0,
+        "compound_detect_ms": 0.5,
+        "decomposition_ms": 0.4,
+        "matching_ms": 1380.1,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "merge_ms": 0.3,
+        "compound_ms": 1380.8,
+        "intent_ms": 1381.3248000015853,
+        "total_post_ms": 1381.3248000015853
+      },
+      {
+        "id": "cdev_002",
+        "whisper_ms": 0.0,
+        "match_ms": 0.0,
+        "compound_detect_ms": 0.5,
+        "decomposition_ms": 0.3,
+        "matching_ms": 516.8,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "merge_ms": 0.2,
+        "compound_ms": 517.3,
+        "intent_ms": 517.8469000025186,
+        "total_post_ms": 517.8469000025186
+      },
+      {
+        "id": "cdev_003",
+        "whisper_ms": 0.0,
+        "match_ms": 0.0,
+        "compound_detect_ms": 0.6,
+        "decomposition_ms": 0.3,
+        "matching_ms": 429.6,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "merge_ms": 0.2,
+        "compound_ms": 430.1,
+        "intent_ms": 430.67920000108427,
+        "total_post_ms": 430.67920000108427
+      },
+      {
+        "id": "cdev_004",
+        "whisper_ms": 0.0,
+        "match_ms": 0.0,
+        "compound_detect_ms": 0.5,
+        "decomposition_ms": 0.3,
+        "matching_ms": 730.0,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "merge_ms": 0.2,
+        "compound_ms": 730.6,
+        "intent_ms": 731.061900002847,
+        "total_post_ms": 731.061900002847
+      },
+      {
+        "id": "cdev_005",
+        "whisper_ms": 0.0,
+        "match_ms": 0.0,
+        "compound_detect_ms": 0.6,
+        "decomposition_ms": 0.5,
+        "matching_ms": 707.9,
+        "semantic_ms": 0.0,
+        "rerank_ms": 0.0,
+        "merge_ms": 0.2,
+        "compound_ms": 708.7,
+        "intent_ms": 709.2963999938104,
+        "total_post_ms": 709.2963999938104
+      }
+    ]
+  }
+}

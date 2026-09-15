@@ -1,0 +1,25 @@
+{
+  "status": "VOIDED",
+  "voided_at": "2026-09-12",
+  "pack": "final-unseen-holdout",
+  "suite": "final_unseen_holdout",
+  "reason": "Evaluator scoring/runtime measurement bugs confirmed and fixed (HC gold override, compound_path coverage metric, STT/intent timer attribution, poor→poor_call wiring). Per protocol, this sample is no longer a Final Holdout.",
+  "official_gate_next": "final_unseen_holdout_v2",
+  "audit": "EVALUATOR_AUDIT_FINAL_UNSEEN_HOLDOUT.md",
+  "retrospective_on_voided_run": {
+    "intent": "110/120 (91.7%) — unchanged by HC/compound metric fixes",
+    "hc_wrong_reported": 14,
+    "hc_wrong_after_fix_definition": 0,
+    "gold_id_mismatch_intent_ok": 40,
+    "compound_coverage_reported": 0.167,
+    "compound_gold_part_coverage_after_fix": 0.467,
+    "compound_intent_type": "15/15",
+    "median_post_speech_ms": 3861,
+    "latency_note": "Wall-clock delay largely real (Whisper-dominated); timer labels were wrong"
+  },
+  "do_not": [
+    "Use this pack for READY / NOT READY adoption judgment",
+    "Tune Intent weights/thresholds/aliases from this pack",
+    "Chase 91.7% → 92% on this voided sample"
+  ]
+}

@@ -1,0 +1,2679 @@
+{
+  "created_at": "2026-09-11T20:54:55.707099+00:00",
+  "mode": "clean_stt_ab_benchmark",
+  "filters": {
+    "condition": "clean",
+    "limit": null,
+    "variants": [
+      "raw",
+      "preroll_pad",
+      "normalize",
+      "denoise",
+      "combo",
+      "vad_crop",
+      "vad_crop_preroll"
+    ]
+  },
+  "summary": {
+    "total_clips": 30,
+    "by_variant": {
+      "raw": {
+        "n": 30,
+        "stt_ok_rate": 0.967,
+        "mean_score": 0.917,
+        "median_score": 0.968,
+        "first_word_missing_rate": 0.0,
+        "last_word_missing_rate": 0.067,
+        "tech_hallucination_rate": 0.0,
+        "avg_stt_ms": 1679.8
+      },
+      "preroll_pad": {
+        "n": 30,
+        "stt_ok_rate": 1.0,
+        "mean_score": 0.922,
+        "median_score": 0.974,
+        "first_word_missing_rate": 0.0,
+        "last_word_missing_rate": 0.067,
+        "tech_hallucination_rate": 0.0,
+        "avg_stt_ms": 1903.7
+      },
+      "normalize": {
+        "n": 30,
+        "stt_ok_rate": 0.967,
+        "mean_score": 0.92,
+        "median_score": 0.968,
+        "first_word_missing_rate": 0.033,
+        "last_word_missing_rate": 0.067,
+        "tech_hallucination_rate": 0.0,
+        "avg_stt_ms": 1856.0
+      },
+      "denoise": {
+        "n": 30,
+        "stt_ok_rate": 0.967,
+        "mean_score": 0.909,
+        "median_score": 0.968,
+        "first_word_missing_rate": 0.033,
+        "last_word_missing_rate": 0.1,
+        "tech_hallucination_rate": 0.0,
+        "avg_stt_ms": 1531.9
+      },
+      "combo": {
+        "n": 30,
+        "stt_ok_rate": 0.933,
+        "mean_score": 0.903,
+        "median_score": 0.968,
+        "first_word_missing_rate": 0.033,
+        "last_word_missing_rate": 0.133,
+        "tech_hallucination_rate": 0.0,
+        "avg_stt_ms": 1635.5
+      },
+      "vad_crop": {
+        "n": 30,
+        "stt_ok_rate": 0.633,
+        "mean_score": 0.735,
+        "median_score": 0.778,
+        "first_word_missing_rate": 1.0,
+        "last_word_missing_rate": 0.233,
+        "tech_hallucination_rate": 0.0,
+        "avg_stt_ms": 1784.3
+      },
+      "vad_crop_preroll": {
+        "n": 30,
+        "stt_ok_rate": 0.967,
+        "mean_score": 0.917,
+        "median_score": 0.968,
+        "first_word_missing_rate": 0.0,
+        "last_word_missing_rate": 0.067,
+        "tech_hallucination_rate": 0.0,
+        "avg_stt_ms": 1531.7
+      }
+    },
+    "best_variant_wins": {
+      "combo": 4,
+      "vad_crop_preroll": 6,
+      "denoise": 7,
+      "normalize": 5,
+      "preroll_pad": 3,
+      "vad_crop": 2,
+      "raw": 3
+    },
+    "combo_hurts_count": 2,
+    "raw_beats_combo_count": 4,
+    "recommended_live_preprocess": "raw",
+    "combo_hurt_examples": [
+      {
+        "file": "audio/Q173_jordanian_synthetic_clean.wav",
+        "expected": "What is agentic ai",
+        "raw": "What's in a agentic AI.",
+        "combo": "was in a genetic KI.I.",
+        "raw_score": 0.7805,
+        "combo_score": 0.6,
+        "best": "vad_crop_preroll"
+      },
+      {
+        "file": "audio/Q178_jordanian_synthetic_clean.wav",
+        "expected": "Why langgraph and not langchain",
+        "raw": "Why LangGraph and not LangChain?",
+        "combo": "Why LangGraph and not Lengen?",
+        "raw_score": 0.8571,
+        "combo_score": 0.6333,
+        "best": "raw"
+      }
+    ],
+    "targets": {
+      "clean_stt_ok": 0.9
+    }
+  },
+  "results": [
+    {
+      "sample_id": 1,
+      "file": "audio/Q156_indian_synthetic_clean.wav",
+      "question_id": 156,
+      "speaker": "indian",
+      "condition": "clean",
+      "expected": "What is RAG?",
+      "speech_duration_ms": 1257.1,
+      "best_variant": "combo",
+      "best_score": 1.0,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "What is RAG?",
+          "score": 1.0,
+          "stt_ms": 1723.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "What is RAG?",
+          "score": 1.0,
+          "stt_ms": 1637.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "What is RAG?",
+          "score": 1.0,
+          "stt_ms": 1594.8,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "What is RAG?",
+          "score": 1.0,
+          "stt_ms": 1532.0,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "What is RAG?",
+          "score": 1.0,
+          "stt_ms": 1507.2,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "RAG",
+          "score": 0.4,
+          "stt_ms": 1508.8,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "What is RAG?",
+          "score": 1.0,
+          "stt_ms": 1519.8,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        }
+      }
+    },
+    {
+      "sample_id": 7,
+      "file": "audio/Q156_jordanian_synthetic_clean.wav",
+      "question_id": 156,
+      "speaker": "jordanian",
+      "condition": "clean",
+      "expected": "What is rag",
+      "speech_duration_ms": 1109.1,
+      "best_variant": "vad_crop_preroll",
+      "best_score": 0.7778,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "What is RAG?",
+          "score": 0.7778,
+          "stt_ms": 1575.0,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "What is RAG?",
+          "score": 0.7778,
+          "stt_ms": 1642.5,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "What is RAG?",
+          "score": 0.7778,
+          "stt_ms": 1579.1,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "What is RAG?",
+          "score": 0.7778,
+          "stt_ms": 1567.0,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "What is RAG?",
+          "score": 0.7778,
+          "stt_ms": 1579.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "This is round.",
+          "score": 0.48,
+          "stt_ms": 1527.1,
+          "first_word_missing": true,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "What is RAG?",
+          "score": 0.7778,
+          "stt_ms": 1494.1,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        }
+      }
+    },
+    {
+      "sample_id": 13,
+      "file": "audio/Q156_kuwaiti_synthetic_clean.wav",
+      "question_id": 156,
+      "speaker": "kuwaiti",
+      "condition": "clean",
+      "expected": "Explain rag",
+      "speech_duration_ms": 1292.8,
+      "best_variant": "vad_crop_preroll",
+      "best_score": 0.7778,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "Explain RAG?",
+          "score": 0.7778,
+          "stt_ms": 1575.7,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "Explain RAG?",
+          "score": 0.7778,
+          "stt_ms": 1607.6,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "Explain RAG?",
+          "score": 0.7778,
+          "stt_ms": 1562.0,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "Explain RAG?",
+          "score": 0.7778,
+          "stt_ms": 1592.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "Explain RAG?",
+          "score": 0.7778,
+          "stt_ms": 1638.1,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "Lainrog.",
+          "score": 0.5263,
+          "stt_ms": 1596.8,
+          "first_word_missing": true,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "Explain RAG?",
+          "score": 0.7778,
+          "stt_ms": 1547.8,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        }
+      }
+    },
+    {
+      "sample_id": 19,
+      "file": "audio/Q160_indian_synthetic_clean.wav",
+      "question_id": 160,
+      "speaker": "indian",
+      "condition": "clean",
+      "expected": "Our regulations change every year. Should we fine-tune the model or use RAG?",
+      "speech_duration_ms": 4996.8,
+      "best_variant": "combo",
+      "best_score": 1.0,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "Our regulations change every year. Should we fine-tune the model, or use RAG?",
+          "score": 0.9935,
+          "stt_ms": 925.6,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "Our regulations change every year. Should we fine-tune the model, or use RAG?",
+          "score": 0.9935,
+          "stt_ms": 941.7,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "Our regulations change every year. Should we fine-tune the model, or use RAG?",
+          "score": 0.9935,
+          "stt_ms": 947.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "Our regulations change every year. Should we fine-tune the model or use RAG?",
+          "score": 1.0,
+          "stt_ms": 984.2,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "Our regulations change every year. Should we fine-tune the model or use RAG?",
+          "score": 1.0,
+          "stt_ms": 934.8,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "regulations change every year. Should we fine-tune the model, or use RAG?",
+          "score": 0.9664,
+          "stt_ms": 940.0,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "Our regulations change every year. Should we fine-tune the model, or use RAG?",
+          "score": 0.9935,
+          "stt_ms": 948.7,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        }
+      }
+    },
+    {
+      "sample_id": 25,
+      "file": "audio/Q160_jordanian_synthetic_clean.wav",
+      "question_id": 160,
+      "speaker": "jordanian",
+      "condition": "clean",
+      "expected": "Should we fine tune the model or use rag",
+      "speech_duration_ms": 2774.6,
+      "best_variant": "denoise",
+      "best_score": 0.8642,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "Should we fine-tune the model or use RAG?",
+          "score": 0.8642,
+          "stt_ms": 917.8,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "Should we fine-tune the model or use RAG?",
+          "score": 0.8642,
+          "stt_ms": 889.2,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "Should we fine-tune the model or use RAG?",
+          "score": 0.8642,
+          "stt_ms": 914.6,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "Should we fine-tune the model or use RAG?",
+          "score": 0.8642,
+          "stt_ms": 873.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "Should we fine-tune the model or use RAG?",
+          "score": 0.8642,
+          "stt_ms": 890.0,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "we fine-tune the model or use RAG.",
+          "score": 0.7838,
+          "stt_ms": 877.3,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "Should we fine-tune the model or use RAG?",
+          "score": 0.8642,
+          "stt_ms": 906.7,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        }
+      }
+    },
+    {
+      "sample_id": 31,
+      "file": "audio/Q160_kuwaiti_synthetic_clean.wav",
+      "question_id": 160,
+      "speaker": "kuwaiti",
+      "condition": "clean",
+      "expected": "Rag or fine tuning",
+      "speech_duration_ms": 1673.8,
+      "best_variant": "normalize",
+      "best_score": 0.8649,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "RAG or fine-tuning.",
+          "score": 0.8108,
+          "stt_ms": 1656.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "RAG or fine-tuning.",
+          "score": 0.8108,
+          "stt_ms": 1678.2,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "Rod or fine tuning.",
+          "score": 0.8649,
+          "stt_ms": 1574.8,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "RAG or fine-tuning.",
+          "score": 0.8108,
+          "stt_ms": 1507.1,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "RAG or fine-tuning.",
+          "score": 0.8108,
+          "stt_ms": 1560.7,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "fine tuning.",
+          "score": 0.7333,
+          "stt_ms": 1498.6,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "RAG or fine-tuning.",
+          "score": 0.8108,
+          "stt_ms": 1490.5,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        }
+      }
+    },
+    {
+      "sample_id": 37,
+      "file": "audio/Q173_indian_synthetic_clean.wav",
+      "question_id": 173,
+      "speaker": "indian",
+      "condition": "clean",
+      "expected": "What is agentic AI?",
+      "speech_duration_ms": 1600.0,
+      "best_variant": "vad_crop_preroll",
+      "best_score": 1.0,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "What is agentic AI?",
+          "score": 1.0,
+          "stt_ms": 1548.8,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "What is agentic AI?",
+          "score": 1.0,
+          "stt_ms": 1614.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "What is agentic AI?",
+          "score": 1.0,
+          "stt_ms": 1561.2,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "What is agentic AI?",
+          "score": 1.0,
+          "stt_ms": 1564.1,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "What is agentic AI?",
+          "score": 1.0,
+          "stt_ms": 1574.4,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "identity KI.I.",
+          "score": 0.3636,
+          "stt_ms": 1506.3,
+          "first_word_missing": true,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "What is agentic AI?",
+          "score": 1.0,
+          "stt_ms": 1532.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        }
+      }
+    },
+    {
+      "sample_id": 43,
+      "file": "audio/Q173_jordanian_synthetic_clean.wav",
+      "question_id": 173,
+      "speaker": "jordanian",
+      "condition": "clean",
+      "expected": "What is agentic ai",
+      "speech_duration_ms": 1664.6,
+      "best_variant": "vad_crop_preroll",
+      "best_score": 0.7805,
+      "combo_hurts": true,
+      "raw_beats_combo": true,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "What's in a agentic AI.",
+          "score": 0.7805,
+          "stt_ms": 1563.5,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "What's in a agentic AI?",
+          "score": 0.7805,
+          "stt_ms": 1572.0,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "What's in a agentic AI.",
+          "score": 0.7805,
+          "stt_ms": 1618.2,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "was in a genetic K.I.I.",
+          "score": 0.5854,
+          "stt_ms": 1638.5,
+          "first_word_missing": true,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "was in a genetic KI.I.",
+          "score": 0.6,
+          "stt_ms": 1578.9,
+          "first_word_missing": true,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "agentic AI.",
+          "score": 0.7778,
+          "stt_ms": 1552.2,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "What's in a agentic AI.",
+          "score": 0.7805,
+          "stt_ms": 1534.5,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        }
+      }
+    },
+    {
+      "sample_id": 49,
+      "file": "audio/Q173_kuwaiti_synthetic_clean.wav",
+      "question_id": 173,
+      "speaker": "kuwaiti",
+      "condition": "clean",
+      "expected": "What is an ai agent",
+      "speech_duration_ms": 1684.7,
+      "best_variant": "denoise",
+      "best_score": 0.8205,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "What is an AI agent?",
+          "score": 0.8205,
+          "stt_ms": 1578.1,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "What is an AI agent?",
+          "score": 0.8205,
+          "stt_ms": 1654.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "What is an AI agent?",
+          "score": 0.8205,
+          "stt_ms": 1599.1,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "What is an AI agent?",
+          "score": 0.8205,
+          "stt_ms": 1553.9,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "What is an AI agent?",
+          "score": 0.8205,
+          "stt_ms": 1609.6,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "an AI agent.",
+          "score": 0.5806,
+          "stt_ms": 1581.1,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "What is an AI agent?",
+          "score": 0.8205,
+          "stt_ms": 1564.9,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        }
+      }
+    },
+    {
+      "sample_id": 55,
+      "file": "audio/Q174_indian_synthetic_clean.wav",
+      "question_id": 174,
+      "speaker": "indian",
+      "condition": "clean",
+      "expected": "What is the difference between an agent and a workflow?",
+      "speech_duration_ms": 3208.9,
+      "best_variant": "denoise",
+      "best_score": 1.0,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "What is the difference between an agent, and a workflow?",
+          "score": 0.991,
+          "stt_ms": 826.7,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "What is the difference between an agent, and a workflow?",
+          "score": 0.991,
+          "stt_ms": 881.4,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "What is the difference between an agent, and a workflow?",
+          "score": 0.991,
+          "stt_ms": 817.7,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "What is the difference between an agent and a workflow?",
+          "score": 1.0,
+          "stt_ms": 865.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "What is the difference between an agent and a workflow?",
+          "score": 1.0,
+          "stt_ms": 918.5,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "the difference between an agent and a workflow.",
+          "score": 0.902,
+          "stt_ms": 881.1,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "What is the difference between an agent, and a workflow?",
+          "score": 0.991,
+          "stt_ms": 881.5,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        }
+      }
+    },
+    {
+      "sample_id": 61,
+      "file": "audio/Q174_jordanian_synthetic_clean.wav",
+      "question_id": 174,
+      "speaker": "jordanian",
+      "condition": "clean",
+      "expected": "What is the difference between an agent and a workflow",
+      "speech_duration_ms": 3214.8,
+      "best_variant": "preroll_pad",
+      "best_score": 0.9908,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "What is the difference between an agent and the workflow?",
+          "score": 0.972,
+          "stt_ms": 914.1,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "What is the difference between an agent and a workflow?",
+          "score": 0.9908,
+          "stt_ms": 906.9,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "What is the difference between an agent and a workflow?",
+          "score": 0.9908,
+          "stt_ms": 933.8,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "What is the difference between an agent and the workflow?",
+          "score": 0.972,
+          "stt_ms": 925.6,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "What is the difference between an agent and the workflow?",
+          "score": 0.972,
+          "stt_ms": 887.6,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "the difference between an agent and the workflow.",
+          "score": 0.8889,
+          "stt_ms": 855.3,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "What is the difference between an agent and the workflow?",
+          "score": 0.972,
+          "stt_ms": 865.0,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        }
+      }
+    },
+    {
+      "sample_id": 67,
+      "file": "audio/Q174_kuwaiti_synthetic_clean.wav",
+      "question_id": 174,
+      "speaker": "kuwaiti",
+      "condition": "clean",
+      "expected": "Agent versus workflow",
+      "speech_duration_ms": 1995.4,
+      "best_variant": "normalize",
+      "best_score": 0.9524,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "agent versus workflow.",
+          "score": 0.9302,
+          "stt_ms": 1657.1,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "Agent versus Workflow",
+          "score": 0.9524,
+          "stt_ms": 5337.0,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "agent versus workflow",
+          "score": 0.9524,
+          "stt_ms": 2612.7,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "agent versus workflow.",
+          "score": 0.9302,
+          "stt_ms": 2858.0,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "agent versus workflow.",
+          "score": 0.9302,
+          "stt_ms": 3465.8,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "versus workflow.",
+          "score": 0.8108,
+          "stt_ms": 2720.7,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "agent versus workflow.",
+          "score": 0.9302,
+          "stt_ms": 2847.0,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        }
+      }
+    },
+    {
+      "sample_id": 73,
+      "file": "audio/Q175_indian_synthetic_clean.wav",
+      "question_id": 175,
+      "speaker": "indian",
+      "condition": "clean",
+      "expected": "What is an agent orchestrator?",
+      "speech_duration_ms": 2026.1,
+      "best_variant": "combo",
+      "best_score": 1.0,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "What is an agent orchestrator?",
+          "score": 1.0,
+          "stt_ms": 3273.8,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "What is an agent orchestrator?",
+          "score": 1.0,
+          "stt_ms": 4782.8,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "What is an agent orchestrator?",
+          "score": 1.0,
+          "stt_ms": 3199.0,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "What is an agent orchestrator?",
+          "score": 1.0,
+          "stt_ms": 3089.7,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "What is an agent orchestrator?",
+          "score": 1.0,
+          "stt_ms": 3084.2,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "an agent orchestrator",
+          "score": 0.8235,
+          "stt_ms": 2778.6,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "What is an agent orchestrator?",
+          "score": 1.0,
+          "stt_ms": 3247.9,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        }
+      }
+    },
+    {
+      "sample_id": 79,
+      "file": "audio/Q175_jordanian_synthetic_clean.wav",
+      "question_id": 175,
+      "speaker": "jordanian",
+      "condition": "clean",
+      "expected": "What is an agent orchestrator",
+      "speech_duration_ms": 2094.0,
+      "best_variant": "denoise",
+      "best_score": 0.9831,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "What is an agent orchestrator?",
+          "score": 0.9831,
+          "stt_ms": 8335.7,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "What is an agent orchestrator?",
+          "score": 0.9831,
+          "stt_ms": 8039.4,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "What is an agent orchestrator?",
+          "score": 0.9831,
+          "stt_ms": 9698.5,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "What is an agent orchestrator?",
+          "score": 0.9831,
+          "stt_ms": 3193.5,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "What is an agent orchestrator?",
+          "score": 0.9831,
+          "stt_ms": 3524.2,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "an agent orchestrator.",
+          "score": 0.8235,
+          "stt_ms": 3185.5,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "What is an agent orchestrator?",
+          "score": 0.9831,
+          "stt_ms": 3281.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        }
+      }
+    },
+    {
+      "sample_id": 85,
+      "file": "audio/Q175_kuwaiti_synthetic_clean.wav",
+      "question_id": 175,
+      "speaker": "kuwaiti",
+      "condition": "clean",
+      "expected": "What is agent orchestration",
+      "speech_duration_ms": 2227.1,
+      "best_variant": "vad_crop",
+      "best_score": 1.0,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "What is agent orchestration?",
+          "score": 0.9818,
+          "stt_ms": 3444.5,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "What is agent orchestration?",
+          "score": 0.9818,
+          "stt_ms": 3345.0,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "What is agent orchestration?",
+          "score": 0.9818,
+          "stt_ms": 2889.6,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "What is agent orchestration?",
+          "score": 0.9818,
+          "stt_ms": 1959.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "What is agent orchestration?",
+          "score": 0.9818,
+          "stt_ms": 2247.9,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "agent orchestration",
+          "score": 1.0,
+          "stt_ms": 5048.2,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "What is agent orchestration?",
+          "score": 0.9818,
+          "stt_ms": 2543.2,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        }
+      }
+    },
+    {
+      "sample_id": 91,
+      "file": "audio/Q178_indian_synthetic_clean.wav",
+      "question_id": 178,
+      "speaker": "indian",
+      "condition": "clean",
+      "expected": "What is the difference between LangChain and LangGraph?",
+      "speech_duration_ms": 3260.1,
+      "best_variant": "combo",
+      "best_score": 0.8704,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "What is the difference between Lung Chain and And Ruff?",
+          "score": 0.8364,
+          "stt_ms": 1133.8,
+          "first_word_missing": false,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "What is the difference between Lachain and And And Ruff?",
+          "score": 0.8037,
+          "stt_ms": 1119.1,
+          "first_word_missing": false,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "What is the difference between Lung Chain and And Ruff?",
+          "score": 0.8364,
+          "stt_ms": 1248.2,
+          "first_word_missing": false,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "What is the difference between Lankane and Lundraff?",
+          "score": 0.8598,
+          "stt_ms": 2422.5,
+          "first_word_missing": false,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "What is the difference between Lanchine and Lundraff?",
+          "score": 0.8704,
+          "stt_ms": 4288.5,
+          "first_word_missing": false,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "the difference between lung chain and unruff.",
+          "score": 0.7324,
+          "stt_ms": 1597.9,
+          "first_word_missing": true,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "What is the difference between Lung Chain and And Ruff?",
+          "score": 0.8364,
+          "stt_ms": 1119.7,
+          "first_word_missing": false,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        }
+      }
+    },
+    {
+      "sample_id": 97,
+      "file": "audio/Q178_jordanian_synthetic_clean.wav",
+      "question_id": 178,
+      "speaker": "jordanian",
+      "condition": "clean",
+      "expected": "Why langgraph and not langchain",
+      "speech_duration_ms": 2228.6,
+      "best_variant": "raw",
+      "best_score": 0.8571,
+      "combo_hurts": true,
+      "raw_beats_combo": true,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "Why LangGraph and not LangChain?",
+          "score": 0.8571,
+          "stt_ms": 2251.1,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "Why LangGraph and not LangChain?",
+          "score": 0.8571,
+          "stt_ms": 3928.4,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "Why LangGraph and not LangChain?",
+          "score": 0.8571,
+          "stt_ms": 5651.6,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "Why LangGraph and not LangChain?",
+          "score": 0.8571,
+          "stt_ms": 2302.5,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "Why LangGraph and not Lengen?",
+          "score": 0.6333,
+          "stt_ms": 2377.0,
+          "first_word_missing": false,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "and not LangGraph and Rang chain.",
+          "score": 0.6,
+          "stt_ms": 7004.2,
+          "first_word_missing": true,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "Why LangGraph and not LangChain?",
+          "score": 0.8571,
+          "stt_ms": 3215.7,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        }
+      }
+    },
+    {
+      "sample_id": 103,
+      "file": "audio/Q178_kuwaiti_synthetic_clean.wav",
+      "question_id": 178,
+      "speaker": "kuwaiti",
+      "condition": "clean",
+      "expected": "What is the difference between langchain and langgraph",
+      "speech_duration_ms": 3396.6,
+      "best_variant": "denoise",
+      "best_score": 0.8785,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "What is the difference between Lachine and Zandrath?",
+          "score": 0.8679,
+          "stt_ms": 783.6,
+          "first_word_missing": false,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "What is the difference between Lanchine and And And Ruff?",
+          "score": 0.785,
+          "stt_ms": 823.2,
+          "first_word_missing": false,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "What is the difference between Lachine and Zandrath?",
+          "score": 0.8679,
+          "stt_ms": 915.3,
+          "first_word_missing": false,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "What is the difference between Lanchine and Landrath?",
+          "score": 0.8785,
+          "stt_ms": 766.9,
+          "first_word_missing": false,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "What is the difference between Lanchine and Landrath?",
+          "score": 0.8785,
+          "stt_ms": 783.4,
+          "first_word_missing": false,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "is the difference between Lachine and Lundraff.",
+          "score": 0.7723,
+          "stt_ms": 790.7,
+          "first_word_missing": true,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "What is the difference between Lachine and Zandrath?",
+          "score": 0.8679,
+          "stt_ms": 794.2,
+          "first_word_missing": false,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        }
+      }
+    },
+    {
+      "sample_id": 109,
+      "file": "audio/Q212_indian_synthetic_clean.wav",
+      "question_id": 212,
+      "speaker": "indian",
+      "condition": "clean",
+      "expected": "What are guardrails?",
+      "speech_duration_ms": 1315.3,
+      "best_variant": "raw",
+      "best_score": 1.0,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "What are guardrails?",
+          "score": 1.0,
+          "stt_ms": 1490.9,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "What are guardrails?",
+          "score": 1.0,
+          "stt_ms": 1498.6,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "What are guardrails?",
+          "score": 1.0,
+          "stt_ms": 1623.1,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "What are guardrails?",
+          "score": 1.0,
+          "stt_ms": 1581.2,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "What are guardrails?",
+          "score": 1.0,
+          "stt_ms": 1504.1,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "Goddrails.",
+          "score": 0.4,
+          "stt_ms": 1499.0,
+          "first_word_missing": true,
+          "last_word_missing": true,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "What are guardrails?",
+          "score": 1.0,
+          "stt_ms": 1558.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        }
+      }
+    },
+    {
+      "sample_id": 115,
+      "file": "audio/Q212_jordanian_synthetic_clean.wav",
+      "question_id": 212,
+      "speaker": "jordanian",
+      "condition": "clean",
+      "expected": "What are guardrails",
+      "speech_duration_ms": 1397.4,
+      "best_variant": "vad_crop_preroll",
+      "best_score": 0.9744,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "What are guardrails?",
+          "score": 0.9744,
+          "stt_ms": 1626.5,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "What are guardrails?",
+          "score": 0.9744,
+          "stt_ms": 1613.0,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "What are guardrails?",
+          "score": 0.9744,
+          "stt_ms": 1603.8,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "What are guardrails?",
+          "score": 0.9744,
+          "stt_ms": 1599.5,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "What are guardrails?",
+          "score": 0.9744,
+          "stt_ms": 1569.9,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "guardrails.",
+          "score": 0.6667,
+          "stt_ms": 1457.9,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "What are guardrails?",
+          "score": 0.9744,
+          "stt_ms": 1521.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        }
+      }
+    },
+    {
+      "sample_id": 121,
+      "file": "audio/Q212_kuwaiti_synthetic_clean.wav",
+      "question_id": 212,
+      "speaker": "kuwaiti",
+      "condition": "clean",
+      "expected": "What are llm guardrails",
+      "speech_duration_ms": 1940.4,
+      "best_variant": "normalize",
+      "best_score": 0.8837,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "What are guardrails?",
+          "score": 0.8837,
+          "stt_ms": 1747.2,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "What are guardrails?",
+          "score": 0.8837,
+          "stt_ms": 1761.2,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "What are guardrails?",
+          "score": 0.8837,
+          "stt_ms": 1743.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "What are guardrails?",
+          "score": 0.8837,
+          "stt_ms": 1754.2,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "What are guardrails?",
+          "score": 0.8837,
+          "stt_ms": 1764.4,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "RLM guardrails.",
+          "score": 0.5789,
+          "stt_ms": 1655.7,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "What are guardrails?",
+          "score": 0.8837,
+          "stt_ms": 1775.5,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        }
+      }
+    },
+    {
+      "sample_id": 127,
+      "file": "audio/Q239_indian_synthetic_clean.wav",
+      "question_id": 239,
+      "speaker": "indian",
+      "condition": "clean",
+      "expected": "How do you prevent an agent from looping forever?",
+      "speech_duration_ms": 2943.4,
+      "best_variant": "normalize",
+      "best_score": 1.0,
+      "combo_hurts": false,
+      "raw_beats_combo": true,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "How do you prevent an agent from looping forever?",
+          "score": 1.0,
+          "stt_ms": 896.9,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "How do you prevent an agent from looping forever?",
+          "score": 1.0,
+          "stt_ms": 890.8,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "How do you prevent an agent from looping forever?",
+          "score": 1.0,
+          "stt_ms": 888.6,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "How do you prevent an agent from looting forever?",
+          "score": 0.9796,
+          "stt_ms": 934.0,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "How do you prevent an agent from looting forever?",
+          "score": 0.9796,
+          "stt_ms": 884.2,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "Do you prevent an agent from looping forever?",
+          "score": 0.9655,
+          "stt_ms": 888.2,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "How do you prevent an agent from looping forever?",
+          "score": 1.0,
+          "stt_ms": 899.5,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        }
+      }
+    },
+    {
+      "sample_id": 133,
+      "file": "audio/Q239_jordanian_synthetic_clean.wav",
+      "question_id": 239,
+      "speaker": "jordanian",
+      "condition": "clean",
+      "expected": "How do you prevent an agent from looping forever",
+      "speech_duration_ms": 3140.6,
+      "best_variant": "denoise",
+      "best_score": 0.9897,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "How do you prevent an agent from looping forever?",
+          "score": 0.9897,
+          "stt_ms": 929.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "How do you prevent an agent from looping forever?",
+          "score": 0.9897,
+          "stt_ms": 907.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "How do you prevent an agent from looping forever?",
+          "score": 0.9897,
+          "stt_ms": 900.4,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "How do you prevent an agent from looping forever?",
+          "score": 0.9897,
+          "stt_ms": 878.5,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "How do you prevent an agent from looping forever?",
+          "score": 0.9897,
+          "stt_ms": 884.9,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "Do you prevent an agent from looping forever?",
+          "score": 0.9247,
+          "stt_ms": 892.8,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "How do you prevent an agent from looping forever?",
+          "score": 0.9897,
+          "stt_ms": 896.2,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        }
+      }
+    },
+    {
+      "sample_id": 139,
+      "file": "audio/Q239_kuwaiti_synthetic_clean.wav",
+      "question_id": 239,
+      "speaker": "kuwaiti",
+      "condition": "clean",
+      "expected": "How do you stop infinite tool loops",
+      "speech_duration_ms": 2769.2,
+      "best_variant": "raw",
+      "best_score": 0.9859,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "How do you stop infinite tool loops?",
+          "score": 0.9859,
+          "stt_ms": 867.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "How do you stop infinite tool loops?",
+          "score": 0.9859,
+          "stt_ms": 882.8,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "How do you stop infinite tool loops?",
+          "score": 0.9859,
+          "stt_ms": 883.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "How do you stop infinite tool loops?",
+          "score": 0.9859,
+          "stt_ms": 909.1,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "How do you stop infinite tool loops?",
+          "score": 0.9859,
+          "stt_ms": 879.8,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "Do you stop infinite dual loops?",
+          "score": 0.806,
+          "stt_ms": 1760.0,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "How do you stop infinite tool loops?",
+          "score": 0.9859,
+          "stt_ms": 891.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        }
+      }
+    },
+    {
+      "sample_id": 145,
+      "file": "audio/Q243_indian_synthetic_clean.wav",
+      "question_id": 243,
+      "speaker": "indian",
+      "condition": "clean",
+      "expected": "How would you debug a bad RAG answer step by step?",
+      "speech_duration_ms": 3300.0,
+      "best_variant": "preroll_pad",
+      "best_score": 0.9286,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "How would you debug about RAG-I-A-G-I-so step-by-step?",
+          "score": 0.7115,
+          "stt_ms": 991.1,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "How would you debug a bad RAGIS a step by step?",
+          "score": 0.9286,
+          "stt_ms": 1020.2,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "How would you debug about RAG-I-A-G-I-so step-by-step?",
+          "score": 0.7115,
+          "stt_ms": 993.6,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "How would you debug a man, RAG-I-A-G-I-S a step-by-step?",
+          "score": 0.7308,
+          "stt_ms": 982.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "How would you debug a man, RAG-I-A-G-I-so step-by-step?",
+          "score": 0.7238,
+          "stt_ms": 1005.8,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "you debug about RAG-I is a step-by-step.",
+          "score": 0.6222,
+          "stt_ms": 995.8,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "How would you debug about RAG-I-A-G-I-so step-by-step?",
+          "score": 0.7115,
+          "stt_ms": 958.5,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        }
+      }
+    },
+    {
+      "sample_id": 151,
+      "file": "audio/Q243_jordanian_synthetic_clean.wav",
+      "question_id": 243,
+      "speaker": "jordanian",
+      "condition": "clean",
+      "expected": "How would you debug a bad rag answer step by step",
+      "speech_duration_ms": 3247.6,
+      "best_variant": "vad_crop_preroll",
+      "best_score": 0.9524,
+      "combo_hurts": false,
+      "raw_beats_combo": true,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "How would you debug a bad RAG answer step by step?",
+          "score": 0.9524,
+          "stt_ms": 917.1,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "How would you debug a bad RAG answer step by step?",
+          "score": 0.9524,
+          "stt_ms": 909.7,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "How would you debug a bad RAG answer step by step?",
+          "score": 0.9524,
+          "stt_ms": 925.2,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "How will you debug a bad RAG answer step by step?",
+          "score": 0.8718,
+          "stt_ms": 897.4,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "How will you debug a bad RAG answer step by step?",
+          "score": 0.8718,
+          "stt_ms": 910.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "you debug a bad RAG and search step by step.",
+          "score": 0.7045,
+          "stt_ms": 929.5,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "How would you debug a bad RAG answer step by step?",
+          "score": 0.9524,
+          "stt_ms": 905.9,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        }
+      }
+    },
+    {
+      "sample_id": 157,
+      "file": "audio/Q243_kuwaiti_synthetic_clean.wav",
+      "question_id": 243,
+      "speaker": "kuwaiti",
+      "condition": "clean",
+      "expected": "Walk me through debugging a wrong rag answer",
+      "speech_duration_ms": 2677.5,
+      "best_variant": "vad_crop",
+      "best_score": 0.8706,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "walk me through debugging a wrong-rog answer.",
+          "score": 0.8315,
+          "stt_ms": 879.2,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "Walk me through debugging a Ronrag answer.",
+          "score": 0.814,
+          "stt_ms": 907.7,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "walk me through debugging a wrong-rog answer.",
+          "score": 0.8315,
+          "stt_ms": 910.4,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "walk me through debugging a wrong-rog answer.",
+          "score": 0.8315,
+          "stt_ms": 906.4,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "walk me through debugging a wrong rock answer.",
+          "score": 0.8444,
+          "stt_ms": 878.7,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "me through debugging a wrong rock answer.",
+          "score": 0.8706,
+          "stt_ms": 1771.0,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "walk me through debugging a wrong-rog answer.",
+          "score": 0.8315,
+          "stt_ms": 907.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        }
+      }
+    },
+    {
+      "sample_id": 163,
+      "file": "audio/Q275_indian_synthetic_clean.wav",
+      "question_id": 275,
+      "speaker": "indian",
+      "condition": "clean",
+      "expected": "What should the system do when retrieval returns nothing useful?",
+      "speech_duration_ms": 3638.2,
+      "best_variant": "normalize",
+      "best_score": 1.0,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "What should the system do when retrieval returns nothing useful?",
+          "score": 1.0,
+          "stt_ms": 911.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "What should the system do when retrieval returns nothing useful?",
+          "score": 1.0,
+          "stt_ms": 938.7,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "What should the system do when retrieval returns nothing useful?",
+          "score": 1.0,
+          "stt_ms": 898.6,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "What should the system do when retrieval returns nothing useful?",
+          "score": 1.0,
+          "stt_ms": 917.4,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "What should the system do when retrieval returns nothing useful?",
+          "score": 1.0,
+          "stt_ms": 924.8,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "Should the system do when retrieval returns nothing useful?",
+          "score": 0.9431,
+          "stt_ms": 916.7,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "What should the system do when retrieval returns nothing useful?",
+          "score": 1.0,
+          "stt_ms": 922.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        }
+      }
+    },
+    {
+      "sample_id": 169,
+      "file": "audio/Q275_jordanian_synthetic_clean.wav",
+      "question_id": 275,
+      "speaker": "jordanian",
+      "condition": "clean",
+      "expected": "Empty retrieval",
+      "speech_duration_ms": 1435.6,
+      "best_variant": "preroll_pad",
+      "best_score": 1.0,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "Empty retrieval.",
+          "score": 0.9677,
+          "stt_ms": 1718.5,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "Empty retrieval",
+          "score": 1.0,
+          "stt_ms": 1686.8,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "Empty retrieval.",
+          "score": 0.9677,
+          "stt_ms": 1703.3,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "Empty retrieval.",
+          "score": 0.9677,
+          "stt_ms": 1739.6,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "Empty retrieval.",
+          "score": 0.9677,
+          "stt_ms": 1693.1,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "a retrieval.",
+          "score": 0.7407,
+          "stt_ms": 1648.3,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": false
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "Empty retrieval.",
+          "score": 0.9677,
+          "stt_ms": 1714.2,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        }
+      }
+    },
+    {
+      "sample_id": 175,
+      "file": "audio/Q275_kuwaiti_synthetic_clean.wav",
+      "question_id": 275,
+      "speaker": "kuwaiti",
+      "condition": "clean",
+      "expected": "No chunks found",
+      "speech_duration_ms": 1588.9,
+      "best_variant": "denoise",
+      "best_score": 0.9677,
+      "combo_hurts": false,
+      "raw_beats_combo": false,
+      "variants": {
+        "raw": {
+          "variant": "raw",
+          "transcript": "No chunks found.",
+          "score": 0.9677,
+          "stt_ms": 1732.7,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "preroll_pad": {
+          "variant": "preroll_pad",
+          "transcript": "No chunks found.",
+          "score": 0.9677,
+          "stt_ms": 1692.6,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "normalize": {
+          "variant": "normalize",
+          "transcript": "No chunks found.",
+          "score": 0.9677,
+          "stt_ms": 1688.1,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "denoise": {
+          "variant": "denoise",
+          "transcript": "No chunks found.",
+          "score": 0.9677,
+          "stt_ms": 1662.2,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "combo": {
+          "variant": "combo",
+          "transcript": "No chunks found.",
+          "score": 0.9677,
+          "stt_ms": 1714.6,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop": {
+          "variant": "vad_crop",
+          "transcript": "chunks found.",
+          "score": 0.8571,
+          "stt_ms": 1664.3,
+          "first_word_missing": true,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        },
+        "vad_crop_preroll": {
+          "variant": "vad_crop_preroll",
+          "transcript": "No chunks found.",
+          "score": 0.9677,
+          "stt_ms": 1666.9,
+          "first_word_missing": false,
+          "last_word_missing": false,
+          "hallucinated_tech_term": false,
+          "accurate_pass": true
+        }
+      }
+    }
+  ]
+}

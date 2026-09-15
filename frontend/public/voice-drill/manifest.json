@@ -1,0 +1,53 @@
+{
+  "voice": "en-US-GuyNeural",
+  "clips": [
+    {
+      "id": "q01_intro",
+      "file": "clips/q01_intro.mp3",
+      "text": "Please introduce yourself briefly, and tell me about the AI work you are doing now.",
+      "suggested_effect": "clean"
+    },
+    {
+      "id": "q02_rag",
+      "file": "clips/q02_rag.mp3",
+      "text": "What is RAG, and why did you use it for BTEC questions?",
+      "suggested_effect": "noise"
+    },
+    {
+      "id": "q03_similarity",
+      "file": "clips/q03_similarity.mp3",
+      "text": "Is the similarity checker a RAG system? Why or why not?",
+      "suggested_effect": "distant"
+    },
+    {
+      "id": "q04_agentic",
+      "file": "clips/q04_agentic.mp3",
+      "text": "What is Agentic AI, and which of your projects used it?",
+      "suggested_effect": "muffled"
+    },
+    {
+      "id": "q05_langgraph",
+      "file": "clips/q05_langgraph.mp3",
+      "text": "Have you used LangGraph in production? What did you use instead?",
+      "suggested_effect": "noise"
+    },
+    {
+      "id": "q06_recall",
+      "file": "clips/q06_recall.mp3",
+      "text": "Why did you use Recall, not Accuracy, in the early-warning project?",
+      "suggested_effect": "distant"
+    },
+    {
+      "id": "q07_whisper",
+      "file": "clips/q07_whisper.mp3",
+      "text": "How does Whisper fit in your kiosk project? Did you use an LLM there?",
+      "suggested_effect": "muffled"
+    },
+    {
+      "id": "q08_school",
+      "file": "clips/q08_school.mp3",
+      "text": "How do you stop School A from seeing School B documents in search?",
+      "suggested_effect": "noise"
+    }
+  ]
+}

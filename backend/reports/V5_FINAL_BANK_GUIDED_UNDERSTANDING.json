@@ -1,0 +1,3065 @@
+{
+  "verdict": "BANK_GUIDED_INTERVIEW_READY",
+  "blockers": [],
+  "n": 91,
+  "pass_rate": 0.9451,
+  "bank_match_accuracy": 0.9405,
+  "technical_term_recovery": "delegated_to_SHORT_TECH",
+  "acronym_recovery": 1.0,
+  "phrase_recovery": 1.0,
+  "personal_question_accuracy": 0.9091,
+  "AI_question_accuracy": 0.8235,
+  "project_question_accuracy": 1.0,
+  "indirect_accuracy": 0.6667,
+  "short_accuracy": 0.9286,
+  "long_accuracy": 0.0,
+  "false_corrections": 0,
+  "HC_wrong": 0,
+  "latency_delta_ms_avg": 2732.74,
+  "by_bucket": {
+    "acronym": {
+      "n": 4,
+      "ok": 4,
+      "rate": 1.0
+    },
+    "phrase": {
+      "n": 2,
+      "ok": 2,
+      "rate": 1.0
+    },
+    "personal": {
+      "n": 11,
+      "ok": 10,
+      "rate": 0.9091
+    },
+    "technical": {
+      "n": 17,
+      "ok": 14,
+      "rate": 0.8235
+    },
+    "project": {
+      "n": 8,
+      "ok": 8,
+      "rate": 1.0
+    },
+    "business": {
+      "n": 5,
+      "ok": 5,
+      "rate": 1.0
+    },
+    "long": {
+      "n": 1,
+      "ok": 0,
+      "rate": 0.0
+    },
+    "indirect": {
+      "n": 1,
+      "ok": 1,
+      "rate": 1.0
+    },
+    "negative": {
+      "n": 2,
+      "ok": 2,
+      "rate": 1.0
+    },
+    "clean": {
+      "n": 40,
+      "ok": 40,
+      "rate": 1.0
+    }
+  },
+  "elapsed_ms": 248682.0,
+  "note": "Evaluation uses bank-guided understand\u2192match path. Accent labels are STT corruption proxies. Offline expansion draft: V5_BANK_EXPANSION_DRAFT.json",
+  "cases": [
+    {
+      "id": "BG_lalam",
+      "bucket": "acronym",
+      "style": "short",
+      "accent": "indian",
+      "raw": "What is the Lalam?",
+      "recovered": "What is the LLM?",
+      "canonical": "What is a large language model?",
+      "guided_intent": "tech.what_is_llm",
+      "matched_intent": "tech.what_is_llm",
+      "confidence": 1.0,
+      "ambiguous": false,
+      "margin": 0.219,
+      "candidates": [
+        {
+          "intent_id": "tech.what_is_llm",
+          "combined": 1.0
+        },
+        {
+          "intent_id": "tech.tokens",
+          "combined": 0.781
+        },
+        {
+          "intent_id": "tech.temperature",
+          "combined": 0.751
+        }
+      ],
+      "gold_ids": [
+        "tech.what_is_llm"
+      ],
+      "pass": true,
+      "ms": 4060.61
+    },
+    {
+      "id": "BG_lalam2",
+      "bucket": "acronym",
+      "style": "short",
+      "accent": "jordanian",
+      "raw": "What is Lalam?",
+      "recovered": "What is LLM?",
+      "canonical": "What is a large language model?",
+      "guided_intent": "tech.what_is_llm",
+      "matched_intent": "tech.what_is_llm",
+      "confidence": 1.0,
+      "ambiguous": false,
+      "margin": 0.231,
+      "candidates": [
+        {
+          "intent_id": "tech.what_is_llm",
+          "combined": 1.0
+        },
+        {
+          "intent_id": "tech.tokens",
+          "combined": 0.769
+        },
+        {
+          "intent_id": "tech.temperature",
+          "combined": 0.738
+        }
+      ],
+      "gold_ids": [
+        "tech.what_is_llm"
+      ],
+      "pass": true,
+      "ms": 3725.44
+    },
+    {
+      "id": "BG_el_el_em",
+      "bucket": "acronym",
+      "style": "short",
+      "accent": "emirati",
+      "raw": "What is el el em?",
+      "recovered": "What is LLM?",
+      "canonical": "What is a large language model?",
+      "guided_intent": "tech.what_is_llm",
+      "matched_intent": "tech.what_is_llm",
+      "confidence": 1.0,
+      "ambiguous": false,
+      "margin": 0.231,
+      "candidates": [
+        {
+          "intent_id": "tech.what_is_llm",
+          "combined": 1.0
+        },
+        {
+          "intent_id": "tech.tokens",
+          "combined": 0.769
+        },
+        {
+          "intent_id": "tech.temperature",
+          "combined": 0.738
+        }
+      ],
+      "gold_ids": [
+        "tech.what_is_llm"
+      ],
+      "pass": true,
+      "ms": 3784.92
+    },
+    {
+      "id": "BG_llm_clean",
+      "bucket": "acronym",
+      "style": "short",
+      "accent": "indian",
+      "raw": "What is LLM?",
+      "recovered": "What is LLM?",
+      "canonical": "What is a large language model?",
+      "guided_intent": "tech.what_is_llm",
+      "matched_intent": "tech.what_is_llm",
+      "confidence": 0.96,
+      "ambiguous": false,
+      "margin": 0.221,
+      "candidates": [
+        {
+          "intent_id": "tech.what_is_llm",
+          "combined": 0.96
+        },
+        {
+          "intent_id": "tech.tokens",
+          "combined": 0.739
+        },
+        {
+          "intent_id": "tech.temperature",
+          "combined": 0.708
+        }
+      ],
+      "gold_ids": [
+        "tech.what_is_llm"
+      ],
+      "pass": true,
+      "ms": 1778.4
+    },
+    {
+      "id": "BG_and_you_plan",
+      "bucket": "phrase",
+      "style": "short",
+      "accent": "indian",
+      "raw": "and you plan your project",
+      "recovered": "Explain your project",
+      "canonical": "What projects have you worked on?",
+      "guided_intent": "cv.projects_overview",
+      "matched_intent": "cv.projects_overview",
+      "confidence": 0.89,
+      "ambiguous": false,
+      "margin": 0.224,
+      "candidates": [
+        {
+          "intent_id": "cv.projects_overview",
+          "combined": 0.89
+        },
+        {
+          "intent_id": "tech.model_drift",
+          "combined": 0.666
+        },
+        {
+          "intent_id": "tech.rag_what",
+          "combined": 0.659
+        }
+      ],
+      "gold_ids": [
+        "cv.projects_overview"
+      ],
+      "pass": true,
+      "ms": 2535.71
+    },
+    {
+      "id": "BG_how_plan_project",
+      "bucket": "phrase",
+      "style": "short",
+      "accent": "jordanian",
+      "raw": "How do you plan your project?",
+      "recovered": "How do you plan your project?",
+      "canonical": "How do you plan your project?",
+      "guided_intent": null,
+      "matched_intent": null,
+      "confidence": 0.62,
+      "ambiguous": true,
+      "margin": 0.045,
+      "candidates": [
+        {
+          "intent_id": "gen.prioritize",
+          "combined": 0.62
+        },
+        {
+          "intent_id": "cv.projects_overview",
+          "combined": 0.575
+        },
+        {
+          "intent_id": "tech.explain_ai_project_structure",
+          "combined": 0.524
+        }
+      ],
+      "gold_ids": [],
+      "pass": true,
+      "ms": 2220.54
+    },
+    {
+      "id": "BG_how_plan_work",
+      "bucket": "personal",
+      "style": "direct",
+      "accent": "emirati",
+      "raw": "How do you prioritize your work?",
+      "recovered": "How do you prioritize your work?",
+      "canonical": "How do you prioritize your work?",
+      "guided_intent": "gen.prioritize",
+      "matched_intent": "gen.prioritize",
+      "confidence": 0.98,
+      "ambiguous": false,
+      "margin": 0.403,
+      "candidates": [
+        {
+          "intent_id": "gen.prioritize",
+          "combined": 0.98
+        },
+        {
+          "intent_id": "gen.teamwork",
+          "combined": 0.577
+        },
+        {
+          "intent_id": "tech.what_is_transformer",
+          "combined": 0.574
+        }
+      ],
+      "gold_ids": [
+        "gen.prioritize"
+      ],
+      "pass": true,
+      "ms": 1842.17
+    },
+    {
+      "id": "BG_ai_0",
+      "bucket": "technical",
+      "style": "short",
+      "accent": "indian",
+      "raw": "What is RAG?",
+      "recovered": "What is RAG?",
+      "canonical": "What is RAG?",
+      "guided_intent": "tech.rag_what",
+      "matched_intent": "tech.rag_what",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.252,
+      "candidates": [
+        {
+          "intent_id": "tech.rag_what",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "tech.faithfulness_check",
+          "combined": 0.723
+        },
+        {
+          "intent_id": "tech.ragas",
+          "combined": 0.67
+        }
+      ],
+      "gold_ids": [
+        "tech.rag_what"
+      ],
+      "pass": true,
+      "ms": 1686.12
+    },
+    {
+      "id": "BG_ai_1",
+      "bucket": "technical",
+      "style": "short",
+      "accent": "jordanian",
+      "raw": "What is are a g?",
+      "recovered": "What is RAG?",
+      "canonical": "What is RAG?",
+      "guided_intent": "tech.rag_what",
+      "matched_intent": "tech.rag_what",
+      "confidence": 1.0,
+      "ambiguous": false,
+      "margin": 0.247,
+      "candidates": [
+        {
+          "intent_id": "tech.rag_what",
+          "combined": 1.0
+        },
+        {
+          "intent_id": "tech.faithfulness_check",
+          "combined": 0.753
+        },
+        {
+          "intent_id": "tech.ragas",
+          "combined": 0.7
+        }
+      ],
+      "gold_ids": [
+        "tech.rag_what"
+      ],
+      "pass": true,
+      "ms": 3594.48
+    },
+    {
+      "id": "BG_ai_2",
+      "bucket": "technical",
+      "style": "short",
+      "accent": "emirati",
+      "raw": "Why am bedding?",
+      "recovered": "Why embeddings?",
+      "canonical": "Why embeddings?",
+      "guided_intent": null,
+      "matched_intent": "tech.tfidf_vs_embeddings",
+      "confidence": 0.681,
+      "ambiguous": true,
+      "margin": 0.006,
+      "candidates": [
+        {
+          "intent_id": "tech.tfidf_vs_embeddings",
+          "combined": 0.681
+        },
+        {
+          "intent_id": "tech.redis_why",
+          "combined": 0.675
+        },
+        {
+          "intent_id": "gen.why_ai_field",
+          "combined": 0.64
+        }
+      ],
+      "gold_ids": [
+        "tech.embeddings"
+      ],
+      "pass": false,
+      "ms": 2905.36
+    },
+    {
+      "id": "BG_ai_3",
+      "bucket": "technical",
+      "style": "short",
+      "accent": "indian",
+      "raw": "What are embeddings?",
+      "recovered": "What are embeddings?",
+      "canonical": "What are embeddings?",
+      "guided_intent": "tech.embeddings",
+      "matched_intent": "tech.embeddings",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.375,
+      "candidates": [
+        {
+          "intent_id": "tech.embeddings",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "tech.tokens",
+          "combined": 0.6
+        },
+        {
+          "intent_id": "hard.pii_in_chunks",
+          "combined": 0.599
+        }
+      ],
+      "gold_ids": [
+        "tech.embeddings"
+      ],
+      "pass": true,
+      "ms": 1942.95
+    },
+    {
+      "id": "BG_ai_4",
+      "bucket": "technical",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "What is LangChain?",
+      "recovered": "What is LangChain?",
+      "canonical": "What is LangChain?",
+      "guided_intent": "tech.what_is_langchain",
+      "matched_intent": "tech.what_is_langchain",
+      "confidence": 0.855,
+      "ambiguous": false,
+      "margin": 0.295,
+      "candidates": [
+        {
+          "intent_id": "tech.what_is_langchain",
+          "combined": 0.855
+        },
+        {
+          "intent_id": "cv.langchain",
+          "combined": 0.56
+        },
+        {
+          "intent_id": "tech.what_is_langgraph",
+          "combined": 0.559
+        }
+      ],
+      "gold_ids": [
+        "tech.what_is_langchain"
+      ],
+      "pass": true,
+      "ms": 1836.65
+    },
+    {
+      "id": "BG_ai_5",
+      "bucket": "technical",
+      "style": "indirect",
+      "accent": "indian",
+      "raw": "What did Lankan give you that you would otherwise need to build yourself?",
+      "recovered": "What did LangChain give you that you would otherwise need to build yourself?",
+      "canonical": "What did LangChain give you that you would otherwise need to build yourself?",
+      "guided_intent": null,
+      "matched_intent": "cv.langchain",
+      "confidence": 0.566,
+      "ambiguous": true,
+      "margin": 0.013,
+      "candidates": [
+        {
+          "intent_id": "cv.langchain",
+          "combined": 0.566
+        },
+        {
+          "intent_id": "hard.production_monitoring",
+          "combined": 0.553
+        },
+        {
+          "intent_id": "hard.evaluate_rag",
+          "combined": 0.55
+        }
+      ],
+      "gold_ids": [
+        "tech.what_is_langchain"
+      ],
+      "pass": false,
+      "ms": 7340.83
+    },
+    {
+      "id": "BG_ai_6",
+      "bucket": "technical",
+      "style": "short",
+      "accent": "emirati",
+      "raw": "Why LangGraph?",
+      "recovered": "Why LangGraph?",
+      "canonical": "Why LangGraph?",
+      "guided_intent": null,
+      "matched_intent": "cv.langgraph",
+      "confidence": 0.674,
+      "ambiguous": true,
+      "margin": 0.06,
+      "candidates": [
+        {
+          "intent_id": "tech.langgraph_vs_langchain",
+          "combined": 0.674
+        },
+        {
+          "intent_id": "gen.why_ai_field",
+          "combined": 0.613
+        },
+        {
+          "intent_id": "tech.redis_why",
+          "combined": 0.608
+        }
+      ],
+      "gold_ids": [
+        "cv.langgraph"
+      ],
+      "pass": true,
+      "ms": 1143.91
+    },
+    {
+      "id": "BG_ai_7",
+      "bucket": "technical",
+      "style": "short",
+      "accent": "jordanian",
+      "raw": "Whyland draft here.",
+      "recovered": "Why LangGraph here?",
+      "canonical": "Why LangGraph here?",
+      "guided_intent": null,
+      "matched_intent": "cv.langgraph",
+      "confidence": 0.686,
+      "ambiguous": true,
+      "margin": 0.075,
+      "candidates": [
+        {
+          "intent_id": "tech.langgraph_vs_langchain",
+          "combined": 0.686
+        },
+        {
+          "intent_id": "tech.conflict_of_interest_scenario",
+          "combined": 0.611
+        },
+        {
+          "intent_id": "cv.why_hire_you",
+          "combined": 0.61
+        }
+      ],
+      "gold_ids": [
+        "cv.langgraph"
+      ],
+      "pass": true,
+      "ms": 2937.71
+    },
+    {
+      "id": "BG_ai_8",
+      "bucket": "technical",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "What is agentic AI?",
+      "recovered": "What is agentic AI?",
+      "canonical": "What is agentic AI?",
+      "guided_intent": "tech.agentic_what",
+      "matched_intent": "tech.agentic_what",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.301,
+      "candidates": [
+        {
+          "intent_id": "tech.agentic_what",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "cv.agentic_experience",
+          "combined": 0.674
+        },
+        {
+          "intent_id": "tech.agent_orchestrator",
+          "combined": 0.642
+        }
+      ],
+      "gold_ids": [
+        "tech.agentic_what"
+      ],
+      "pass": true,
+      "ms": 2004.21
+    },
+    {
+      "id": "BG_ai_9",
+      "bucket": "technical",
+      "style": "direct",
+      "accent": "emirati",
+      "raw": "What is hallucination?",
+      "recovered": "What is hallucination?",
+      "canonical": "What is hallucination and why does it happen?",
+      "guided_intent": "tech.hallucination_what",
+      "matched_intent": "tech.hallucination_what",
+      "confidence": 0.96,
+      "ambiguous": false,
+      "margin": 0.397,
+      "candidates": [
+        {
+          "intent_id": "tech.hallucination_what",
+          "combined": 0.96
+        },
+        {
+          "intent_id": "tech.what_is_llm",
+          "combined": 0.563
+        },
+        {
+          "intent_id": "hard.production_monitoring",
+          "combined": 0.546
+        }
+      ],
+      "gold_ids": [
+        "tech.hallucination_what"
+      ],
+      "pass": true,
+      "ms": 1992.23
+    },
+    {
+      "id": "BG_ai_10",
+      "bucket": "technical",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "What are guardrails?",
+      "recovered": "What are guardrails?",
+      "canonical": "What are guardrails?",
+      "guided_intent": "tech.guardrails_what",
+      "matched_intent": "tech.guardrails_what",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.252,
+      "candidates": [
+        {
+          "intent_id": "tech.guardrails_what",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "tech.guardrails_layers",
+          "combined": 0.723
+        },
+        {
+          "intent_id": "tech.guardrails_how",
+          "combined": 0.665
+        }
+      ],
+      "gold_ids": [
+        "tech.guardrails_what"
+      ],
+      "pass": true,
+      "ms": 1942.65
+    },
+    {
+      "id": "BG_ai_11",
+      "bucket": "technical",
+      "style": "direct",
+      "accent": "emirati",
+      "raw": "What is a vector database?",
+      "recovered": "What is a vector database?",
+      "canonical": "What is a vector database?",
+      "guided_intent": null,
+      "matched_intent": "cv.vector_db",
+      "confidence": 0.77,
+      "ambiguous": true,
+      "margin": 0.06,
+      "candidates": [
+        {
+          "intent_id": "tech.vector_db_choice",
+          "combined": 0.77
+        },
+        {
+          "intent_id": "tech.embeddings",
+          "combined": 0.71
+        },
+        {
+          "intent_id": "hard.why_not_chroma_prod",
+          "combined": 0.661
+        }
+      ],
+      "gold_ids": [
+        "tech.vector_db_choice"
+      ],
+      "pass": false,
+      "ms": 2160.18
+    },
+    {
+      "id": "BG_ai_12",
+      "bucket": "technical",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "What does a vector database store?",
+      "recovered": "What does a vector database store?",
+      "canonical": "What does a vector database store?",
+      "guided_intent": null,
+      "matched_intent": "cv.vector_db",
+      "confidence": 0.74,
+      "ambiguous": true,
+      "margin": 0.067,
+      "candidates": [
+        {
+          "intent_id": "tech.vector_db_choice",
+          "combined": 0.74
+        },
+        {
+          "intent_id": "cv.vector_db",
+          "combined": 0.673
+        },
+        {
+          "intent_id": "hard.why_not_chroma_prod",
+          "combined": 0.653
+        }
+      ],
+      "gold_ids": [
+        "cv.vector_db"
+      ],
+      "pass": true,
+      "ms": 2434.91
+    },
+    {
+      "id": "BG_ai_13",
+      "bucket": "technical",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "Why did you use RAG?",
+      "recovered": "Why did you use RAG?",
+      "canonical": "Why did you use RAG?",
+      "guided_intent": null,
+      "matched_intent": "proj.similarity.is_rag",
+      "confidence": 0.746,
+      "ambiguous": true,
+      "margin": 0.091,
+      "candidates": [
+        {
+          "intent_id": "hard.why_rag_for_btec",
+          "combined": 0.746
+        },
+        {
+          "intent_id": "proj.early_warning.metric",
+          "combined": 0.654
+        },
+        {
+          "intent_id": "cv.chromadb",
+          "combined": 0.609
+        }
+      ],
+      "gold_ids": [
+        "proj.similarity.is_rag"
+      ],
+      "pass": true,
+      "ms": 1729.38
+    },
+    {
+      "id": "BG_ai_14",
+      "bucket": "technical",
+      "style": "short",
+      "accent": "emirati",
+      "raw": "why did you use rack",
+      "recovered": "why did you use RAG",
+      "canonical": "why did you use RAG",
+      "guided_intent": null,
+      "matched_intent": "proj.similarity.is_rag",
+      "confidence": 0.776,
+      "ambiguous": true,
+      "margin": 0.091,
+      "candidates": [
+        {
+          "intent_id": "hard.why_rag_for_btec",
+          "combined": 0.776
+        },
+        {
+          "intent_id": "proj.early_warning.metric",
+          "combined": 0.684
+        },
+        {
+          "intent_id": "cv.chromadb",
+          "combined": 0.639
+        }
+      ],
+      "gold_ids": [
+        "proj.similarity.is_rag"
+      ],
+      "pass": true,
+      "ms": 3288.82
+    },
+    {
+      "id": "BG_ai_15",
+      "bucket": "technical",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "What is Whisper?",
+      "recovered": "What is Whisper?",
+      "canonical": "What is Whisper?",
+      "guided_intent": "tech.what_is_whisper",
+      "matched_intent": "tech.what_is_whisper",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.354,
+      "candidates": [
+        {
+          "intent_id": "tech.what_is_whisper",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "proj.kiosk.describe",
+          "combined": 0.621
+        },
+        {
+          "intent_id": "cv.whisper_experience",
+          "combined": 0.576
+        }
+      ],
+      "gold_ids": [
+        "tech.what_is_whisper"
+      ],
+      "pass": true,
+      "ms": 1823.47
+    },
+    {
+      "id": "BG_ai_16",
+      "bucket": "technical",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "How does STT work?",
+      "recovered": "How does STT work?",
+      "canonical": "How does STT work?",
+      "guided_intent": null,
+      "matched_intent": "tech.how_stt_works",
+      "confidence": 0.608,
+      "ambiguous": true,
+      "margin": 0.002,
+      "candidates": [
+        {
+          "intent_id": "tech.how_llm_works",
+          "combined": 0.608
+        },
+        {
+          "intent_id": "tech.rag_build",
+          "combined": 0.607
+        },
+        {
+          "intent_id": "tech.lora",
+          "combined": 0.604
+        }
+      ],
+      "gold_ids": [
+        "tech.how_stt_works"
+      ],
+      "pass": true,
+      "ms": 1759.33
+    },
+    {
+      "id": "BG_proj_0",
+      "bucket": "project",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "Explain your project",
+      "recovered": "Explain your project",
+      "canonical": "What projects have you worked on?",
+      "guided_intent": "cv.projects_overview",
+      "matched_intent": "cv.projects_overview",
+      "confidence": 0.86,
+      "ambiguous": false,
+      "margin": 0.224,
+      "candidates": [
+        {
+          "intent_id": "cv.projects_overview",
+          "combined": 0.86
+        },
+        {
+          "intent_id": "tech.model_drift",
+          "combined": 0.636
+        },
+        {
+          "intent_id": "tech.rag_what",
+          "combined": 0.629
+        }
+      ],
+      "gold_ids": [
+        "cv.projects_overview"
+      ],
+      "pass": true,
+      "ms": 1344.58
+    },
+    {
+      "id": "BG_proj_1",
+      "bucket": "project",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "Tell me about your project",
+      "recovered": "Tell me about your project",
+      "canonical": "What projects have you worked on?",
+      "guided_intent": "cv.projects_overview",
+      "matched_intent": "cv.projects_overview",
+      "confidence": 0.84,
+      "ambiguous": false,
+      "margin": 0.273,
+      "candidates": [
+        {
+          "intent_id": "cv.projects_overview",
+          "combined": 0.84
+        },
+        {
+          "intent_id": "gen.teamwork",
+          "combined": 0.567
+        },
+        {
+          "intent_id": "gen.conflict",
+          "combined": 0.566
+        }
+      ],
+      "gold_ids": [
+        "cv.projects_overview"
+      ],
+      "pass": true,
+      "ms": 1422.07
+    },
+    {
+      "id": "BG_proj_2",
+      "bucket": "project",
+      "style": "direct",
+      "accent": "emirati",
+      "raw": "Walk me through your project",
+      "recovered": "Walk me through your project",
+      "canonical": "What projects have you worked on?",
+      "guided_intent": "cv.projects_overview",
+      "matched_intent": "cv.projects_overview",
+      "confidence": 0.84,
+      "ambiguous": false,
+      "margin": 0.233,
+      "candidates": [
+        {
+          "intent_id": "cv.projects_overview",
+          "combined": 0.84
+        },
+        {
+          "intent_id": "gen.strengths",
+          "combined": 0.607
+        },
+        {
+          "intent_id": "intro.tell_me_about_yourself",
+          "combined": 0.599
+        }
+      ],
+      "gold_ids": [
+        "cv.projects_overview"
+      ],
+      "pass": true,
+      "ms": 1752.8
+    },
+    {
+      "id": "BG_proj_3",
+      "bucket": "project",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "What projects have you worked on?",
+      "recovered": "What projects have you worked on?",
+      "canonical": "What projects have you worked on?",
+      "guided_intent": "cv.projects_overview",
+      "matched_intent": "cv.projects_overview",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.274,
+      "candidates": [
+        {
+          "intent_id": "cv.projects_overview",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "cv.kuwait_projects",
+          "combined": 0.701
+        },
+        {
+          "intent_id": "cv.nlp_experience",
+          "combined": 0.619
+        }
+      ],
+      "gold_ids": [
+        "cv.projects_overview"
+      ],
+      "pass": true,
+      "ms": 2614.28
+    },
+    {
+      "id": "BG_proj_4",
+      "bucket": "project",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "What was your role?",
+      "recovered": "What was your role?",
+      "canonical": "What was your role?",
+      "guided_intent": null,
+      "matched_intent": "proj.similarity.role",
+      "confidence": 0.565,
+      "ambiguous": true,
+      "margin": 0.014,
+      "candidates": [
+        {
+          "intent_id": "intro.current_role",
+          "combined": 0.565
+        },
+        {
+          "intent_id": "proj.helpdesk.tech",
+          "combined": 0.551
+        },
+        {
+          "intent_id": "proj.similarity.role",
+          "combined": 0.551
+        }
+      ],
+      "gold_ids": [
+        "proj.similarity.role"
+      ],
+      "pass": true,
+      "ms": 1979.99
+    },
+    {
+      "id": "BG_proj_5",
+      "bucket": "project",
+      "style": "direct",
+      "accent": "emirati",
+      "raw": "what was your roll",
+      "recovered": "What was your role?",
+      "canonical": "What was your role?",
+      "guided_intent": null,
+      "matched_intent": "proj.similarity.role",
+      "confidence": 0.595,
+      "ambiguous": true,
+      "margin": 0.014,
+      "candidates": [
+        {
+          "intent_id": "intro.current_role",
+          "combined": 0.595
+        },
+        {
+          "intent_id": "proj.helpdesk.tech",
+          "combined": 0.581
+        },
+        {
+          "intent_id": "proj.similarity.role",
+          "combined": 0.581
+        }
+      ],
+      "gold_ids": [
+        "proj.similarity.role"
+      ],
+      "pass": true,
+      "ms": 3928.8
+    },
+    {
+      "id": "BG_proj_6",
+      "bucket": "project",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "What challenges did you face?",
+      "recovered": "What challenges did you face?",
+      "canonical": "What challenges did you face?",
+      "guided_intent": null,
+      "matched_intent": "proj.similarity.challenges",
+      "confidence": 0.775,
+      "ambiguous": true,
+      "margin": 0.024,
+      "candidates": [
+        {
+          "intent_id": "proj.similarity.challenges",
+          "combined": 0.775
+        },
+        {
+          "intent_id": "proj.kiosk.challenges",
+          "combined": 0.751
+        },
+        {
+          "intent_id": "gen.biggest_challenge_career",
+          "combined": 0.49
+        }
+      ],
+      "gold_ids": [
+        "proj.similarity.challenges"
+      ],
+      "pass": true,
+      "ms": 2140.2
+    },
+    {
+      "id": "BG_proj_7",
+      "bucket": "project",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "What is your most recent project?",
+      "recovered": "What is your most recent project?",
+      "canonical": "What is your most recent project?",
+      "guided_intent": "cv.projects.most_recent",
+      "matched_intent": "cv.projects.most_recent",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.412,
+      "candidates": [
+        {
+          "intent_id": "cv.projects.most_recent",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "cv.projects.most_proud",
+          "combined": 0.563
+        },
+        {
+          "intent_id": "proj.completion_risk.tech",
+          "combined": 0.506
+        }
+      ],
+      "gold_ids": [
+        "cv.projects.most_recent"
+      ],
+      "pass": true,
+      "ms": 2948.35
+    },
+    {
+      "id": "BG_hr_0",
+      "bucket": "personal",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "Tell me about yourself",
+      "recovered": "Tell me about yourself",
+      "canonical": "Tell me about yourself",
+      "guided_intent": "intro.tell_me_about_yourself",
+      "matched_intent": "intro.tell_me_about_yourself",
+      "confidence": 0.98,
+      "ambiguous": false,
+      "margin": 0.427,
+      "candidates": [
+        {
+          "intent_id": "intro.tell_me_about_yourself",
+          "combined": 0.98
+        },
+        {
+          "intent_id": "cv.education",
+          "combined": 0.553
+        },
+        {
+          "intent_id": "gen.three_words",
+          "combined": 0.55
+        }
+      ],
+      "gold_ids": [
+        "intro.tell_me_about_yourself"
+      ],
+      "pass": true,
+      "ms": 1119.26
+    },
+    {
+      "id": "BG_hr_1",
+      "bucket": "personal",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "tell me a boat yourself",
+      "recovered": "Tell me about yourself",
+      "canonical": "Tell me about yourself",
+      "guided_intent": "intro.tell_me_about_yourself",
+      "matched_intent": "intro.tell_me_about_yourself",
+      "confidence": 1.0,
+      "ambiguous": false,
+      "margin": 0.417,
+      "candidates": [
+        {
+          "intent_id": "intro.tell_me_about_yourself",
+          "combined": 1.0
+        },
+        {
+          "intent_id": "cv.education",
+          "combined": 0.583
+        },
+        {
+          "intent_id": "gen.three_words",
+          "combined": 0.58
+        }
+      ],
+      "gold_ids": [
+        "intro.tell_me_about_yourself"
+      ],
+      "pass": true,
+      "ms": 2718.47
+    },
+    {
+      "id": "BG_hr_2",
+      "bucket": "personal",
+      "style": "direct",
+      "accent": "emirati",
+      "raw": "Why should we hire you?",
+      "recovered": "Why should we hire you?",
+      "canonical": "Why should we hire you?",
+      "guided_intent": "cv.why_hire_you",
+      "matched_intent": "cv.why_hire_you",
+      "confidence": 0.935,
+      "ambiguous": false,
+      "margin": 0.328,
+      "candidates": [
+        {
+          "intent_id": "cv.why_hire_you",
+          "combined": 0.935
+        },
+        {
+          "intent_id": "tech.context_window",
+          "combined": 0.607
+        },
+        {
+          "intent_id": "cv.transition_pm_to_ai",
+          "combined": 0.556
+        }
+      ],
+      "gold_ids": [
+        "cv.why_hire_you"
+      ],
+      "pass": true,
+      "ms": 1590.83
+    },
+    {
+      "id": "BG_hr_3",
+      "bucket": "personal",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "why should we higher you",
+      "recovered": "Why should we hire you?",
+      "canonical": "Why should we hire you?",
+      "guided_intent": "cv.why_hire_you",
+      "matched_intent": "cv.why_hire_you",
+      "confidence": 1.0,
+      "ambiguous": false,
+      "margin": 0.363,
+      "candidates": [
+        {
+          "intent_id": "cv.why_hire_you",
+          "combined": 1.0
+        },
+        {
+          "intent_id": "tech.context_window",
+          "combined": 0.637
+        },
+        {
+          "intent_id": "cv.transition_pm_to_ai",
+          "combined": 0.586
+        }
+      ],
+      "gold_ids": [
+        "cv.why_hire_you"
+      ],
+      "pass": true,
+      "ms": 3238.44
+    },
+    {
+      "id": "BG_hr_4",
+      "bucket": "personal",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "What are your strengths?",
+      "recovered": "What are your strengths?",
+      "canonical": "What are your strengths?",
+      "guided_intent": "gen.strengths",
+      "matched_intent": "gen.strengths",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.374,
+      "candidates": [
+        {
+          "intent_id": "gen.strengths",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "gen.weaknesses",
+          "combined": 0.601
+        },
+        {
+          "intent_id": "tech.embeddings",
+          "combined": 0.584
+        }
+      ],
+      "gold_ids": [
+        "gen.strengths"
+      ],
+      "pass": true,
+      "ms": 2021.23
+    },
+    {
+      "id": "BG_hr_5",
+      "bucket": "personal",
+      "style": "direct",
+      "accent": "emirati",
+      "raw": "What is your weakness?",
+      "recovered": "What is your weakness?",
+      "canonical": "What are your weaknesses?",
+      "guided_intent": "gen.weaknesses",
+      "matched_intent": "gen.weaknesses",
+      "confidence": 0.769,
+      "ambiguous": false,
+      "margin": 0.169,
+      "candidates": [
+        {
+          "intent_id": "gen.weaknesses",
+          "combined": 0.769
+        },
+        {
+          "intent_id": "tech.llm_problems",
+          "combined": 0.6
+        },
+        {
+          "intent_id": "cv.what_is_knet",
+          "combined": 0.54
+        }
+      ],
+      "gold_ids": [
+        "gen.weaknesses"
+      ],
+      "pass": true,
+      "ms": 1936.12
+    },
+    {
+      "id": "BG_hr_6",
+      "bucket": "personal",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "How do you handle pressure?",
+      "recovered": "How do you handle pressure?",
+      "canonical": "How do you handle pressure?",
+      "guided_intent": null,
+      "matched_intent": "gen.disagree_manager",
+      "confidence": 0.687,
+      "ambiguous": true,
+      "margin": 0.076,
+      "candidates": [
+        {
+          "intent_id": "gen.pressure",
+          "combined": 0.687
+        },
+        {
+          "intent_id": "tech.pii_redaction",
+          "combined": 0.611
+        },
+        {
+          "intent_id": "gen.feedback",
+          "combined": 0.599
+        }
+      ],
+      "gold_ids": [
+        "gen.pressure"
+      ],
+      "pass": false,
+      "ms": 2006.25
+    },
+    {
+      "id": "BG_hr_7",
+      "bucket": "personal",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "How do you work in a team?",
+      "recovered": "How do you work in a team?",
+      "canonical": "How do you work in a team?",
+      "guided_intent": "gen.teamwork",
+      "matched_intent": "gen.teamwork",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.279,
+      "candidates": [
+        {
+          "intent_id": "gen.teamwork",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "cv.team_and_collaboration",
+          "combined": 0.696
+        },
+        {
+          "intent_id": "gen.non_technical_stakeholders",
+          "combined": 0.642
+        }
+      ],
+      "gold_ids": [
+        "gen.teamwork"
+      ],
+      "pass": true,
+      "ms": 1847.17
+    },
+    {
+      "id": "BG_hr_8",
+      "bucket": "personal",
+      "style": "direct",
+      "accent": "emirati",
+      "raw": "Where do you see yourself in five years?",
+      "recovered": "Where do you see yourself in five years?",
+      "canonical": "Where do you see yourself in five years?",
+      "guided_intent": "gen.five_years",
+      "matched_intent": "gen.five_years",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.402,
+      "candidates": [
+        {
+          "intent_id": "gen.five_years",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "cv.kuwait_how_long",
+          "combined": 0.573
+        },
+        {
+          "intent_id": "gen.three_words",
+          "combined": 0.537
+        }
+      ],
+      "gold_ids": [
+        "gen.five_years"
+      ],
+      "pass": true,
+      "ms": 2364.6
+    },
+    {
+      "id": "BG_hr_9",
+      "bucket": "personal",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "How do you prioritize your work?",
+      "recovered": "How do you prioritize your work?",
+      "canonical": "How do you prioritize your work?",
+      "guided_intent": "gen.prioritize",
+      "matched_intent": "gen.prioritize",
+      "confidence": 0.94,
+      "ambiguous": false,
+      "margin": 0.363,
+      "candidates": [
+        {
+          "intent_id": "gen.prioritize",
+          "combined": 0.94
+        },
+        {
+          "intent_id": "gen.teamwork",
+          "combined": 0.577
+        },
+        {
+          "intent_id": "tech.what_is_transformer",
+          "combined": 0.574
+        }
+      ],
+      "gold_ids": [
+        "gen.prioritize"
+      ],
+      "pass": true,
+      "ms": 2069.89
+    },
+    {
+      "id": "BG_biz_0",
+      "bucket": "business",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "What is the business value?",
+      "recovered": "What is the business value?",
+      "canonical": "What is the business value?",
+      "guided_intent": null,
+      "matched_intent": null,
+      "confidence": 0.492,
+      "ambiguous": true,
+      "margin": 0.02,
+      "candidates": [
+        {
+          "intent_id": "tech.what_is_llm",
+          "combined": 0.492
+        },
+        {
+          "intent_id": "tech.what_is_langchain",
+          "combined": 0.472
+        },
+        {
+          "intent_id": "moe.what_is_btec",
+          "combined": 0.472
+        }
+      ],
+      "gold_ids": [],
+      "pass": true,
+      "ms": 1941.66
+    },
+    {
+      "id": "BG_biz_1",
+      "bucket": "business",
+      "style": "scenario",
+      "accent": "jordanian",
+      "raw": "How would you secure the system?",
+      "recovered": "How would you secure the system?",
+      "canonical": "How would you secure RAG in a government setting?",
+      "guided_intent": "hard.secure_rag",
+      "matched_intent": "hard.secure_rag",
+      "confidence": 0.747,
+      "ambiguous": false,
+      "margin": 0.147,
+      "candidates": [
+        {
+          "intent_id": "hard.secure_rag",
+          "combined": 0.747
+        },
+        {
+          "intent_id": "tech.agent_tools_permissions",
+          "combined": 0.6
+        },
+        {
+          "intent_id": "hard.evaluate_rag",
+          "combined": 0.58
+        }
+      ],
+      "gold_ids": [],
+      "pass": true,
+      "ms": 2178.12
+    },
+    {
+      "id": "BG_biz_2",
+      "bucket": "business",
+      "style": "scenario",
+      "accent": "emirati",
+      "raw": "What if the model hallucinates?",
+      "recovered": "What if the model hallucinates?",
+      "canonical": "What if the model hallucinates?",
+      "guided_intent": null,
+      "matched_intent": null,
+      "confidence": 0.663,
+      "ambiguous": true,
+      "margin": 0.006,
+      "candidates": [
+        {
+          "intent_id": "hard.change_embedding",
+          "combined": 0.663
+        },
+        {
+          "intent_id": "tech.model_drift",
+          "combined": 0.657
+        },
+        {
+          "intent_id": "hard.remove_llm_from_rag",
+          "combined": 0.653
+        }
+      ],
+      "gold_ids": [],
+      "pass": true,
+      "ms": 2406.31
+    },
+    {
+      "id": "BG_biz_3",
+      "bucket": "business",
+      "style": "scenario",
+      "accent": "indian",
+      "raw": "How would you monitor it in production?",
+      "recovered": "How would you monitor it in production?",
+      "canonical": "How would you monitor it in production?",
+      "guided_intent": null,
+      "matched_intent": "tech.model_monitoring",
+      "confidence": 0.767,
+      "ambiguous": true,
+      "margin": 0.103,
+      "candidates": [
+        {
+          "intent_id": "tech.model_monitoring",
+          "combined": 0.767
+        },
+        {
+          "intent_id": "hard.prompt_versioning",
+          "combined": 0.663
+        },
+        {
+          "intent_id": "tech.deploy_on_prem",
+          "combined": 0.652
+        }
+      ],
+      "gold_ids": [],
+      "pass": true,
+      "ms": 2283.37
+    },
+    {
+      "id": "BG_biz_4",
+      "bucket": "business",
+      "style": "scenario",
+      "accent": "jordanian",
+      "raw": "How would you scale the RAG system?",
+      "recovered": "How would you scale the RAG system?",
+      "canonical": "How would you scale the RAG system?",
+      "guided_intent": null,
+      "matched_intent": "hard.evaluate_rag",
+      "confidence": 0.772,
+      "ambiguous": true,
+      "margin": 0.055,
+      "candidates": [
+        {
+          "intent_id": "hard.evaluate_rag",
+          "combined": 0.772
+        },
+        {
+          "intent_id": "tech.good_enough_to_launch",
+          "combined": 0.717
+        },
+        {
+          "intent_id": "hard.secure_rag",
+          "combined": 0.703
+        }
+      ],
+      "gold_ids": [],
+      "pass": true,
+      "ms": 2397.78
+    },
+    {
+      "id": "BG_long_latency",
+      "bucket": "long",
+      "style": "long",
+      "accent": "indian",
+      "raw": "Your assistant understands the interview question correctly, but the answer arrives several seconds after the interviewer finishes speaking. Walk me through how you would measure the delay and decide whether the bottleneck is speech recognition, retrieval, model inference, or the user interface.",
+      "recovered": "Your assistant understands the interview question correctly, but the answer arrives several seconds after the interviewer finishes speaking. Walk me through how you would measure the delay and decide whether the bottleneck is speech recognition, retrieval, model difference, or the user interface.",
+      "canonical": "Your assistant understands the interview question correctly, but the answer arrives several seconds after the interviewer finishes speaking. Walk me through how you would measure the delay and decide whether the bottleneck is speech recognition, retrieval, model difference, or the user interface.",
+      "guided_intent": null,
+      "matched_intent": null,
+      "confidence": 0.387,
+      "ambiguous": true,
+      "margin": 0.076,
+      "candidates": [
+        {
+          "intent_id": "tech.what_is_llm",
+          "combined": 0.387
+        },
+        {
+          "intent_id": "intro.tell_me_about_yourself",
+          "combined": 0.311
+        },
+        {
+          "intent_id": "cv.projects_overview",
+          "combined": 0.262
+        }
+      ],
+      "gold_ids": [
+        "tech.latency_p95",
+        "hard.production_monitoring"
+      ],
+      "pass": false,
+      "ms": 23487.82
+    },
+    {
+      "id": "BG_indirect_ambiguity",
+      "bucket": "indirect",
+      "style": "indirect",
+      "accent": "emirati",
+      "raw": "How do you handle ambiguous requirements?",
+      "recovered": "How do you handle ambiguous requirements?",
+      "canonical": "How do you handle ambiguous requirements?",
+      "guided_intent": "gen.ambiguity",
+      "matched_intent": "gen.ambiguity",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.358,
+      "candidates": [
+        {
+          "intent_id": "gen.ambiguity",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "proj.helpdesk.challenges",
+          "combined": 0.617
+        },
+        {
+          "intent_id": "tech.imbalanced_data",
+          "combined": 0.535
+        }
+      ],
+      "gold_ids": [
+        "gen.ambiguity"
+      ],
+      "pass": true,
+      "ms": 2490.1
+    },
+    {
+      "id": "BG_london_no",
+      "bucket": "negative",
+      "style": "indirect",
+      "accent": "jordanian",
+      "raw": "What did London give you that you would otherwise need to build yourself?",
+      "recovered": "What did London give you that you would otherwise need to build yourself?",
+      "canonical": "What did London give you that you would otherwise need to build yourself?",
+      "guided_intent": null,
+      "matched_intent": null,
+      "confidence": 0.526,
+      "ambiguous": true,
+      "margin": 0.0,
+      "candidates": [
+        {
+          "intent_id": "hard.evaluate_rag",
+          "combined": 0.526
+        },
+        {
+          "intent_id": "hard.production_monitoring",
+          "combined": 0.525
+        },
+        {
+          "intent_id": "cv.kuwait_projects",
+          "combined": 0.514
+        }
+      ],
+      "gold_ids": [],
+      "pass": true,
+      "ms": 3471.55
+    },
+    {
+      "id": "BG_embeddings_clean",
+      "bucket": "negative",
+      "style": "short",
+      "accent": "indian",
+      "raw": "What are embeddings?",
+      "recovered": "What are embeddings?",
+      "canonical": "What are embeddings?",
+      "guided_intent": "tech.embeddings",
+      "matched_intent": "tech.embeddings",
+      "confidence": 0.935,
+      "ambiguous": false,
+      "margin": 0.335,
+      "candidates": [
+        {
+          "intent_id": "tech.embeddings",
+          "combined": 0.935
+        },
+        {
+          "intent_id": "tech.tokens",
+          "combined": 0.6
+        },
+        {
+          "intent_id": "hard.pii_in_chunks",
+          "combined": 0.599
+        }
+      ],
+      "gold_ids": [
+        "tech.embeddings"
+      ],
+      "pass": true,
+      "ms": 2124.02
+    },
+    {
+      "id": "BG_clean_0",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "Tell me about yourself",
+      "recovered": "Tell me about yourself",
+      "canonical": "Tell me about yourself",
+      "guided_intent": "intro.tell_me_about_yourself",
+      "matched_intent": "intro.tell_me_about_yourself",
+      "confidence": 0.94,
+      "ambiguous": false,
+      "margin": 0.387,
+      "candidates": [
+        {
+          "intent_id": "intro.tell_me_about_yourself",
+          "combined": 0.94
+        },
+        {
+          "intent_id": "cv.education",
+          "combined": 0.553
+        },
+        {
+          "intent_id": "gen.three_words",
+          "combined": 0.55
+        }
+      ],
+      "gold_ids": [
+        "intro.tell_me_about_yourself"
+      ],
+      "pass": true,
+      "ms": 1154.86
+    },
+    {
+      "id": "BG_clean_1",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "Give me a one-minute summary of who you are",
+      "recovered": "Give me a one-minute summary of who you are",
+      "canonical": "Give me a one-minute summary of who you are",
+      "guided_intent": "intro.short_version",
+      "matched_intent": "intro.short_version",
+      "confidence": 0.815,
+      "ambiguous": false,
+      "margin": 0.384,
+      "candidates": [
+        {
+          "intent_id": "intro.short_version",
+          "combined": 0.815
+        },
+        {
+          "intent_id": "cv.team_and_collaboration",
+          "combined": 0.431
+        },
+        {
+          "intent_id": "proj.early_warning.leakage",
+          "combined": 0.429
+        }
+      ],
+      "gold_ids": [
+        "intro.short_version"
+      ],
+      "pass": true,
+      "ms": 2325.22
+    },
+    {
+      "id": "BG_clean_2",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "emirati",
+      "raw": "What do you do in your current role?",
+      "recovered": "What do you do in your current role?",
+      "canonical": "What do you do in your current role?",
+      "guided_intent": "intro.current_role",
+      "matched_intent": "intro.current_role",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.456,
+      "candidates": [
+        {
+          "intent_id": "intro.current_role",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "moe.ai_solutions",
+          "combined": 0.519
+        },
+        {
+          "intent_id": "cv.why_leaving",
+          "combined": 0.518
+        }
+      ],
+      "gold_ids": [
+        "intro.current_role"
+      ],
+      "pass": true,
+      "ms": 2768.2
+    },
+    {
+      "id": "BG_clean_3",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "Tell me about the BTEC Assignment Similarity Checker",
+      "recovered": "Tell me about the BTEC Assignment Similarity Checker",
+      "canonical": "Tell me about the BTEC Assignment Similarity Checker",
+      "guided_intent": "proj.similarity.describe",
+      "matched_intent": "proj.similarity.describe",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.36,
+      "candidates": [
+        {
+          "intent_id": "proj.similarity.describe",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "moe.what_is_btec",
+          "combined": 0.615
+        },
+        {
+          "intent_id": "proj.completion_risk.describe",
+          "combined": 0.598
+        }
+      ],
+      "gold_ids": [
+        "proj.similarity.describe"
+      ],
+      "pass": true,
+      "ms": 2956.27
+    },
+    {
+      "id": "BG_clean_4",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "What technologies did you use in the similarity checker?",
+      "recovered": "What technologies did you use in the similarity checker?",
+      "canonical": "What technologies did you use in the similarity checker?",
+      "guided_intent": "proj.similarity.tech",
+      "matched_intent": "proj.similarity.tech",
+      "confidence": 0.935,
+      "ambiguous": false,
+      "margin": 0.202,
+      "candidates": [
+        {
+          "intent_id": "proj.similarity.tech",
+          "combined": 0.935
+        },
+        {
+          "intent_id": "proj.similarity.challenges",
+          "combined": 0.733
+        },
+        {
+          "intent_id": "proj.similarity.role",
+          "combined": 0.697
+        }
+      ],
+      "gold_ids": [
+        "proj.similarity.tech"
+      ],
+      "pass": true,
+      "ms": 3168.23
+    },
+    {
+      "id": "BG_clean_5",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "emirati",
+      "raw": "How did you choose the similarity threshold?",
+      "recovered": "How did you choose the similarity threshold?",
+      "canonical": "How did you choose the similarity threshold?",
+      "guided_intent": "proj.similarity.threshold",
+      "matched_intent": "proj.similarity.threshold",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.409,
+      "candidates": [
+        {
+          "intent_id": "proj.similarity.threshold",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "proj.similarity.tech",
+          "combined": 0.566
+        },
+        {
+          "intent_id": "proj.similarity.role",
+          "combined": 0.566
+        }
+      ],
+      "gold_ids": [
+        "proj.similarity.threshold"
+      ],
+      "pass": true,
+      "ms": 2915.4
+    },
+    {
+      "id": "BG_clean_6",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "Is the similarity checker a RAG system?",
+      "recovered": "Is the similarity checker a RAG system?",
+      "canonical": "Is the similarity checker a RAG system?",
+      "guided_intent": "proj.similarity.is_rag",
+      "matched_intent": "proj.similarity.is_rag",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.223,
+      "candidates": [
+        {
+          "intent_id": "proj.similarity.is_rag",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "cv.rag_experience",
+          "combined": 0.752
+        },
+        {
+          "intent_id": "proj.similarity.stack",
+          "combined": 0.689
+        }
+      ],
+      "gold_ids": [
+        "proj.similarity.is_rag"
+      ],
+      "pass": true,
+      "ms": 2227.45
+    },
+    {
+      "id": "BG_clean_7",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "What challenges did you face in the similarity checker?",
+      "recovered": "What challenges did you face in the similarity checker?",
+      "canonical": "What challenges did you face in the similarity checker?",
+      "guided_intent": "proj.similarity.challenges",
+      "matched_intent": "proj.similarity.challenges",
+      "confidence": 0.935,
+      "ambiguous": false,
+      "margin": 0.202,
+      "candidates": [
+        {
+          "intent_id": "proj.similarity.challenges",
+          "combined": 0.935
+        },
+        {
+          "intent_id": "proj.similarity.tech",
+          "combined": 0.733
+        },
+        {
+          "intent_id": "proj.kiosk.challenges",
+          "combined": 0.712
+        }
+      ],
+      "gold_ids": [
+        "proj.similarity.challenges"
+      ],
+      "pass": true,
+      "ms": 2859.53
+    },
+    {
+      "id": "BG_clean_8",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "emirati",
+      "raw": "What was your role in the similarity checker project?",
+      "recovered": "What was your role in the similarity checker project?",
+      "canonical": "What was your role in the similarity checker project?",
+      "guided_intent": "proj.similarity.role",
+      "matched_intent": "proj.similarity.role",
+      "confidence": 0.935,
+      "ambiguous": false,
+      "margin": 0.233,
+      "candidates": [
+        {
+          "intent_id": "proj.similarity.role",
+          "combined": 0.935
+        },
+        {
+          "intent_id": "proj.similarity.challenges",
+          "combined": 0.702
+        },
+        {
+          "intent_id": "proj.similarity.tech",
+          "combined": 0.7
+        }
+      ],
+      "gold_ids": [
+        "proj.similarity.role"
+      ],
+      "pass": true,
+      "ms": 3099.7
+    },
+    {
+      "id": "BG_clean_9",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "Tell me about the Student Performance Early-Warning project",
+      "recovered": "Tell me about the Student Performance Early-Warning project",
+      "canonical": "Tell me about the Student Performance Early-Warning project",
+      "guided_intent": "proj.early_warning.describe",
+      "matched_intent": "proj.early_warning.describe",
+      "confidence": 0.935,
+      "ambiguous": false,
+      "margin": 0.331,
+      "candidates": [
+        {
+          "intent_id": "proj.early_warning.describe",
+          "combined": 0.935
+        },
+        {
+          "intent_id": "proj.early_warning.tech",
+          "combined": 0.604
+        },
+        {
+          "intent_id": "proj.early_warning.stack",
+          "combined": 0.512
+        }
+      ],
+      "gold_ids": [
+        "proj.early_warning.describe"
+      ],
+      "pass": true,
+      "ms": 3074.02
+    },
+    {
+      "id": "BG_clean_10",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "What technologies did you use in the early-warning project?",
+      "recovered": "What technologies did you use in the early-warning project?",
+      "canonical": "What technologies did you use in the early-warning project?",
+      "guided_intent": "proj.early_warning.tech",
+      "matched_intent": "proj.early_warning.tech",
+      "confidence": 0.935,
+      "ambiguous": false,
+      "margin": 0.253,
+      "candidates": [
+        {
+          "intent_id": "proj.early_warning.tech",
+          "combined": 0.935
+        },
+        {
+          "intent_id": "proj.similarity.tech",
+          "combined": 0.682
+        },
+        {
+          "intent_id": "proj.completion_risk.tech",
+          "combined": 0.654
+        }
+      ],
+      "gold_ids": [
+        "proj.early_warning.tech"
+      ],
+      "pass": true,
+      "ms": 3103.19
+    },
+    {
+      "id": "BG_clean_11",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "emirati",
+      "raw": "Which metric did you use and why?",
+      "recovered": "Which metric did you use and why?",
+      "canonical": "Which metric did you use and why?",
+      "guided_intent": "proj.early_warning.metric",
+      "matched_intent": "proj.early_warning.metric",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.336,
+      "candidates": [
+        {
+          "intent_id": "proj.early_warning.metric",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "tech.which_framework",
+          "combined": 0.639
+        },
+        {
+          "intent_id": "proj.helpdesk.tech",
+          "combined": 0.585
+        }
+      ],
+      "gold_ids": [
+        "proj.early_warning.metric"
+      ],
+      "pass": true,
+      "ms": 1913.92
+    },
+    {
+      "id": "BG_clean_12",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "How did you avoid data leakage in the early-warning model?",
+      "recovered": "How did you avoid data leakage in the early-warning model?",
+      "canonical": "How did you avoid data leakage in the early-warning model?",
+      "guided_intent": "proj.early_warning.leakage",
+      "matched_intent": "proj.early_warning.leakage",
+      "confidence": 0.935,
+      "ambiguous": false,
+      "margin": 0.215,
+      "candidates": [
+        {
+          "intent_id": "proj.early_warning.leakage",
+          "combined": 0.935
+        },
+        {
+          "intent_id": "proj.early_warning.metric",
+          "combined": 0.72
+        },
+        {
+          "intent_id": "proj.early_warning.tech",
+          "combined": 0.611
+        }
+      ],
+      "gold_ids": [
+        "proj.early_warning.leakage"
+      ],
+      "pass": true,
+      "ms": 3331.63
+    },
+    {
+      "id": "BG_clean_13",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "What was the result of the early-warning project?",
+      "recovered": "What was the result of the early-warning project?",
+      "canonical": "What was the result of the early-warning project?",
+      "guided_intent": "proj.early_warning.result",
+      "matched_intent": "proj.early_warning.result",
+      "confidence": 0.935,
+      "ambiguous": false,
+      "margin": 0.356,
+      "candidates": [
+        {
+          "intent_id": "proj.early_warning.result",
+          "combined": 0.935
+        },
+        {
+          "intent_id": "gen.biggest_achievement",
+          "combined": 0.579
+        },
+        {
+          "intent_id": "proj.early_warning.tech",
+          "combined": 0.566
+        }
+      ],
+      "gold_ids": [
+        "proj.early_warning.result"
+      ],
+      "pass": true,
+      "ms": 3339.07
+    },
+    {
+      "id": "BG_clean_14",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "emirati",
+      "raw": "Tell me about the Helpdesk Request Classification project",
+      "recovered": "Tell me about the Helpdesk Request Classification project",
+      "canonical": "Tell me about the Helpdesk Request Classification project",
+      "guided_intent": "proj.helpdesk.describe",
+      "matched_intent": "proj.helpdesk.describe",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.322,
+      "candidates": [
+        {
+          "intent_id": "proj.helpdesk.describe",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "proj.helpdesk.challenges",
+          "combined": 0.653
+        },
+        {
+          "intent_id": "proj.early_warning.describe",
+          "combined": 0.599
+        }
+      ],
+      "gold_ids": [
+        "proj.helpdesk.describe"
+      ],
+      "pass": true,
+      "ms": 3234.2
+    },
+    {
+      "id": "BG_clean_15",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "What approach and tools did you use for ticket classification?",
+      "recovered": "What approach and tools did you use for ticket classification?",
+      "canonical": "What approach and tools did you use for ticket classification?",
+      "guided_intent": "proj.helpdesk.tech",
+      "matched_intent": "proj.helpdesk.tech",
+      "confidence": 0.935,
+      "ambiguous": false,
+      "margin": 0.308,
+      "candidates": [
+        {
+          "intent_id": "proj.helpdesk.tech",
+          "combined": 0.935
+        },
+        {
+          "intent_id": "tech.evaluate_classification",
+          "combined": 0.627
+        },
+        {
+          "intent_id": "proj.similarity.tech",
+          "combined": 0.588
+        }
+      ],
+      "gold_ids": [
+        "proj.helpdesk.tech"
+      ],
+      "pass": true,
+      "ms": 2995.6
+    },
+    {
+      "id": "BG_clean_16",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "What was difficult in the helpdesk classification project?",
+      "recovered": "What was difficult in the helpdesk classification project?",
+      "canonical": "What was difficult in the helpdesk classification project?",
+      "guided_intent": "proj.helpdesk.challenges",
+      "matched_intent": "proj.helpdesk.challenges",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.324,
+      "candidates": [
+        {
+          "intent_id": "proj.helpdesk.challenges",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "proj.helpdesk.describe",
+          "combined": 0.651
+        },
+        {
+          "intent_id": "proj.helpdesk.tech",
+          "combined": 0.582
+        }
+      ],
+      "gold_ids": [
+        "proj.helpdesk.challenges"
+      ],
+      "pass": true,
+      "ms": 3241.99
+    },
+    {
+      "id": "BG_clean_17",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "emirati",
+      "raw": "Tell me about the BTEC Completion Risk Monitoring project",
+      "recovered": "Tell me about the BTEC Completion Risk Monitoring project",
+      "canonical": "Tell me about the BTEC Completion Risk Monitoring project",
+      "guided_intent": "proj.completion_risk.describe",
+      "matched_intent": "proj.completion_risk.describe",
+      "confidence": 0.935,
+      "ambiguous": false,
+      "margin": 0.341,
+      "candidates": [
+        {
+          "intent_id": "proj.completion_risk.describe",
+          "combined": 0.935
+        },
+        {
+          "intent_id": "proj.completion_risk.tech",
+          "combined": 0.594
+        },
+        {
+          "intent_id": "proj.similarity.describe",
+          "combined": 0.594
+        }
+      ],
+      "gold_ids": [
+        "proj.completion_risk.describe"
+      ],
+      "pass": true,
+      "ms": 3038.56
+    },
+    {
+      "id": "BG_clean_18",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "What technologies did you use for completion risk monitoring?",
+      "recovered": "What technologies did you use for completion risk monitoring?",
+      "canonical": "What technologies did you use for completion risk monitoring?",
+      "guided_intent": "proj.completion_risk.tech",
+      "matched_intent": "proj.completion_risk.tech",
+      "confidence": 0.935,
+      "ambiguous": false,
+      "margin": 0.279,
+      "candidates": [
+        {
+          "intent_id": "proj.completion_risk.tech",
+          "combined": 0.935
+        },
+        {
+          "intent_id": "proj.early_warning.tech",
+          "combined": 0.656
+        },
+        {
+          "intent_id": "proj.similarity.tech",
+          "combined": 0.656
+        }
+      ],
+      "gold_ids": [
+        "proj.completion_risk.tech"
+      ],
+      "pass": true,
+      "ms": 3189.09
+    },
+    {
+      "id": "BG_clean_19",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "Tell me about the voice kiosk with Whisper",
+      "recovered": "Tell me about the voice kiosk with Whisper",
+      "canonical": "Tell me about the voice kiosk with Whisper",
+      "guided_intent": "proj.kiosk.describe",
+      "matched_intent": "proj.kiosk.describe",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.405,
+      "candidates": [
+        {
+          "intent_id": "proj.kiosk.describe",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "tech.voice_assistant_design",
+          "combined": 0.57
+        },
+        {
+          "intent_id": "cv.knet_role",
+          "combined": 0.552
+        }
+      ],
+      "gold_ids": [
+        "proj.kiosk.describe"
+      ],
+      "pass": true,
+      "ms": 2439.28
+    },
+    {
+      "id": "BG_clean_20",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "emirati",
+      "raw": "What challenges did you face in the voice kiosk?",
+      "recovered": "What challenges did you face in the voice kiosk?",
+      "canonical": "What challenges did you face in the voice kiosk?",
+      "guided_intent": "proj.kiosk.challenges",
+      "matched_intent": "proj.kiosk.challenges",
+      "confidence": 0.935,
+      "ambiguous": false,
+      "margin": 0.219,
+      "candidates": [
+        {
+          "intent_id": "proj.kiosk.challenges",
+          "combined": 0.935
+        },
+        {
+          "intent_id": "proj.similarity.challenges",
+          "combined": 0.716
+        },
+        {
+          "intent_id": "proj.kiosk.voice_classifier",
+          "combined": 0.546
+        }
+      ],
+      "gold_ids": [
+        "proj.kiosk.challenges"
+      ],
+      "pass": true,
+      "ms": 3018.8
+    },
+    {
+      "id": "BG_clean_21",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "How did the voice classifier work?",
+      "recovered": "How did the voice classifier work?",
+      "canonical": "How did the voice classifier work?",
+      "guided_intent": "proj.kiosk.voice_classifier",
+      "matched_intent": "proj.kiosk.voice_classifier",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.329,
+      "candidates": [
+        {
+          "intent_id": "proj.kiosk.voice_classifier",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "tech.evaluate_classification",
+          "combined": 0.646
+        },
+        {
+          "intent_id": "proj.kiosk.challenges",
+          "combined": 0.564
+        }
+      ],
+      "gold_ids": [
+        "proj.kiosk.voice_classifier"
+      ],
+      "pass": true,
+      "ms": 2441.99
+    },
+    {
+      "id": "BG_clean_22",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "What projects have you worked on?",
+      "recovered": "What projects have you worked on?",
+      "canonical": "What projects have you worked on?",
+      "guided_intent": "cv.projects_overview",
+      "matched_intent": "cv.projects_overview",
+      "confidence": 0.935,
+      "ambiguous": false,
+      "margin": 0.234,
+      "candidates": [
+        {
+          "intent_id": "cv.projects_overview",
+          "combined": 0.935
+        },
+        {
+          "intent_id": "cv.kuwait_projects",
+          "combined": 0.701
+        },
+        {
+          "intent_id": "cv.nlp_experience",
+          "combined": 0.619
+        }
+      ],
+      "gold_ids": [
+        "cv.projects_overview"
+      ],
+      "pass": true,
+      "ms": 2958.53
+    },
+    {
+      "id": "BG_clean_23",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "emirati",
+      "raw": "What is your most recent project?",
+      "recovered": "What is your most recent project?",
+      "canonical": "What is your most recent project?",
+      "guided_intent": "cv.projects.most_recent",
+      "matched_intent": "cv.projects.most_recent",
+      "confidence": 0.935,
+      "ambiguous": false,
+      "margin": 0.372,
+      "candidates": [
+        {
+          "intent_id": "cv.projects.most_recent",
+          "combined": 0.935
+        },
+        {
+          "intent_id": "cv.projects.most_proud",
+          "combined": 0.563
+        },
+        {
+          "intent_id": "proj.completion_risk.tech",
+          "combined": 0.506
+        }
+      ],
+      "gold_ids": [
+        "cv.projects.most_recent"
+      ],
+      "pass": true,
+      "ms": 2471.17
+    },
+    {
+      "id": "BG_clean_24",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "Which project are you most proud of and why?",
+      "recovered": "Which project are you most proud of and why?",
+      "canonical": "Which project are you most proud of and why?",
+      "guided_intent": "cv.projects.most_proud",
+      "matched_intent": "cv.projects.most_proud",
+      "confidence": 0.935,
+      "ambiguous": false,
+      "margin": 0.234,
+      "candidates": [
+        {
+          "intent_id": "cv.projects.most_proud",
+          "combined": 0.935
+        },
+        {
+          "intent_id": "gen.biggest_achievement",
+          "combined": 0.701
+        },
+        {
+          "intent_id": "tech.which_framework",
+          "combined": 0.61
+        }
+      ],
+      "gold_ids": [
+        "cv.projects.most_proud"
+      ],
+      "pass": true,
+      "ms": 2433.35
+    },
+    {
+      "id": "BG_clean_25",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "Tell me about your role at Al Najat",
+      "recovered": "Tell me about your role at Al Najat",
+      "canonical": "Tell me about your role at Al Najat",
+      "guided_intent": "cv.najat_role",
+      "matched_intent": "cv.najat_role",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.242,
+      "candidates": [
+        {
+          "intent_id": "cv.najat_role",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "proj.helpdesk.describe",
+          "combined": 0.733
+        },
+        {
+          "intent_id": "cv.image_processing",
+          "combined": 0.708
+        }
+      ],
+      "gold_ids": [
+        "cv.najat_role"
+      ],
+      "pass": true,
+      "ms": 1981.12
+    },
+    {
+      "id": "BG_clean_26",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "emirati",
+      "raw": "Tell me about your project management experience at VNC / KNET",
+      "recovered": "Tell me about your project management experience at VNC / KNET",
+      "canonical": "Tell me about your project management experience at VNC / KNET",
+      "guided_intent": "cv.knet_role",
+      "matched_intent": "cv.knet_role",
+      "confidence": 0.935,
+      "ambiguous": false,
+      "margin": 0.445,
+      "candidates": [
+        {
+          "intent_id": "cv.knet_role",
+          "combined": 0.935
+        },
+        {
+          "intent_id": "cv.python_fastapi",
+          "combined": 0.49
+        },
+        {
+          "intent_id": "proj.helpdesk.describe",
+          "combined": 0.483
+        }
+      ],
+      "gold_ids": [
+        "cv.knet_role"
+      ],
+      "pass": true,
+      "ms": 2880.53
+    },
+    {
+      "id": "BG_clean_27",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "What is KNET?",
+      "recovered": "What is KNET?",
+      "canonical": "What is KNET?",
+      "guided_intent": "cv.what_is_knet",
+      "matched_intent": "cv.what_is_knet",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.413,
+      "candidates": [
+        {
+          "intent_id": "cv.what_is_knet",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "tech.n8n_what",
+          "combined": 0.562
+        },
+        {
+          "intent_id": "tech.what_is_llm",
+          "combined": 0.561
+        }
+      ],
+      "gold_ids": [
+        "cv.what_is_knet"
+      ],
+      "pass": true,
+      "ms": 1720.02
+    },
+    {
+      "id": "BG_clean_28",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "Why did you move from project management to AI engineering?",
+      "recovered": "Why did you move from project management to AI engineering?",
+      "canonical": "Why did you move from project management to AI engineering?",
+      "guided_intent": "cv.transition_pm_to_ai",
+      "matched_intent": "cv.transition_pm_to_ai",
+      "confidence": 0.935,
+      "ambiguous": false,
+      "margin": 0.269,
+      "candidates": [
+        {
+          "intent_id": "cv.transition_pm_to_ai",
+          "combined": 0.935
+        },
+        {
+          "intent_id": "gen.why_ai_field",
+          "combined": 0.666
+        },
+        {
+          "intent_id": "cv.why_back_to_jordan",
+          "combined": 0.576
+        }
+      ],
+      "gold_ids": [
+        "cv.transition_pm_to_ai"
+      ],
+      "pass": true,
+      "ms": 2938.65
+    },
+    {
+      "id": "BG_clean_29",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "emirati",
+      "raw": "How many years of experience do you have?",
+      "recovered": "How many years of experience do you have?",
+      "canonical": "How many years of experience do you have?",
+      "guided_intent": "cv.years_experience",
+      "matched_intent": "cv.years_experience",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.431,
+      "candidates": [
+        {
+          "intent_id": "cv.years_experience",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "cv.senior_justification",
+          "combined": 0.544
+        },
+        {
+          "intent_id": "cv.kuwait_how_long",
+          "combined": 0.533
+        }
+      ],
+      "gold_ids": [
+        "cv.years_experience"
+      ],
+      "pass": true,
+      "ms": 2321.65
+    },
+    {
+      "id": "BG_clean_30",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "Have you used RAG in your projects?",
+      "recovered": "Have you used RAG in your projects?",
+      "canonical": "Have you used RAG in your projects?",
+      "guided_intent": "cv.rag_experience",
+      "matched_intent": "cv.rag_experience",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.324,
+      "candidates": [
+        {
+          "intent_id": "cv.rag_experience",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "tech.reranking",
+          "combined": 0.651
+        },
+        {
+          "intent_id": "cv.chromadb",
+          "combined": 0.647
+        }
+      ],
+      "gold_ids": [
+        "cv.rag_experience"
+      ],
+      "pass": true,
+      "ms": 2459.84
+    },
+    {
+      "id": "BG_clean_31",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "What is your experience with LLMs?",
+      "recovered": "What is your experience with LLMs?",
+      "canonical": "What is your experience with LLMs?",
+      "guided_intent": "cv.llm_experience",
+      "matched_intent": "cv.llm_experience",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.29,
+      "candidates": [
+        {
+          "intent_id": "cv.llm_experience",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "moe.ai_solutions",
+          "combined": 0.685
+        },
+        {
+          "intent_id": "cv.agentic_experience",
+          "combined": 0.614
+        }
+      ],
+      "gold_ids": [
+        "cv.llm_experience"
+      ],
+      "pass": true,
+      "ms": 2984.08
+    },
+    {
+      "id": "BG_clean_32",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "emirati",
+      "raw": "What is your experience with Agentic AI?",
+      "recovered": "What is your experience with Agentic AI?",
+      "canonical": "What is your experience with Agentic AI?",
+      "guided_intent": "cv.agentic_experience",
+      "matched_intent": "cv.agentic_experience",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.301,
+      "candidates": [
+        {
+          "intent_id": "cv.agentic_experience",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "tech.agentic_what",
+          "combined": 0.674
+        },
+        {
+          "intent_id": "cv.llm_experience",
+          "combined": 0.614
+        }
+      ],
+      "gold_ids": [
+        "cv.agentic_experience"
+      ],
+      "pass": true,
+      "ms": 2763.93
+    },
+    {
+      "id": "BG_clean_33",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "Have you used LangChain?",
+      "recovered": "Have you used LangChain?",
+      "canonical": "Have you used LangChain?",
+      "guided_intent": "cv.langchain",
+      "matched_intent": "cv.langchain",
+      "confidence": 0.855,
+      "ambiguous": false,
+      "margin": 0.23,
+      "candidates": [
+        {
+          "intent_id": "cv.langchain",
+          "combined": 0.855
+        },
+        {
+          "intent_id": "cv.langgraph",
+          "combined": 0.625
+        },
+        {
+          "intent_id": "cv.n8n",
+          "combined": 0.622
+        }
+      ],
+      "gold_ids": [
+        "cv.langchain"
+      ],
+      "pass": true,
+      "ms": 1750.61
+    },
+    {
+      "id": "BG_clean_34",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "Which vector database have you used?",
+      "recovered": "Which vector database have you used?",
+      "canonical": "Which vector database have you used?",
+      "guided_intent": "cv.vector_db",
+      "matched_intent": "cv.vector_db",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.266,
+      "candidates": [
+        {
+          "intent_id": "cv.vector_db",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "proj.similarity.tech",
+          "combined": 0.709
+        },
+        {
+          "intent_id": "cv.chromadb",
+          "combined": 0.599
+        }
+      ],
+      "gold_ids": [
+        "cv.vector_db"
+      ],
+      "pass": true,
+      "ms": 2262.79
+    },
+    {
+      "id": "BG_clean_35",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "emirati",
+      "raw": "Have you done fine-tuning?",
+      "recovered": "Have you done fine-tuning?",
+      "canonical": "Have you done fine-tuning?",
+      "guided_intent": "cv.fine_tuning",
+      "matched_intent": "cv.fine_tuning",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.345,
+      "candidates": [
+        {
+          "intent_id": "cv.fine_tuning",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "cv.nlp_experience",
+          "combined": 0.63
+        },
+        {
+          "intent_id": "tech.fine_tuning_what",
+          "combined": 0.521
+        }
+      ],
+      "gold_ids": [
+        "cv.fine_tuning"
+      ],
+      "pass": true,
+      "ms": 1936.17
+    },
+    {
+      "id": "BG_clean_36",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "Have you used Whisper?",
+      "recovered": "Have you used Whisper?",
+      "canonical": "Have you used Whisper?",
+      "guided_intent": "cv.whisper_experience",
+      "matched_intent": "cv.whisper_experience",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.368,
+      "candidates": [
+        {
+          "intent_id": "cv.whisper_experience",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "cv.chromadb",
+          "combined": 0.607
+        },
+        {
+          "intent_id": "cv.n8n",
+          "combined": 0.6
+        }
+      ],
+      "gold_ids": [
+        "cv.whisper_experience"
+      ],
+      "pass": true,
+      "ms": 1634.86
+    },
+    {
+      "id": "BG_clean_37",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "jordanian",
+      "raw": "What is your machine learning experience?",
+      "recovered": "What is your machine learning experience?",
+      "canonical": "What is your machine learning experience?",
+      "guided_intent": "cv.ml_experience",
+      "matched_intent": "cv.ml_experience",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.172,
+      "candidates": [
+        {
+          "intent_id": "cv.ml_experience",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "tech.what_is_ml",
+          "combined": 0.803
+        },
+        {
+          "intent_id": "tech.data_leakage",
+          "combined": 0.739
+        }
+      ],
+      "gold_ids": [
+        "cv.ml_experience"
+      ],
+      "pass": true,
+      "ms": 2599.83
+    },
+    {
+      "id": "BG_clean_38",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "emirati",
+      "raw": "What NLP tasks have you worked on?",
+      "recovered": "What NLP tasks have you worked on?",
+      "canonical": "What NLP tasks have you worked on?",
+      "guided_intent": "cv.nlp_experience",
+      "matched_intent": "cv.nlp_experience",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.356,
+      "candidates": [
+        {
+          "intent_id": "cv.nlp_experience",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "cv.projects_overview",
+          "combined": 0.619
+        },
+        {
+          "intent_id": "tech.nlp_vs_llm",
+          "combined": 0.548
+        }
+      ],
+      "gold_ids": [
+        "cv.nlp_experience"
+      ],
+      "pass": true,
+      "ms": 2235.45
+    },
+    {
+      "id": "BG_clean_39",
+      "bucket": "clean",
+      "style": "direct",
+      "accent": "indian",
+      "raw": "Tell me about your Python and FastAPI experience",
+      "recovered": "Tell me about your Python and FastAPI experience",
+      "canonical": "Tell me about your Python and FastAPI experience",
+      "guided_intent": "cv.python_fastapi",
+      "matched_intent": "cv.python_fastapi",
+      "confidence": 0.975,
+      "ambiguous": false,
+      "margin": 0.441,
+      "candidates": [
+        {
+          "intent_id": "cv.python_fastapi",
+          "combined": 0.975
+        },
+        {
+          "intent_id": "cv.llm_experience",
+          "combined": 0.534
+        },
+        {
+          "intent_id": "cv.knet_role",
+          "combined": 0.49
+        }
+      ],
+      "gold_ids": [
+        "cv.python_fastapi"
+      ],
+      "pass": true,
+      "ms": 2215.78
+    }
+  ]
+}

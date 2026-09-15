@@ -1,0 +1,45 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.log
+runtime.log
+runtime.log.err
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Local data / caches
+backend/chroma_db/
+backend/uploads/
+backend/.pytest_cache/
+*.db-journal
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Large local-only freeze copies (keep source of truth in repo root)
+../interview11_FROZEN_V5_20260915/
+
+# Local runtime DB
+*.db

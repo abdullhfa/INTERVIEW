@@ -1,0 +1,1921 @@
+{
+  "bank": "scenario",
+  "description": "Hard follow-up and scenario questions on Agentic AI, RAG, LangGraph, orchestration, guardrails, ChromaDB, and n8n. Level 1 spoken answer plus Level 2 How/Why. CV-honest.",
+  "entries": [
+    {
+      "id": "hard.agentic_rag_design",
+      "category": "scenario.hard",
+      "topic": "rag",
+      "question": "Design an Agentic RAG system for our organization.",
+      "aliases": [
+        "design an agentic rag system for our organization",
+        "design an agentic rag solution for the ministry of finance",
+        "how would you build agentic rag for us",
+        "walk me through an agentic rag architecture",
+        "design a rag agent for a government organization",
+        "if you joined us how would you design rag with agents",
+        "whiteboard an agentic rag pipeline for a ministry",
+        "suppose we need rag that can also call tools how would you design it"
+      ],
+      "keywords": [
+        "agentic rag",
+        "design",
+        "architecture",
+        "ministry"
+      ],
+      "listen_for": [
+        "design agentic rag",
+        "architecture for our organization",
+        "build it for a ministry",
+        "whiteboard the pipeline",
+        "rag that can call tools",
+        "how would you design it"
+      ],
+      "answer_en": "I would not start with agents. Start with the job: staff ask about rules and must get a sourced answer, or 'not in the documents'. Ingest approved files, chunk with metadata, retrieve with permission, then generate only from those chunks. The agent is a gated loop: it can rewrite a weak query or call a tool, but it cannot send email, write money, or change a record.",
+      "followup_en": "RAG is the knowledge path. I add an agent only when the next step depends on the last result. State can sit in Python or LangGraph with a checkpoint and a human interrupt before any action. After the model, every number must appear in a source. I have not shipped LangGraph in production. For BTEC I used Python orchestration, RAG, an LLM, and teacher approval.",
+      "answer_ar": "ما أبدأ بالوكلاء. أصمم استرجاعاً من وثائق معتمدة مع فلتر صلاحيات، والوكيل حلقة تحكم مقيدة لا تكتب ولا ترسل بدون موافقة."
+    },
+    {
+      "id": "hard.why_agent_not_rag",
+      "category": "scenario.hard",
+      "topic": "agents",
+      "question": "Why do you need an agent here? Why not normal RAG?",
+      "aliases": [
+        "why do you need an agent here why not normal rag",
+        "why not just use rag",
+        "when is rag enough and when do you need an agent",
+        "why agentic rag instead of rag",
+        "is a normal rag pipeline enough for this",
+        "why add an agent if retrieval already works",
+        "when would you skip the agent and keep rag only"
+      ],
+      "keywords": [
+        "why",
+        "agent",
+        "normal rag"
+      ],
+      "listen_for": [
+        "why not just rag",
+        "why do you need an agent",
+        "when is rag enough",
+        "agentic instead of rag",
+        "skip the agent",
+        "plain rag versus agent"
+      ],
+      "answer_en": "Normal RAG is enough when the path is fixed: question, retrieve, answer, stop. I used that in BTEC question generation. An agent earns its place only if the next step depends on the last result, like rewrite the query or call another tool. On a straight FAQ, an agent adds loops, cost, and new failures. My default is a workflow with RAG.",
+      "followup_en": "Why? An agent is a loop that chooses tools. If I already know the steps, I should code them. I still keep permissions and a human gate if I add an agent. For BTEC the path was retrieve unit content, generate JSON, validate, then teacher approval. That is orchestration, not a free agent.",
+      "answer_ar": "الـ RAG العادي يكفي إذا المسار ثابت. أضيف وكيلاً فقط إذا الخطوة التالية تعتمد على نتيجة السابقة، وإلا أزيد تكلفة وفشل بلا فائدة."
+    },
+    {
+      "id": "hard.agent_stop_tools",
+      "category": "scenario.hard",
+      "topic": "agents",
+      "question": "When should an agent stop using tools?",
+      "aliases": [
+        "when should an agent stop using tools",
+        "when does the agent know it is done",
+        "how do you stop an agent from calling more tools",
+        "what is the stopping condition for an agent",
+        "how do you decide the agent is finished",
+        "what if the agent never stops calling tools",
+        "when do you cut the tool loop"
+      ],
+      "keywords": [
+        "stop",
+        "tools",
+        "done"
+      ],
+      "listen_for": [
+        "stop using tools",
+        "agent is done",
+        "stopping condition",
+        "cut the tool loop",
+        "never stops calling",
+        "when is it finished"
+      ],
+      "answer_en": "It stops when the goal is met and the output passes schema checks. It also stops if tools return 'not found' twice, or if a step, time, or token budget is hit. If a tool refuses, or the next call would change data, it must pause for a human. I never let 'the model feels done' be the only stop.",
+      "followup_en": "In code I return a terminal state: complete, blocked, needs_human, or failed. Why hard stops? A prompt that says 'do not loop' is not a control. Same idea as BTEC generation: a fixed number of steps, then teacher approval, never an open loop.",
+      "answer_ar": "الوكيل يتوقف عندما يتحقق الهدف أو ينفد الميزانية أو ترفض الأداة أو تحتاج موافقة بشرية. شعور النموذج أنه انتهى ليس شرط توقف."
+    },
+    {
+      "id": "hard.wrong_tool",
+      "category": "scenario.hard",
+      "topic": "agents",
+      "question": "What if the agent chooses the wrong tool?",
+      "aliases": [
+        "what if the agent chooses the wrong tool",
+        "what if the agent picks the wrong function",
+        "how do you handle a bad tool call",
+        "the agent called the wrong api what do you do",
+        "suppose it tries to run sql instead of search",
+        "how do you recover from a mistaken tool choice",
+        "what if the function name is wrong"
+      ],
+      "keywords": [
+        "wrong tool",
+        "tool call"
+      ],
+      "listen_for": [
+        "wrong tool",
+        "bad tool call",
+        "called the wrong api",
+        "picks the wrong function",
+        "tries to run sql",
+        "mistaken tool"
+      ],
+      "answer_en": "The tool layer must make a wrong choice cheap. Tools have narrow names and typed arguments, so a bad call fails closed. I log the name and args. If the tool does not exist or fails validation, I return an error, allow one retry, then stop. A write tool is never given to a research agent.",
+      "followup_en": "Why this? The model is not a security boundary. If a wrong tool somehow ran, idempotency and a human gate on writes mean the damage is a logged no-op, not a changed record. In BTEC the model never wrote to the question bank. Approval was the write path.",
+      "answer_ar": "الأدوات ضيقة ومُتحقَّق من مدخلاتها، فالنداء الخاطئ يفشل بأمان. محاولة واحدة ثم توقف، وأدوات الكتابة لا تُعطى لوكيل بحث."
+    },
+    {
+      "id": "hard.agents_disagree",
+      "category": "scenario.hard",
+      "topic": "agents",
+      "question": "What if two agents disagree?",
+      "aliases": [
+        "what if two agents disagree",
+        "how do you resolve conflict between agents",
+        "what if the supervisor and the specialist disagree",
+        "conflicting answers from two agents",
+        "one agent says yes and the other says no",
+        "how do you pick a winner when agents conflict",
+        "what if retrieval agent and sql agent clash"
+      ],
+      "keywords": [
+        "disagree",
+        "two agents",
+        "conflict"
+      ],
+      "listen_for": [
+        "two agents disagree",
+        "agents conflict",
+        "supervisor disagrees",
+        "conflicting answers",
+        "pick a winner",
+        "sql agent clash"
+      ],
+      "answer_en": "I do not let them vote on facts. Each agent owns a source type: one reads policy text, one reads a live number. If they conflict, the orchestrator compares timestamps and source ids, or shows the conflict to a human. I never add a third agent to decide who is right. In a ministry, disagreement is an audit event.",
+      "followup_en": "Why not a judge agent? It can invent a compromise that is not in any source. If I only have one agent, this problem mostly disappears, which is why I start with one. Same as completion numbers: if two systems disagree, I check timestamps. I do not guess.",
+      "answer_ar": "لا أصوّت على الحقائق. أعرض التعارض مع المصادر والتواريخ لإنسان، ولا أضيف وكيلاً ثالثاً ليحكم. الخلاف في جهة حكومية حدث تدقيق."
+    },
+    {
+      "id": "hard.agent_loop",
+      "category": "scenario.hard",
+      "topic": "agents",
+      "question": "How do you prevent an agent from looping forever?",
+      "aliases": [
+        "how do you prevent an agent from looping forever",
+        "how do you stop infinite tool loops",
+        "what if the agent keeps calling the same tool",
+        "how do you cap agent iterations",
+        "it keeps retrying the same action how do you break it",
+        "max steps for an agent loop",
+        "runaway agent iterations"
+      ],
+      "keywords": [
+        "loop",
+        "forever",
+        "infinite"
+      ],
+      "listen_for": [
+        "looping forever",
+        "infinite tool loops",
+        "keeps calling the same tool",
+        "cap iterations",
+        "runaway agent",
+        "max steps"
+      ],
+      "answer_en": "Hard caps in code, not in the prompt. Max steps, max tokens, max wall-clock time, max cost. If the same tool is called with the same arguments twice and nothing new happens, I break. After the cap I return failed or needs_human with the trace. 'Do not loop' in a prompt is not a control.",
+      "followup_en": "If I used LangGraph, a cycle still needs a retry counter on the state. I have not run LangGraph in production, but the idea is the same as my generation flow: a fixed number of steps, then teacher approval, never an open loop. Caps stop cost spikes as well as hangs.",
+      "answer_ar": "حدود صارمة في الكود: خطوات ووقت وتكلفة. نفس الأداة بنفس المدخلات مرتين بدون حالة جديدة تعني التوقف. الجملة في الـ prompt لا تمنع الحلقة."
+    },
+    {
+      "id": "hard.agent_memory_privacy",
+      "category": "scenario.hard",
+      "topic": "agents",
+      "question": "How do you give an agent memory without leaking sensitive data?",
+      "aliases": [
+        "how do you give an agent memory without leaking sensitive data",
+        "how do you store agent memory safely",
+        "short term versus long term agent memory",
+        "how do you avoid putting pii in the context window",
+        "can the agent remember previous users",
+        "where do you persist agent state without leaking pii",
+        "how do you keep student data out of memory"
+      ],
+      "keywords": [
+        "memory",
+        "sensitive",
+        "pii",
+        "leak"
+      ],
+      "listen_for": [
+        "agent memory",
+        "leaking sensitive data",
+        "pii in context",
+        "short term versus long term",
+        "student data in memory",
+        "persist agent state"
+      ],
+      "answer_en": "Two memories, two rules. Short-term is this task: the question, chunk ids, tool results. I keep ids and redacted text, not full student or staff files. Long-term is only what policy allows to persist, with retention and access control. Checkpoints are execution state, not a dump of PII. Documents enter memory only after permission filters.",
+      "followup_en": "Why ids instead of names? In BTEC, student names never went to the LLM. I used internal ids and joined names back after the answer. If you save the whole chat into a vector store, you have created a leak that search will find later. Memory and RAG storage must stay separate.",
+      "answer_ar": "الذاكرة قصيرة المدى لهذه المهمة فقط بمعرّفات ونص منقّى. طويلة المدى حسب السياسة. أسماء الطلاب ما كانت تروح للنموذج في عمل BTEC."
+    },
+    {
+      "id": "hard.langgraph_vs_n8n_vs_python",
+      "category": "scenario.hard",
+      "topic": "frameworks",
+      "question": "Would you use LangGraph, n8n, or plain Python for this workflow? Why?",
+      "aliases": [
+        "would you use langgraph n8n or plain python",
+        "langgraph versus n8n versus python",
+        "which orchestrator would you pick",
+        "why not n8n for this agent workflow",
+        "if you had to choose one orchestrator today",
+        "python or langgraph for ministry workflows",
+        "when would you pick n8n over code"
+      ],
+      "keywords": [
+        "langgraph",
+        "n8n",
+        "python",
+        "workflow"
+      ],
+      "listen_for": [
+        "langgraph or n8n",
+        "plain python",
+        "which orchestrator",
+        "why not n8n",
+        "pick one workflow tool",
+        "python versus langgraph"
+      ],
+      "answer_en": "For a prototype of integrations, n8n: visual and self-hosted. For a stateful agent with retries and a human pause, LangGraph: checkpoints and interrupt are the point. For production I used plain Python, because I needed tests, diffs, and a clear audit of the code. I have not used LangGraph or n8n in production. I would not hide exam rules only inside n8n.",
+      "followup_en": "Why Python in BTEC? The live path is retrieve, prompt, model, Pydantic, teacher approval. That is easy to test and review. A clean split if I used all three: n8n routes, Python or LangGraph decides, a human approves anything with effect. Visual graphs are weak at versioning complex state.",
+      "answer_ar": "للتجربة n8n، للوكيل ذي الحالة LangGraph، وللإنتاج استخدمت بايثون. لم أشغّل LangGraph أو n8n في الإنتاج، ولا أضع قواعد الامتحان داخل رسم بصري فقط."
+    },
+    {
+      "id": "hard.why_not_chroma_prod",
+      "category": "scenario.hard",
+      "topic": "rag",
+      "question": "Why ChromaDB and not Qdrant or PostgreSQL with pgvector?",
+      "aliases": [
+        "why chromadb and not qdrant or postgresql with pgvector",
+        "why not chromadb in production",
+        "why would you pick chroma over qdrant",
+        "chroma versus qdrant versus pgvector for us",
+        "would you keep chroma if we go live",
+        "is chroma good enough for a ministry",
+        "what vector database would you choose in production"
+      ],
+      "keywords": [
+        "chromadb",
+        "qdrant",
+        "pgvector"
+      ],
+      "listen_for": [
+        "why chromadb",
+        "not qdrant",
+        "pgvector",
+        "chroma in production",
+        "vector database in production",
+        "keep chroma live"
+      ],
+      "answer_en": "I would not pick ChromaDB for ministry production. I used it because it runs in Python with no extra server, which is perfect for a prototype. For production I want backup, concurrent writers, strong metadata filters, and a real ops story. That is Qdrant, or pgvector if you already run PostgreSQL. Pinecone I would avoid for sovereign data.",
+      "followup_en": "Why does ops matter? Access control lives in metadata filters and in who can write the index. A lab tool with no backup story is a risk. Chroma is honest in my CV as a prototype store, not the production choice. I would migrate with a new collection and a golden retrieval set, not a silent swap.",
+      "answer_ar": "Chroma مناسبة للنموذج الأولي لأنها تعمل داخل بايثون. للإنتاج أفضّل Qdrant أو pgvector بسبب النسخ الاحتياطي والكتابة المتزامنة والفلاتر."
+    },
+    {
+      "id": "hard.rag_debug_steps",
+      "category": "scenario.hard",
+      "topic": "rag",
+      "question": "How would you debug a bad RAG answer step by step?",
+      "aliases": [
+        "how would you debug a bad rag answer step by step",
+        "walk me through debugging a wrong rag answer",
+        "the rag answer is wrong debug it live",
+        "this answer is nonsense how do you find the bug",
+        "how do you trace a bad retrieval answer",
+        "live debug this rag failure with me",
+        "where do you start when rag is wrong"
+      ],
+      "keywords": [
+        "debug",
+        "bad rag",
+        "step by step"
+      ],
+      "listen_for": [
+        "debug a bad rag answer",
+        "wrong rag answer",
+        "trace the failure",
+        "this answer is nonsense",
+        "debug it live",
+        "where do you start"
+      ],
+      "answer_en": "I debug one request, in order. Was the user allowed to search that corpus? Did we parse the file, or did OCR break a table? Does the right chunk even exist? Look at retrieved ids and scores. If the gold chunk is missing, I stop blaming the LLM. Then I print the prompt, context, and output, and I fix the first failing stage.",
+      "followup_en": "Why this order? Changing the model first is the common mistake when retrieval never saw the document. After a fix I rerun a golden question so I did not break another path. In BTEC I could inspect chunk ids in logs. The similarity checker already shows passages, which is the same idea: look at evidence before generation.",
+      "answer_ar": "أتتبع الطلب طبقة طبقة: صلاحية، استخراج، وجود المقطع، ثم الاسترجاع، ثم الـ prompt. إذا المقطع الذهبي غير موجود لا ألوم النموذج."
+    },
+    {
+      "id": "hard.which_rag_layer_failed",
+      "category": "scenario.hard",
+      "topic": "rag",
+      "question": "How do you know whether the problem is the embedding model, retrieval, prompt, or LLM?",
+      "aliases": [
+        "how do you know whether the problem is the embedding model retrieval prompt or llm",
+        "is it the embedding or the llm",
+        "how do you isolate rag failures by layer",
+        "embedding versus retrieval versus prompt versus llm",
+        "which layer broke in this rag answer",
+        "how do you tell retrieval failed not the model",
+        "is this a chunking bug or a generation bug"
+      ],
+      "keywords": [
+        "embedding",
+        "retrieval",
+        "prompt",
+        "layer"
+      ],
+      "listen_for": [
+        "embedding or the llm",
+        "which layer failed",
+        "isolate rag failures",
+        "chunking bug",
+        "retrieval failed",
+        "prompt versus model"
+      ],
+      "answer_en": "I treat it as a pipeline test. If the gold chunk is not in the index, it is ingest or chunking. If it is in the index but not in top-k, it is embedding, filters, or query wording. If it is in the prompt and the model still fails, it is the prompt or the model, not retrieval.",
+      "followup_en": "A cheap check: use the gold text itself as a query. If even that misses, the index or filters are wrong. If the chunk is in the prompt and the model invents a number, I tighten 'answer only from context' or change the model last. I do not swap the LLM when retrieval never saw the file.",
+      "answer_ar": "أفصل الطبقات: إن لم يكن المقطع في الفهرس فالمشكلة إدخال. إن لم يصل للـ top-k فاسترجاع. إن وُجد في الـ prompt وفشل الجواب فالنموذج أو التعليمات."
+    },
+    {
+      "id": "hard.rag_arabic_english",
+      "category": "scenario.hard",
+      "topic": "rag",
+      "question": "How would you design RAG for Arabic and English documents?",
+      "aliases": [
+        "how would you design rag for arabic and english documents",
+        "how do you handle bilingual rag",
+        "arabic and english in the same vector database",
+        "does embedding work for arabic",
+        "our policies are arabic and staff ask in english",
+        "how do you retrieve mixed language documents",
+        "multilingual rag for a ministry"
+      ],
+      "keywords": [
+        "arabic",
+        "english",
+        "bilingual"
+      ],
+      "listen_for": [
+        "arabic and english",
+        "bilingual rag",
+        "embedding for arabic",
+        "mixed language documents",
+        "ask in english",
+        "multilingual rag"
+      ],
+      "answer_en": "I pick an embedding model actually tested on Arabic, not only English, and I keep language in metadata. I do not mix two embedding models in one collection. Queries keep their language. I may also retrieve with a translated query if tests show it helps. I never assume a strong English model is good enough for Arabic ministry text.",
+      "followup_en": "Chunking must not split a legal condition from its exception, in either language. Evaluation uses Arabic questions written by staff, not translated English ones. In my work, content is often Arabic and engineering is English. Retrieval has to be measured on the Arabic documents, not on a demo in English.",
+      "answer_ar": "أختار نموذجاً مجرَّباً على العربية، وأحفظ اللغة في البيانات الوصفية، ولا أخلط نموذجين في مجموعة واحدة. القياس يتم بأسئلة عربية حقيقية."
+    },
+    {
+      "id": "hard.rag_pdfs_tables_scans",
+      "category": "scenario.hard",
+      "topic": "rag",
+      "question": "What changes when documents contain tables, PDFs, scanned files, or images?",
+      "aliases": [
+        "what changes when documents contain tables pdfs scanned files or images",
+        "how do you rag over pdfs and scans",
+        "how do you handle tables in rag",
+        "ocr and rag",
+        "our files are scanned circulars not clean text",
+        "what if the number sits in a table cell",
+        "how do you ingest messy government pdfs"
+      ],
+      "keywords": [
+        "pdf",
+        "tables",
+        "scanned",
+        "ocr",
+        "images"
+      ],
+      "listen_for": [
+        "tables and pdfs",
+        "scanned files",
+        "ocr and rag",
+        "number in a table",
+        "messy government pdfs",
+        "ingest scans"
+      ],
+      "answer_en": "Text PDFs: extract with structure, keep headings and table rows as text plus page metadata. Scans: OCR first. OCR errors become wrong answers, so I check extract quality before embedding. Tables: a row often must stay together, sometimes as 'column: value' sentences. Images: caption them offline, or do not pretend they are searchable.",
+      "followup_en": "Why so strict on ingest? I never embed a broken extract and hope the LLM repairs it. Bad ingest is the most common silent RAG failure. If a ministry number lives in a cell, splitting mid-table loses its meaning. I would rather skip a page than index garbage.",
+      "answer_ar": "الـ PDF النصي يُستخرج مع البنية. الممسوح يحتاج OCR بجودة قبل الفهرسة. صف الجدول يبقى معاً. لا أفهرس استخراجاً مكسوراً وأتمنى أن يصلحه النموذج."
+    },
+    {
+      "id": "hard.three_documents",
+      "category": "scenario.hard",
+      "topic": "rag",
+      "question": "What happens when the user asks a question that requires information from three different documents?",
+      "aliases": [
+        "what happens when the question requires three different documents",
+        "how does rag answer from multiple documents",
+        "multi document questions in rag",
+        "can rag combine three sources",
+        "the answer needs a policy a rate and a date from three files",
+        "how do you stop rag from citing only one pdf",
+        "multi hop across three documents"
+      ],
+      "keywords": [
+        "three",
+        "multiple documents",
+        "combine"
+      ],
+      "listen_for": [
+        "three different documents",
+        "multiple sources",
+        "combine three files",
+        "only one pdf",
+        "multi document",
+        "policy and a rate"
+      ],
+      "answer_en": "Single-shot RAG often retrieves three near-duplicate chunks from one file and misses the other two sources. I raise k, filter for source diversity, or do multi-hop: answer part one, retrieve for part two. Then the prompt must say: use all provided sources, and if a source is missing say so. I still verify each claim against a chunk.",
+      "followup_en": "If the three documents conflict, I show the conflict. I do not average them. An agent can retrieve, see a gap, and retrieve again, but a coded two-step retrieve is easier to test when the path is known. Faithfulness still comes first: every sentence needs a supporting chunk.",
+      "answer_ar": "الاسترجاع لمرة واحدة قد يكرر ملفاً واحداً. أزيد التنوع أو أسترجع على مرحلتين، وأطلب ذكر النقص. إن تعارضت الوثائق أعرض التعارض ولا أدمجها."
+    },
+    {
+      "id": "hard.agent_write_db",
+      "category": "scenario.hard",
+      "topic": "agents",
+      "question": "Can an agent write directly to a database?",
+      "aliases": [
+        "can an agent write directly to a database",
+        "should an agent have insert or update access",
+        "do you give the agent sql write permission",
+        "can the agent save to the database",
+        "would you let it update a student record",
+        "open sql for the agent yes or no",
+        "can the model commit a transaction"
+      ],
+      "keywords": [
+        "write",
+        "database",
+        "sql"
+      ],
+      "listen_for": [
+        "write to a database",
+        "sql write permission",
+        "insert or update",
+        "save to the database",
+        "update a student record",
+        "open sql"
+      ],
+      "answer_en": "Not directly, and not with open SQL. If a write is required, it is a narrow tool with permission checks and an idempotency key. No generic query tool. In finance or exams, even that tool stops at a human interrupt. The agent prepares the payload, a person confirms, then a service account writes.",
+      "followup_en": "Why? A model can invent an id. In my BTEC generator the model never wrote to the question bank. Teacher approval was the write path. That is the same pattern I would use for a ministry record: draft, approve, then a controlled service writes.",
+      "answer_ar": "لا كتابة مباشرة ولا SQL مفتوح. أداة ضيقة ثم موافقة بشرية ثم حساب خدمة ينفّذ. في مولّد الأسئلة النموذج ما كان يحفظ في البنك."
+    },
+    {
+      "id": "hard.agent_terms_difference",
+      "category": "scenario.hard",
+      "topic": "agents",
+      "question": "What is the difference between an AI Agent, Agentic Workflow, Multi-Agent System, and Agent Orchestrator?",
+      "aliases": [
+        "difference between an ai agent agentic workflow multi agent system and agent orchestrator",
+        "agent versus agentic workflow versus multi agent versus orchestrator",
+        "define agent workflow multi-agent orchestrator",
+        "are those four terms the same thing",
+        "explain agent versus orchestrator in simple words",
+        "what do you mean by agentic workflow",
+        "is an orchestrator an llm"
+      ],
+      "keywords": [
+        "agent",
+        "workflow",
+        "multi agent",
+        "orchestrator"
+      ],
+      "listen_for": [
+        "agent versus workflow",
+        "multi agent system",
+        "what is an orchestrator",
+        "agentic workflow",
+        "are those terms the same",
+        "orchestrator an llm"
+      ],
+      "answer_en": "An AI agent is a loop where a model chooses the next tool toward a goal. An agentic workflow is a path you defined that may include an agent step, but you own the transitions. A multi-agent system is several specialists. An orchestrator decides the order, data, and retries; it can be Python or LangGraph, and it is not itself a model.",
+      "followup_en": "I can have orchestration with zero agents. I can have one agent with no multi-agent system. I used an agentic workflow: Python orchestration plus LLM steps, not a swarm of agents. LangGraph is one engine for that. It is not the definition, and I did not run it in production.",
+      "answer_ar": "الوكيل حلقة يختار فيها النموذج الأداة. المسار الوكيلي أنت تصممه. متعدد الوكلاء عدة متخصصين. المنسّق طبقة تحكم وليس نموذجاً."
+    },
+    {
+      "id": "hard.project_architecture_e2e",
+      "category": "scenario.hard",
+      "topic": "projects",
+      "question": "Show me the architecture of one of your AI projects from user request until final response.",
+      "aliases": [
+        "show me the architecture of one of your ai projects from user request until final response",
+        "walk me through the request path of the question generator",
+        "end to end architecture of your rag system",
+        "from the teacher click to the saved question what happens",
+        "draw the btec generation flow for me",
+        "what happens after the teacher submits a unit",
+        "request to response in your production system"
+      ],
+      "keywords": [
+        "architecture",
+        "end to end",
+        "request",
+        "response"
+      ],
+      "listen_for": [
+        "end to end architecture",
+        "from user request",
+        "teacher click to saved question",
+        "request path",
+        "walk me through the flow",
+        "production request path"
+      ],
+      "answer_en": "Question generation, end to end. The teacher logs in, picks a BTEC unit, and the backend checks authorization. Retrieval loads that unit's content, the LLM returns JSON, and Pydantic validates it. Nothing is saved until the teacher approves. If retrieval is empty, we stop.",
+      "followup_en": "Logs keep prompt hash, model id, chunk ids, and user id. No LangChain on that production path. This is LLM plus RAG plus Python orchestration plus teacher approval. The similarity checker is a different architecture: extract, embed, compare, show passages, no LLM. I keep those two stories separate.",
+      "answer_ar": "المعلم يختار الوحدة، الاسترجاع يجلب محتواها، النموذج يولّد JSON، ثم موافقة المعلم قبل الحفظ. إن كان الاسترجاع فارغاً نتوقف ولا نختلق."
+    },
+    {
+      "id": "hard.remove_langchain",
+      "category": "scenario.hard",
+      "topic": "frameworks",
+      "question": "If I remove LangChain from your system, can it still work?",
+      "aliases": [
+        "if i remove langchain from your system can it still work",
+        "does your production system depend on langchain",
+        "can you run without langchain",
+        "what happens if langchain is gone",
+        "are you locked into langchain",
+        "is langchain in the live path",
+        "could you rewrite this without langchain"
+      ],
+      "keywords": [
+        "remove",
+        "langchain"
+      ],
+      "listen_for": [
+        "remove langchain",
+        "depend on langchain",
+        "run without langchain",
+        "locked into langchain",
+        "langchain in production",
+        "live path"
+      ],
+      "answer_en": "Yes. Production generation is plain Python: retrieval, prompt, model API, validation, approval. LangChain was the proof of concept to wire those parts quickly. If you remove it, the POC notebooks break. The live path does not. That was the point of the abstraction: the app asks 'generate', it does not ask LangChain.",
+      "followup_en": "Why say this clearly? Interviewers hear LangChain on a CV and assume it is the runtime. For me it was a lab wiring tool. The same honesty applies to LangGraph and n8n: useful, not what served teachers in production. The live path does not import them.",
+      "answer_ar": "نعم. مسار الإنتاج بايثون: استرجاع ثم نموذج ثم تحقق ثم موافقة. LangChain كان إثبات مفهوم، وإزالته لا توقف النظام الحي."
+    },
+    {
+      "id": "hard.remove_llm_from_rag",
+      "category": "scenario.hard",
+      "topic": "rag",
+      "question": "If I remove the LLM from your RAG system, what parts still remain?",
+      "aliases": [
+        "if i remove the llm from your rag system what parts still remain",
+        "what is left of rag without the llm",
+        "rag without generation",
+        "is rag useful without an llm",
+        "what still works if the model is gone",
+        "can teachers use retrieval without generation",
+        "strip the llm what do we keep"
+      ],
+      "keywords": [
+        "remove",
+        "llm",
+        "remain"
+      ],
+      "listen_for": [
+        "remove the llm",
+        "rag without generation",
+        "what still remains",
+        "useful without an llm",
+        "retrieval without generation",
+        "model is gone"
+      ],
+      "answer_en": "Ingest, chunking, embeddings, vector search, metadata filters, and a UI that shows the passages. That is the similarity checker: retrieval and compare, without an LLM. Teachers still read the evidence. You lose drafted questions and summaries. You keep retrieval you can audit.",
+      "followup_en": "That is why I say the similarity project is not RAG until an LLM writes from the chunks. RAG is retrieve then generate. If you only retrieve and compare, you still have a useful search and plagiarism-style tool. The last mile is what changes the risk.",
+      "answer_ar": "يبقى الإدخال والتضمين والبحث والفلاتر وعرض المقاطع. هذا فاحص التشابه: استرجاع ومقارنة بدون نموذج. تفقد التوليد وتبقي دليلاً قابلاً للتدقيق."
+    },
+    {
+      "id": "hard.production_monitoring",
+      "category": "scenario.hard",
+      "topic": "evaluation",
+      "question": "What would you monitor in production: latency, cost, retrieval quality, hallucination, tool errors?",
+      "aliases": [
+        "what would you monitor in production",
+        "latency cost retrieval quality hallucination tool errors",
+        "what metrics for an llm rag agent in production",
+        "how do you monitor an agentic rag system",
+        "which dashboards would you build first",
+        "what alerts would you set on the agent",
+        "how do you know rag is dying in production"
+      ],
+      "keywords": [
+        "monitor",
+        "latency",
+        "cost",
+        "hallucination",
+        "production"
+      ],
+      "listen_for": [
+        "monitor in production",
+        "latency and cost",
+        "retrieval quality",
+        "hallucination metrics",
+        "tool errors",
+        "rag is dying"
+      ],
+      "answer_en": "All of them, as separate signals. I watch latency and cost by stage, retrieval recall and empty hits, and answers with no source. Tool fails, retries, and permission denials are their own metrics. Teacher reject rate matters too, because it is real quality.",
+      "followup_en": "Why separate? Watching only LLM accuracy hides retrieval death. I alert on loops and cost spikes. In BTEC, teachers rejecting drafts is a quality metric. I do not wait for a monthly invoice to learn that a prompt change stuffed twenty chunks into every call.",
+      "answer_ar": "أراقب الزمن والتكلفة وجودة الاسترجاع والهلوسة وأخطاء الأدوات، كلٌّ على حدة. رفض المعلم مسودة هو مقياس جودة، ودقة النموذج وحدها تخفي موت الاسترجاع."
+    },
+    {
+      "id": "hard.why_rag_for_btec",
+      "category": "scenario.hard",
+      "topic": "rag",
+      "question": "Why did you choose RAG for the question generator?",
+      "aliases": [
+        "why did you choose rag",
+        "why rag for exam questions",
+        "why not fine tune instead of rag for btec",
+        "why retrieval for btec units",
+        "could you have fine tuned the whole curriculum",
+        "why ground questions in the unit file",
+        "why not just prompt the model with no rag"
+      ],
+      "keywords": [
+        "why",
+        "rag",
+        "btec"
+      ],
+      "listen_for": [
+        "why did you choose rag",
+        "why rag for exam questions",
+        "fine tune instead of rag",
+        "ground in the unit file",
+        "no rag just prompt",
+        "btec question generator"
+      ],
+      "answer_en": "Because the source of truth is the unit file, and it changes. RAG lets me add or update a unit without retraining. Fine-tuning would bake old content into weights and still would not cite the page. Teachers needed to see that the question came from the outcome text. RAG plus a schema plus approval was the honest design.",
+      "followup_en": "Why not prompt with no retrieval? The model will fill gaps from general knowledge and drift off the unit. Fine-tuning I used only to adapt style, not to store the curriculum. The live path is LLM plus RAG plus Python plus teacher approval. That split kept content in files we can audit.",
+      "answer_ar": "ملف الوحدة هو المصدر ويتغيّر. الـ RAG يحدّث المحتوى بدون إعادة تدريب ويستشهد بالنص. الضبط الدقيق للوزن لا يكفي كذاكرة للمنهج."
+    },
+    {
+      "id": "hard.wrong_chunk",
+      "category": "scenario.hard",
+      "topic": "rag",
+      "question": "What happens if retrieval returns the wrong chunk?",
+      "aliases": [
+        "what happens if retrieval returns the wrong chunk",
+        "what if rag retrieves irrelevant context",
+        "wrong chunk in the prompt",
+        "the model answered from the wrong passage",
+        "off topic chunks in the context window",
+        "how do you stop fluent answers from bad retrieval",
+        "irrelevant top k what do you do"
+      ],
+      "keywords": [
+        "wrong chunk",
+        "irrelevant"
+      ],
+      "listen_for": [
+        "wrong chunk",
+        "irrelevant context",
+        "off topic passage",
+        "bad retrieval",
+        "fluent but wrong",
+        "wrong passage"
+      ],
+      "answer_en": "The model will often still write a fluent answer, which is the danger. I try to prevent it: metadata filters, hybrid search for codes, re-rank, and a minimum similarity. After generation I check that claims are supported. If the chunk is off-topic I drop it or retrieve again once. If still weak, the system says it cannot answer from the documents.",
+      "followup_en": "I do not ask the model to 'ignore bad context'. I do not send bad context. In BTEC a wrong unit chunk would make a wrong exam item, so empty or weak retrieval stops generation. Teachers still see the draft against the unit, which catches leftovers.",
+      "answer_ar": "النموذج قد يجيب بطلاقة من مقطع خاطئ. أفلتر وأعيد الاسترجاع مرة، وإن بقي ضعيفاً أقول إن الوثائق لا تكفي. لا أطلب منه تجاهل سياق سيئ."
+    },
+    {
+      "id": "hard.evaluate_rag",
+      "category": "scenario.hard",
+      "topic": "evaluation",
+      "question": "How would you evaluate this RAG system?",
+      "aliases": [
+        "how would you evaluate this rag system",
+        "how do you evaluate rag before launch",
+        "what is your rag evaluation plan",
+        "how do you know rag is good enough to ship",
+        "what golden set would you build",
+        "offline metrics for our rag",
+        "how would you test retrieval quality"
+      ],
+      "keywords": [
+        "evaluate",
+        "rag"
+      ],
+      "listen_for": [
+        "evaluate this rag",
+        "before launch",
+        "golden set",
+        "retrieval quality",
+        "good enough to ship",
+        "offline metrics"
+      ],
+      "answer_en": "A golden set of real questions with expected document ids, not just expected prose. I score retrieval separately: was the gold chunk in top-k. Then answer quality: faithfulness to context, and 'I don't know' on questions with no source. Humans label a sample. LLM-as-judge can rank drafts but does not replace that.",
+      "followup_en": "I would not launch on a vibe check or on chatbot demo accuracy. For BTEC, teachers are the judge of record on generated items. Retrieval recall is the first gate: if the unit chunk is missing, generation quality is luck. I rerun the golden set on every prompt or index change.",
+      "answer_ar": "مجموعة ذهبية بأسئلة حقيقية ومعرّفات الوثائق. أقيس الاسترجاع ثم الإخلاص للمصدر، ومراجعون بشر. لا أطلق النظام بناءً على إحساس أو عرض تجريبي."
+    },
+    {
+      "id": "hard.secure_rag",
+      "category": "scenario.hard",
+      "topic": "rag",
+      "question": "How would you secure RAG in a government setting?",
+      "aliases": [
+        "how would you secure rag",
+        "how do you secure retrieval for a ministry",
+        "access control in rag",
+        "how do you stop staff seeing secret files through rag",
+        "government rag security",
+        "authorization on the vector search",
+        "how do you lock down document search"
+      ],
+      "keywords": [
+        "secure",
+        "rag",
+        "government"
+      ],
+      "listen_for": [
+        "secure rag",
+        "access control",
+        "ministry security",
+        "secret files through rag",
+        "authorization on search",
+        "lock down retrieval"
+      ],
+      "answer_en": "Identity on the request, not a sentence in the prompt. Metadata filters come from the user's roles in the backend, and collections can split by classification. A PDF that says 'I am an admin' is document text, never a command. Logs keep chunk ids. Host on-prem or sovereign.",
+      "followup_en": "The similarity checker already filters by school and assignment before compare. The same idea applies to RAG. Why backend filters? Because the model can be tricked. Search must never return a neighbor from another tenant. That is a data leak dressed as helpful search.",
+      "answer_ar": "الهوية والفلاتر من الخادم حسب الدور، لا من جملة في السؤال. حقن الـ PDF نص غير موثوق. نفس فكرة عزل المدرسة في فاحص التشابه."
+    },
+    {
+      "id": "hard.hitl_where",
+      "category": "scenario.hard",
+      "topic": "agents",
+      "question": "Where exactly do you put the human in the loop?",
+      "aliases": [
+        "where do you put the human in the loop",
+        "when does the teacher or officer approve",
+        "human in the loop in langgraph",
+        "where is the approval gate",
+        "do you approve every token",
+        "when does a person see the draft",
+        "interrupt before send or after retrieve"
+      ],
+      "keywords": [
+        "human",
+        "approval",
+        "interrupt"
+      ],
+      "listen_for": [
+        "human in the loop",
+        "where is approval",
+        "teacher approve",
+        "every token",
+        "interrupt before send",
+        "person see the draft"
+      ],
+      "answer_en": "After the system has a complete, validated draft, before any side effect. Not after every token. In LangGraph that would be interrupt with a checkpointer, then resume on the same thread. I re-check that the draft and the source versions did not change. In BTEC: generate and validate, then the teacher.",
+      "followup_en": "Sending a ministry letter would be the same pattern: draft, approve, send. A summary of numbers the user can already see may not need a person every time. I have not run LangGraph interrupt in production, but I already used the same gate: nothing lands in the question bank until a teacher says yes.",
+      "answer_ar": "بعد مسودة مكتملة ومتحققة، وقبل أي أثر جانبي. في BTEC المعلم يوافق قبل الحفظ. ليس بعد كل كلمة."
+    },
+    {
+      "id": "hard.checkpoint_vs_memory",
+      "category": "scenario.hard",
+      "topic": "agents",
+      "question": "What is the difference between a LangGraph checkpoint and RAG memory?",
+      "aliases": [
+        "difference between checkpoint and memory",
+        "is a checkpoint a vector store",
+        "checkpoint versus long term memory",
+        "does langgraph checkpoint mean rag",
+        "are you saving chats into chroma",
+        "workflow state versus document memory",
+        "explain checkpoint in simple terms"
+      ],
+      "keywords": [
+        "checkpoint",
+        "memory"
+      ],
+      "listen_for": [
+        "checkpoint versus memory",
+        "is a checkpoint a vector store",
+        "long term memory",
+        "saving chats into chroma",
+        "workflow state",
+        "langgraph checkpoint"
+      ],
+      "answer_en": "A checkpoint is a snapshot of workflow state so you can pause, crash, and resume the same run. It is ops. RAG memory is documents you search by meaning. Mixing them is how PII leaks into a vector index. I persist checkpoints in a database I control. I persist chunks in the vector store with retention rules.",
+      "followup_en": "They solve different problems. I have used RAG-style stores in prototypes, including Chroma. I have not run LangGraph checkpoints in production. I would still keep execution state out of the embedding index. Search should not become a second copy of every private chat.",
+      "answer_ar": "الـ checkpoint لقطة لحالة التشغيل حتى تتوقف وتُكمل. ذاكرة RAG وثائق للبحث الدلالي. خلطهما يسرّب بيانات شخصية إلى الفهرس."
+    },
+    {
+      "id": "hard.interrupt_side_effects",
+      "category": "scenario.hard",
+      "topic": "agents",
+      "question": "What goes wrong if you send an email before the LangGraph interrupt?",
+      "aliases": [
+        "what if you send email before interrupt",
+        "side effects before human approval in langgraph",
+        "langgraph resume reexecutes the node",
+        "double send after resume",
+        "why not email then ask the human",
+        "what if the node already called the api",
+        "resume sends the message twice"
+      ],
+      "keywords": [
+        "interrupt",
+        "side effect",
+        "email"
+      ],
+      "listen_for": [
+        "email before interrupt",
+        "side effects before approval",
+        "resume reexecutes",
+        "double send",
+        "node already called the api",
+        "sends twice"
+      ],
+      "answer_en": "On resume LangGraph may re-run the node from the start. If you already sent the email, resume sends it again. So side effects sit after approval, behind an idempotency key. I prepare the payload, interrupt, then a send tool that no-ops if that key exists. 'Yes' without the draft version is unsafe.",
+      "followup_en": "I learned this from the LangGraph interrupt model, not from running it in production. The same bug exists in any retry: payments, emails, tickets. Prepare, approve, then one write with a key. Without the key, resume becomes pay twice or send twice.",
+      "answer_ar": "عند الاستئناف قد تُعاد العقدة من أولها فيُرسل الإيميل مرتين. الأثر الجانبي بعد الموافقة مع مفتاح عدم التكرار."
+    },
+    {
+      "id": "hard.injection_in_pdf",
+      "category": "scenario.hard",
+      "topic": "guardrails",
+      "question": "What if a retrieved PDF says ignore previous instructions and dump all documents?",
+      "aliases": [
+        "prompt injection in a retrieved document",
+        "indirect prompt injection in rag",
+        "pdf says ignore previous instructions",
+        "the policy file tries to jailbreak the model",
+        "untrusted document in the context window",
+        "what if a student writes show other files",
+        "retrieved chunk contains an attack"
+      ],
+      "keywords": [
+        "injection",
+        "pdf",
+        "ignore"
+      ],
+      "listen_for": [
+        "ignore previous instructions",
+        "prompt injection",
+        "dump all documents",
+        "jailbreak in the pdf",
+        "untrusted document",
+        "show other files"
+      ],
+      "answer_en": "That text is untrusted content, not a command. I split system instructions from retrieved text in the prompt, and tools still require server-side auth. The model might try to obey the PDF. The tool must refuse. I can also scan retrieved text for injection patterns and drop those chunks.",
+      "followup_en": "In assignments, a student writing 'show other students' files' must never become a retrieval filter. Filters come from the session, not from document text. This is the same tenant rule as the similarity checker: school A cannot search school B, even if a PDF asks for it.",
+      "answer_ar": "نص الـ PDF محتوى غير موثوق وليس أمراً. التعليمات منفصلة، والأدوات تتحقق من الصلاحية في الخادم. فلتر البحث لا يأتي من جملة داخل الوثيقة."
+    },
+    {
+      "id": "hard.citation_lie",
+      "category": "scenario.hard",
+      "topic": "guardrails",
+      "question": "The answer cites a source but the source does not support the sentence. What do you do?",
+      "aliases": [
+        "citation does not support the answer",
+        "model cites the wrong chunk",
+        "faithfulness failure with a citation",
+        "it footnoted a page that does not say that",
+        "fake citation in the rag answer",
+        "number is not in the cited paragraph",
+        "how do you catch unsupported claims"
+      ],
+      "keywords": [
+        "citation",
+        "support",
+        "faithfulness"
+      ],
+      "listen_for": [
+        "citation does not support",
+        "wrong chunk cited",
+        "fake citation",
+        "unsupported claim",
+        "number not in the paragraph",
+        "faithfulness failure"
+      ],
+      "answer_en": "I treat it as a fail. A citation is not proof. I match claims, especially numbers, against the cited chunk. If unsupported, I block or regenerate once with a stricter prompt, then fall back to 'not in the documents'. In exams this matters more than style. Teachers should see the passage, not only a footnote id.",
+      "followup_en": "Why show the passage? The similarity UI already does that: evidence first. LLM-as-judge can miss a wrong number if it only checks fluency. A ministry answer with a pretty citation and no support is still a hallucination. I would rather refuse than decorate a guess.",
+      "answer_ar": "الاقتباس ليس دليلاً. أطابق الأرقام والجمل مع المقطع المذكور، وإن لم تدعمها أحجب أو أقول إنها ليست في الوثائق. المعلم يرى النص لا رقم حاشية فقط."
+    },
+    {
+      "id": "hard.hybrid_when",
+      "category": "scenario.hard",
+      "topic": "rag",
+      "question": "When do you add hybrid search or a re-ranker?",
+      "aliases": [
+        "when do you use hybrid search",
+        "when do you add a reranker",
+        "keyword plus vector search",
+        "do we need bm25 on top of embeddings",
+        "when is a cross encoder worth it",
+        "unit codes are missed by embeddings",
+        "precision in the prompt is poor"
+      ],
+      "keywords": [
+        "hybrid",
+        "rerank"
+      ],
+      "listen_for": [
+        "hybrid search",
+        "add a reranker",
+        "bm25",
+        "cross encoder",
+        "unit codes missed",
+        "keyword plus vector"
+      ],
+      "answer_en": "Hybrid when the query has a precise code, unit number, or article id that embeddings blur. Re-rank when top-k is cheap to over-fetch but precision in the prompt is poor. I measure: if gold chunks are retrieved but ranked tenth, re-rank. If they are missing, hybrid or chunking, not a bigger LLM.",
+      "followup_en": "I have not run a cross-encoder in production. I would add it when retrieval metrics stall. Why not start there? Extra cost and latency for no gain if the gold chunk never entered the index. Fix ingest first, then lexical match for ids, then re-rank.",
+      "answer_ar": "البحث الهجين لرموز دقيقة تضيّعها المتجهات. إعادة الترتيب إذا وُجد المقطع الذهبي لكنه متأخر. إن كان غائباً فالمشكلة إدخال أو فهرسة لا كبر النموذج."
+    },
+    {
+      "id": "hard.change_embedding",
+      "category": "scenario.hard",
+      "topic": "rag",
+      "question": "What do you do if you change the embedding model in production?",
+      "aliases": [
+        "what if you change the embedding model",
+        "reindex after embedding change",
+        "can i mix embedding models in one collection",
+        "we upgraded the embedder now answers are worse",
+        "how do you migrate vector collections",
+        "same dimension can we skip rebuild",
+        "switch embedding without downtime"
+      ],
+      "keywords": [
+        "embedding",
+        "reindex",
+        "change"
+      ],
+      "listen_for": [
+        "change the embedding model",
+        "reindex",
+        "mix embedding models",
+        "same dimension",
+        "migrate collections",
+        "answers are worse"
+      ],
+      "answer_en": "I never mix models in one collection even if the dimension matches. New model, new collection or a full rebuild, then a retrieval A/B on the golden set, then switch the pointer. Dual-write during migration if I must. Changing embeddings silently is how a system that worked last month dies.",
+      "followup_en": "Why not mix? Neighbors stop meaning the same thing. Chroma in my prototype made rebuilds easy because the corpus was small. In production I would keep the old collection until recall on gold ids is at least as good. Prompt changes wait for a different release than embedding changes.",
+      "answer_ar": "لا أخلط نماذج تضمين في مجموعة واحدة حتى لو البعد واحد. مجموعة جديدة، قياس على المجموعة الذهبية، ثم تحويل المؤشر. التغيير الصامت يقتل النظام."
+    },
+    {
+      "id": "hard.tenant_isolation",
+      "category": "scenario.hard",
+      "topic": "rag",
+      "question": "How do you stop school A from retrieving school B's assignments?",
+      "aliases": [
+        "tenant isolation in vector database",
+        "how do you isolate tenants in rag",
+        "school a must not see school b documents",
+        "can embeddings leak another school's files",
+        "multi tenant vector search",
+        "how do you scope retrieval by school",
+        "what if a teacher searches and gets another campus"
+      ],
+      "keywords": [
+        "tenant",
+        "isolation",
+        "school"
+      ],
+      "listen_for": [
+        "school a and school b",
+        "tenant isolation",
+        "another school's files",
+        "multi tenant",
+        "scope by school",
+        "embeddings leak"
+      ],
+      "answer_en": "Filter in the backend from the session, not from the question text. Metadata school_id must match, or use separate collections. Tests that try to retrieve across tenants must fail. The similarity checker already scoped compare by assignment and school. RAG without that is a data leak dressed as search.",
+      "followup_en": "Why not trust the prompt? A user or a PDF can claim to be admin. Nearest-neighbor search will happily return another tenant's chunk if you only filter in English instructions. I want a failing test before go-live, not a policy paragraph.",
+      "answer_ar": "الفلتر من الجلسة في الخادم حسب معرّف المدرسة، أو مجموعات منفصلة. فاحص التشابه أصلاً يعزل المدرسة والواجب. البحث دون ذلك تسريب."
+    },
+    {
+      "id": "hard.timeout_vs_steps",
+      "category": "scenario.hard",
+      "topic": "agents",
+      "question": "What is the difference between a step limit and a timeout for an agent?",
+      "aliases": [
+        "step limit versus timeout",
+        "token budget versus wall clock for agents",
+        "why do you need both max steps and a timeout",
+        "the tool hung but steps were not finished",
+        "wall clock versus iteration cap",
+        "how do you stop a hanging http tool",
+        "step budget is not enough why"
+      ],
+      "keywords": [
+        "timeout",
+        "step limit"
+      ],
+      "listen_for": [
+        "step limit versus timeout",
+        "token budget",
+        "tool hung",
+        "wall clock",
+        "hanging http",
+        "max steps"
+      ],
+      "answer_en": "A step limit stops 'one more tool' loops. A timeout stops a hung HTTP call. A token budget stops a talkative model. I set all three. A step limit of eight with a thirty second tool hang still burns the user. Timeouts on tools, circuit breakers after N failures, then needs_human.",
+      "followup_en": "Why all three? They fail in different ways. Loops burn tokens. Hangs burn waiting time. Long prompts burn money without extra steps. Same discipline as payment calls: do not wait forever on a dead host, and do not retry without a cap.",
+      "answer_ar": "حد الخطوات يمنع حلقات الأدوات. المهلة توقف استدعاء معلّقاً. ميزانية الرموز توقف الإطالة. الثلاثة معاً، ثم تحويل لإنسان بعد تكرار الفشل."
+    },
+    {
+      "id": "hard.idempotent_tools",
+      "category": "scenario.hard",
+      "topic": "agents",
+      "question": "How do you make agent tools idempotent?",
+      "aliases": [
+        "how do you make tools idempotent",
+        "idempotency for agent actions",
+        "retry without double send",
+        "how do you avoid paying twice on resume",
+        "same tool call twice what happens",
+        "idempotency keys on writes",
+        "safe retries after interrupt"
+      ],
+      "keywords": [
+        "idempotency",
+        "retry"
+      ],
+      "listen_for": [
+        "idempotent tools",
+        "double send",
+        "pay twice",
+        "idempotency key",
+        "retry the write",
+        "safe retries"
+      ],
+      "answer_en": "Every write carries a key from the workflow id plus the action. The tool stores that key. A retry with the same key returns the first result. Reads are naturally safe. This is mandatory if a graph re-enters a node after interrupt. Without it, resume becomes pay twice.",
+      "followup_en": "I would use this even in plain Python retries, not only LangGraph. Emails, payments, ticket updates all need it. I have not shipped LangGraph, but I have seen double posts from naive retries. The research agent should barely have writes at all.",
+      "answer_ar": "كل كتابة تحمل مفتاحاً من معرّف المسار والإجراء. الإعادة بنفس المفتاح ترجع نفس النتيجة. بدونه الاستئناف قد يدفع أو يرسل مرتين."
+    },
+    {
+      "id": "hard.least_privilege_example",
+      "category": "scenario.hard",
+      "topic": "agents",
+      "question": "Give an example of least privilege tools for a finance research agent.",
+      "aliases": [
+        "least privilege tools for a finance agent",
+        "what tools would you give a research agent",
+        "finance agent tool list",
+        "should a research agent send email",
+        "what can a policy research bot call",
+        "tools for answering budget questions",
+        "no write tools for research yes"
+      ],
+      "keywords": [
+        "least privilege",
+        "finance",
+        "tools"
+      ],
+      "listen_for": [
+        "least privilege",
+        "finance research agent",
+        "what tools",
+        "send email",
+        "budget questions",
+        "no write tools"
+      ],
+      "answer_en": "search_policy on a classified corpus. get_published_rate for numbers that already exist. No send_email, no update_payment, no open SQL. If someone asks to pay a supplier, the agent retrieves the rule and drafts a note, then interrupt. An operations agent would still not get raw SQL, but it might get a narrower update tool behind a human.",
+      "followup_en": "Why so tight? A research question does not need side effects. If I expose write tools 'just in case', the model will eventually call them. Same as BTEC: generation can draft, only a teacher writes to the bank. Privilege follows the job, not the model's confidence.",
+      "answer_ar": "بحث في السياسات وقراءة أرقام منشورة فقط. لا إيميل ولا دفع ولا SQL. طلب الدفع يتحول لمسودة وموافقة. الصلاحية تتبع المهمة لا ثقة النموذج."
+    },
+    {
+      "id": "hard.supervisor_vs_router",
+      "category": "scenario.hard",
+      "topic": "agents",
+      "question": "When is a router enough, and when do you need a supervisor agent?",
+      "aliases": [
+        "router versus supervisor agent",
+        "do i need a supervisor",
+        "can rules route instead of an llm supervisor",
+        "when is a classifier enough",
+        "multi agent supervisor or a simple switch",
+        "who decides rag versus sql",
+        "is a supervisor overkill"
+      ],
+      "keywords": [
+        "router",
+        "supervisor"
+      ],
+      "listen_for": [
+        "router versus supervisor",
+        "do i need a supervisor",
+        "classifier enough",
+        "rag versus sql",
+        "simple switch",
+        "supervisor overkill"
+      ],
+      "answer_en": "A router is a classifier or rules: this question goes to RAG, this one to SQL. It is simple and easy to test. A supervisor is an LLM that delegates and merges. I need it only if routing depends on intermediate results. For a ministry portal I would start with a router. A supervisor can also mis-route and leak extra context.",
+      "followup_en": "Why start small? Each extra agent is another prompt, another cost, another place to leak. If after retrieve I sometimes need SQL, that branch can still be coded. I used Python orchestration, not a supervisor swarm. I would add a supervisor when the path really cannot be listed.",
+      "answer_ar": "الموجّه قواعد أو مصنّف رخيص وقابل للاختبار. المشرف نموذج يوزّع ويدمج. أبدأ بالموجّه، والمشرف يزيد تكلفة وتسريباً إن لم يكن المسار متفرعاً حقاً."
+    },
+    {
+      "id": "hard.when_n8n_wrong",
+      "category": "scenario.hard",
+      "topic": "frameworks",
+      "question": "When is n8n the wrong tool?",
+      "aliases": [
+        "when is n8n the wrong choice",
+        "why not put the agent in n8n",
+        "limits of n8n for llm workflows",
+        "can n8n own exam generation",
+        "n8n versus python for regulated writes",
+        "is a visual workflow enough for agents",
+        "where does n8n break down"
+      ],
+      "keywords": [
+        "n8n",
+        "wrong"
+      ],
+      "listen_for": [
+        "n8n the wrong tool",
+        "put the agent in n8n",
+        "visual workflow",
+        "exam generation in n8n",
+        "regulated writes",
+        "n8n versus python"
+      ],
+      "answer_en": "When you need unit tests, code review, complex state, or regulated writes. Visual graphs hide branches and are weak at versioning. n8n is right for 'when a form is submitted, call this API'. It is wrong as the only home of exam generation or payment policy. I have not used it in production. I would still draw that line.",
+      "followup_en": "Why this line? Teachers and auditors need a diff of what changed. A giant canvas is hard to review. I would let n8n route events, then Python does the decision and the human gate. Same honesty as LangGraph: useful in a lab, not what ran BTEC generation.",
+      "answer_ar": "n8n خطأ عندما تحتاج اختبارات وحالة معقدة وكتابة منظّمة. مناسب لربط نموذج بنموذج. توليد الأسئلة أو سياسة الدفع يجب أن تبقى في كود قابل للمراجعة."
+    },
+    {
+      "id": "hard.cost_spike",
+      "category": "scenario.hard",
+      "topic": "evaluation",
+      "question": "The agent bill jumped overnight. What do you look at?",
+      "aliases": [
+        "agent cost spike",
+        "why did token usage explode",
+        "runaway llm cost",
+        "openai bill doubled what happened",
+        "who burned the tokens",
+        "cost alert on the agent",
+        "overnight spend on llm calls"
+      ],
+      "keywords": [
+        "cost",
+        "tokens",
+        "bill"
+      ],
+      "listen_for": [
+        "bill jumped",
+        "token usage explode",
+        "runaway cost",
+        "who burned the tokens",
+        "overnight spend",
+        "cost spike"
+      ],
+      "answer_en": "Traces: which workflow, which user, step count, retries, context size. Classic causes: a loop, stuffing too many chunks, users pasting huge files, or a prompt change. Caps per user and per run would have stopped it. I alert on tokens per run, not only the monthly invoice.",
+      "followup_en": "Same discipline as KNET: you measure before the surprise. If step count is huge, the stop condition failed. If tokens per step exploded, the prompt or retrieval k changed. I would roll back the prompt, then fix the cap. Cost is a reliability signal, not only finance.",
+      "answer_ar": "أنظر التتبع: أي مسار، أي مستخدم، عدد الخطوات وحجم السياق. غالباً حلقة أو حشو مقاطع أو تغيير في الـ prompt. التنبيه لكل تشغيل لا للفاتورة الشهرية فقط."
+    },
+    {
+      "id": "hard.observability",
+      "category": "scenario.hard",
+      "topic": "evaluation",
+      "question": "How do you trace an agentic RAG request in production?",
+      "aliases": [
+        "how do you trace rag and agent calls",
+        "langsmith or your own logs",
+        "observability for llm systems",
+        "how do you debug one user request across tools",
+        "correlation id through retrieval and generate",
+        "would you use langsmith in a ministry",
+        "what do you log from a rag call"
+      ],
+      "keywords": [
+        "trace",
+        "observability",
+        "logs"
+      ],
+      "listen_for": [
+        "trace the request",
+        "langsmith",
+        "observability",
+        "correlation id",
+        "what do you log",
+        "debug one user request"
+      ],
+      "answer_en": "A correlation id from the HTTP request through retrieval, prompt, model, and tools. Store chunk ids, token counts, tool names, and latency. I am fine with LangSmith in a lab. In a ministry I prefer logs we host, with redaction. You cannot debug a wrong answer without that trace.",
+      "followup_en": "I built BTEC generation to log those fields even without a vendor platform. Why redaction? Prompts can contain student text. Chunk ids are enough to replay retrieval. If I cannot show which chunks entered the prompt, I cannot defend the answer to an auditor.",
+      "answer_ar": "معرّف تتبع من الطلب حتى الاسترجاع والنموذج والأدوات. أسجّل معرّفات المقاطع والرموز والزمن. في جهة حكومية سجلات نستضيفها مع تنقيح، لا منصة سحابية فقط."
+    },
+    {
+      "id": "hard.golden_agentic",
+      "category": "scenario.hard",
+      "topic": "evaluation",
+      "question": "What is in a golden dataset for Agentic RAG?",
+      "aliases": [
+        "golden dataset for agentic rag",
+        "how do you test an agent with rag",
+        "what cases go in the eval set",
+        "how do you regression test tool use",
+        "eval set for retrieve then act",
+        "must never call write tool cases",
+        "golden questions including no answer"
+      ],
+      "keywords": [
+        "golden",
+        "dataset",
+        "agent"
+      ],
+      "listen_for": [
+        "golden dataset",
+        "test an agent",
+        "eval set",
+        "must never call write",
+        "no answer cases",
+        "regression test tools"
+      ],
+      "answer_en": "Questions, expected document ids, expected 'no answer' cases, expected tool names for a few scenarios, and cases that must never call a write tool. Plus injection documents. I run it on every prompt or retrieval change. An agent without a golden set is a demo.",
+      "followup_en": "Why include 'never write'? That is least privilege under test. Why injection docs? RAG will retrieve them someday. For BTEC my human gold was teacher accept or reject, plus whether the item stayed on the unit chunks. I would still add retrieval ids before any agent loop.",
+      "answer_ar": "أسئلة ومعرّفات وثائق متوقعة، حالات بلا جواب، أدوات متوقعة، وحالات يُمنع فيها الكتابة، مع وثائق حقن. بدون هذه المجموعة الوكيل عرض تجريبي."
+    },
+    {
+      "id": "hard.faithfulness_vs_relevance",
+      "category": "scenario.hard",
+      "topic": "evaluation",
+      "question": "What is the difference between faithfulness and answer relevance?",
+      "aliases": [
+        "faithfulness versus relevance",
+        "ragas faithfulness",
+        "is a relevant answer good enough",
+        "fluent but unfaithful what does that mean",
+        "groundedness versus answering the question",
+        "why faithfulness first in government rag",
+        "relevance without sources"
+      ],
+      "keywords": [
+        "faithfulness",
+        "relevance"
+      ],
+      "listen_for": [
+        "faithfulness versus relevance",
+        "ragas",
+        "fluent but unfaithful",
+        "groundedness",
+        "relevance without sources",
+        "answering the question"
+      ],
+      "answer_en": "Relevance: the answer addresses the question. Faithfulness: every claim is in the retrieved text. A fluent wrong legal answer can look relevant and still be unfaithful. I optimize faithfulness first in government RAG. Relevance without sources is still a fail.",
+      "followup_en": "Why this order? A helpful-sounding policy answer that is not in the circular is the failure mode that gets you in trouble. I would rather say 'not in the documents'. In BTEC a relevant-looking question that is off the unit outcomes is still a bad item.",
+      "answer_ar": "الصلة تعني أن الجواب على السؤال. الإخلاص يعني أن كل ادّعاء موجود في النص المسترجع. في العمل الحكومي الإخلاص أولاً، والجواب اللطيف بلا مصدر فشل."
+    },
+    {
+      "id": "hard.empty_retrieval",
+      "category": "scenario.hard",
+      "topic": "rag",
+      "question": "What should the system do when retrieval returns nothing useful?",
+      "aliases": [
+        "empty retrieval",
+        "no chunks found",
+        "rag finds nothing",
+        "what if top k is garbage",
+        "should the model still answer from memory",
+        "low similarity hits",
+        "no approved documents match",
+        "no chunks",
+        "no chunks down",
+        "what if retrieval returns nothing",
+        "what should the system do when retrieval returns nothing"
+      ],
+      "keywords": [
+        "empty",
+        "no chunks",
+        "retrieval returns nothing"
+      ],
+      "listen_for": [
+        "empty retrieval",
+        "no chunks found",
+        "finds nothing",
+        "answer from memory",
+        "low similarity",
+        "nothing useful"
+      ],
+      "answer_en": "Do not generate from model memory. Say we do not have that in the approved documents, offer to rephrase, or route to a human. One query rewrite is allowed. A second empty hit stops. This is how I keep BTEC questions from drifting off the unit file.",
+      "followup_en": "Why one rewrite only? Rewriting forever is a loop and a cost spike. If filters are too tight, that is a backend bug, not a reason to invent. The similarity checker already stops at passages. Generation should stop the same way when evidence is missing.",
+      "answer_ar": "لا نولّد من ذاكرة النموذج. نقول إن الوثائق المعتمدة لا تحتوي ذلك، مع إعادة صياغة واحدة ثم توقف. هكذا منعت أسئلة BTEC من الانحراف عن ملف الوحدة."
+    },
+    {
+      "id": "hard.conflicting_docs",
+      "category": "scenario.hard",
+      "topic": "rag",
+      "question": "Two policies disagree in the retrieved set. What does the system output?",
+      "aliases": [
+        "conflicting documents in rag",
+        "two policies disagree",
+        "old circular and new circular both retrieved",
+        "how do you reconcile two sources",
+        "the agent wants to merge the rules",
+        "which document wins",
+        "contradictory chunks in context"
+      ],
+      "keywords": [
+        "conflict",
+        "policies"
+      ],
+      "listen_for": [
+        "two policies disagree",
+        "conflicting documents",
+        "old and new circular",
+        "which document wins",
+        "merge the rules",
+        "contradictory chunks"
+      ],
+      "answer_en": "It names both, with dates and ids, and does not pick a winner unless a rule says the newer circular overrides. An agent that reconciles in prose is inventing policy. A human legal owner decides. If two systems disagree, I check timestamps. I do not guess.",
+      "followup_en": "Why not let the LLM 'be helpful'? Helpful here means writing a third policy. I would rather surface the conflict in the UI, like showing two passages in the similarity tool. Retrieval should keep source ids so an officer can open both files.",
+      "answer_ar": "يذكر الوثيقتين مع التاريخ والمعرّف ولا يختار فائزاً إلا بقاعدة صريحة. دمج النموذج للنص اختراع سياسة. الإنسان صاحب الاختصاص يقرر."
+    },
+    {
+      "id": "hard.pii_in_chunks",
+      "category": "scenario.hard",
+      "topic": "guardrails",
+      "question": "You find a student ID inside a chunk that will go to the LLM. What do you do?",
+      "aliases": [
+        "pii in retrieved chunks",
+        "student id in rag context",
+        "what if embeddings stored a national id",
+        "redact before the prompt",
+        "sensitive field in the vector store",
+        "chunk contains personal data",
+        "do you still send it to the model"
+      ],
+      "keywords": [
+        "pii",
+        "student",
+        "redact"
+      ],
+      "listen_for": [
+        "student id in the chunk",
+        "pii in retrieval",
+        "redact before the prompt",
+        "personal data in the index",
+        "still send it to the model",
+        "national id"
+      ],
+      "answer_en": "I do not send it. Redact or replace with an internal id before the prompt. Fix ingest so that field is not stored in the collection, or lives in a restricted collection. Curriculum is low sensitivity. Student identity is high. It never went to the model in my BTEC work.",
+      "followup_en": "Why fix ingest, not only the prompt? The vector store itself becomes a PII database you will search later. Retention and access control belong on that collection. I joined names back after generation using ids. That split is boring and it is the correct one.",
+      "answer_ar": "لا أرسله. أنقّح أو أستبدل بمعرّف داخلي، وأصلح الإدخال حتى لا يُخزَّن في المجموعة. هوية الطالب ما كانت تذهب للنموذج في عملي."
+    },
+    {
+      "id": "hard.multihop_vs_agent",
+      "category": "scenario.hard",
+      "topic": "rag",
+      "question": "When is multi-hop RAG enough, and when do you need an agent?",
+      "aliases": [
+        "multi hop rag versus agent",
+        "fixed two retrieve steps or an agent",
+        "do i need an agent for two documents",
+        "coded hops versus tool loop",
+        "when is a second retrieve enough",
+        "branching path then add an agent",
+        "always retrieve twice is that agentic"
+      ],
+      "keywords": [
+        "multi hop",
+        "agent"
+      ],
+      "listen_for": [
+        "multi hop versus agent",
+        "two retrieve steps",
+        "second retrieve",
+        "coded hops",
+        "branching path",
+        "need an agent"
+      ],
+      "answer_en": "If I always need document A then document B, I code two retrieves. That is a workflow. If sometimes I need a calculator, sometimes a second corpus, sometimes stop, an agent chooses. Multi-hop RAG is still easier to test. I prefer it until the path really branches.",
+      "followup_en": "Why easier? I can assert hop one id and hop two id in a golden set. An agent can take a third unused path. For BTEC I did not need hops: one unit retrieve was the path. I would not call two fixed retrieves a multi-agent system.",
+      "answer_ar": "إذا احتجت دائماً وثيقة ثم أخرى أبرمج استرجاعين. هذا مسار. الوكيل عندما يتفرع الطريق حقاً. متعدد القفزات أسهل اختباراً حتى يثبت التفرع."
+    },
+    {
+      "id": "hard.graph_vs_vector",
+      "category": "scenario.hard",
+      "topic": "rag",
+      "question": "When would you use a knowledge graph instead of only a vector database?",
+      "aliases": [
+        "knowledge graph versus vector database",
+        "when is a graph better than embeddings",
+        "do embeddings replace relations",
+        "circular amends article how do you model that",
+        "parent child links in rag",
+        "graphrag do you need it",
+        "sql for relations plus vectors for prose"
+      ],
+      "keywords": [
+        "knowledge graph",
+        "vector"
+      ],
+      "listen_for": [
+        "knowledge graph",
+        "versus vector",
+        "embeddings replace relations",
+        "graphrag",
+        "parent child links",
+        "amends this article"
+      ],
+      "answer_en": "When relations are the question: which circular amends which article, who reports to whom. Vectors find similar text. They do not reliably walk parent-of links. For ministry regulations I would consider a graph or even SQL for those links, and still use vectors for the prose. I have not shipped a production knowledge graph.",
+      "followup_en": "I would not pretend embeddings replace it. Hybrid is honest: SQL or a graph for structure, vectors for 'find the paragraph about leave'. GraphRAG demos look strong until the graph is stale. I would start with metadata and foreign keys I already trust.",
+      "answer_ar": "الرسوم عندما يكون السؤال علاقة: أي تعميم يعدّل أي مادة. المتجهات تجد نصاً مشابهاً ولا تمشي الروابط بموثوقية. لم أشحن رسم معرفة إنتاجياً."
+    },
+    {
+      "id": "hard.not_finetune_first",
+      "category": "scenario.hard",
+      "topic": "rag",
+      "question": "Why not fine-tune a model on all our documents instead of Agentic RAG?",
+      "aliases": [
+        "why not fine tune on our documents instead of rag",
+        "fine tuning versus agentic rag",
+        "put the whole archive into weights",
+        "why retrieve if we can train",
+        "is fine tuning a better knowledge store",
+        "replace rag with a custom model",
+        "train on ministry pdfs instead of search"
+      ],
+      "keywords": [
+        "fine tune",
+        "instead of rag"
+      ],
+      "listen_for": [
+        "fine tune instead of rag",
+        "put documents into weights",
+        "custom model as knowledge",
+        "train on the pdfs",
+        "replace rag",
+        "better knowledge store"
+      ],
+      "answer_en": "Fine-tuning changes style and format. It does not give you citations, immediate updates, or access control per document. Weights are a blurry memory. RAG keeps the file as the source. Agentic RAG adds tools and stops. Fine-tune later for tone, on top of RAG, not instead of it.",
+      "followup_en": "That matches my BTEC split: retrieval for content, light fine-tune for shape. If a unit changes tomorrow, I reindex. I do not retrain. Access control also dies in weights: you cannot filter one school out of a fused model. So documents stay files, not parameters.",
+      "answer_ar": "الضبط الدقيق يغيّر الأسلوب لا المصدر. لا اقتباس فوري ولا صلاحيات لكل ملف. الـ RAG يبقي الوثيقة مصدراً، والضبط لاحقاً للنبرة فوقه لا بدله."
+    },
+    {
+      "id": "hard.teacher_rejects",
+      "category": "scenario.hard",
+      "topic": "projects",
+      "question": "The teacher rejects the generated question. What happens next in the system?",
+      "aliases": [
+        "teacher rejects the generated question",
+        "human reject path in the agent workflow",
+        "what if approval is no",
+        "does the agent argue with the teacher",
+        "reject reason how do you use it",
+        "regenerate after teacher feedback",
+        "nothing saved on reject right"
+      ],
+      "keywords": [
+        "reject",
+        "teacher"
+      ],
+      "listen_for": [
+        "teacher rejects",
+        "approval is no",
+        "reject reason",
+        "regenerate after feedback",
+        "agent argue",
+        "nothing saved"
+      ],
+      "answer_en": "We log the reject reason if they give one. We do not save the item. We may regenerate once with the comment as extra instruction, still grounded in the same unit chunks. Repeated rejects on one unit flag the prompt or the source file, not the teacher. The agent does not argue. The human is the authority.",
+      "followup_en": "Why not loop until accept? That burns tokens and pressures the teacher. Reject rate is a production metric. If many teachers reject the same unit, chunking or the prompt is wrong. This is the write path I actually shipped: LLM plus RAG plus Python, and only approval writes to the bank.",
+      "answer_ar": "نسجل سبب الرفض ولا نحفظ البند. قد نعيد التوليد مرة من نفس مقاطع الوحدة. الرفض المتكرر يفضح الـ prompt أو الملف. المعلم هو السلطة."
+    },
+    {
+      "id": "hard.fallback_llm_down",
+      "category": "scenario.hard",
+      "topic": "general",
+      "question": "The LLM API is down. What does the user still get?",
+      "aliases": [
+        "llm api is down",
+        "fallback when the model is unavailable",
+        "openai outage what still works",
+        "degraded mode without generation",
+        "can they still see similarity results",
+        "what fails closed when the llm dies",
+        "partial service if the model times out"
+      ],
+      "keywords": [
+        "down",
+        "fallback",
+        "unavailable"
+      ],
+      "listen_for": [
+        "llm api is down",
+        "model is unavailable",
+        "outage",
+        "degraded mode",
+        "similarity still works",
+        "fallback"
+      ],
+      "answer_en": "Anything that was never the model: completion percentages from SQL, similarity flags, early-warning lists. For generation, a clear error, not a hang. Cached previous drafts if policy allows. This is why I keep numbers in code. When the model dies, the facts should still show.",
+      "followup_en": "The similarity checker has no LLM, so compare can survive an outage. Question generation cannot, and I would not fake items from a stale model memory. Timeouts and circuit breakers matter here too. Users should see 'generation unavailable', not a spinner that dies after a minute.",
+      "answer_ar": "ما ليس نموذجاً يبقى: نسب الإكمال من SQL وفاحص التشابه. التوليد يظهر خطأ واضحاً لا تعليقاً. الأرقام في الكود حتى لا تختفي الحقائق."
+    },
+    {
+      "id": "hard.streaming_vs_validate",
+      "category": "scenario.hard",
+      "topic": "guardrails",
+      "question": "Do you stream the LLM tokens to the user in a government RAG app?",
+      "aliases": [
+        "do you stream tokens in rag",
+        "streaming versus validate then show",
+        "can staff see partial answers",
+        "why wait for the full json",
+        "is streaming safe for citations",
+        "show tokens as they arrive",
+        "validate before render"
+      ],
+      "keywords": [
+        "stream",
+        "tokens"
+      ],
+      "listen_for": [
+        "stream tokens",
+        "validate then show",
+        "partial answers",
+        "streaming safe",
+        "wait for json",
+        "as they arrive"
+      ],
+      "answer_en": "Not for answers that must pass faithfulness and schema checks. Streaming shows a number before I can block it. I stream in a coaching UI like this interview tool. For ministry RAG I wait, validate, then show. Partial tokens are not an audit record.",
+      "followup_en": "Why the split? Latency feels better with streams, but a leaked unsupported figure is worse. JSON questions in BTEC needed Pydantic first. If I stream, I still would not persist the partial text as the official answer. The saved record is the validated one.",
+      "answer_ar": "في تطبيق حكومي أنتظر وأتحقق ثم أعرض. البث يظهر رقماً قبل أن أقدر أحجبه. البث مناسب لأداة تدريب، لا كسجل تدقيق."
+    },
+    {
+      "id": "hard.prompt_versioning",
+      "category": "scenario.hard",
+      "topic": "general",
+      "question": "How do you version prompts in production?",
+      "aliases": [
+        "how do you version prompts",
+        "prompt change management",
+        "are prompts in git",
+        "how do you roll back a bad prompt",
+        "who approves prompt edits",
+        "prompt id in the logs",
+        "live edit prompts on the server"
+      ],
+      "keywords": [
+        "prompt",
+        "version"
+      ],
+      "listen_for": [
+        "version prompts",
+        "prompts in git",
+        "roll back a prompt",
+        "prompt id",
+        "live edit",
+        "change management"
+      ],
+      "answer_en": "Prompts are files in git with ids. Each answer log stores the prompt id. I change them with the same discipline as code: review, golden set, then release. A prompt edited live on a server is how quality regresses with no diff.",
+      "followup_en": "Why treat prompts as code? A one-line change can stuff extra chunks or drop 'answer only from context'. I want to know which prompt produced a bad BTEC draft. Rollback is then a pointer change, not archaeology in a chat UI.",
+      "answer_ar": "الـ prompts ملفات في git لها معرّف يُحفظ مع كل جواب. تعديل حي على الخادم يُرجع الجودة بدون فرق واضح. المراجعة ثم المجموعة الذهبية ثم الإطلاق."
+    },
+    {
+      "id": "hard.circuit_breaker",
+      "category": "scenario.hard",
+      "topic": "agents",
+      "question": "What is a circuit breaker on tools?",
+      "aliases": [
+        "circuit breaker for agent tools",
+        "stop calling a failing api",
+        "how do you stop hammering a dead tool",
+        "open circuit on retrieval",
+        "tool fails n times then what",
+        "degraded path when search is down",
+        "breaker between agent and http"
+      ],
+      "keywords": [
+        "circuit breaker",
+        "tools"
+      ],
+      "listen_for": [
+        "circuit breaker",
+        "failing api",
+        "hammering a dead tool",
+        "fails n times",
+        "degraded path",
+        "search is down"
+      ],
+      "answer_en": "If a tool fails several times in a short time, I stop calling it and mark that branch failed. I do not let the agent keep retrying during an outage and waste tokens. The user gets a simpler path: documents only, or try later.",
+      "followup_en": "Why not leave retries to the LLM? It will keep calling. Pair this with timeouts and step caps. If retrieval is down, generation must refuse rather than answer from memory. That is the empty-retrieval rule under an outage, not only under a missing chunk.",
+      "answer_ar": "إذا فشلت الأداة مرات في نافذة زمنية أوقف نداءها. لا أترك الوكيل يعيد المحاولة على خدمة ميتة ويحرق الرموز. مسار متدهور أو المحاولة لاحقاً."
+    },
+    {
+      "id": "hard.accountability",
+      "category": "scenario.hard",
+      "topic": "guardrails",
+      "question": "Who is responsible if the agent is wrong?",
+      "aliases": [
+        "who is responsible if the agent is wrong",
+        "accountability for llm decisions",
+        "who owns a bad rag answer",
+        "is the model legally responsible",
+        "who signs the generated letter",
+        "engineer versus teacher versus the llm",
+        "blame when the agent hallucinates"
+      ],
+      "keywords": [
+        "responsible",
+        "accountability"
+      ],
+      "listen_for": [
+        "who is responsible",
+        "accountability",
+        "model legally responsible",
+        "who owns the answer",
+        "who signs",
+        "blame the agent"
+      ],
+      "answer_en": "The organization is responsible through the human who approved the action, and the engineer who designed the controls. The model is not responsible like a person. That is why I do not allow automatic writes. In BTEC the teacher owns the question that enters the bank. I own the design that made that approval possible.",
+      "followup_en": "If we skip approval, we quietly moved liability onto nobody. Logs of chunk ids and prompt ids are how an engineer can still be reviewed. I would never say 'the agent decided'. I would say 'the workflow allowed this step'. Design is part of accountability.",
+      "answer_ar": "المسؤولية على الجهة عبر الإنسان الذي وافق، وعلى المهندس الذي صمم البوابات. النموذج ليس شخصاً قانونياً. في BTEC المعلم يملك السؤال المحفوظ."
+    },
+    {
+      "id": "hard.similarity_vs_qgen_arch",
+      "category": "scenario.hard",
+      "topic": "projects",
+      "question": "Contrast the architecture of the similarity checker and the question generator.",
+      "aliases": [
+        "contrast similarity checker and question generator architecture",
+        "two projects two architectures",
+        "how is plagiarism style search different from rag generation",
+        "did both projects use an llm",
+        "same embeddings different last mile",
+        "why is similarity not rag",
+        "compare your two retrieval systems"
+      ],
+      "keywords": [
+        "similarity",
+        "question generator",
+        "architecture"
+      ],
+      "listen_for": [
+        "similarity versus question generator",
+        "two architectures",
+        "is similarity rag",
+        "both use an llm",
+        "different last mile",
+        "compare the two systems"
+      ],
+      "answer_en": "Similarity: extract, chunk, embed, filter, compare, show passages, stop. No LLM. Question generation: extract the unit, retrieve, prompt an LLM, validate JSON, human approval, save. Same embedding ideas, different last mile. Not every AI project is an agent, and not every retrieval path is RAG.",
+      "followup_en": "I keep this contrast honest in interviews. RAG means retrieve then generate. Similarity is retrieval and compare. Generation is LLM plus RAG plus Python orchestration plus teacher approval. If you mix the two stories, it sounds like I put an agent on plagiarism search. I did not.",
+      "answer_ar": "فاحص التشابه: استخراج وتضمين ومقارنة وعرض مقاطع بدون نموذج. مولّد الأسئلة: استرجاع ثم LLM ثم تحقق ثم موافقة المعلم. نفس أفكار التضمين، نهاية مختلفة."
+    },
+    {
+      "id": "hard.canary_rag",
+      "category": "scenario.hard",
+      "topic": "evaluation",
+      "question": "How would you roll out a new retriever without breaking production?",
+      "aliases": [
+        "canary deploy rag retriever",
+        "how do you roll out retrieval changes",
+        "shadow traffic for a new index",
+        "how do you ship a new embedder safely",
+        "percent rollout on rag",
+        "kill switch for retrieval",
+        "do not swap prompt and retriever together"
+      ],
+      "keywords": [
+        "canary",
+        "rollout",
+        "retriever"
+      ],
+      "listen_for": [
+        "roll out a new retriever",
+        "canary",
+        "shadow traffic",
+        "kill switch",
+        "percent rollout",
+        "without breaking production"
+      ],
+      "answer_en": "Shadow traffic: the new retriever scores in logs, the old one still answers. Compare recall on golden ids. Then a small percent of users, with a quick way to turn it off. Never swap embeddings and the prompt on the same day.",
+      "followup_en": "Why shadow first? You see missed gold chunks before users do. If recall drops, you do not promote. Chroma rebuilds were easy in a prototype. In production I would keep both collections until the pointer flip. Same caution I would use for a payment switch: measure, then cut.",
+      "answer_ar": "حركة ظلّية أولاً: المسترجع الجديد في السجلات والقديم يجيب. أقارن الاستدعاء على المعرّفات الذهبية ثم نسبة صغيرة مع مفتاح إيقاف. لا أغيّر التضمين والـ prompt في يوم واحد."
+    },
+    {
+      "id": "hard.mixed_language_query",
+      "category": "scenario.hard",
+      "topic": "rag",
+      "question": "The user asks in English about an Arabic regulation. What does retrieval do?",
+      "aliases": [
+        "english question arabic documents",
+        "cross language rag",
+        "query in english corpus in arabic",
+        "will bilingual embeddings just work",
+        "translate the query or not",
+        "staff search arabic circulars in english",
+        "cross lingual retrieval for policies"
+      ],
+      "keywords": [
+        "english",
+        "arabic",
+        "query"
+      ],
+      "listen_for": [
+        "english about arabic",
+        "cross language",
+        "translate the query",
+        "bilingual embeddings",
+        "arabic circulars",
+        "ask in english"
+      ],
+      "answer_en": "A bilingual embedder may align them. I would not bet without tests. Options: embed both languages, or translate the query for retrieval only and keep the Arabic chunks in the prompt so the answer can quote the real text. I measure both. Guessing that English queries just work on Arabic PDFs is how you miss the article.",
+      "followup_en": "Why keep Arabic in the prompt? The citation must be the real wording, not my English paraphrase. Staff-written Arabic questions belong in the golden set. In my work, documents are often Arabic and the engineering talk is English. Retrieval quality is a measurement problem, not a slogan about multilingual models.",
+      "answer_ar": "لا أفترض أن السؤال الإنجليزي يجد النص العربي. أختبر نموذجاً ثنائي اللغة أو ترجمة الاستعلام فقط مع إبقاء المقاطع العربية في السياق للاقتباس الحقيقي."
+    },
+    {
+      "id": "hard.agent_cannot_delete",
+      "category": "scenario.hard",
+      "topic": "agents",
+      "question": "Should an agent ever have a delete tool?",
+      "aliases": [
+        "should an agent have a delete tool",
+        "agent delete files or records",
+        "can the bot drop a row",
+        "destructive tools for agents",
+        "two person delete for llm",
+        "why not give delete to operations agent",
+        "soft delete versus agent delete"
+      ],
+      "keywords": [
+        "delete",
+        "tool"
+      ],
+      "listen_for": [
+        "delete tool",
+        "drop a row",
+        "destructive tools",
+        "two person delete",
+        "agent delete files",
+        "should it ever"
+      ],
+      "answer_en": "Default no. Delete is irreversible and easy to call in a loop. If operations require it, it is a two-person tool: the agent proposes ids, a human confirms, a job runs with a dry-run diff. Not in the research agent. Not in a RAG chatbot.",
+      "followup_en": "Why dry-run? So the human sees what would vanish. Idempotency does not save you if the first call already deleted. I would rather a ticket for a DBA than a model with DROP rights. Same as BTEC: the model never wrote, so it certainly never deleted.",
+      "answer_ar": "افتراضياً لا. الحذف لا يُعكس وسهل نداؤه في حلقة. إن لزم فاقتراح من الوكيل ثم تأكيد إنسان مع عرض تجريبي. ليس لوكيل بحث ولا لشات RAG."
+    },
+    {
+      "id": "hard.llm_as_judge_limits",
+      "category": "scenario.hard",
+      "topic": "evaluation",
+      "question": "When is LLM-as-judge a bad idea?",
+      "aliases": [
+        "limits of llm as judge",
+        "when not to use llm as judge",
+        "can the same model grade itself",
+        "judge sharing blindness with the worker",
+        "legal truth versus llm scores",
+        "why teachers not an llm judge",
+        "ragas judge failure modes"
+      ],
+      "keywords": [
+        "llm as judge",
+        "evaluation"
+      ],
+      "listen_for": [
+        "llm as judge",
+        "grade itself",
+        "when not to use",
+        "legal truth",
+        "teachers not the judge",
+        "sharing blindness"
+      ],
+      "answer_en": "When the judge shares the same blindness as the worker, or when you need legal truth. It is useful for ranking fluency. It is weak for faithfulness to a specific article unless you force it to quote. I use it as a filter, then humans on the sample that matters. For BTEC, the teacher is the judge of record.",
+      "followup_en": "Why? A judge model can like a fluent wrong number. Pair it with exact checks: is the cited chunk id in top-k, does the number string appear. Golden ids beat another LLM opinion. I would never let a judge model approve a write.",
+      "answer_ar": "سيئ عندما يشارك الحكم عمى العامل، أو عندما تحتاج حقيقة نظامية. مفيد لترتيب الطلاقة، ضعيف للإخلاص لنص محدد. في BTEC المعلم هو الحكم."
+    },
+    {
+      "id": "hard.context_stuffing",
+      "category": "scenario.hard",
+      "topic": "rag",
+      "question": "What if you stuff twenty chunks into the prompt to be safe?",
+      "aliases": [
+        "too many chunks in the prompt",
+        "context stuffing in rag",
+        "just increase k to twenty",
+        "why not send the whole pdf",
+        "lost in the middle with many chunks",
+        "more context is safer right",
+        "over stuffing the window"
+      ],
+      "keywords": [
+        "twenty chunks",
+        "context"
+      ],
+      "listen_for": [
+        "twenty chunks",
+        "context stuffing",
+        "increase k",
+        "whole pdf",
+        "more context is safer",
+        "lost in the middle"
+      ],
+      "answer_en": "You drown the right sentence, raise cost and latency, and still may exceed the window. Better: fewer, diverse, re-ranked chunks. Twenty near-duplicates from one PDF is not more evidence. I would rather send five good passages and say I don't know than send twenty noisy ones.",
+      "followup_en": "This also shows up as a cost spike overnight. I cap k and log context size. Hybrid plus re-rank is how you keep precision without stuffing. In BTEC I retrieved the unit, not the whole corpus. Wide k feels safe and it is how the gold sentence gets buried.",
+      "answer_ar": "حشو عشرين مقطعاً يغرق الجملة الصحيحة ويرفع التكلفة. أفضل خمسة مقاطع متنوعة. تكرار ملف واحد ليس دليلاً أكثر. أفضّل الاعتراف بالجهل على الضجيج."
+    },
+    {
+      "id": "hard.tool_schema",
+      "category": "scenario.hard",
+      "topic": "agents",
+      "question": "Why do tool arguments need a schema if the model is smart?",
+      "aliases": [
+        "why schema for tool arguments",
+        "pydantic for tool calls",
+        "the model knows the api why validate",
+        "typed tools versus free json",
+        "extra fields in a tool call",
+        "enum versus free string ids",
+        "why not trust function calling"
+      ],
+      "keywords": [
+        "schema",
+        "tool",
+        "arguments"
+      ],
+      "listen_for": [
+        "tool arguments schema",
+        "pydantic",
+        "model is smart",
+        "trust function calling",
+        "typed tools",
+        "extra fields"
+      ],
+      "answer_en": "Because the model is not a security boundary. A schema drops extra fields, enforces enums, and blocks a string where an id must be. Pydantic did that for generated questions. The same idea applies to tools. Smart is not validated.",
+      "followup_en": "Function calling still emits JSON the model invented. Without a schema, an extra field can become a query filter or a write. Fail closed, one retry, then stop. In BTEC invalid JSON never reached the bank. Tools should fail the same way.",
+      "answer_ar": "النموذج ليس حدود أمان. المخطط يحذف حقولاً زائدة ويفرض أنواعاً. Pydantic كان يفعل ذلك للأسئلة المولَّدة، ونفس الفكرة للأدوات."
+    },
+    {
+      "id": "hard.first_90_agentic",
+      "category": "scenario.hard",
+      "topic": "general",
+      "question": "If you joined us next month, what would you build first: RAG, an agent, or monitoring?",
+      "aliases": [
+        "what would you build first rag or agent",
+        "first month agentic rag plan",
+        "your first ninety days on our llm project",
+        "start with an agent demo or with evals",
+        "what is day one in this team",
+        "priority order rag agent monitoring",
+        "if you start monday what ships first"
+      ],
+      "keywords": [
+        "first",
+        "build",
+        "rag",
+        "agent"
+      ],
+      "listen_for": [
+        "build first",
+        "first ninety days",
+        "rag or agent",
+        "day one",
+        "monitoring first",
+        "what ships first"
+      ],
+      "answer_en": "A thin RAG on a small approved corpus, with permissions, logs, and a golden test set. Then a human review UI. An agent only after that loop is stable and measured. Monitoring from day one, even if it is only logs. An agent on day one is usually just a demo, and hard to audit.",
+      "followup_en": "Why this order? I have already seen the last mile matter more than the framework. BTEC worked because retrieval, schema, and teacher approval were in place. Chroma and LangGraph can wait. If we cannot score retrieval, we cannot score an agent. Start where an auditor can follow the request.",
+      "answer_ar": "أولاً RAG ضيق على وثائق معتمدة مع صلاحيات وتتبع ومجموعة ذهبية، ثم واجهة مراجعة. الوكيل بعد أن يصبح هذا مملاً ومقاساً. المراقبة من اليوم الأول."
+    },
+    {
+      "id": "hard.plain_python_still_agentic",
+      "category": "scenario.hard",
+      "topic": "projects",
+      "question": "If you did not use LangGraph, was your BTEC flow still agentic?",
+      "aliases": [
+        "is python orchestration still agentic",
+        "does agentic require langgraph",
+        "were you really doing agents without langgraph",
+        "is a python pipeline an agent",
+        "agentic workflow without a graph library",
+        "did production use langgraph or python",
+        "can you be agentic in plain code"
+      ],
+      "keywords": [
+        "python",
+        "agentic",
+        "langgraph"
+      ],
+      "listen_for": [
+        "still agentic",
+        "without langgraph",
+        "python orchestration",
+        "require langgraph",
+        "plain code",
+        "production langgraph"
+      ],
+      "answer_en": "Yes, if we use the practical definition: a goal, multiple steps, tools, state, and a stop for a human. LangGraph is a better engine for that, not the definition. In the interview I would say agentic workflow in Python. I would not say I had LangGraph in production, because I did not.",
+      "followup_en": "BTEC was LLM plus RAG plus Python orchestration plus teacher approval. That is not a swarm and not n8n. Similarity is not agentic at all: retrieve, compare, stop, no LLM. I keep those words tight so I do not oversell a library I used in a lab.",
+      "answer_ar": "نعم بالمعنى العملي: هدف وخطوات وأدوات وحالة وتوقف عند الإنسان. LangGraph محرك أفضل وليس التعريف. في الإنتاج كان مسار بايثون، لا LangGraph."
+    }
+  ]
+}

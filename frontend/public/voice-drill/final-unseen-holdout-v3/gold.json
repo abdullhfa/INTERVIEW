@@ -1,0 +1,423 @@
+{
+ "pack": "final-unseen-holdout-v3",
+ "note": "Gold lives here, never in scripts.json, so no expected id can reach the matching path. Read only by the scorer.",
+ "expected_intent_ids": {
+  "fuh3_warm_01": [
+   "hard.mixed_language_query"
+  ],
+  "fuh3_warm_02": [
+   "hard.project_architecture_e2e"
+  ],
+  "fuh3_001": [
+   "tech.chunk_size"
+  ],
+  "fuh3_002": [
+   "tech.reranking"
+  ],
+  "fuh3_003": [
+   "tech.model_drift"
+  ],
+  "fuh3_004": [
+   "tech.p95"
+  ],
+  "fuh3_005": [
+   "tech.idempotency"
+  ],
+  "fuh3_006": [
+   "tech.lora"
+  ],
+  "fuh3_007": [
+   "tech.air_gapped"
+  ],
+  "fuh3_008": [
+   "cv.notice_period"
+  ],
+  "fuh3_009": [
+   "tech.redis_why"
+  ],
+  "fuh3_010": [
+   "tech.hybrid_search"
+  ],
+  "fuh3_011": [
+   "tech.golden_dataset"
+  ],
+  "fuh3_012": [
+   "hard.canary_rag"
+  ],
+  "fuh3_013": [
+   "tech.temperature"
+  ],
+  "fuh3_014": [
+   "tech.mcp"
+  ],
+  "fuh3_015": [
+   "hard.circuit_breaker"
+  ],
+  "fuh3_016": [
+   "tech.chunk_size"
+  ],
+  "fuh3_017": [
+   "hard.conflicting_docs"
+  ],
+  "fuh3_018": [
+   "hard.not_finetune_first"
+  ],
+  "fuh3_019": [
+   "hard.accountability"
+  ],
+  "fuh3_020": [
+   "tech.gpu_sizing"
+  ],
+  "fuh3_021": [
+   "hard.rag_pdfs_tables_scans"
+  ],
+  "fuh3_022": [
+   "hard.streaming_vs_validate"
+  ],
+  "fuh3_023": [
+   "cv.kubernetes"
+  ],
+  "fuh3_024": [
+   "cv.kuwait_how_long"
+  ],
+  "fuh3_025": [
+   "cv.transition_pm_to_ai"
+  ],
+  "fuh3_026": [
+   "proj.early_warning.metric"
+  ],
+  "fuh3_027": [
+   "cv.student_pii"
+  ],
+  "fuh3_028": [
+   "tech.reduce_cost"
+  ],
+  "fuh3_029": [
+   "hard.prompt_versioning"
+  ],
+  "fuh3_030": [
+   "hard.first_90_agentic"
+  ],
+  "fuh3_031": [
+   "hard.empty_retrieval"
+  ],
+  "fuh3_032": [
+   "hard.tenant_isolation"
+  ],
+  "fuh3_033": [
+   "hard.which_rag_layer_failed"
+  ],
+  "fuh3_034": [
+   "tech.reindex_embedding_change"
+  ],
+  "fuh3_035": [
+   "tech.faithfulness_check"
+  ],
+  "fuh3_036": [
+   "hard.graph_vs_vector"
+  ],
+  "fuh3_037": [
+   "tech.deploy_on_prem",
+   "tech.gpu_sizing"
+  ],
+  "fuh3_038": [
+   "hard.idempotent_tools"
+  ],
+  "fuh3_039": [
+   "hard.production_monitoring"
+  ],
+  "fuh3_040": [
+   "proj.early_warning.leakage"
+  ],
+  "fuh3_041": [
+   "tech.python_libraries"
+  ],
+  "fuh3_042": [
+   "gen.non_technical_stakeholders"
+  ],
+  "fuh3_043": [
+   "tech.emirati_dialect"
+  ],
+  "fuh3_044": [
+   "hard.supervisor_vs_router"
+  ],
+  "fuh3_045": [
+   "tech.good_enough_to_launch"
+  ],
+  "fuh3_046": [
+   "hard.rag_pdfs_tables_scans",
+   "tech.rag_build"
+  ],
+  "fuh3_047": [
+   "hard.injection_in_pdf"
+  ],
+  "fuh3_048": [
+   "tech.rag_vs_finetuning"
+  ],
+  "fuh3_049": [
+   "hard.citation_lie"
+  ],
+  "fuh3_050": [
+   "hard.canary_rag"
+  ],
+  "fuh3_051": [
+   "tech.guardrails_layers"
+  ],
+  "fuh3_052": [
+   "hard.fallback_llm_down"
+  ],
+  "fuh3_053": [
+   "hard.observability"
+  ],
+  "fuh3_054": [
+   "hard.rag_debug_steps"
+  ],
+  "fuh3_055": [
+   "tech.hosting_decision"
+  ],
+  "fuh3_056": [
+   "proj.kiosk.describe",
+   "proj.kiosk.challenges"
+  ],
+  "fuh3_057": [
+   "tech.reduce_cost",
+   "hard.cost_spike"
+  ],
+  "fuh3_058": [
+   "hard.evaluate_rag"
+  ],
+  "fuh3_059": [
+   "hard.teacher_rejects"
+  ],
+  "fuh3_060": [
+   "hard.checkpoint_vs_memory"
+  ],
+  "fuh3_061": [
+   "tech.air_gapped",
+   "hard.secure_rag",
+   "tech.deploy_on_prem"
+  ],
+  "fuh3_062": [
+   "hard.production_monitoring",
+   "tech.latency_p95"
+  ],
+  "fuh3_063": [
+   "cv.what_would_you_improve",
+   "cv.projects.most_proud"
+  ],
+  "fuh3_064": [
+   "tech.prompt_injection_supplier",
+   "tech.guardrails_layers"
+  ],
+  "fuh3_065": [
+   "hard.rag_arabic_english",
+   "hard.mixed_language_query"
+  ],
+  "fuh3_066": [
+   "hard.least_privilege_example",
+   "hard.interrupt_side_effects"
+  ],
+  "fuh3_067": [
+   "moe.question_generation",
+   "hard.hitl_where"
+  ],
+  "fuh3_068": [
+   "tech.latency_p95",
+   "hard.evaluate_rag"
+  ],
+  "fuh3_069": [
+   "tech.production_failure_story"
+  ],
+  "fuh3_070": [
+   "gen.non_technical_stakeholders",
+   "hard.first_90_agentic"
+  ],
+  "fuh3_071": [
+   "hard.agents_disagree",
+   "hard.hitl_where"
+  ],
+  "fuh3_072": [
+   "tech.pii_redaction",
+   "cv.student_pii",
+   "tech.audio_retention"
+  ],
+  "fuh3_073": [
+   "hard.agent_terms_difference",
+   "hard.plain_python_still_agentic"
+  ],
+  "fuh3_074": [
+   "tech.no_wrong_info_finance",
+   "tech.i_dont_know_too_often"
+  ],
+  "fuh3_075": [
+   "tech.golden_dataset",
+   "hard.golden_agentic"
+  ],
+  "fuh3_076": [
+   "tech.reranking",
+   "hard.hybrid_when"
+  ],
+  "fuh3_077": [
+   "tech.hallucination_what",
+   "tech.hallucination_prevent"
+  ],
+  "fuh3_078": [
+   "tech.context_window",
+   "tech.chunk_size"
+  ],
+  "fuh3_079": [
+   "proj.similarity.describe",
+   "proj.similarity.tech",
+   "proj.similarity.is_rag"
+  ],
+  "fuh3_080": [
+   "tech.overfitting",
+   "tech.overfitting_prevent",
+   "tech.evaluate_classification"
+  ],
+  "fuh3_081": [
+   "cv.vector_db",
+   "tech.vector_db_choice"
+  ],
+  "fuh3_082": [
+   "tech.agent_orchestrator",
+   "tech.multi_agent_when"
+  ],
+  "fuh3_083": [
+   "cv.education",
+   "cv.certifications",
+   "cv.pmp_value"
+  ],
+  "fuh3_084": [
+   "tech.prompt_injection_what",
+   "hard.injection_in_pdf",
+   "tech.guardrails_how"
+  ],
+  "fuh3_085": [
+   "tech.docker_why",
+   "tech.container_vs_vm",
+   "tech.kubernetes"
+  ],
+  "fuh3_086": [
+   "proj.early_warning.describe",
+   "proj.early_warning.metric",
+   "proj.early_warning.result"
+  ],
+  "fuh3_087": [
+   "tech.tool_calling",
+   "hard.tool_schema",
+   "hard.agent_stop_tools"
+  ],
+  "fuh3_088": [
+   "tech.how_stt_works",
+   "tech.whisper_vs_cloud",
+   "tech.transcription_quality"
+  ],
+  "fuh3_089": [
+   "tech.langgraph_vs_langchain",
+   "cv.langgraph",
+   "hard.remove_langchain"
+  ],
+  "fuh3_090": [
+   "tech.embeddings",
+   "tech.cosine_semantic_search",
+   "tech.metadata_filtering",
+   "tech.hybrid_search"
+  ],
+  "fuh3_091": [
+   "tech.hallucination_what"
+  ],
+  "fuh3_092": [
+   "tech.reindex_embedding_change"
+  ],
+  "fuh3_093": [
+   "hard.cost_spike"
+  ],
+  "fuh3_094": [
+   "hard.wrong_chunk"
+  ],
+  "fuh3_095": [
+   "hard.not_finetune_first"
+  ],
+  "fuh3_096": [
+   "hard.citation_lie",
+   "tech.faithfulness_check"
+  ],
+  "fuh3_097": [
+   "tech.i_dont_know_too_often"
+  ],
+  "fuh3_098": [
+   "tech.rag_access_control"
+  ],
+  "fuh3_099": [
+   "hard.agent_loop",
+   "hard.timeout_vs_steps"
+  ],
+  "fuh3_100": [
+   "tech.good_enough_to_launch",
+   "hard.evaluate_rag"
+  ],
+  "fuh3_101": [
+   "tech.temperature",
+   "hard.prompt_versioning"
+  ],
+  "fuh3_102": [
+   "tech.audio_retention",
+   "tech.external_api_risks"
+  ],
+  "fuh3_103": [
+   "cv.why_leaving"
+  ],
+  "fuh3_104": [
+   "gen.motivation"
+  ],
+  "fuh3_105": [
+   "gen.weaknesses"
+  ],
+  "fuh3_106": [
+   "proj.similarity.role"
+  ],
+  "fuh3_107": [
+   "tech.rag_build"
+  ],
+  "fuh3_108": [
+   "tech.cosine_semantic_search"
+  ],
+  "fuh3_109": [
+   "tech.agent_vs_workflow"
+  ],
+  "fuh3_110": [
+   "tech.guardrails_how"
+  ],
+  "fuh3_111": [
+   "tech.hallucination_prevent"
+  ],
+  "fuh3_112": [
+   "proj.early_warning.tech"
+  ],
+  "fuh3_113": [
+   "tech.data_leakage_prevent"
+  ],
+  "fuh3_114": [
+   "tech.overfitting_prevent"
+  ],
+  "fuh3_115": [
+   "cv.langgraph"
+  ],
+  "fuh3_116": [
+   "tech.vector_db_choice"
+  ],
+  "fuh3_117": [
+   "tech.rag_vs_finetuning"
+  ],
+  "fuh3_118": [
+   "tech.guardrails_how"
+  ],
+  "fuh3_119": [
+   "proj.helpdesk.challenges"
+  ],
+  "fuh3_120": [
+   "tech.whisper_vs_cloud"
+  ]
+ }
+}

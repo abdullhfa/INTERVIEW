@@ -1,0 +1,705 @@
+{
+  "created_at": "2026-09-13T21:39:07.942177+00:00",
+  "step": "v4 step 5 — L2 Variant D compound trailing rescue",
+  "change": "After harvest: for dropped/duplicate trailing (or pronoun-heavy) sub-questions, re-rank with clause kept + parent subject carry + same-topic soft filter + exclude parent/already; accept via existing _accept_match only (COMPOUND_VARIANT_D_RESCUE).",
+  "untouched": [
+    "_MIN_ANSWER_SCORE",
+    "_MIN_KEEP_SCORE",
+    "_MIN_MARGIN",
+    "strong thresholds",
+    "aliases",
+    "weights",
+    "L1 / semantic recovery gates"
+  ],
+  "verdict": "STEP5_PASS",
+  "primary": {
+    "mean_coverage_before": 0.5556,
+    "mean_coverage_after": 0.5778,
+    "gold_parts_before": 22,
+    "gold_parts_after": 23,
+    "surfaced_correct_rank1_before": 5,
+    "surfaced_correct_rank1_after": 5,
+    "coverage_gains": [
+      {
+        "clip": "fuh3_080",
+        "before": 0.3333,
+        "after": 0.6667,
+        "new_gold": [
+          "tech.overfitting_prevent"
+        ],
+        "rescues": [
+          {
+            "sub_question": "What do you do about it?",
+            "intent_id": "tech.overfitting_prevent",
+            "is_gold": true
+          }
+        ]
+      }
+    ],
+    "rescue_gold": 1,
+    "rescue_wrong": 0
+  },
+  "guards": {
+    "new_wrong_intents": [],
+    "coverage_drops": [],
+    "min_answer_score": 0.58
+  },
+  "per_clip": {
+    "before": {
+      "fuh3_076": {
+        "selected": [
+          "tech.reranking"
+        ],
+        "gold": [
+          "tech.reranking",
+          "hard.hybrid_when"
+        ],
+        "coverage": 0.5,
+        "gold_hit": 1,
+        "gold_n": 2,
+        "wrong_ids": [],
+        "rescues": [],
+        "surfaced_correct_rank1": 0,
+        "trailing_cases": 1,
+        "notes": [
+          "clause_primary"
+        ]
+      },
+      "fuh3_077": {
+        "selected": [
+          "tech.hallucination_what",
+          "tech.hallucination_prevent",
+          "tech.rag_prevent_invented_numbers"
+        ],
+        "gold": [
+          "tech.hallucination_what",
+          "tech.hallucination_prevent"
+        ],
+        "coverage": 1.0,
+        "gold_hit": 2,
+        "gold_n": 2,
+        "wrong_ids": [
+          "tech.rag_prevent_invented_numbers"
+        ],
+        "rescues": [],
+        "surfaced_correct_rank1": 1,
+        "trailing_cases": 2,
+        "notes": [
+          "facet:hallucination",
+          "facet_with_clauses"
+        ]
+      },
+      "fuh3_078": {
+        "selected": [
+          "tech.context_window"
+        ],
+        "gold": [
+          "tech.context_window",
+          "tech.chunk_size"
+        ],
+        "coverage": 0.5,
+        "gold_hit": 1,
+        "gold_n": 2,
+        "wrong_ids": [],
+        "rescues": [],
+        "surfaced_correct_rank1": 0,
+        "trailing_cases": 1,
+        "notes": [
+          "clause_primary"
+        ]
+      },
+      "fuh3_079": {
+        "selected": [
+          "proj.similarity.stack",
+          "proj.similarity.is_rag",
+          "proj.similarity.describe"
+        ],
+        "gold": [
+          "proj.similarity.describe",
+          "proj.similarity.tech",
+          "proj.similarity.is_rag"
+        ],
+        "coverage": 0.6667,
+        "gold_hit": 2,
+        "gold_n": 3,
+        "wrong_ids": [
+          "proj.similarity.stack"
+        ],
+        "rescues": [],
+        "surfaced_correct_rank1": 0,
+        "trailing_cases": 0,
+        "notes": [
+          "facet:similarity checker",
+          "facet_with_clauses"
+        ]
+      },
+      "fuh3_080": {
+        "selected": [
+          "tech.overfitting"
+        ],
+        "gold": [
+          "tech.overfitting",
+          "tech.overfitting_prevent",
+          "tech.evaluate_classification"
+        ],
+        "coverage": 0.3333,
+        "gold_hit": 1,
+        "gold_n": 3,
+        "wrong_ids": [],
+        "rescues": [],
+        "surfaced_correct_rank1": 0,
+        "trailing_cases": 1,
+        "notes": [
+          "clause_primary"
+        ]
+      },
+      "fuh3_081": {
+        "selected": [
+          "cv.vector_db"
+        ],
+        "gold": [
+          "cv.vector_db",
+          "tech.vector_db_choice"
+        ],
+        "coverage": 0.5,
+        "gold_hit": 1,
+        "gold_n": 2,
+        "wrong_ids": [],
+        "rescues": [],
+        "surfaced_correct_rank1": 0,
+        "trailing_cases": 1,
+        "notes": [
+          "clause_primary"
+        ]
+      },
+      "fuh3_082": {
+        "selected": [
+          "tech.agent_orchestrator",
+          "tech.multi_agent_when"
+        ],
+        "gold": [
+          "tech.agent_orchestrator",
+          "tech.multi_agent_when"
+        ],
+        "coverage": 1.0,
+        "gold_hit": 2,
+        "gold_n": 2,
+        "wrong_ids": [],
+        "rescues": [],
+        "surfaced_correct_rank1": 0,
+        "trailing_cases": 1,
+        "notes": [
+          "clause_primary"
+        ]
+      },
+      "fuh3_083": {
+        "selected": [
+          "cv.education"
+        ],
+        "gold": [
+          "cv.education",
+          "cv.certifications",
+          "cv.pmp_value"
+        ],
+        "coverage": 0.3333,
+        "gold_hit": 1,
+        "gold_n": 3,
+        "wrong_ids": [],
+        "rescues": [],
+        "surfaced_correct_rank1": 0,
+        "trailing_cases": 1,
+        "notes": [
+          "clause_primary"
+        ]
+      },
+      "fuh3_084": {
+        "selected": [
+          "tech.prompt_engineering",
+          "hard.injection_in_pdf"
+        ],
+        "gold": [
+          "tech.prompt_injection_what",
+          "hard.injection_in_pdf",
+          "tech.guardrails_how"
+        ],
+        "coverage": 0.3333,
+        "gold_hit": 1,
+        "gold_n": 3,
+        "wrong_ids": [
+          "tech.prompt_engineering"
+        ],
+        "rescues": [],
+        "surfaced_correct_rank1": 1,
+        "trailing_cases": 1,
+        "notes": [
+          "facet:retrieved pdfs",
+          "facet_with_clauses"
+        ]
+      },
+      "fuh3_085": {
+        "selected": [
+          "tech.docker_why",
+          "tech.container_vs_vm"
+        ],
+        "gold": [
+          "tech.docker_why",
+          "tech.container_vs_vm",
+          "tech.kubernetes"
+        ],
+        "coverage": 0.6667,
+        "gold_hit": 2,
+        "gold_n": 3,
+        "wrong_ids": [],
+        "rescues": [],
+        "surfaced_correct_rank1": 1,
+        "trailing_cases": 1,
+        "notes": [
+          "clause_primary"
+        ]
+      },
+      "fuh3_086": {
+        "selected": [
+          "proj.early_warning.metric",
+          "tech.ragas",
+          "proj.early_warning.describe"
+        ],
+        "gold": [
+          "proj.early_warning.describe",
+          "proj.early_warning.metric",
+          "proj.early_warning.result"
+        ],
+        "coverage": 0.6667,
+        "gold_hit": 2,
+        "gold_n": 3,
+        "wrong_ids": [
+          "tech.ragas"
+        ],
+        "rescues": [],
+        "surfaced_correct_rank1": 0,
+        "trailing_cases": 1,
+        "notes": [
+          "facet:early warning",
+          "facet_with_clauses"
+        ]
+      },
+      "fuh3_087": {
+        "selected": [
+          "hard.tool_schema",
+          "hard.agent_stop_tools"
+        ],
+        "gold": [
+          "tech.tool_calling",
+          "hard.tool_schema",
+          "hard.agent_stop_tools"
+        ],
+        "coverage": 0.6667,
+        "gold_hit": 2,
+        "gold_n": 3,
+        "wrong_ids": [],
+        "rescues": [],
+        "surfaced_correct_rank1": 1,
+        "trailing_cases": 1,
+        "notes": [
+          "clause_primary"
+        ]
+      },
+      "fuh3_088": {
+        "selected": [
+          "tech.how_stt_works",
+          "tech.transcription_quality",
+          "hard.production_monitoring"
+        ],
+        "gold": [
+          "tech.how_stt_works",
+          "tech.whisper_vs_cloud",
+          "tech.transcription_quality"
+        ],
+        "coverage": 0.6667,
+        "gold_hit": 2,
+        "gold_n": 3,
+        "wrong_ids": [
+          "hard.production_monitoring"
+        ],
+        "rescues": [],
+        "surfaced_correct_rank1": 1,
+        "trailing_cases": 1,
+        "notes": [
+          "facet:interview assistant",
+          "facet_with_clauses"
+        ]
+      },
+      "fuh3_089": {
+        "selected": [],
+        "gold": [
+          "tech.langgraph_vs_langchain",
+          "cv.langgraph",
+          "hard.remove_langchain"
+        ],
+        "coverage": 0.0,
+        "gold_hit": 0,
+        "gold_n": 3,
+        "wrong_ids": [],
+        "rescues": [],
+        "surfaced_correct_rank1": 0,
+        "trailing_cases": 0,
+        "notes": [
+          "clause_primary"
+        ]
+      },
+      "fuh3_090": {
+        "selected": [
+          "tech.hybrid_search",
+          "tech.metadata_filtering"
+        ],
+        "gold": [
+          "tech.embeddings",
+          "tech.cosine_semantic_search",
+          "tech.metadata_filtering",
+          "tech.hybrid_search"
+        ],
+        "coverage": 0.5,
+        "gold_hit": 2,
+        "gold_n": 4,
+        "wrong_ids": [],
+        "rescues": [],
+        "surfaced_correct_rank1": 0,
+        "trailing_cases": 0,
+        "notes": [
+          "clause_primary"
+        ]
+      }
+    },
+    "after": {
+      "fuh3_076": {
+        "selected": [
+          "tech.reranking"
+        ],
+        "gold": [
+          "tech.reranking",
+          "hard.hybrid_when"
+        ],
+        "coverage": 0.5,
+        "gold_hit": 1,
+        "gold_n": 2,
+        "wrong_ids": [],
+        "rescues": [],
+        "surfaced_correct_rank1": 0,
+        "trailing_cases": 1,
+        "notes": [
+          "clause_primary"
+        ]
+      },
+      "fuh3_077": {
+        "selected": [
+          "tech.hallucination_what",
+          "tech.hallucination_prevent",
+          "tech.rag_prevent_invented_numbers"
+        ],
+        "gold": [
+          "tech.hallucination_what",
+          "tech.hallucination_prevent"
+        ],
+        "coverage": 1.0,
+        "gold_hit": 2,
+        "gold_n": 2,
+        "wrong_ids": [
+          "tech.rag_prevent_invented_numbers"
+        ],
+        "rescues": [],
+        "surfaced_correct_rank1": 1,
+        "trailing_cases": 2,
+        "notes": [
+          "facet:hallucination",
+          "facet_with_clauses"
+        ]
+      },
+      "fuh3_078": {
+        "selected": [
+          "tech.context_window"
+        ],
+        "gold": [
+          "tech.context_window",
+          "tech.chunk_size"
+        ],
+        "coverage": 0.5,
+        "gold_hit": 1,
+        "gold_n": 2,
+        "wrong_ids": [],
+        "rescues": [],
+        "surfaced_correct_rank1": 0,
+        "trailing_cases": 1,
+        "notes": [
+          "clause_primary"
+        ]
+      },
+      "fuh3_079": {
+        "selected": [
+          "proj.similarity.stack",
+          "proj.similarity.is_rag",
+          "proj.similarity.describe"
+        ],
+        "gold": [
+          "proj.similarity.describe",
+          "proj.similarity.tech",
+          "proj.similarity.is_rag"
+        ],
+        "coverage": 0.6667,
+        "gold_hit": 2,
+        "gold_n": 3,
+        "wrong_ids": [
+          "proj.similarity.stack"
+        ],
+        "rescues": [],
+        "surfaced_correct_rank1": 0,
+        "trailing_cases": 0,
+        "notes": [
+          "facet:similarity checker",
+          "facet_with_clauses"
+        ]
+      },
+      "fuh3_080": {
+        "selected": [
+          "tech.overfitting",
+          "tech.overfitting_prevent"
+        ],
+        "gold": [
+          "tech.overfitting",
+          "tech.overfitting_prevent",
+          "tech.evaluate_classification"
+        ],
+        "coverage": 0.6667,
+        "gold_hit": 2,
+        "gold_n": 3,
+        "wrong_ids": [],
+        "rescues": [
+          {
+            "sub_question": "What do you do about it?",
+            "intent_id": "tech.overfitting_prevent",
+            "is_gold": true
+          }
+        ],
+        "surfaced_correct_rank1": 0,
+        "trailing_cases": 1,
+        "notes": [
+          "clause_primary",
+          "variant_d_trailing_rescue"
+        ]
+      },
+      "fuh3_081": {
+        "selected": [
+          "cv.vector_db"
+        ],
+        "gold": [
+          "cv.vector_db",
+          "tech.vector_db_choice"
+        ],
+        "coverage": 0.5,
+        "gold_hit": 1,
+        "gold_n": 2,
+        "wrong_ids": [],
+        "rescues": [],
+        "surfaced_correct_rank1": 0,
+        "trailing_cases": 1,
+        "notes": [
+          "clause_primary"
+        ]
+      },
+      "fuh3_082": {
+        "selected": [
+          "tech.agent_orchestrator",
+          "tech.multi_agent_when"
+        ],
+        "gold": [
+          "tech.agent_orchestrator",
+          "tech.multi_agent_when"
+        ],
+        "coverage": 1.0,
+        "gold_hit": 2,
+        "gold_n": 2,
+        "wrong_ids": [],
+        "rescues": [],
+        "surfaced_correct_rank1": 0,
+        "trailing_cases": 1,
+        "notes": [
+          "clause_primary"
+        ]
+      },
+      "fuh3_083": {
+        "selected": [
+          "cv.education"
+        ],
+        "gold": [
+          "cv.education",
+          "cv.certifications",
+          "cv.pmp_value"
+        ],
+        "coverage": 0.3333,
+        "gold_hit": 1,
+        "gold_n": 3,
+        "wrong_ids": [],
+        "rescues": [],
+        "surfaced_correct_rank1": 0,
+        "trailing_cases": 1,
+        "notes": [
+          "clause_primary"
+        ]
+      },
+      "fuh3_084": {
+        "selected": [
+          "tech.prompt_engineering",
+          "hard.injection_in_pdf"
+        ],
+        "gold": [
+          "tech.prompt_injection_what",
+          "hard.injection_in_pdf",
+          "tech.guardrails_how"
+        ],
+        "coverage": 0.3333,
+        "gold_hit": 1,
+        "gold_n": 3,
+        "wrong_ids": [
+          "tech.prompt_engineering"
+        ],
+        "rescues": [],
+        "surfaced_correct_rank1": 1,
+        "trailing_cases": 1,
+        "notes": [
+          "facet:retrieved pdfs",
+          "facet_with_clauses"
+        ]
+      },
+      "fuh3_085": {
+        "selected": [
+          "tech.docker_why",
+          "tech.container_vs_vm"
+        ],
+        "gold": [
+          "tech.docker_why",
+          "tech.container_vs_vm",
+          "tech.kubernetes"
+        ],
+        "coverage": 0.6667,
+        "gold_hit": 2,
+        "gold_n": 3,
+        "wrong_ids": [],
+        "rescues": [],
+        "surfaced_correct_rank1": 1,
+        "trailing_cases": 1,
+        "notes": [
+          "clause_primary"
+        ]
+      },
+      "fuh3_086": {
+        "selected": [
+          "proj.early_warning.metric",
+          "tech.ragas",
+          "proj.early_warning.describe"
+        ],
+        "gold": [
+          "proj.early_warning.describe",
+          "proj.early_warning.metric",
+          "proj.early_warning.result"
+        ],
+        "coverage": 0.6667,
+        "gold_hit": 2,
+        "gold_n": 3,
+        "wrong_ids": [
+          "tech.ragas"
+        ],
+        "rescues": [],
+        "surfaced_correct_rank1": 0,
+        "trailing_cases": 1,
+        "notes": [
+          "facet:early warning",
+          "facet_with_clauses"
+        ]
+      },
+      "fuh3_087": {
+        "selected": [
+          "hard.tool_schema",
+          "hard.agent_stop_tools"
+        ],
+        "gold": [
+          "tech.tool_calling",
+          "hard.tool_schema",
+          "hard.agent_stop_tools"
+        ],
+        "coverage": 0.6667,
+        "gold_hit": 2,
+        "gold_n": 3,
+        "wrong_ids": [],
+        "rescues": [],
+        "surfaced_correct_rank1": 1,
+        "trailing_cases": 1,
+        "notes": [
+          "clause_primary"
+        ]
+      },
+      "fuh3_088": {
+        "selected": [
+          "tech.how_stt_works",
+          "tech.transcription_quality",
+          "hard.production_monitoring"
+        ],
+        "gold": [
+          "tech.how_stt_works",
+          "tech.whisper_vs_cloud",
+          "tech.transcription_quality"
+        ],
+        "coverage": 0.6667,
+        "gold_hit": 2,
+        "gold_n": 3,
+        "wrong_ids": [
+          "hard.production_monitoring"
+        ],
+        "rescues": [],
+        "surfaced_correct_rank1": 1,
+        "trailing_cases": 1,
+        "notes": [
+          "facet:interview assistant",
+          "facet_with_clauses"
+        ]
+      },
+      "fuh3_089": {
+        "selected": [],
+        "gold": [
+          "tech.langgraph_vs_langchain",
+          "cv.langgraph",
+          "hard.remove_langchain"
+        ],
+        "coverage": 0.0,
+        "gold_hit": 0,
+        "gold_n": 3,
+        "wrong_ids": [],
+        "rescues": [],
+        "surfaced_correct_rank1": 0,
+        "trailing_cases": 0,
+        "notes": [
+          "clause_primary"
+        ]
+      },
+      "fuh3_090": {
+        "selected": [
+          "tech.hybrid_search",
+          "tech.metadata_filtering"
+        ],
+        "gold": [
+          "tech.embeddings",
+          "tech.cosine_semantic_search",
+          "tech.metadata_filtering",
+          "tech.hybrid_search"
+        ],
+        "coverage": 0.5,
+        "gold_hit": 2,
+        "gold_n": 4,
+        "wrong_ids": [],
+        "rescues": [],
+        "surfaced_correct_rank1": 0,
+        "trailing_cases": 0,
+        "notes": [
+          "clause_primary"
+        ]
+      }
+    }
+  }
+}

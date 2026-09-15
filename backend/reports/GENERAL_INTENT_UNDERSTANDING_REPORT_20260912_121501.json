@@ -1,0 +1,62 @@
+{
+  "title": "General Semantic Intent Understanding",
+  "generated_at": "2026-09-12T12:15:01.427849+00:00",
+  "before": {
+    "medium_intent": "1/8 (12.5%)",
+    "medium_fail_gate": "intent_score_gate=7 (canonical bank Q fuzz only)",
+    "short_intent": "5/8",
+    "short_notes": "fast path OK; ultra-short abstain cases",
+    "very_long_intent": "5/8",
+    "very_long_notes": "last_word_missing=8/8; MAX_UTTERANCE ~30s",
+    "long_accent_intent": "40/40 (compound layer)",
+    "realistic_intent": "96/100 (post-compound); prior 93/100",
+    "realistic_hc_wrong": 0
+  },
+  "after_offline_gold_transcripts": {
+    "medium_intent": "8/8",
+    "short_intent": "8/8",
+    "short_recovery_triggered": "6/8 (clear definitions skip via strong_agrees)",
+    "very_long_intent_on_gold": "8/8",
+    "realistic_intent": "100/100",
+    "realistic_hc_wrong": 0,
+    "realistic_recovery_triggered": "20/100",
+    "long_accent_compound": "40/40",
+    "long_accent_hc_wrong": 0,
+    "unit_tests": "test_semantic_intent_recovery.py \u2014 8 passed"
+  },
+  "architecture": {
+    "modules": [
+      "intent_profile.py \u2014 IntentProfile + intent_agreement + intent_meaning_ok",
+      "semantic_intent_index.py \u2014 MiniLM profile index (optional warm)",
+      "semantic_intent_recovery.py \u2014 conditional hybrid recovery + ultra-short gate"
+    ],
+    "wiring": [
+      "live_audio._bank_match after far + realistic",
+      "interview_e2e_loopback intent gate + semantic recovery",
+      "compound_question_pipeline per sub-question",
+      "answer_generator._match_question_bank"
+    ],
+    "phase2_continuation": [
+      "vad_engine.truncated_by_max on max-duration finalize",
+      "speaker_router stash + continuation gap + merge segments (max 3)",
+      "E2E fields: segment_count, truncated_by_max, merged_transcript"
+    ],
+    "frozen_preserved": [
+      "No Whisper/EQ changes",
+      "No global STRONG_THRESHOLD lowering",
+      "Far/realistic recovery paths intact",
+      "Embedder never loaded on hot path unless already warm"
+    ]
+  },
+  "acceptance_phase1": {
+    "medium_offline": "8/8 >= 90%",
+    "short_fast_path": "definitions skip semantic recovery when score+agreement strong",
+    "realistic_offline": "100/100 >= 93%, HC=0",
+    "long_compound_offline": "40/40 >= 90%"
+  },
+  "notes": [
+    "E2E audio suites still required for STT/VAD validation; offline numbers use gold transcripts.",
+    "intent_meaning_ok allows paraphrase agreement >=0.52 with distinctive family consistency.",
+    "Do not tune weights on future unseen holdout packs."
+  ]
+}

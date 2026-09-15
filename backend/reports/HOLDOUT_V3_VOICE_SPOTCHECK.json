@@ -1,0 +1,833 @@
+{
+  "created_at": "2026-09-13T21:44:44.425494+00:00",
+  "purpose": "validate TTS pronunciation of domain terms before v3 synthesis",
+  "note": "probe sentences only — no v3 clip was synthesized or transcribed",
+  "voice_sets": [
+    "multilingual"
+  ],
+  "conditions": [
+    "clean",
+    "poor"
+  ],
+  "summary": {
+    "multilingual/en-IN": {
+      "ok": 27,
+      "total": 36,
+      "clips": 12,
+      "missed": [
+        "ChromaDB",
+        "FastAPI",
+        "LangGraph",
+        "Pydantic",
+        "TF-IDF",
+        "cosine"
+      ],
+      "rate": 0.75
+    },
+    "multilingual/proxy-ar-JO": {
+      "ok": 31,
+      "total": 36,
+      "clips": 12,
+      "missed": [
+        "Pydantic",
+        "TF-IDF",
+        "embeddings",
+        "guardrails"
+      ],
+      "rate": 0.861
+    },
+    "multilingual/proxy-ar-EG": {
+      "ok": 30,
+      "total": 36,
+      "clips": 12,
+      "missed": [
+        "ChromaDB",
+        "LoRA",
+        "RAG",
+        "TF-IDF"
+      ],
+      "rate": 0.833
+    },
+    "multilingual/proxy-ar-AE": {
+      "ok": 32,
+      "total": 36,
+      "clips": 12,
+      "missed": [
+        "LangGraph",
+        "Pydantic",
+        "TF-IDF"
+      ],
+      "rate": 0.889
+    }
+  },
+  "rows": [
+    {
+      "voice_set": "multilingual",
+      "accent": "en-IN",
+      "accent_kind": "native_locale",
+      "condition": "clean",
+      "voice": "en-IN-NeerjaNeural",
+      "probe": "The RAG layer and the embeddings index both sit behind the same guardrails.",
+      "transcript": "The RAG layer and the embeddings index both sit behind the same guardrails.",
+      "terms": {
+        "RAG": true,
+        "embeddings": true,
+        "guardrails": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "en-IN",
+      "accent_kind": "native_locale",
+      "condition": "poor",
+      "voice": "en-IN-NeerjaNeural",
+      "probe": "The RAG layer and the embeddings index both sit behind the same guardrails.",
+      "transcript": "The RAG layer and the embeddings index both sit behind the same guardrails.",
+      "terms": {
+        "RAG": true,
+        "embeddings": true,
+        "guardrails": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "en-IN",
+      "accent_kind": "native_locale",
+      "condition": "clean",
+      "voice": "en-IN-PrabhatNeural",
+      "probe": "LangGraph checkpoints, ChromaDB collections and Whisper transcripts are logged together.",
+      "transcript": "Landgraph checkpoints, Chromadibi collections and Whisper transcripts are logged together.",
+      "terms": {
+        "LangGraph": false,
+        "ChromaDB": false,
+        "Whisper": true
+      },
+      "terms_ok": 1,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "en-IN",
+      "accent_kind": "native_locale",
+      "condition": "poor",
+      "voice": "en-IN-PrabhatNeural",
+      "probe": "LangGraph checkpoints, ChromaDB collections and Whisper transcripts are logged together.",
+      "transcript": "LangGraph checkpoints, chromaD collections and Whisper transcripts are logged together.",
+      "terms": {
+        "LangGraph": true,
+        "ChromaDB": false,
+        "Whisper": true
+      },
+      "terms_ok": 2,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "en-IN",
+      "accent_kind": "native_locale",
+      "condition": "clean",
+      "voice": "en-IN-NeerjaNeural",
+      "probe": "Agentic orchestration, cosine similarity and re-ranking all appear in this sentence.",
+      "transcript": "Agentic orchestration, cosine similarity and re-ranking all appear in this sentence.",
+      "terms": {
+        "agentic": true,
+        "cosine": true,
+        "re-ranking": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "en-IN",
+      "accent_kind": "native_locale",
+      "condition": "poor",
+      "voice": "en-IN-NeerjaNeural",
+      "probe": "Agentic orchestration, cosine similarity and re-ranking all appear in this sentence.",
+      "transcript": "Agentic orchestration, cosign similarity and re-ranking all appear in this sentence.",
+      "terms": {
+        "agentic": true,
+        "cosine": false,
+        "re-ranking": true
+      },
+      "terms_ok": 2,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "en-IN",
+      "accent_kind": "native_locale",
+      "condition": "clean",
+      "voice": "en-IN-PrabhatNeural",
+      "probe": "Pydantic validates the FastAPI payload before the model sees any token.",
+      "transcript": "Pyentic validates the FastAPI payload before the model sees any token. Pytentic validates the FastAPI payload before the model sees any token.",
+      "terms": {
+        "Pydantic": false,
+        "FastAPI": true,
+        "token": true
+      },
+      "terms_ok": 2,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "en-IN",
+      "accent_kind": "native_locale",
+      "condition": "poor",
+      "voice": "en-IN-PrabhatNeural",
+      "probe": "Pydantic validates the FastAPI payload before the model sees any token.",
+      "transcript": "PyTenic validates the past API payload before the model sees any token.",
+      "terms": {
+        "Pydantic": false,
+        "FastAPI": false,
+        "token": true
+      },
+      "terms_ok": 1,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "en-IN",
+      "accent_kind": "native_locale",
+      "condition": "clean",
+      "voice": "en-IN-NeerjaNeural",
+      "probe": "Fine-tuning, LoRA adapters and hallucination checks belong to different layers.",
+      "transcript": "Fine tuning, LoRA adapters and hallucination checks belong to different layers.",
+      "terms": {
+        "fine-tuning": true,
+        "LoRA": true,
+        "hallucination": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "en-IN",
+      "accent_kind": "native_locale",
+      "condition": "poor",
+      "voice": "en-IN-NeerjaNeural",
+      "probe": "Fine-tuning, LoRA adapters and hallucination checks belong to different layers.",
+      "transcript": "Fine tuning, LoRA adapters and hallucination checks belong to different layers.",
+      "terms": {
+        "fine-tuning": true,
+        "LoRA": true,
+        "hallucination": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "en-IN",
+      "accent_kind": "native_locale",
+      "condition": "clean",
+      "voice": "en-IN-PrabhatNeural",
+      "probe": "TF-IDF, hybrid search and metadata filtering are three distinct retrieval tricks.",
+      "transcript": "T-F-F, hybrid search and metadata filtering are three distinct retrieval tricks.",
+      "terms": {
+        "TF-IDF": false,
+        "hybrid search": true,
+        "metadata": true
+      },
+      "terms_ok": 2,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "en-IN",
+      "accent_kind": "native_locale",
+      "condition": "poor",
+      "voice": "en-IN-PrabhatNeural",
+      "probe": "TF-IDF, hybrid search and metadata filtering are three distinct retrieval tricks.",
+      "transcript": "CFIDF, hybrid search and metadata filtering are three distinct retrieval tricks.",
+      "terms": {
+        "TF-IDF": false,
+        "hybrid search": true,
+        "metadata": true
+      },
+      "terms_ok": 2,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-JO",
+      "accent_kind": "synthetic_proxy",
+      "condition": "clean",
+      "voice": "en-US-AvaMultilingualNeural",
+      "probe": "The RAG layer and the embeddings index both sit behind the same guardrails.",
+      "transcript": "The RAG layer and the embeddings index both sit behind the same guardrails.",
+      "terms": {
+        "RAG": true,
+        "embeddings": true,
+        "guardrails": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-JO",
+      "accent_kind": "synthetic_proxy",
+      "condition": "poor",
+      "voice": "en-US-AvaMultilingualNeural",
+      "probe": "The RAG layer and the embeddings index both sit behind the same guardrails.",
+      "transcript": "The RAG layer and the beddings index both sit behind the same guardrail.",
+      "terms": {
+        "RAG": true,
+        "embeddings": false,
+        "guardrails": false
+      },
+      "terms_ok": 1,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-JO",
+      "accent_kind": "synthetic_proxy",
+      "condition": "clean",
+      "voice": "en-US-AndrewMultilingualNeural",
+      "probe": "LangGraph checkpoints, ChromaDB collections and Whisper transcripts are logged together.",
+      "transcript": "LangGraph checkpoints, ChromaDB collections, and Whisper transcripts are logged together.",
+      "terms": {
+        "LangGraph": true,
+        "ChromaDB": true,
+        "Whisper": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-JO",
+      "accent_kind": "synthetic_proxy",
+      "condition": "poor",
+      "voice": "en-US-AndrewMultilingualNeural",
+      "probe": "LangGraph checkpoints, ChromaDB collections and Whisper transcripts are logged together.",
+      "transcript": "LangGraph checkpoints, ChromaDB collections, and Whisper transcripts are logged together.",
+      "terms": {
+        "LangGraph": true,
+        "ChromaDB": true,
+        "Whisper": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-JO",
+      "accent_kind": "synthetic_proxy",
+      "condition": "clean",
+      "voice": "en-US-AvaMultilingualNeural",
+      "probe": "Agentic orchestration, cosine similarity and re-ranking all appear in this sentence.",
+      "transcript": "agentic orchestration, cosine similarity, and re-ranking all appear in this sentence.",
+      "terms": {
+        "agentic": true,
+        "cosine": true,
+        "re-ranking": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-JO",
+      "accent_kind": "synthetic_proxy",
+      "condition": "poor",
+      "voice": "en-US-AvaMultilingualNeural",
+      "probe": "Agentic orchestration, cosine similarity and re-ranking all appear in this sentence.",
+      "transcript": "agentic orchestration, cosine similarity, and re-ranking all appear in this center.",
+      "terms": {
+        "agentic": true,
+        "cosine": true,
+        "re-ranking": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-JO",
+      "accent_kind": "synthetic_proxy",
+      "condition": "clean",
+      "voice": "en-US-AndrewMultilingualNeural",
+      "probe": "Pydantic validates the FastAPI payload before the model sees any token.",
+      "transcript": "Pydantic validates the FastAPI payload before the model sees any token. Pydantic validates the FastAPI payload before the model sees any token.",
+      "terms": {
+        "Pydantic": true,
+        "FastAPI": true,
+        "token": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-JO",
+      "accent_kind": "synthetic_proxy",
+      "condition": "poor",
+      "voice": "en-US-AndrewMultilingualNeural",
+      "probe": "Pydantic validates the FastAPI payload before the model sees any token.",
+      "transcript": "Hydantic validates the FastAPI payload before the model sees any token.",
+      "terms": {
+        "Pydantic": false,
+        "FastAPI": true,
+        "token": true
+      },
+      "terms_ok": 2,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-JO",
+      "accent_kind": "synthetic_proxy",
+      "condition": "clean",
+      "voice": "en-US-AvaMultilingualNeural",
+      "probe": "Fine-tuning, LoRA adapters and hallucination checks belong to different layers.",
+      "transcript": "Fine-tuning, LoRA adapters, and hallucination checks belong to different layers.",
+      "terms": {
+        "fine-tuning": true,
+        "LoRA": true,
+        "hallucination": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-JO",
+      "accent_kind": "synthetic_proxy",
+      "condition": "poor",
+      "voice": "en-US-AvaMultilingualNeural",
+      "probe": "Fine-tuning, LoRA adapters and hallucination checks belong to different layers.",
+      "transcript": "Fine-tuning, LoRA adapters, and hallucination checks belong to different layers.",
+      "terms": {
+        "fine-tuning": true,
+        "LoRA": true,
+        "hallucination": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-JO",
+      "accent_kind": "synthetic_proxy",
+      "condition": "clean",
+      "voice": "en-US-AndrewMultilingualNeural",
+      "probe": "TF-IDF, hybrid search and metadata filtering are three distinct retrieval tricks.",
+      "transcript": "TIF, hybrid search and metadata filtering are three distinct retrieval tricks.",
+      "terms": {
+        "TF-IDF": false,
+        "hybrid search": true,
+        "metadata": true
+      },
+      "terms_ok": 2,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-JO",
+      "accent_kind": "synthetic_proxy",
+      "condition": "poor",
+      "voice": "en-US-AndrewMultilingualNeural",
+      "probe": "TF-IDF, hybrid search and metadata filtering are three distinct retrieval tricks.",
+      "transcript": "TideF, hybrid search and metadata filtering are three distinct retrieval tricks.",
+      "terms": {
+        "TF-IDF": false,
+        "hybrid search": true,
+        "metadata": true
+      },
+      "terms_ok": 2,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-EG",
+      "accent_kind": "synthetic_proxy",
+      "condition": "clean",
+      "voice": "en-US-EmmaMultilingualNeural",
+      "probe": "The RAG layer and the embeddings index both sit behind the same guardrails.",
+      "transcript": "The RAG layer and the embeddings index both sit behind the same guardrails.",
+      "terms": {
+        "RAG": true,
+        "embeddings": true,
+        "guardrails": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-EG",
+      "accent_kind": "synthetic_proxy",
+      "condition": "poor",
+      "voice": "en-US-EmmaMultilingualNeural",
+      "probe": "The RAG layer and the embeddings index both sit behind the same guardrails.",
+      "transcript": "The Argy layer and the embeddings index both sit behind the same guardrails.",
+      "terms": {
+        "RAG": false,
+        "embeddings": true,
+        "guardrails": true
+      },
+      "terms_ok": 2,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-EG",
+      "accent_kind": "synthetic_proxy",
+      "condition": "clean",
+      "voice": "en-US-BrianMultilingualNeural",
+      "probe": "LangGraph checkpoints, ChromaDB collections and Whisper transcripts are logged together.",
+      "transcript": "LangGraph checkpoints, chromaD collections, and Whisper transcripts are logged together.",
+      "terms": {
+        "LangGraph": true,
+        "ChromaDB": false,
+        "Whisper": true
+      },
+      "terms_ok": 2,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-EG",
+      "accent_kind": "synthetic_proxy",
+      "condition": "poor",
+      "voice": "en-US-BrianMultilingualNeural",
+      "probe": "LangGraph checkpoints, ChromaDB collections and Whisper transcripts are logged together.",
+      "transcript": "LangGraph checkpoints, chromaD collections, and Whisper transcripts are logged together.",
+      "terms": {
+        "LangGraph": true,
+        "ChromaDB": false,
+        "Whisper": true
+      },
+      "terms_ok": 2,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-EG",
+      "accent_kind": "synthetic_proxy",
+      "condition": "clean",
+      "voice": "en-US-EmmaMultilingualNeural",
+      "probe": "Agentic orchestration, cosine similarity and re-ranking all appear in this sentence.",
+      "transcript": "Agentic orchestration, cosine similarity, and re-ranking all appear in this sentence.",
+      "terms": {
+        "agentic": true,
+        "cosine": true,
+        "re-ranking": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-EG",
+      "accent_kind": "synthetic_proxy",
+      "condition": "poor",
+      "voice": "en-US-EmmaMultilingualNeural",
+      "probe": "Agentic orchestration, cosine similarity and re-ranking all appear in this sentence.",
+      "transcript": "Agentic orchestration, cosine similarity in re-ranking all appear in this sentence.",
+      "terms": {
+        "agentic": true,
+        "cosine": true,
+        "re-ranking": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-EG",
+      "accent_kind": "synthetic_proxy",
+      "condition": "clean",
+      "voice": "en-US-BrianMultilingualNeural",
+      "probe": "Pydantic validates the FastAPI payload before the model sees any token.",
+      "transcript": "Pydantic validates the FastAPI payload before the model sees any token. PIDDantic validates the FastAPI payload before the model sees any token.",
+      "terms": {
+        "Pydantic": true,
+        "FastAPI": true,
+        "token": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-EG",
+      "accent_kind": "synthetic_proxy",
+      "condition": "poor",
+      "voice": "en-US-BrianMultilingualNeural",
+      "probe": "Pydantic validates the FastAPI payload before the model sees any token.",
+      "transcript": "Pydantic validates the FastAPI payload before the model sees any token.",
+      "terms": {
+        "Pydantic": true,
+        "FastAPI": true,
+        "token": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-EG",
+      "accent_kind": "synthetic_proxy",
+      "condition": "clean",
+      "voice": "en-US-EmmaMultilingualNeural",
+      "probe": "Fine-tuning, LoRA adapters and hallucination checks belong to different layers.",
+      "transcript": "Fine-tuning, lore adapters, and hallucination checks belong to different layers.",
+      "terms": {
+        "fine-tuning": true,
+        "LoRA": false,
+        "hallucination": true
+      },
+      "terms_ok": 2,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-EG",
+      "accent_kind": "synthetic_proxy",
+      "condition": "poor",
+      "voice": "en-US-EmmaMultilingualNeural",
+      "probe": "Fine-tuning, LoRA adapters and hallucination checks belong to different layers.",
+      "transcript": "Fine-tuning, lore adapters, and hallucination checks belong to different layers.",
+      "terms": {
+        "fine-tuning": true,
+        "LoRA": false,
+        "hallucination": true
+      },
+      "terms_ok": 2,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-EG",
+      "accent_kind": "synthetic_proxy",
+      "condition": "clean",
+      "voice": "en-US-BrianMultilingualNeural",
+      "probe": "TF-IDF, hybrid search and metadata filtering are three distinct retrieval tricks.",
+      "transcript": "T-F, hybrid search, and metadata filtering are three distinct retrieval tricks.",
+      "terms": {
+        "TF-IDF": false,
+        "hybrid search": true,
+        "metadata": true
+      },
+      "terms_ok": 2,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-EG",
+      "accent_kind": "synthetic_proxy",
+      "condition": "poor",
+      "voice": "en-US-BrianMultilingualNeural",
+      "probe": "TF-IDF, hybrid search and metadata filtering are three distinct retrieval tricks.",
+      "transcript": "TF-IDF, hybrid search, and metadata filtering are three distinct retrieval tricks.",
+      "terms": {
+        "TF-IDF": true,
+        "hybrid search": true,
+        "metadata": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-AE",
+      "accent_kind": "synthetic_proxy",
+      "condition": "clean",
+      "voice": "de-DE-SeraphinaMultilingualNeural",
+      "probe": "The RAG layer and the embeddings index both sit behind the same guardrails.",
+      "transcript": "The RAG layer and the embeddings index both sit behind the same guardrails.",
+      "terms": {
+        "RAG": true,
+        "embeddings": true,
+        "guardrails": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-AE",
+      "accent_kind": "synthetic_proxy",
+      "condition": "poor",
+      "voice": "de-DE-SeraphinaMultilingualNeural",
+      "probe": "The RAG layer and the embeddings index both sit behind the same guardrails.",
+      "transcript": "The RAG layer and the embeddings index both sit behind the same guardrails.",
+      "terms": {
+        "RAG": true,
+        "embeddings": true,
+        "guardrails": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-AE",
+      "accent_kind": "synthetic_proxy",
+      "condition": "clean",
+      "voice": "en-US-AndrewMultilingualNeural",
+      "probe": "LangGraph checkpoints, ChromaDB collections and Whisper transcripts are logged together.",
+      "transcript": "LangGraph checkpoints, ChromaDB collections, and Whisper transcripts are logged together.",
+      "terms": {
+        "LangGraph": true,
+        "ChromaDB": true,
+        "Whisper": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-AE",
+      "accent_kind": "synthetic_proxy",
+      "condition": "poor",
+      "voice": "en-US-AndrewMultilingualNeural",
+      "probe": "LangGraph checkpoints, ChromaDB collections and Whisper transcripts are logged together.",
+      "transcript": "Landgraph checkpoints, ChromaDB collections, and Whisper transcripts are logged together.",
+      "terms": {
+        "LangGraph": false,
+        "ChromaDB": true,
+        "Whisper": true
+      },
+      "terms_ok": 2,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-AE",
+      "accent_kind": "synthetic_proxy",
+      "condition": "clean",
+      "voice": "de-DE-SeraphinaMultilingualNeural",
+      "probe": "Agentic orchestration, cosine similarity and re-ranking all appear in this sentence.",
+      "transcript": "Agentic orchestration, cosine similarity, and re-ranking all appear in this sentence.",
+      "terms": {
+        "agentic": true,
+        "cosine": true,
+        "re-ranking": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-AE",
+      "accent_kind": "synthetic_proxy",
+      "condition": "poor",
+      "voice": "de-DE-SeraphinaMultilingualNeural",
+      "probe": "Agentic orchestration, cosine similarity and re-ranking all appear in this sentence.",
+      "transcript": "Agentic orchestration, cosine similarity, and re-ranking all appear in this sentence.",
+      "terms": {
+        "agentic": true,
+        "cosine": true,
+        "re-ranking": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-AE",
+      "accent_kind": "synthetic_proxy",
+      "condition": "clean",
+      "voice": "en-US-AndrewMultilingualNeural",
+      "probe": "Pydantic validates the FastAPI payload before the model sees any token.",
+      "transcript": "Pydantic validates the FastAPI payload before the model sees any token. Pydantic validates the FastAPI payload before the model sees any token.",
+      "terms": {
+        "Pydantic": true,
+        "FastAPI": true,
+        "token": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-AE",
+      "accent_kind": "synthetic_proxy",
+      "condition": "poor",
+      "voice": "en-US-AndrewMultilingualNeural",
+      "probe": "Pydantic validates the FastAPI payload before the model sees any token.",
+      "transcript": "Pythantic validates the FastAPI payload before the model sees any token.",
+      "terms": {
+        "Pydantic": false,
+        "FastAPI": true,
+        "token": true
+      },
+      "terms_ok": 2,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-AE",
+      "accent_kind": "synthetic_proxy",
+      "condition": "clean",
+      "voice": "de-DE-SeraphinaMultilingualNeural",
+      "probe": "Fine-tuning, LoRA adapters and hallucination checks belong to different layers.",
+      "transcript": "Fine-tuning, LoRA adapters, and hallucination checks belong to different layers.",
+      "terms": {
+        "fine-tuning": true,
+        "LoRA": true,
+        "hallucination": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-AE",
+      "accent_kind": "synthetic_proxy",
+      "condition": "poor",
+      "voice": "de-DE-SeraphinaMultilingualNeural",
+      "probe": "Fine-tuning, LoRA adapters and hallucination checks belong to different layers.",
+      "transcript": "Fine-tuning, LoRA adapters, and hallucination checks belong to different layers.",
+      "terms": {
+        "fine-tuning": true,
+        "LoRA": true,
+        "hallucination": true
+      },
+      "terms_ok": 3,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-AE",
+      "accent_kind": "synthetic_proxy",
+      "condition": "clean",
+      "voice": "en-US-AndrewMultilingualNeural",
+      "probe": "TF-IDF, hybrid search and metadata filtering are three distinct retrieval tricks.",
+      "transcript": "TIF, hybrid search and metadata filtering are three distinct retrieval tricks.",
+      "terms": {
+        "TF-IDF": false,
+        "hybrid search": true,
+        "metadata": true
+      },
+      "terms_ok": 2,
+      "terms_total": 3
+    },
+    {
+      "voice_set": "multilingual",
+      "accent": "proxy-ar-AE",
+      "accent_kind": "synthetic_proxy",
+      "condition": "poor",
+      "voice": "en-US-AndrewMultilingualNeural",
+      "probe": "TF-IDF, hybrid search and metadata filtering are three distinct retrieval tricks.",
+      "transcript": "Tidifidef, hybrid search and metadata filtering are three distinct retrieval tricks.",
+      "terms": {
+        "TF-IDF": false,
+        "hybrid search": true,
+        "metadata": true
+      },
+      "terms_ok": 2,
+      "terms_total": 3
+    }
+  ]
+}

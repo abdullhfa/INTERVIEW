@@ -1,0 +1,142 @@
+{
+  "status": "FROZEN",
+  "freeze_id": "V5_LIVE_INTERVIEW_ASSISTANT_2026_09_15",
+  "frozen_at": "2026-09-15T08:19:35.598650+00:00",
+  "label": "V5 Live Interview Assistant \u2014 restorable snapshot + fingerprints",
+  "policy": {
+    "further_changes": "bug_fix_only",
+    "forbidden": [
+      "B8_B9_ranking_research",
+      "threshold_tuning_for_score_chasing",
+      "weight_tuning_for_score_chasing",
+      "alias_expansion_for_score_chasing",
+      "global_STRONG_THRESHOLD_lowering",
+      "HC_threshold_relaxation",
+      "accept_gate_relaxation",
+      "STT_model_change_for_metric_chasing",
+      "VAD_retune_for_metric_chasing",
+      "new_compound_routing_experiments",
+      "endless_holdout_compound_research"
+    ],
+    "allowed": [
+      "true_bug_fix_with_regression",
+      "operational_deploy_docs",
+      "non_scoring_observability"
+    ]
+  },
+  "pipeline_frozen": [
+    "STT",
+    "TECH_TERM_RECOVERY / short_tech_recovery",
+    "MAIN_REQUEST_EXTRACTION (long/indirect)",
+    "lexical/semantic/hybrid match",
+    "compound path",
+    "HC guards / strong thresholds / accept gate / mode ladder",
+    "question banks",
+    "frontend live UI"
+  ],
+  "baselines_e2e_150_voice_stress": {
+    "verdict": "PASS_150_VOICE_STRESS_E2E",
+    "n": 150,
+    "pass_rate": 0.9,
+    "intent_rate": 0.9,
+    "stt_rate": 0.9533,
+    "hc_wrong": 0,
+    "audio_fail": 0,
+    "median_post_speech_ms": 1420.8,
+    "by_accent": {
+      "emirati": 0.82,
+      "indian": 0.92,
+      "jordanian": 0.96
+    },
+    "by_style": {
+      "compound": 0.9667,
+      "direct": 0.9444,
+      "indirect": 0.8,
+      "long": 1.0,
+      "short": 0.9444
+    },
+    "report": "reports/V5_150_VOICE_STRESS_E2E_VERDICT.json"
+  },
+  "accepted_improvements": {
+    "MAIN_REQUEST_EXTRACTION": "MAIN_REQUEST_EXTRACTION_PASS",
+    "SHORT_TECH_RECOVERY": "SHORT_TECH_RECOVERY_PASS"
+  },
+  "known_limitations": [
+    {
+      "id": "unrecoverable_short_stt_garble",
+      "example": "V5A_148",
+      "severity": "low",
+      "blocking": false,
+      "note": "Heavily garbled short audio with no usable tech anchor \u2014 abstain preferred over guess."
+    },
+    {
+      "id": "ambiguous_tech_token_chroma_vs_langgraph",
+      "example": "Zundra/Zandra",
+      "severity": "low",
+      "blocking": false,
+      "note": "Phonetic collision between Chroma and LangGraph \u2014 do not force-correct."
+    },
+    {
+      "id": "holdout_v3_v4_historical_nogo",
+      "severity": "info",
+      "blocking": false,
+      "note": "Official holdout v3/v4 remain historical NO-GO baselines; this freeze is practical interview readiness + V5 150 E2E."
+    }
+  ],
+  "do_not_open": [
+    "B8",
+    "B9",
+    "new ranking study",
+    "new compound study",
+    "new routing study"
+  ],
+  "fingerprint_files": [
+    "app/services/question_bank.py",
+    "app/services/main_request_extraction.py",
+    "app/services/short_tech_recovery.py",
+    "app/services/technical_term_repair.py",
+    "app/services/compound_question_pipeline.py",
+    "app/services/semantic_intent_recovery.py",
+    "app/services/answer_generator.py",
+    "app/services/live_audio.py",
+    "app/services/interview_e2e_loopback.py",
+    "app/services/domain_terms.py",
+    "app/audio/whisper_stt.py",
+    "app/config.py",
+    "app/services/warm_start.py",
+    "app/services/question_classifier.py",
+    "app/data/question_bank/cv_abdullah.json",
+    "app/data/question_bank/general_personal.json",
+    "app/data/question_bank/technical_ai_senior.json",
+    "app/data/question_bank/hard_scenarios.json",
+    "app/services/compound_answer_builder.py",
+    "app/services/compound_question_decomposer.py",
+    "app/services/compound_question_detector.py",
+    "app/services/realistic_recovery.py",
+    "app/services/intent_profile.py",
+    "app/services/semantic_intent_index.py",
+    "frontend/src/App.tsx",
+    "frontend/src/main.tsx",
+    "frontend/src/api/client.ts",
+    "frontend/src/api/websocket.ts",
+    "frontend/src/types/index.ts",
+    "frontend/src/components/Interview/AudioConfigModal.tsx",
+    "frontend/package.json",
+    "frontend/vite.config.ts"
+  ],
+  "missing_files": [],
+  "snapshot": {
+    "folder": "interview11_FROZEN_V5_20260915",
+    "relative_to_workspace": "interview11_FROZEN_V5_20260915",
+    "excludes": [
+      ".venv",
+      "node_modules",
+      "__pycache__",
+      ".pytest_cache",
+      ".env",
+      "runtime.log",
+      "runtime.log.err"
+    ],
+    "note": "Full restorable copy of interview11 source, banks, reports, and voice-drill audio. Restore by copying this folder over interview11 (keep live .venv/node_modules)."
+  }
+}

@@ -1,0 +1,73 @@
+﻿category,file,transcript,duration_sec,sample_rate
+far,01_far_voice/far_01.wav,"What is RAG, and why did you use it in your BTEC project?",4.02,16000
+far,01_far_voice/far_02.wav,"What is agentic AI, and how is it different from a normal workflow?",4.16,16000
+far,01_far_voice/far_03.wav,"What are guardrails, and why are they important in an AI system?",3.79,16000
+far,01_far_voice/far_04.wav,What is the difference between LangChain and LangGraph?,3.44,16000
+far,01_far_voice/far_05.wav,How do embeddings and cosine similarity work in your similarity checker?,4.49,16000
+far,01_far_voice/far_06.wav,Why did you use recall instead of only accuracy in the early warning model?,4.42,16000
+far,01_far_voice/far_07.wav,How do you prevent an AI agent from writing directly to a sensitive database?,4.79,16000
+far,01_far_voice/far_08.wav,What happens in your RAG system when retrieval returns no useful chunks?,4.65,16000
+slow,02_slow_speech/slow_01.wav,"What is RAG, and why did you use it in your BTEC project?",6.69,16000
+slow,02_slow_speech/slow_02.wav,"What is agentic AI, and how is it different from a normal workflow?",6.9,16000
+slow,02_slow_speech/slow_03.wav,"What are guardrails, and why are they important in an AI system?",6.22,16000
+slow,02_slow_speech/slow_04.wav,What is the difference between LangChain and LangGraph?,5.65,16000
+slow,02_slow_speech/slow_05.wav,How do embeddings and cosine similarity work in your similarity checker?,7.4,16000
+slow,02_slow_speech/slow_06.wav,Why did you use recall instead of only accuracy in the early warning model?,7.36,16000
+slow,02_slow_speech/slow_07.wav,How do you prevent an AI agent from writing directly to a sensitive database?,7.83,16000
+slow,02_slow_speech/slow_08.wav,What happens in your RAG system when retrieval returns no useful chunks?,7.39,16000
+fast,03_fast_speech/fast_01.wav,"What is RAG, and why did you use it in your BTEC project?",2.47,16000
+fast,03_fast_speech/fast_02.wav,"What is agentic AI, and how is it different from a normal workflow?",2.59,16000
+fast,03_fast_speech/fast_03.wav,"What are guardrails, and why are they important in an AI system?",2.41,16000
+fast,03_fast_speech/fast_04.wav,What is the difference between LangChain and LangGraph?,2.13,16000
+fast,03_fast_speech/fast_05.wav,How do embeddings and cosine similarity work in your similarity checker?,2.85,16000
+fast,03_fast_speech/fast_06.wav,Why did you use recall instead of only accuracy in the early warning model?,2.8,16000
+fast,03_fast_speech/fast_07.wav,How do you prevent an AI agent from writing directly to a sensitive database?,3.04,16000
+fast,03_fast_speech/fast_08.wav,What happens in your RAG system when retrieval returns no useful chunks?,3.04,16000
+interrupted,04_interrupted_speech/interrupted_01.wav,"What is RAG, and why did you use it in your BTEC project?",3.93,16000
+interrupted,04_interrupted_speech/interrupted_02.wav,"What is agentic AI, and how is it different from a normal workflow?",4.07,16000
+interrupted,04_interrupted_speech/interrupted_03.wav,"What are guardrails, and why are they important in an AI system?",3.7,16000
+interrupted,04_interrupted_speech/interrupted_04.wav,What is the difference between LangChain and LangGraph?,3.35,16000
+interrupted,04_interrupted_speech/interrupted_05.wav,How do embeddings and cosine similarity work in your similarity checker?,4.4,16000
+interrupted,04_interrupted_speech/interrupted_06.wav,Why did you use recall instead of only accuracy in the early warning model?,4.33,16000
+interrupted,04_interrupted_speech/interrupted_07.wav,How do you prevent an AI agent from writing directly to a sensitive database?,4.7,16000
+interrupted,04_interrupted_speech/interrupted_08.wav,What happens in your RAG system when retrieval returns no useful chunks?,4.56,16000
+very_long,05_very_long_sentences/very_long_01.wav,"I want you to describe one complete example from your BTEC question generation project in detail. Start with how the curriculum document enters the system, how you clean and split the document, how embeddings are created, how the relevant chunks are retrieved, how the language model receives only the selected context, how the question is generated, how the output structure is checked, how you verify that the question is grounded in the source, what happens when validation fails, where human approval happens, what gets logged, and what is finally saved to the question bank. Also explain which parts are RAG, which parts are agentic control, and why you do not allow the model to save an important question by itself.",46.65,16000
+very_long,05_very_long_sentences/very_long_02.wav,"Suppose you are asked to build a secure AI assistant for several schools that all use the same platform. Explain how you would keep each school's information isolated while still using one application. Discuss authentication, school identifiers, backend metadata filtering before retrieval, separate vector collections when stronger isolation is required, controlled tools for sensitive actions, audit logs, human approval, and tests that prove School A can never retrieve School B documents. Then explain how you would handle a request when no relevant document is found and how you would prevent the model from inventing an answer.",40.32,16000
+very_long,05_very_long_sentences/very_long_03.wav,"Compare RAG, fine tuning, and agentic AI in one practical explanation. Explain why RAG is useful when curriculum documents change, why fine tuning is better for changing behavior or response style rather than frequently changing facts, and how agentic control can manage steps such as retrieval, generation, validation, retry, pause, and human approval. Use your BTEC question generation work as the example, and make clear that the similarity checker is different because it uses embeddings and cosine similarity without an LLM generation step.",37.79,16000
+very_long,05_very_long_sentences/very_long_04.wav,"Imagine that the interviewer gives you a difficult production incident. Users report that the AI gives fluent but incorrect answers, some retrieval results belong to the wrong unit, and a few requests take too long. Explain how you would debug this systematically by separating audio or input problems, retrieval quality, metadata filtering, chunking, embedding quality, ranking, prompt construction, output validation, latency, and human approval. Describe what evidence you would inspect before changing the model, and explain why a strong model cannot fix missing or incorrect retrieved evidence.",39.8,16000
+very_long,05_very_long_sentences/very_long_05.wav,"Describe the design of a safe AI agent that can help with government workflows but cannot take uncontrolled actions. Explain the difference between giving the agent a small set of tools and giving it full system access. Discuss permissions, input validation, output validation, idempotency, audit logs, retry limits, timeouts, human approval for sensitive actions, and how the system should stop when confidence is low. Then explain how a framework such as LangGraph could help manage state, checkpoints, pause, resume, and recovery if the workflow becomes more complex.",39.14,16000
+very_long,05_very_long_sentences/very_long_06.wav,"Please explain how you would test an interview assistant from end to end before relying on it in a real interview. Include system audio capture, pre roll, voice activity detection, speech to text, technical term repair, intent matching, confidence checks, answer retrieval, latency measurement, and abstaining when the system is uncertain. Explain why clean audio, office noise, poor call quality, far audio, fast speech, slow speech, short questions, and very long questions should all be tested separately.",34.68,16000
+very_long,05_very_long_sentences/very_long_07.wav,"Explain your approach to reducing hallucination in an AI system that generates BTEC questions. Describe how retrieval grounds the model in approved documents, why the source chunks should be kept with the result, how structured JSON output can be validated, how unsupported claims should be rejected, why empty retrieval should stop generation, and why teacher approval remains necessary. Also explain why lowering temperature alone is not a reliable method for preventing hallucination.",30.71,16000
+very_long,05_very_long_sentences/very_long_08.wav,"Walk me through how you would decide whether a new AI problem needs a language model, classical machine learning, embeddings, or a simple deterministic workflow. Use examples from question generation, assignment similarity, early warning, helpdesk classification, and speech recognition. Explain what each technology is good at, what it should not be used for, and why choosing a simpler method can sometimes be safer, faster, cheaper, and easier to evaluate.",29.99,16000
+long,06_long_sentences/long_01.wav,"Please explain the complete path in your BTEC RAG system, starting from the source document, then chunking, embeddings, retrieval, generation, validation, teacher approval, and finally saving the approved question.",14.29,16000
+long,06_long_sentences/long_02.wav,"Imagine the interviewer asks why you did not use a large language model for the assignment similarity checker. Explain how embeddings, cosine similarity, metadata filters, and teacher review solve that problem without a generation step.",14.49,16000
+long,06_long_sentences/long_03.wav,"Describe how you would design safe database access for an AI agent in a government system, including limited permissions, a controlled service, validation, logging, and human approval before any sensitive write operation.",13.73,16000
+long,06_long_sentences/long_04.wav,"Explain why a strong language model can still produce a bad RAG answer when retrieval is weak, and describe how you would check chunking, metadata filters, embeddings, ranking, and the retrieved passages before changing the model.",14.37,16000
+long,06_long_sentences/long_05.wav,"Walk me through the difference between a fixed automated workflow and an agentic workflow, and explain how state, tools, validation, retries, stop conditions, and human approval change the behavior of the system.",13.56,16000
+long,06_long_sentences/long_06.wav,"Tell me how you would evaluate an early warning model for students, why recall matters, why accuracy alone can be misleading, and how precision helps prevent teachers from receiving too many unnecessary alerts.",12.49,16000
+long,06_long_sentences/long_07.wav,"Explain how you would isolate data between multiple schools in one RAG platform, including backend filtering, school identifiers, metadata, separate collections when needed, and tests that prevent cross school retrieval.",14.29,16000
+long,06_long_sentences/long_08.wav,"Describe what should happen when an AI generated question fails validation more than once, including retry limits, logging, escalation to a teacher, and why the system should never continue retrying forever.",12.83,16000
+medium,07_medium_sentences/medium_01.wav,Explain how RAG retrieves information before the language model generates an answer.,5.38,16000
+medium,07_medium_sentences/medium_02.wav,Why do you use embeddings and cosine similarity instead of an LLM in the similarity checker?,5.69,16000
+medium,07_medium_sentences/medium_03.wav,How does your BTEC workflow validate a generated question before a teacher can approve it?,5.38,16000
+medium,07_medium_sentences/medium_04.wav,Why is human approval important when an AI system can already generate a good answer?,4.88,16000
+medium,07_medium_sentences/medium_05.wav,How would LangGraph help if your Python agentic workflow became more complex?,5.04,16000
+medium,07_medium_sentences/medium_06.wav,What is the difference between changing model knowledge with RAG and changing behavior with fine tuning?,6.15,16000
+medium,07_medium_sentences/medium_07.wav,How do metadata filters stop one school from retrieving documents that belong to another school?,6.03,16000
+medium,07_medium_sentences/medium_08.wav,What should the system do when the retrieved context does not contain enough information?,5.2,16000
+short,08_short_sentences/short_01.wav,What is RAG?,1.34,16000
+short,08_short_sentences/short_02.wav,What are guardrails?,1.39,16000
+short,08_short_sentences/short_03.wav,What is agentic AI?,1.67,16000
+short,08_short_sentences/short_04.wav,Why embeddings?,1.25,16000
+short,08_short_sentences/short_05.wav,What is LangGraph?,1.47,16000
+short,08_short_sentences/short_06.wav,Why recall?,1.01,16000
+short,08_short_sentences/short_07.wav,What if retrieval fails?,1.8,16000
+short,08_short_sentences/short_08.wav,Who approves the result?,1.71,16000
+noise,09_noise/noise_01.wav,"What is RAG, and why did you use it in your BTEC project?",3.93,16000
+noise,09_noise/noise_02.wav,"What is agentic AI, and how is it different from a normal workflow?",4.07,16000
+noise,09_noise/noise_03.wav,"What are guardrails, and why are they important in an AI system?",3.7,16000
+noise,09_noise/noise_04.wav,What is the difference between LangChain and LangGraph?,3.35,16000
+noise,09_noise/noise_05.wav,How do embeddings and cosine similarity work in your similarity checker?,4.4,16000
+noise,09_noise/noise_06.wav,Why did you use recall instead of only accuracy in the early warning model?,4.33,16000
+noise,09_noise/noise_07.wav,How do you prevent an AI agent from writing directly to a sensitive database?,4.7,16000
+noise,09_noise/noise_08.wav,What happens in your RAG system when retrieval returns no useful chunks?,4.56,16000

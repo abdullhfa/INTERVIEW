@@ -1,0 +1,4157 @@
+{
+  "created_at": "2026-09-13T21:26:18.782584+00:00",
+  "step": "v4 step 2 — hybrid ranking (conservative: rank without blob, apply with legacy blob)",
+  "change": "semantic_intent_recovery SEMANTIC_BLOB_PROXY=auto on a warm index: hybrid_top5 ranks on real cosine only; apply decision still uses the pre-v4 blob fill so successful recovery applies do not flip. Cold index / SEMANTIC_BLOB_PROXY=always keep full legacy behaviour.",
+  "untouched": [
+    "_W_* weights",
+    "_MIN_ACCEPT / accept_floor",
+    "_MIN_ANSWER_SCORE",
+    "apply gate",
+    "aliases",
+    "semantic top_k",
+    "STT",
+    "compound architecture"
+  ],
+  "verdict": "STEP2_PASS",
+  "primary": {
+    "failing_before": {
+      "n": 23,
+      "gold_in_hybrid_top5": 8,
+      "gold_at_hybrid_1": 4,
+      "applied_and_gold": 0,
+      "abstained": 23
+    },
+    "failing_after": {
+      "n": 23,
+      "gold_in_hybrid_top5": 13,
+      "gold_at_hybrid_1": 6,
+      "applied_and_gold": 1,
+      "abstained": 22
+    },
+    "passing_before": {
+      "n": 97,
+      "gold_in_hybrid_top5": 48,
+      "gold_at_hybrid_1": 35,
+      "applied_and_gold": 54,
+      "abstained": 17
+    },
+    "passing_after": {
+      "n": 97,
+      "gold_in_hybrid_top5": 53,
+      "gold_at_hybrid_1": 38,
+      "applied_and_gold": 54,
+      "abstained": 17
+    }
+  },
+  "guards": {
+    "applied_intent_changed": [
+      {
+        "clip": "fuh3_102",
+        "before": null,
+        "after": "tech.audio_retention",
+        "was_passing": false
+      }
+    ],
+    "changed_on_currently_passing": [],
+    "hc_risk": []
+  },
+  "gold_rank_moves": [
+    {
+      "clip": "fuh3_002",
+      "before": 3,
+      "after": 1
+    },
+    {
+      "clip": "fuh3_019",
+      "before": null,
+      "after": 1
+    },
+    {
+      "clip": "fuh3_021",
+      "before": null,
+      "after": 1
+    },
+    {
+      "clip": "fuh3_025",
+      "before": 3,
+      "after": 1
+    },
+    {
+      "clip": "fuh3_027",
+      "before": null,
+      "after": 1
+    },
+    {
+      "clip": "fuh3_034",
+      "before": 3,
+      "after": 2
+    },
+    {
+      "clip": "fuh3_038",
+      "before": null,
+      "after": 4
+    },
+    {
+      "clip": "fuh3_039",
+      "before": null,
+      "after": 2
+    },
+    {
+      "clip": "fuh3_042",
+      "before": 5,
+      "after": null
+    },
+    {
+      "clip": "fuh3_045",
+      "before": null,
+      "after": 2
+    },
+    {
+      "clip": "fuh3_052",
+      "before": null,
+      "after": 2
+    },
+    {
+      "clip": "fuh3_053",
+      "before": 1,
+      "after": null
+    },
+    {
+      "clip": "fuh3_066",
+      "before": 5,
+      "after": null
+    },
+    {
+      "clip": "fuh3_071",
+      "before": null,
+      "after": 2
+    },
+    {
+      "clip": "fuh3_073",
+      "before": 3,
+      "after": 5
+    },
+    {
+      "clip": "fuh3_088",
+      "before": 3,
+      "after": 4
+    },
+    {
+      "clip": "fuh3_093",
+      "before": null,
+      "after": 1
+    },
+    {
+      "clip": "fuh3_094",
+      "before": null,
+      "after": 2
+    },
+    {
+      "clip": "fuh3_095",
+      "before": null,
+      "after": 4
+    },
+    {
+      "clip": "fuh3_096",
+      "before": 2,
+      "after": null
+    },
+    {
+      "clip": "fuh3_097",
+      "before": null,
+      "after": 4
+    },
+    {
+      "clip": "fuh3_099",
+      "before": null,
+      "after": 3
+    },
+    {
+      "clip": "fuh3_100",
+      "before": null,
+      "after": 4
+    },
+    {
+      "clip": "fuh3_101",
+      "before": 1,
+      "after": 5
+    },
+    {
+      "clip": "fuh3_103",
+      "before": null,
+      "after": 5
+    },
+    {
+      "clip": "fuh3_104",
+      "before": 5,
+      "after": null
+    },
+    {
+      "clip": "fuh3_106",
+      "before": 3,
+      "after": 1
+    },
+    {
+      "clip": "fuh3_107",
+      "before": null,
+      "after": 1
+    },
+    {
+      "clip": "fuh3_112",
+      "before": 1,
+      "after": 2
+    },
+    {
+      "clip": "fuh3_116",
+      "before": 3,
+      "after": 5
+    },
+    {
+      "clip": "fuh3_117",
+      "before": 4,
+      "after": null
+    }
+  ],
+  "per_clip": {
+    "before": {
+      "fuh3_001": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.chunk_size",
+        "applied_mode": "strong",
+        "applied_score": 0.915,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_002": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.335 agree=0.725",
+        "hybrid_top5": [
+          "gen.biggest_achievement",
+          "gen.first_90_days",
+          "tech.reranking",
+          "hard.hybrid_when",
+          "tech.wer"
+        ],
+        "gold_rank_hybrid": 3,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.725,
+        "reranker_used": true
+      },
+      "fuh3_003": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.model_drift",
+        "applied_mode": "strong",
+        "applied_score": 0.763,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_004": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.p95",
+        "applied_mode": "strong",
+        "applied_score": 0.806,
+        "applied_is_gold": true,
+        "agreement": 0.85,
+        "reranker_used": false
+      },
+      "fuh3_005": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.402 agree=0.753",
+        "hybrid_top5": [
+          "tech.idempotency",
+          "cv.hallucination_in_projects",
+          "hard.idempotent_tools",
+          "hard.context_stuffing",
+          "gen.strengths"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.753,
+        "reranker_used": false
+      },
+      "fuh3_006": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.lora",
+        "applied_mode": "strong",
+        "applied_score": 0.84,
+        "applied_is_gold": true,
+        "agreement": 0.85,
+        "reranker_used": false
+      },
+      "fuh3_007": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.461 agree=0.725",
+        "hybrid_top5": [
+          "gen.weaknesses",
+          "cv.image_processing",
+          "cv.python_fastapi",
+          "hard.empty_retrieval",
+          "hard.rag_pdfs_tables_scans"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.725,
+        "reranker_used": false
+      },
+      "fuh3_008": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "cv.notice_period",
+        "applied_mode": "strong",
+        "applied_score": 0.809,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_009": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.redis_why",
+        "applied_mode": "strong",
+        "applied_score": 0.839,
+        "applied_is_gold": true,
+        "agreement": 0.85,
+        "reranker_used": false
+      },
+      "fuh3_010": {
+        "reason": "recovered:thin_margin",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.hybrid_search",
+          "hard.hybrid_when",
+          "tech.conflict_of_interest_scenario",
+          "hard.empty_retrieval",
+          "tech.rag_build"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.hybrid_search",
+        "applied_mode": "strong",
+        "applied_score": 0.871,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_011": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.golden_dataset",
+        "applied_mode": "strong",
+        "applied_score": 0.903,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_012": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.canary_rag",
+          "tech.agent_mistake",
+          "hard.prompt_versioning",
+          "cv.what_would_you_improve",
+          "hard.cost_spike"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "hard.canary_rag",
+        "applied_mode": "strong",
+        "applied_score": 0.574,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_013": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.temperature",
+        "applied_mode": "strong",
+        "applied_score": 0.663,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_014": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "gen.pressure",
+          "gen.first_90_days",
+          "tech.mcp",
+          "intro.short_version",
+          "cv.python_fastapi"
+        ],
+        "gold_rank_hybrid": 3,
+        "applied_id": "gen.pressure",
+        "applied_mode": "weak",
+        "applied_score": 0.598,
+        "applied_is_gold": false,
+        "agreement": 0.739,
+        "reranker_used": false
+      },
+      "fuh3_015": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.circuit_breaker",
+        "applied_mode": "strong",
+        "applied_score": 0.809,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_016": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.chunk_size",
+        "applied_mode": "strong",
+        "applied_score": 0.853,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_017": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.conflicting_docs",
+        "applied_mode": "strong",
+        "applied_score": 0.79,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_018": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.lora",
+        "applied_mode": "strong",
+        "applied_score": 0.787,
+        "applied_is_gold": false,
+        "agreement": 0.77,
+        "reranker_used": false
+      },
+      "fuh3_019": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.446 agree=0.725",
+        "hybrid_top5": [
+          "hard.wrong_tool",
+          "tech.agent_mistake",
+          "cv.agentic_experience",
+          "tech.agentic_what",
+          "tech.agent_design_finance"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.725,
+        "reranker_used": true
+      },
+      "fuh3_020": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.gpu_sizing",
+        "applied_mode": "strong",
+        "applied_score": 0.929,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_021": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.417 agree=0.655",
+        "hybrid_top5": [
+          "hard.three_documents",
+          "tech.metadata_filtering",
+          "tech.context_window",
+          "tech.prompt_engineering",
+          "tech.chunk_size"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.655,
+        "reranker_used": true
+      },
+      "fuh3_022": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.streaming_vs_validate",
+        "applied_mode": "strong",
+        "applied_score": 0.749,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_023": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "cv.kubernetes",
+        "applied_mode": "strong",
+        "applied_score": 0.829,
+        "applied_is_gold": true,
+        "agreement": 0.884,
+        "reranker_used": false
+      },
+      "fuh3_024": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.312 agree=0.500",
+        "hybrid_top5": [
+          "hard.tenant_isolation",
+          "gen.questions_for_us",
+          "tech.overfitting_prevent",
+          "tech.data_leakage_prevent",
+          "tech.rag_prevent_invented_numbers"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.5,
+        "reranker_used": true
+      },
+      "fuh3_025": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "cv.pmp_value",
+          "cv.knet_role",
+          "cv.transition_pm_to_ai",
+          "gen.why_ai_field",
+          "gen.motivation"
+        ],
+        "gold_rank_hybrid": 3,
+        "applied_id": "cv.pmp_value",
+        "applied_mode": "weak",
+        "applied_score": 0.661,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_026": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.416 agree=0.880",
+        "hybrid_top5": [
+          "proj.early_warning.metric",
+          "tech.precision_recall",
+          "proj.completion_risk.describe",
+          "hard.which_rag_layer_failed",
+          "proj.helpdesk.challenges"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_027": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.agent_write_db",
+          "tech.pii_redaction",
+          "proj.early_warning.result",
+          "hard.pii_in_chunks",
+          "tech.rag_debugging"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.agent_write_db",
+        "applied_mode": "strong",
+        "applied_score": 0.619,
+        "applied_is_gold": false,
+        "agreement": 0.838,
+        "reranker_used": false
+      },
+      "fuh3_028": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.444 agree=0.850",
+        "hybrid_top5": [
+          "hard.cost_spike",
+          "hard.agent_stop_tools",
+          "tech.rag_prevent_invented_numbers",
+          "tech.production_failure_story",
+          "hard.fallback_llm_down"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.85,
+        "reranker_used": true
+      },
+      "fuh3_029": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "moe.operational_status",
+        "applied_mode": "strong",
+        "applied_score": 0.556,
+        "applied_is_gold": false,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_030": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "gen.first_90_days",
+        "applied_mode": "strong",
+        "applied_score": 0.733,
+        "applied_is_gold": false,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_031": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.empty_retrieval",
+        "applied_mode": "strong",
+        "applied_score": 0.723,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_032": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.tenant_isolation",
+        "applied_mode": "strong",
+        "applied_score": 0.741,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_033": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.which_rag_layer_failed",
+          "tech.tfidf_vs_embeddings",
+          "tech.reindex_embedding_change",
+          "hard.change_embedding",
+          "proj.similarity.tech"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "hard.which_rag_layer_failed",
+        "applied_mode": "strong",
+        "applied_score": 0.69,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_034": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.embeddings",
+          "hard.change_embedding",
+          "tech.reindex_embedding_change",
+          "proj.similarity.tech",
+          "tech.tfidf_vs_embeddings"
+        ],
+        "gold_rank_hybrid": 3,
+        "applied_id": "tech.embeddings",
+        "applied_mode": "strong",
+        "applied_score": 0.711,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_035": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.citation_lie",
+        "applied_mode": "strong",
+        "applied_score": 0.723,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_036": {
+        "reason": "recovered:thin_margin",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.knowledge_graph_what",
+          "hard.graph_vs_vector",
+          "tech.conflict_of_interest_scenario",
+          "cv.vector_db",
+          "hard.agentic_rag_design"
+        ],
+        "gold_rank_hybrid": 2,
+        "applied_id": "tech.knowledge_graph_what",
+        "applied_mode": "strong",
+        "applied_score": 0.751,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_037": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.deploy_on_prem",
+          "tech.on_prem_llm_experience",
+          "tech.gpu_sizing",
+          "tech.kubernetes",
+          "tech.hosting_decision"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.deploy_on_prem",
+        "applied_mode": "weak",
+        "applied_score": 0.562,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_038": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.agent_loop",
+          "hard.agent_stop_tools",
+          "tech.agent_mistake",
+          "hard.multihop_vs_agent",
+          "tech.agent_design_finance"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.agent_loop",
+        "applied_mode": "strong",
+        "applied_score": 0.574,
+        "applied_is_gold": false,
+        "agreement": 0.8,
+        "reranker_used": true
+      },
+      "fuh3_039": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.390 agree=0.850",
+        "hybrid_top5": [
+          "moe.operational_status",
+          "proj.completion_risk.tech",
+          "cv.projects.most_recent",
+          "proj.completion.stack",
+          "hard.rag_debug_steps"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.85,
+        "reranker_used": true
+      },
+      "fuh3_040": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "proj.early_warning.leakage",
+          "proj.early_warning.stack",
+          "proj.early_warning.tech",
+          "proj.early_warning.describe",
+          "proj.early_warning.metric"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "proj.early_warning.leakage",
+        "applied_mode": "weak",
+        "applied_score": 0.586,
+        "applied_is_gold": true,
+        "agreement": 0.693,
+        "reranker_used": true
+      },
+      "fuh3_041": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.python_libraries",
+          "proj.early_warning.tech",
+          "proj.similarity.tech",
+          "intro.current_role",
+          "tech.container_vs_vm"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.python_libraries",
+        "applied_mode": "weak",
+        "applied_score": 0.583,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_042": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.rag_debug_steps",
+          "hard.which_rag_layer_failed",
+          "hard.tenant_isolation",
+          "hard.evaluate_rag",
+          "gen.non_technical_stakeholders"
+        ],
+        "gold_rank_hybrid": 5,
+        "applied_id": "hard.rag_debug_steps",
+        "applied_mode": "weak",
+        "applied_score": 0.536,
+        "applied_is_gold": false,
+        "agreement": 0.725,
+        "reranker_used": true
+      },
+      "fuh3_043": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.emirati_dialect",
+          "cv.languages",
+          "tech.reindex_embedding_change",
+          "hard.rag_arabic_english",
+          "hard.mixed_language_query"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.emirati_dialect",
+        "applied_mode": "strong",
+        "applied_score": 0.646,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_044": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.supervisor_vs_router",
+        "applied_mode": "strong",
+        "applied_score": 0.732,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_045": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.456 agree=0.680",
+        "hybrid_top5": [
+          "gen.handle_mistake_in_production",
+          "hard.agent_stop_tools",
+          "tech.no_wrong_info_finance",
+          "tech.reduce_cost",
+          "tech.latency_p95"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.68,
+        "reranker_used": true
+      },
+      "fuh3_046": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.rag_pdfs_tables_scans",
+          "hard.mixed_language_query",
+          "hard.conflicting_docs",
+          "hard.tenant_isolation",
+          "cv.csharp_dotnet"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "hard.rag_pdfs_tables_scans",
+        "applied_mode": "strong",
+        "applied_score": 0.613,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_047": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.injection_in_pdf",
+          "tech.prompt_injection_supplier",
+          "tech.prompt_injection_what",
+          "tech.rag_build",
+          "hard.plain_python_still_agentic"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "hard.injection_in_pdf",
+        "applied_mode": "weak",
+        "applied_score": 0.496,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_048": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.508 agree=0.725",
+        "hybrid_top5": [
+          "tech.rag_vs_finetuning",
+          "hard.remove_llm_from_rag",
+          "hard.which_rag_layer_failed",
+          "tech.rag_two_phases",
+          "moe.question_generation.why_steps"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.725,
+        "reranker_used": true
+      },
+      "fuh3_049": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.497 agree=0.734",
+        "hybrid_top5": [
+          "hard.citation_lie",
+          "tech.faithfulness_check",
+          "tech.rag_what",
+          "cv.rag_experience",
+          "tech.knowledge_graph_what"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.734,
+        "reranker_used": true
+      },
+      "fuh3_050": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.canary_rag",
+        "applied_mode": "strong",
+        "applied_score": 0.767,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_051": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.guardrails_layers",
+          "cv.python_fastapi",
+          "tech.guardrails_how",
+          "tech.tool_calling",
+          "tech.precision_recall"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.guardrails_layers",
+        "applied_mode": "strong",
+        "applied_score": 0.626,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_052": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.403 agree=0.582",
+        "hybrid_top5": [
+          "cv.student_pii",
+          "tech.how_llm_works",
+          "tech.on_prem_llm_experience",
+          "hard.remove_llm_from_rag",
+          "moe.ai_solutions"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.582,
+        "reranker_used": true
+      },
+      "fuh3_053": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.observability",
+          "hard.empty_retrieval",
+          "hard.which_rag_layer_failed",
+          "hard.canary_rag",
+          "hard.circuit_breaker"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "hard.observability",
+        "applied_mode": "weak",
+        "applied_score": 0.508,
+        "applied_is_gold": true,
+        "agreement": 0.8,
+        "reranker_used": true
+      },
+      "fuh3_054": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.rag_access_control",
+          "proj.helpdesk.describe",
+          "tech.responsibility",
+          "tech.no_wrong_info_finance",
+          "proj.helpdesk.challenges"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.rag_access_control",
+        "applied_mode": "weak",
+        "applied_score": 0.533,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_055": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.526 agree=0.671",
+        "hybrid_top5": [
+          "tech.hosting_decision",
+          "tech.core42",
+          "tech.on_prem_llm_experience",
+          "tech.deploy_on_prem",
+          "tech.gpu_sizing"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.671,
+        "reranker_used": false
+      },
+      "fuh3_056": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "proj.kiosk.describe",
+          "tech.voice_assistant_design",
+          "proj.kiosk.challenges",
+          "proj.kiosk.stack",
+          "cv.whisper_experience"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "proj.kiosk.describe",
+        "applied_mode": "strong",
+        "applied_score": 0.694,
+        "applied_is_gold": true,
+        "agreement": 0.85,
+        "reranker_used": false
+      },
+      "fuh3_057": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.reduce_cost",
+          "tech.no_wrong_info_finance",
+          "gen.handle_mistake_in_production",
+          "tech.agent_mistake",
+          "hard.least_privilege_example"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.reduce_cost",
+        "applied_mode": "strong",
+        "applied_score": 0.616,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_058": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.evaluate_rag",
+          "hard.which_rag_layer_failed",
+          "tech.good_enough_to_launch",
+          "hard.similarity_vs_qgen_arch",
+          "hard.rag_debug_steps"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "hard.evaluate_rag",
+        "applied_mode": "weak",
+        "applied_score": 0.672,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": true
+      },
+      "fuh3_059": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.teacher_rejects",
+        "applied_mode": "strong",
+        "applied_score": 0.696,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_060": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.checkpoint_vs_memory",
+        "applied_mode": "strong",
+        "applied_score": 0.622,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_061": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.rag_access_control",
+          "cv.csharp_dotnet",
+          "hard.project_architecture_e2e",
+          "moe.ai_solutions",
+          "hard.agentic_rag_design"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.rag_access_control",
+        "applied_mode": "weak",
+        "applied_score": 0.537,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_062": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.426 agree=0.850",
+        "hybrid_top5": [
+          "hard.first_90_agentic",
+          "gen.handle_mistake_in_production",
+          "gen.prioritize",
+          "moe.question_generation.why_steps",
+          "tech.production_failure_story"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.85,
+        "reranker_used": true
+      },
+      "fuh3_063": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "cv.what_would_you_improve",
+          "gen.biggest_challenge_career",
+          "proj.similarity.challenges",
+          "proj.helpdesk.tech",
+          "gen.leadership"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "cv.what_would_you_improve",
+        "applied_mode": "weak",
+        "applied_score": 0.488,
+        "applied_is_gold": true,
+        "agreement": 1.0,
+        "reranker_used": true
+      },
+      "fuh3_064": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.507 agree=0.644",
+        "hybrid_top5": [
+          "tech.prompt_injection_supplier",
+          "tech.conflict_of_interest_scenario",
+          "hard.agent_stop_tools",
+          "tech.vector_db_choice",
+          "hard.agent_terms_difference"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.644,
+        "reranker_used": false
+      },
+      "fuh3_065": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.mixed_language_query",
+          "hard.rag_arabic_english",
+          "cv.languages",
+          "hard.which_rag_layer_failed",
+          "tech.reindex_embedding_change"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "hard.mixed_language_query",
+        "applied_mode": "strong",
+        "applied_score": 0.776,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_066": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.429 agree=0.880",
+        "hybrid_top5": [
+          "proj.helpdesk.describe",
+          "tech.agent_tools_permissions",
+          "tech.rag_access_control",
+          "tech.agent_mistake",
+          "hard.interrupt_side_effects"
+        ],
+        "gold_rank_hybrid": 5,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_067": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "moe.question_generation",
+          "hard.teacher_rejects",
+          "tech.rag_two_phases",
+          "hard.project_architecture_e2e",
+          "moe.question_generation.stack"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "moe.question_generation",
+        "applied_mode": "strong",
+        "applied_score": 0.574,
+        "applied_is_gold": true,
+        "agreement": 0.812,
+        "reranker_used": false
+      },
+      "fuh3_068": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.532 agree=0.584",
+        "hybrid_top5": [
+          "tech.transcription_quality",
+          "tech.good_enough_to_launch",
+          "proj.early_warning.metric",
+          "gen.handle_mistake_in_production",
+          "tech.wer"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.584,
+        "reranker_used": false
+      },
+      "fuh3_069": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "gen.handle_mistake_in_production",
+          "tech.production_failure_story",
+          "gen.failure",
+          "hard.production_monitoring",
+          "moe.operational_status"
+        ],
+        "gold_rank_hybrid": 2,
+        "applied_id": "gen.handle_mistake_in_production",
+        "applied_mode": "weak",
+        "applied_score": 0.518,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_070": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.what_is_ml",
+          "cv.ml_experience",
+          "tech.ai_ml_dl_difference",
+          "gen.learning_new_tech",
+          "gen.teamwork"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.what_is_ml",
+        "applied_mode": "weak",
+        "applied_score": 0.482,
+        "applied_is_gold": false,
+        "agreement": 0.933,
+        "reranker_used": true
+      },
+      "fuh3_071": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "proj.early_warning.describe",
+          "gen.non_technical_stakeholders",
+          "cv.student_pii",
+          "hard.teacher_rejects",
+          "proj.similarity.describe"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": "proj.early_warning.describe",
+        "applied_mode": "weak",
+        "applied_score": 0.502,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_072": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.pii_redaction",
+          "hard.pii_in_chunks",
+          "hard.first_90_agentic",
+          "hard.which_rag_layer_failed",
+          "moe.question_generation.stack"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.pii_redaction",
+        "applied_mode": "weak",
+        "applied_score": 0.515,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": true
+      },
+      "fuh3_073": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.455 agree=0.800",
+        "hybrid_top5": [
+          "cv.team_and_collaboration",
+          "tech.agent_vs_workflow",
+          "hard.agent_terms_difference",
+          "tech.langgraph_vs_langchain",
+          "tech.ai_ml_dl_difference"
+        ],
+        "gold_rank_hybrid": 3,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.8,
+        "reranker_used": true
+      },
+      "fuh3_074": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.439 agree=0.950",
+        "hybrid_top5": [
+          "tech.no_wrong_info_finance",
+          "tech.transcription_quality",
+          "tech.i_dont_know_too_often",
+          "hard.wrong_chunk",
+          "tech.wer"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.95,
+        "reranker_used": true
+      },
+      "fuh3_075": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.good_enough_to_launch",
+          "hard.evaluate_rag",
+          "tech.transcription_quality",
+          "tech.overfitting_prevent",
+          "tech.rag_prevent_invented_numbers"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.good_enough_to_launch",
+        "applied_mode": "strong",
+        "applied_score": 0.583,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_076": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.reranking",
+        "applied_mode": "weak",
+        "applied_score": 0.828,
+        "applied_is_gold": true,
+        "agreement": 0.895,
+        "reranker_used": false
+      },
+      "fuh3_077": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.hallucination_what",
+        "applied_mode": "strong",
+        "applied_score": 0.736,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_078": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.context_window",
+        "applied_mode": "strong",
+        "applied_score": 0.715,
+        "applied_is_gold": true,
+        "agreement": 0.933,
+        "reranker_used": false
+      },
+      "fuh3_079": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "proj.similarity.tech",
+        "applied_mode": "strong",
+        "applied_score": 0.719,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_080": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.overfitting",
+        "applied_mode": "weak",
+        "applied_score": 0.871,
+        "applied_is_gold": true,
+        "agreement": 1.0,
+        "reranker_used": false
+      },
+      "fuh3_081": {
+        "reason": "recovered:thin_margin",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.vector_db_choice",
+          "cv.vector_db",
+          "hard.graph_vs_vector",
+          "hard.checkpoint_vs_memory",
+          "hard.tenant_isolation"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.vector_db_choice",
+        "applied_mode": "strong",
+        "applied_score": 0.749,
+        "applied_is_gold": true,
+        "agreement": 0.899,
+        "reranker_used": false
+      },
+      "fuh3_082": {
+        "reason": "recovered:thin_margin",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.agent_orchestrator",
+          "tech.multi_agent_when",
+          "hard.agent_terms_difference",
+          "hard.langgraph_vs_n8n_vs_python",
+          "tech.data_leakage"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.agent_orchestrator",
+        "applied_mode": "strong",
+        "applied_score": 0.723,
+        "applied_is_gold": true,
+        "agreement": 0.885,
+        "reranker_used": false
+      },
+      "fuh3_083": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "cv.education",
+          "intro.tell_me_about_yourself",
+          "proj.kiosk.challenges",
+          "cv.certifications",
+          "cv.why_leaving"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "cv.education",
+        "applied_mode": "weak",
+        "applied_score": 0.568,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_084": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.prompt_injection_what",
+        "applied_mode": "weak",
+        "applied_score": 0.861,
+        "applied_is_gold": true,
+        "agreement": 1.0,
+        "reranker_used": false
+      },
+      "fuh3_085": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.container_vs_vm",
+          "tech.docker_why",
+          "cv.kubernetes",
+          "gen.anything_else",
+          "tech.kubernetes"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.container_vs_vm",
+        "applied_mode": "strong",
+        "applied_score": 0.713,
+        "applied_is_gold": true,
+        "agreement": 0.914,
+        "reranker_used": false
+      },
+      "fuh3_086": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "proj.early_warning.describe",
+          "proj.early_warning.metric",
+          "proj.completion_risk.describe",
+          "proj.early_warning.stack",
+          "cv.guardrails"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "proj.early_warning.describe",
+        "applied_mode": "weak",
+        "applied_score": 0.539,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_087": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.tool_calling",
+          "hard.tool_schema",
+          "hard.agent_stop_tools",
+          "hard.circuit_breaker",
+          "tech.agent_tools_permissions"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.tool_calling",
+        "applied_mode": "strong",
+        "applied_score": 0.71,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_088": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "proj.kiosk.describe",
+          "cv.whisper_experience",
+          "tech.whisper_vs_cloud",
+          "tech.voice_assistant_design",
+          "cv.hallucination_in_projects"
+        ],
+        "gold_rank_hybrid": 3,
+        "applied_id": "proj.kiosk.describe",
+        "applied_mode": "weak",
+        "applied_score": 0.57,
+        "applied_is_gold": false,
+        "agreement": 0.85,
+        "reranker_used": true
+      },
+      "fuh3_089": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.agent_vs_workflow",
+          "tech.langgraph_vs_langchain",
+          "tech.library_framework_platform",
+          "tech.ai_ml_dl_difference",
+          "tech.python_libraries"
+        ],
+        "gold_rank_hybrid": 2,
+        "applied_id": "tech.agent_vs_workflow",
+        "applied_mode": "weak",
+        "applied_score": 0.467,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_090": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.embeddings",
+          "hard.hybrid_when",
+          "tech.metadata_filtering",
+          "tech.hybrid_search",
+          "tech.tfidf_vs_embeddings"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.embeddings",
+        "applied_mode": "weak",
+        "applied_score": 0.672,
+        "applied_is_gold": true,
+        "agreement": 1.0,
+        "reranker_used": true
+      },
+      "fuh3_091": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.371 agree=0.880",
+        "hybrid_top5": [
+          "tech.rag_access_control",
+          "gen.non_technical_stakeholders",
+          "hard.agent_loop",
+          "cv.agentic_experience",
+          "proj.helpdesk.challenges"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_092": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.388 agree=0.880",
+        "hybrid_top5": [
+          "hard.change_embedding",
+          "hard.streaming_vs_validate",
+          "gen.anything_else",
+          "tech.model_drift",
+          "gen.handle_mistake_in_production"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_093": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.350 agree=0.880",
+        "hybrid_top5": [
+          "hard.least_privilege_example",
+          "cv.csharp_dotnet",
+          "cv.kuwait_projects_and_llm",
+          "gen.why_this_role",
+          "tech.supervised_unsupervised"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_094": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.555 agree=0.583",
+        "hybrid_top5": [
+          "tech.rag_what",
+          "tech.knowledge_graph_what",
+          "tech.rag_vs_finetuning",
+          "hard.conflicting_docs",
+          "tech.rag_prevent_invented_numbers"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.583,
+        "reranker_used": false
+      },
+      "fuh3_095": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.empty_retrieval",
+          "hard.remove_llm_from_rag",
+          "hard.which_rag_layer_failed",
+          "tech.rag_vs_finetuning",
+          "moe.question_generation.why_steps"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.empty_retrieval",
+        "applied_mode": "weak",
+        "applied_score": 0.524,
+        "applied_is_gold": false,
+        "agreement": 0.75,
+        "reranker_used": true
+      },
+      "fuh3_096": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.313 agree=0.615",
+        "hybrid_top5": [
+          "tech.what_is_ml",
+          "hard.citation_lie",
+          "hard.wrong_chunk",
+          "tech.transcription_quality",
+          "tech.wer"
+        ],
+        "gold_rank_hybrid": 2,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.615,
+        "reranker_used": true
+      },
+      "fuh3_097": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.376 agree=0.850",
+        "hybrid_top5": [
+          "proj.early_warning.result",
+          "hard.agent_loop",
+          "hard.citation_lie",
+          "proj.similarity.challenges",
+          "cv.notice_period"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.85,
+        "reranker_used": true
+      },
+      "fuh3_098": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.418 agree=0.556",
+        "hybrid_top5": [
+          "tech.rag_access_control",
+          "cv.csharp_dotnet",
+          "tech.conflict_of_interest_scenario",
+          "hard.hitl_where",
+          "hard.multihop_vs_agent"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.556,
+        "reranker_used": true
+      },
+      "fuh3_099": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.337 agree=0.556",
+        "hybrid_top5": [
+          "hard.agent_stop_tools",
+          "hard.wrong_tool",
+          "hard.accountability",
+          "proj.early_warning.result",
+          "proj.early_warning.stack"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.556,
+        "reranker_used": true
+      },
+      "fuh3_100": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.337 agree=0.556",
+        "hybrid_top5": [
+          "tech.wer",
+          "tech.transcription_quality",
+          "gen.feedback",
+          "proj.helpdesk.challenges",
+          "gen.strengths"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.556,
+        "reranker_used": true
+      },
+      "fuh3_101": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.337 agree=0.629",
+        "hybrid_top5": [
+          "tech.temperature",
+          "cv.why_hire_you",
+          "hard.streaming_vs_validate",
+          "gen.leadership",
+          "gen.ambiguity"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.629,
+        "reranker_used": true
+      },
+      "fuh3_102": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.410 agree=0.880",
+        "hybrid_top5": [
+          "tech.audio_retention",
+          "proj.kiosk.describe",
+          "tech.whisper_vs_cloud",
+          "tech.guardrails_how",
+          "gen.remote_onsite"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_103": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.410 agree=0.800",
+        "hybrid_top5": [
+          "cv.team_and_collaboration",
+          "intro.current_role",
+          "cv.projects.most_recent",
+          "cv.guardrails",
+          "gen.pressure"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.8,
+        "reranker_used": true
+      },
+      "fuh3_104": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.399 agree=0.880",
+        "hybrid_top5": [
+          "proj.similarity.challenges",
+          "gen.why_this_role",
+          "gen.weaknesses",
+          "hard.agent_stop_tools",
+          "gen.motivation"
+        ],
+        "gold_rank_hybrid": 5,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_105": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "gen.strengths",
+          "gen.weaknesses",
+          "cv.core_skills",
+          "gen.disagree_manager",
+          "cv.why_hire_you"
+        ],
+        "gold_rank_hybrid": 2,
+        "applied_id": "gen.strengths",
+        "applied_mode": "weak",
+        "applied_score": 0.551,
+        "applied_is_gold": false,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_106": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "cv.years_experience",
+          "tech.hybrid_search",
+          "proj.similarity.role",
+          "gen.ambiguity",
+          "proj.kiosk.challenges"
+        ],
+        "gold_rank_hybrid": 3,
+        "applied_id": "cv.years_experience",
+        "applied_mode": "strong",
+        "applied_score": 0.707,
+        "applied_is_gold": false,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_107": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.346 agree=0.650",
+        "hybrid_top5": [
+          "hard.canary_rag",
+          "tech.python_libraries",
+          "tech.deploy_on_prem",
+          "intro.current_role",
+          "cv.projects.most_proud"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.65,
+        "reranker_used": true
+      },
+      "fuh3_108": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.436 agree=0.590",
+        "hybrid_top5": [
+          "tech.rag_access_control",
+          "hard.secure_rag",
+          "hard.similarity_vs_qgen_arch",
+          "proj.similarity.describe",
+          "tech.how_stt_works"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.cosine_semantic_search",
+        "applied_mode": "weak",
+        "applied_score": 0.571,
+        "applied_is_gold": true,
+        "agreement": 0.59,
+        "reranker_used": true
+      },
+      "fuh3_109": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.agent_vs_workflow",
+          "hard.langgraph_vs_n8n_vs_python",
+          "hard.agent_terms_difference",
+          "hard.checkpoint_vs_memory",
+          "tech.n8n"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.agent_vs_workflow",
+        "applied_mode": "weak",
+        "applied_score": 0.515,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_110": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "intro.current_role",
+        "applied_mode": "strong",
+        "applied_score": 0.677,
+        "applied_is_gold": false,
+        "agreement": 0.797,
+        "reranker_used": false
+      },
+      "fuh3_111": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.376 agree=0.950",
+        "hybrid_top5": [
+          "hard.fallback_llm_down",
+          "tech.production_failure_story",
+          "cv.hallucination_in_projects",
+          "cv.rag_experience",
+          "proj.kiosk.challenges"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.95,
+        "reranker_used": true
+      },
+      "fuh3_112": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.456 agree=0.880",
+        "hybrid_top5": [
+          "proj.early_warning.tech",
+          "cv.core_skills",
+          "proj.similarity.tech",
+          "proj.completion_risk.tech",
+          "moe.question_generation.llm_used"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_113": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "cv.student_pii",
+          "cv.pmp_value",
+          "hard.agent_memory_privacy",
+          "tech.model_monitoring",
+          "tech.deploy_on_prem"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": "cv.student_pii",
+        "applied_mode": "weak",
+        "applied_score": 0.634,
+        "applied_is_gold": false,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_114": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.361 agree=0.880",
+        "hybrid_top5": [
+          "tech.overfitting_prevent",
+          "tech.data_leakage_prevent",
+          "gen.ai_ethics",
+          "gen.prioritize",
+          "gen.ambiguity"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_115": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.388 agree=0.650",
+        "hybrid_top5": [
+          "cv.llm_experience",
+          "intro.tell_me_about_yourself",
+          "tech.gpu_server_managed",
+          "proj.similarity.role",
+          "cv.langchain"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.65,
+        "reranker_used": true
+      },
+      "fuh3_116": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.384 agree=0.760",
+        "hybrid_top5": [
+          "gen.why_ai_field",
+          "hard.why_rag_for_btec",
+          "tech.vector_db_choice",
+          "hard.langgraph_vs_n8n_vs_python",
+          "gen.prioritize"
+        ],
+        "gold_rank_hybrid": 3,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.76,
+        "reranker_used": true
+      },
+      "fuh3_117": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.empty_retrieval",
+          "hard.which_rag_layer_failed",
+          "tech.rag_two_phases",
+          "tech.rag_vs_finetuning",
+          "tech.hybrid_search"
+        ],
+        "gold_rank_hybrid": 4,
+        "applied_id": "hard.empty_retrieval",
+        "applied_mode": "weak",
+        "applied_score": 0.546,
+        "applied_is_gold": false,
+        "agreement": 0.75,
+        "reranker_used": true
+      },
+      "fuh3_118": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.agentic_rag_design",
+          "cv.education.why_diploma",
+          "tech.agent_design_finance",
+          "tech.prompt_engineering",
+          "gen.ambiguity"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.agentic_rag_design",
+        "applied_mode": "weak",
+        "applied_score": 0.504,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_119": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "proj.kiosk.challenges",
+        "applied_mode": "strong",
+        "applied_score": 0.734,
+        "applied_is_gold": false,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_120": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.whisper_vs_cloud",
+          "tech.hosting_decision",
+          "tech.gpu_sizing",
+          "tech.reduce_cost",
+          "cv.whisper_experience"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.whisper_vs_cloud",
+        "applied_mode": "weak",
+        "applied_score": 0.472,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": true
+      }
+    },
+    "after": {
+      "fuh3_001": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.chunk_size",
+        "applied_mode": "strong",
+        "applied_score": 0.915,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_002": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.335 agree=0.725",
+        "hybrid_top5": [
+          "tech.reranking",
+          "gen.biggest_achievement",
+          "gen.first_90_days",
+          "hard.hybrid_when",
+          "tech.wer"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.725,
+        "reranker_used": true
+      },
+      "fuh3_003": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.model_drift",
+        "applied_mode": "strong",
+        "applied_score": 0.763,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_004": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.p95",
+        "applied_mode": "strong",
+        "applied_score": 0.806,
+        "applied_is_gold": true,
+        "agreement": 0.85,
+        "reranker_used": false
+      },
+      "fuh3_005": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.402 agree=0.753",
+        "hybrid_top5": [
+          "tech.idempotency",
+          "cv.hallucination_in_projects",
+          "hard.context_stuffing",
+          "hard.idempotent_tools",
+          "cv.core_skills"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.753,
+        "reranker_used": false
+      },
+      "fuh3_006": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.lora",
+        "applied_mode": "strong",
+        "applied_score": 0.84,
+        "applied_is_gold": true,
+        "agreement": 0.85,
+        "reranker_used": false
+      },
+      "fuh3_007": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.461 agree=0.725",
+        "hybrid_top5": [
+          "gen.weaknesses",
+          "cv.image_processing",
+          "hard.empty_retrieval",
+          "cv.python_fastapi",
+          "tech.rag_debugging"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.725,
+        "reranker_used": false
+      },
+      "fuh3_008": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "cv.notice_period",
+        "applied_mode": "strong",
+        "applied_score": 0.809,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_009": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.redis_why",
+        "applied_mode": "strong",
+        "applied_score": 0.839,
+        "applied_is_gold": true,
+        "agreement": 0.85,
+        "reranker_used": false
+      },
+      "fuh3_010": {
+        "reason": "recovered:thin_margin",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.hybrid_search",
+          "hard.hybrid_when",
+          "tech.conflict_of_interest_scenario",
+          "hard.empty_retrieval",
+          "tech.rag_build"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.hybrid_search",
+        "applied_mode": "strong",
+        "applied_score": 0.871,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_011": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.golden_dataset",
+        "applied_mode": "strong",
+        "applied_score": 0.903,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_012": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.canary_rag",
+          "gen.handle_mistake_in_production",
+          "hard.context_stuffing",
+          "hard.remove_langchain",
+          "tech.agent_mistake"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "hard.canary_rag",
+        "applied_mode": "strong",
+        "applied_score": 0.574,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_013": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.temperature",
+        "applied_mode": "strong",
+        "applied_score": 0.663,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_014": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "gen.pressure",
+          "gen.first_90_days",
+          "tech.mcp",
+          "intro.short_version",
+          "tech.latency_p95"
+        ],
+        "gold_rank_hybrid": 3,
+        "applied_id": "gen.pressure",
+        "applied_mode": "weak",
+        "applied_score": 0.598,
+        "applied_is_gold": false,
+        "agreement": 0.739,
+        "reranker_used": false
+      },
+      "fuh3_015": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.circuit_breaker",
+        "applied_mode": "strong",
+        "applied_score": 0.809,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_016": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.chunk_size",
+        "applied_mode": "strong",
+        "applied_score": 0.853,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_017": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.conflicting_docs",
+        "applied_mode": "strong",
+        "applied_score": 0.79,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_018": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.lora",
+        "applied_mode": "strong",
+        "applied_score": 0.787,
+        "applied_is_gold": false,
+        "agreement": 0.77,
+        "reranker_used": false
+      },
+      "fuh3_019": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.446 agree=0.725",
+        "hybrid_top5": [
+          "hard.accountability",
+          "hard.agents_disagree",
+          "tech.react_reasoning",
+          "tech.agentic_what",
+          "cv.agentic_experience"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.725,
+        "reranker_used": true
+      },
+      "fuh3_020": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.gpu_sizing",
+        "applied_mode": "strong",
+        "applied_score": 0.929,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_021": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.417 agree=0.655",
+        "hybrid_top5": [
+          "hard.rag_pdfs_tables_scans",
+          "hard.not_finetune_first",
+          "hard.injection_in_pdf",
+          "hard.empty_retrieval",
+          "tech.conflict_of_interest_scenario"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.655,
+        "reranker_used": true
+      },
+      "fuh3_022": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.streaming_vs_validate",
+        "applied_mode": "strong",
+        "applied_score": 0.749,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_023": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "cv.kubernetes",
+        "applied_mode": "strong",
+        "applied_score": 0.829,
+        "applied_is_gold": true,
+        "agreement": 0.884,
+        "reranker_used": false
+      },
+      "fuh3_024": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.312 agree=0.500",
+        "hybrid_top5": [
+          "tech.hallucination_prevent",
+          "hard.tenant_isolation",
+          "hard.agent_memory_privacy",
+          "tech.data_leakage_prevent",
+          "tech.rag_prevent_invented_numbers"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.5,
+        "reranker_used": true
+      },
+      "fuh3_025": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "cv.transition_pm_to_ai",
+          "gen.why_ai_field",
+          "gen.leadership",
+          "cv.pmp_value",
+          "gen.motivation"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "cv.pmp_value",
+        "applied_mode": "weak",
+        "applied_score": 0.661,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_026": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.416 agree=0.880",
+        "hybrid_top5": [
+          "proj.early_warning.metric",
+          "hard.fallback_llm_down",
+          "proj.similarity.threshold",
+          "hard.empty_retrieval",
+          "proj.completion_risk.describe"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_027": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "cv.student_pii",
+          "proj.early_warning.describe",
+          "cv.hallucination_in_projects",
+          "moe.question_generation.llm_used",
+          "hard.agent_write_db"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "hard.agent_write_db",
+        "applied_mode": "strong",
+        "applied_score": 0.619,
+        "applied_is_gold": false,
+        "agreement": 0.838,
+        "reranker_used": false
+      },
+      "fuh3_028": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.444 agree=0.850",
+        "hybrid_top5": [
+          "hard.cost_spike",
+          "hard.agent_stop_tools",
+          "tech.idempotency",
+          "hard.timeout_vs_steps",
+          "hard.context_stuffing"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.85,
+        "reranker_used": true
+      },
+      "fuh3_029": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "moe.operational_status",
+        "applied_mode": "strong",
+        "applied_score": 0.556,
+        "applied_is_gold": false,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_030": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "gen.first_90_days",
+        "applied_mode": "strong",
+        "applied_score": 0.733,
+        "applied_is_gold": false,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_031": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.empty_retrieval",
+        "applied_mode": "strong",
+        "applied_score": 0.723,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_032": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.tenant_isolation",
+        "applied_mode": "strong",
+        "applied_score": 0.741,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_033": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.which_rag_layer_failed",
+          "tech.reindex_embedding_change",
+          "hard.change_embedding",
+          "tech.tfidf_vs_embeddings",
+          "tech.embeddings"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "hard.which_rag_layer_failed",
+        "applied_mode": "strong",
+        "applied_score": 0.69,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_034": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.change_embedding",
+          "tech.reindex_embedding_change",
+          "tech.embeddings",
+          "hard.which_rag_layer_failed",
+          "proj.similarity.tech"
+        ],
+        "gold_rank_hybrid": 2,
+        "applied_id": "tech.embeddings",
+        "applied_mode": "strong",
+        "applied_score": 0.711,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_035": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.citation_lie",
+        "applied_mode": "strong",
+        "applied_score": 0.723,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_036": {
+        "reason": "recovered:thin_margin",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.knowledge_graph_what",
+          "hard.graph_vs_vector",
+          "tech.conflict_of_interest_scenario",
+          "cv.vector_db",
+          "proj.similarity.tech"
+        ],
+        "gold_rank_hybrid": 2,
+        "applied_id": "tech.knowledge_graph_what",
+        "applied_mode": "strong",
+        "applied_score": 0.751,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_037": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.deploy_on_prem",
+          "tech.on_prem_llm_experience",
+          "tech.gpu_sizing",
+          "tech.kubernetes",
+          "gen.weaknesses"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.deploy_on_prem",
+        "applied_mode": "weak",
+        "applied_score": 0.562,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_038": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.agent_loop",
+          "tech.agent_mistake",
+          "hard.multihop_vs_agent",
+          "hard.idempotent_tools",
+          "hard.wrong_tool"
+        ],
+        "gold_rank_hybrid": 4,
+        "applied_id": "hard.agent_loop",
+        "applied_mode": "strong",
+        "applied_score": 0.574,
+        "applied_is_gold": false,
+        "agreement": 0.8,
+        "reranker_used": true
+      },
+      "fuh3_039": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.390 agree=0.850",
+        "hybrid_top5": [
+          "tech.model_monitoring",
+          "hard.production_monitoring",
+          "moe.operational_status",
+          "proj.completion_risk.tech",
+          "hard.streaming_vs_validate"
+        ],
+        "gold_rank_hybrid": 2,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.85,
+        "reranker_used": true
+      },
+      "fuh3_040": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "proj.early_warning.leakage",
+          "proj.early_warning.stack",
+          "proj.early_warning.tech",
+          "proj.early_warning.result",
+          "proj.early_warning.metric"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "proj.early_warning.leakage",
+        "applied_mode": "weak",
+        "applied_score": 0.586,
+        "applied_is_gold": true,
+        "agreement": 0.693,
+        "reranker_used": true
+      },
+      "fuh3_041": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.python_libraries",
+          "proj.early_warning.tech",
+          "proj.similarity.tech",
+          "cv.projects.most_recent",
+          "cv.projects.most_proud"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.python_libraries",
+        "applied_mode": "weak",
+        "applied_score": 0.583,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_042": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.which_rag_layer_failed",
+          "hard.empty_retrieval",
+          "hard.wrong_chunk",
+          "hard.rag_debug_steps",
+          "hard.evaluate_rag"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.rag_debug_steps",
+        "applied_mode": "weak",
+        "applied_score": 0.536,
+        "applied_is_gold": false,
+        "agreement": 0.725,
+        "reranker_used": true
+      },
+      "fuh3_043": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.emirati_dialect",
+          "cv.languages",
+          "tech.reindex_embedding_change",
+          "hard.rag_arabic_english",
+          "hard.mixed_language_query"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.emirati_dialect",
+        "applied_mode": "strong",
+        "applied_score": 0.646,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_044": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.supervisor_vs_router",
+        "applied_mode": "strong",
+        "applied_score": 0.732,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_045": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.456 agree=0.680",
+        "hybrid_top5": [
+          "gen.handle_mistake_in_production",
+          "tech.good_enough_to_launch",
+          "moe.operational_status",
+          "hard.production_monitoring",
+          "tech.latency_p95"
+        ],
+        "gold_rank_hybrid": 2,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.68,
+        "reranker_used": true
+      },
+      "fuh3_046": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.rag_pdfs_tables_scans",
+          "hard.secure_rag",
+          "tech.metadata_filtering",
+          "tech.rag_access_control",
+          "tech.conflict_of_interest_scenario"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "hard.rag_pdfs_tables_scans",
+        "applied_mode": "strong",
+        "applied_score": 0.613,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_047": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.injection_in_pdf",
+          "tech.prompt_injection_supplier",
+          "tech.prompt_injection_what",
+          "hard.empty_retrieval",
+          "tech.rag_access_control"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "hard.injection_in_pdf",
+        "applied_mode": "weak",
+        "applied_score": 0.496,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_048": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.508 agree=0.725",
+        "hybrid_top5": [
+          "tech.rag_vs_finetuning",
+          "hard.remove_llm_from_rag",
+          "hard.empty_retrieval",
+          "hard.not_finetune_first",
+          "hard.which_rag_layer_failed"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.725,
+        "reranker_used": true
+      },
+      "fuh3_049": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.497 agree=0.734",
+        "hybrid_top5": [
+          "hard.citation_lie",
+          "tech.faithfulness_check",
+          "tech.rag_prevent_invented_numbers",
+          "tech.rag_what",
+          "tech.knowledge_graph_what"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.734,
+        "reranker_used": true
+      },
+      "fuh3_050": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.canary_rag",
+        "applied_mode": "strong",
+        "applied_score": 0.767,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_051": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.guardrails_layers",
+          "tech.guardrails_how",
+          "cv.python_fastapi",
+          "cv.guardrails",
+          "tech.tool_calling"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.guardrails_layers",
+        "applied_mode": "strong",
+        "applied_score": 0.626,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_052": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.403 agree=0.582",
+        "hybrid_top5": [
+          "cv.student_pii",
+          "hard.fallback_llm_down",
+          "hard.remove_langchain",
+          "tech.reindex_embedding_change",
+          "moe.ai_solutions"
+        ],
+        "gold_rank_hybrid": 2,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.582,
+        "reranker_used": true
+      },
+      "fuh3_053": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.empty_retrieval",
+          "tech.rag_two_phases",
+          "hard.wrong_chunk",
+          "hard.which_rag_layer_failed",
+          "tech.rag_build"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.observability",
+        "applied_mode": "weak",
+        "applied_score": 0.508,
+        "applied_is_gold": true,
+        "agreement": 0.8,
+        "reranker_used": true
+      },
+      "fuh3_054": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.responsibility",
+          "tech.no_wrong_info_finance",
+          "proj.helpdesk.challenges",
+          "tech.conflict_of_interest_scenario",
+          "tech.rag_access_control"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.rag_access_control",
+        "applied_mode": "weak",
+        "applied_score": 0.533,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_055": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.526 agree=0.671",
+        "hybrid_top5": [
+          "tech.hosting_decision",
+          "tech.core42",
+          "tech.on_prem_llm_experience",
+          "tech.deploy_on_prem",
+          "tech.sagemaker"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.671,
+        "reranker_used": false
+      },
+      "fuh3_056": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "proj.kiosk.describe",
+          "tech.voice_assistant_design",
+          "proj.kiosk.challenges",
+          "proj.kiosk.stack",
+          "cv.whisper_experience"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "proj.kiosk.describe",
+        "applied_mode": "strong",
+        "applied_score": 0.694,
+        "applied_is_gold": true,
+        "agreement": 0.85,
+        "reranker_used": false
+      },
+      "fuh3_057": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.reduce_cost",
+          "tech.no_wrong_info_finance",
+          "tech.agent_design_finance",
+          "gen.what_do_you_know_about_us",
+          "tech.agent_mistake"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.reduce_cost",
+        "applied_mode": "strong",
+        "applied_score": 0.616,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_058": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.evaluate_rag",
+          "hard.which_rag_layer_failed",
+          "tech.good_enough_to_launch",
+          "hard.empty_retrieval",
+          "cv.rag_experience"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "hard.evaluate_rag",
+        "applied_mode": "weak",
+        "applied_score": 0.672,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": true
+      },
+      "fuh3_059": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.teacher_rejects",
+        "applied_mode": "strong",
+        "applied_score": 0.696,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_060": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.checkpoint_vs_memory",
+        "applied_mode": "strong",
+        "applied_score": 0.622,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_061": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "moe.ai_solutions",
+          "hard.project_architecture_e2e",
+          "tech.rag_access_control",
+          "moe.question_generation",
+          "cv.csharp_dotnet"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.rag_access_control",
+        "applied_mode": "weak",
+        "applied_score": 0.537,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_062": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.426 agree=0.850",
+        "hybrid_top5": [
+          "hard.first_90_agentic",
+          "gen.handle_mistake_in_production",
+          "gen.failure",
+          "gen.first_90_days",
+          "gen.prioritize"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.85,
+        "reranker_used": true
+      },
+      "fuh3_063": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "cv.what_would_you_improve",
+          "proj.helpdesk.challenges",
+          "proj.helpdesk.tech",
+          "gen.failure",
+          "gen.disagree_manager"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "cv.what_would_you_improve",
+        "applied_mode": "weak",
+        "applied_score": 0.488,
+        "applied_is_gold": true,
+        "agreement": 1.0,
+        "reranker_used": true
+      },
+      "fuh3_064": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.507 agree=0.644",
+        "hybrid_top5": [
+          "tech.prompt_injection_supplier",
+          "hard.wrong_tool",
+          "tech.no_wrong_info_finance",
+          "tech.responsibility",
+          "hard.secure_rag"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.644,
+        "reranker_used": false
+      },
+      "fuh3_065": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.mixed_language_query",
+          "hard.rag_arabic_english",
+          "tech.emirati_dialect",
+          "hard.wrong_chunk",
+          "cv.languages"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "hard.mixed_language_query",
+        "applied_mode": "strong",
+        "applied_score": 0.776,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_066": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.429 agree=0.880",
+        "hybrid_top5": [
+          "proj.helpdesk.describe",
+          "tech.agent_mistake",
+          "tech.responsibility",
+          "tech.agent_tools_permissions",
+          "tech.rag_access_control"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_067": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "moe.question_generation",
+          "moe.question_generation.stack",
+          "moe.question_generation.why_steps",
+          "hard.teacher_rejects",
+          "hard.why_rag_for_btec"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "moe.question_generation",
+        "applied_mode": "strong",
+        "applied_score": 0.574,
+        "applied_is_gold": true,
+        "agreement": 0.812,
+        "reranker_used": false
+      },
+      "fuh3_068": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.532 agree=0.584",
+        "hybrid_top5": [
+          "gen.failure",
+          "tech.transcription_quality",
+          "hard.rag_debug_steps",
+          "tech.good_enough_to_launch",
+          "proj.helpdesk.challenges"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.584,
+        "reranker_used": false
+      },
+      "fuh3_069": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "gen.handle_mistake_in_production",
+          "tech.production_failure_story",
+          "gen.failure",
+          "hard.production_monitoring",
+          "gen.conflict"
+        ],
+        "gold_rank_hybrid": 2,
+        "applied_id": "gen.handle_mistake_in_production",
+        "applied_mode": "weak",
+        "applied_score": 0.518,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_070": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.what_is_ml",
+          "intro.current_role",
+          "cv.team_and_collaboration",
+          "tech.ai_ml_dl_difference",
+          "cv.ml_experience"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.what_is_ml",
+        "applied_mode": "weak",
+        "applied_score": 0.482,
+        "applied_is_gold": false,
+        "agreement": 0.933,
+        "reranker_used": true
+      },
+      "fuh3_071": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.prompt_injection_supplier",
+          "hard.agents_disagree",
+          "tech.responsibility",
+          "hard.conflicting_docs",
+          "proj.early_warning.describe"
+        ],
+        "gold_rank_hybrid": 2,
+        "applied_id": "proj.early_warning.describe",
+        "applied_mode": "weak",
+        "applied_score": 0.502,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_072": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.pii_redaction",
+          "cv.student_pii",
+          "hard.tenant_isolation",
+          "hard.pii_in_chunks",
+          "hard.first_90_agentic"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.pii_redaction",
+        "applied_mode": "weak",
+        "applied_score": 0.515,
+        "applied_is_gold": true,
+        "agreement": 0.95,
+        "reranker_used": true
+      },
+      "fuh3_073": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.455 agree=0.800",
+        "hybrid_top5": [
+          "cv.team_and_collaboration",
+          "tech.agent_vs_workflow",
+          "moe.ai_solutions",
+          "moe.operational_status",
+          "hard.agent_terms_difference"
+        ],
+        "gold_rank_hybrid": 5,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.8,
+        "reranker_used": true
+      },
+      "fuh3_074": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.439 agree=0.950",
+        "hybrid_top5": [
+          "tech.no_wrong_info_finance",
+          "tech.transcription_quality",
+          "hard.citation_lie",
+          "tech.wer",
+          "tech.faithfulness_check"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.95,
+        "reranker_used": true
+      },
+      "fuh3_075": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.good_enough_to_launch",
+          "hard.evaluate_rag",
+          "tech.no_wrong_info_finance",
+          "tech.transcription_quality",
+          "tech.overfitting_prevent"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.good_enough_to_launch",
+        "applied_mode": "strong",
+        "applied_score": 0.583,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_076": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.reranking",
+        "applied_mode": "weak",
+        "applied_score": 0.828,
+        "applied_is_gold": true,
+        "agreement": 0.895,
+        "reranker_used": false
+      },
+      "fuh3_077": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.hallucination_what",
+        "applied_mode": "strong",
+        "applied_score": 0.736,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_078": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.context_window",
+        "applied_mode": "strong",
+        "applied_score": 0.715,
+        "applied_is_gold": true,
+        "agreement": 0.933,
+        "reranker_used": false
+      },
+      "fuh3_079": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "proj.similarity.tech",
+        "applied_mode": "strong",
+        "applied_score": 0.719,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_080": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.overfitting",
+        "applied_mode": "weak",
+        "applied_score": 0.871,
+        "applied_is_gold": true,
+        "agreement": 1.0,
+        "reranker_used": false
+      },
+      "fuh3_081": {
+        "reason": "recovered:thin_margin",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.vector_db_choice",
+          "cv.vector_db",
+          "hard.graph_vs_vector",
+          "hard.why_not_chroma_prod",
+          "hard.checkpoint_vs_memory"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.vector_db_choice",
+        "applied_mode": "strong",
+        "applied_score": 0.749,
+        "applied_is_gold": true,
+        "agreement": 0.899,
+        "reranker_used": false
+      },
+      "fuh3_082": {
+        "reason": "recovered:thin_margin",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.agent_orchestrator",
+          "tech.multi_agent_when",
+          "hard.agent_terms_difference",
+          "hard.langgraph_vs_n8n_vs_python",
+          "tech.tool_calling"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.agent_orchestrator",
+        "applied_mode": "strong",
+        "applied_score": 0.723,
+        "applied_is_gold": true,
+        "agreement": 0.885,
+        "reranker_used": false
+      },
+      "fuh3_083": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "cv.education",
+          "intro.tell_me_about_yourself",
+          "cv.why_leaving",
+          "cv.education.why_diploma",
+          "cv.why_hire_you"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "cv.education",
+        "applied_mode": "weak",
+        "applied_score": 0.568,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_084": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.prompt_injection_what",
+        "applied_mode": "weak",
+        "applied_score": 0.861,
+        "applied_is_gold": true,
+        "agreement": 1.0,
+        "reranker_used": false
+      },
+      "fuh3_085": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.container_vs_vm",
+          "tech.docker_why",
+          "tech.deploy_on_prem",
+          "cv.kubernetes",
+          "tech.on_prem_llm_experience"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.container_vs_vm",
+        "applied_mode": "strong",
+        "applied_score": 0.713,
+        "applied_is_gold": true,
+        "agreement": 0.914,
+        "reranker_used": false
+      },
+      "fuh3_086": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "proj.early_warning.metric",
+          "proj.completion_risk.describe",
+          "proj.early_warning.result",
+          "proj.early_warning.describe",
+          "gen.failure"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "proj.early_warning.describe",
+        "applied_mode": "weak",
+        "applied_score": 0.539,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_087": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.tool_calling",
+          "hard.tool_schema",
+          "hard.agent_stop_tools",
+          "tech.agent_tools_permissions",
+          "hard.wrong_tool"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.tool_calling",
+        "applied_mode": "strong",
+        "applied_score": 0.71,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_088": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "proj.kiosk.describe",
+          "cv.whisper_experience",
+          "tech.voice_assistant_design",
+          "tech.whisper_vs_cloud",
+          "cv.hallucination_in_projects"
+        ],
+        "gold_rank_hybrid": 4,
+        "applied_id": "proj.kiosk.describe",
+        "applied_mode": "weak",
+        "applied_score": 0.57,
+        "applied_is_gold": false,
+        "agreement": 0.85,
+        "reranker_used": true
+      },
+      "fuh3_089": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.agent_vs_workflow",
+          "tech.langgraph_vs_langchain",
+          "tech.library_framework_platform",
+          "tech.ai_ml_dl_difference",
+          "hard.similarity_vs_qgen_arch"
+        ],
+        "gold_rank_hybrid": 2,
+        "applied_id": "tech.agent_vs_workflow",
+        "applied_mode": "weak",
+        "applied_score": 0.467,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_090": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.embeddings",
+          "tech.metadata_filtering",
+          "hard.hybrid_when",
+          "tech.hybrid_search",
+          "tech.tfidf_vs_embeddings"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.embeddings",
+        "applied_mode": "weak",
+        "applied_score": 0.672,
+        "applied_is_gold": true,
+        "agreement": 1.0,
+        "reranker_used": true
+      },
+      "fuh3_091": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.371 agree=0.880",
+        "hybrid_top5": [
+          "tech.rag_access_control",
+          "hard.accountability",
+          "tech.responsibility",
+          "hard.agentic_rag_design",
+          "tech.prompt_injection_supplier"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_092": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.388 agree=0.880",
+        "hybrid_top5": [
+          "hard.change_embedding",
+          "tech.rag_vs_finetuning",
+          "hard.streaming_vs_validate",
+          "tech.model_drift",
+          "tech.rag_two_phases"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_093": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.350 agree=0.880",
+        "hybrid_top5": [
+          "hard.cost_spike",
+          "hard.least_privilege_example",
+          "hard.idempotent_tools",
+          "cv.csharp_dotnet",
+          "gen.what_do_you_know_about_us"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_094": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.555 agree=0.583",
+        "hybrid_top5": [
+          "hard.conflicting_docs",
+          "hard.wrong_chunk",
+          "tech.rag_what",
+          "hard.citation_lie",
+          "tech.rag_vs_finetuning"
+        ],
+        "gold_rank_hybrid": 2,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.583,
+        "reranker_used": false
+      },
+      "fuh3_095": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.empty_retrieval",
+          "hard.remove_llm_from_rag",
+          "tech.rag_vs_finetuning",
+          "hard.not_finetune_first",
+          "hard.which_rag_layer_failed"
+        ],
+        "gold_rank_hybrid": 4,
+        "applied_id": "hard.empty_retrieval",
+        "applied_mode": "weak",
+        "applied_score": 0.524,
+        "applied_is_gold": false,
+        "agreement": 0.75,
+        "reranker_used": true
+      },
+      "fuh3_096": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.313 agree=0.615",
+        "hybrid_top5": [
+          "hard.accountability",
+          "tech.what_is_ml",
+          "tech.voice_assistant_design",
+          "tech.transcription_quality",
+          "tech.responsibility"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.615,
+        "reranker_used": true
+      },
+      "fuh3_097": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.376 agree=0.850",
+        "hybrid_top5": [
+          "proj.early_warning.result",
+          "proj.helpdesk.challenges",
+          "gen.feedback",
+          "tech.i_dont_know_too_often",
+          "tech.responsibility"
+        ],
+        "gold_rank_hybrid": 4,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.85,
+        "reranker_used": true
+      },
+      "fuh3_098": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.418 agree=0.556",
+        "hybrid_top5": [
+          "tech.rag_access_control",
+          "tech.conflict_of_interest_scenario",
+          "tech.prompt_injection_supplier",
+          "hard.secure_rag",
+          "cv.csharp_dotnet"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.556,
+        "reranker_used": true
+      },
+      "fuh3_099": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.337 agree=0.556",
+        "hybrid_top5": [
+          "hard.hitl_where",
+          "tech.agent_mistake",
+          "hard.agent_loop",
+          "tech.responsibility",
+          "hard.timeout_vs_steps"
+        ],
+        "gold_rank_hybrid": 3,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.556,
+        "reranker_used": true
+      },
+      "fuh3_100": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.337 agree=0.556",
+        "hybrid_top5": [
+          "tech.wer",
+          "tech.transcription_quality",
+          "proj.early_warning.metric",
+          "tech.good_enough_to_launch",
+          "proj.helpdesk.challenges"
+        ],
+        "gold_rank_hybrid": 4,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.556,
+        "reranker_used": true
+      },
+      "fuh3_101": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.337 agree=0.629",
+        "hybrid_top5": [
+          "tech.i_dont_know_too_often",
+          "hard.faithfulness_vs_relevance",
+          "cv.why_hire_you",
+          "hard.similarity_vs_qgen_arch",
+          "tech.temperature"
+        ],
+        "gold_rank_hybrid": 5,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.629,
+        "reranker_used": true
+      },
+      "fuh3_102": {
+        "reason": "recovered:conservative_rank:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.audio_retention",
+          "proj.kiosk.challenges",
+          "cv.why_leaving",
+          "gen.anything_else",
+          "proj.kiosk.describe"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.audio_retention",
+        "applied_mode": "weak",
+        "applied_score": 0.455,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_103": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.410 agree=0.800",
+        "hybrid_top5": [
+          "cv.team_and_collaboration",
+          "cv.notice_period",
+          "cv.why_back_to_jordan",
+          "cv.guardrails",
+          "cv.why_leaving"
+        ],
+        "gold_rank_hybrid": 5,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.8,
+        "reranker_used": true
+      },
+      "fuh3_104": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.399 agree=0.880",
+        "hybrid_top5": [
+          "gen.biggest_challenge_career",
+          "cv.why_hire_you",
+          "proj.similarity.challenges",
+          "proj.helpdesk.challenges",
+          "gen.questions_for_us"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_105": {
+        "reason": "recovered:weak_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "gen.strengths",
+          "gen.weaknesses",
+          "gen.feedback",
+          "gen.three_words",
+          "tech.i_dont_know_too_often"
+        ],
+        "gold_rank_hybrid": 2,
+        "applied_id": "gen.strengths",
+        "applied_mode": "weak",
+        "applied_score": 0.551,
+        "applied_is_gold": false,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_106": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "proj.similarity.role",
+          "cv.years_experience",
+          "proj.kiosk.challenges",
+          "cv.nlp_experience",
+          "intro.short_version"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "cv.years_experience",
+        "applied_mode": "strong",
+        "applied_score": 0.707,
+        "applied_is_gold": false,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_107": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.346 agree=0.650",
+        "hybrid_top5": [
+          "tech.rag_build",
+          "tech.air_gapped",
+          "hard.agentic_rag_design",
+          "cv.projects.most_proud",
+          "hard.first_90_agentic"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.65,
+        "reranker_used": true
+      },
+      "fuh3_108": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.436 agree=0.590",
+        "hybrid_top5": [
+          "hard.secure_rag",
+          "hard.hybrid_when",
+          "tech.rag_access_control",
+          "hard.similarity_vs_qgen_arch",
+          "proj.similarity.describe"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": "tech.cosine_semantic_search",
+        "applied_mode": "weak",
+        "applied_score": 0.571,
+        "applied_is_gold": true,
+        "agreement": 0.59,
+        "reranker_used": true
+      },
+      "fuh3_109": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.agent_vs_workflow",
+          "hard.langgraph_vs_n8n_vs_python",
+          "hard.when_n8n_wrong",
+          "hard.agent_terms_difference",
+          "cv.n8n"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.agent_vs_workflow",
+        "applied_mode": "weak",
+        "applied_score": 0.515,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_110": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "intro.current_role",
+        "applied_mode": "strong",
+        "applied_score": 0.677,
+        "applied_is_gold": false,
+        "agreement": 0.797,
+        "reranker_used": false
+      },
+      "fuh3_111": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.376 agree=0.950",
+        "hybrid_top5": [
+          "gen.learning_new_tech",
+          "hard.fallback_llm_down",
+          "tech.overfitting_prevent",
+          "cv.rag_experience",
+          "hard.empty_retrieval"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.95,
+        "reranker_used": true
+      },
+      "fuh3_112": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.456 agree=0.880",
+        "hybrid_top5": [
+          "gen.learning_new_tech",
+          "proj.early_warning.tech",
+          "proj.completion_risk.tech",
+          "proj.similarity.tech",
+          "cv.core_skills"
+        ],
+        "gold_rank_hybrid": 2,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_113": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.hallucination_prevent",
+          "tech.rag_prevent_invented_numbers",
+          "hard.agent_memory_privacy",
+          "tech.overfitting_prevent",
+          "cv.pmp_value"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": "cv.student_pii",
+        "applied_mode": "weak",
+        "applied_score": 0.634,
+        "applied_is_gold": false,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_114": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.361 agree=0.880",
+        "hybrid_top5": [
+          "tech.overfitting_prevent",
+          "tech.hallucination_prevent",
+          "tech.pii_redaction",
+          "hard.secure_rag",
+          "tech.rag_prevent_invented_numbers"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": true
+      },
+      "fuh3_115": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.388 agree=0.650",
+        "hybrid_top5": [
+          "cv.llm_experience",
+          "gen.leadership",
+          "tech.on_prem_llm_experience",
+          "proj.similarity.role",
+          "cv.najat_role"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.65,
+        "reranker_used": true
+      },
+      "fuh3_116": {
+        "reason": "abstain_low_confidence",
+        "abstain_reason": "score=0.384 agree=0.760",
+        "hybrid_top5": [
+          "cv.what_would_you_improve",
+          "hard.why_rag_for_btec",
+          "hard.langgraph_vs_n8n_vs_python",
+          "gen.why_ai_field",
+          "tech.vector_db_choice"
+        ],
+        "gold_rank_hybrid": 5,
+        "applied_id": null,
+        "applied_mode": null,
+        "applied_score": 0.0,
+        "applied_is_gold": false,
+        "agreement": 0.76,
+        "reranker_used": true
+      },
+      "fuh3_117": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "hard.empty_retrieval",
+          "tech.rag_two_phases",
+          "hard.evaluate_rag",
+          "hard.wrong_chunk",
+          "hard.remove_llm_from_rag"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.empty_retrieval",
+        "applied_mode": "weak",
+        "applied_score": 0.546,
+        "applied_is_gold": false,
+        "agreement": 0.75,
+        "reranker_used": true
+      },
+      "fuh3_118": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "gen.feedback",
+          "cv.hallucination_in_projects",
+          "hard.agent_stop_tools",
+          "cv.what_would_you_improve",
+          "hard.agentic_rag_design"
+        ],
+        "gold_rank_hybrid": null,
+        "applied_id": "hard.agentic_rag_design",
+        "applied_mode": "weak",
+        "applied_score": 0.504,
+        "applied_is_gold": false,
+        "agreement": 0.88,
+        "reranker_used": false
+      },
+      "fuh3_119": {
+        "reason": "strong_agrees",
+        "abstain_reason": null,
+        "hybrid_top5": [],
+        "gold_rank_hybrid": null,
+        "applied_id": "proj.kiosk.challenges",
+        "applied_mode": "strong",
+        "applied_score": 0.734,
+        "applied_is_gold": false,
+        "agreement": 0.95,
+        "reranker_used": false
+      },
+      "fuh3_120": {
+        "reason": "recovered:no_match",
+        "abstain_reason": null,
+        "hybrid_top5": [
+          "tech.whisper_vs_cloud",
+          "tech.vllm_ollama",
+          "tech.deploy_on_prem",
+          "tech.hosting_decision",
+          "tech.docker_why"
+        ],
+        "gold_rank_hybrid": 1,
+        "applied_id": "tech.whisper_vs_cloud",
+        "applied_mode": "weak",
+        "applied_score": 0.472,
+        "applied_is_gold": true,
+        "agreement": 0.88,
+        "reranker_used": true
+      }
+    }
+  }
+}

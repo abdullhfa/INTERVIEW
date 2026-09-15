@@ -1,0 +1,19 @@
+{
+  "locked_at": "2026-09-14T08:08:52.232024+00:00",
+  "fingerprint": {
+    "app/services/question_bank.py": "4c11beb7b34a48c2c7d0d9913c5061014fcfd73c208030b12d38b5252bf3e5aa",
+    "app/services/compound_question_pipeline.py": "c36852b76cfed6c108809b8ef28a1f2210e497dff64f729e4120abce9901f724",
+    "app/services/semantic_intent_recovery.py": "13c03c698d702f065665542c48d1128e4c9bd70f32aa59e4c9ad22b7682eb2b6",
+    "app/services/answer_generator.py": "cfaa78c5d7c26a23ffda0de586085def672b7a568ea49ac02ca7e51b93e6d139",
+    "app/services/live_audio.py": "a83b1dc7c0adf9cef5d1cc45de0be295d2802fe2366e724fad9c4cfcc1d6c3f5",
+    "app/audio/whisper_stt.py": "a402ef28a85923c6d9a62c6fa61fd8356313cb9e0ccd9f749e1e6dce1f9c10a2",
+    "app/config.py": "2015baaf2facdd762a324f5a085636f1d40d74208d011fe06e15405ce539fb86",
+    "app/services/warm_start.py": "fddae66d9419ff4cd4b4a10b4ebb59a380333db21d6f1d927b37de84215d10c2"
+  },
+  "metrics_snapshot": {
+    "verdict": "READY_FOR_REAL_INTERVIEW",
+    "text_ok_rate": 1.0,
+    "hc_wrong_text": 0,
+    "hc_wrong_audio": 0
+  }
+}

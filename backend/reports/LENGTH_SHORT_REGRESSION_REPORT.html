@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/>
+<title>Short Length Regression Score</title>
+<style>
+body{font-family:Segoe UI,Tahoma,sans-serif;margin:24px;background:#0f1419;color:#e8eef5}
+.card{display:inline-block;background:#1a222d;border:1px solid #2a3544;border-radius:12px;padding:12px;margin:6px;min-width:140px}
+.card b{display:block;font-size:1.25rem}
+table{width:100%;border-collapse:collapse;background:#1a222d}
+th,td{border-bottom:1px solid #2a3544;padding:8px;font-size:.85rem;text-align:left}
+tr.pass td{background:rgba(61,214,140,.06)}
+tr.fail td{background:rgba(240,113,120,.08)}
+.meta{color:#8b9aab}
+</style></head><body>
+<h1>Short Length Regression Score</h1>
+<p class="meta">Suite: short_length · Mode: play → WASAPI loopback → VAD → STT → repair → intent → answer</p>
+<p class="meta">Audio path: pre-roll + light denoise + RMS normalize · STT second-pass + strong-answer abstain</p>
+<p class="meta">Generated: 2026-09-13T21:10:31.046455+00:00</p>
+<div>
+  <div class="card"><span>Total</span><b>8</b></div>
+  <div class="card"><span>PASS</span><b>7</b></div>
+  <div class="card"><span>Intent</span><b>7/8</b></div>
+  <div class="card"><span>HC wrong</span><b>0</b></div>
+  <div class="card"><span>Avg RMS before</span><b>0.06057</b></div>
+  <div class="card"><span>Avg SNR dB</span><b>84.58</b></div>
+  <div class="card"><span>Median post-speech</span><b>1138.6 ms</b></div>
+  <div class="card"><span>p95 post-speech</span><b>1352.3 ms</b></div>
+  <div class="card"><span>Median wall</span><b>3709.1 ms</b></div>
+  <div class="card"><span>Avg VAD</span><b>2214.8 ms</b></div>
+  <div class="card"><span>Avg STT</span><b>938.7 ms</b></div>
+  <div class="card"><span>Avg Intent</span><b>150.8 ms</b></div>
+  <div class="card"><span>Avg Answer</span><b>0.1 ms</b></div>
+</div>
+<p><b>By condition intent:</b> {&quot;short&quot;: {&quot;total&quot;: 8, &quot;pass&quot;: 7, &quot;intent&quot;: 7, &quot;pass_rate&quot;: 0.875, &quot;intent_rate&quot;: 0.875}}</p>
+<p><b>Compound:</b> {&quot;compound_detected&quot;: 0, &quot;compound_path_used&quot;: 0, &quot;full_compound_success&quot;: 0, &quot;partial_compound_success&quot;: 0, &quot;avg_intent_coverage_rate&quot;: 0.0, &quot;answer_order_correct&quot;: 8, &quot;final_answer_ok&quot;: 4, &quot;requested_parts_total&quot;: 0, &quot;matched_parts_total&quot;: 0, &quot;unsupported_parts_total&quot;: 0}</p>
+<p><b>Failure stages:</b> {&quot;QUESTION_UNDERSTANDING&quot;: 1}</p>
+<table><thead><tr>
+<th>Audio</th><th>STT</th><th>Intent</th><th>Answer</th>
+<th>VAD ms</th><th>STT ms</th><th>Intent ms</th><th>Answer ms</th><th>Total ms</th>
+<th>Recovered</th><th>Result</th><th>Stage</th>
+</tr></thead><tbody><tr class='pass'><td>QNone short short</td><td>OK</td><td>OK</td><td>OK</td><td>2170.2</td><td>866.3</td><td>37.5</td><td>0.0</td><td>3358.4</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>QNone short short</td><td>OK</td><td>OK</td><td>no</td><td>2241.8</td><td>940.1</td><td>198.2</td><td>0.2</td><td>3628.5</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>QNone short short</td><td>OK</td><td>OK</td><td>OK</td><td>2145.1</td><td>1081.9</td><td>103.4</td><td>0.1</td><td>3709.1</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>QNone short short</td><td>OK</td><td>OK</td><td>OK</td><td>1791.9</td><td>943.1</td><td>32.8</td><td>0.0</td><td>3040.2</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>QNone short short</td><td>OK</td><td>OK</td><td>OK</td><td>2009.0</td><td>926.6</td><td>38.3</td><td>0.1</td><td>3227.2</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>QNone short short</td><td>OK</td><td>OK</td><td>no</td><td>2559.8</td><td>912.1</td><td>120.9</td><td>0.1</td><td>3858.3</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='pass'><td>QNone short short</td><td>OK</td><td>OK</td><td>no</td><td>2369.9</td><td>923.5</td><td>239.4</td><td>0.0</td><td>3879.2</td><td>—</td><td><b>PASS</b></td><td>—</td></tr><tr class='fail'><td>QNone short short</td><td>OK</td><td>wrong 0.0</td><td>no</td><td>2430.3</td><td>915.9</td><td>436.3</td><td>0.0</td><td>4032.0</td><td>—</td><td><b>FAIL</b></td><td>QUESTION_UNDERSTANDING</td></tr></tbody></table>
+</body></html>
