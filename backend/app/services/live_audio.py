@@ -29,7 +29,11 @@ from app.models.session import SessionMetrics
 from app.config import settings
 from app.services.session_manager import session_manager
 from app.models.question import QuestionAction, UtteranceType
-from app.services.question_classifier import question_classifier, is_greeting_or_filler
+from app.services.question_classifier import (
+    question_classifier,
+    is_greeting_or_filler,
+    has_structural_interview_request,
+)
 from app.services.question_bank import BankMatch, question_bank
 from app.services.answer_generator import answer_generator
 from app.services.candidate_profile import candidate_profile_service
@@ -529,7 +533,8 @@ class LiveAudioOrchestrator:
             self._pending_transcript_ms = transcription_ms
 
         combined = " ".join(self._pending_transcript_parts).strip()
-        await session_manager.set_current_question(self.session_id, combined)
+        # P0/P1: transcript is hypothesis only — do not commit current_question yet.
+        # UI must wait for QUESTION_ACCEPTED after the gate.
         await self._send_ws({
             "type": "TRANSCRIPT_CREATED",
             "speaker": "interviewer",
@@ -768,30 +773,78 @@ class LiveAudioOrchestrator:
         # monotonic clock so system clock adjustments cannot corrupt metrics.
         start_time = time.perf_counter() - (transcription_ms / 1000)
 
-        if not self.suppress_answer:
-            await self._send_ws({"type": "ANSWER_GENERATING"})
-        
-        # Classify
+        # Classify first. Heavy bank runs in parallel but is cancelled when the
+        # gate rejects (P2) so non-questions never pay for full recovery.
         logger.info("QUESTION_CLASSIFICATION_START history_turns=%s", len(history))
         classify_start = time.perf_counter()
-        classification, bank_match = await asyncio.gather(
-            question_classifier.classify(
+        bank_task = asyncio.create_task(self._bank_match(text, history))
+        try:
+            classification = await question_classifier.classify(
                 text,
                 conversation_history=history,
                 prefer_speed=True,
-            ),
-            self._bank_match(text, history),
-        )
-        classify_ms = (time.perf_counter() - classify_start) * 1000
-        action = question_classifier.determine_action(classification)
-        # A strong hit in the prepared question bank is a question by
-        # definition (imperatives like "Walk me through the BTEC project" must
-        # never be dropped as statements). Acknowledgments never match strongly.
+            )
+            action = question_classifier.determine_action(classification)
+            # Gray STATEMENT only: cheap lexical bank check (no semantic path).
+            if (
+                action.value != "SHOW_ANSWER"
+                and classification.type == UtteranceType.STATEMENT
+                and not is_greeting_or_filler(text)
+                and not has_structural_interview_request(text)
+            ):
+                lexical_hit = await asyncio.to_thread(
+                    question_classifier.light_lexical_bank_hit, text
+                )
+                if lexical_hit:
+                    action = question_classifier.determine_action(
+                        classification, bank_lexical_hit=True
+                    )
+            classify_ms = (time.perf_counter() - classify_start) * 1000
+
+            if action.value != "SHOW_ANSWER":
+                bank_task.cancel()
+                try:
+                    await bank_task
+                except asyncio.CancelledError:
+                    pass
+                logger.info(
+                    "QUESTION_CLASSIFIED (action=%s) latency=%.1fms gate=reject",
+                    action.value,
+                    classify_ms,
+                )
+                await self._send_ws({
+                    "type": "NON_QUESTION_IGNORED",
+                    "utterance": text,
+                    "action": action.value,
+                    "reason": classification.type.value if classification.type else "not_a_question",
+                    "latency_ms": round(classify_ms, 1),
+                })
+                # Keep legacy alias for older UI listeners.
+                await self._send_ws({
+                    "type": "QUESTION_IGNORED",
+                    "utterance": text,
+                    "action": action.value,
+                    "reason": classification.type.value if classification.type else "not_a_question",
+                })
+                await self._send_ws({"type": "STATE_CHANGED", "state": "LISTENING"})
+                return
+
+            bank_match = await bank_task
+        except Exception:
+            if not bank_task.done():
+                bank_task.cancel()
+                try:
+                    await bank_task
+                except asyncio.CancelledError:
+                    pass
+            raise
+
+        # Accepted path only: strong bank may still refine classification type.
         if (
-            action.value != "SHOW_ANSWER"
-            and bank_match is not None
+            bank_match is not None
             and bank_match.is_strong
             and not is_greeting_or_filler(text)
+            and classification.type == UtteranceType.STATEMENT
         ):
             logger.info(
                 "Question bank override: treating %r as a question (id=%s score=%.2f)",
@@ -800,9 +853,17 @@ class LiveAudioOrchestrator:
             classification = classification.model_copy(
                 update={"type": UtteranceType.QUESTION, "confidence": max(classification.confidence, 0.9)}
             )
-            action = QuestionAction.SHOW_ANSWER
         logger.info(f"QUESTION_CLASSIFIED (action={action.value}) latency={classify_ms:.1f}ms")
-        
+
+        # P0/P1: commit question only after gate accept.
+        await session_manager.set_current_question(self.session_id, text)
+        await self._send_ws({
+            "type": "QUESTION_ACCEPTED",
+            "utterance": text,
+            "classification": classification.model_dump(),
+            "action": action.value,
+            "latency_ms": round(classify_ms, 1),
+        })
         await self._send_ws({
             "type": "QUESTION_DETECTED",
             "utterance": text,
@@ -811,15 +872,8 @@ class LiveAudioOrchestrator:
             "latency_ms": round(classify_ms, 1),
         })
 
-        if action.value != "SHOW_ANSWER":
-            await self._send_ws({
-                "type": "QUESTION_IGNORED",
-                "utterance": text,
-                "action": action.value,
-                "reason": classification.type.value if classification.type else "not_a_question",
-            })
-            await self._send_ws({"type": "STATE_CHANGED", "state": "LISTENING"})
-            return
+        if not self.suppress_answer:
+            await self._send_ws({"type": "ANSWER_GENERATING"})
         
         if not self.suppress_answer:
             logger.info("ANSWER_GENERATION_START")

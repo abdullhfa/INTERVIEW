@@ -267,6 +267,76 @@ def strip_leading_greeting(utterance: str) -> str:
     return _LEADING_GREETING_RE.sub("", utterance.strip(), count=1).strip() or utterance.strip()
 
 
+# UI / TTS / meeting chrome that must never become a question (P2 stop class).
+SYSTEM_AUDIO_MARKERS = (
+    "your download is ready",
+    "download is ready",
+    "download ready",
+    "playback started",
+    "playback has started",
+    "click here to start",
+    "click here to begin",
+    "click here",
+    "press the button",
+    "recording has started",
+    "this meeting is being recorded",
+    "you are muted",
+    "please unmute",
+    "waiting for the host",
+    "the host will let you in",
+)
+
+# "Yeah, John." / "Okay, Sarah." — acknowledgment + optional name, not a request.
+_ACK_WITH_NAME_RE = re.compile(
+    r"^(?:yeah|yes|yep|yup|ok|okay|sure|right|alright|thanks|thank you|"
+    r"hi|hello|hey|mm hmm|mhm|uh huh)"
+    r"(?:[\s,]+[a-zA-Z\u0600-\u06FF'.-]{2,24})?"
+    r"[.!]*$"
+)
+
+
+def is_system_audio_or_noise(utterance: str) -> bool:
+    """True for system/TTS/meeting chrome and empty noise fragments."""
+    normalized = " ".join(utterance.casefold().strip().rstrip(".!,?").split())
+    if not normalized:
+        return True
+    if any(marker in normalized for marker in SYSTEM_AUDIO_MARKERS):
+        return True
+    # Very short non-request fragments ("uh", "um", single punctuation).
+    if len(normalized) <= 2 and normalized not in {"why", "how", "ما", "شو"}:
+        return True
+    return False
+
+
+def has_structural_interview_request(utterance: str) -> bool:
+    """Fast structural signal that the utterance asks the candidate for an answer.
+
+    Used for STATEMENT fail-closed gating (P2). No semantic / bank work here.
+    """
+    text = " ".join(utterance.strip().split())
+    if not text:
+        return False
+    if "?" in text or "؟" in text:
+        return True
+    normalized = text.casefold().rstrip(".!,?")
+    if any(phrase in f"{normalized} " for phrase in QUESTION_PHRASES_ANYWHERE):
+        return True
+    if any(marker in normalized for marker in INTRODUCTION_QUESTION_MARKERS):
+        return True
+    if _ADDRESSED_QUESTION_RE.search(normalized):
+        return True
+    if _QUESTION_HINT_RE.search(normalized) and len(normalized.split()) >= 3:
+        # Hint words alone are weak; require a bit of substance.
+        body = _SENTENCE_LEAD_IN_RE.sub("", normalized.strip().lstrip(".,!"), count=1)
+        if _INTERROGATIVE_START_RE.match(body):
+            return True
+    for sentence in _SENTENCE_SPLIT_RE.split(normalized):
+        body = _SENTENCE_LEAD_IN_RE.sub("", sentence.strip().lstrip(".,!"), count=1)
+        if _INTERROGATIVE_START_RE.match(body):
+            return True
+    return False
+
+
 def is_greeting_or_filler(utterance: str) -> bool:
     """True for greetings and acknowledgments that should not get an answer."""
     normalized = " ".join(utterance.casefold().strip().rstrip(".!,?").split())
@@ -279,6 +349,10 @@ def is_greeting_or_filler(utterance: str) -> bool:
     normalized = " ".join(normalized.split())
     if not normalized:
         return True
+    if is_system_audio_or_noise(utterance):
+        return True
+    if _ACK_WITH_NAME_RE.match(normalized):
+        return True
     if normalized in ACKNOWLEDGMENT_PATTERNS or normalized in GREETING_PATTERNS:
         return True
     # Peel stacked soft acks: "Okay thanks, that makes sense."
@@ -289,6 +363,15 @@ def is_greeting_or_filler(utterance: str) -> bool:
             break
         remainder = nxt
     if not remainder or remainder in ACKNOWLEDGMENT_PATTERNS:
+        return True
+    # Soft ack + leftover name token only ("yeah john").
+    if (
+        remainder
+        and len(remainder.split()) == 1
+        and remainder.isalpha()
+        and len(remainder) <= 24
+        and not _QUESTION_HINT_RE.search(remainder)
+    ):
         return True
     if _AFFIRMATION_ONLY_RE.match(remainder) or _AFFIRMATION_ONLY_RE.match(normalized):
         return True
@@ -634,25 +717,32 @@ class QuestionClassifier:
 
         # Live coaching: skip the extra LLM round-trip (~2-3s). Heuristics above
         # already catch acknowledgments, introductions, follow-ups, and obvious
-        # questions. Two-word technical phrases such as a misheard
-        # "what are transformers" → "water transformers" must still be answered.
+        # questions. P2: do NOT fail-open unknown text as QUESTION — that made
+        # "Yeah, John." / system chrome trigger SHOW_ANSWER.
         if prefer_speed:
-            needs_cv = is_project_cv_question(utterance)
+            if has_structural_interview_request(utterance):
+                needs_cv = is_project_cv_question(utterance)
+                return UtteranceClassification(
+                    type=UtteranceType.QUESTION,
+                    confidence=0.88,
+                    normalized_question=utterance.strip(),
+                    raw_utterance=utterance,
+                    category=(
+                        QuestionCategory.CV_DEEP_DIVE
+                        if needs_cv
+                        else (
+                            QuestionCategory.AI_ML
+                            if is_ai_ml_question(utterance)
+                            else None
+                        )
+                    ),
+                    requires_candidate_context=needs_cv,
+                    latency_ms=(time.time() - start_time) * 1000,
+                )
             return UtteranceClassification(
-                type=UtteranceType.QUESTION,
-                confidence=0.88,
-                normalized_question=utterance.strip(),
+                type=UtteranceType.STATEMENT,
+                confidence=0.7,
                 raw_utterance=utterance,
-                category=(
-                    QuestionCategory.CV_DEEP_DIVE
-                    if needs_cv
-                    else (
-                        QuestionCategory.AI_ML
-                        if is_ai_ml_question(utterance)
-                        else None
-                    )
-                ),
-                requires_candidate_context=needs_cv,
                 latency_ms=(time.time() - start_time) * 1000,
             )
 
@@ -708,25 +798,65 @@ Determine:
             )
 
     def determine_action(
-        self, classification: UtteranceClassification
+        self,
+        classification: UtteranceClassification,
+        *,
+        bank_lexical_hit: bool = False,
     ) -> QuestionAction:
-        """Determine what action to take based on classification."""
-        if classification.type == UtteranceType.STATEMENT:
-            raw = classification.raw_utterance or ""
-            if is_greeting_or_filler(raw) or is_non_question_monologue(raw):
-                return QuestionAction.LISTEN
-            return QuestionAction.SHOW_ANSWER
+        """Determine what action to take based on classification.
 
-        if classification.type == UtteranceType.UNCERTAIN:
-            # Live coaching: prefer answering over silently returning to listen.
-            if classification.confidence < 0.35 and len((classification.raw_utterance or "").split()) < 3:
-                return QuestionAction.LISTEN
-            return QuestionAction.SHOW_ANSWER
+        P2 STATEMENT policy (fail-closed):
+          QUESTION / FOLLOW_UP → answer
+          ACK / SYSTEM_AUDIO / filler / monologue → stop
+          STATEMENT → answer only if clear structural interview request,
+                      or (gray only) a light lexical bank hit.
+        """
+        raw = classification.raw_utterance or ""
+
+        if is_greeting_or_filler(raw) or is_system_audio_or_noise(raw):
+            return QuestionAction.LISTEN
+        if is_non_question_monologue(raw):
+            return QuestionAction.LISTEN
 
         if classification.type in (UtteranceType.QUESTION, UtteranceType.FOLLOW_UP):
             return QuestionAction.SHOW_ANSWER
 
-        return QuestionAction.SHOW_ANSWER
+        if classification.type == UtteranceType.STATEMENT:
+            if has_structural_interview_request(raw):
+                return QuestionAction.SHOW_ANSWER
+            # Gray STATEMENT only: caller may pass a cheap lexical bank hint.
+            if bank_lexical_hit:
+                return QuestionAction.SHOW_ANSWER
+            return QuestionAction.LISTEN
+
+        if classification.type == UtteranceType.UNCERTAIN:
+            if has_structural_interview_request(raw) or bank_lexical_hit:
+                return QuestionAction.SHOW_ANSWER
+            if classification.confidence < 0.55 or len(raw.split()) < 4:
+                return QuestionAction.LISTEN
+            return QuestionAction.LISTEN
+
+        return QuestionAction.LISTEN
+
+    def light_lexical_bank_hit(self, utterance: str) -> bool:
+        """Cheap lexical bank check for gray STATEMENT — no semantic recovery."""
+        text = " ".join((utterance or "").strip().split())
+        if not text or is_greeting_or_filler(text) or is_system_audio_or_noise(text):
+            return False
+        if not has_structural_interview_request(text) and len(text.split()) < 4:
+            # Too thin to bother the bank.
+            return False
+        try:
+            from app.services.question_bank import question_bank
+
+            match = question_bank.match(text, tech_repair=False)
+        except Exception as exc:
+            logger.debug("light lexical bank check skipped: %s", exc)
+            return False
+        if match is None:
+            return False
+        # Lexical evidence only — ignore semantic-only promotions.
+        return bool(match.lexical >= 0.72 or (match.is_strong and match.lexical >= 0.60))
 
 
 # Singleton instance

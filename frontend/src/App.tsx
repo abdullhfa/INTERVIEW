@@ -451,17 +451,24 @@ function LiveSessionContainer({ session, lengthMode, langMode, onLangChange, aud
       storePartialAnswer(msg.answer as GeneratedAnswer);
     });
 
-    const offQuestionDetected = interviewWS.on('QUESTION_DETECTED', (msg: any) => {
+    const offQuestionAccepted = interviewWS.on('QUESTION_ACCEPTED', (msg: any) => {
       if (msg.utterance) setQuestionText(msg.utterance);
+      setPhase('question');
+      setStatus('تم قبول السؤال، جاري التوليد...');
+    });
+
+    const offQuestionDetected = interviewWS.on('QUESTION_DETECTED', (msg: any) => {
+      // Legacy: only update if QUESTION_ACCEPTED did not already land.
+      if (!activeQuestionRef.current && msg.utterance) setQuestionText(msg.utterance);
       setPhase('question');
       setStatus('تم اكتشاف سؤال...');
     });
 
     const offTranscript = interviewWS.on('TRANSCRIPT_CREATED', (msg: any) => {
+      // P0/P1: transcript must NOT write the question box — wait for QUESTION_ACCEPTED.
       if (msg.speaker === 'interviewer' && msg.text) {
-        setQuestionText(msg.text);
-        setPhase('question');
-        setStatus('تم تفريغ السؤال، جاري التصنيف...');
+        setPhase('dumping');
+        setStatus('تم تفريغ المقطع، جاري التحقق...');
       }
     });
 
@@ -470,9 +477,18 @@ function LiveSessionContainer({ session, lengthMode, langMode, onLangChange, aud
       setStatus('جاري توليد الإجابة...');
     });
 
-    const offIgnored = interviewWS.on('QUESTION_IGNORED', (msg: any) => {
+    const offIgnored = interviewWS.on('NON_QUESTION_IGNORED', (msg: any) => {
       setPhase('listening');
-      // Do not clear the transcript — show why we skipped answering.
+      // Do not clear the previous accepted question.
+      setStatus(
+        msg?.reason
+          ? `تم تجاهل المقطع (${msg.reason}) — جاري الاستماع...`
+          : 'تم تجاهل المقطع — جاري الاستماع...'
+      );
+    });
+
+    const offIgnoredLegacy = interviewWS.on('QUESTION_IGNORED', (msg: any) => {
+      setPhase('listening');
       setStatus(
         msg?.reason
           ? `تم تجاهل المقطع (${msg.reason}) — جاري الاستماع...`
@@ -599,10 +615,12 @@ function LiveSessionContainer({ session, lengthMode, langMode, onLangChange, aud
       if (liveStateTimer) clearInterval(liveStateTimer);
       offAnswer();
       offAnswerPartial();
+      offQuestionAccepted();
       offQuestionDetected();
       offTranscript();
       offGenerating();
       offIgnored();
+      offIgnoredLegacy();
       offPartial();
       offFinalized();
       offSttRetrying();
