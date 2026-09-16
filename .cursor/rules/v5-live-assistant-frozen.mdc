@@ -9,7 +9,8 @@ The live interview assistant latency stack is **closed**. Do not reopen for scor
 
 Canonical freeze: `FROZEN_VERSION.txt` (`V6_LIVE_LATENCY_2026_09_16`, commit `a76bb96`)  
 Supersedes: `V5_LIVE_INTERVIEW_ASSISTANT_2026_09_15`  
-Restorable snapshot: `interview11_FROZEN_V6_20260916` (sibling of `interview11`)
+Restorable snapshot: `C:\Users\aalsa\OneDrive\Desktop\interview (2)\interview11_FROZEN_V6_20260916`
+(live restore target: `...\interview (2)\interview11`)
 
 ## Allowed
 - True bug fixes (crashes, incorrect wiring, broken imports, regressions that violate HC=0)

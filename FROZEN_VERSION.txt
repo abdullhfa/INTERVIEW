@@ -3,14 +3,18 @@ Freeze ID: V6_LIVE_LATENCY_2026_09_16
 Frozen at: 2026-09-16
 Commit: a76bb96 (origin/main)
 Supersedes: V5_LIVE_INTERVIEW_ASSISTANT_2026_09_15
-Snapshot folder: ..\interview11_FROZEN_V6_20260916
+Snapshot folder:
+  C:\Users\aalsa\OneDrive\Desktop\interview (2)\interview11_FROZEN_V6_20260916
+Live tree to restore over:
+  C:\Users\aalsa\OneDrive\Desktop\interview (2)\interview11
 
 Policy: bug-fix only.
 Do not chase thresholds, weights, aliases, STT/VAD, B8/B9, ranking, compound, or
 routing. Latency work is closed; do not re-open it without a new measurement.
 
-Restore: copy the snapshot folder over interview11, then keep the live
-backend\.venv and frontend\node_modules (those are not in the snapshot).
+Restore: copy the snapshot folder over interview11 (absolute paths above), then
+keep the live backend\.venv and frontend\node_modules (those are not in the
+snapshot).
 
 --------------------------------------------------------------------------
 WHAT CHANGED SINCE V5 (all measured live, none changes a decision)
