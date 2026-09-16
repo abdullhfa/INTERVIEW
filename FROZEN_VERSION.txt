@@ -1,9 +1,10 @@
 FROZEN
-Freeze ID: V6_4_BANK_HYGIENE_2026_09_16
+Freeze ID: V6_5_BANK_341_COVERAGE_2026_09_16
 Frozen at: 2026-09-16
-Supersedes: V6_1_BANK_331_2026_09_16
-Snapshot folder: C:\Users\aalsa\OneDrive\Desktop\interview (2)\interview11_FROZEN_V6_4_20260916
+Supersedes: V6_4_BANK_HYGIENE_2026_09_16
+Snapshot folder: C:\Users\aalsa\OneDrive\Desktop\interview (2)\interview11_FROZEN_V6_5_20260916
 Restore target:  C:\Users\aalsa\OneDrive\Desktop\interview (2)\interview11
+Prior bank backup: backend\app\data\question_bank_V6_4_backup\
 
 Policy: bug-fix only.
 Do not chase thresholds, weights, aliases, STT/VAD, B8/B9, ranking, compound, or
@@ -13,98 +14,56 @@ Restore: copy the snapshot folder over interview11, then keep the live
 backend\.venv and frontend\node_modules (those are not in the snapshot).
 
 --------------------------------------------------------------------------
-WHAT CHANGED SINCE V6.1 — bank data only, no app/ file touched
+WHAT CHANGED SINCE V6.4 — bank data only, no app/ file touched
 --------------------------------------------------------------------------
-Trigger: a live interview answer was wrong with high confidence ("what is the
-project you have that uses RAG" answered with the definition of RAG). The warm
-self-match instrument then showed strong_and_wrong = 16 on BOTH the 331-entry bank
-and the V6 295-entry bank — an inherited defect, not a regression from the bank
-replacement.
+Coverage fill: 11 new entries (330 -> 341), alias lines ~2494.
 
-Phase 1 (12 of 16):
-  - 6 aliases moved to the entry they actually describe. Two of them were
-    duplicated onto two entries, which was the collision itself.
-  - 5 subjectless aliases qualified with their missing subject
-    ("no chunks down" -> "what if retrieval returns no chunks at all").
-  - 6 coverage aliases added to cv.rag_experience for the live incident.
+Project matrix gaps closed (challenges / role):
+  proj.early_warning.challenges, proj.early_warning.role
+  proj.completion_risk.challenges, proj.completion_risk.role
+  moe.question_generation.role, proj.kiosk.role, cv.knet_challenges
 
-Phase 2a (3 of the remaining 4):
-  - tech.rag_build: alias "how would you design rag for our documents" restricted
-    to "how would you build rag for our documents" (design vs build was the
-    collision with hard.rag_arabic_english).
-  - cv.guardrails: "what guardrails do you actually use" was too generic even after
-    being moved off gen.ai_ethics; replaced with
-    "which guardrails do you actually use in your projects" and
-    "what guardrails do you use in your own system".
-  - MERGED tech.reindex_embedding_change INTO hard.change_embedding.
-    KEPT id:    hard.change_embedding   (richer answer: new collection, A/B on the
-                golden set, dual-write during migration)
-    DELETED id: tech.reindex_embedding_change
-    Union of aliases, 7 surfaces carried over including the deleted entry's own
-    question. Keywords unioned. No test or app/ file referenced either id.
+Agentic / senior gaps:
+  tech.reflection_loop, tech.agent_memory_types
+  hard.long_running_agent, gen.mentoring_code_review
 
-Phase 2b (the last one):
-  - tech.google_stack_semantic_kernel: "how much experience do you have with the
-    google stack" was 6 generic words + 2 distinctive ones, so it lost to
-    cv.llm_experience. Replaced with three specific surfaces:
-      what is your experience with the google stack and semantic kernel
-      do you have experience with vertex ai or semantic kernel
-      how much experience do you have with the google ai stack
+Collision fix during authoring: early-warning role/result/challenges siblings
+were colliding on a shared "what was the … early warning project" frame;
+distinctive phrasing restored so role/result/challenges/describe each self-match.
 
-Bank now: 330 entries, 2,441 alias lines, 4 files.
-cv_abdullah 96 · general_personal 30 · technical_ai_senior 142 · hard_scenarios 62
+Answers built from existing bank facts only (no invented metrics/tools).
 
 --------------------------------------------------------------------------
-RESULT
+RESULT (measured warm on this machine 2026-09-16)
 --------------------------------------------------------------------------
-                       V6.1        V6.2        V6.3        V6.4
-  strong_and_wrong      16           5           1           0 (measured warm)
-  pytest            268/5       268/5       269/4       269/4 (measured)
-  question self-match 330/331   330/331     330/330     330/330
-  alias self-match  2417/2433  2432/2437   2437/2439   2440/2441
-    (V6.4: one alias still non-self-match but not strong+wrong)
+  entries                 341
+  raw aliases             2494
+  strong_and_wrong        0
+  pytest                  269 passed / 4 failed
+  question self-match     341/341
+  alias self-match        2493/2494  (1 non-strong mismatch — leave it)
 
-test_hard_scenario_questions[rag_arabic_english] now PASSES. It was one of the five
-known failures; the bank was the cause, not the matcher.
-
-Measured on this machine 2026-09-16 after load:
-  strong_and_wrong=0 · pytest 269 passed / 4 failed · questions 330/330
+Known pytest debt (unchanged from V6.4):
+  1. test_misheard_two_word_topic_is_still_a_question
+  2. test_asr_noise_on_domain_terms
+  3. test_indirect_long_questions
+  4. test_split_entries_answer_only_their_own_question[hallucination]
 
 --------------------------------------------------------------------------
-KNOWN DEBT
+KNOWN DEBT (carried forward)
 --------------------------------------------------------------------------
-1. test_answer_context_policy::test_misheard_two_word_topic_is_still_a_question
-   "water transformers" -> STATEMENT. Deterministic, heuristic-only.
-   Owner: deferred P2-scoped classifier work.
-2. test_question_bank::test_asr_noise_on_domain_terms
-3. test_question_bank::test_indirect_long_questions
-4. test_question_bank::test_split_entries_answer_only_their_own_question[hallucination]
-   Retrieval coverage. Do not tune thresholds or aliases to pass them.
-
-5. detect_intent returns None for forms it should classify — measured live:
-     detect_intent("How would you design RAG for Arabic and English documents?") = None
-     detect_intent("How would you build a RAG system?")                          = experience
-   _granularity_penalty only runs for q_intent in {how, why, compare, definition},
-   so with None it never runs and a specific question cannot outrank a general one
-   on merit. V5 Phase B already measured the fix (action-type completion): on 105
-   non-compound clips, 1 clip changed, gold gained 1, gold lost 0, no new
-   weak->strong on a non-gold intent — but cold. NOT opened here: every V6.2-V6.4
-   case was reachable as a data fix, so the code change was not needed.
-
-6. Compound questions cost 1518-3343 ms and usually return None. Clean fix:
-   extend the L2 cache to sub-question searches in resolve_compound_question.
-
-7. V7 retrieval prefilter: implemented, measured at 1.56x (gate was 3x), reverted.
-   Root cause: the candidate pool stays at ~884 of 2588 probes because common
-   interview tokens and generic skeleton trigrams collide. A redesign (IDF weighting,
-   dropping generic skeleton trigrams, distinctive-first) needs its own measurement
-   before any code. The bank cannot grow much past this size until it is solved;
-   696 cleaned questions from the source document remain unadded for that reason.
+5. detect_intent returns None for forms it should classify — closed by decision;
+   V5 Phase B numbers ready if a new family appears.
+6. Compound stage latency; L2 sub-question cache when it matters.
+7. V7 retrieval prefilter redesign (IDF / less generic skeleton) — gate failed at
+   1.56x; 696 source questions still blocked by scan cost, not by bank quality.
+8. Conversational follow-ups ("Are you use in your project?" after agentic) —
+   needs design before code; not opened here.
+9. Update CV text with LangGraph / FAISS / pgvector — human, not bank.
 
 --------------------------------------------------------------------------
 STANDING GATES FOR EVERY FUTURE FREEZE
 --------------------------------------------------------------------------
-  strong_and_wrong must be measured WARM and reported. It is not optional.
-  V6 and V6.1 shipped without it and both carried 16 confident wrong answers.
-  pytest must be exactly at the recorded pass/fail counts, and a test that starts
-  PASSING must be reported, not silently absorbed.
+  strong_and_wrong must be measured WARM and reported.
+  pytest must match the recorded pass/fail counts; a newly PASSING known-fail
+  must be reported explicitly.

@@ -3254,6 +3254,162 @@
    ],
    "answer_en": "Gradient Boosting handles tabular data well, captures non-linear relationships, and provides feature importance. It also performed better than Logistic Regression in cross-validation.",
    "answer_ar": "Gradient Boosting يتعامل مع البيانات الجدولية بشكل جيد، ويلتقط العلاقات غير الخطية، ويوفر أهمية الميزات. أدى أيضًا بشكل أفضل من Logistic Regression في التحقق المتقاطع."
+  },
+  {
+   "id": "proj.early_warning.challenges",
+   "category": "cv.projects",
+   "topic": "early_warning",
+   "question": "What problems did you face in the early-warning project?",
+   "aliases": [
+    "what problems did you face in the early warning project",
+    "what was difficult about building the early warning model",
+    "what challenges came up in the early warning model",
+    "hardest technical problem in the early warning model"
+   ],
+   "keywords": [
+    "early",
+    "warning",
+    "problems",
+    "challenges",
+    "difficult"
+   ],
+   "answer_en": "Three things. Most students were fine, so the classes were unbalanced and accuracy looked good while the model missed the students who mattered. Time was the second: I had to predict early in the term, so a random split would have leaked final grades. Third, teachers asked why a name was on the list, so a black box was not an option.",
+   "followup_en": "I answered each one directly. For the imbalance I judged on recall for the students who needed support and watched precision so the list did not flood teachers. For time I split in term order and kept any column that only exists after the outcome out of the data. For trust I started with a simple model people could explain, and every score carried the factors behind it. Missing attendance was a signal, so I flagged it instead of filling the average.",
+   "answer_ar": "ثلاثة أمور. أغلب الطلاب بخير، فالفئات غير متوازنة، والدقة تبدو عالية بينما النموذج يفوّت الطلاب المهمين. والثاني الزمن: التنبؤ مبكراً في الفصل، فالتقسيم العشوائي كان سيسرّب الدرجات النهائية. والثالث أن المعلمين يسألون لماذا ظهر هذا الاسم، فالصندوق الأسود لم يكن خياراً."
+  },
+  {
+   "id": "proj.early_warning.role",
+   "category": "cv.projects",
+   "topic": "early_warning",
+   "question": "What was your role in the early-warning project?",
+   "aliases": [
+    "what exactly did you do in the early warning project",
+    "what did you personally build in the early warning model",
+    "did you build the early warning tool yourself",
+    "who built the early warning model",
+    "was the early warning model your own work"
+   ],
+   "keywords": [
+    "early",
+    "warning",
+    "role",
+    "responsibility",
+    "built"
+   ],
+   "answer_en": "I built it. I merged grades and attendance in Pandas, chose the features, wrote the sklearn pipeline, picked the metric, and produced the ranked follow-up list with the factors behind each score. Teachers tested it on real cases and decided the support. I did not outsource the modelling.",
+   "followup_en": "The judgement calls were mine: recall as the main metric, a simple explainable model instead of a neural net, a time-ordered split, and a missing-attendance flag rather than mean filling. The part I did not own is the intervention. The model pointed to who to look at first, and a teacher chose what to do. I was clear about that from the start so nobody treated the list as a verdict.",
+   "answer_ar": "أنا بنيته. دمجت الدرجات والحضور في Pandas، واخترت الخصائص، وكتبت pipeline في sklearn، وحددت المقياس، وأنتجت قائمة المتابعة المرتّبة مع العوامل وراء كل درجة. المعلمون جرّبوه على حالات حقيقية وقرروا نوع الدعم. لم أسند النمذجة لأحد."
+  },
+  {
+   "id": "proj.completion_risk.challenges",
+   "category": "cv.projects",
+   "topic": "completion_risk",
+   "question": "What problems did you face in the completion risk project?",
+   "aliases": [
+    "what problems did you face in the completion risk project",
+    "what was difficult in completion risk monitoring",
+    "what challenges came up in the completion risk work",
+    "hardest part of completion risk monitoring"
+   ],
+   "keywords": [
+    "completion",
+    "risk",
+    "problems",
+    "challenges",
+    "difficult"
+   ],
+   "answer_en": "The main one was that people mixed two different questions. How complete a school is today is arithmetic. Whether it will finish on time is a forecast, and a forecast needs past terms. For some units the history was thin, so I did not build a clever model on top of nothing. The second problem was definitions: two people counted completion differently until the rule lived in SQL.",
+   "followup_en": "Where history supported it, I used sklearn for the risk side only. Where it did not, I reported the calculated percentage and said plainly that there was no basis for a forecast. Putting the joins and the completion rule in SQL meant everyone got the same number, which matters in a ministry where a list turns into a follow-up visit. There is no LLM and no retrieval in that pipeline.",
+   "answer_ar": "الأهم أن الناس كانت تخلط سؤالين مختلفين. نسبة الإنجاز اليوم حساب، واحتمال الإنجاز في الموعد تنبؤ، والتنبؤ يحتاج فصولاً سابقة. في بعض الوحدات كان التاريخ ضعيفاً، فلم أبنِ نموذجاً ذكياً فوق لا شيء. والمشكلة الثانية التعريفات: كل شخص يحسب الإنجاز بطريقة، حتى وضعت القاعدة داخل SQL."
+  },
+  {
+   "id": "proj.completion_risk.role",
+   "category": "cv.projects",
+   "topic": "completion_risk",
+   "question": "What was your role in the completion risk project?",
+   "aliases": [
+    "what was your role in the completion risk project",
+    "what did you personally do in completion risk monitoring",
+    "who built the completion risk tool",
+    "your responsibility in completion risk monitoring"
+   ],
+   "keywords": [
+    "completion",
+    "risk",
+    "role",
+    "responsibility",
+    "built"
+   ],
+   "answer_en": "I wrote it end to end. The SQL that pulls school and unit records and the exact counts, the cleaning in Pandas, the completion rule, and the sklearn part for risk where history existed. The output was a follow-up list with indicators, and the Ministry decided which schools to visit.",
+   "followup_en": "The decision I defend is keeping calculation and prediction apart. If a number can be calculated, I calculate it. I do not ask a model to guess it. I also kept the definitions in SQL rather than in a notebook, so the same query gives the same count next term and after I move on. FastAPI can serve the list later, but that was not the hard part.",
+   "answer_ar": "كتبته من البداية إلى النهاية. استعلامات SQL التي تسحب سجلات المدارس والوحدات والأعداد الدقيقة، والتنظيف في Pandas، وقاعدة احتساب الإنجاز، وجزء sklearn لجانب المخاطرة حيث توفّر تاريخ. المخرج قائمة متابعة مع مؤشرات، والوزارة تقرر أي مدارس تزور."
+  },
+  {
+   "id": "moe.question_generation.role",
+   "category": "cv.projects",
+   "topic": "moe",
+   "question": "What was your role in the exam question generation system?",
+   "aliases": [
+    "what was your role in the question generation system",
+    "what did you personally build in the exam generation project",
+    "who designed the question generation flow",
+    "your responsibility in the exam question system",
+    "did you build the question generation system yourself"
+   ],
+   "keywords": [
+    "question",
+    "generation",
+    "role",
+    "responsibility",
+    "designed"
+   ],
+   "answer_en": "I designed the flow and wrote it. Retrieval of the unit text, the generation call, the Pydantic schema check, the pause for teacher approval, and the logging. I chose to split it into steps instead of one prompt, and I chose that nothing is saved without a teacher.",
+   "followup_en": "I also own the refusals. If retrieval is empty the flow stops rather than letting the model fill gaps from memory. If the JSON fails validation I retry or send it to review, I do not save a broken record. I worked with Ministry IT on access and deployment, and teachers were the reviewers. The exam decision stays with them; my part is the machinery around it.",
+   "answer_ar": "أنا صمّمت المسار وكتبته. استرجاع نص الوحدة، ونداء التوليد، وفحص المخطط بـPydantic، والتوقف لموافقة المعلم، والتسجيل. اخترت تقسيمه إلى خطوات بدل prompt واحد، واخترت ألا يُحفظ شيء بلا معلم."
+  },
+  {
+   "id": "proj.kiosk.role",
+   "category": "cv.projects",
+   "topic": "kiosk",
+   "question": "What was your role in the voice kiosk project?",
+   "aliases": [
+    "what was your role in the voice kiosk project",
+    "what did you personally build in the kiosk",
+    "who built the kiosk voice system",
+    "your responsibility in the kiosk work"
+   ],
+   "keywords": [
+    "kiosk",
+    "voice",
+    "role",
+    "responsibility",
+    "built"
+   ],
+   "answer_en": "I built the voice side. Running Whisper locally so audio stayed on the machine, cleaning noise, voice activity detection instead of continuous recording, the small classifier that picked a male or female reply voice, and the NLP step that routed the request. The image-processing functions sat on the same kiosk.",
+   "followup_en": "Most of the accuracy came from clean audio and knowing when the person stopped talking, not from a bigger model, and that was my call. The privacy rule was also mine: keep the text, do not store audio. This was 2017 to 2023, before my LLM work, so there is no LLM in that path and I do not describe it as one.",
+   "answer_ar": "بنيت الجانب الصوتي. تشغيل Whisper محلياً ليبقى الصوت داخل الجهاز، وتنظيف الضوضاء، واكتشاف النشاط الصوتي بدل التسجيل المستمر، والمصنّف الصغير الذي يختار صوت الرد ذكراً أو أنثى، وخطوة NLP التي توجّه الطلب. ووظائف معالجة الصور كانت على الجهاز نفسه."
+  },
+  {
+   "id": "cv.knet_challenges",
+   "category": "cv.experience",
+   "topic": "knet",
+   "question": "What problems did you face in the KNET payment projects?",
+   "aliases": [
+    "what problems did you face in the knet payment projects",
+    "what was difficult in the kuwait payment work",
+    "what challenges came up in the pos and kiosk payment projects",
+    "hardest part of the vnc payment projects"
+   ],
+   "keywords": [
+    "knet",
+    "payment",
+    "problems",
+    "challenges",
+    "difficult"
+   ],
+   "answer_en": "A payment must not stop and must not charge twice. That is harder than it sounds across kiosks, POS terminals, a national network, and ministry systems. Integration failures were rarely clean: a transaction would time out somewhere in the middle and both sides would disagree about what happened. So the work was logging, reconciliation, UAT with real edge cases, and vendors who had to fix things on their side.",
+   "followup_en": "The habit I kept from it is designing as if someone will replay the log tomorrow and ask what happened. That is the same instinct behind teacher approval and stored retrieved chunks in the Ministry work. Service continuity was the job, not the demo. A pretty screen that double-charges is a failure; an ugly one that reconciles is not.",
+   "answer_ar": "الدفعة يجب ألا تتوقف وألا تُحسب مرتين. وهذا أصعب مما يبدو عبر أجهزة الخدمة الذاتية ونقاط البيع والشبكة الوطنية وأنظمة الوزارات. أعطال التكامل نادراً ما كانت نظيفة: تنتهي مهلة العملية في المنتصف فيختلف الطرفان على ما حدث. لذلك كان العمل تسجيلاً ومطابقة واختبار قبول بحالات حقيقية ومورّدين يصلحون من جهتهم."
   }
  ]
 }

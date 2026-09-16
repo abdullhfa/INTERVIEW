@@ -1112,6 +1112,29 @@
    "answer_en": "It is the first technology in my career that can read language and help people directly, not only move data around. When I built the voice kiosk and saw people talk to a machine and get help, I knew this was the direction. Making these systems safe is as interesting as making them work.",
    "followup_en": "I did not start in generative AI. I started in payments, then applied machine learning at Al Najat: the Whisper kiosk, early-warning, and helpdesk classification. The kiosk was speech to text and a flow, not an LLM. The Ministry work from 2023 is where RAG and generation began. I moved into AI because users could finally talk and read with the system. I stayed because the safety problems are real, and I like solving them.",
    "answer_ar": "اخترت الذكاء الاصطناعي لأنه يقرأ اللغة ويساعد الناس مباشرة، ومن يوم الكشك الصوتي عرفت أن هذا اتجاهي."
+  },
+  {
+   "id": "gen.mentoring_code_review",
+   "category": "general.seniority",
+   "topic": "seniority",
+   "question": "How do you mentor a junior engineer or review their code?",
+   "aliases": [
+    "how do you mentor a junior engineer",
+    "how do you review someone else code",
+    "what do you look for in a code review",
+    "how do you bring a new engineer up to speed",
+    "how do you give technical feedback to a colleague"
+   ],
+   "keywords": [
+    "mentor",
+    "junior",
+    "code",
+    "review",
+    "feedback"
+   ],
+   "answer_en": "I start by asking what the code is supposed to guarantee, because most review comments are really disagreements about the requirement. Then I separate three things: something that is wrong, something that is risky, and something I would write differently. Only the first two block. The third is an opinion and I say so.",
+   "followup_en": "With a junior I would rather explain the failure mode than hand over the fix, and I ask for a test that fails before the change. Fifteen years of delivery taught me that the expensive bugs are the ones nobody could reproduce, so I push for logs and reproducible steps more than for style. I also say when I am unsure. A reviewer who is always certain teaches people to hide problems.",
+   "answer_ar": "أبدأ بسؤال ما الذي يفترض أن يضمنه هذا الكود، لأن أغلب ملاحظات المراجعة هي في الحقيقة خلاف على المتطلب. ثم أفصل ثلاثة أشياء: ما هو خطأ، وما هو خطِر، وما كنت سأكتبه بشكل مختلف. الأولان فقط يوقفان الدمج. والثالث رأي وأقول ذلك صراحة."
   }
  ]
 }

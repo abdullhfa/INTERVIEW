@@ -4081,6 +4081,54 @@
    ],
    "answer_en": "Fixed-size, recursive, semantic, parent-child, and document-aware. I use recursive chunking with overlap for most documents, and semantic chunking for complex content.",
    "answer_ar": "تقطيع بحجم ثابت، تقطيع تكراري، تقطيع دلالي، تقطيع أب وابن، وتقطيع حسب بنية المستند. أستخدم التقطيع التكراري مع التداخل لمعظم المستندات، والتقطيع الدلالي للمحتوى المعقد."
+  },
+  {
+   "id": "tech.reflection_loop",
+   "category": "technical.agentic",
+   "topic": "agentic",
+   "question": "What is a reflection or self-critique step in an agent, and when is it worth it?",
+   "aliases": [
+    "what is a reflection step in an agent",
+    "what is self critique in an agent loop",
+    "when would you add a critic step to an agent",
+    "is reflexion worth the tokens",
+    "should an agent check its own output",
+    "what is an evaluator or critic agent"
+   ],
+   "keywords": [
+    "reflection",
+    "critique",
+    "critic",
+    "agent",
+    "loop"
+   ],
+   "answer_en": "Reflection means the agent looks at its own output against the goal and tries again before anything leaves the system. It pays when the failure is visible from the output itself, like a wrong JSON shape, a claim with no source, or a broken plan. It does not pay when you have no way to judge the output, because then you are just spending tokens to sound more confident.",
+   "followup_en": "I prefer a cheap deterministic check first. In the Ministry flow the critic is Pydantic and the retrieval evidence, not a second model: if the schema fails I retry, if there is no retrieved text I stop. A model critic is the fallback for things a schema cannot see, and it needs a hard cap on iterations, otherwise cost and latency grow with no bound. If a reflection loop cannot fail, it is decoration.",
+   "answer_ar": "الانعكاس يعني أن الوكيل ينظر إلى مخرجه مقابل الهدف ويحاول مجدداً قبل أن يخرج شيء من النظام. يستحق حين يكون الخلل ظاهراً في المخرج نفسه، كشكل JSON خاطئ أو ادعاء بلا مصدر أو خطة مكسورة. ولا يستحق حين لا تملك طريقة للحكم على المخرج، فتكون تنفق توكنات ليبدو أكثر ثقة."
+  },
+  {
+   "id": "tech.agent_memory_types",
+   "category": "technical.agentic",
+   "topic": "agentic",
+   "question": "What kinds of memory does an agent need, and what do you keep versus recompute?",
+   "aliases": [
+    "what kinds of memory does an agent need",
+    "difference between short term and long term agent memory",
+    "what is episodic memory in an agent",
+    "what do you store between agent steps",
+    "how do you manage agent context over a long session",
+    "when do you summarize the conversation instead of keeping it"
+   ],
+   "keywords": [
+    "memory",
+    "agent",
+    "short",
+    "long",
+    "episodic"
+   ],
+   "answer_en": "Short-term memory is the working state of one task: the goal, the steps taken, tool results. Long-term is what survives the task: facts about the user or the domain that you look up later. I keep what I cannot rebuild, like a decision, an approval, or a tool result that cost money. I recompute what is cheap and I retrieve documents rather than memorising them.",
+   "followup_en": "Context is a budget, not a container. When a session grows I summarise the older turns and keep the decisions verbatim, because a compressed decision is worth more than a compressed greeting. Long-term memory needs the same care as any store: who can read it, how it is deleted, and whether a fact is still true. That is why in the Ministry work student personal data does not go to the model at all, and the unit text is retrieved fresh instead of remembered.",
+   "answer_ar": "الذاكرة قصيرة المدى هي حالة العمل لمهمة واحدة: الهدف والخطوات المنفّذة ونتائج الأدوات. وطويلة المدى ما يبقى بعد المهمة: حقائق عن المستخدم أو المجال تُستدعى لاحقاً. أحتفظ بما لا أستطيع إعادة بنائه، كقرار أو موافقة أو نتيجة أداة كلّفت مالاً. وأعيد حساب الرخيص، وأسترجع المستندات بدل حفظها."
   }
  ]
 }

@@ -1928,6 +1928,30 @@
    "answer_en": "Yes, if we use the practical definition: a goal, multiple steps, tools, state, and a stop for a human. LangGraph is a better engine for that, not the definition. In the interview I would say agentic workflow in Python. I would not say I had LangGraph in production, because I did not.",
    "followup_en": "BTEC was LLM plus RAG plus Python orchestration plus teacher approval. That is not a swarm and not n8n. Similarity is not agentic at all: retrieve, compare, stop, no LLM. I keep those words tight so I do not oversell a library I used in a lab.",
    "answer_ar": "نعم بالمعنى العملي: هدف وخطوات وأدوات وحالة وتوقف عند الإنسان. LangGraph محرك أفضل وليس التعريف. في الإنتاج كان مسار بايثون، لا LangGraph."
+  },
+  {
+   "id": "hard.long_running_agent",
+   "category": "scenario.agentic",
+   "topic": "agentic",
+   "question": "How would you run an agent whose task takes minutes or waits for a human?",
+   "aliases": [
+    "how do you run an agent that takes minutes",
+    "how do you handle a long running agent task",
+    "what if the agent has to wait for a human for a day",
+    "would you run an agent inside a http request",
+    "how do you resume an agent after a pause",
+    "agent that runs in the background"
+   ],
+   "keywords": [
+    "long",
+    "running",
+    "agent",
+    "resume",
+    "background"
+   ],
+   "answer_en": "Not inside one HTTP request. The request starts the job and returns an id. The work runs in a background worker off a queue, the state is written after every step, and the caller polls or gets a callback. A pause for a human is just a state the job sits in until someone answers, maybe tomorrow.",
+   "followup_en": "This is exactly the pain I hit in the Ministry flow by hand: a teacher comes back the next day and the retrieved chunks have to still be there, so I persisted the state myself. It is also why I would reach for LangGraph checkpoints if I started today. The rest is ordinary engineering: a timeout per step, a bounded number of retries, idempotent tool calls so a retry does not double-charge anything, and a dead-letter path so a stuck job is visible instead of silent.",
+   "answer_ar": "ليس داخل طلب HTTP واحد. الطلب يبدأ المهمة ويعيد معرّفاً. العمل يجري في عامل خلفي من طابور، وتُكتب الحالة بعد كل خطوة، والمستدعي يستعلم أو يستقبل نداءً راجعاً. والتوقف لانتظار إنسان هو مجرد حالة تبقى فيها المهمة حتى يجيب أحد، ولو غداً."
   }
  ]
 }
