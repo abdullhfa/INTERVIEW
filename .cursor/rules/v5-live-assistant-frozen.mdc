@@ -1,15 +1,15 @@
 ---
-description: V5 live interview assistant is FROZEN — bug fixes only
+description: V6 live latency stack is FROZEN — bug fixes only
 alwaysApply: true
 ---
 
-# V5 Live Interview Assistant — FROZEN (2026-09-15)
+# V6 Live Latency — FROZEN (2026-09-16)
 
-The live interview assistant is **closed**. Do not reopen for score chasing.
+The live interview assistant latency stack is **closed**. Do not reopen for score or latency chasing.
 
-Canonical freeze: `backend/reports/V5_LIVE_ASSISTANT_FREEZE.json`  
-Lock fingerprints: `backend/reports/V5_LIVE_ASSISTANT_FREEZE.lock.json`  
-Restorable snapshot: `interview11_FROZEN_V5_20260915` (sibling of `interview11`)
+Canonical freeze: `FROZEN_VERSION.txt` (`V6_LIVE_LATENCY_2026_09_16`, commit `a76bb96`)  
+Supersedes: `V5_LIVE_INTERVIEW_ASSISTANT_2026_09_15`  
+Restorable snapshot: `interview11_FROZEN_V6_20260916` (sibling of `interview11`)
 
 ## Allowed
 - True bug fixes (crashes, incorrect wiring, broken imports, regressions that violate HC=0)
@@ -22,7 +22,14 @@ Restorable snapshot: `interview11_FROZEN_V5_20260915` (sibling of `interview11`)
 - Whisper / EQ / VAD changes for metric chasing
 - B8 / B9 / new ranking, compound, or routing research
 - Editing frozen question banks to chase scores
+- Re-opening L1–L4 latency work without a new measurement
+- Tuning to make the five documented freeze-debt tests pass
 
 ## Frozen baselines (do not regress)
 - V5 150 Voice Stress E2E: pass **0.90**, intent **0.90**, HC wrong **0**
 - SHORT_TECH_RECOVERY_PASS · MAIN_REQUEST_EXTRACTION_PASS
+- L2 bank search: decision-equivalent (verified on 49 queries)
+
+## Known debt (documented, not regressions)
+- P2-family: `water transformers` / `Yeah, John.` / download chrome
+- Bank retrieval: asr_noise, indirect_long, hallucination sibling, rag_arabic_english
