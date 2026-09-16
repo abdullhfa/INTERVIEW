@@ -28,6 +28,21 @@ from typing import Any, Optional
 logger = logging.getLogger(__name__)
 
 _WORD = re.compile(r"[A-Za-z0-9']+")
+_NON_ALNUM = re.compile(r"[^a-z0-9\s]")
+_NON_ALPHA = re.compile(r"[^a-z]")
+_VOWELS = re.compile(r"[aeiou]")
+
+# Known STT bridges. Hoisted out of the _phonetic inner loop: it was rebuilt for
+# every token pair of every candidate (hundreds of thousands of allocations per
+# question). Same content, same comparisons.
+_STT_BRIDGES = (
+    frozenset({"llm", "lalam", "ellem", "elem"}),
+    frozenset({"explain", "plan"}),
+    frozenset({"langchain", "lankan"}),
+    frozenset({"embeddings", "bedding", "beddings"}),
+    frozenset({"rag", "rack", "drag", "ragged"}),
+    frozenset({"role", "roll"}),
+)
 _LOCK = threading.Lock()
 _LAST: "UnderstandingResult | None" = None
 
@@ -104,16 +119,19 @@ def _norm(text: str) -> str:
     return " ".join((text or "").strip().split())
 
 
+@lru_cache(maxsize=16384)
 def _fold(text: str) -> str:
-    return " ".join(re.sub(r"[^a-z0-9\s]", " ", (text or "").lower()).split())
+    return " ".join(_NON_ALNUM.sub(" ", (text or "").lower()).split())
 
 
+@lru_cache(maxsize=16384)
 def _tokens(text: str) -> tuple[str, ...]:
     return tuple(t for t in _WORD.findall(_fold(text)) if t not in _STOP and len(t) > 1)
 
 
+@lru_cache(maxsize=16384)
 def _skel(text: str) -> str:
-    return re.sub(r"[aeiou]", "", re.sub(r"[^a-z]", "", _fold(text)))
+    return _VOWELS.sub("", _NON_ALPHA.sub("", _fold(text)))
 
 
 def _question_type(text: str) -> str:
@@ -159,6 +177,7 @@ def _category_bucket(entry) -> str:
     return "TECHNICAL_AI"
 
 
+@lru_cache(maxsize=32768)
 def _phonetic(a: str, b: str) -> float:
     fa, fb = _fold(a), _fold(b)
     seq = SequenceMatcher(None, fa, fb).ratio()
@@ -173,17 +192,8 @@ def _phonetic(a: str, b: str) -> float:
             for i, y in enumerate(tb):
                 if i in used:
                     continue
-                s = SequenceMatcher(None, x, y).ratio()
-                # Known STT bridges
-                pairs = {
-                    frozenset({"llm", "lalam", "ellem", "elem"}),
-                    frozenset({"explain", "plan"}),
-                    frozenset({"langchain", "lankan"}),
-                    frozenset({"embeddings", "bedding", "beddings"}),
-                    frozenset({"rag", "rack", "drag", "ragged"}),
-                    frozenset({"role", "roll"}),
-                }
-                for p in pairs:
+                s = _token_ratio(x, y)
+                for p in _STT_BRIDGES:
                     if x in p and y in p:
                         s = max(s, 0.85)
                 if {x, y} <= {"explain", "plan", "and"}:
@@ -197,6 +207,13 @@ def _phonetic(a: str, b: str) -> float:
     return max(0.0, min(1.0, 0.35 * seq + 0.25 * sk + 0.40 * tok))
 
 
+@lru_cache(maxsize=32768)
+def _token_ratio(x: str, y: str) -> float:
+    """SequenceMatcher.ratio for a token pair — memoized, identical output."""
+    return SequenceMatcher(None, x, y).ratio()
+
+
+@lru_cache(maxsize=16384)
 def _lexical(a: str, b: str) -> float:
     ta, tb = set(_tokens(a)), set(_tokens(b))
     if not ta or not tb:
@@ -280,6 +297,7 @@ def _probe_index() -> tuple[tuple[str, str, str, int, str, str], ...]:
 def clear_bank_guided_cache() -> None:
     global _LAST
     _LAST = None
+    _SEARCH_CACHE.clear()
     _probe_index.cache_clear()
     try:
         from app.services.interview_lexicon import clear_lexicon_cache
@@ -289,11 +307,44 @@ def clear_bank_guided_cache() -> None:
         pass
 
 
+_SEARCH_CACHE: dict[tuple[str, int], list[BankCandidate]] = {}
+_SEARCH_CACHE_GEN: int = -1
+_SEARCH_CACHE_MAX = 256
+
+
 def search_bank_candidates(raw: str, *, k: int = 5) -> list[BankCandidate]:
-    """Top-k bank questions for a raw STT hypothesis (bank-primary)."""
+    """Top-k bank questions for a raw STT hypothesis (bank-primary).
+
+    Pure function of (raw, k) and the loaded bank, so the result is memoized:
+    the same utterance is searched up to three times per question (the STT
+    second-pass probe, main-request extraction, and the answer generator), and
+    each scan costs ~2.4k difflib comparisons. The cache is keyed on
+    `question_bank.generation`, so a bank reload invalidates it automatically.
+    """
     from app.services.question_bank import question_bank
 
     question_bank.load()
+
+    global _SEARCH_CACHE_GEN
+    generation = question_bank.generation
+    if generation != _SEARCH_CACHE_GEN:
+        _SEARCH_CACHE.clear()
+        _SEARCH_CACHE_GEN = generation
+    cache_key = (raw, k)
+    cached = _SEARCH_CACHE.get(cache_key)
+    if cached is not None:
+        return list(cached)
+
+    result = _search_bank_candidates_uncached(raw, k=k)
+    if len(_SEARCH_CACHE) >= _SEARCH_CACHE_MAX:
+        _SEARCH_CACHE.clear()
+    _SEARCH_CACHE[cache_key] = result
+    return list(result)
+
+
+def _search_bank_candidates_uncached(raw: str, *, k: int = 5) -> list[BankCandidate]:
+    from app.services.question_bank import question_bank
+
     raw_n = _norm(raw)
     if not raw_n:
         return []
@@ -303,10 +354,14 @@ def search_bank_candidates(raw: str, *, k: int = 5) -> list[BankCandidate]:
     scored: dict[str, BankCandidate] = {}
 
     for text, eid, kind, idx, tf, ts in _probe_index():
-        # Cheap gates before full scoring
-        sk_ratio = SequenceMatcher(None, raw_skel, ts).ratio() if raw_skel and ts else 0.0
-        if kind != "spoken" and sk_ratio < 0.25 and not (raw_toks & set(tf.split())):
-            continue
+        # Cheap gates before full scoring. The skeleton ratio is only consulted
+        # when the token-overlap test cannot already keep the candidate, so the
+        # difflib pass is skipped for every alias sharing a token with the
+        # utterance. Same branch, same result, fewer comparisons.
+        if kind != "spoken" and not (raw_toks & set(tf.split())):
+            sk_ratio = SequenceMatcher(None, raw_skel, ts).ratio() if raw_skel and ts else 0.0
+            if sk_ratio < 0.25:
+                continue
         # silence unused canonical fold param use for token overlap speed
         _ = tf
         phon = _phonetic(raw_n, text)

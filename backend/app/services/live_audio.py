@@ -926,6 +926,7 @@ class LiveAudioOrchestrator:
                     "answer": draft.model_dump(),
                 })
 
+            _t_gen = time.perf_counter()
             generated = await answer_generator.generate(
                 classification=classification,
                 profile=profile,
@@ -1003,6 +1004,13 @@ class LiveAudioOrchestrator:
             # Publish the complete display payload before WebSocket delivery.
             # The socket remains the fast path; the REST session snapshot is the
             # replayable source of truth if this one frame is lost.
+            _t_publish = time.perf_counter()
+            logger.info(
+                "ANSWER_TIMING generate=%.0fms (stt=%.0f classify=%.0f)",
+                (_t_publish - _t_gen) * 1000,
+                transcription_ms,
+                classify_ms,
+            )
             await session_manager.publish_live_answer(self.session_id, generated)
             self._remember_turn(generated.question, generated.answer_en)
             await self._send_ws({
@@ -1016,6 +1024,10 @@ class LiveAudioOrchestrator:
             })
 
             await session_manager.record_answer(self.session_id, generated)
+            logger.info(
+                "ANSWER_PUBLISH_MS publish_and_record=%.0f",
+                (time.perf_counter() - _t_publish) * 1000,
+            )
             # Free the live strip for the next question; keep answer for recovery.
             await session_manager.clear_live_question(self.session_id)
             self.aggregator.recent_questions.clear()

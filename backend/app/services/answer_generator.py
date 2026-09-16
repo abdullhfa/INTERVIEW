@@ -288,6 +288,8 @@ class AnswerGenerator:
         ] = OrderedDict()
         # Live observability (read by live_audio after generate).
         self._last_bank_lookup_ms: float = 0.0
+        self._last_prepared_ms: float = 0.0
+        self._last_compound_ms: float = 0.0
         self._last_answer_source: str = "deepseek"
 
     async def generate(
@@ -311,10 +313,13 @@ class AnswerGenerator:
         """
         start_time = time.perf_counter()
         self._last_bank_lookup_ms = 0.0
+        self._last_prepared_ms = 0.0
+        self._last_compound_ms = 0.0
         self._last_answer_source = "deepseek"
         asked = (classification.raw_utterance or classification.normalized_question or "").strip()
         question = classification.normalized_question or asked
 
+        _t_stage = time.perf_counter()
         prepared = match_expected_question(
             question, getattr(profile, "expected_questions", None) or []
         )
@@ -322,6 +327,7 @@ class AnswerGenerator:
             prepared = match_expected_question(
                 asked, profile.expected_questions or []
             )
+        self._last_prepared_ms = (time.perf_counter() - _t_stage) * 1000
         if prepared is not None:
             logger.info(
                 "Using prepared expected-question answer score=%.2f reason=%s",
@@ -361,6 +367,7 @@ class AnswerGenerator:
         # Track B: if detector says compound/uncertain, try multi-intent BEFORE
         # returning a strong single-intent bank answer (so all parts get covered).
         if settings.question_bank_enabled:
+            _t_stage = time.perf_counter()
             compound_answer = await self._maybe_compound_answer(
                 asked or question,
                 conversation_history=conversation_history,
@@ -369,6 +376,14 @@ class AnswerGenerator:
                 question_id=question_id,
                 length_mode=length_mode,
                 start_time=start_time,
+            )
+            self._last_compound_ms = (time.perf_counter() - _t_stage) * 1000
+            logger.info(
+                "ANSWER_STAGES prepared=%.0f bank=%.0f compound=%.0f elapsed=%.0f",
+                self._last_prepared_ms,
+                self._last_bank_lookup_ms,
+                self._last_compound_ms,
+                (time.perf_counter() - start_time) * 1000,
             )
             if compound_answer is not None:
                 self._last_answer_source = "bank"

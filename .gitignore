@@ -37,6 +37,7 @@ Thumbs.db
 .idea/
 .vscode/*
 !.vscode/extensions.json
+pyrefly.toml
 
 # Large local-only freeze copies (keep source of truth in repo root)
 ../interview11_FROZEN_V5_20260915/
