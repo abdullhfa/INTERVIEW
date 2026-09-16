@@ -1,966 +1,1117 @@
 {
-  "bank": "general",
-  "description": "General and behavioral interview questions answered in Abdullah's voice, grounded in his CV. Easy spoken English.",
-  "entries": [
-    {
-      "id": "gen.strengths",
-      "category": "personal",
-      "topic": "personal",
-      "question": "What are your strengths?",
-      "aliases": [
-        "what are your strengths",
-        "what is your greatest strength",
-        "what are you good at",
-        "tell me three strengths",
-        "what would you say you do well",
-        "if I asked your manager, what are you strongest at",
-        "what makes you a strong candidate for this role",
-        "walk me through your strengths",
-        "what do you bring to the team",
-        "where do you add the most value"
-      ],
-      "keywords": ["strengths", "strength", "good at"],
-      "listen_for": [
-        "strengths",
-        "what are you good at",
-        "greatest strength",
-        "what do you bring",
-        "strongest at",
-        "add the most value",
-        "three strengths",
-        "key strengths"
-      ],
-      "answer_en": "I am careful with AI that other people will use. I learned that in payment systems: a person should check before anything important happens. I also pick the simple tool first, like Scikit-learn before a big neural network. And I say clearly if I have not used a tool in production.",
-      "followup_en": "In seven years of government payments, a wrong action was worse than a slow one. So I put checks in AI work too: a person reviews important output, and we keep a log. Simple tools help because they are easier to test and explain. If I only studied a tool, I say that. I do not pretend production experience I do not have.",
-      "answer_ar": "قوتي أنني أبني أنظمة فيها مراجعة من شخص، وأختار الأداة البسيطة، وأصرّح إذا لم أستخدم أداة في الإنتاج."
-    },
-    {
-      "id": "gen.weaknesses",
-      "category": "personal",
-      "topic": "personal",
-      "question": "What are your weaknesses?",
-      "aliases": [
-        "what are your weaknesses",
-        "what is your greatest weakness",
-        "what is one area you need to improve",
-        "what would your manager say you should work on",
-        "what are you not good at",
-        "where do you still have a gap",
-        "if you could improve one thing, what would it be",
-        "what is something you are still learning",
-        "tell me about a development area",
-        "what do you struggle with at work"
-      ],
-      "keywords": ["weakness", "weaknesses", "improve", "not good at"],
-      "listen_for": [
-        "weakness",
-        "area to improve",
-        "not good at",
-        "manager say you should work on",
-        "still learning",
-        "development area",
-        "gap in your skills",
-        "what do you struggle with"
-      ],
-      "answer_en": "I will be honest. I have run on-premise systems for years, but I have not built a GPU cluster. I studied serving tools like vLLM, and I would want a partner on the first build. I can also be too careful and add checks when a prototype should move faster.",
-      "followup_en": "GPU serving is different from the CPU systems I already run. I know the ideas: VRAM, batching, and engines like vLLM. I have not operated a cluster in production, so I would not claim that. For the careful part, I keep the first demo light, then move the real logic into tested code before users depend on it.",
-      "answer_ar": "ضعفي أنني لم أبنِ عنقود GPU بنفسي، وأحياناً أزيد التحقق حتى لو كانت التجربة تحتاج سرعة."
-    },
-    {
-      "id": "gen.why_this_role",
-      "category": "personal",
-      "topic": "personal",
-      "question": "Why do you want this job?",
-      "aliases": [
-        "why do you want this job",
-        "why this role",
-        "why are you interested in this position",
-        "why do you want to work with us",
-        "why this company",
-        "why the ministry of finance",
-        "what attracted you to this vacancy",
-        "why leave your current role for this one",
-        "what is interesting about this opportunity",
-        "why us and not another organization"
-      ],
-      "keywords": ["why this job", "this role", "interested", "attracts", "join us", "this company"],
-      "listen_for": [
-        "why this job",
-        "why this role",
-        "why us",
-        "why this company",
-        "what attracted you",
-        "why the ministry",
-        "interested in this position",
-        "why do you want to join"
-      ],
-      "answer_en": "I want work where AI must be careful, not just clever. A finance team needs answers from its own documents, with the source shown, and a person checking. I built that kind of system at the Ministry of Education. I also want bigger scale, and data that must stay in the country.",
-      "followup_en": "At the Ministry I already build systems that answer from our own material and keep a person in the loop. A finance organization is the same idea, with higher risk. I am interested in in-country models because the data cannot leave. That is a real engineering problem, not a demo. I also want generative AI to be the main work, not a side project.",
-      "answer_ar": "أريد عملاً يكون فيه الذكاء الاصطناعي حذراً وموثّقاً من وثائقكم، ومع بيانات لا تخرج من الدولة."
-    },
-    {
-      "id": "gen.five_years",
-      "category": "personal",
-      "topic": "personal",
-      "question": "Where do you see yourself in five years?",
-      "aliases": [
-        "where do you see yourself in five years",
-        "what are your career goals",
-        "what is your long term plan",
-        "where do you want to be in a few years",
-        "what is your ambition",
-        "how do you see your career developing here",
-        "what does success look like for you in five years",
-        "where are you heading professionally",
-        "what is the next step in your career",
-        "do you want to stay technical or move into management"
-      ],
-      "keywords": ["five years", "career goals", "long term", "ambition"],
-      "listen_for": [
-        "five years",
-        "career goals",
-        "long term plan",
-        "where do you see yourself",
-        "your ambition",
-        "next step in your career",
-        "stay technical",
-        "move into management"
-      ],
-      "answer_en": "I want to lead the AI engineering work in a place like this. That means owning retrieval, agents, checks, and how we measure quality. I want to explain to an auditor why the system gave an answer. The next step is production work with models that stay inside the country.",
-      "followup_en": "I still want to stay close to the code, not only manage people. In five years I want to mentor engineers and own the architecture: retrieval, agents, evaluation, and how we deploy models on our own hardware. I have the delivery background from PMP and payment projects. The missing piece is deep production experience with in-country LLM serving, and that is what I want to build here.",
-      "answer_ar": "بعد خمس سنوات أريد أن أقود هندسة الذكاء الاصطناعي هنا، وأن أشرح لأي مدقق لماذا أجاب النظام بهذا الشكل."
-    },
-    {
-      "id": "gen.biggest_achievement",
-      "category": "personal",
-      "topic": "personal",
-      "question": "What is your biggest professional achievement?",
-      "aliases": [
-        "what is your biggest professional achievement",
-        "what is your greatest accomplishment",
-        "tell me about something you are proud of",
-        "what is your proudest moment at work",
-        "what result are you most proud of",
-        "tell me about a win you had",
-        "what is the best thing you have shipped",
-        "which project are you most proud of",
-        "what impact are you most proud of",
-        "give me an example of success in your career"
-      ],
-      "keywords": ["achievement", "accomplishment", "proud"],
-      "listen_for": [
-        "biggest achievement",
-        "greatest accomplishment",
-        "proud of",
-        "proudest moment",
-        "best thing you shipped",
-        "which project are you proud of",
-        "a win you had",
-        "impact you are proud of"
-      ],
-      "answer_en": "The BTEC similarity checker at the Ministry of Education. Review used to mean reading everything by hand. Now teachers get a short list of flagged cases, with the two texts side by side. I am proud that they trusted it, because it never accused a student. It only showed the evidence, and the teacher decided.",
-      "followup_en": "This is not an LLM system. It uses embeddings, chunking, and cosine similarity, then shows both passages. Teachers used to spend a long time reading every assignment. After we tuned the threshold with them on real cases, they reviewed a short list instead. Trust came from the design: the tool flags, a person decides. That is the result I am proud of, not a fancy model.",
-      "answer_ar": "أفخر بفاحص التشابه في BTEC: قلّل المراجعة اليدوية، ولم يتهم الطالب، والمعلم هو من يقرر."
-    },
-    {
-      "id": "gen.failure",
-      "category": "behavioral",
-      "topic": "personal",
-      "question": "Tell me about a time you failed or made a mistake",
-      "aliases": [
-        "tell me about a time you failed",
-        "tell me about a mistake you made",
-        "describe a failure and what you learned",
-        "what is the biggest mistake you made at work",
-        "tell me about a project that did not go well",
-        "when did something go wrong on your watch",
-        "give me an example of a lesson you learned the hard way",
-        "have you ever been wrong about a model",
-        "tell me about a time your result looked good but was not",
-        "what would you do differently next time"
-      ],
-      "keywords": ["failed", "failure", "mistake", "did not go well", "learned"],
-      "listen_for": [
-        "a time you failed",
-        "a mistake you made",
-        "project that did not go well",
-        "what you learned",
-        "something went wrong",
-        "been wrong about a model",
-        "lesson the hard way",
-        "do differently next time"
-      ],
-      "answer_en": "In the early-warning project, my first version looked strong on paper, then failed in real use. The problem was data leakage. I scaled before the split, and a random split let later terms leak into earlier ones. The score was fake. I put every step in a Scikit-learn Pipeline and split by time.",
-      "followup_en": "This was classic machine learning at Al Najat, not an LLM. The model looked good because it had seen the future. After I fixed the pipeline and used a time-based split, the score dropped, which was the honest number. Now a high test score makes me suspicious until I know how the data was split. That habit still helps me when people show me a shiny demo metric.",
-      "answer_ar": "في الإنذار المبكر كان التقييم وهمي بسبب تسريب البيانات، فتعلمت أحترم ترتيب الزمن داخل الـ Pipeline."
-    },
-    {
-      "id": "gen.conflict",
-      "category": "behavioral",
-      "topic": "personal",
-      "question": "Tell me about a conflict with a colleague and how you handled it",
-      "aliases": [
-        "tell me about a conflict with a colleague",
-        "how do you handle disagreements at work",
-        "describe a time you disagreed with a coworker",
-        "how do you deal with conflict in a team",
-        "tell me about a time you and a teammate did not agree",
-        "have you ever had friction with someone you work with",
-        "what happens when two engineers want different designs",
-        "give me an example of resolving a disagreement",
-        "how do you handle pushback from a colleague",
-        "tell me about a tense moment in a project"
-      ],
-      "keywords": ["conflict", "disagreement", "disagreed", "coworker", "colleague"],
-      "listen_for": [
-        "conflict with a colleague",
-        "disagreed with a coworker",
-        "disagreement at work",
-        "friction with someone",
-        "two engineers want different",
-        "resolving a disagreement",
-        "pushback from a colleague",
-        "tense moment in a project"
-      ],
-      "answer_en": "In question generation, a colleague wanted the system to publish questions by itself to save time. I wanted a teacher to approve every question. I asked what worried him, and it was speed. We measured a short review, not a full rewrite. We kept approval, and it was still much faster.",
-      "followup_en": "The generation pipeline retrieves unit content, writes questions from it, and stores a structured result. Production orchestration is Python, with a teacher approval step before save. Auto-publish would have been faster on paper, but a bad question in an exam is worse than a short review. Once we timed the review, the speed concern went away. I try to solve the real worry, not win the argument.",
-      "answer_ar": "زميلي أراد النشر التلقائي للأسئلة، واتفقنا على موافقة المعلم بعدما تأكدنا أن المراجعة سريعة."
-    },
-    {
-      "id": "gen.disagree_manager",
-      "category": "behavioral",
-      "topic": "personal",
-      "question": "Tell me about a time you disagreed with your manager",
-      "aliases": [
-        "tell me about a time you disagreed with your manager",
-        "have you ever pushed back on a decision",
-        "what do you do when you disagree with leadership",
-        "have you ever said no to your boss",
-        "tell me about a time you challenged a request from above",
-        "how do you handle pressure from management to go faster",
-        "have you ever raised a risk that leadership did not want to hear",
-        "give me an example of constructive pushback",
-        "what if your manager asks you to send data to an external API",
-        "how do you disagree without being difficult"
-      ],
-      "keywords": ["disagreed with your manager", "pushed back", "leadership", "disagree"],
-      "listen_for": [
-        "disagreed with your manager",
-        "pushed back on a decision",
-        "disagree with leadership",
-        "said no to your boss",
-        "challenged a request",
-        "pressure from management",
-        "send data to an external API",
-        "constructive pushback"
-      ],
-      "answer_en": "Yes. Early in the BTEC work, there was pressure to send data to an outside model. I agreed we needed speed, but not with sending student data. I suggested curriculum text only, hide names, and one internal interface for model calls. Management accepted it, so we can change the model later without a rewrite.",
-      "followup_en": "I did not say no and stop. I offered a path that still showed results. We classify content first, send only curriculum material, and keep student identifiers out. All model calls go through one internal interface, so later we can move on-premise without rewriting the product. I presented it as a risk choice with an alternative. That is usually easier for a manager to accept than a hard block.",
-      "answer_ar": "لم أوافق على إرسال بيانات الطلاب لنموذج خارجي، واقترحت مساراً أسرع وآمناً عبر واجهة داخلية."
-    },
-    {
-      "id": "gen.pressure",
-      "category": "behavioral",
-      "topic": "personal",
-      "question": "How do you work under pressure and tight deadlines?",
-      "aliases": [
-        "how do you work under pressure",
-        "how do you handle tight deadlines",
-        "tell me about a stressful situation at work",
-        "how do you deal with stress",
-        "what do you do when everything is urgent",
-        "how do you stay calm when the date cannot move",
-        "tell me about a time you had to deliver quickly",
-        "how do you handle last minute requests",
-        "can you work with an aggressive timeline",
-        "what happens when the ministry needs it this week"
-      ],
-      "keywords": ["pressure", "deadlines", "stressful", "stress"],
-      "listen_for": [
-        "under pressure",
-        "tight deadlines",
-        "stressful situation",
-        "deal with stress",
-        "everything is urgent",
-        "deliver quickly",
-        "last minute requests",
-        "aggressive timeline"
-      ],
-      "answer_en": "Payment systems taught me that pressure is normal and panic is optional. I make the scope clear, so we agree what must ship and what can wait. I protect testing, because skipping it creates a bigger problem later. And I speak early. A manager prefers a risk on Monday to a surprise on Friday.",
-      "followup_en": "In ministry payment work, a missed date was bad, but a wrong payment was worse. So I cut scope before I cut testing. I write down what is in and what is out, then I protect user acceptance. If a new request arrives mid-week, I say what will slip. Silence under pressure is what creates Friday emergencies. I would rather look cautious than look surprised.",
-      "answer_ar": "تحت الضغط أحدد النطاق بوضوح، ولا أضحّي بالاختبار، وأخبر المدير بالمخاطر مبكراً."
-    },
-    {
-      "id": "gen.teamwork",
-      "category": "behavioral",
-      "topic": "personal",
-      "question": "How do you work in a team?",
-      "aliases": [
-        "how do you work in a team",
-        "are you a team player",
-        "describe your teamwork style",
-        "tell me about a successful team project",
-        "how do you collaborate with others",
-        "how do you work with people who are not engineers",
-        "do you prefer to own a piece or work across the team",
-        "how do you hand work over to testers or users",
-        "tell me how you fit into a delivery team",
-        "how do you work with teachers or business users"
-      ],
-      "keywords": ["team", "teamwork", "collaborate", "team player"],
-      "listen_for": [
-        "work in a team",
-        "team player",
-        "collaborate with others",
-        "teamwork style",
-        "successful team project",
-        "people who are not engineers",
-        "hand work over",
-        "fit into a delivery team"
-      ],
-      "answer_en": "I like clear ownership. Everyone should know what they own and what they hand over. As a project manager I worked with developers, testers, vendors, and ministry users. As an engineer I work with teachers and IT. I explain decisions in plain language, and I listen to the people who will use the system.",
-      "followup_en": "In Kuwait I coordinated whole delivery chains, not only my own tasks. At the Ministry I sit between teachers and IT, so I translate both ways. Teachers know what a fair result looks like. IT knows what can actually run. My job is to keep those two views in the same design. I do not disappear into code and come back with a surprise.",
-      "answer_ar": "أحب ملكية واضحة بين الناس، وأشرح القرار بلغة بسيطة، وأسمع المستخدم لأنه يعرف شكل الإجابة الصحيحة."
-    },
-    {
-      "id": "gen.leadership",
-      "category": "behavioral",
-      "topic": "personal",
-      "question": "Do you have leadership experience?",
-      "aliases": [
-        "do you have leadership experience",
-        "have you led a team",
-        "tell me about your leadership style",
-        "have you managed people",
-        "how do you lead",
-        "have you been a project manager",
-        "how do you lead without being the official boss",
-        "tell me about a time you had to get people aligned",
-        "have you coordinated vendors and internal teams",
-        "what kind of leader are you"
-      ],
-      "keywords": ["leadership", "led a team", "managed people", "lead"],
-      "listen_for": [
-        "leadership experience",
-        "led a team",
-        "managed people",
-        "leadership style",
-        "been a project manager",
-        "lead without being the boss",
-        "get people aligned",
-        "coordinated vendors"
-      ],
-      "answer_en": "Yes. For seven years I managed software and e-payment projects for Kuwait ministries, including testing, user acceptance, and vendors. My style is clear ownership and honest status. I set the goal and the acceptance checks, then give people room. At the Ministry of Education I lead the AI work technically.",
-      "followup_en": "That Kuwait role was delivery leadership: developers, testers, vendors, and ministry users. I did not write every line of code. I made sure the path to go-live was clear. At the Ministry the leadership is more technical: which design is safe, what we will not send to a model, and how teachers approve output. Both kinds matter. I am not looking to leave the engineering work behind.",
-      "answer_ar": "نعم، سبع سنوات إدارة مشاريع دفع حكومي في الكويت، واليوم أقود اتجاه الذكاء الاصطناعي فنياً في الوزارة."
-    },
-    {
-      "id": "gen.learning_new_tech",
-      "category": "behavioral",
-      "topic": "personal",
-      "question": "How do you learn new technologies and stay up to date?",
-      "aliases": [
-        "how do you stay up to date with ai",
-        "how do you learn new technologies",
-        "how do you keep your skills current",
-        "the field moves fast, how do you keep up",
-        "tell me about something you learned recently",
-        "how do you decide which new tool is worth learning",
-        "do you learn from courses or from building",
-        "how do you avoid chasing every new framework",
-        "what have you been studying lately",
-        "how do you keep up with LLMs"
-      ],
-      "keywords": ["stay up to date", "learn", "keep up", "current", "recently"],
-      "listen_for": [
-        "stay up to date",
-        "learn new technologies",
-        "keep your skills current",
-        "field moves fast",
-        "learned recently",
-        "studying lately",
-        "keep up with LLMs",
-        "how do you keep up"
-      ],
-      "answer_en": "I learn by building. When RAG became important, I did not only read. I built the question generation pipeline and hit real problems, like state tracking and teacher approval. I follow official docs and test claims on my own data. Lately I have been studying evaluation, because measuring quality is where many teams are weak.",
-      "followup_en": "I read LangChain and LangGraph docs to understand the ideas, but production orchestration for question generation is Python, not LangGraph. Chroma was a prototype, not the production store. Recently I have been going deeper on faithfulness checks and RAGAS-style metrics. I have not run RAGAS as a production gate. I test claims on our own data before I trust a blog post. That keeps me current without collecting tools I cannot support.",
-      "answer_ar": "أتعلم بالبناء على بيانات حقيقية، ومؤخراً أركز على قياس جودة الإجابات لا على جمع أدوات جديدة."
-    },
-    {
-      "id": "gen.prioritize",
-      "category": "behavioral",
-      "topic": "personal",
-      "question": "How do you prioritize your work?",
-      "aliases": [
-        "how do you prioritize your work",
-        "how do you manage multiple tasks",
-        "how do you decide what to work on first",
-        "how do you handle competing priorities",
-        "what do you do when two people want you today",
-        "how do you choose between a feature and a risk",
-        "walk me through your weekly priorities",
-        "how do you avoid doing the loudest task first",
-        "what comes first for you, new features or stability",
-        "how do you handle a growing backlog"
-      ],
-      "keywords": ["prioritize", "multiple tasks", "first", "competing priorities"],
-      "listen_for": [
-        "prioritize your work",
-        "multiple tasks",
-        "what to work on first",
-        "competing priorities",
-        "two people want you",
-        "feature and a risk",
-        "features or stability",
-        "growing backlog"
-      ],
-      "answer_en": "I prioritize by impact and risk. Anything that touches production stability or data safety comes first, then whatever unblocks other people. Features come after that, ordered by value to users. I keep the list visible, and I renegotiate openly when something new arrives. That is the project manager in me.",
-      "followup_en": "If a model might leak student data, that jumps the queue over a nicer screen. If a tester is blocked, that jumps a nice-to-have feature. I learned this on payment projects: silent slipping is worse than a hard conversation. When a new request arrives, I say what will move down. People can accept a delay they can see. They cannot accept a surprise miss.",
-      "answer_ar": "أولويتي للسلامة واستقرار الإنتاج، ثم ما يفك حظر الآخرين، ثم الميزات حسب فائدتها."
-    },
-    {
-      "id": "gen.feedback",
-      "category": "behavioral",
-      "topic": "personal",
-      "question": "How do you handle criticism or feedback?",
-      "aliases": [
-        "how do you handle criticism",
-        "how do you take feedback",
-        "tell me about a time you received difficult feedback",
-        "how do you react when someone says your work is wrong",
-        "have users ever told you the tool was not good enough",
-        "tell me about feedback that changed your design",
-        "are you defensive when people challenge your work",
-        "how do you handle negative feedback from teachers or users",
-        "what is the hardest feedback you have received",
-        "how do you improve after criticism"
-      ],
-      "keywords": ["criticism", "feedback"],
-      "listen_for": [
-        "handle criticism",
-        "take feedback",
-        "difficult feedback",
-        "your work is wrong",
-        "tool was not good enough",
-        "feedback that changed your design",
-        "negative feedback",
-        "hardest feedback"
-      ],
-      "answer_en": "I treat feedback like a test result, not an attack. Teachers told me the similarity checker gave too many false alarms. That was hard to hear, but useful. I tuned the threshold with them on real cases and showed evidence side by side. I would rather hear the problem than watch people stop using it.",
-      "followup_en": "False alarms were a trust problem, not only a metric problem. If teachers see too many flags, they ignore the tool. We sat with real assignments, moved the threshold, and changed the screen so both passages were visible. After that, they used it. I ask for the example, not the feeling. An example I can fix. A vague complaint I cannot.",
-      "answer_ar": "أتعامل مع النقد كمعلومة. المعلمون قالوا إن الإنذارات كثيرة، وعدّلت الحد معهم على حالات حقيقية."
-    },
-    {
-      "id": "gen.non_technical_stakeholders",
-      "category": "behavioral",
-      "topic": "personal",
-      "question": "How do you explain technical concepts to non-technical people?",
-      "aliases": [
-        "how do you explain technical concepts to non technical people",
-        "how do you communicate with business stakeholders",
-        "how do you work with non technical teams",
-        "explain ai to a manager who is not technical",
-        "how would you explain this system to a teacher",
-        "how do you avoid jargon with leadership",
-        "can you make a complex idea simple",
-        "how do you brief a minister or a director",
-        "how do you talk about models without saying embeddings",
-        "tell me how you communicate risk to non engineers"
-      ],
-      "keywords": ["non technical", "stakeholders", "business", "explain", "communicate"],
-      "listen_for": [
-        "explain technical concepts",
-        "non technical people",
-        "business stakeholders",
-        "explain AI to a manager",
-        "explain this to a teacher",
-        "avoid jargon",
-        "brief a director",
-        "communicate risk"
-      ],
-      "answer_en": "I start from their question, not from the technology. A teacher does not care about embeddings. She cares if the tool is fair. So I say: it finds similar passages, shows them to you, and you decide. I show the real output, and I am honest about what the system cannot do.",
-      "followup_en": "Years as a project manager with ministry users taught me that trust comes from a clear sentence, not from impressive words. I use one picture or one real example, then I stop. If I say the model might guess, I say that in the first minute. Hiding limits is how people lose faith later. For finance leaders I would do the same: where the data goes, who approves, and what the log can prove.",
-      "answer_ar": "أبدأ من سؤال الشخص لا من التقنية، وأريه ناتجاً حقيقياً، وأقول بصراحة ما الذي لا يستطيع النظام فعله."
-    },
-    {
-      "id": "gen.ambiguity",
-      "category": "behavioral",
-      "topic": "personal",
-      "question": "How do you handle ambiguous requirements?",
-      "aliases": [
-        "how do you handle ambiguous requirements",
-        "what do you do when the requirements are unclear",
-        "how do you deal with ambiguity",
-        "how do you start a project when the goal is vague",
-        "what if the user cannot tell you exactly what they want",
-        "how do you turn a vague request into something you can build",
-        "tell me about a time the brief was unclear",
-        "how do you avoid building the wrong thing",
-        "what do you do when everyone means something different",
-        "how do you define done when nobody defined it"
-      ],
-      "keywords": ["ambiguous", "unclear", "ambiguity", "vague"],
-      "listen_for": [
-        "ambiguous requirements",
-        "requirements are unclear",
-        "deal with ambiguity",
-        "goal is vague",
-        "cannot tell you exactly",
-        "vague request",
-        "brief was unclear",
-        "define done"
-      ],
-      "answer_en": "I turn a vague request into a small example. For completion risk, people said find schools at risk. I asked: what does complete mean, on what date, and what should the output look like? We agreed on a definition, ten sample schools, and a one-page output. Then the design was clear.",
-      "followup_en": "That project was SQL, Pandas, and sklearn where the history supported it. No LLM. The word risk meant different things to different people. A sample of ten schools forced a decision: which date, which status, which columns on the page. After that, building was straightforward. I still do this with AI work. If we cannot show one good output, we are not ready to talk about architecture.",
-      "answer_ar": "أحوّل الطلب الغامض إلى مثال صغير: تعريف، عشر حالات، وصفحة واحدة، وبعدها يصبح التصميم واضحاً."
-    },
-    {
-      "id": "gen.motivation",
-      "category": "personal",
-      "topic": "personal",
-      "question": "What motivates you?",
-      "aliases": [
-        "what motivates you",
-        "what gets you excited about work",
-        "why do you do this work",
-        "what do you enjoy most about your job",
-        "what makes a good day at work for you",
-        "when do you feel you did something worthwhile",
-        "what keeps you going in this field",
-        "what part of AI work do you actually like",
-        "why not stay in project management only",
-        "what gets you out of bed for this job"
-      ],
-      "keywords": ["motivates", "excited", "enjoy", "why do you do"],
-      "listen_for": [
-        "what motivates you",
-        "gets you excited",
-        "enjoy most about your job",
-        "good day at work",
-        "something worthwhile",
-        "keeps you going",
-        "part of AI work you like",
-        "why do you do this work"
-      ],
-      "answer_en": "Seeing a system used by real people and trusted by them. When teachers stopped reading every assignment and started reviewing a short, explained list, that was the moment. I also like the puzzle of making AI useful without letting it decide. And I like work where correctness matters, like education and finance.",
-      "followup_en": "A demo that impresses a meeting does not motivate me for long. A tool that a teacher still uses next month does. That is why I care about thresholds, evidence on screen, and approval steps. Payment systems trained me the same way: the work is not finished when the code runs. It is finished when the user trusts the result and an auditor can follow it.",
-      "answer_ar": "يحفّزني أن الناس تستخدم النظام وتثق فيه، وأن الذكاء الاصطناعي يساعد دون أن يقرر وحده."
-    },
-    {
-      "id": "gen.work_environment",
-      "category": "personal",
-      "topic": "personal",
-      "question": "What kind of work environment do you prefer?",
-      "aliases": [
-        "what kind of work environment do you prefer",
-        "describe your ideal work environment",
-        "do you prefer working alone or in a team",
-        "what type of culture suits you",
-        "what kind of team do you do your best work in",
-        "do you like a startup pace or a government pace",
-        "how do you feel about process and documentation",
-        "what environment helps you deliver",
-        "are you comfortable in a regulated organization",
-        "do you need a lot of structure or a lot of freedom"
-      ],
-      "keywords": ["work environment", "ideal", "culture", "alone or in a team"],
-      "listen_for": [
-        "work environment",
-        "ideal work environment",
-        "alone or in a team",
-        "culture suits you",
-        "startup or government",
-        "regulated organization",
-        "process and documentation",
-        "structure or freedom"
-      ],
-      "answer_en": "A place where correctness and clarity matter more than speed for its own sake. I like clear ownership, honest status, and access to the people who use the system. I am comfortable as the hands-on engineer and as the person explaining work to management. Government and regulated environments suit me.",
-      "followup_en": "I have spent most of my career in ministries and similar organizations, so I am used to approvals, audits, and shared ownership. I can move fast on a prototype, but I do not enjoy a culture that hides problems to look quick. I work well alone on a technical piece, and I work well in a team when the interfaces are clear. Both are fine. Unclear ownership is what slows me down.",
-      "answer_ar": "أرتاح في بيئة تهتم بالصحة والوضوح أكثر من السرعة، وخاصة العمل الحكومي المنضبط."
-    },
-    {
-      "id": "gen.three_words",
-      "category": "personal",
-      "topic": "personal",
-      "question": "Describe yourself in three words",
-      "aliases": [
-        "describe yourself in three words",
-        "how would your colleagues describe you",
-        "how would you describe your personality",
-        "what three words describe you",
-        "if I asked your team about you, what would they say",
-        "give me three adjectives for yourself",
-        "how do people experience working with you",
-        "what is your working style in a few words",
-        "sum up your professional character",
-        "how would a teacher you work with describe you"
-      ],
-      "keywords": ["three words", "describe you", "personality", "colleagues describe"],
-      "listen_for": [
-        "three words",
-        "colleagues describe you",
-        "your personality",
-        "three adjectives",
-        "working with you",
-        "working style",
-        "professional character",
-        "how would your team describe you"
-      ],
-      "answer_en": "Careful, practical, and honest. Careful because I design as if someone will audit the work. Practical because I pick the simplest tool that solves the problem. Honest because I say what I have done in production and what I have not. In this field that honesty protects the organization.",
-      "followup_en": "Careful does not mean slow forever. It means I do not skip the check that prevents a bad decision. Practical means I will use sklearn if it is enough, not a neural network for show. Honest means if LangGraph or vLLM is study knowledge, I say so. Colleagues usually see the same three things: I document, I simplify, and I do not oversell.",
-      "answer_ar": "ثلاث كلمات: حذر، عملي، وصادق. أصمّم كأن العمل سيُراجع، وأختار أبسط أداة، ولا أدّعي خبرة إنتاج ليست عندي."
-    },
-    {
-      "id": "gen.questions_for_us",
-      "category": "personal",
-      "topic": "personal",
-      "question": "Do you have any questions for us?",
-      "aliases": [
-        "do you have any questions for us",
-        "any questions from your side",
-        "is there anything you would like to ask us",
-        "what would you like to know about us",
-        "what questions do you have about the role",
-        "anything you want to ask the panel",
-        "what are you curious about in this team",
-        "do you want to know anything about the work",
-        "your turn, any questions",
-        "what should we tell you before we finish"
-      ],
-      "keywords": ["questions for us", "ask us", "your side", "know about us"],
-      "listen_for": [
-        "questions for us",
-        "from your side",
-        "anything you would like to ask",
-        "questions about the role",
-        "ask the panel",
-        "curious about this team",
-        "your turn",
-        "before we finish"
-      ],
-      "answer_en": "Yes. Where does the data live today, and is there already an on-premise or in-country model? Which use case comes first: document question answering, reporting, or workflow? And how do you check AI quality before launch, a test set and human approval, or would I set that up?",
-      "followup_en": "Those three questions tell me if the job is real engineering or only a demo. If data already has a home, I can map sensitivity on day one. If there is no in-country model yet, building that path is part of the role, and I want that to be explicit. If there is no test set, I would rather know now. I am asking how the system will be judged, not about perks.",
-      "answer_ar": "أسأل أين البيانات اليوم، وما أول حالة استخدام، وكيف تقيسون جودة الذكاء الاصطناعي قبل الإطلاق."
-    },
-    {
-      "id": "gen.salary",
-      "category": "personal",
-      "topic": "personal",
-      "question": "What are your salary expectations?",
-      "aliases": [
-        "what are your salary expectations",
-        "how much do you expect to earn",
-        "what is your expected salary",
-        "what compensation are you looking for",
-        "what package do you have in mind",
-        "how do you think about compensation for this move",
-        "what would make the offer work for you",
-        "are you flexible on salary",
-        "what range are you targeting",
-        "how should we think about your compensation"
-      ],
-      "keywords": ["salary", "compensation", "earn", "expected"],
-      "listen_for": [
-        "salary expectations",
-        "expect to earn",
-        "expected salary",
-        "compensation",
-        "package do you have in mind",
-        "flexible on salary",
-        "what range",
-        "make the offer work"
-      ],
-      "answer_en": "I am flexible. The role and the impact matter more than a number today. I would expect a package in line with a senior AI engineer in the UAE government sector, given fifteen years of experience and relocation. I am happy to discuss a range once I understand the full scope and benefits.",
-      "followup_en": "I am not going to invent a number in this meeting. Relocation, housing, and benefits change the picture. I want the scope first: seniority, on-site expectation, and how central the AI work is. After that I can talk about a range that matches the market for this kind of government role. I would rather be aligned than pick a figure that surprises either side.",
-      "answer_ar": "مرن، وأتوقع عرضاً يتناسب مع مهندس ذكاء اصطناعي أول في القطاع الحكومي مع خبرة خمسة عشر عاماً وانتقال."
-    },
-    {
-      "id": "gen.first_90_days",
-      "category": "personal",
-      "topic": "personal",
-      "question": "What would you do in your first ninety days?",
-      "aliases": [
-        "what would you do in your first ninety days",
-        "what would your first three months look like",
-        "how would you start in this role",
-        "what is your plan for the first months",
-        "if you joined on Monday, what would you do first",
-        "how would you ramp up without breaking anything",
-        "what would your first win look like",
-        "walk me through your first quarter",
-        "how quickly would you try to put a model in production",
-        "what would you learn before you build"
-      ],
-      "keywords": ["ninety days", "first three months", "first months", "start in this role"],
-      "listen_for": [
-        "first ninety days",
-        "first three months",
-        "start in this role",
-        "plan for the first months",
-        "joined on Monday",
-        "first win",
-        "first quarter",
-        "before you build"
-      ],
-      "answer_en": "First month I listen and map: where data lives, how sensitive it is, and who the users are. Second month I pick one useful, lower-risk case, usually document questions with sources, and a small test set. Third month I harden it: checks, human approval, logs, and a model behind one interface.",
-      "followup_en": "I would not start by training a new model. I would start by reading access rules and talking to the people who own the documents. A first use case should be question answering with citations, because it is useful and easier to judge than full automation. The test set comes before the demo. In month three the interface matters, because it lets us move to an in-country model later without a rewrite. Small, measured, and safe.",
-      "answer_ar": "أول شهر أفهم البيانات والمستخدمين، ثاني شهر نموذج أسئلة مع مصادر واختبار، ثالث شهر أحصّنه بموافقة بشرية وسجلات."
-    },
-    {
-      "id": "gen.what_do_you_know_about_us",
-      "category": "personal",
-      "topic": "personal",
-      "question": "What do you know about our organization?",
-      "aliases": [
-        "what do you know about our organization",
-        "what do you know about us",
-        "why do you think ai matters for a ministry of finance",
-        "what do you know about our work",
-        "what does a finance ministry need from AI",
-        "how would AI help a government finance organization",
-        "what is special about AI in a sovereign setting",
-        "why is this not like a startup AI job",
-        "what problems do you think we are trying to solve",
-        "how well do you understand our context"
-      ],
-      "keywords": ["know about us", "our organization", "ministry of finance", "our work"],
-      "listen_for": [
-        "know about our organization",
-        "know about us",
-        "AI for a ministry of finance",
-        "know about our work",
-        "finance ministry need from AI",
-        "government finance organization",
-        "sovereign setting",
-        "not like a startup"
-      ],
-      "answer_en": "You are a government financial organization, so the first question is where the data goes, not which model is smartest. Budget and salary data cannot leave the country, so in-country models come first. The value is answering from your own documents with sources, faster reporting, and a person approving anything that affects money.",
-      "followup_en": "I am not going to pretend I know internal systems I have not seen. What I do know is the constraint: finance data is sensitive, and a wrong automated action is expensive. That is close to payment systems and to the Ministry work I already do. Retrieval with citations is a better first bet than an agent that acts alone. I would want to learn your document stores and approval paths before I talk about tools.",
-      "answer_ar": "أنتم جهة مالية حكومية، فالسؤال الأول أين تذهب البيانات، والقيمة في إجابات من وثائقكم مع مصدر وموافقة بشرية."
-    },
-    {
-      "id": "gen.handle_mistake_in_production",
-      "category": "behavioral",
-      "topic": "personal",
-      "question": "What do you do when you find a bug in production?",
-      "aliases": [
-        "what do you do when you find a bug in production",
-        "how do you handle a production incident",
-        "what if your system fails in production",
-        "tell me how you respond when something breaks",
-        "walk me through an incident from the moment you are told",
-        "what is your first move if users start seeing wrong answers",
-        "how do you handle a live failure in a government system",
-        "do you roll back or patch forward",
-        "how do you communicate during an outage",
-        "what if the model starts hallucinating in production"
-      ],
-      "keywords": ["bug in production", "incident", "fails in production", "breaks"],
-      "listen_for": [
-        "bug in production",
-        "production incident",
-        "system fails",
-        "when something breaks",
-        "wrong answers",
-        "live failure",
-        "roll back",
-        "outage"
-      ],
-      "answer_en": "Stop the damage first, then understand, then fix. Stopping means turn the feature off, roll back, or use a fallback. Then I read the logs and reconstruct what happened, because in finance you must say exactly what the system did. Then I fix the cause and add a test so it cannot return quietly.",
-      "followup_en": "That order comes from payment systems. A rushed patch under pressure can be worse than a short outage. I tell the owner what users see, what we switched off, and when the next update will come. After the fix, I want a test that would have caught it, and a log that an auditor can read. For AI, the same pattern: if answers go wrong, disable the path, do not keep serving guesses while we investigate.",
-      "answer_ar": "أولاً أوقف الضرر، ثم أفهم من السجلات، ثم أصلح السبب وأضيف اختباراً حتى لا يعود بهدوء."
-    },
-    {
-      "id": "gen.ai_ethics",
-      "category": "personal",
-      "topic": "personal",
-      "question": "How do you think about responsible or ethical AI?",
-      "aliases": [
-        "how do you think about responsible ai",
-        "what does ethical ai mean to you",
-        "how do you make sure ai is fair",
-        "what are the risks of ai in government",
-        "how do you keep AI from harming people",
-        "what guardrails do you actually use",
-        "how should government AI be controlled",
-        "what does responsible AI look like in practice",
-        "how do you handle bias and privacy",
-        "when should a human stay in the loop"
-      ],
-      "keywords": ["responsible ai", "ethical", "fair", "risks of ai"],
-      "listen_for": [
-        "responsible AI",
-        "ethical AI",
-        "make sure AI is fair",
-        "risks of AI in government",
-        "guardrails",
-        "bias and privacy",
-        "human in the loop",
-        "harming people"
-      ],
-      "answer_en": "For me it is practical, not a speech. The system should show its source, say I do not know instead of guessing, and keep personal data inside the organization. A person must approve anything that affects a person or money. In my BTEC work, the similarity checker showed evidence, and a teacher decided.",
-      "followup_en": "Fairness for me is also about false alarms. If a tool flags too many students, it is not fair, even if the model is clever. Privacy means we do not send student identifiers to an outside model. Logging means we can reconstruct a decision later. I do not treat responsible AI as a poster on the wall. It is design choices: sources, refusal, approval, and a small data footprint.",
-      "answer_ar": "الذكاء الاصطناعي المسؤول عندي عملي: مصدر، وما يخمن، وبيانات داخل الجهة، وشخص يوافق على أي قرار يمس الناس أو المال."
-    },
-    {
-      "id": "gen.anything_else",
-      "category": "personal",
-      "topic": "personal",
-      "question": "Is there anything else you would like to add?",
-      "aliases": [
-        "is there anything else you would like to add",
-        "anything else we should know about you",
-        "any final words",
-        "is there something we did not ask that you want to mention",
-        "before we close, anything we missed",
-        "do you want to leave us with one last point",
-        "any closing comments",
-        "is there a message you want us to remember",
-        "anything you wish we had asked",
-        "last chance to add something"
-      ],
-      "keywords": ["anything else", "final words", "did not ask", "add"],
-      "listen_for": [
-        "anything else",
-        "should know about you",
-        "final words",
-        "we did not ask",
-        "before we close",
-        "closing comments",
-        "one last point",
-        "last chance"
-      ],
-      "answer_en": "Just one thing. I spent seven years on government payment systems, so I design as if everything will be audited. I bring that into AI: answers with sources, a person checking important actions, and full logs. If I have not used a tool in production, I will say so. Thank you for your time.",
-      "followup_en": "The point I want remembered is not a slogan. It is a habit from KNET payment work: if you cannot reconstruct it, you should not put it in production. I can learn a new serving stack. I will not hide a gap. If this role needs in-country models, human approval, and measurable quality, that is the work I already try to do at the Ministry, at a smaller scale.",
-      "answer_ar": "أبني كأن كل شيء سيُراجع: مصادر، موافقة شخص، وسجلات. وإذا الأداة ليست في الإنتاج، أقول ذلك."
-    },
-    {
-      "id": "gen.hobbies",
-      "category": "personal",
-      "topic": "personal",
-      "question": "What do you do outside of work?",
-      "aliases": [
-        "what do you do outside of work",
-        "what are your hobbies",
-        "how do you spend your free time",
-        "what do you do for fun",
-        "tell me about life outside the office",
-        "how do you switch off after work",
-        "what do you do on weekends",
-        "any interests besides AI",
-        "how do you recharge",
-        "what does a normal evening look like for you"
-      ],
-      "keywords": ["outside of work", "hobbies", "free time", "fun"],
-      "listen_for": [
-        "outside of work",
-        "hobbies",
-        "free time",
-        "do for fun",
-        "life outside the office",
-        "switch off",
-        "weekends",
-        "how do you recharge"
-      ],
-      "answer_en": "I spend time with my family. I also read and try AI tools on small real problems. I honestly enjoy that. I completed a diploma in educational administration recently, so learning is part of how I rest. And I like walking to keep fit and clear my head.",
-      "followup_en": "I will not invent a long hobby list. Family time comes first. The diploma was extra study, not a job. Trying a new model on a small problem is curiosity, not production work, and I keep that line clear in interviews. Walking is simply how I clear my head. That is the honest picture.",
-      "answer_ar": "خارج العمل أقضي وقتاً مع العائلة، وأقرأ وأجرّب أدوات الذكاء الاصطناعي، وأمشي لأصفّي ذهني."
-    },
-    {
-      "id": "gen.remote_onsite",
-      "category": "personal",
-      "topic": "personal",
-      "question": "Are you comfortable working on-site?",
-      "aliases": [
-        "are you comfortable working on site",
-        "do you prefer remote or on site",
-        "can you work from the office full time",
-        "how do you feel about hybrid work",
-        "are you open to relocating and coming to the office",
-        "would you be in the building every day",
-        "can you do on-site because of data sensitivity",
-        "is remote a requirement for you",
-        "are you willing to work from the ministry premises",
-        "how flexible are you on location"
-      ],
-      "keywords": ["on site", "remote", "office", "hybrid"],
-      "listen_for": [
-        "comfortable working on site",
-        "remote or on site",
-        "office full time",
-        "hybrid work",
-        "relocating",
-        "in the building every day",
-        "data sensitivity",
-        "ministry premises"
-      ],
-      "answer_en": "Yes, fully comfortable on-site. For a government financial organization with sensitive data, office work is often the right model, and I understand why. I have worked on-site in ministries and organizations for my whole career. I can also work well in a hybrid setup if the organization supports it.",
-      "followup_en": "I am not asking for remote as a condition. Sensitive finance data is easier to control in the building, with people you can talk to. I have done that in Kuwait and in Jordan. If the team later offers hybrid days, I can use them well. If the role is full-time on-site, that is fine. Location should follow the data rules, not my preference.",
-      "answer_ar": "مرتاح بالعمل من الموقع، وأفهم لماذا تفضّل الجهة المالية الحكومية المكتب بسبب حساسية البيانات."
-    },
-    {
-      "id": "gen.biggest_challenge_career",
-      "category": "behavioral",
-      "topic": "personal",
-      "question": "What was the biggest challenge in your career?",
-      "aliases": [
-        "what was the biggest challenge in your career",
-        "tell me about a difficult problem you solved",
-        "what is the hardest technical problem you faced",
-        "describe a challenging situation and how you handled it",
-        "what was the hardest thing about working with teachers",
-        "tell me about a problem that was not only technical",
-        "when did you have to change the product, not the model",
-        "what challenge took the longest to get right",
-        "what was difficult about putting AI in front of users",
-        "give me your toughest professional problem"
-      ],
-      "keywords": ["biggest challenge", "difficult problem", "hardest", "challenging"],
-      "listen_for": [
-        "biggest challenge",
-        "difficult problem you solved",
-        "hardest technical problem",
-        "challenging situation",
-        "not only technical",
-        "change the product",
-        "AI in front of users",
-        "toughest professional problem"
-      ],
-      "answer_en": "Making teachers trust an AI tool that touches student assessment. The technical part of the similarity checker was manageable. The hard part was trust: a tool that accuses students gets rejected. I changed the design, not the model. The system flags, shows both passages, and the teacher decides.",
-      "followup_en": "Embeddings and cosine similarity were the easy layer. The hard layer was false alarms and fairness. We sat with teachers on real cases and moved the threshold until the list was usable. We also refused to let the tool issue a verdict. In sensitive domains, the human boundary is the product. That lesson is why I still push for approval steps in question generation, even when someone wants full automation.",
-      "answer_ar": "أصعب تحدي كان ثقة المعلمين بأداة تمس تقييم الطالب: غيّرت التصميم ليعرض الدليل والمعلم يقرر."
-    },
-    {
-      "id": "gen.why_ai_field",
-      "category": "personal",
-      "topic": "personal",
-      "question": "Why did you choose AI as a career?",
-      "aliases": [
-        "why did you choose ai as a career",
-        "why are you passionate about ai",
-        "what drew you to artificial intelligence",
-        "why ai",
-        "why move from project management into AI",
-        "when did you decide AI was the path",
-        "why not stay in software project management",
-        "what made you shift into machine learning",
-        "why this field and not another",
-        "what clicked for you about AI"
-      ],
-      "keywords": ["choose ai", "passionate", "drew you", "why ai"],
-      "listen_for": [
-        "why did you choose AI",
-        "passionate about AI",
-        "drew you to",
-        "why AI",
-        "move from project management",
-        "AI was the path",
-        "shift into machine learning",
-        "what clicked"
-      ],
-      "answer_en": "It is the first technology in my career that can read language and help people directly, not only move data around. When I built the voice kiosk and saw people talk to a machine and get help, I knew this was the direction. Making these systems safe is as interesting as making them work.",
-      "followup_en": "I did not start in generative AI. I started in payments, then applied machine learning at Al Najat: the Whisper kiosk, early-warning, and helpdesk classification. The kiosk was speech to text and a flow, not an LLM. The Ministry work from 2023 is where RAG and generation began. I moved into AI because users could finally talk and read with the system. I stayed because the safety problems are real, and I like solving them.",
-      "answer_ar": "اخترت الذكاء الاصطناعي لأنه يقرأ اللغة ويساعد الناس مباشرة، ومن يوم الكشك الصوتي عرفت أن هذا اتجاهي."
-    }
-  ]
+ "bank": "general",
+ "description": "General and behavioral interview questions answered in Abdullah's voice, grounded in his CV. Easy spoken English.",
+ "entries": [
+  {
+   "id": "gen.strengths",
+   "category": "personal",
+   "topic": "personal",
+   "question": "What are your strengths?",
+   "aliases": [
+    "what are your strengths",
+    "what is your greatest strength",
+    "what are you good at",
+    "tell me three strengths",
+    "what would you say you do well",
+    "if I asked your manager, what are you strongest at",
+    "what makes you a strong candidate for this role",
+    "walk me through your strengths",
+    "what do you bring to the team",
+    "where do you add the most value"
+   ],
+   "keywords": [
+    "strengths",
+    "strength",
+    "good at"
+   ],
+   "listen_for": [
+    "strengths",
+    "what are you good at",
+    "greatest strength",
+    "what do you bring",
+    "strongest at",
+    "add the most value",
+    "three strengths",
+    "key strengths"
+   ],
+   "answer_en": "I have a strong mix of technical AI skills and project management experience. I can build AI solutions and also manage stakeholders, timelines, and delivery. I am hands-on with LLMs, RAG, Python, and APIs, and I have a proven track record of delivering projects in education and payment systems.",
+   "followup_en": "In seven years of government payments, a wrong action was worse than a slow one. So I put checks in AI work too: a person reviews important output, and we keep a log. Simple tools help because they are easier to test and explain. If I only studied a tool, I say that. I do not pretend production experience I do not have.",
+   "answer_ar": "لدي مزيج قوي من المهارات التقنية في الذكاء الاصطناعي وخبرة إدارة المشاريع. أستطيع بناء حلول الذكاء الاصطناعي وإدارة أصحاب المصلحة والجداول الزمنية والتسليم. أنا عملي في LLMs و RAG و Python و APIs، ولدي سجل حافل في تسليم المشاريع في التعليم وأنظمة الدفع."
+  },
+  {
+   "id": "gen.weaknesses",
+   "category": "personal",
+   "topic": "personal",
+   "question": "What are your weaknesses?",
+   "aliases": [
+    "what are your weaknesses",
+    "what is your greatest weakness",
+    "what is one area you need to improve",
+    "what would your manager say you should work on",
+    "what are you not good at",
+    "where do you still have a gap",
+    "if you could improve one thing, what would it be",
+    "what is something you are still learning",
+    "tell me about a development area",
+    "what do you struggle with at work"
+   ],
+   "keywords": [
+    "weakness",
+    "weaknesses",
+    "improve",
+    "not good at"
+   ],
+   "listen_for": [
+    "weakness",
+    "area to improve",
+    "not good at",
+    "manager say you should work on",
+    "still learning",
+    "development area",
+    "gap in your skills",
+    "what do you struggle with"
+   ],
+   "answer_en": "I sometimes spend too much time perfecting details. I am learning to balance perfection with delivery speed, especially in fast-paced AI projects. I now set time limits for exploration and focus on iterative delivery.",
+   "followup_en": "GPU serving is different from the CPU systems I already run. I know the ideas: VRAM, batching, and engines like vLLM. I have not operated a cluster in production, so I would not claim that. For the careful part, I keep the first demo light, then move the real logic into tested code before users depend on it.",
+   "answer_ar": "أحيانًا أقضي وقتًا طويلاً في تحسين التفاصيل. أتعلم حاليًا تحقيق التوازن بين الإتقان وسرعة التسليم، خاصة في مشاريع الذكاء الاصطناعي سريعة الوتيرة. الآن أضع حدودًا زمنية للاستكشاف وأركز على التسليم التكراري."
+  },
+  {
+   "id": "gen.why_this_role",
+   "category": "personal",
+   "topic": "personal",
+   "question": "Why do you want this job?",
+   "aliases": [
+    "why do you want this job",
+    "why this role",
+    "why are you interested in this position",
+    "why do you want to work with us",
+    "why this company",
+    "why the ministry of finance",
+    "what attracted you to this vacancy",
+    "why leave your current role for this one",
+    "what is interesting about this opportunity",
+    "why us and not another organization"
+   ],
+   "keywords": [
+    "why this job",
+    "this role",
+    "interested",
+    "attracts",
+    "join us",
+    "this company"
+   ],
+   "listen_for": [
+    "why this job",
+    "why this role",
+    "why us",
+    "why this company",
+    "what attracted you",
+    "why the ministry",
+    "interested in this position",
+    "why do you want to join"
+   ],
+   "answer_en": "I want work where AI must be careful, not just clever. A finance team needs answers from its own documents, with the source shown, and a person checking. I built that kind of system at the Ministry of Education. I also want bigger scale, and data that must stay in the country.",
+   "followup_en": "At the Ministry I already build systems that answer from our own material and keep a person in the loop. A finance organization is the same idea, with higher risk. I am interested in in-country models because the data cannot leave. That is a real engineering problem, not a demo. I also want generative AI to be the main work, not a side project.",
+   "answer_ar": "أريد عملاً يكون فيه الذكاء الاصطناعي حذراً وموثّقاً من وثائقكم، ومع بيانات لا تخرج من الدولة."
+  },
+  {
+   "id": "gen.five_years",
+   "category": "personal",
+   "topic": "personal",
+   "question": "Where do you see yourself in five years?",
+   "aliases": [
+    "where do you see yourself in five years",
+    "what are your career goals",
+    "what is your long term plan",
+    "where do you want to be in a few years",
+    "what is your ambition",
+    "how do you see your career developing here",
+    "what does success look like for you in five years",
+    "where are you heading professionally",
+    "what is the next step in your career",
+    "do you want to stay technical or move into management"
+   ],
+   "keywords": [
+    "five years",
+    "career goals",
+    "long term",
+    "ambition"
+   ],
+   "listen_for": [
+    "five years",
+    "career goals",
+    "long term plan",
+    "where do you see yourself",
+    "your ambition",
+    "next step in your career",
+    "stay technical",
+    "move into management"
+   ],
+   "answer_en": "I want to lead the AI engineering work in a place like this. That means owning retrieval, agents, checks, and how we measure quality. I want to explain to an auditor why the system gave an answer. The next step is production work with models that stay inside the country.",
+   "followup_en": "I still want to stay close to the code, not only manage people. In five years I want to mentor engineers and own the architecture: retrieval, agents, evaluation, and how we deploy models on our own hardware. I have the delivery background from PMP and payment projects. The missing piece is deep production experience with in-country LLM serving, and that is what I want to build here.",
+   "answer_ar": "بعد خمس سنوات أريد أن أقود هندسة الذكاء الاصطناعي هنا، وأن أشرح لأي مدقق لماذا أجاب النظام بهذا الشكل."
+  },
+  {
+   "id": "gen.biggest_achievement",
+   "category": "personal",
+   "topic": "personal",
+   "question": "What is your biggest professional achievement?",
+   "aliases": [
+    "what is your biggest professional achievement",
+    "what is your greatest accomplishment",
+    "tell me about something you are proud of",
+    "what is your proudest moment at work",
+    "what result are you most proud of",
+    "tell me about a win you had",
+    "what is the best thing you have shipped",
+    "which project are you most proud of",
+    "what impact are you most proud of",
+    "give me an example of success in your career"
+   ],
+   "keywords": [
+    "achievement",
+    "accomplishment",
+    "proud"
+   ],
+   "listen_for": [
+    "biggest achievement",
+    "greatest accomplishment",
+    "proud of",
+    "proudest moment",
+    "best thing you shipped",
+    "which project are you proud of",
+    "a win you had",
+    "impact you are proud of"
+   ],
+   "answer_en": "The BTEC similarity checker at the Ministry of Education. Review used to mean reading everything by hand. Now teachers get a short list of flagged cases, with the two texts side by side. I am proud that they trusted it, because it never accused a student. It only showed the evidence, and the teacher decided.",
+   "followup_en": "This is not an LLM system. It uses embeddings, chunking, and cosine similarity, then shows both passages. Teachers used to spend a long time reading every assignment. After we tuned the threshold with them on real cases, they reviewed a short list instead. Trust came from the design: the tool flags, a person decides. That is the result I am proud of, not a fancy model.",
+   "answer_ar": "أفخر بفاحص التشابه في BTEC: قلّل المراجعة اليدوية، ولم يتهم الطالب، والمعلم هو من يقرر."
+  },
+  {
+   "id": "gen.failure",
+   "category": "behavioral",
+   "topic": "personal",
+   "question": "Tell me about a time you failed or made a mistake",
+   "aliases": [
+    "tell me about a time you failed",
+    "tell me about a mistake you made",
+    "describe a failure and what you learned",
+    "what is the biggest mistake you made at work",
+    "tell me about a project that did not go well",
+    "when did something go wrong on your watch",
+    "give me an example of a lesson you learned the hard way",
+    "have you ever been wrong about a model",
+    "tell me about a time your result looked good but was not",
+    "what would you do differently after that failure"
+   ],
+   "keywords": [
+    "failed",
+    "failure",
+    "mistake",
+    "did not go well",
+    "learned"
+   ],
+   "listen_for": [
+    "a time you failed",
+    "a mistake you made",
+    "project that did not go well",
+    "what you learned",
+    "something went wrong",
+    "been wrong about a model",
+    "lesson the hard way",
+    "do differently next time"
+   ],
+   "answer_en": "In the early-warning project, my first version looked strong on paper, then failed in real use. The problem was data leakage. I scaled before the split, and a random split let later terms leak into earlier ones. The score was fake. I put every step in a Scikit-learn Pipeline and split by time.",
+   "followup_en": "This was classic machine learning at Al Najat, not an LLM. The model looked good because it had seen the future. After I fixed the pipeline and used a time-based split, the score dropped, which was the honest number. Now a high test score makes me suspicious until I know how the data was split. That habit still helps me when people show me a shiny demo metric.",
+   "answer_ar": "في الإنذار المبكر كان التقييم وهمي بسبب تسريب البيانات، فتعلمت أحترم ترتيب الزمن داخل الـ Pipeline."
+  },
+  {
+   "id": "gen.conflict",
+   "category": "behavioral",
+   "topic": "personal",
+   "question": "Tell me about a conflict with a colleague and how you handled it",
+   "aliases": [
+    "tell me about a conflict with a colleague",
+    "how do you handle disagreements at work",
+    "describe a time you disagreed with a coworker",
+    "how do you deal with conflict in a team",
+    "tell me about a time you and a teammate did not agree",
+    "have you ever had friction with someone you work with",
+    "what happens when two engineers want different designs",
+    "give me an example of resolving a disagreement",
+    "how do you handle pushback from a colleague",
+    "tell me about a tense moment in a project"
+   ],
+   "keywords": [
+    "conflict",
+    "disagreement",
+    "disagreed",
+    "coworker",
+    "colleague"
+   ],
+   "listen_for": [
+    "conflict with a colleague",
+    "disagreed with a coworker",
+    "disagreement at work",
+    "friction with someone",
+    "two engineers want different",
+    "resolving a disagreement",
+    "pushback from a colleague",
+    "tense moment in a project"
+   ],
+   "answer_en": "In question generation, a colleague wanted the system to publish questions by itself to save time. I wanted a teacher to approve every question. I asked what worried him, and it was speed. We measured a short review, not a full rewrite. We kept approval, and it was still much faster.",
+   "followup_en": "The generation pipeline retrieves unit content, writes questions from it, and stores a structured result. Production orchestration is Python, with a teacher approval step before save. Auto-publish would have been faster on paper, but a bad question in an exam is worse than a short review. Once we timed the review, the speed concern went away. I try to solve the real worry, not win the argument.",
+   "answer_ar": "زميلي أراد النشر التلقائي للأسئلة، واتفقنا على موافقة المعلم بعدما تأكدنا أن المراجعة سريعة."
+  },
+  {
+   "id": "gen.disagree_manager",
+   "category": "behavioral",
+   "topic": "personal",
+   "question": "Tell me about a time you disagreed with your manager",
+   "aliases": [
+    "tell me about a time you disagreed with your manager",
+    "have you ever pushed back on a decision",
+    "what do you do when you disagree with leadership",
+    "have you ever said no to your boss",
+    "tell me about a time you challenged a request from above",
+    "how do you handle pressure from management to go faster",
+    "have you ever raised a risk that leadership did not want to hear",
+    "give me an example of constructive pushback",
+    "what if your manager asks you to send data to an external API",
+    "how do you disagree without being difficult"
+   ],
+   "keywords": [
+    "disagreed with your manager",
+    "pushed back",
+    "leadership",
+    "disagree"
+   ],
+   "listen_for": [
+    "disagreed with your manager",
+    "pushed back on a decision",
+    "disagree with leadership",
+    "said no to your boss",
+    "challenged a request",
+    "pressure from management",
+    "send data to an external API",
+    "constructive pushback"
+   ],
+   "answer_en": "Yes. Early in the BTEC work, there was pressure to send data to an outside model. I agreed we needed speed, but not with sending student data. I suggested curriculum text only, hide names, and one internal interface for model calls. Management accepted it, so we can change the model later without a rewrite.",
+   "followup_en": "I did not say no and stop. I offered a path that still showed results. We classify content first, send only curriculum material, and keep student identifiers out. All model calls go through one internal interface, so later we can move on-premise without rewriting the product. I presented it as a risk choice with an alternative. That is usually easier for a manager to accept than a hard block.",
+   "answer_ar": "لم أوافق على إرسال بيانات الطلاب لنموذج خارجي، واقترحت مساراً أسرع وآمناً عبر واجهة داخلية."
+  },
+  {
+   "id": "gen.pressure",
+   "category": "behavioral",
+   "topic": "personal",
+   "question": "How do you work under pressure and tight deadlines?",
+   "aliases": [
+    "how do you work under pressure",
+    "how do you handle tight deadlines",
+    "tell me about a stressful situation at work",
+    "how do you deal with stress",
+    "what do you do when everything is urgent",
+    "how do you stay calm when the date cannot move",
+    "tell me about a time you had to deliver quickly",
+    "how do you handle last minute requests",
+    "can you work with an aggressive timeline",
+    "what happens when the ministry needs it this week"
+   ],
+   "keywords": [
+    "pressure",
+    "deadlines",
+    "stressful",
+    "stress"
+   ],
+   "listen_for": [
+    "under pressure",
+    "tight deadlines",
+    "stressful situation",
+    "deal with stress",
+    "everything is urgent",
+    "deliver quickly",
+    "last minute requests",
+    "aggressive timeline"
+   ],
+   "answer_en": "Payment systems taught me that pressure is normal and panic is optional. I make the scope clear, so we agree what must ship and what can wait. I protect testing, because skipping it creates a bigger problem later. And I speak early. A manager prefers a risk on Monday to a surprise on Friday.",
+   "followup_en": "In ministry payment work, a missed date was bad, but a wrong payment was worse. So I cut scope before I cut testing. I write down what is in and what is out, then I protect user acceptance. If a new request arrives mid-week, I say what will slip. Silence under pressure is what creates Friday emergencies. I would rather look cautious than look surprised.",
+   "answer_ar": "تحت الضغط أحدد النطاق بوضوح، ولا أضحّي بالاختبار، وأخبر المدير بالمخاطر مبكراً."
+  },
+  {
+   "id": "gen.teamwork",
+   "category": "behavioral",
+   "topic": "personal",
+   "question": "How do you work in a team?",
+   "aliases": [
+    "how do you work in a team",
+    "are you a team player",
+    "describe your teamwork style",
+    "tell me about a successful team project",
+    "how do you collaborate with others",
+    "how do you work with people who are not engineers",
+    "do you prefer to own a piece or work across the team",
+    "how do you hand work over to testers or users",
+    "tell me how you fit into a delivery team",
+    "how do you work with teachers or business users"
+   ],
+   "keywords": [
+    "team",
+    "teamwork",
+    "collaborate",
+    "team player"
+   ],
+   "listen_for": [
+    "work in a team",
+    "team player",
+    "collaborate with others",
+    "teamwork style",
+    "successful team project",
+    "people who are not engineers",
+    "hand work over",
+    "fit into a delivery team"
+   ],
+   "answer_en": "I like clear ownership. Everyone should know what they own and what they hand over. As a project manager I worked with developers, testers, vendors, and ministry users. As an engineer I work with teachers and IT. I explain decisions in plain language, and I listen to the people who will use the system.",
+   "followup_en": "In Kuwait I coordinated whole delivery chains, not only my own tasks. At the Ministry I sit between teachers and IT, so I translate both ways. Teachers know what a fair result looks like. IT knows what can actually run. My job is to keep those two views in the same design. I do not disappear into code and come back with a surprise.",
+   "answer_ar": "أحب ملكية واضحة بين الناس، وأشرح القرار بلغة بسيطة، وأسمع المستخدم لأنه يعرف شكل الإجابة الصحيحة."
+  },
+  {
+   "id": "gen.leadership",
+   "category": "behavioral",
+   "topic": "personal",
+   "question": "Do you have leadership experience?",
+   "aliases": [
+    "do you have leadership experience",
+    "have you led a team",
+    "tell me about your leadership style",
+    "have you managed people",
+    "how do you lead",
+    "have you been a project manager",
+    "how do you lead without being the official boss",
+    "tell me about a time you had to get people aligned",
+    "have you coordinated vendors and internal teams",
+    "what kind of leader are you"
+   ],
+   "keywords": [
+    "leadership",
+    "led a team",
+    "managed people",
+    "lead"
+   ],
+   "listen_for": [
+    "leadership experience",
+    "led a team",
+    "managed people",
+    "leadership style",
+    "been a project manager",
+    "lead without being the boss",
+    "get people aligned",
+    "coordinated vendors"
+   ],
+   "answer_en": "Yes. For seven years I managed software and e-payment projects for Kuwait ministries, including testing, user acceptance, and vendors. My style is clear ownership and honest status. I set the goal and the acceptance checks, then give people room. At the Ministry of Education I lead the AI work technically.",
+   "followup_en": "That Kuwait role was delivery leadership: developers, testers, vendors, and ministry users. I did not write every line of code. I made sure the path to go-live was clear. At the Ministry the leadership is more technical: which design is safe, what we will not send to a model, and how teachers approve output. Both kinds matter. I am not looking to leave the engineering work behind.",
+   "answer_ar": "نعم، سبع سنوات إدارة مشاريع دفع حكومي في الكويت، واليوم أقود اتجاه الذكاء الاصطناعي فنياً في الوزارة."
+  },
+  {
+   "id": "gen.learning_new_tech",
+   "category": "behavioral",
+   "topic": "personal",
+   "question": "How do you learn new technologies and stay up to date?",
+   "aliases": [
+    "how do you stay up to date with ai",
+    "how do you learn new technologies",
+    "how do you keep your skills current",
+    "the field moves fast, how do you keep up",
+    "tell me about something you learned recently",
+    "how do you decide which new tool is worth learning",
+    "do you learn from courses or from building",
+    "how do you avoid chasing every new framework",
+    "what have you been studying lately",
+    "how do you keep up with LLMs"
+   ],
+   "keywords": [
+    "stay up to date",
+    "learn",
+    "keep up",
+    "current",
+    "recently"
+   ],
+   "listen_for": [
+    "stay up to date",
+    "learn new technologies",
+    "keep your skills current",
+    "field moves fast",
+    "learned recently",
+    "studying lately",
+    "keep up with LLMs",
+    "how do you keep up"
+   ],
+   "answer_en": "I learn by building. When RAG became important, I did not only read. I built the question generation pipeline and hit real problems, like state tracking and teacher approval. I follow official docs and test claims on my own data. Lately I have been studying evaluation, because measuring quality is where many teams are weak.",
+   "followup_en": "I read LangChain and LangGraph docs to understand the ideas, but production orchestration for question generation is Python, not LangGraph. Chroma was a prototype, not the production store. Recently I have been going deeper on faithfulness checks and RAGAS-style metrics. I have not run RAGAS as a production gate. I test claims on our own data before I trust a blog post. That keeps me current without collecting tools I cannot support.",
+   "answer_ar": "أتعلم بالبناء على بيانات حقيقية، ومؤخراً أركز على قياس جودة الإجابات لا على جمع أدوات جديدة."
+  },
+  {
+   "id": "gen.prioritize",
+   "category": "behavioral",
+   "topic": "personal",
+   "question": "How do you prioritize your work?",
+   "aliases": [
+    "how do you prioritize your work",
+    "how do you manage multiple tasks",
+    "how do you decide what to work on first",
+    "how do you handle competing priorities",
+    "what do you do when two people want you today",
+    "how do you choose between a feature and a risk",
+    "walk me through your weekly priorities",
+    "how do you avoid doing the loudest task first",
+    "what comes first for you, new features or stability",
+    "how do you handle a growing backlog"
+   ],
+   "keywords": [
+    "prioritize",
+    "multiple tasks",
+    "first",
+    "competing priorities"
+   ],
+   "listen_for": [
+    "prioritize your work",
+    "multiple tasks",
+    "what to work on first",
+    "competing priorities",
+    "two people want you",
+    "feature and a risk",
+    "features or stability",
+    "growing backlog"
+   ],
+   "answer_en": "I prioritize by impact and risk. Anything that touches production stability or data safety comes first, then whatever unblocks other people. Features come after that, ordered by value to users. I keep the list visible, and I renegotiate openly when something new arrives. That is the project manager in me.",
+   "followup_en": "If a model might leak student data, that jumps the queue over a nicer screen. If a tester is blocked, that jumps a nice-to-have feature. I learned this on payment projects: silent slipping is worse than a hard conversation. When a new request arrives, I say what will move down. People can accept a delay they can see. They cannot accept a surprise miss.",
+   "answer_ar": "أولويتي للسلامة واستقرار الإنتاج، ثم ما يفك حظر الآخرين، ثم الميزات حسب فائدتها."
+  },
+  {
+   "id": "gen.feedback",
+   "category": "behavioral",
+   "topic": "personal",
+   "question": "How do you handle criticism or feedback?",
+   "aliases": [
+    "how do you handle criticism",
+    "how do you take feedback",
+    "tell me about a time you received difficult feedback",
+    "how do you react when someone says your work is wrong",
+    "have users ever told you the tool was not good enough",
+    "tell me about feedback that changed your design",
+    "are you defensive when people challenge your work",
+    "how do you handle negative feedback from teachers or users",
+    "what is the hardest feedback you have received",
+    "how do you improve after criticism"
+   ],
+   "keywords": [
+    "criticism",
+    "feedback"
+   ],
+   "listen_for": [
+    "handle criticism",
+    "take feedback",
+    "difficult feedback",
+    "your work is wrong",
+    "tool was not good enough",
+    "feedback that changed your design",
+    "negative feedback",
+    "hardest feedback"
+   ],
+   "answer_en": "I treat feedback like a test result, not an attack. Teachers told me the similarity checker gave too many false alarms. That was hard to hear, but useful. I tuned the threshold with them on real cases and showed evidence side by side. I would rather hear the problem than watch people stop using it.",
+   "followup_en": "False alarms were a trust problem, not only a metric problem. If teachers see too many flags, they ignore the tool. We sat with real assignments, moved the threshold, and changed the screen so both passages were visible. After that, they used it. I ask for the example, not the feeling. An example I can fix. A vague complaint I cannot.",
+   "answer_ar": "أتعامل مع النقد كمعلومة. المعلمون قالوا إن الإنذارات كثيرة، وعدّلت الحد معهم على حالات حقيقية."
+  },
+  {
+   "id": "gen.non_technical_stakeholders",
+   "category": "behavioral",
+   "topic": "personal",
+   "question": "How do you explain technical concepts to non-technical people?",
+   "aliases": [
+    "how do you explain technical concepts to non technical people",
+    "how do you communicate with business stakeholders",
+    "how do you work with non technical teams",
+    "explain ai to a manager who is not technical",
+    "how would you explain this system to a teacher",
+    "how do you avoid jargon with leadership",
+    "can you make a complex idea simple",
+    "how do you brief a minister or a director",
+    "how do you talk about models without saying embeddings",
+    "tell me how you communicate risk to non engineers"
+   ],
+   "keywords": [
+    "non technical",
+    "stakeholders",
+    "business",
+    "explain",
+    "communicate"
+   ],
+   "listen_for": [
+    "explain technical concepts",
+    "non technical people",
+    "business stakeholders",
+    "explain AI to a manager",
+    "explain this to a teacher",
+    "avoid jargon",
+    "brief a director",
+    "communicate risk"
+   ],
+   "answer_en": "I start from their question, not from the technology. A teacher does not care about embeddings. She cares if the tool is fair. So I say: it finds similar passages, shows them to you, and you decide. I show the real output, and I am honest about what the system cannot do.",
+   "followup_en": "Years as a project manager with ministry users taught me that trust comes from a clear sentence, not from impressive words. I use one picture or one real example, then I stop. If I say the model might guess, I say that in the first minute. Hiding limits is how people lose faith later. For finance leaders I would do the same: where the data goes, who approves, and what the log can prove.",
+   "answer_ar": "أبدأ من سؤال الشخص لا من التقنية، وأريه ناتجاً حقيقياً، وأقول بصراحة ما الذي لا يستطيع النظام فعله."
+  },
+  {
+   "id": "gen.ambiguity",
+   "category": "behavioral",
+   "topic": "personal",
+   "question": "How do you handle ambiguous requirements?",
+   "aliases": [
+    "how do you handle ambiguous requirements",
+    "what do you do when the requirements are unclear",
+    "how do you deal with ambiguity",
+    "how do you start a project when the goal is vague",
+    "what if the user cannot tell you exactly what they want",
+    "how do you turn a vague request into something you can build",
+    "tell me about a time the brief was unclear",
+    "how do you avoid building the wrong thing",
+    "what do you do when everyone means something different",
+    "how do you define done when nobody defined it"
+   ],
+   "keywords": [
+    "ambiguous",
+    "unclear",
+    "ambiguity",
+    "vague"
+   ],
+   "listen_for": [
+    "ambiguous requirements",
+    "requirements are unclear",
+    "deal with ambiguity",
+    "goal is vague",
+    "cannot tell you exactly",
+    "vague request",
+    "brief was unclear",
+    "define done"
+   ],
+   "answer_en": "I turn a vague request into a small example. For completion risk, people said find schools at risk. I asked: what does complete mean, on what date, and what should the output look like? We agreed on a definition, ten sample schools, and a one-page output. Then the design was clear.",
+   "followup_en": "That project was SQL, Pandas, and sklearn where the history supported it. No LLM. The word risk meant different things to different people. A sample of ten schools forced a decision: which date, which status, which columns on the page. After that, building was straightforward. I still do this with AI work. If we cannot show one good output, we are not ready to talk about architecture.",
+   "answer_ar": "أحوّل الطلب الغامض إلى مثال صغير: تعريف، عشر حالات، وصفحة واحدة، وبعدها يصبح التصميم واضحاً."
+  },
+  {
+   "id": "gen.motivation",
+   "category": "personal",
+   "topic": "personal",
+   "question": "What motivates you?",
+   "aliases": [
+    "what motivates you",
+    "what gets you excited about work",
+    "why do you do this work",
+    "what do you enjoy most about your job",
+    "what makes a good day at work for you",
+    "when do you feel you did something worthwhile",
+    "what keeps you going in this field",
+    "what part of AI work do you actually like",
+    "what gets you out of bed for this job"
+   ],
+   "keywords": [
+    "motivates",
+    "excited",
+    "enjoy",
+    "why do you do"
+   ],
+   "listen_for": [
+    "what motivates you",
+    "gets you excited",
+    "enjoy most about your job",
+    "good day at work",
+    "something worthwhile",
+    "keeps you going",
+    "part of AI work you like",
+    "why do you do this work"
+   ],
+   "answer_en": "Seeing a system used by real people and trusted by them. When teachers stopped reading every assignment and started reviewing a short, explained list, that was the moment. I also like the puzzle of making AI useful without letting it decide. And I like work where correctness matters, like education and finance.",
+   "followup_en": "A demo that impresses a meeting does not motivate me for long. A tool that a teacher still uses next month does. That is why I care about thresholds, evidence on screen, and approval steps. Payment systems trained me the same way: the work is not finished when the code runs. It is finished when the user trusts the result and an auditor can follow it.",
+   "answer_ar": "يحفّزني أن الناس تستخدم النظام وتثق فيه، وأن الذكاء الاصطناعي يساعد دون أن يقرر وحده."
+  },
+  {
+   "id": "gen.work_environment",
+   "category": "personal",
+   "topic": "personal",
+   "question": "What kind of work environment do you prefer?",
+   "aliases": [
+    "what kind of work environment do you prefer",
+    "describe your ideal work environment",
+    "do you prefer working alone or in a team",
+    "what type of culture suits you",
+    "what kind of team do you do your best work in",
+    "do you like a startup pace or a government pace",
+    "how do you feel about process and documentation",
+    "what environment helps you deliver",
+    "are you comfortable in a regulated organization",
+    "do you need a lot of structure or a lot of freedom"
+   ],
+   "keywords": [
+    "work environment",
+    "ideal",
+    "culture",
+    "alone or in a team"
+   ],
+   "listen_for": [
+    "work environment",
+    "ideal work environment",
+    "alone or in a team",
+    "culture suits you",
+    "startup or government",
+    "regulated organization",
+    "process and documentation",
+    "structure or freedom"
+   ],
+   "answer_en": "A place where correctness and clarity matter more than speed for its own sake. I like clear ownership, honest status, and access to the people who use the system. I am comfortable as the hands-on engineer and as the person explaining work to management. Government and regulated environments suit me.",
+   "followup_en": "I have spent most of my career in ministries and similar organizations, so I am used to approvals, audits, and shared ownership. I can move fast on a prototype, but I do not enjoy a culture that hides problems to look quick. I work well alone on a technical piece, and I work well in a team when the interfaces are clear. Both are fine. Unclear ownership is what slows me down.",
+   "answer_ar": "أرتاح في بيئة تهتم بالصحة والوضوح أكثر من السرعة، وخاصة العمل الحكومي المنضبط."
+  },
+  {
+   "id": "gen.three_words",
+   "category": "personal",
+   "topic": "personal",
+   "question": "Describe yourself in three words",
+   "aliases": [
+    "describe yourself in three words",
+    "how would your colleagues describe you",
+    "how would you describe your personality",
+    "what three words describe you",
+    "if I asked your team about you, what would they say",
+    "give me three adjectives for yourself",
+    "how do people experience working with you",
+    "what is your working style in a few words",
+    "sum up your professional character",
+    "how would a teacher you work with describe you"
+   ],
+   "keywords": [
+    "three words",
+    "describe you",
+    "personality",
+    "colleagues describe"
+   ],
+   "listen_for": [
+    "three words",
+    "colleagues describe you",
+    "your personality",
+    "three adjectives",
+    "working with you",
+    "working style",
+    "professional character",
+    "how would your team describe you"
+   ],
+   "answer_en": "Careful, practical, and honest. Careful because I design as if someone will audit the work. Practical because I pick the simplest tool that solves the problem. Honest because I say what I have done in production and what I have not. In this field that honesty protects the organization.",
+   "followup_en": "Careful does not mean slow forever. It means I do not skip the check that prevents a bad decision. Practical means I will use sklearn if it is enough, not a neural network for show. Honest means if LangGraph or vLLM is study knowledge, I say so. Colleagues usually see the same three things: I document, I simplify, and I do not oversell.",
+   "answer_ar": "ثلاث كلمات: حذر، عملي، وصادق. أصمّم كأن العمل سيُراجع، وأختار أبسط أداة، ولا أدّعي خبرة إنتاج ليست عندي."
+  },
+  {
+   "id": "gen.questions_for_us",
+   "category": "personal",
+   "topic": "personal",
+   "question": "Do you have any questions for us?",
+   "aliases": [
+    "do you have any questions for us",
+    "any questions from your side",
+    "is there anything you would like to ask us",
+    "what would you like to know about us",
+    "what questions do you have about the role",
+    "anything you want to ask the panel",
+    "what are you curious about in this team",
+    "do you want to know anything about the work",
+    "your turn, any questions",
+    "what should we tell you before we finish"
+   ],
+   "keywords": [
+    "questions for us",
+    "ask us",
+    "your side",
+    "know about us"
+   ],
+   "listen_for": [
+    "questions for us",
+    "from your side",
+    "anything you would like to ask",
+    "questions about the role",
+    "ask the panel",
+    "curious about this team",
+    "your turn",
+    "before we finish"
+   ],
+   "answer_en": "Yes. Where does the data live today, and is there already an on-premise or in-country model? Which use case comes first: document question answering, reporting, or workflow? And how do you check AI quality before launch, a test set and human approval, or would I set that up?",
+   "followup_en": "Those three questions tell me if the job is real engineering or only a demo. If data already has a home, I can map sensitivity on day one. If there is no in-country model yet, building that path is part of the role, and I want that to be explicit. If there is no test set, I would rather know now. I am asking how the system will be judged, not about perks.",
+   "answer_ar": "أسأل أين البيانات اليوم، وما أول حالة استخدام، وكيف تقيسون جودة الذكاء الاصطناعي قبل الإطلاق."
+  },
+  {
+   "id": "gen.salary",
+   "category": "personal",
+   "topic": "personal",
+   "question": "What are your salary expectations?",
+   "aliases": [
+    "what are your salary expectations",
+    "how much do you expect to earn",
+    "what is your expected salary",
+    "what compensation are you looking for",
+    "what package do you have in mind",
+    "how do you think about compensation for this move",
+    "what would make the offer work for you",
+    "are you flexible on salary",
+    "what range are you targeting",
+    "how should we think about your compensation"
+   ],
+   "keywords": [
+    "salary",
+    "compensation",
+    "earn",
+    "expected"
+   ],
+   "listen_for": [
+    "salary expectations",
+    "expect to earn",
+    "expected salary",
+    "compensation",
+    "package do you have in mind",
+    "flexible on salary",
+    "what range",
+    "make the offer work"
+   ],
+   "answer_en": "I am flexible. The role and the impact matter more than a number today. I would expect a package in line with a senior AI engineer in the UAE government sector, given fifteen years of experience and relocation. I am happy to discuss a range once I understand the full scope and benefits.",
+   "followup_en": "I am not going to invent a number in this meeting. Relocation, housing, and benefits change the picture. I want the scope first: seniority, on-site expectation, and how central the AI work is. After that I can talk about a range that matches the market for this kind of government role. I would rather be aligned than pick a figure that surprises either side.",
+   "answer_ar": "مرن، وأتوقع عرضاً يتناسب مع مهندس ذكاء اصطناعي أول في القطاع الحكومي مع خبرة خمسة عشر عاماً وانتقال."
+  },
+  {
+   "id": "gen.first_90_days",
+   "category": "personal",
+   "topic": "personal",
+   "question": "What would you do in your first ninety days?",
+   "aliases": [
+    "what would you do in your first ninety days",
+    "what would your first three months look like",
+    "how would you start in this role",
+    "what is your plan for the first months",
+    "if you joined on Monday, what would you do first",
+    "how would you ramp up without breaking anything",
+    "what would your first win look like",
+    "walk me through your first quarter",
+    "how quickly would you try to put a model in production",
+    "what would you learn before you build"
+   ],
+   "keywords": [
+    "ninety days",
+    "first three months",
+    "first months",
+    "start in this role"
+   ],
+   "listen_for": [
+    "first ninety days",
+    "first three months",
+    "start in this role",
+    "plan for the first months",
+    "joined on Monday",
+    "first win",
+    "first quarter",
+    "before you build"
+   ],
+   "answer_en": "First month I listen and map: where data lives, how sensitive it is, and who the users are. Second month I pick one useful, lower-risk case, usually document questions with sources, and a small test set. Third month I harden it: checks, human approval, logs, and a model behind one interface.",
+   "followup_en": "I would not start by training a new model. I would start by reading access rules and talking to the people who own the documents. A first use case should be question answering with citations, because it is useful and easier to judge than full automation. The test set comes before the demo. In month three the interface matters, because it lets us move to an in-country model later without a rewrite. Small, measured, and safe.",
+   "answer_ar": "أول شهر أفهم البيانات والمستخدمين، ثاني شهر نموذج أسئلة مع مصادر واختبار، ثالث شهر أحصّنه بموافقة بشرية وسجلات."
+  },
+  {
+   "id": "gen.what_do_you_know_about_us",
+   "category": "personal",
+   "topic": "personal",
+   "question": "What do you know about our organization?",
+   "aliases": [
+    "what do you know about our organization",
+    "what do you know about us",
+    "why do you think ai matters for a ministry of finance",
+    "what do you know about our work",
+    "what does a finance ministry need from AI",
+    "how would AI help a government finance organization",
+    "what is special about AI in a sovereign setting",
+    "why is this not like a startup AI job",
+    "what problems do you think we are trying to solve",
+    "how well do you understand our context"
+   ],
+   "keywords": [
+    "know about us",
+    "our organization",
+    "ministry of finance",
+    "our work"
+   ],
+   "listen_for": [
+    "know about our organization",
+    "know about us",
+    "AI for a ministry of finance",
+    "know about our work",
+    "finance ministry need from AI",
+    "government finance organization",
+    "sovereign setting",
+    "not like a startup"
+   ],
+   "answer_en": "You are a government financial organization, so the first question is where the data goes, not which model is smartest. Budget and salary data cannot leave the country, so in-country models come first. The value is answering from your own documents with sources, faster reporting, and a person approving anything that affects money.",
+   "followup_en": "I am not going to pretend I know internal systems I have not seen. What I do know is the constraint: finance data is sensitive, and a wrong automated action is expensive. That is close to payment systems and to the Ministry work I already do. Retrieval with citations is a better first bet than an agent that acts alone. I would want to learn your document stores and approval paths before I talk about tools.",
+   "answer_ar": "أنتم جهة مالية حكومية، فالسؤال الأول أين تذهب البيانات، والقيمة في إجابات من وثائقكم مع مصدر وموافقة بشرية."
+  },
+  {
+   "id": "gen.handle_mistake_in_production",
+   "category": "behavioral",
+   "topic": "personal",
+   "question": "What do you do when you find a bug in production?",
+   "aliases": [
+    "what do you do when you find a bug in production",
+    "how do you handle a production incident",
+    "what if your system fails in production",
+    "tell me how you respond when something breaks",
+    "walk me through an incident from the moment you are told",
+    "what is your first move if users start seeing wrong answers",
+    "how do you handle a live failure in a government system",
+    "do you roll back or patch forward",
+    "how do you communicate during an outage",
+    "what if the model starts hallucinating in production"
+   ],
+   "keywords": [
+    "bug in production",
+    "incident",
+    "fails in production",
+    "breaks"
+   ],
+   "listen_for": [
+    "bug in production",
+    "production incident",
+    "system fails",
+    "when something breaks",
+    "wrong answers",
+    "live failure",
+    "roll back",
+    "outage"
+   ],
+   "answer_en": "Stop the damage first, then understand, then fix. Stopping means turn the feature off, roll back, or use a fallback. Then I read the logs and reconstruct what happened, because in finance you must say exactly what the system did. Then I fix the cause and add a test so it cannot return quietly.",
+   "followup_en": "That order comes from payment systems. A rushed patch under pressure can be worse than a short outage. I tell the owner what users see, what we switched off, and when the next update will come. After the fix, I want a test that would have caught it, and a log that an auditor can read. For AI, the same pattern: if answers go wrong, disable the path, do not keep serving guesses while we investigate.",
+   "answer_ar": "أولاً أوقف الضرر، ثم أفهم من السجلات، ثم أصلح السبب وأضيف اختباراً حتى لا يعود بهدوء."
+  },
+  {
+   "id": "gen.ai_ethics",
+   "category": "personal",
+   "topic": "personal",
+   "question": "How do you think about responsible or ethical AI?",
+   "aliases": [
+    "how do you think about responsible ai",
+    "what does ethical ai mean to you",
+    "how do you make sure ai is fair",
+    "what are the risks of ai in government",
+    "how do you keep AI from harming people",
+    "how should government AI be controlled",
+    "what does responsible AI look like in practice",
+    "how do you handle bias and privacy",
+    "when should a human stay in the loop"
+   ],
+   "keywords": [
+    "responsible ai",
+    "ethical",
+    "fair",
+    "risks of ai"
+   ],
+   "listen_for": [
+    "responsible AI",
+    "ethical AI",
+    "make sure AI is fair",
+    "risks of AI in government",
+    "guardrails",
+    "bias and privacy",
+    "human in the loop",
+    "harming people"
+   ],
+   "answer_en": "For me it is practical, not a speech. The system should show its source, say I do not know instead of guessing, and keep personal data inside the organization. A person must approve anything that affects a person or money. In my BTEC work, the similarity checker showed evidence, and a teacher decided.",
+   "followup_en": "Fairness for me is also about false alarms. If a tool flags too many students, it is not fair, even if the model is clever. Privacy means we do not send student identifiers to an outside model. Logging means we can reconstruct a decision later. I do not treat responsible AI as a poster on the wall. It is design choices: sources, refusal, approval, and a small data footprint.",
+   "answer_ar": "الذكاء الاصطناعي المسؤول عندي عملي: مصدر، وما يخمن، وبيانات داخل الجهة، وشخص يوافق على أي قرار يمس الناس أو المال."
+  },
+  {
+   "id": "gen.anything_else",
+   "category": "personal",
+   "topic": "personal",
+   "question": "Is there anything else you would like to add?",
+   "aliases": [
+    "is there anything else you would like to add",
+    "anything else we should know about you",
+    "any final words",
+    "is there something we did not ask that you want to mention",
+    "before we close, anything we missed",
+    "do you want to leave us with one last point",
+    "any closing comments",
+    "is there a message you want us to remember",
+    "anything you wish we had asked",
+    "last chance to add something"
+   ],
+   "keywords": [
+    "anything else",
+    "final words",
+    "did not ask",
+    "add"
+   ],
+   "listen_for": [
+    "anything else",
+    "should know about you",
+    "final words",
+    "we did not ask",
+    "before we close",
+    "closing comments",
+    "one last point",
+    "last chance"
+   ],
+   "answer_en": "Just one thing. I spent seven years on government payment systems, so I design as if everything will be audited. I bring that into AI: answers with sources, a person checking important actions, and full logs. If I have not used a tool in production, I will say so. Thank you for your time.",
+   "followup_en": "The point I want remembered is not a slogan. It is a habit from KNET payment work: if you cannot reconstruct it, you should not put it in production. I can learn a new serving stack. I will not hide a gap. If this role needs in-country models, human approval, and measurable quality, that is the work I already try to do at the Ministry, at a smaller scale.",
+   "answer_ar": "أبني كأن كل شيء سيُراجع: مصادر، موافقة شخص، وسجلات. وإذا الأداة ليست في الإنتاج، أقول ذلك."
+  },
+  {
+   "id": "gen.hobbies",
+   "category": "personal",
+   "topic": "personal",
+   "question": "What do you do outside of work?",
+   "aliases": [
+    "what do you do outside of work",
+    "what are your hobbies",
+    "how do you spend your free time",
+    "what do you do for fun",
+    "tell me about life outside the office",
+    "how do you switch off after work",
+    "what do you do on weekends",
+    "any interests besides AI",
+    "how do you recharge",
+    "what does a normal evening look like for you"
+   ],
+   "keywords": [
+    "outside of work",
+    "hobbies",
+    "free time",
+    "fun"
+   ],
+   "listen_for": [
+    "outside of work",
+    "hobbies",
+    "free time",
+    "do for fun",
+    "life outside the office",
+    "switch off",
+    "weekends",
+    "how do you recharge"
+   ],
+   "answer_en": "I spend time with my family. I also read and try AI tools on small real problems. I honestly enjoy that. I completed a diploma in educational administration recently, so learning is part of how I rest. And I like walking to keep fit and clear my head.",
+   "followup_en": "I will not invent a long hobby list. Family time comes first. The diploma was extra study, not a job. Trying a new model on a small problem is curiosity, not production work, and I keep that line clear in interviews. Walking is simply how I clear my head. That is the honest picture.",
+   "answer_ar": "خارج العمل أقضي وقتاً مع العائلة، وأقرأ وأجرّب أدوات الذكاء الاصطناعي، وأمشي لأصفّي ذهني."
+  },
+  {
+   "id": "gen.remote_onsite",
+   "category": "personal",
+   "topic": "personal",
+   "question": "Are you comfortable working on-site?",
+   "aliases": [
+    "are you comfortable working on site",
+    "do you prefer remote or on site",
+    "can you work from the office full time",
+    "how do you feel about hybrid work",
+    "are you open to relocating and coming to the office",
+    "would you be in the building every day",
+    "can you do on-site because of data sensitivity",
+    "is remote a requirement for you",
+    "are you willing to work from the ministry premises",
+    "how flexible are you on location"
+   ],
+   "keywords": [
+    "on site",
+    "remote",
+    "office",
+    "hybrid"
+   ],
+   "listen_for": [
+    "comfortable working on site",
+    "remote or on site",
+    "office full time",
+    "hybrid work",
+    "relocating",
+    "in the building every day",
+    "data sensitivity",
+    "ministry premises"
+   ],
+   "answer_en": "Yes, fully comfortable on-site. For a government financial organization with sensitive data, office work is often the right model, and I understand why. I have worked on-site in ministries and organizations for my whole career. I can also work well in a hybrid setup if the organization supports it.",
+   "followup_en": "I am not asking for remote as a condition. Sensitive finance data is easier to control in the building, with people you can talk to. I have done that in Kuwait and in Jordan. If the team later offers hybrid days, I can use them well. If the role is full-time on-site, that is fine. Location should follow the data rules, not my preference.",
+   "answer_ar": "مرتاح بالعمل من الموقع، وأفهم لماذا تفضّل الجهة المالية الحكومية المكتب بسبب حساسية البيانات."
+  },
+  {
+   "id": "gen.biggest_challenge_career",
+   "category": "behavioral",
+   "topic": "personal",
+   "question": "What was the biggest challenge in your career?",
+   "aliases": [
+    "what was the biggest challenge in your career",
+    "tell me about a difficult problem you solved",
+    "what is the hardest technical problem you faced",
+    "describe a challenging situation and how you handled it",
+    "what was the hardest thing about working with teachers",
+    "tell me about a problem that was not only technical",
+    "when did you have to change the product, not the model",
+    "what challenge took the longest to get right",
+    "what was difficult about putting AI in front of users",
+    "give me your toughest professional problem"
+   ],
+   "keywords": [
+    "biggest challenge",
+    "difficult problem",
+    "hardest",
+    "challenging"
+   ],
+   "listen_for": [
+    "biggest challenge",
+    "difficult problem you solved",
+    "hardest technical problem",
+    "challenging situation",
+    "not only technical",
+    "change the product",
+    "AI in front of users",
+    "toughest professional problem"
+   ],
+   "answer_en": "Making teachers trust an AI tool that touches student assessment. The technical part of the similarity checker was manageable. The hard part was trust: a tool that accuses students gets rejected. I changed the design, not the model. The system flags, shows both passages, and the teacher decides.",
+   "followup_en": "Embeddings and cosine similarity were the easy layer. The hard layer was false alarms and fairness. We sat with teachers on real cases and moved the threshold until the list was usable. We also refused to let the tool issue a verdict. In sensitive domains, the human boundary is the product. That lesson is why I still push for approval steps in question generation, even when someone wants full automation.",
+   "answer_ar": "أصعب تحدي كان ثقة المعلمين بأداة تمس تقييم الطالب: غيّرت التصميم ليعرض الدليل والمعلم يقرر."
+  },
+  {
+   "id": "gen.why_ai_field",
+   "category": "personal",
+   "topic": "personal",
+   "question": "Why did you choose AI as a career?",
+   "aliases": [
+    "why did you choose ai as a career",
+    "why are you passionate about ai",
+    "what drew you to artificial intelligence",
+    "why ai",
+    "why move from project management into AI",
+    "when did you decide AI was the path",
+    "why not stay in software project management",
+    "what made you shift into machine learning",
+    "why this field and not another",
+    "what clicked for you about AI",
+    "why not stay in project management only"
+   ],
+   "keywords": [
+    "choose ai",
+    "passionate",
+    "drew you",
+    "why ai"
+   ],
+   "listen_for": [
+    "why did you choose AI",
+    "passionate about AI",
+    "drew you to",
+    "why AI",
+    "move from project management",
+    "AI was the path",
+    "shift into machine learning",
+    "what clicked"
+   ],
+   "answer_en": "It is the first technology in my career that can read language and help people directly, not only move data around. When I built the voice kiosk and saw people talk to a machine and get help, I knew this was the direction. Making these systems safe is as interesting as making them work.",
+   "followup_en": "I did not start in generative AI. I started in payments, then applied machine learning at Al Najat: the Whisper kiosk, early-warning, and helpdesk classification. The kiosk was speech to text and a flow, not an LLM. The Ministry work from 2023 is where RAG and generation began. I moved into AI because users could finally talk and read with the system. I stayed because the safety problems are real, and I like solving them.",
+   "answer_ar": "اخترت الذكاء الاصطناعي لأنه يقرأ اللغة ويساعد الناس مباشرة، ومن يوم الكشك الصوتي عرفت أن هذا اتجاهي."
+  }
+ ]
 }

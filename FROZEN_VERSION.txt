@@ -1,107 +1,110 @@
 FROZEN
-Freeze ID: V6_LIVE_LATENCY_2026_09_16
+Freeze ID: V6_4_BANK_HYGIENE_2026_09_16
 Frozen at: 2026-09-16
-Commit: a76bb96 (origin/main)
-Supersedes: V5_LIVE_INTERVIEW_ASSISTANT_2026_09_15
-Snapshot folder:
-  C:\Users\aalsa\OneDrive\Desktop\interview (2)\interview11_FROZEN_V6_20260916
-Live tree to restore over:
-  C:\Users\aalsa\OneDrive\Desktop\interview (2)\interview11
+Supersedes: V6_1_BANK_331_2026_09_16
+Snapshot folder: C:\Users\aalsa\OneDrive\Desktop\interview (2)\interview11_FROZEN_V6_4_20260916
+Restore target:  C:\Users\aalsa\OneDrive\Desktop\interview (2)\interview11
 
 Policy: bug-fix only.
 Do not chase thresholds, weights, aliases, STT/VAD, B8/B9, ranking, compound, or
-routing. Latency work is closed; do not re-open it without a new measurement.
+routing. detect_intent stays closed. V7 retrieval prefilter stays reverted.
 
-Restore: copy the snapshot folder over interview11 (absolute paths above), then
-keep the live backend\.venv and frontend\node_modules (those are not in the
-snapshot).
-
---------------------------------------------------------------------------
-WHAT CHANGED SINCE V5 (all measured live, none changes a decision)
---------------------------------------------------------------------------
-P0  Question state moved behind QUESTION_GATE.
-    - live_audio.py no longer writes session state or the question field from a
-      raw transcript. Single writer: QUESTION_ACCEPTED, after the gate.
-    - App.tsx: question field is written only by QUESTION_ACCEPTED.
-      TRANSCRIPT_CREATED is a listening/debug signal. An ignored utterance shows
-      a transient status and never replaces the previous question.
-    - Fixes: a STATEMENT ("Kindly enter your text here...") appearing under
-      "السؤال".
-
-P1  SELF_PLAYBACK_ACTIVE guard. Captured audio is dropped before STT while the
-    app plays local audio (ws control message "self_playback", 400 ms cooldown).
-    Preventive: the app ships no local playback today.
-
-L1  Duplicate live bank lookup cancelled on the SHOW_ANSWER path.
-
-L2  bank_guided_understanding.search_bank_candidates memoized on (raw, k),
-    invalidated by question_bank.generation, plus a short-circuit so the
-    difflib skeleton ratio is computed only when token overlap cannot already
-    decide the gate. Root cause was 2386 difflib.SequenceMatcher.ratio() calls
-    per lookup (75% of bank time), run 2-3x per question.
-    Verified: 0 differing results over 49 queries (intent_id, combined,
-    phonetic, lexical at 9 decimals). Cold scan 2.12x faster; repeat ~free.
-
-L3  warm_start._warm_decode uses a real 6.6 s dev-pack clip (compound-dev,
-    never a holdout pack) instead of 0.5 s of near-silence, which tripped
-    no_speech_threshold and returned before the decoder loop ran.
-
-L4  Stage timers at INFO: ANSWER_STAGES / ANSWER_TIMING / ANSWER_PUBLISH_MS.
-    Measurement only. Keep them — they localised the bottleneck in one run.
-
-Tooling: scripts\profile_live_answer.py, scripts\verify_bgu_equivalence.py.
+Restore: copy the snapshot folder over interview11, then keep the live
+backend\.venv and frontend\node_modules (those are not in the snapshot).
 
 --------------------------------------------------------------------------
-MEASURED RESULT (live loopback session, simple questions, warm)
+WHAT CHANGED SINCE V6.1 — bank data only, no app/ file touched
 --------------------------------------------------------------------------
-                       before        after
-  total            4782-6366 ms   965-1877 ms
-  stt              3704-4486 ms   934-1840 ms   (bank lookup was hidden inside)
-  bank lookup       923-1068 ms      1-84 ms
-  first question       ~14000 ms      1840 ms   (L3)
-  compound stage             n/a         0 ms   on simple questions
+Trigger: a live interview answer was wrong with high confidence ("what is the
+project you have that uses RAG" answered with the definition of RAG). The warm
+self-match instrument then showed strong_and_wrong = 16 on BOTH the 331-entry bank
+and the V6 295-entry bank — an inherited defect, not a regression from the bank
+replacement.
 
-  NOTE: `total` excludes vad_interviewer_min_silence_ms (900 ms). Perceived
-  latency from end of speech is ~1.9-2.8 s.
+Phase 1 (12 of 16):
+  - 6 aliases moved to the entry they actually describe. Two of them were
+    duplicated onto two entries, which was the collision itself.
+  - 5 subjectless aliases qualified with their missing subject
+    ("no chunks down" -> "what if retrieval returns no chunks at all").
+  - 6 coverage aliases added to cv.rag_experience for the live incident.
+
+Phase 2a (3 of the remaining 4):
+  - tech.rag_build: alias "how would you design rag for our documents" restricted
+    to "how would you build rag for our documents" (design vs build was the
+    collision with hard.rag_arabic_english).
+  - cv.guardrails: "what guardrails do you actually use" was too generic even after
+    being moved off gen.ai_ethics; replaced with
+    "which guardrails do you actually use in your projects" and
+    "what guardrails do you use in your own system".
+  - MERGED tech.reindex_embedding_change INTO hard.change_embedding.
+    KEPT id:    hard.change_embedding   (richer answer: new collection, A/B on the
+                golden set, dual-write during migration)
+    DELETED id: tech.reindex_embedding_change
+    Union of aliases, 7 surfaces carried over including the deleted entry's own
+    question. Keywords unioned. No test or app/ file referenced either id.
+
+Phase 2b (the last one):
+  - tech.google_stack_semantic_kernel: "how much experience do you have with the
+    google stack" was 6 generic words + 2 distinctive ones, so it lost to
+    cv.llm_experience. Replaced with three specific surfaces:
+      what is your experience with the google stack and semantic kernel
+      do you have experience with vertex ai or semantic kernel
+      how much experience do you have with the google ai stack
+
+Bank now: 330 entries, 2,441 alias lines, 4 files.
+cv_abdullah 96 · general_personal 30 · technical_ai_senior 142 · hard_scenarios 62
 
 --------------------------------------------------------------------------
-KNOWN DEBT AT FREEZE TIME — 5 failing tests, all pre-existing on V5
+RESULT
 --------------------------------------------------------------------------
-None of these is a regression from P0/P1/L1-L4; all five fail identically on
-the pre-L2 commit. They are capability gaps already documented in the V5
-analysis, not defects introduced here.
+                       V6.1        V6.2        V6.3        V6.4
+  strong_and_wrong      16           5           1           0 (measured warm)
+  pytest            268/5       268/5       269/4       269/4 (measured)
+  question self-match 330/331   330/331     330/330     330/330
+  alias self-match  2417/2433  2432/2437   2437/2439   2440/2441
+    (V6.4: one alias still non-self-match but not strong+wrong)
 
+test_hard_scenario_questions[rag_arabic_english] now PASSES. It was one of the five
+known failures; the bank was the cause, not the matcher.
+
+Measured on this machine 2026-09-16 after load:
+  strong_and_wrong=0 · pytest 269 passed / 4 failed · questions 330/330
+
+--------------------------------------------------------------------------
+KNOWN DEBT
+--------------------------------------------------------------------------
 1. test_answer_context_policy::test_misheard_two_word_topic_is_still_a_question
-   "water transformers" classifies as STATEMENT (conf 0.70), test expects
-   QUESTION. Deterministic, heuristic-only path, no embedder involved.
-   Cause: question_classifier has no rule for a bare misheard topic fragment.
-   Owner: the deferred P2-scoped classifier work (same family as
-   "Yeah, John." and "Your download is ready" passing as SHOW_ANSWER).
-
+   "water transformers" -> STATEMENT. Deterministic, heuristic-only.
+   Owner: deferred P2-scoped classifier work.
 2. test_question_bank::test_asr_noise_on_domain_terms
 3. test_question_bank::test_indirect_long_questions
-4. test_question_bank::test_split_entries_answer_only_their_own_question
-      [What is hallucination? -> tech.hallucination_what]
-5. test_question_bank::test_hard_scenario_questions
-      [How would you design RAG for Arabic and English documents?
-       -> hard.rag_arabic_english]
+4. test_question_bank::test_split_entries_answer_only_their_own_question[hallucination]
+   Retrieval coverage. Do not tune thresholds or aliases to pass them.
 
-   All four assert _strong(question, intent): bank retrieval coverage, not
-   latency and not the gate. They match the two buckets V5 Phase A already
-   named as the dominant intent failures: SEMANTIC_PROFILE_QUALITY (retrieval
-   for indirect paraphrases) and granularity siblings (split entries stealing
-   each other's questions). V5 closed as NO-GO on exactly this.
-   Owner: v6 retrieval track. Not a bug-fix item; do not tune thresholds or
-   aliases to make them pass.
+5. detect_intent returns None for forms it should classify — measured live:
+     detect_intent("How would you design RAG for Arabic and English documents?") = None
+     detect_intent("How would you build a RAG system?")                          = experience
+   _granularity_penalty only runs for q_intent in {how, why, compare, definition},
+   so with None it never runs and a specific question cannot outrank a general one
+   on merit. V5 Phase B already measured the fix (action-type completion): on 105
+   non-compound clips, 1 clip changed, gold gained 1, gold lost 0, no new
+   weak->strong on a non-gold intent — but cold. NOT opened here: every V6.2-V6.4
+   case was reachable as a data fix, so the code change was not needed.
+
+6. Compound questions cost 1518-3343 ms and usually return None. Clean fix:
+   extend the L2 cache to sub-question searches in resolve_compound_question.
+
+7. V7 retrieval prefilter: implemented, measured at 1.56x (gate was 3x), reverted.
+   Root cause: the candidate pool stays at ~884 of 2588 probes because common
+   interview tokens and generic skeleton trigrams collide. A redesign (IDF weighting,
+   dropping generic skeleton trigrams, distinctive-first) needs its own measurement
+   before any code. The bank cannot grow much past this size until it is solved;
+   696 cleaned questions from the source document remain unadded for that reason.
 
 --------------------------------------------------------------------------
-DEFERRED, ACCEPTED, NOT SCHEDULED
+STANDING GATES FOR EVERY FUTURE FREEZE
 --------------------------------------------------------------------------
-- Compound questions still cost 1518-3343 ms and usually return None, with the
-  answer coming from the single bank match. Clean fix when it matters: extend
-  the L2 cache to sub-question searches inside resolve_compound_question
-  (no decision change). Simple questions are unaffected (compound = 0 ms).
-- P2-scoped gate work: STATEMENT should answer only when it is a clear
-  interview request backed by the bank. Requires opening this freeze and a
-  regression run over the 105 non-compound clips plus U15/U16.
-- Whisper (~1.8 s) is now the floor for the current architecture.
+  strong_and_wrong must be measured WARM and reported. It is not optional.
+  V6 and V6.1 shipped without it and both carried 16 confident wrong answers.
+  pytest must be exactly at the recorded pass/fail counts, and a test that starts
+  PASSING must be reported, not silently absorbed.

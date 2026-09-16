@@ -1,16 +1,16 @@
 ---
-description: V6 live latency stack is FROZEN — bug fixes only
+description: V6.4 bank hygiene is FROZEN — bug fixes only
 alwaysApply: true
 ---
 
-# V6 Live Latency — FROZEN (2026-09-16)
+# V6.4 Bank Hygiene — FROZEN (2026-09-16)
 
-The live interview assistant latency stack is **closed**. Do not reopen for score or latency chasing.
+Question-bank hygiene is **closed**. Do not reopen for score or latency chasing.
 
-Canonical freeze: `FROZEN_VERSION.txt` (`V6_LIVE_LATENCY_2026_09_16`, commit `a76bb96`)  
-Supersedes: `V5_LIVE_INTERVIEW_ASSISTANT_2026_09_15`  
-Restorable snapshot: `C:\Users\aalsa\OneDrive\Desktop\interview (2)\interview11_FROZEN_V6_20260916`
-(live restore target: `...\interview (2)\interview11`)
+Canonical freeze: `FROZEN_VERSION.txt` (`V6_4_BANK_HYGIENE_2026_09_16`)  
+Supersedes: `V6_LIVE_LATENCY_2026_09_16` / bank V6.1–V6.3 hygiene steps  
+Restorable snapshot: `C:\Users\aalsa\OneDrive\Desktop\interview (2)\interview11_FROZEN_V6_4_20260916`  
+Restore target: `C:\Users\aalsa\OneDrive\Desktop\interview (2)\interview11`
 
 ## Allowed
 - True bug fixes (crashes, incorrect wiring, broken imports, regressions that violate HC=0)
@@ -19,18 +19,15 @@ Restorable snapshot: `C:\Users\aalsa\OneDrive\Desktop\interview (2)\interview11_
 
 ## Forbidden without explicit user approval
 - Threshold / weight / margin / accept-gate / HC-threshold tuning
-- New aliases or pack-transcript hard-coding in recovery
-- Whisper / EQ / VAD changes for metric chasing
-- B8 / B9 / new ranking, compound, or routing research
-- Editing frozen question banks to chase scores
-- Re-opening L1–L4 latency work without a new measurement
-- Tuning to make the five documented freeze-debt tests pass
+- New aliases or pack-transcript hard-coding to chase scores
+- Opening `detect_intent` / `_granularity_penalty` without a warm measurement plan
+- Re-opening V7 retrieval prefilter without a redesign + measurement
+- Whisper / EQ / VAD / B8 / B9 / ranking / compound / routing research
 
 ## Frozen baselines (do not regress)
 - V5 150 Voice Stress E2E: pass **0.90**, intent **0.90**, HC wrong **0**
-- SHORT_TECH_RECOVERY_PASS · MAIN_REQUEST_EXTRACTION_PASS
-- L2 bank search: decision-equivalent (verified on 49 queries)
+- Warm `strong_and_wrong` = **0** (330 entries / 2441 aliases)
+- pytest **269 passed / 4 failed** (known debt only)
 
-## Known debt (documented, not regressions)
-- P2-family: `water transformers` / `Yeah, John.` / download chrome
-- Bank retrieval: asr_noise, indirect_long, hallucination sibling, rag_arabic_english
+## Standing freeze gate
+Every future freeze must report warm `strong_and_wrong`. It is not optional.
