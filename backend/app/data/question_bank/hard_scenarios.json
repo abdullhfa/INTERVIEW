@@ -31,7 +31,7 @@
     "rag that can call tools",
     "how would you design it"
    ],
-   "answer_en": "I would not start with agents. Start with the job: staff ask about rules and must get a sourced answer, or 'not in the documents'. Ingest approved files, chunk with metadata, retrieve with permission, then generate only from those chunks. The agent is a gated loop: it can rewrite a weak query or call a tool, but it cannot send email, write money, or change a record.",
+   "answer_en": "I would not start with agents. Start with the job. Staff ask about rules, and they must get an answer with a source, or 'not in the documents'. So: load approved files, chunk them with metadata, retrieve with permissions, and answer only from those chunks. The agent is a small gated loop. It can rewrite a weak query or call a tool. It cannot send email, move money, or change a record.",
    "followup_en": "RAG is the knowledge path. I add an agent only when the next step depends on the last result. State can sit in Python or LangGraph with a checkpoint and a human interrupt before any action. After the model, every number must appear in a source. I have not shipped LangGraph in production. For BTEC I used Python orchestration, RAG, an LLM, and teacher approval.",
    "answer_ar": "ما أبدأ بالوكلاء. أصمم استرجاعاً من وثائق معتمدة مع فلتر صلاحيات، والوكيل حلقة تحكم مقيدة لا تكتب ولا ترسل بدون موافقة."
   },
@@ -62,7 +62,7 @@
     "skip the agent",
     "plain rag versus agent"
    ],
-   "answer_en": "Normal RAG is enough when the path is fixed: question, retrieve, answer, stop. I used that in BTEC question generation. An agent earns its place only if the next step depends on the last result, like rewrite the query or call another tool. On a straight FAQ, an agent adds loops, cost, and new failures. My default is a workflow with RAG.",
+   "answer_en": "Normal RAG is enough when the path is fixed. Question, retrieve, answer, stop. I used that in BTEC question generation. An agent earns its place only when the next step depends on the last result. For example, rewrite the query, or call another tool. On a simple FAQ an agent only adds loops, cost, and new ways to fail. My default is a workflow with RAG.",
    "followup_en": "Why? An agent is a loop that chooses tools. If I already know the steps, I should code them. I still keep permissions and a human gate if I add an agent. For BTEC the path was retrieve unit content, generate JSON, validate, then teacher approval. That is orchestration, not a free agent.",
    "answer_ar": "الـ RAG العادي يكفي إذا المسار ثابت. أضيف وكيلاً فقط إذا الخطوة التالية تعتمد على نتيجة السابقة، وإلا أزيد تكلفة وفشل بلا فائدة."
   },
@@ -124,7 +124,7 @@
     "mistaken tool"
    ],
    "answer_en": "The tool layer must make a wrong choice cheap. Tools have narrow names and typed arguments, so a bad call fails closed. I log the name and args. If the tool does not exist or fails validation, I return an error, allow one retry, then stop. A write tool is never given to a research agent.",
-   "followup_en": "Why this? The model is not a security boundary. If a wrong tool somehow ran, idempotency and a human gate on writes mean the damage is a logged no-op, not a changed record. In BTEC the model never wrote to the question bank. Approval was the write path.",
+   "followup_en": "Why this way? Because the model is not a security wall. If a wrong tool did run, two things save you. The call is safe to repeat, and a human must approve any write. So the damage is a logged no-op, not a changed record. In BTEC the model never wrote to the question bank. Approval was the write path.",
    "answer_ar": "الأدوات ضيقة ومُتحقَّق من مدخلاتها، فالنداء الخاطئ يفشل بأمان. محاولة واحدة ثم توقف، وأدوات الكتابة لا تُعطى لوكيل بحث."
   },
   {
@@ -186,7 +186,7 @@
     "max steps"
    ],
    "answer_en": "Hard caps in code, not in the prompt. Max steps, max tokens, max wall-clock time, max cost. If the same tool is called with the same arguments twice and nothing new happens, I break. After the cap I return failed or needs_human with the trace. 'Do not loop' in a prompt is not a control.",
-   "followup_en": "If I used LangGraph, a cycle still needs a retry counter on the state. I have not run LangGraph in production, but the idea is the same as my generation flow: a fixed number of steps, then teacher approval, never an open loop. Caps stop cost spikes as well as hangs.",
+   "followup_en": "With LangGraph, a loop still needs a retry counter in the state. I have not run LangGraph in production. But the idea is the same as my generation flow. A fixed number of steps, then teacher approval. Never an open loop. Caps stop cost spikes as well as hangs.",
    "answer_ar": "حدود صارمة في الكود: خطوات ووقت وتكلفة. نفس الأداة بنفس المدخلات مرتين بدون حالة جديدة تعني التوقف. الجملة في الـ prompt لا تمنع الحلقة."
   },
   {
@@ -345,7 +345,7 @@
     "prompt versus model"
    ],
    "answer_en": "I treat it as a pipeline test. If the gold chunk is not in the index, it is ingest or chunking. If it is in the index but not in top-k, it is embedding, filters, or query wording. If it is in the prompt and the model still fails, it is the prompt or the model, not retrieval.",
-   "followup_en": "A cheap check: use the gold text itself as a query. If even that misses, the index or filters are wrong. If the chunk is in the prompt and the model invents a number, I tighten 'answer only from context' or change the model last. I do not swap the LLM when retrieval never saw the file.",
+   "followup_en": "Here is a cheap check. Use the gold text itself as the query. If even that misses, the index or the filters are wrong. If the chunk is in the prompt and the model still invents a number, I tighten 'answer only from the context'. I change the model last. I do not swap the LLM when retrieval never saw the file.",
    "answer_ar": "أفصل الطبقات: إن لم يكن المقطع في الفهرس فالمشكلة إدخال. إن لم يصل للـ top-k فاسترجاع. إن وُجد في الـ prompt وفشل الجواب فالنموذج أو التعليمات."
   },
   {
@@ -440,7 +440,7 @@
     "policy and a rate"
    ],
    "answer_en": "Single-shot RAG often retrieves three near-duplicate chunks from one file and misses the other two sources. I raise k, filter for source diversity, or do multi-hop: answer part one, retrieve for part two. Then the prompt must say: use all provided sources, and if a source is missing say so. I still verify each claim against a chunk.",
-   "followup_en": "If the three documents conflict, I show the conflict. I do not average them. An agent can retrieve, see a gap, and retrieve again, but a coded two-step retrieve is easier to test when the path is known. Faithfulness still comes first: every sentence needs a supporting chunk.",
+   "followup_en": "If the three documents disagree, I show the conflict. I do not average them. An agent can retrieve, see a gap, and retrieve again. But when the path is known, a coded two-step retrieve is easier to test. Faithfulness still comes first. Every sentence needs a chunk behind it.",
    "answer_ar": "الاسترجاع لمرة واحدة قد يكرر ملفاً واحداً. أزيد التنوع أو أسترجع على مرحلتين، وأطلب ذكر النقص. إن تعارضت الوثائق أعرض التعارض ولا أدمجها."
   },
   {
@@ -497,12 +497,11 @@
    "listen_for": [
     "agent versus workflow",
     "multi agent system",
-    "what is an orchestrator",
-    "agentic workflow",
-    "are those terms the same",
+    "difference between agent and agentic",
+    "four terms the same thing",
     "orchestrator an llm"
    ],
-   "answer_en": "An AI agent is a loop where a model chooses the next tool toward a goal. An agentic workflow is a path you defined that may include an agent step, but you own the transitions. A multi-agent system is several specialists. An orchestrator decides the order, data, and retries; it can be Python or LangGraph, and it is not itself a model.",
+   "answer_en": "An AI agent is a loop where a model chooses the next tool toward a goal. An agentic workflow is a path you defined that may include an agent step, but you own the transitions. A multi-agent system is several specialists. An orchestrator decides the order, the data, and the retries. It can be Python or LangGraph. And it is not a model itself.",
    "followup_en": "I can have orchestration with zero agents. I can have one agent with no multi-agent system. I used an agentic workflow: Python orchestration plus LLM steps, not a swarm of agents. LangGraph is one engine for that. It is not the definition, and I did not run it in production.",
    "answer_ar": "الوكيل حلقة يختار فيها النموذج الأداة. المسار الوكيلي أنت تصممه. متعدد الوكلاء عدة متخصصين. المنسّق طبقة تحكم وليس نموذجاً."
   },
@@ -782,7 +781,7 @@
     "person see the draft"
    ],
    "answer_en": "After the system has a complete, validated draft, before any side effect. Not after every token. In LangGraph that would be interrupt with a checkpointer, then resume on the same thread. I re-check that the draft and the source versions did not change. In BTEC: generate and validate, then the teacher.",
-   "followup_en": "Sending a ministry letter would be the same pattern: draft, approve, send. A summary of numbers the user can already see may not need a person every time. I have not run LangGraph interrupt in production, but I already used the same gate: nothing lands in the question bank until a teacher says yes.",
+   "followup_en": "Sending a ministry letter is the same pattern. Draft, approve, send. A summary of numbers the user can already see may not need a person every time. I have not run LangGraph interrupt in production. But I already used the same gate. Nothing enters the question bank until a teacher says yes.",
    "answer_ar": "بعد مسودة مكتملة ومتحققة، وقبل أي أثر جانبي. في BTEC المعلم يوافق قبل الحفظ. ليس بعد كل كلمة."
   },
   {
@@ -811,9 +810,9 @@
     "workflow state",
     "langgraph checkpoint"
    ],
-   "answer_en": "A checkpoint is a snapshot of workflow state so you can pause, crash, and resume the same run. It is ops. RAG memory is documents you search by meaning. Mixing them is how PII leaks into a vector index. I persist checkpoints in a database I control. I persist chunks in the vector store with retention rules.",
+   "answer_en": "A checkpoint is a saved snapshot of the graph state. Persistence saves graph state so the workflow can continue later. That is different from RAG memory, which is documents you search by meaning.",
    "followup_en": "They solve different problems. I have used RAG-style stores in prototypes, including Chroma. I have not run LangGraph checkpoints in production. I would still keep execution state out of the embedding index. Search should not become a second copy of every private chat.",
-   "answer_ar": "الـ checkpoint لقطة لحالة التشغيل حتى تتوقف وتُكمل. ذاكرة RAG وثائق للبحث الدلالي. خلطهما يسرّب بيانات شخصية إلى الفهرس."
+   "answer_ar": "نقطة التحقق لقطة محفوظة لحالة الرسم. الاستمرارية تحفظ الحالة لإكمال العمل لاحقاً. هذا غير ذاكرة RAG التي تبحث في مستندات بالمعنى."
   },
   {
    "id": "hard.interrupt_side_effects",
@@ -874,7 +873,7 @@
     "show other files"
    ],
    "answer_en": "That text is untrusted content, not a command. I split system instructions from retrieved text in the prompt, and tools still require server-side auth. The model might try to obey the PDF. The tool must refuse. I can also scan retrieved text for injection patterns and drop those chunks.",
-   "followup_en": "In assignments, a student writing 'show other students' files' must never become a retrieval filter. Filters come from the session, not from document text. This is the same tenant rule as the similarity checker: school A cannot search school B, even if a PDF asks for it.",
+   "followup_en": "In assignments, a student may write 'show other students files'. That text must never become a retrieval filter. Filters come from the session, not from the document. This is the same tenant rule as the similarity checker. School A cannot search school B, even if a PDF asks for it.",
    "answer_ar": "نص الـ PDF محتوى غير موثوق وليس أمراً. التعليمات منفصلة، والأدوات تتحقق من الصلاحية في الخادم. فلتر البحث لا يأتي من جملة داخل الوثيقة."
   },
   {
@@ -1251,7 +1250,7 @@
     "no answer cases",
     "regression test tools"
    ],
-   "answer_en": "Questions, expected document ids, expected 'no answer' cases, expected tool names for a few scenarios, and cases that must never call a write tool. Plus injection documents. I run it on every prompt or retrieval change. An agent without a golden set is a demo.",
+   "answer_en": "Questions, and the document ids I expect. Cases where the right answer is 'no answer'. The tool names I expect for a few scenarios. And cases that must never call a write tool. Plus a few injection documents. I run it on every prompt change and every retrieval change. An agent without a golden set is a demo.",
    "followup_en": "Why include 'never write'? That is least privilege under test. Why injection docs? RAG will retrieve them someday. For BTEC my human gold was teacher accept or reject, plus whether the item stayed on the unit chunks. I would still add retrieval ids before any agent loop.",
    "answer_ar": "أسئلة ومعرّفات وثائق متوقعة، حالات بلا جواب، أدوات متوقعة، وحالات يُمنع فيها الكتابة، مع وثائق حقن. بدون هذه المجموعة الوكيل عرض تجريبي."
   },
@@ -1741,7 +1740,7 @@
     "arabic circulars",
     "ask in english"
    ],
-   "answer_en": "A bilingual embedder may align them. I would not bet without tests. Options: embed both languages, or translate the query for retrieval only and keep the Arabic chunks in the prompt so the answer can quote the real text. I measure both. Guessing that English queries just work on Arabic PDFs is how you miss the article.",
+   "answer_en": "A bilingual embedder may line them up. I would not bet on it without a test. I have two options. Embed both languages. Or translate the query for retrieval only. Then keep the Arabic chunks in the prompt, so the answer can quote the real text. I would measure both. Assuming English queries just work on Arabic PDFs is how you miss the article.",
    "followup_en": "Why keep Arabic in the prompt? The citation must be the real wording, not my English paraphrase. Staff-written Arabic questions belong in the golden set. In my work, documents are often Arabic and the engineering talk is English. Retrieval quality is a measurement problem, not a slogan about multilingual models.",
    "answer_ar": "لا أفترض أن السؤال الإنجليزي يجد النص العربي. أختبر نموذجاً ثنائي اللغة أو ترجمة الاستعلام فقط مع إبقاء المقاطع العربية في السياق للاقتباس الحقيقي."
   },
@@ -1771,7 +1770,7 @@
     "agent delete files",
     "should it ever"
    ],
-   "answer_en": "Default no. Delete is irreversible and easy to call in a loop. If operations require it, it is a two-person tool: the agent proposes ids, a human confirms, a job runs with a dry-run diff. Not in the research agent. Not in a RAG chatbot.",
+   "answer_en": "By default, no. Delete cannot be undone, and it is easy to call inside a loop. If the business really needs it, make it a two-person tool. The agent proposes the ids. A human confirms. A job runs with a dry-run diff first. Not in a research agent. Not in a RAG chatbot.",
    "followup_en": "Why dry-run? So the human sees what would vanish. Idempotency does not save you if the first call already deleted. I would rather a ticket for a DBA than a model with DROP rights. Same as BTEC: the model never wrote, so it certainly never deleted.",
    "answer_ar": "افتراضياً لا. الحذف لا يُعكس وسهل نداؤه في حلقة. إن لزم فاقتراح من الوكيل ثم تأكيد إنسان مع عرض تجريبي. ليس لوكيل بحث ولا لشات RAG."
   },
@@ -1949,9 +1948,34 @@
     "resume",
     "background"
    ],
-   "answer_en": "Not inside one HTTP request. The request starts the job and returns an id. The work runs in a background worker off a queue, the state is written after every step, and the caller polls or gets a callback. A pause for a human is just a state the job sits in until someone answers, maybe tomorrow.",
-   "followup_en": "This is exactly the pain I hit in the Ministry flow by hand: a teacher comes back the next day and the retrieved chunks have to still be there, so I persisted the state myself. It is also why I would reach for LangGraph checkpoints if I started today. The rest is ordinary engineering: a timeout per step, a bounded number of retries, idempotent tool calls so a retry does not double-charge anything, and a dead-letter path so a stuck job is visible instead of silent.",
+   "answer_en": "Not inside one HTTP request. The request starts the job and returns an id. The work runs in a background worker, from a queue. The state is saved after every step. The caller then checks back, or gets a callback. A pause for a human is just a state. The job waits there until someone answers, maybe tomorrow.",
+   "followup_en": "This is the pain I hit in the Ministry flow by hand. A teacher comes back the next day, and the retrieved text must still be there. So I saved the state myself. That is also why I would use LangGraph checkpoints if I started today. The rest is normal engineering. A timeout for each step. A limit on retries. Tool calls that are safe to repeat, so a retry does not charge twice. And a dead-letter path, so a stuck job is visible and not silent.",
    "answer_ar": "ليس داخل طلب HTTP واحد. الطلب يبدأ المهمة ويعيد معرّفاً. العمل يجري في عامل خلفي من طابور، وتُكتب الحالة بعد كل خطوة، والمستدعي يستعلم أو يستقبل نداءً راجعاً. والتوقف لانتظار إنسان هو مجرد حالة تبقى فيها المهمة حتى يجيب أحد، ولو غداً."
+  },
+  {
+   "id": "hard.bank_weekly_policies",
+   "category": "scenario.rag",
+   "topic": "rag_design",
+   "question": "We have thousands of internal policy documents that change every week, a limited budget, and we cannot allow wrong answers. What would you build?",
+   "aliases": [
+    "we have thousands of policy documents that change every week what would you build",
+    "our documents change weekly and we cannot retrain what do you recommend",
+    "rag or fine tuning for internal policy documents",
+    "how would you build a question answering system over our internal policies",
+    "we cannot afford to retrain every week what is the right approach",
+    "what would you build for employees asking about internal policies"
+   ],
+   "keywords": [
+    "policy",
+    "documents",
+    "weekly",
+    "retrain",
+    "budget",
+    "rag"
+   ],
+   "answer_en": "RAG. Not fine-tuning, and not in-context learning on its own. The reason is in your own constraints. The documents change every week and you cannot retrain. With RAG I do not retrain anything, I re-index. A new policy is a new document in the store, live the same day. Fine-tuning would mean a training run every week, which is the cost you said you do not have. It also teaches style, not facts, so the model can still invent a number. In-context learning is part of the answer, not all of it. You cannot put thousands of documents in one prompt. So retrieval picks the few right chunks, and the model answers only from them.",
+   "followup_en": "To stop wrong answers I would not trust the prompt alone. Three things do the real work. Every answer shows its source, so the employee can open the policy. If retrieval finds nothing useful, the system says this is not in the documents. It does not guess. And the permission filter runs before the search, not after. In a bank that is a requirement, not a feature. I would also keep a small golden set. Real questions, with the right document for each one. I run it after every weekly re-index. One more thing. Versions matter more than the model here. When a policy is replaced I remove the old chunks. I do not only add the new ones. A perfect model on a stale index still gives the wrong answer. And I will be honest about one word. I can make it refuse instead of invent. I cannot promise zero hallucination.",
+   "answer_ar": "‏RAG. ليس الضبط الدقيق، ولا التعلّم داخل السياق وحده. والسبب في قيودكم أنتم. المستندات تتغير كل أسبوع ولا تستطيعون إعادة التدريب. مع RAG لا أعيد تدريب شيء، بل أعيد الفهرسة. السياسة الجديدة مستند جديد في المخزن، ويعمل في اليوم نفسه. الضبط الدقيق يعني تدريباً كل أسبوع، وهي الكلفة التي قلتم إنها غير متاحة. وهو يعلّم الأسلوب لا الحقائق، فيبقى النموذج قادراً على اختراع رقم. والتعلّم داخل السياق جزء من الحل لا كله، فلا يمكن وضع آلاف المستندات في نافذة واحدة. لذلك يختار الاسترجاع المقاطع القليلة الصحيحة، ويجيب النموذج منها وحدها."
   }
  ]
 }

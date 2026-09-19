@@ -591,6 +591,7 @@ class QuestionBank:
         topic_hint: Optional[str] = None,
         conversation_history: Optional[Iterable[dict]] = None,
         tech_repair: bool = True,
+        _skip_follow_up: bool = False,
     ) -> Optional[BankMatch]:
         """Best bank entry for a transcribed question, or None below WEAK_THRESHOLD."""
         # Never block a live question on embedding warm-up: before `warm()` has
@@ -600,6 +601,18 @@ class QuestionBank:
             topic_hint = self.topic_for_history(conversation_history)
 
         raw_text = " ".join((text or "").strip().split())
+
+        def _finish(result: Optional[BankMatch]) -> Optional[BankMatch]:
+            if _skip_follow_up:
+                return result
+            return self._apply_follow_up_expand(
+                raw_text,
+                result,
+                conversation_history=conversation_history,
+                topic_hint=topic_hint,
+                tech_repair=tech_repair,
+            )
+
         recovery = None
         understanding = None
         if tech_repair:
@@ -668,23 +681,25 @@ class QuestionBank:
             guided_entry = self._index.by_id.get(understanding.intent_id)
             if guided_entry is not None:
                 if primary is not None and primary.entry.id == guided_entry.id:
-                    return primary
+                    return _finish(primary)
                 if primary is None or primary.entry.id != guided_entry.id:
                     runner = primary.entry.id if primary is not None else None
                     runner_score = primary.score if primary is not None else 0.0
                     mode = "weak"
                     if understanding.confidence >= STRONG_THRESHOLD and understanding.margin >= 0.18:
                         mode = "strong"
-                    return BankMatch(
-                        entry=guided_entry,
-                        score=float(understanding.confidence),
-                        semantic=0.0,
-                        lexical=float(understanding.confidence),
-                        keyword=0.0,
-                        alias=understanding.canonical_question or guided_entry.question,
-                        mode=mode,
-                        runner_up=runner,
-                        runner_up_score=runner_score,
+                    return _finish(
+                        BankMatch(
+                            entry=guided_entry,
+                            score=float(understanding.confidence),
+                            semantic=0.0,
+                            lexical=float(understanding.confidence),
+                            keyword=0.0,
+                            alias=understanding.canonical_question or guided_entry.question,
+                            mode=mode,
+                            runner_up=runner,
+                            runner_up_score=runner_score,
+                        )
                     )
 
         # Dual scoring for tech-term recovery: raw vs normalized.
@@ -701,12 +716,53 @@ class QuestionBank:
                 topic_hint=topic_hint,
                 conversation_history=conversation_history,
             )
-            return reconcile_dual_matches(
-                raw_match=raw_match,
-                norm_match=primary,
-                recovery=recovery,
+            return _finish(
+                reconcile_dual_matches(
+                    raw_match=raw_match,
+                    norm_match=primary,
+                    recovery=recovery,
+                )
             )
-        return primary
+        return _finish(primary)
+
+    def _apply_follow_up_expand(
+        self,
+        raw_text: str,
+        raw_match: Optional[BankMatch],
+        *,
+        conversation_history: Optional[Iterable[dict]],
+        topic_hint: Optional[str],
+        tech_repair: bool,
+    ) -> Optional[BankMatch]:
+        from app.services.follow_up_expand import apply_follow_up_expand
+
+        recent_entry = None
+        if conversation_history:
+            for hist in reversed(list(conversation_history)):
+                if hist.get("role") != "interviewer":
+                    continue
+                key = normalize_for_matching(str(hist.get("text") or ""))
+                eid = self._recent_matches.get(key)
+                if eid:
+                    recent_entry = self._index.by_id.get(eid)
+                break
+
+        def _match_expanded(expanded: str) -> Optional[BankMatch]:
+            return self.match(
+                expanded,
+                topic_hint=topic_hint,
+                conversation_history=conversation_history,
+                tech_repair=tech_repair,
+                _skip_follow_up=True,
+            )
+
+        return apply_follow_up_expand(
+            raw_text=raw_text,
+            raw_match=raw_match,
+            conversation_history=conversation_history,
+            match_expanded=_match_expanded,
+            recent_entry=recent_entry,
+        )
 
     def _match_repaired(
         self,

@@ -504,7 +504,18 @@ def understand_interview_question(
         if mid and mid in merged:
             c = merged[mid]
             merged[mid] = BankCandidate(
-                **{**c.__dict__, "combined": min(1.0, c.combined + 0.04)}
+                intent_id=c.intent_id,
+                canonical=c.canonical,
+                category=c.category,
+                topic=c.topic,
+                question_type=c.question_type,
+                phonetic=c.phonetic,
+                lexical=c.lexical,
+                structure=c.structure,
+                lexicon=c.lexicon,
+                bank_prior=c.bank_prior,
+                combined=min(1.0, c.combined + 0.04),
+                alias_hit=c.alias_hit,
             )
 
     candidates = sorted(merged.values(), key=lambda c: c.combined, reverse=True)[:5]
@@ -570,9 +581,11 @@ def understand_interview_question(
 
 def apply_bank_guided_transcript(raw: str, *, prior_topic: Optional[str] = None) -> str:
     """
-    Transcript for display/match: prefer canonical when bank-guided is confident.
+    Transcript for the live question pane / STT pipeline.
+
+    Keep what was heard. Do NOT run full bank-guided search here — that cost
+    belongs in question_bank.match (once per answer), not on every STT decode.
+    Technical-term repair already ran in repair_live_transcript before this.
     """
-    u = understand_interview_question(raw, prior_topic=prior_topic)
-    if u.intent_id and not u.ambiguous and u.confidence >= _MIN_ACCEPT:
-        return u.canonical_question
-    return u.recovered_transcript or u.raw_transcript
+    cleaned = _norm(raw)
+    return cleaned

@@ -34,7 +34,7 @@
     "three strengths",
     "key strengths"
    ],
-   "answer_en": "I have a strong mix of technical AI skills and project management experience. I can build AI solutions and also manage stakeholders, timelines, and delivery. I am hands-on with LLMs, RAG, Python, and APIs, and I have a proven track record of delivering projects in education and payment systems.",
+   "answer_en": "I have two sides. I build AI systems, and I can also run a project. I work hands-on with LLMs, RAG, Python, and APIs. And I can talk to the people who pay for it, set a timeline, and deliver. I have done that in education and in payment systems.",
    "followup_en": "In seven years of government payments, a wrong action was worse than a slow one. So I put checks in AI work too: a person reviews important output, and we keep a log. Simple tools help because they are easier to test and explain. If I only studied a tool, I say that. I do not pretend production experience I do not have.",
    "answer_ar": "لدي مزيج قوي من المهارات التقنية في الذكاء الاصطناعي وخبرة إدارة المشاريع. أستطيع بناء حلول الذكاء الاصطناعي وإدارة أصحاب المصلحة والجداول الزمنية والتسليم. أنا عملي في LLMs و RAG و Python و APIs، ولدي سجل حافل في تسليم المشاريع في التعليم وأنظمة الدفع."
   },
@@ -72,7 +72,7 @@
     "what do you struggle with"
    ],
    "answer_en": "I sometimes spend too much time perfecting details. I am learning to balance perfection with delivery speed, especially in fast-paced AI projects. I now set time limits for exploration and focus on iterative delivery.",
-   "followup_en": "GPU serving is different from the CPU systems I already run. I know the ideas: VRAM, batching, and engines like vLLM. I have not operated a cluster in production, so I would not claim that. For the careful part, I keep the first demo light, then move the real logic into tested code before users depend on it.",
+   "followup_en": "GPU serving is different from the CPU systems I run today. I know the ideas: VRAM, batching, and engines like vLLM. I have not run a cluster in production, so I will not claim it. For the careful part, I keep the first demo light. Then I move the real logic into tested code before users depend on it.",
    "answer_ar": "أحيانًا أقضي وقتًا طويلاً في تحسين التفاصيل. أتعلم حاليًا تحقيق التوازن بين الإتقان وسرعة التسليم، خاصة في مشاريع الذكاء الاصطناعي سريعة الوتيرة. الآن أضع حدودًا زمنية للاستكشاف وأركز على التسليم التكراري."
   },
   {
@@ -148,7 +148,7 @@
     "move into management"
    ],
    "answer_en": "I want to lead the AI engineering work in a place like this. That means owning retrieval, agents, checks, and how we measure quality. I want to explain to an auditor why the system gave an answer. The next step is production work with models that stay inside the country.",
-   "followup_en": "I still want to stay close to the code, not only manage people. In five years I want to mentor engineers and own the architecture: retrieval, agents, evaluation, and how we deploy models on our own hardware. I have the delivery background from PMP and payment projects. The missing piece is deep production experience with in-country LLM serving, and that is what I want to build here.",
+   "followup_en": "I still want to stay close to the code, not only manage people. In five years I want to mentor engineers and own the design. That means retrieval, agents, testing, and how we run models on our own hardware. I already have the delivery side from PMP and the payment projects. What I am missing is deep production work with local LLM serving. That is what I want to build here.",
    "answer_ar": "بعد خمس سنوات أريد أن أقود هندسة الذكاء الاصطناعي هنا، وأن أشرح لأي مدقق لماذا أجاب النظام بهذا الشكل."
   },
   {
@@ -408,7 +408,7 @@
     "coordinated vendors"
    ],
    "answer_en": "Yes. For seven years I managed software and e-payment projects for Kuwait ministries, including testing, user acceptance, and vendors. My style is clear ownership and honest status. I set the goal and the acceptance checks, then give people room. At the Ministry of Education I lead the AI work technically.",
-   "followup_en": "That Kuwait role was delivery leadership: developers, testers, vendors, and ministry users. I did not write every line of code. I made sure the path to go-live was clear. At the Ministry the leadership is more technical: which design is safe, what we will not send to a model, and how teachers approve output. Both kinds matter. I am not looking to leave the engineering work behind.",
+   "followup_en": "The Kuwait role was delivery leadership. Developers, testers, vendors, and ministry users. I did not write every line of code. My job was to keep the path to go-live clear. At the Ministry the leadership is more technical. Which design is safe. What we will not send to a model. How teachers approve the output. Both kinds matter. I do not want to leave the engineering work behind.",
    "answer_ar": "نعم، سبع سنوات إدارة مشاريع دفع حكومي في الكويت، واليوم أقود اتجاه الذكاء الاصطناعي فنياً في الوزارة."
   },
   {
@@ -740,7 +740,7 @@
     "before we finish"
    ],
    "answer_en": "Yes. Where does the data live today, and is there already an on-premise or in-country model? Which use case comes first: document question answering, reporting, or workflow? And how do you check AI quality before launch, a test set and human approval, or would I set that up?",
-   "followup_en": "Those three questions tell me if the job is real engineering or only a demo. If data already has a home, I can map sensitivity on day one. If there is no in-country model yet, building that path is part of the role, and I want that to be explicit. If there is no test set, I would rather know now. I am asking how the system will be judged, not about perks.",
+   "followup_en": "Those three questions tell me if the job is real engineering or only a demo. If the data already has a home, I can map what is sensitive on day one. If there is no local model yet, building that path is part of the role, and I want that said out loud. If there is no test set, I would rather know now. I am asking how the system will be judged, not about perks.",
    "answer_ar": "أسأل أين البيانات اليوم، وما أول حالة استخدام، وكيف تقيسون جودة الذكاء الاصطناعي قبل الإطلاق."
   },
   {
@@ -776,7 +776,7 @@
     "what range",
     "make the offer work"
    ],
-   "answer_en": "I am flexible. The role and the impact matter more than a number today. I would expect a package in line with a senior AI engineer in the UAE government sector, given fifteen years of experience and relocation. I am happy to discuss a range once I understand the full scope and benefits.",
+   "answer_en": "I am flexible. The role matters more to me than a number today. I would expect something in line with a senior AI engineer in the UAE government sector. I have fifteen years of experience, and I would be relocating. I am happy to talk about a range once I know the full scope and the benefits.",
    "followup_en": "I am not going to invent a number in this meeting. Relocation, housing, and benefits change the picture. I want the scope first: seniority, on-site expectation, and how central the AI work is. After that I can talk about a range that matches the market for this kind of government role. I would rather be aligned than pick a figure that surprises either side.",
    "answer_ar": "مرن، وأتوقع عرضاً يتناسب مع مهندس ذكاء اصطناعي أول في القطاع الحكومي مع خبرة خمسة عشر عاماً وانتقال."
   },
@@ -961,7 +961,7 @@
     "last chance"
    ],
    "answer_en": "Just one thing. I spent seven years on government payment systems, so I design as if everything will be audited. I bring that into AI: answers with sources, a person checking important actions, and full logs. If I have not used a tool in production, I will say so. Thank you for your time.",
-   "followup_en": "The point I want remembered is not a slogan. It is a habit from KNET payment work: if you cannot reconstruct it, you should not put it in production. I can learn a new serving stack. I will not hide a gap. If this role needs in-country models, human approval, and measurable quality, that is the work I already try to do at the Ministry, at a smaller scale.",
+   "followup_en": "The point I want you to remember is not a slogan. It is a habit from the KNET payment years. If you cannot rebuild what happened, do not put it in production. I can learn a new serving stack, and I will not hide a gap. This role needs local models, human approval, and quality you can measure. That is the work I already do at the Ministry, just on a smaller scale.",
    "answer_ar": "أبني كأن كل شيء سيُراجع: مصادر، موافقة شخص، وسجلات. وإذا الأداة ليست في الإنتاج، أقول ذلك."
   },
   {
@@ -1133,7 +1133,7 @@
     "feedback"
    ],
    "answer_en": "I start by asking what the code is supposed to guarantee, because most review comments are really disagreements about the requirement. Then I separate three things: something that is wrong, something that is risky, and something I would write differently. Only the first two block. The third is an opinion and I say so.",
-   "followup_en": "With a junior I would rather explain the failure mode than hand over the fix, and I ask for a test that fails before the change. Fifteen years of delivery taught me that the expensive bugs are the ones nobody could reproduce, so I push for logs and reproducible steps more than for style. I also say when I am unsure. A reviewer who is always certain teaches people to hide problems.",
+   "followup_en": "With a junior I explain what breaks, instead of handing over the fix. I also ask for a test that fails before the change. Fifteen years taught me that the expensive bugs are the ones nobody can repeat. So I push for logs and clear steps more than for style. I also say when I am not sure. A reviewer who is always certain teaches people to hide problems.",
    "answer_ar": "أبدأ بسؤال ما الذي يفترض أن يضمنه هذا الكود، لأن أغلب ملاحظات المراجعة هي في الحقيقة خلاف على المتطلب. ثم أفصل ثلاثة أشياء: ما هو خطأ، وما هو خطِر، وما كنت سأكتبه بشكل مختلف. الأولان فقط يوقفان الدمج. والثالث رأي وأقول ذلك صراحة."
   }
  ]

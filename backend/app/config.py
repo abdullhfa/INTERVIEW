@@ -102,22 +102,22 @@ class Settings(BaseSettings):
         600, description="Minimum silence to finalize candidate utterance"
     )
     vad_interviewer_min_silence_ms: int = Field(
-        900,
+        550,
         description=(
             "Minimum silence before finalizing interviewer speech. "
-            "Lower = faster answers; raise if questions get cut mid-sentence."
+            "550ms for live latency (was 900); raise if questions get cut mid-sentence."
         ),
     )
     vad_pre_roll_ms: int = Field(
-        600,
+        450,
         description=(
             "Circular loopback pre-roll kept before VAD speech_start. "
             "Whisper receives pre-roll + speech (not a VAD-cropped onset). "
-            "Clean onset A/B: 400/600/800/1000 tied on first_word; 600 best latency/intent."
+            "450ms trims decode audio vs 600 while keeping onset margin."
         ),
     )
     vad_post_roll_ms: int = Field(
-        250,
+        120,
         description="Extra audio kept after VAD end-of-speech before flushing to STT",
     )
     interviewer_stt_merge_ms: int = Field(
@@ -167,10 +167,10 @@ class Settings(BaseSettings):
         description="Force Whisper decoding language (interview questions are English only). Empty = auto-detect.",
     )
     whisper_beam_size: int = Field(
-        3,
+        1,
         description=(
-            "Beam size for first-pass Whisper. 3 balances accent robustness vs latency; "
-            "accurate second-pass may use a slightly larger beam. best_of stays 1."
+            "Beam size for first-pass Whisper. 1 for live latency; "
+            "accurate second-pass may still widen beam slightly. best_of stays 1."
         ),
     )
     whisper_fallback_model_size: str = Field(

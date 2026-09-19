@@ -377,9 +377,9 @@ function LiveSessionContainer({ session, lengthMode, langMode, onLangChange, aud
       setPhase('listening');
       const status = 'تم توليد الإجابة — بانتظار السؤال التالي';
       setSessionStatus(status);
-      activeQuestionRef.current = '';
-      setActiveQuestionText('');
-      persistCache(next, '', status);
+      // Keep the spoken question visible as defense against wrong matches.
+      // Clear only when the next question is accepted.
+      persistCache(next, activeQuestionRef.current, status);
     };
 
     const storePartialAnswer = (answer: GeneratedAnswer) => {

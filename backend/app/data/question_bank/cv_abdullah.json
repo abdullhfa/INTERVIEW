@@ -32,8 +32,8 @@
     "journey",
     "profile"
    ],
-   "answer_en": "I am an AI & Software Engineer with over 15 years of experience across software development, systems, AI, and technical project delivery. I started my career in software and payment systems, managing Kiosk and POS projects in Kuwait. Later, I moved into AI and intelligent automation, working on NLP, speech recognition, and machine learning for educational organizations. Currently, I work at the Ministry of Education in Jordan, where I build LLM, RAG, and Agentic AI solutions for BTEC educational processes, including student assessment support, automated feedback, and exam generation. I hold a B.Sc. in Computer Engineering, a Higher Diploma in Educational Administration, and certifications like PMP and PRINCE2. I am passionate about applying AI to solve real-world problems, especially in education.",
-   "followup_en": "The Ministry work started in 2023. That is where LLM, RAG, and the question-generation flow live. Production orchestration is Python. LangChain was only a proof of concept, and LangGraph is not in production. At Al Najat from 2017 to 2023 I built a Whisper kiosk, student early-warning with Pandas and sklearn, and helpdesk classification with TF-IDF. From 2010 to 2017 at VNC I managed KNET payment kiosks and POS. I am PMP certified.",
+   "answer_en": "I am an AI and software engineer with more than 15 years of work. I started with payment systems in Kuwait, running kiosk and POS projects. Then I moved to AI at Al Najat: early-warning, helpdesk classification, and a donation kiosk with Whisper and TTS. Since 2023 I work at Jordan’s Ministry of Education on BTEC. There I build RAG and multi-agent tools for student assessment support, automated feedback, and exam questions, plus similarity checking and completion risk monitoring. I studied computer engineering, and I hold PMP and PRINCE2.",
+   "followup_en": "The Ministry work started in 2023. That is where LLM, RAG, and the question flow live. Production orchestration is plain Python. LangChain was only a test, and LangGraph is not in production. At Al Najat, from 2017 to 2023, I built a Whisper kiosk. I also built an early-warning tool with Pandas and sklearn, and helpdesk sorting with TF-IDF. From 2010 to 2017 at VNC I ran KNET payment kiosks and POS. I am PMP certified.",
    "listen_for": [
     "fifteen years",
     "Ministry of Education",
@@ -44,7 +44,7 @@
     "Jordan",
     "from 2023"
    ],
-   "answer_ar": "أنا مهندس ذكاء اصطناعي وبرمجيات بخبرة تتجاوز 15 عامًا في تطوير البرمجيات والأنظمة والذكاء الاصطناعي وإدارة المشاريع التقنية. بدأت مسيرتي في أنظمة الدفع والبرمجيات، حيث أدرت مشاريع الكشك ونقاط البيع في الكويت. ثم انتقلت إلى الذكاء الاصطناعي والأتمتة الذكية، وعملت على معالجة اللغة الطبيعية والتعرف على الصوت وتعلم الآلة في مؤسسات تعليمية. حاليًا أعمل في وزارة التربية والتعليم في الأردن، حيث أبني حلول LLM و RAG و Agentic AI لدعم عمليات BTEC التعليمية، بما في ذلك دعم تقييم الطلاب والتغذية الراجعة الآلية وتوليد الأسئلة والامتحانات. أحمل بكالوريوس في هندسة الحاسوب، ودبلوم عالي في الإدارة التربوية، وشهادات مثل PMP و PRINCE2. لدي شغف بتطبيق الذكاء الاصطناعي لحل مشكلات واقعية، خاصة في التعليم."
+   "answer_ar": "أنا مهندس ذكاء اصطناعي وبرمجيات بخبرة أكثر من 15 عاماً. بدأت بأنظمة الدفع في الكويت، ثم الذكاء الاصطناعي في النجاة، ومنذ 2023 في وزارة التربية بالأردن على أدوات BTEC: دعم التقييم والتغذية الراجعة وتوليد الأسئلة مع RAG ووكلاء متعددين، إضافة إلى التشابه ومخاطر الإكمال. درست هندسة الحاسوب ولدي PMP وPRINCE2."
   },
   {
    "id": "intro.short_version",
@@ -96,7 +96,12 @@
     "if I sat next to you for a week, what would I see",
     "who do you actually build things for right now",
     "are you more systems or more AI in this job",
-    "what does systems developer and AI engineer mean in practice"
+    "what does systems developer and AI engineer mean in practice",
+    "tell me a bit about the project involving software systems that support btec educational and administrative processes",
+    "tell me about the project involving software systems that support btec",
+    "software systems that support btec educational and administrative processes",
+    "the software that supports btec educational and administrative processes",
+    "why does btec even need software"
    ],
    "keywords": [
     "current role",
@@ -104,13 +109,20 @@
     "ministry of education",
     "btec",
     "responsibilities",
-    "day to day"
+    "day to day",
+    "software systems",
+    "educational",
+    "administrative",
+    "processes"
    ],
-   "answer_en": "Since 2023 I am a Systems Developer and AI Engineer for BTEC at Jordan's Ministry of Education. I maintain the software that supports BTEC processes. I also build LLM, RAG, and agentic tools for exam questions and feedback. Day to day that is Python, FastAPI, SQL, embeddings, and teacher review before save.",
-   "followup_en": "The generation flow retrieves unit content, generates only from that text, checks JSON with Pydantic, then waits for a teacher. Student personal data does not go to the model. Similarity checking is a separate system: embeddings and cosine similarity, no LLM. Completion risk is SQL and Pandas, with sklearn where history existed. I own the AI design and work with Ministry IT on access and deployment.",
+   "answer_en": "Since 2023 I am a Systems Developer and AI Engineer for BTEC at Jordan’s Ministry of Education. I build and maintain the software systems that support BTEC educational and administrative processes. That includes the core process software for units, assessments, and school follow-up, plus AI tools on top of it: student assessment support, automated feedback, and exam question generation with RAG and a multi-agent workflow; an assignment similarity checker with embeddings and cosine similarity; and BTEC completion risk monitoring with SQL, Pandas, and Scikit-learn.",
+   "followup_en": "For the generative tools the pattern is: prepare BTEC content, chunk it, embed it, store it in a vector database, retrieve with RAG, then agents for retrieve, analyze, and generate. Similarity has no LLM. Completion risk is classic data and ML. I own the AI design and work with Ministry IT on access and deployment.",
    "listen_for": [
     "since 2023",
     "BTEC",
+    "educational",
+    "administrative",
+    "software systems",
     "exam questions",
     "teacher",
     "Python",
@@ -118,7 +130,7 @@
     "Ministry of Education",
     "systems developer"
    ],
-   "answer_ar": "عمله الحالي مزيج: صيانة أنظمة BTEC، وبناء أدوات توليد أسئلة وتغذية راجعة بالنماذج اللغوية، مع مراجعة المعلم قبل الحفظ."
+   "answer_ar": "منذ 2023 أعمل مطور أنظمة ومهندس ذكاء اصطناعي لـ BTEC في وزارة التربية بالأردن. أبني وأصون أنظمة البرمجيات التي تدعم العمليات التعليمية والإدارية لـ BTEC، إضافة إلى أدوات الذكاء الاصطناعي: دعم التقييم، والتغذية الراجعة، وتوليد الأسئلة بـ RAG ووكلاء متعددين، وفاحص التشابه، ومراقبة مخاطر الإكمال."
   },
   {
    "id": "moe.what_is_btec",
@@ -132,15 +144,14 @@
     "what is the btec program",
     "tell me about btec",
     "I do not know btec, explain it like I am not in education",
-    "why does btec even need software",
     "what are students actually doing in btec",
     "is btec an exam board or a school system"
    ],
    "keywords": [
     "btec"
    ],
-   "answer_en": "BTEC is a vocational program in Jordanian schools under the Ministry of Education. Students finish units and assignments. Teachers mark them against learning outcomes. My job is the software around that: admin systems, plus AI tools that help teachers with questions, feedback, and review.",
-   "followup_en": "A unit has content and learning outcomes. Questions and feedback must stay inside that content, not general internet knowledge. That is why generation uses retrieval first. Teachers still own the mark and the question bank. The software helps them move faster. It does not replace assessment.",
+   "answer_en": "BTEC (Business and Technology Education Council) is a vocational qualification in the UK. It focuses on practical, work-related learning. In Jordan, the Ministry of Education adopted BTEC for vocational education. It includes units, learning outcomes, and assessments.",
+   "followup_en": "Teachers mark student work against those learning outcomes. My AI tools stay inside the unit content: retrieval first, then generation or comparison. The software helps teachers move faster. It does not replace the teacher’s assessment decision.",
    "listen_for": [
     "vocational",
     "units",
@@ -150,7 +161,7 @@
     "Jordan",
     "Ministry"
    ],
-   "answer_ar": "BTEC برنامج مهني في المدارس. الطالب ينجز وحدات، والمعلم يقيّم حسب نواتج التعلم، وأنظمة عبدالله تدعم هذا العمل."
+   "answer_ar": "BTEC هو مؤهل مهني في المملكة المتحدة يركز على التعلم العملي المرتبط بالعمل. في الأردن تبنّته وزارة التربية للتعليم المهني، ويشمل وحدات ومخرجات تعلم وتقييمات."
   },
   {
    "id": "moe.ai_solutions",
@@ -177,8 +188,8 @@
     "ministry",
     "generative"
    ],
-   "answer_en": "Three Ministry systems. Exam question generation and automated feedback uses an LLM, RAG, and an agentic workflow. The similarity checker uses embeddings and cosine similarity, not an LLM. Completion risk uses SQL and Pandas, and sklearn where the history was enough. Only generation is agentic.",
-   "followup_en": "For generation I retrieve unit content, generate only from it, validate JSON with Pydantic, and wait for teacher approval. Similarity splits assignments into chunks, compares vectors, and flags pairs. Completion computes rates in SQL, then a risk score if past terms exist. LangChain was a proof of concept. Production glue is Python. I do not put an LLM inside similarity, early-warning, or helpdesk.",
+   "answer_en": "At the Ministry I built several AI systems for BTEC. Three use RAG and a multi-agent workflow: student assessment support for teachers, automated feedback for students, and exam question generation. I also built an assignment similarity checker with embeddings and cosine similarity, and a BTEC completion risk monitoring system with SQL, Pandas, and Scikit-learn.",
+   "followup_en": "For the three generative systems the pattern is the same: prepare BTEC content, chunk it, embed it, store it in a vector database, retrieve with RAG, then run agents for retrieve, analyze, and generate. Similarity has no LLM. Completion risk is classic data and ML, not generation.",
    "listen_for": [
     "question generation",
     "similarity checker",
@@ -189,7 +200,7 @@
     "teacher approval",
     "three systems"
    ],
-   "answer_ar": "ثلاثة أنظمة: توليد أسئلة بنموذج لغوي، ومدقق تشابه بالـ embeddings فقط، ومخاطر الإنجاز بـ SQL وتحليل بيانات. الوكيل الذكي في التوليد فقط."
+   "answer_ar": "في الوزارة بنيت عدة أنظمة ذكاء اصطناعي لـ BTEC. ثلاثة منها تستخدم RAG وسير عمل متعدد الوكلاء: دعم تقييم أعمال الطلاب، والتغذية الراجعة الآلية، وتوليد أسئلة الامتحان. وأيضاً فاحص تشابه الواجبات بالتضمينات وتشابه جيب التمام، ومراقبة مخاطر إكمال الوحدات بـ SQL وPandas وScikit-learn."
   },
   {
    "id": "moe.operational_status",
@@ -232,9 +243,14 @@
    "id": "moe.question_generation",
    "category": "cv.project",
    "topic": "project:qgen",
-   "question": "Tell me about the exam question generation and feedback system",
+   "question": "Tell me about the Exam Question Generation project",
    "aliases": [
+    "tell me about the exam question generation project",
+    "tell me a brief overview of the exam question generation project",
     "tell me about the exam question generation and feedback system",
+    "exam/question generation",
+    "exam question generation",
+    "question generation",
     "how did you build the question generation with llm",
     "how does the ai generate exam questions",
     "walk me through the question generator",
@@ -242,28 +258,31 @@
     "how do you stop the model inventing a topic that is not in the unit",
     "is this one prompt or a workflow",
     "who is allowed to save a generated question",
-    "show me the path from unit text to a saved question"
+    "show me the path from unit text to a saved question",
+    "overview of the exam question generation project",
+    "describe the exam question generation system"
    ],
    "keywords": [
     "question generation",
     "exam questions",
-    "automated feedback",
     "generate questions",
-    "feedback"
+    "exam question",
+    "assessment questions"
    ],
-   "answer_en": "This is the LLM project at the Ministry. I retrieve the BTEC unit text and learning outcomes, and the model writes questions and feedback only from that text. Output is JSON, checked with Pydantic. A teacher must approve before anything is saved, and I wrote that flow in Python.",
-   "followup_en": "I did not send one giant prompt. Retrieval, generation, schema check, then a pause. That is agentic in the practical sense: a goal, tools, state between steps, and a stop for a person. LangChain helped the proof of concept. LangGraph would fit the pause and checkpoints, but it is not what runs today. Student names never go to the model. Curriculum text does.",
+   "answer_en": "I developed an AI system to help teachers generate BTEC exam and assessment questions based on BTEC assessment criteria.\n\nWhen a teacher selects a topic or BTEC assessment criteria, the system analyzes the relevant content and creates questions based on the selected topic and criteria.\n\nI prepared the BTEC learning content, split it into smaller chunks, created embeddings, and stored them in a vector database.\n\nI built the RAG workflow to retrieve the most relevant BTEC criteria and learning content for the selected topic.\n\nI also used a multi-agent workflow to manage the process. One agent retrieves the relevant BTEC content, another agent analyzes the selected topic and assessment criteria, and a third agent generates the questions.\n\nI tested the generated questions, checked accuracy, and improved the prompts.",
+   "followup_en": "This is for teachers generating exam and assessment questions. Student assessment support and automated feedback are separate projects with the same RAG and three-agent pattern, but different outputs.",
    "listen_for": [
-    "retrieve",
-    "unit content",
-    "JSON",
-    "Pydantic",
-    "teacher approve",
-    "Python",
-    "only from that text",
-    "not one prompt"
+    "BTEC assessment criteria",
+    "selected topic",
+    "chunks",
+    "embeddings",
+    "vector database",
+    "RAG",
+    "multi-agent",
+    "generates the questions",
+    "improved the prompts"
    ],
-   "answer_ar": "النظام يجلب محتوى الوحدة أولاً، ثم يولّد أسئلة منها فقط بشكل JSON، ولا يحفظ شيئاً إلا بعد موافقة المعلم."
+   "answer_ar": "طورت نظام ذكاء اصطناعي لمساعدة المعلمين على توليد أسئلة امتحان وتقييم BTEC وفق معايير التقييم. عندما يختار المعلم موضوعاً أو معايير، يحلّل النظام المحتوى ويُنشئ الأسئلة. حضّرت محتوى BTEC وقسّمته إلى أجزاء وأنشأت تضمينات وخزّنتها في قاعدة متجهات. بنيت سير عمل RAG، واستخدمت ثلاثة وكلاء: استرجاع، وتحليل الموضوع والمعايير، وتوليد الأسئلة، مع اختبار الدقة وتحسين الـ prompts."
   },
   {
    "id": "moe.question_generation.why_steps",
@@ -287,8 +306,8 @@
     "one prompt",
     "multi step"
    ],
-   "answer_en": "Because one giant prompt gives me output I cannot check. First, retrieval shows exactly which unit text went in. Second, a fixed JSON shape lets me validate every field. Third, teacher approval keeps the exam decision with a human. Each step is small and testable, which matters for official questions.",
-   "followup_en": "If retrieval is empty, I stop. I do not let the model fill gaps from memory. If JSON fails Pydantic, I retry or send it to review, I do not save a broken record. Logs show the retrieved chunks, the raw model text, and who approved. In an exam bank that trail is the point. Speed is not the point.",
+   "answer_en": "I split the work into steps so each part is clear and testable. First retrieve the relevant BTEC content. Then analyze the topic, criteria, or student work. Then generate the questions, feedback, or assessment report. That multi-agent split keeps retrieval separate from generation, so I can check what text went into the model.",
+   "followup_en": "If retrieval returns the wrong unit text, I fix retrieval. If the draft is weak, I fix the analyze or generate prompts. One giant prompt hides which step failed. For official BTEC material that separation matters.",
    "listen_for": [
     "cannot check",
     "retrieval",
@@ -299,7 +318,7 @@
     "official",
     "one prompt"
    ],
-   "answer_ar": "تقسيم الخطوات حتى يمكن فحص المصدر والشكل والموافقة. السؤال الرسمي لا يُحفظ من رد حر للنموذج."
+   "answer_ar": "قسّمت العمل إلى خطوات قابلة للفحص: استرجاع محتوى BTEC، ثم تحليل الموضوع أو عمل الطالب، ثم توليد الأسئلة أو التغذية الراجعة أو تقرير التقييم. فصل الاسترجاع عن التوليد يوضح مصدر الخطأ."
   },
   {
    "id": "moe.question_generation.llm_used",
@@ -339,11 +358,99 @@
    "answer_ar": "بدأ بواجهة نموذج خارجية للتجربة. بيانات الطالب الشخصية لا تُرسل للنموذج، والاستدعاء يمر من طبقة داخلية واحدة حتى يمكن تبديل النموذج."
   },
   {
+   "id": "proj.assessment_support.describe",
+   "category": "cv.project",
+   "topic": "project:assessment_support",
+   "question": "Tell me about the Student Assessment Support project",
+   "aliases": [
+    "tell me about the student assessment support project",
+    "tell me a brief overview of the student assessment support project",
+    "student assessment support",
+    "what is the student assessment support project",
+    "overview of the student assessment support project",
+    "describe the student assessment support system",
+    "how does student assessment support work",
+    "tell me about assessment support for teachers",
+    "the ai system that helps teachers assess student work"
+   ],
+   "keywords": [
+    "student assessment support",
+    "assessment support",
+    "assessment report",
+    "btec criteria",
+    "strengths",
+    "weaknesses"
+   ],
+   "answer_en": "I developed an AI system to help teachers review and assess student work based on BTEC assessment criteria.\n\nWhen a student submits an assignment, the system analyzes the work and generates a report showing strengths, weaknesses, achieved criteria, and areas that need improvement.\n\nI prepared the BTEC learning content, split it into smaller chunks, created embeddings, and stored them in a vector database.\n\nI built the RAG workflow to retrieve the most relevant BTEC criteria and learning content for the student’s assignment.\n\nI also used a multi-agent workflow to manage the process. One agent retrieves the relevant BTEC content, another agent analyzes the student’s work, and a third agent generates the assessment report.\n\nI also tested the results, checked the accuracy of the assessment, and improved the prompts.",
+   "followup_en": "This is Ministry BTEC work for teachers. It uses RAG and a three-agent flow: retrieve, analyze, generate. It is not the similarity checker, and it is not classic ML like early-warning.",
+   "listen_for": [
+    "BTEC assessment criteria",
+    "strengths and weaknesses",
+    "chunks",
+    "embeddings",
+    "vector database",
+    "RAG",
+    "multi-agent",
+    "assessment report",
+    "improved the prompts"
+   ],
+   "answer_ar": "طورت نظام ذكاء اصطناعي لمساعدة المعلمين على مراجعة وتقييم أعمال الطلاب وفق معايير تقييم BTEC. عند تسليم الواجب يحلّل النظام العمل ويُنشئ تقريراً يوضح نقاط القوة والضعف والمعايير المحققة وما يحتاج تحسيناً. حضّرت محتوى BTEC، وقسّمته إلى أجزاء، وأنشأت تضمينات، وخزّنتها في قاعدة متجهات. بنيت سير عمل RAG لاسترجاع المعايير والمحتوى الأنسب، واستخدمت ثلاثة وكلاء: استرجاع، وتحليل، وتوليد تقرير التقييم، مع اختبار النتائج وتحسين الـ prompts."
+  },
+  {
+   "id": "proj.automated_feedback.describe",
+   "category": "cv.project",
+   "topic": "project:automated_feedback",
+   "question": "Tell me about the Automated Feedback project",
+   "aliases": [
+    "tell me about the automated feedback project",
+    "tell me a brief overview of the automated feedback project",
+    "automated feedback",
+    "what is the automated feedback project",
+    "overview of the automated feedback project",
+    "describe the automated feedback system",
+    "how does automated feedback work",
+    "the ai system that helps students improve btec assignments",
+    "tell me about automated feedback for students",
+    "student automated feedback"
+   ],
+   "keywords": [
+    "automated feedback",
+    "feedback",
+    "students improve",
+    "btec assignments",
+    "assessment criteria"
+   ],
+   "answer_en": "I developed an AI system to help students improve their performance in BTEC assignments.\n\nWhen a student submits an assignment, the system analyzes the work and identifies the areas that need improvement based on the BTEC assessment criteria.\n\nI prepared the BTEC learning content, split it into smaller chunks, created embeddings, and stored them in a vector database.\n\nI built the RAG workflow to retrieve the most relevant BTEC criteria and learning content for the student’s assignment.\n\nI also used a multi-agent workflow to manage the process. One agent retrieves the relevant BTEC content, another agent analyzes the student’s work, and a third agent generates the feedback.\n\nI also tested the feedback, checked its accuracy, and improved the prompts and retrieval process when needed.",
+   "followup_en": "This is for students, not the teacher assessment-support report. Same RAG and three-agent pattern: retrieve, analyze, generate feedback. I tune prompts and retrieval when the feedback is weak.",
+   "listen_for": [
+    "students",
+    "BTEC assignments",
+    "areas that need improvement",
+    "chunks",
+    "embeddings",
+    "vector database",
+    "RAG",
+    "multi-agent",
+    "generates the feedback",
+    "improved the prompts"
+   ],
+   "answer_ar": "طورت نظام ذكاء اصطناعي لمساعدة الطلاب على تحسين أدائهم في واجبات BTEC. عند تسليم الواجب يحلّل النظام العمل ويحدد نقاط التحسين وفق معايير التقييم. حضّرت محتوى BTEC وقسّمته إلى أجزاء وأنشأت تضمينات وخزّنتها في قاعدة متجهات. بنيت سير عمل RAG، واستخدمت ثلاثة وكلاء: استرجاع، وتحليل، وتوليد التغذية الراجعة، مع اختبار الدقة وتحسين الـ prompts والاسترجاع عند الحاجة."
+  },
+  {
    "id": "proj.similarity.describe",
    "category": "cv.project",
    "topic": "project:similarity",
-   "question": "Tell me about the BTEC Assignment Similarity Checker",
+   "question": "Tell me about the AI-based Assignment Similarity Checker for BTEC",
    "aliases": [
+    "tell me about the ai-based assignment similarity checker for btec",
+    "tell me about the btec assignment similarity checker",
+    "tell me a brief overview of the assignment similarity checker",
+    "ai-based assignment similarity checker for btec",
+    "assignment similarity checker",
+    "similarity checker for btec",
+    "how does the similarity checker work",
+    "overview of the assignment similarity checker project",
+    "describe the btec similarity checker",
     "tell me about the BTEC Assignment Similarity Checker",
     "how does the assignment similarity checker work",
     "how did you detect copied assignments",
@@ -358,23 +465,25 @@
     "similarity checker",
     "similarity",
     "assignments",
+    "embeddings",
+    "cosine",
+    "threshold",
+    "btec",
     "plagiarism",
     "copied",
     "compared assignments"
    ],
-   "answer_en": "Students can copy and change the words, so exact matching misses that. I turn assignments into embeddings and compare meaning. I split the text into chunks, because one vector for a whole paper hides a copied paragraph. The tool flags two close passages, and the teacher decides.",
-   "followup_en": "Each chunk has metadata: school, subject, term, assignment number. I filter on that before comparing, so I am not mixing the wrong sets. I tuned the cutoff on real teacher-reviewed pairs. This is not an LLM and not RAG. There is no generation step. A local vector store holds id, vector, text, and metadata. Chroma was a prototype evaluation only.",
+   "answer_en": "I developed an AI system to help teachers identify high similarity between BTEC student assignments.\n\nThe system analyzes and compares student assignments to find similar content that may need additional review.\n\nI prepared and cleaned the assignment text and created embeddings to represent the text numerically.\n\nI used cosine similarity to compare the embeddings and calculate the similarity score between assignments.\n\nThe system highlights assignments with high similarity for teacher review.\n\nI also tested the results, checked the similarity scores, and adjusted the similarity threshold when needed.",
+   "followup_en": "This is not an LLM and not RAG. There is no generation step. Embeddings and cosine similarity only flag pairs. The teacher decides what to do next.",
    "listen_for": [
     "embeddings",
-    "chunks",
-    "meaning",
-    "flags",
-    "teacher decides",
-    "not word matching",
-    "metadata",
-    "not an LLM"
+    "cosine similarity",
+    "similarity score",
+    "high similarity",
+    "teacher review",
+    "threshold"
    ],
-   "answer_ar": "المدقق يحوّل الواجب إلى متجهات ويقارن المعنى على مستوى فقرات. يُظهر التشابه للمعلم، ولا يحكم على الطالب."
+   "answer_ar": "طورت نظام ذكاء اصطناعي لمساعدة المعلمين على اكتشاف التشابه العالي بين واجبات طلاب BTEC. يحلّل النظام الواجبات ويقارنها لإيجاد محتوى متشابه قد يحتاج مراجعة إضافية. حضّرت نص الواجب ونظّفته وأنشأت تضمينات، واستخدمت تشابه جيب التمام لحساب الدرجة، ثم أُبرزت الحالات للمراجعة، مع اختبار النتائج وضبط عتبة التشابه عند الحاجة."
   },
   {
    "id": "proj.similarity.tech",
@@ -399,8 +508,8 @@
     "tools",
     "vector database"
    ],
-   "answer_en": "Python, a sentence-embedding model from Hugging Face, and cosine similarity. I stored vectors in a lightweight local store. I tried Chroma for a prototype. I did not use an LLM here. The rest is text extraction, chunking, metadata filters, and a teacher review screen.",
-   "followup_en": "I would pick Qdrant or pgvector for a heavier production store, because filtering, backup, and on-premise ops matter. I have not run Qdrant in production. I know how collections and payload filters work. Pinecone is a poor fit if data must stay inside the country. No LangChain in this project. No agent.",
+   "answer_en": "Python, embeddings for the assignment text, and cosine similarity for the score. I prepared and cleaned the text, stored the vectors, compared them, and tuned the threshold with real cases. No LLM in this path.",
+   "followup_en": "Chunking helps when a copied paragraph sits inside a longer paper. Metadata filters keep comparisons inside the right school, subject, and term set.",
    "listen_for": [
     "Python",
     "Hugging Face",
@@ -411,7 +520,7 @@
     "chunking",
     "Qdrant"
    ],
-   "answer_ar": "التقنية: بايثون وembeddings وتشابه جيب التمام وتخزين محلي خفيف. كروما للتجربة فقط، بلا نموذج لغوي."
+   "answer_ar": "بايثون، وتضمينات لنص الواجب، وتشابه جيب التمام للدرجة، مع تنظيف النص وضبط العتبة. لا يوجد نموذج لغوي في هذا المسار."
   },
   {
    "id": "proj.similarity.threshold",
@@ -435,7 +544,7 @@
     "tune",
     "similar"
    ],
-   "answer_en": "I did not pick a textbook number. Teachers had already reviewed some pairs: real follow-up cases, and expected overlap like shared question text. I tried different cutoffs and looked at misses and false alarms. Too low and teachers ignore the tool; too high and we miss copies, so they still decide.",
+   "answer_en": "I did not pick a textbook number. Teachers had already reviewed some pairs: real follow-up cases, and expected overlap like shared question text. I tried different cutoffs and looked at misses and false alarms. Too low and teachers ignore the tool. Too high and we miss real copies. So they still decide.",
    "followup_en": "Shared assignment instructions score high even when the student work is honest. Metadata filters reduce that noise before the score. I cared more about a list teachers would actually open than about a pretty chart. The cutoff can move by subject if needed. I would not freeze one global number forever.",
    "listen_for": [
     "not a textbook number",
@@ -468,7 +577,7 @@
     "rag",
     "similarity"
    ],
-   "answer_en": "No, it is vector search and comparison: embeddings, similarity, and metadata filters. Those blocks also appear in RAG. It becomes RAG when a language model writes from the retrieved text. We did not do that; the teacher reads the two passages.",
+   "answer_en": "No, it is vector search and comparison: embeddings, similarity, and metadata filters. Those blocks also appear in RAG. It becomes RAG when a language model writes from the retrieved text. We did not do that. The teacher reads the two passages.",
    "followup_en": "An LLM summary of the match would start to look like RAG. We avoided that because the case is about a student. I wanted the evidence on screen, not a generated accusation. Retrieval without generation is still useful. I keep the names clean so the interview and the architecture stay honest.",
    "listen_for": [
     "no",
@@ -535,8 +644,8 @@
     "yourself",
     "exactly did you do"
    ],
-   "answer_en": "I designed it and built it. I chose embeddings, wrote the chunking and comparison in Python, added metadata filters, and tuned the cutoff with teachers on real cases. I also built the review screen with the two passages side by side. The tool flags. The teacher decides.",
-   "followup_en": "I coordinated with Ministry IT for data access and deployment. Teachers were testers, not passengers. I did not outsource the core logic. There is no LLM in the matching path, and that was my call. If someone else had forced a chatbot on top, I would have pushed back because of student cases.",
+   "answer_en": "I designed and built it. I prepared the text, created embeddings, implemented cosine similarity, set the highlight path for teachers, and tuned the threshold after testing real cases.",
+   "followup_en": "Teachers were reviewers on flagged pairs. The tool flags. The teacher decides. I kept generation out of this path on purpose.",
    "listen_for": [
     "I designed",
     "I built",
@@ -546,14 +655,25 @@
     "review screen",
     "flags"
    ],
-   "answer_ar": "صمّمه وبناه بنفسه: المتجهات، التقطيع، الفلترة، وضبط الحد مع المعلمين، وشاشة المراجعة."
+   "answer_ar": "صممته وبنيته: تجهيز النص، التضمينات، تشابه جيب التمام، وإبراز الحالات للمعلمين مع ضبط العتبة بعد الاختبار."
   },
   {
    "id": "proj.early_warning.describe",
    "category": "cv.project",
    "topic": "project:early_warning",
-   "question": "Tell me about the Student Performance Early-Warning project",
+   "question": "Tell me about the Student Performance Early-Warning System",
    "aliases": [
+    "tell me about the student performance early-warning system",
+    "tell me about the student performance early-warning project",
+    "tell me a brief overview of the student performance early-warning system",
+    "student performance early-warning system",
+    "early-warning system",
+    "early warning system",
+    "early warning project",
+    "tell me about the early warning project",
+    "how does the early warning system work",
+    "overview of the student early-warning system",
+    "describe the student early warning system",
     "tell me about the Student Performance Early-Warning project",
     "how did you predict students at risk",
     "tell me about the machine learning project at al najat schools",
@@ -565,26 +685,30 @@
     "when in the term did the model run"
    ],
    "keywords": [
+    "early-warning",
     "early warning",
     "student performance",
-    "at risk",
     "grades",
     "attendance",
+    "scikit-learn",
+    "academic support",
+    "at risk",
     "najat schools"
    ],
-   "answer_en": "It was a project at Al Najat Schools. We analyzed grades and attendance to identify students who might need academic support. I used Python, Pandas, and Scikit-learn. I built a classification model that flagged at-risk students so teachers could intervene early.",
-   "followup_en": "I kept student IDs as text so leading zeros were not lost. Missing attendance was a signal, so I added a missing flag instead of filling the average. Scaling sat inside a sklearn pipeline to avoid leakage. I respected time: the model only saw features available at that point in the term, not final grades. Most students were fine, so Accuracy would have lied.",
+   "answer_en": "I developed an AI system to help identify students who may need academic support.\n\nThe system analyzes student data such as grades, attendance, and academic performance.\n\nI prepared and cleaned the data using Python and Pandas.\n\nI built a machine learning model using Scikit-learn to identify patterns and predict which students may need follow-up.\n\nI also tested the model, checked its accuracy, and improved it when needed.",
+   "followup_en": "This was at Al Najat in Kuwait. No LLM and no RAG. Teachers use the list as decision support, not as an automatic judgment.",
    "listen_for": [
-    "Al Najat",
-    "grades and attendance",
+    "academic support",
+    "grades",
+    "attendance",
+    "Python",
     "Pandas",
-    "sklearn",
-    "Recall",
-    "ranked list",
-    "no LLM",
-    "teacher reviewed"
+    "Scikit-learn",
+    "patterns",
+    "follow-up",
+    "tested the model"
    ],
-   "answer_ar": "كان مشروعًا في مدارس Al Najat. حللنا الدرجات والحضور لتحديد الطلاب الذين قد يحتاجون دعمًا أكاديميًا. استخدمت Python و Pandas و Scikit-learn. بنيت نموذج تصنيف يحدد الطلاب المعرضين للخطر حتى يتمكن المعلمون من التدخل مبكرًا."
+   "answer_ar": "طورت نظام ذكاء اصطناعي لتحديد الطلاب الذين قد يحتاجون دعماً أكاديمياً. يحلّل النظام بيانات مثل الدرجات والحضور والأداء الأكاديمي. حضّرت البيانات ونظّفتها بـ Python وPandas، وبنيت نموذج تعلم آلي بـ Scikit-learn لاكتشاف الأنماط والتنبؤ بمن يحتاج متابعة، مع اختبار الدقة وتحسين النموذج عند الحاجة."
   },
   {
    "id": "proj.early_warning.tech",
@@ -608,8 +732,8 @@
     "stack",
     "libraries"
    ],
-   "answer_en": "Python, Pandas, and sklearn: Pandas to clean and merge grades and attendance, sklearn for a pipeline with scaling and a classifier. I started with a simple model people could explain. I did not use a neural net, and I did not use an LLM or RAG.",
-   "followup_en": "Tabular school data of this size does not need a deep network. Teachers asked why a name was on the list. A black box would have died in the first meeting. A baseline that always predicts the majority class was there so I knew I was beating something real. LangChain and Chroma are not in this project at all.",
+   "answer_en": "Python, Pandas, and Scikit-learn. Pandas to prepare and clean grades and attendance. Scikit-learn to train the classification model. No neural net and no LLM.",
+   "followup_en": "Tabular school data of this size does not need a deep network. A model teachers can discuss was more useful than a black box.",
    "listen_for": [
     "Python",
     "Pandas",
@@ -619,7 +743,7 @@
     "no LLM",
     "explain"
    ],
-   "answer_ar": "التقنية جدولية: بايثون وPandas وsklearn. بدون شبكة عصبية وبدون نموذج لغوي، حتى يفهم المعلم سبب الإشارة."
+   "answer_ar": "Python وPandas وScikit-learn لتنظيف البيانات وبناء نموذج التصنيف. بلا شبكة عصبية وبلا نموذج لغوي."
   },
   {
    "id": "proj.early_warning.metric",
@@ -715,7 +839,7 @@
     "help"
    ],
    "answer_en": "Schools got a ranked follow-up list during the term, with the factors behind each score. They did not wait until final results. A teacher still reviewed the case and chose the support. The model pointed to who to look at first. It did not prove why a student struggled.",
-   "followup_en": "I am honest about impact. I did not run a big causal study that grades rose by X percent. The operational win was earlier attention and a shared list instead of scattered files. If a teacher disagreed, that was allowed. That is why I did not hide the features that pushed the score up.",
+   "followup_en": "I am honest about the result. I did not run a big study to prove grades rose by some percent. What changed is that teachers looked earlier, and they shared one list instead of many files. A teacher could disagree with the list. That is fine. That is why I always showed the reasons behind a score.",
    "listen_for": [
     "ranked list",
     "during the term",
@@ -731,8 +855,18 @@
    "id": "proj.helpdesk.describe",
    "category": "cv.project",
    "topic": "project:helpdesk",
-   "question": "Tell me about the Helpdesk Request Classification project",
+   "question": "Tell me about the AI-Based Helpdesk Ticket Classification System",
    "aliases": [
+    "tell me about the ai-based helpdesk ticket classification system",
+    "tell me about the helpdesk ticket classification system",
+    "tell me a brief overview of the helpdesk ticket classification system",
+    "ai-based helpdesk ticket classification system",
+    "helpdesk ticket classification",
+    "helpdesk classification",
+    "ticket classification system",
+    "how does the helpdesk classification work",
+    "overview of the helpdesk ticket classification project",
+    "describe the helpdesk ticket classifier",
     "tell me about the Helpdesk Request Classification project",
     "how did you classify helpdesk tickets",
     "tell me about the nlp project at al najat",
@@ -745,24 +879,29 @@
    ],
    "keywords": [
     "helpdesk",
+    "ticket classification",
+    "tickets",
+    "nlp",
+    "scikit-learn",
+    "department",
     "ticket",
     "classification",
     "support requests",
     "routing"
    ],
-   "answer_en": "Helpdesk tickets arrived as free text and people routed them by hand. I trained a sklearn classifier on TF-IDF to predict the department, like accounts or network, using tickets staff had already routed. Unclear tickets went to a person, with no LLM. Faster routing, plus simple stats for reporting.",
-   "followup_en": "I cleaned duplicates and sensitive details first. I split train and test before learning the text features, so IDF could not peek at the test set. Ambiguous tickets were a review category, not a forced high-confidence label. If two problems sat in one ticket, forcing one department would have been worse than asking a human.",
+   "answer_en": "I developed an AI system to help classify helpdesk tickets and route them to the correct department.\n\nThe system analyzes ticket data and identifies the most suitable category based on the user’s issue.\n\nI prepared and cleaned the data using Python and Pandas and used NLP.\n\nI built a machine learning model using Scikit-learn to identify patterns and classify the tickets into the correct categories.\n\nI also tested the model, checked its accuracy, and improved it when needed.",
+   "followup_en": "This was classic NLP plus Scikit-learn at Al Najat. No LLM and no RAG in the live path.",
    "listen_for": [
-    "TF-IDF",
-    "sklearn",
+    "classify",
     "department",
-    "free text",
-    "review",
-    "no LLM",
-    "Al Najat",
-    "routing"
+    "Python",
+    "Pandas",
+    "NLP",
+    "Scikit-learn",
+    "categories",
+    "tested the model"
    ],
-   "answer_ar": "تصنيف تذاكر الدعم بنصوص حرة باستخدام TF-IDF وsklearn. التذكرة الغامضة تذهب لشخص، بلا نموذج لغوي."
+   "answer_ar": "طورت نظام ذكاء اصطناعي لتصنيف تذاكر مكتب المساعدة وتوجيهها للقسم الصحيح. يحلّل النظام بيانات التذكرة ويحدد الفئة الأنسب حسب مشكلة المستخدم. حضّرت البيانات ونظّفتها بـ Python وPandas واستخدمت NLP، وبنيت نموذج تعلم آلي بـ Scikit-learn للتصنيف إلى الفئات الصحيحة، مع اختبار الدقة وتحسين النموذج عند الحاجة."
   },
   {
    "id": "proj.helpdesk.tech",
@@ -787,8 +926,8 @@
     "represent",
     "llm"
    ],
-   "answer_en": "Classic NLP: TF-IDF for the ticket text, then a sklearn classifier. I compared it to a most-common-class baseline so I knew the model beat a dummy. I did not use an LLM and would still start simple today. Only after per-department errors would I try embeddings or an LLM.",
-   "followup_en": "Helpdesk language repeats. TF-IDF is strong there. An LLM would cost more and still need a human for mixed tickets. If hardware tickets were clean and accounts tickets were a mess, I would fix that slice, not replace the whole stack. No RAG, because nothing is being generated from a knowledge base.",
+   "answer_en": "Python, Pandas, NLP, and Scikit-learn. Clean the ticket text, extract features, then classify into departments.",
+   "followup_en": "Imbalanced departments matter. I watched precision and recall per class, not only overall accuracy.",
    "listen_for": [
     "TF-IDF",
     "sklearn",
@@ -798,7 +937,7 @@
     "per department",
     "embeddings later"
    ],
-   "answer_ar": "تمثيل TF-IDF ثم مصنّف sklearn، مع خط أساس بسيط. لا يستخدم LLM إلا إذا قاس خطأ الأقسام وبرر الترقية."
+   "answer_ar": "Python وPandas وNLP وScikit-learn لتنظيف نص التذكرة وتصنيفها إلى الأقسام."
   },
   {
    "id": "proj.helpdesk.challenges",
@@ -838,8 +977,18 @@
    "id": "proj.completion_risk.describe",
    "category": "cv.project",
    "topic": "project:completion",
-   "question": "Tell me about the BTEC Completion Risk Monitoring project",
+   "question": "Tell me about the BTEC Completion Risk Monitoring System",
    "aliases": [
+    "tell me about the btec completion risk monitoring system",
+    "tell me about the btec completion risk monitoring project",
+    "tell me a brief overview of the btec completion risk monitoring system",
+    "btec completion risk monitoring system",
+    "completion risk monitoring",
+    "completion risk",
+    "how does completion risk monitoring work",
+    "overview of the completion risk monitoring project",
+    "describe the btec completion risk system",
+    "schools and btec units that may require follow-up",
     "tell me about the BTEC Completion Risk Monitoring project",
     "how did you identify schools that need follow up",
     "tell me about the unit completion monitoring",
@@ -854,22 +1003,28 @@
     "completion risk",
     "completion",
     "schools",
+    "units",
+    "sql",
+    "pandas",
+    "scikit-learn",
+    "follow-up",
     "follow up",
     "unit completion"
    ],
-   "answer_en": "The Ministry needed schools that might miss BTEC unit deadlines. I pulled data with SQL, cleaned it in Pandas, and computed completion from a clear rule. Current percent is math, not a model. Risk of finishing late used sklearn where past terms existed. The output was a follow-up list with indicators.",
-   "followup_en": "I kept those two ideas apart on purpose. Seventy percent complete is a query. Will they finish on time is a forecast, and it needs history. If history was thin, I did not fake a clever model. No LLM and no RAG in the live path. An LLM could draft a note from the numbers later, with a human sending it. I did not put generation in the core.",
+   "answer_en": "I developed an AI system to help identify schools and BTEC units that may require follow-up.\n\nThe system analyzes school and unit completion data to identify cases that may need attention.\n\nI prepared and cleaned the data using Python and Pandas and used SQL.\n\nI built a machine learning model using Scikit-learn to identify patterns in the completion data and highlight schools.\n\nI also tested the model, checked the results, and improved it when needed.",
+   "followup_en": "Completion percent is calculated from the data. Risk uses the model when history is enough. No LLM and no RAG in the live path.",
    "listen_for": [
-    "SQL",
-    "Pandas",
-    "completion percent",
-    "not a model",
-    "sklearn",
     "schools",
-    "follow-up list",
-    "history"
+    "BTEC units",
+    "follow-up",
+    "Python",
+    "Pandas",
+    "SQL",
+    "Scikit-learn",
+    "completion data",
+    "highlight schools"
    ],
-   "answer_ar": "مراقبة إنجاز وحدات BTEC: الحساب من SQL، والخطر من التاريخ عبر sklearn إن وُجد. النسبة الحالية ليست نموذجاً لغوياً."
+   "answer_ar": "طورت نظام ذكاء اصطناعي لتحديد المدارس ووحدات BTEC التي قد تحتاج متابعة. يحلّل النظام بيانات إكمال المدارس والوحدات لتحديد الحالات التي تحتاج انتباهاً. حضّرت البيانات ونظّفتها بـ Python وPandas واستخدمت SQL، وبنيت نموذج تعلم آلي بـ Scikit-learn لاكتشاف الأنماط وإبراز المدارس، مع اختبار النتائج وتحسين النموذج عند الحاجة."
   },
   {
    "id": "proj.completion_risk.tech",
@@ -892,8 +1047,8 @@
     "stack",
     "sql"
    ],
-   "answer_en": "Python, Pandas, sklearn, and SQL. SQL pulls school and unit records and the exact counts, Pandas cleans the tables, and sklearn is only for the risk side when history supports it. If a number can be calculated, I calculate it. I do not ask a model to guess it.",
-   "followup_en": "Joins and definitions live in SQL so two people get the same count. That matters in a ministry. sklearn does not replace those counts. There is no embedding index and no agent. FastAPI can serve the list later, but the thinking is still queries plus a small classifier. Keep the stack boring on purpose.",
+   "answer_en": "Python, Pandas, Scikit-learn, and SQL. SQL pulls school and unit records. Pandas cleans the tables. Scikit-learn supports the risk patterns when history exists.",
+   "followup_en": "If I can calculate a completion rate, I calculate it. I do not ask a model to invent that number.",
    "listen_for": [
     "SQL",
     "Pandas",
@@ -903,14 +1058,25 @@
     "history",
     "Python"
    ],
-   "answer_ar": "SQL للعدّ، وPandas للتنظيف، وsklearn للخطر فقط عند وجود تاريخ. الرقم القابل للحساب لا يُخمَّن بنموذج."
+   "answer_ar": "Python وPandas وScikit-learn وSQL لسحب سجلات المدارس والوحدات وتنظيفها وبناء أنماط المخاطر."
   },
   {
    "id": "proj.kiosk.describe",
    "category": "cv.project",
    "topic": "project:kiosk",
-   "question": "Tell me about the voice kiosk with Whisper",
+   "question": "Tell me about the AI-based donation kiosk",
    "aliases": [
+    "tell me about the ai-based donation kiosk",
+    "tell me about the donation kiosk",
+    "tell me a brief overview of the donation kiosk",
+    "ai-based donation kiosk",
+    "donation kiosk",
+    "voice kiosk",
+    "tell me about the voice kiosk with whisper",
+    "how does the donation kiosk work",
+    "overview of the donation kiosk project",
+    "describe the ai donation kiosk",
+    "the project is an ai-based donation kiosk",
     "tell me about the voice kiosk with Whisper",
     "how did you use whisper at al najat",
     "what did you build with whisper",
@@ -922,26 +1088,29 @@
     "what happened after Whisper gave you text"
    ],
    "keywords": [
+    "donation kiosk",
     "kiosk",
     "whisper",
+    "tts",
     "voice",
+    "donor",
     "speech",
     "speech recognition",
     "speech to text"
    ],
-   "answer_en": "At Al Najat I built a kiosk people could speak to. Whisper did speech-to-text on local machines, so audio stayed inside. I cleaned noise and used voice activity detection instead of recording all the time. A small classifier picked a male or female reply voice, then NLP routed the request, with no LLM.",
-   "followup_en": "This was 2017 to 2023, before my LLM work. After the text came out, request classification sent people to the right service. Image-processing functions sat on the same kiosk. Privacy was simple: keep the text, do not store the audio. A hall is noisy, so clean audio helped more than a bigger speech model.",
+   "answer_en": "The project is an AI-based donation kiosk designed to make the donation process easier and more interactive for donors.\n\nThe system listens to the donor, understands the request, and responds by voice.\n\nMy role was focused on the voice interaction part of the system.\n\nI used Whisper to convert the donor’s speech into text and a voice model to identify if the speaker was male or female.\n\nI used TTS to generate the response using a male or female voice based on the speaker.\n\nI also connected the speech recognition, voice classification, and TTS components together.\n\nI tested the voice interaction and improved the system when needed.",
+   "followup_en": "This was at Al Najat in Kuwait, before my LLM work at the Ministry. No LLM and no RAG in that kiosk path.",
    "listen_for": [
-    "Al Najat",
+    "donation kiosk",
     "Whisper",
-    "local",
-    "audio never left",
-    "voice activity",
-    "no LLM",
+    "speech into text",
     "male or female",
-    "kiosk"
+    "TTS",
+    "voice classification",
+    "connected",
+    "tested"
    ],
-   "answer_ar": "كشك صوتي في الكويت بـ Whisper محلياً حتى لا يخرج الصوت. بعده توجيه الطلب، بلا نموذج لغوي توليدي."
+   "answer_ar": "المشروع كشك تبرع بالذكاء الاصطناعي لتسهيل التبرع وجعله تفاعلياً. يستمع النظام للمتبرع ويفهم الطلب ويرد بالصوت. كان دوري على التفاعل الصوتي: Whisper لتحويل الكلام إلى نص، ونموذج صوت لتمييز ذكر/أنثى، وTTS للرد بصوت مناسب، مع ربط المكوّنات واختبار التفاعل وتحسينه عند الحاجة."
   },
   {
    "id": "proj.kiosk.challenges",
@@ -965,8 +1134,8 @@
     "hard",
     "background"
    ],
-   "answer_en": "Noise and timing. A hall has other voices, so I cleaned audio before Whisper and used voice activity detection to capture real speech. Most accuracy came from clean audio, not a bigger model. I also had to know when the person finished. For privacy I kept text and did not store audio.",
-   "followup_en": "Continuous recording would have filled disks and captured other people in the queue. Voice activity detection cuts that. Short answers and Arabic-English mix made transcripts messy, so the next NLP step had to tolerate imperfect text. I would still start with the microphone and the room before I blame Whisper.",
+   "answer_en": "Voice interaction in a real space is noisy, and timing matters. I connected Whisper, voice classification, and TTS, then tested the full path and improved it when the reply or the transcript was weak.",
+   "followup_en": "Clean audio and clear turn-taking helped more than swapping models. Privacy: keep what the process needs; do not keep unnecessary audio.",
    "listen_for": [
     "noise",
     "clean audio",
@@ -976,7 +1145,7 @@
     "privacy",
     "not a bigger model"
    ],
-   "answer_ar": "التحدي الضجيج ومعرفة نهاية الكلام. تنظيف الصوت أهم من تكبير النموذج، والنص يُحفظ لا التسجيل."
+   "answer_ar": "التحدي في الضوضاء وتوقيت الحوار. ربطت Whisper وتصنيف الصوت وTTS واختبرت المسار كاملاً وحسّنته عند ضعف النص أو الرد."
   },
   {
    "id": "proj.kiosk.voice_classifier",
@@ -1001,8 +1170,8 @@
     "tts voice",
     "biometrics"
    ],
-   "answer_en": "It was a simple classifier on audio features. It predicted a speaker category so the kiosk could reply with a matching male or female voice. That is a category, not an identity. I never used voice to recognize a person. I would not use voice alone for any approval.",
-   "followup_en": "Speaker classification says male or female style. Speaker verification says this is Ahmed. Those are different problems. Mixing them in a government setting is dangerous. The kiosk used the label only to pick TTS. Access and records stayed on other controls. No LLM picked the voice either.",
+   "answer_en": "I used a voice model to identify if the speaker was male or female, then TTS replied with a matching male or female voice. That is a style label for the reply voice, not identity recognition.",
+   "followup_en": "I never used voice to recognize a person. The label only picks the TTS voice. Access and records stay on other controls.",
    "listen_for": [
     "category",
     "not identity",
@@ -1012,7 +1181,7 @@
     "not biometrics for login",
     "would not approve"
    ],
-   "answer_ar": "مصنّف بسيط لاختيار صوت الرد. هذا فئة وليس تحققاً من هوية، ولا يُستخدم للموافقة أو الدخول."
+   "answer_ar": "نموذج صوت يحدد إن كان المتحدث ذكراً أو أنثى لاختيار صوت الرد في TTS. هذا تصنيف أسلوب لا تعرّف هوية."
   },
   {
    "id": "cv.projects_overview",
@@ -1041,8 +1210,8 @@
     "machine learning project",
     "ai projects"
    ],
-   "answer_en": "At the Ministry: assignment similarity with embeddings, completion risk with SQL and Pandas, and LLM question generation with RAG. At Al Najat: student early-warning, helpdesk classification with TF-IDF, and a Whisper kiosk. Only the question tool is LLM plus RAG plus an agentic flow.",
-   "followup_en": "KNET work was payment kiosks and POS, not AI. I mention it because delivery and audit come from there. I do not fold Whisper or sklearn into generative AI. If you want depth, pick similarity or question generation. Those two show the line I care about: retrieve and compare versus generate with a human stop.",
+   "answer_en": "At the Ministry: student assessment support, automated feedback, and exam question generation with RAG and multi-agent workflows; assignment similarity with embeddings and cosine similarity; and BTEC completion risk with SQL, Pandas, and Scikit-learn. At Al Najat: student early-warning, helpdesk ticket classification, and an AI donation kiosk with Whisper and TTS.",
+   "followup_en": "Only the three BTEC generative systems use LLM, RAG, and multi-agent flow. Similarity has no generation. Al Najat projects are classic ML or speech, not LLM.",
    "listen_for": [
     "similarity",
     "completion risk",
@@ -1053,7 +1222,7 @@
     "only generation is LLM",
     "Ministry and Kuwait"
    ],
-   "answer_ar": "مشاريع الوزارة: تشابه وتوليد أسئلة ومخاطر إنجاز. في الكويت: إنذار مبكر وتصنيف تذاكر وكشك Whisper. التوليد وحده LLM وRAG."
+   "answer_ar": "في الوزارة: دعم التقييم، والتغذية الراجعة، وتوليد الأسئلة بـ RAG ووكلاء متعددين؛ وتشابه الواجبات؛ ومخاطر الإكمال. في النجاة: إنذار مبكر، وتصنيف تذاكر، وكشك تبرع بـ Whisper وTTS."
   },
   {
    "id": "cv.projects.most_recent",
@@ -1076,8 +1245,8 @@
     "latest",
     "right now"
    ],
-   "answer_en": "The recent work is at the Ministry on BTEC. Similarity checking with embeddings is in use for teacher review. Completion risk uses SQL and Pandas. Alongside that I build the LLM and RAG tools for exam questions and feedback, with teacher approval before save.",
-   "followup_en": "If you mean the generative piece, question generation is the one with retrieval, JSON, and the pause. If you mean the last production-style tool teachers touch every week, similarity is the clearer daily object. I work on both. I do not call the Kuwait kiosk recent. That ended when I left in 2023.",
+   "answer_en": "The recent work is at the Ministry on BTEC: assessment support, automated feedback, and exam question generation with RAG and multi-agent workflows, plus the similarity checker and completion risk monitoring.",
+   "followup_en": "If you want the generative piece, I walk through retrieve, analyze, and generate on unit content. If you want the daily teacher tool, similarity is the clearer comparison story.",
    "listen_for": [
     "Ministry",
     "BTEC",
@@ -1087,7 +1256,7 @@
     "teacher approval",
     "right now"
    ],
-   "answer_ar": "الأحدث في الوزارة: مدقق التشابه ومخاطر الإنجاز، ومعهما توليد الأسئلة بالـ LLM مع موافقة المعلم."
+   "answer_ar": "أحدث عملي في الوزارة على BTEC: دعم التقييم والتغذية الراجعة وتوليد الأسئلة مع RAG والوكلاء، إضافة إلى فاحص التشابه ومراقبة مخاطر الإكمال."
   },
   {
    "id": "cv.projects.most_proud",
@@ -1111,8 +1280,8 @@
     "biggest impact",
     "stands out"
    ],
-   "answer_en": "The BTEC LLM/RAG and Agentic AI project. It combines cutting-edge AI (RAG, agents, LLMs) with real educational impact. It also challenged me technically (Arabic support, hallucination, latency) and allowed me to deliver a production system.",
-   "followup_en": "Impact here means teachers review a short list instead of every paper. I am proud of saying no to an LLM in the core. Generation would have sounded smarter in a meeting and weaker in a student case. Question generation is the project I would discuss for agents. Pride for me is the boundary, not the buzzword.",
+   "answer_en": "The BTEC generative systems: assessment support, automated feedback, and question generation. They use RAG and a multi-agent workflow on real unit content, and they help teachers and students in the real process.",
+   "followup_en": "I am also careful about the line: similarity stays embeddings only, with no generated accusation. That boundary matters as much as the generative work.",
    "listen_for": [
     "similarity checker",
     "embeddings",
@@ -1122,7 +1291,7 @@
     "not a judge",
     "restraint"
    ],
-   "answer_ar": "مشروع BTEC LLM/RAG و Agentic AI. يجمع بين الذكاء الاصطناعي المتقدم (RAG، الوكلاء، LLMs) والتأثير التعليمي الحقيقي. تحداني تقنيًا (دعم العربية، الهلوسة، زمن الاستجابة) وسمح لي بتسليم نظام إنتاجي."
+   "answer_ar": "أكثر ما أفتخر به أنظمة BTEC التوليدية: دعم التقييم والتغذية الراجعة وتوليد الأسئلة بـ RAG وسير عمل متعدد الوكلاء على محتوى حقيقي."
   },
   {
    "id": "cv.najat_role",
@@ -1148,8 +1317,8 @@
     "applied ai",
     "automation engineer"
    ],
-   "answer_en": "From 2017 to 2023 I was an Applied AI and Intelligent Automation Engineer at Al Najat in Kuwait. I built tools for schools and admin teams. That included a Whisper kiosk with some image-processing functions, helpdesk classification with TF-IDF, and student early-warning with Pandas and sklearn. No LLM work there.",
-   "followup_en": "The organization is charity and education, so the users were school staff and families at the kiosk. I moved back to hands-on engineering after the KNET project-manager years. Speech, tabular ML, and classic NLP. When I left in 2023 it was to do LLM and RAG at the Ministry, not because Al Najat had a generative stack.",
+   "answer_en": "From 2017 to 2023 I worked at Al Najat in Kuwait as an Applied AI and Automation Engineer. I built a student performance early-warning system, a helpdesk ticket classification system, and an AI-based donation kiosk with Whisper and TTS. No LLM work there.",
+   "followup_en": "When I left in 2023 it was to do LLM and RAG work at the Ministry in Jordan. Speech, tabular ML, and classic NLP were the Al Najat stack.",
    "listen_for": [
     "2017 to 2023",
     "Kuwait",
@@ -1160,7 +1329,7 @@
     "applied AI",
     "schools"
    ],
-   "answer_ar": "في النجاة 2017–2023 بنى كشك Whisper وتصنيف تذاكر وإنذاراً مبكراً. عمل تطبيقي كلاسيكي، بلا نماذج توليد."
+   "answer_ar": "من 2017 إلى 2023 في النجاة بالكويت: إنذار مبكر لأداء الطلاب، وتصنيف تذاكر المساعدة، وكشك تبرع بـ Whisper وTTS. بلا نماذج لغوية هناك."
   },
   {
    "id": "cv.knet_role",
@@ -1332,8 +1501,8 @@
     "retrieval augmented",
     "retrieval"
    ],
-   "answer_en": "Yes, at the Ministry, in question generation. I retrieve BTEC unit content and learning outcomes, then the model writes only from that text. JSON is checked, then a teacher approves. The similarity checker uses embeddings too, but it does not generate, so I do not call it RAG.",
-   "followup_en": "Chunking, embeddings, metadata filters, and grounding are the parts I have actually wired. RAG started in 2023 with this job, not in Kuwait. LangChain appeared in the proof of concept. Production retrieval and generation are Python. I have not run a formal RAGAS loop in production. I still think in those metrics when I debug retrieval versus generation.",
+   "answer_en": "Yes, at the Ministry in assessment support, automated feedback, and exam question generation. I prepare BTEC content, chunk it, embed it, store it in a vector database, and retrieve the most relevant criteria and learning content before generation. The similarity checker uses embeddings too, but it does not generate, so I do not call it RAG.",
+   "followup_en": "RAG started with this Ministry work in 2023, not in Kuwait. The multi-agent step comes after retrieval.",
    "listen_for": [
     "yes",
     "question generation",
@@ -1344,7 +1513,7 @@
     "2023",
     "teacher"
    ],
-   "answer_ar": "نعم في توليد الأسئلة بالوزارة: استرجاع محتوى الوحدة ثم التوليد منه. مدقق التشابه ليس RAG لأنه بلا توليد."
+   "answer_ar": "نعم في الوزارة ضمن دعم التقييم والتغذية الراجعة وتوليد الأسئلة: تجهيز محتوى BTEC وتضمينه واسترجاعه قبل التوليد. فاحص التشابه يستخدم التضمينات بلا توليد فليس RAG."
   },
   {
    "id": "cv.llm_experience",
@@ -1367,8 +1536,8 @@
     "large language models",
     "generative ai"
    ],
-   "answer_en": "Since 2023 at the Ministry I have built LLM tools for BTEC: exam questions, feedback, and assessment support. Calls go through one internal interface. I care about retrieval, prompts, JSON with Pydantic, cost, and teacher approval. I have done basic fine-tuning. I have not trained a large model from scratch.",
-   "followup_en": "The model is a component. The system is the product. Student PII stays out. I started on an external API for speed, with the option to move. LangChain was POC. Production flow is Python. Whisper in Kuwait was speech, not an LLM. I will say that in the interview if someone mixes them.",
+   "answer_en": "Since 2023 at the Ministry I have built LLM tools for BTEC: student assessment support, automated feedback, and exam question generation. Each one retrieves unit content with RAG, then uses a multi-agent flow to analyze and generate. I care about prompts, retrieval quality, and checking the output.",
+   "followup_en": "I have done basic fine-tuning. I have not trained a large model from scratch. Kuwait projects did not use LLMs.",
    "listen_for": [
     "since 2023",
     "Ministry",
@@ -1379,7 +1548,7 @@
     "not from scratch",
     "teacher approval"
    ],
-   "answer_ar": "خبرته التوليدية منذ 2023: أسئلة وتغذية راجعة مع استرجاع وتحقق JSON وموافقة معلم. ضبط دقيق أساسي فقط."
+   "answer_ar": "منذ 2023 في الوزارة بنيت أدوات نماذج لغوية لـ BTEC: دعم التقييم والتغذية الراجعة وتوليد الأسئلة، مع RAG وسير عمل متعدد الوكلاء."
   },
   {
    "id": "cv.agentic_experience",
@@ -1402,8 +1571,8 @@
     "agent",
     "agents"
    ],
-   "answer_en": "The question-generation system is agentic: retrieve unit content, generate, validate schema, stop for the teacher, then save. I wrote that in Python with state and logs. Similarity is not an agent, and early-warning and helpdesk are classic ML. LangGraph is not in production; I would use it next for the pause.",
-   "followup_en": "Agentic for me means a goal, tools, state between steps, and a stop you cannot skip. It does not mean a chatbot that sounds independent. I have not run a multi-agent swarm. I have run a workflow that can refuse to save. That is the production experience I will claim, nothing more.",
+   "answer_en": "In the BTEC systems I used a multi-agent workflow. One agent retrieves the relevant BTEC content, another analyzes the student work or the selected topic and criteria, and a third generates the assessment report, the feedback, or the questions. I tested the outputs and improved the prompts. Similarity, early-warning, and helpdesk are not agentic.",
+   "followup_en": "Agentic here means retrieve, analyze, and generate as separate steps with a clear goal. It does not mean an unsupervised chatbot. Those three Ministry systems are the experience I claim.",
    "listen_for": [
     "question generation",
     "retrieve generate validate",
@@ -1413,7 +1582,7 @@
     "not LangGraph in production",
     "classic ML"
    ],
-   "answer_ar": "الوكيل في توليد الأسئلة فقط: استرجاع ثم توليد ثم تحقق ثم توقف للمعلم. باقي المشاريع ليست وكلاء، وLangGraph غير إنتاجي."
+   "answer_ar": "في أنظمة BTEC استخدمت سير عمل متعدد الوكلاء: وكيل يسترجع المحتوى، وآخر يحلّل عمل الطالب أو الموضوع، وثالث يولّد التقرير أو التغذية الراجعة أو الأسئلة."
   },
   {
    "id": "cv.langchain",
@@ -1455,6 +1624,9 @@
    "topic": "skills",
    "question": "Which vector database have you used?",
    "aliases": [
+    "what vector db did you use",
+    "which vector database did you use",
+    "what vector database did you use in your project",
     "which vector database have you used",
     "have you used qdrant or pinecone",
     "what vector store did you use",
@@ -1472,7 +1644,7 @@
     "pinecone",
     "vector store"
    ],
-   "answer_en": "I have used embeddings and vector search hands-on. I evaluated Chroma for local prototyping because it runs inside Python, and production similarity used a lightweight local store. I have not run Qdrant in production, though I know collections, payload filters, and HNSW. For a ministry I would look at Qdrant or pgvector.",
+   "answer_en": "I used FAISS for storing and searching embeddings efficiently.",
    "followup_en": "Pinecone is awkward if data must stay in-country. Chroma is a lab convenience, not my production recommendation. Filters matter as much as nearest-neighbor search, because school and term must not mix. If PostgreSQL is already there, pgvector means one less system to secure. I will not pretend I operated a Qdrant cluster.",
    "listen_for": [
     "Chroma prototype",
@@ -1483,7 +1655,7 @@
     "on-premise",
     "embeddings"
    ],
-   "answer_ar": "تعامل مع البحث المتجهي عملياً. كروما للتجربة، وتخزين محلي خفيف في المشروع. قدورانت يفهمه ولم يشغّله إنتاجياً."
+   "answer_ar": "استخدمت FAISS لتخزين التضمينات والبحث فيها بكفاءة."
   },
   {
    "id": "cv.fine_tuning",
@@ -1506,7 +1678,7 @@
     "fine-tune",
     "fine tuned"
    ],
-   "answer_en": "Basics only, and I say that clearly. At the Ministry I used light fine-tuning so outputs followed BTEC style and format, and I have not trained a large model from scratch. RAG is for knowledge that changes; fine-tuning is for behavior. If facts change, I re-index rather than retrain first.",
+   "answer_en": "Basics only, and I say that clearly. At the Ministry I used light fine-tuning so the output followed BTEC style and format. I have not trained a large model from scratch. RAG is for knowledge that changes. Fine-tuning is for behaviour. If the facts change, I re-index first, I do not retrain.",
    "followup_en": "I would not fine-tune to stuff new unit PDFs into weights. That goes stale. I would fine-tune if JSON shape or Arabic exam tone stayed wrong after prompting and retrieval. I do not claim LoRA factories or custom base models. If the job needs that as year-one ownership, I would learn it with a specialist, not bluff it.",
    "listen_for": [
     "basics",
@@ -1861,7 +2033,7 @@
     "ccnp",
     "cisco"
    ],
-   "answer_en": "I have three: PMP from PMI, from the payment-project years; PRINCE2 Foundation, which is common in government; and Cisco CCNP from the systems and networking side. CCNP still helps when AI runs on-premise. I do not hold a cloud-vendor AI certificate.",
+   "answer_en": "I have three. PMP from PMI, from the payment years. PRINCE2 Foundation, which is common in government. And Cisco CCNP from my systems and network work. CCNP still helps when AI runs on our own servers. I do not have a cloud AI certificate.",
    "followup_en": "I will not add certs I do not have. No Kubernetes exam, no AWS ML specialty. PMP is about defining done, risk, and handover. PRINCE2 is stage thinking. CCNP is routing, switching, isolation. Together they support sober delivery more than a model-name badge.",
    "listen_for": [
     "PMP",
@@ -1895,8 +2067,8 @@
     "project management",
     "pm skills"
    ],
-   "answer_en": "PMP helps me manage AI projects: scoping, scheduling, risk management, and stakeholder communication. It ensures I deliver AI solutions on time and within budget, and it helps me bridge the gap between technical teams and business stakeholders.",
-   "followup_en": "Vendors, UAT, and handover come from the KNET years and from PMP. For question generation, done means a teacher can approve a valid JSON item into the bank, not that a notebook printed a question. Risk includes sending student data out, which we blocked. That is project thinking inside engineering.",
+   "answer_en": "PMP helps me run AI projects. Scope, schedule, risk, and talking to the people who pay for it. It helps me deliver on time and inside the budget. And it helps me sit between the technical team and the business side.",
+   "followup_en": "Vendors, testing, and handover come from the KNET years and from PMP. For question generation, done means a teacher approves a valid item into the bank. It does not mean a notebook printed a question. Risk includes sending student data out, and we blocked that. That is project thinking inside engineering.",
    "listen_for": [
     "delivery",
     "what done means",
@@ -1961,7 +2133,7 @@
     "cisco",
     "networking"
    ],
-   "answer_en": "It comes from my systems background before AI. CCNP is Cisco professional networking: routing, switching, security. It still helps when we host models on-premise, because I understand isolation and firewalls, not only prompts. I have not run Kubernetes; this is the network side, not a cluster badge.",
+   "answer_en": "It comes from my systems background before AI. CCNP is Cisco professional networking: routing, switching, security. It still helps when we host models on-premise, because I understand isolation and firewalls, not only prompts. I have not run Kubernetes. This is the network side, not a cluster badge.",
    "followup_en": "In a sovereign setup the model server is still a machine on a network. If that part is magic to the AI person, security people will not trust the design. I can sit in that meeting. I will not pretend I am your full-time network architect today. My daily craft is Python and AI systems.",
    "listen_for": [
     "systems background",
@@ -2245,7 +2417,7 @@
     "years"
    ],
    "answer_en": "Thirteen years, from 2010 to 2023. Seven years at VNC on KNET payment systems, 2010 to 2017. Six years at Al Najat on applied AI and automation, 2017 to 2023. Then I moved to the Ministry role in Jordan.",
-   "followup_en": "I do not round it to fifteen. Fifteen is the whole career including Jordan. Kuwait stops in 2023, when I joined the Ministry. If an interviewer mixes those dates with LLM experience, I correct it immediately: those thirteen years include zero production LLM work, only payments, Whisper, and sklearn.",
+   "followup_en": "I do not round it up to fifteen. Fifteen is the whole career, including Jordan. Kuwait ends in 2023, when I joined the Ministry. If someone mixes those dates with LLM experience, I correct it right away. Those thirteen years have no production LLM work. They are payments, Whisper, and sklearn.",
    "listen_for": [
     "thirteen years",
     "2010 to 2023",
@@ -2484,7 +2656,7 @@
     "differently",
     "looking back"
    ],
-   "answer_en": "On question generation I would use LangGraph for state and the approval pause, instead of hand-rolled Python. I would also start evaluation earlier. I would keep a small golden set of real questions and sources, plus RAGAS-style scores, to see if retrieval or generation is the weak part.",
+   "answer_en": "On question generation I would use LangGraph for the state and the approval pause, instead of my own Python. I would also start testing earlier. I would keep a small set of real questions and sources. Then I would score retrieval and generation, so I can see which part is weak.",
    "followup_en": "I know LangGraph. I have not run it in production. That is why this is a redo, not a current fact. RAGAS I understand and have not used as a live gate. Manual checks with teachers carried us. A golden set would have caught retrieval misses faster than impression. I would not redo similarity into an LLM.",
    "listen_for": [
     "LangGraph",
@@ -2554,7 +2726,7 @@
     "langgraph"
    ],
    "answer_en": "I know LangGraph: state, nodes, edges, checkpoints, interrupt for a human. I have not run it in production. At the Ministry I built retrieve, generate, validate, pause in Python. That is the same shape. If I started today I would use LangGraph for durable state after approval.",
-   "followup_en": "The pain I hit by hand is exactly why the library exists: resume after a teacher comes back tomorrow, without losing the retrieved chunks. I will not say I deployed it. I will say I am ready to. n8n is a different tool and also not my production orchestrator.",
+   "followup_en": "The problem I hit by hand is exactly why the library exists. A teacher comes back tomorrow, and the work must continue without losing the retrieved text. I will not say I deployed it. I will say I am ready to. n8n is a different tool, and it is not my production orchestrator either.",
    "listen_for": [
     "know it",
     "not production",
@@ -2654,8 +2826,8 @@
     "langchain",
     "chromadb"
    ],
-   "answer_en": "LLM yes, it writes the question, and RAG yes, I retrieve unit content first. Agentic yes: multi-step with a teacher pause. LangChain was proof of concept only, production is Python, and LangGraph is not in production. Chroma was a prototype evaluation, not the production store, with schema check and teacher approval before save.",
-   "followup_en": "If you need a map: generator is the LLM, retriever is RAG, orchestrator is Python, guardrail is Pydantic plus a human. I will not tick LangChain or Chroma as production. I will not tick LangGraph at all. Student PII is out of the prompt. That is the stack I will defend.",
+   "answer_en": "Yes: an LLM writes the draft, RAG retrieves BTEC unit content first, and the flow is multi-agent — retrieve, analyze, generate. I use embeddings and a vector database for the content. I tested outputs and improved prompts. The similarity checker is a different project and does not use an LLM.",
+   "followup_en": "The shared pattern across assessment support, automated feedback, and question generation is RAG plus three agents. Classic ML projects at Al Najat and completion risk do not use this stack.",
    "listen_for": [
     "LLM yes",
     "RAG yes",
@@ -2666,7 +2838,7 @@
     "Chroma prototype",
     "teacher approval"
    ],
-   "answer_ar": "التوليد: نعم LLM وRAG ووكيل بخطوات. LangChain وكروما تجربة. الإنتاج بايثون مع تحقق وموافقة معلم."
+   "answer_ar": "نعم: نموذج لغوي للصياغة، وRAG لاسترجاع محتوى الوحدة، وسير عمل متعدد الوكلاء للاسترجاع والتحليل والتوليد، مع تضمينات وقاعدة متجهات. فاحص التشابه مشروع مختلف بلا نموذج لغوي."
   },
   {
    "id": "proj.similarity.stack",
@@ -2692,8 +2864,8 @@
     "langchain",
     "chromadb"
    ],
-   "answer_en": "LLM no, and RAG no, because nothing is generated. It is embeddings, chunks, cosine similarity, and metadata filters, with no agent and no LangChain. Chroma was a prototype, and production used a lightweight local vector store. The teacher reads the two passages.",
-   "followup_en": "People hear vector search and say RAG. I stop them. RAG needs a generation step. An LLM summary of a match would drag this toward RAG and toward a generated accusation. We did not do that. Qdrant would be a later store choice. It is not what ran.",
+   "answer_en": "No LLM and no RAG, because nothing is generated. It is embeddings, cosine similarity, and a teacher review step. No multi-agent workflow here.",
+   "followup_en": "People hear vector search and say RAG. I stop them. RAG needs a generation step. This tool only compares and flags.",
    "listen_for": [
     "LLM no",
     "RAG no",
@@ -2704,7 +2876,7 @@
     "Chroma prototype",
     "local store"
    ],
-   "answer_ar": "مدقق التشابه بلا LLM وبلا RAG وبلا وكيل. متجهات وتشابه جيب التمام، وكروما للتجربة فقط."
+   "answer_ar": "لا نموذج لغوي ولا RAG لأنه لا يوجد توليد. تضمينات وتشابه جيب التمام ومراجعة المعلّم فقط."
   },
   {
    "id": "proj.early_warning.stack",
@@ -2729,8 +2901,8 @@
     "rag",
     "agentic"
    ],
-   "answer_en": "No LLM, no RAG, no agent, no LangChain, no Chroma. It is Pandas and a sklearn pipeline on grades and attendance, with Recall as the metric. An LLM could later write a short note for a teacher as a layer on top. The list comes from the classifier.",
-   "followup_en": "This project is Kuwait, 2017 to 2023. Mixing it with Ministry generation is a factual error. I keep the story clean even if the interviewer wants one AI buzzword for everything. Leakage care and time splits matter more here than prompts.",
+   "answer_en": "No LLM, no RAG, and no multi-agent workflow. It is Pandas and Scikit-learn on grades and attendance.",
+   "followup_en": "This is Al Najat work, not Ministry generation. Mixing the two stacks is a factual error.",
    "listen_for": [
     "no LLM",
     "no RAG",
@@ -2741,7 +2913,7 @@
     "classifier",
     "Kuwait"
    ],
-   "answer_ar": "الإنذار المبكر جدولي: Pandas وsklearn. ليس LLM ولا RAG ولا وكيلاً."
+   "answer_ar": "لا نموذج لغوي ولا RAG ولا وكلاء. Pandas وScikit-learn فقط على الدرجات والحضور."
   },
   {
    "id": "proj.helpdesk.stack",
@@ -2765,8 +2937,8 @@
     "rag",
     "agentic"
    ],
-   "answer_en": "No. TF-IDF and sklearn, trained on tickets staff had already routed. No LLM, no RAG, no agents, no LangChain, no Chroma. If department errors justified it, I would try embeddings or an LLM after measuring, not by default.",
-   "followup_en": "RAG would mean retrieving policy text and writing an answer. We predicted a department label. Different job. An agent would take actions in other systems. We did not give it that power. Unclear tickets went to a person. That is the whole architecture.",
+   "answer_en": "No LLM, no RAG, and no multi-agent workflow. It is NLP features and a Scikit-learn classifier.",
+   "followup_en": "Same family as early-warning: classic ML, different data. Not Ministry generative work.",
    "listen_for": [
     "no",
     "TF-IDF",
@@ -2776,7 +2948,7 @@
     "no agents",
     "measure first"
    ],
-   "answer_ar": "تصنيف التذاكر TF-IDF وsklearn فقط. لا توليد ولا استرجاع توليدي ولا وكيل."
+   "answer_ar": "لا نموذج لغوي ولا RAG ولا وكلاء. ميزات NLP ومصنّف Scikit-learn."
   },
   {
    "id": "proj.completion.stack",
@@ -2800,8 +2972,8 @@
     "rag",
     "agentic"
    ],
-   "answer_en": "The core is SQL, Pandas, and sklearn where history existed. Completion percent is a calculation. No RAG and no agent in the live path. An LLM could draft a follow-up note from the numbers, with a human sending it. I did not put generation in the core.",
-   "followup_en": "This is Ministry work, but it is not the generative work. I say that so question generation does not swallow the whole CV. If history was missing, I did not invent a deep model. Counts stay in SQL. That is intentional, not a lack of ambition.",
+   "answer_en": "No LLM, no RAG, and no multi-agent workflow in the core. It is SQL, Pandas, and Scikit-learn where history existed.",
+   "followup_en": "This is Ministry work, but not generative work. Keep it separate from question generation in the interview story.",
    "listen_for": [
     "SQL",
     "Pandas",
@@ -2811,7 +2983,7 @@
     "no agent",
     "not generation in the core"
    ],
-   "answer_ar": "مراقبة الإنجاز SQL وPandas وsklearn. ليست RAG وليست وكيلاً، والنسبة تُحسب ولا تُولَّد."
+   "answer_ar": "لا نموذج لغوي ولا RAG ولا وكلاء في الجوهر. SQL وPandas وScikit-learn عند توفر التاريخ."
   },
   {
    "id": "proj.kiosk.stack",
@@ -2835,8 +3007,8 @@
     "rag",
     "whisper"
    ],
-   "answer_en": "No LLM and no RAG. The kiosk is Whisper for speech-to-text, a voice classifier for male or female TTS, plus image-processing functions. Applied AI at Al Najat, 2017 to 2023. LLM and RAG started in 2023 at the Ministry. Different years, different stack.",
-   "followup_en": "After text, request classification was classic NLP, in the same spirit as helpdesk. I will not upgrade this story into an agent in the lobby. Local Whisper was a privacy choice. If we rebuilt it now, someone might add an LLM. That would be a new project, and I would still keep audio on-premise.",
+   "answer_en": "No LLM and no RAG. The kiosk uses Whisper for speech-to-text, a voice classifier for male or female style, and TTS for the reply.",
+   "followup_en": "Voice work was Al Najat, 2017 to 2023. LLM and RAG started in 2023 at the Ministry. Different years, different stack.",
    "listen_for": [
     "no LLM",
     "no RAG",
@@ -2846,7 +3018,7 @@
     "2017 to 2023",
     "Ministry later"
    ],
-   "answer_ar": "الكشك Whisper وتصنيف صوت ومعالجة صور. بلا LLM وبلا RAG. التوليد جاء لاحقاً في الوزارة."
+   "answer_ar": "لا نموذج لغوي ولا RAG. Whisper لتحويل الكلام، ومصنّف صوت، وTTS للرد."
   },
   {
    "id": "cv.projects_stack_overview",
@@ -2872,8 +3044,8 @@
     "langchain",
     "chromadb"
    ],
-   "answer_en": "Only Ministry question generation is LLM plus RAG plus agentic. Similarity is embeddings, not generation, while early-warning, helpdesk, and completion risk are classic ML or SQL. The Kuwait kiosk is Whisper, not an LLM. LangChain was POC on generation, Chroma was vector prototyping, and LangGraph and n8n are not in production.",
-   "followup_en": "I repeat this map because interviewers blend projects. I will not call every AI project an LLM project. If they want depth, I go into generation or similarity, not into a fake shared stack. Fine-tuning is basic on BTEC style only. Qdrant, Kubernetes, vLLM, RAGAS, knowledge graphs: I understand them. I have not shipped them.",
+   "answer_en": "LLM, RAG, and multi-agent: Ministry assessment support, automated feedback, and question generation. Embeddings without generation: similarity checker. Classic ML or SQL: early-warning, helpdesk, and completion risk. Speech: donation kiosk with Whisper and TTS. No LLM on the Al Najat projects.",
+   "followup_en": "I repeat this map so interviewers do not blend stacks. Generative BTEC work is one family. Similarity is another. Kuwait ML and speech are another.",
    "listen_for": [
     "only question generation",
     "similarity not generation",
@@ -2883,7 +3055,7 @@
     "Chroma prototype",
     "not LangGraph production"
    ],
-   "answer_ar": "خريطة واضحة: التوليد وحده LLM وRAG ووكيل. الباقي متجهات أو sklearn أو Whisper. مكتبات كثيرة للفهم لا للإنتاج."
+   "answer_ar": "نموذج لغوي وRAG ووكلاء: أنظمة BTEC الثلاثة. تضمينات بلا توليد: التشابه. تعلم آلي أو SQL: الإنذار المبكر والمساعدة ومخاطر الإكمال. كلام: كشك التبرع."
   },
   {
    "id": "cv.guardrails",
@@ -2907,7 +3079,7 @@
     "guardrails",
     "ministry"
    ],
-   "answer_en": "For generation I retrieve approved unit content, keep the prompt on that text, validate JSON with Pydantic, and require teacher approval before save. Student personal data never goes to the model. For similarity the tool flags and does not judge. One internal model interface keeps the rules in one place.",
+   "answer_en": "For generation I pull approved unit content, and I keep the prompt on that text. I check the JSON with Pydantic. A teacher must approve before anything is saved. Student personal data never goes to the model. For similarity, the tool only flags. It does not judge. All of this sits behind one internal interface, so the rules live in one place.",
    "followup_en": "Guardrails here are engineering, not a sticker. Empty retrieval stops generation. Failed schema does not enter the bank. I log chunks, output, and approver. I have not installed a fancy policy product as the main control. If we needed regex redaction later, it would sit in front of the interface. The human step is still there for exam items.",
    "listen_for": [
     "unit content",
@@ -3152,7 +3324,7 @@
     "ensure",
     "kiosk"
    ],
-   "answer_en": "Audio was processed locally, not sent to the cloud. I also anonymized data and didn\\'t store voice recordings beyond the session.",
+   "answer_en": "Audio was processed on the machine, not sent to the cloud. I removed identifying details, and I did not keep voice recordings after the session.",
    "answer_ar": "تمت معالجة الصوت محليًا، ولم يُرسل إلى السحابة. أخفيت أيضًا الهوية ولم أخزن التسجيلات الصوتية بعد الجلسة."
   },
   {
@@ -3172,7 +3344,7 @@
     "handle",
     "model"
    ],
-   "answer_en": "I used Random Forest feature importance and SHAP values to explain predictions. I also provided simple reasons (e.g., \\\"low attendance\\\").",
+   "answer_en": "I used Random Forest feature importance, and SHAP values, to explain a prediction. I also gave the teacher a plain reason, like low attendance.",
    "answer_ar": "استخدمت أهمية ميزات Random Forest وقيم SHAP لشرح التنبؤات. قدمت أيضًا أسبابًا بسيطة (مثل \\\"حضور منخفض\\\")."
   },
   {
@@ -3222,7 +3394,7 @@
     "forest",
     "random"
    ],
-   "answer_en": "Random Forest handles mixed data types, is robust to outliers, provides feature importance, and performs well on tabular data. It was also interpretable enough for teachers.",
+   "answer_en": "Random Forest works well with tables. It takes mixed data types. One strange value does not break it. And it shows which features mattered, so I could explain a score to a teacher.",
    "answer_ar": "Random Forest يتعامل مع أنواع البيانات المختلطة، وقوي ضد القيم الشاذة، ويوفر أهمية الميزات، ويؤدي بشكل جيد على البيانات الجدولية. كان أيضًا قابلاً للتفسير بدرجة كافية للمعلمين."
   },
   {
@@ -3237,7 +3409,7 @@
     "linear",
     "svm"
    ],
-   "answer_en": "Linear SVM works well for high-dimensional text data and is robust to overfitting. It also performs well with small datasets.",
+   "answer_en": "Linear SVM works well with text, because text turns into many features. It also holds up on a small dataset and does not overfit easily.",
    "answer_ar": "Linear SVM يعمل بشكل جيد للبيانات النصية عالية الأبعاد وقوي ضد الإفراط في التعلم. يؤدي أيضًا بشكل جيد مع مجموعات البيانات الصغيرة."
   },
   {
@@ -3274,7 +3446,7 @@
     "difficult"
    ],
    "answer_en": "Three things. Most students were fine, so the classes were unbalanced and accuracy looked good while the model missed the students who mattered. Time was the second: I had to predict early in the term, so a random split would have leaked final grades. Third, teachers asked why a name was on the list, so a black box was not an option.",
-   "followup_en": "I answered each one directly. For the imbalance I judged on recall for the students who needed support and watched precision so the list did not flood teachers. For time I split in term order and kept any column that only exists after the outcome out of the data. For trust I started with a simple model people could explain, and every score carried the factors behind it. Missing attendance was a signal, so I flagged it instead of filling the average.",
+   "followup_en": "I handled each one. For the imbalance I looked at recall for the students who needed help, and I watched precision so the list stayed short. For time I split the data in term order, and I dropped any column that only exists after the result. For trust I started with a simple model that people can explain, and every score came with its reasons. Missing attendance was itself a sign, so I flagged it instead of filling the average.",
    "answer_ar": "ثلاثة أمور. أغلب الطلاب بخير، فالفئات غير متوازنة، والدقة تبدو عالية بينما النموذج يفوّت الطلاب المهمين. والثاني الزمن: التنبؤ مبكراً في الفصل، فالتقسيم العشوائي كان سيسرّب الدرجات النهائية. والثالث أن المعلمين يسألون لماذا ظهر هذا الاسم، فالصندوق الأسود لم يكن خياراً."
   },
   {
@@ -3296,8 +3468,8 @@
     "responsibility",
     "built"
    ],
-   "answer_en": "I built it. I merged grades and attendance in Pandas, chose the features, wrote the sklearn pipeline, picked the metric, and produced the ranked follow-up list with the factors behind each score. Teachers tested it on real cases and decided the support. I did not outsource the modelling.",
-   "followup_en": "The judgement calls were mine: recall as the main metric, a simple explainable model instead of a neural net, a time-ordered split, and a missing-attendance flag rather than mean filling. The part I did not own is the intervention. The model pointed to who to look at first, and a teacher chose what to do. I was clear about that from the start so nobody treated the list as a verdict.",
+   "answer_en": "I built it. I joined grades and attendance in Pandas. I chose the features. I wrote the sklearn pipeline and picked the metric. Then I gave teachers a sorted list, with the reasons behind each score. They tested it on real cases and chose the support. I did not give the model work to anyone else.",
+   "followup_en": "The choices were mine. Recall as the main metric. A simple model that people can explain, not a neural net. A split by time, not random. And a flag for missing attendance, instead of filling the average. The part I did not own is the action. The model says who to look at first. The teacher decides what to do. I said that from day one, so nobody read the list as a final answer.",
    "answer_ar": "أنا بنيته. دمجت الدرجات والحضور في Pandas، واخترت الخصائص، وكتبت pipeline في sklearn، وحددت المقياس، وأنتجت قائمة المتابعة المرتّبة مع العوامل وراء كل درجة. المعلمون جرّبوه على حالات حقيقية وقرروا نوع الدعم. لم أسند النمذجة لأحد."
   },
   {
@@ -3319,7 +3491,7 @@
     "difficult"
    ],
    "answer_en": "The main one was that people mixed two different questions. How complete a school is today is arithmetic. Whether it will finish on time is a forecast, and a forecast needs past terms. For some units the history was thin, so I did not build a clever model on top of nothing. The second problem was definitions: two people counted completion differently until the rule lived in SQL.",
-   "followup_en": "Where history supported it, I used sklearn for the risk side only. Where it did not, I reported the calculated percentage and said plainly that there was no basis for a forecast. Putting the joins and the completion rule in SQL meant everyone got the same number, which matters in a ministry where a list turns into a follow-up visit. There is no LLM and no retrieval in that pipeline.",
+   "followup_en": "Where there was enough history, I used sklearn for the risk part only. Where there was not, I gave the number and said there is no base for a forecast. Putting the joins and the rule in SQL meant everyone saw the same number. That matters in a ministry, because a list turns into a school visit. There is no LLM and no retrieval in that pipeline.",
    "answer_ar": "الأهم أن الناس كانت تخلط سؤالين مختلفين. نسبة الإنجاز اليوم حساب، واحتمال الإنجاز في الموعد تنبؤ، والتنبؤ يحتاج فصولاً سابقة. في بعض الوحدات كان التاريخ ضعيفاً، فلم أبنِ نموذجاً ذكياً فوق لا شيء. والمشكلة الثانية التعريفات: كل شخص يحسب الإنجاز بطريقة، حتى وضعت القاعدة داخل SQL."
   },
   {
@@ -3340,8 +3512,8 @@
     "responsibility",
     "built"
    ],
-   "answer_en": "I wrote it end to end. The SQL that pulls school and unit records and the exact counts, the cleaning in Pandas, the completion rule, and the sklearn part for risk where history existed. The output was a follow-up list with indicators, and the Ministry decided which schools to visit.",
-   "followup_en": "The decision I defend is keeping calculation and prediction apart. If a number can be calculated, I calculate it. I do not ask a model to guess it. I also kept the definitions in SQL rather than in a notebook, so the same query gives the same count next term and after I move on. FastAPI can serve the list later, but that was not the hard part.",
+   "answer_en": "I wrote it from start to end. The SQL that pulls the school and unit records and the exact counts. The cleaning in Pandas. The rule for completion. And the sklearn part for risk, where history allowed it. The output was a follow-up list with the main signs. The Ministry chose which schools to visit.",
+   "followup_en": "The choice I defend is keeping the math and the guess apart. If I can calculate a number, I calculate it. I do not ask a model to guess it. I also kept the rules in SQL, not in a notebook. So the same query gives the same count next term, and after I leave. FastAPI can serve the list later, but that was not the hard part.",
    "answer_ar": "كتبته من البداية إلى النهاية. استعلامات SQL التي تسحب سجلات المدارس والوحدات والأعداد الدقيقة، والتنظيف في Pandas، وقاعدة احتساب الإنجاز، وجزء sklearn لجانب المخاطرة حيث توفّر تاريخ. المخرج قائمة متابعة مع مؤشرات، والوزارة تقرر أي مدارس تزور."
   },
   {
@@ -3363,9 +3535,9 @@
     "responsibility",
     "designed"
    ],
-   "answer_en": "I designed the flow and wrote it. Retrieval of the unit text, the generation call, the Pydantic schema check, the pause for teacher approval, and the logging. I chose to split it into steps instead of one prompt, and I chose that nothing is saved without a teacher.",
-   "followup_en": "I also own the refusals. If retrieval is empty the flow stops rather than letting the model fill gaps from memory. If the JSON fails validation I retry or send it to review, I do not save a broken record. I worked with Ministry IT on access and deployment, and teachers were the reviewers. The exam decision stays with them; my part is the machinery around it.",
-   "answer_ar": "أنا صمّمت المسار وكتبته. استرجاع نص الوحدة، ونداء التوليد، وفحص المخطط بـPydantic، والتوقف لموافقة المعلم، والتسجيل. اخترت تقسيمه إلى خطوات بدل prompt واحد، واخترت ألا يُحفظ شيء بلا معلم."
+   "answer_en": "I designed and built the flow. I prepared the BTEC content, chunking, embeddings, and the vector store. I built the RAG retrieval and the multi-agent workflow: retrieve, analyze, and generate. I also tested the outputs, checked accuracy, and improved the prompts.",
+   "followup_en": "I own the path from unit text to a draft the teacher can review. If retrieval is weak, the output quality drops, so I fix chunking and prompts before I blame the model. Teachers remain the final reviewers for questions and assessment support.",
+   "answer_ar": "صممت التدفق وبنيته: تجهيز محتوى BTEC والتقطيع والتضمينات وقاعدة المتجهات، وبناء الاسترجاع بـ RAG وسير العمل متعدد الوكلاء، مع اختبار المخرجات وتحسين الـ prompts."
   },
   {
    "id": "proj.kiosk.role",
@@ -3385,8 +3557,8 @@
     "responsibility",
     "built"
    ],
-   "answer_en": "I built the voice side. Running Whisper locally so audio stayed on the machine, cleaning noise, voice activity detection instead of continuous recording, the small classifier that picked a male or female reply voice, and the NLP step that routed the request. The image-processing functions sat on the same kiosk.",
-   "followup_en": "Most of the accuracy came from clean audio and knowing when the person stopped talking, not from a bigger model, and that was my call. The privacy rule was also mine: keep the text, do not store audio. This was 2017 to 2023, before my LLM work, so there is no LLM in that path and I do not describe it as one.",
+   "answer_en": "I built the voice side. I ran Whisper on the machine, so the audio stayed there. I cleaned the noise. I used voice detection, so it did not record all the time. I trained a small model to pick a male or female reply voice. And I wrote the NLP step that sent the request to the right place. The image functions sat on the same kiosk.",
+   "followup_en": "Most of the accuracy came from clean audio, and from knowing when the person stopped talking. It did not come from a bigger model. That was my call. The privacy rule was mine too: keep the text, do not keep the audio. This was 2017 to 2023, before my LLM work. There is no LLM in that path, and I do not call it one.",
    "answer_ar": "بنيت الجانب الصوتي. تشغيل Whisper محلياً ليبقى الصوت داخل الجهاز، وتنظيف الضوضاء، واكتشاف النشاط الصوتي بدل التسجيل المستمر، والمصنّف الصغير الذي يختار صوت الرد ذكراً أو أنثى، وخطوة NLP التي توجّه الطلب. ووظائف معالجة الصور كانت على الجهاز نفسه."
   },
   {
@@ -3407,8 +3579,8 @@
     "challenges",
     "difficult"
    ],
-   "answer_en": "A payment must not stop and must not charge twice. That is harder than it sounds across kiosks, POS terminals, a national network, and ministry systems. Integration failures were rarely clean: a transaction would time out somewhere in the middle and both sides would disagree about what happened. So the work was logging, reconciliation, UAT with real edge cases, and vendors who had to fix things on their side.",
-   "followup_en": "The habit I kept from it is designing as if someone will replay the log tomorrow and ask what happened. That is the same instinct behind teacher approval and stored retrieved chunks in the Ministry work. Service continuity was the job, not the demo. A pretty screen that double-charges is a failure; an ugly one that reconciles is not.",
+   "answer_en": "A payment must not stop, and it must not charge twice. That is harder than it sounds. We had kiosks, POS machines, the national network, and ministry systems. When something broke, it was never clean. A payment would time out in the middle, and the two sides would not agree on what happened. So the work was logs, matching records, testing with real edge cases, and vendors who had to fix their side.",
+   "followup_en": "The habit I kept is simple. I build as if someone will read the log tomorrow and ask what happened. That is the same reason I store the retrieved text and ask for teacher approval in the Ministry work. Keeping the service running was the job, not the demo. A nice screen that charges twice is a failure. An ugly one that matches records is not.",
    "answer_ar": "الدفعة يجب ألا تتوقف وألا تُحسب مرتين. وهذا أصعب مما يبدو عبر أجهزة الخدمة الذاتية ونقاط البيع والشبكة الوطنية وأنظمة الوزارات. أعطال التكامل نادراً ما كانت نظيفة: تنتهي مهلة العملية في المنتصف فيختلف الطرفان على ما حدث. لذلك كان العمل تسجيلاً ومطابقة واختبار قبول بحالات حقيقية ومورّدين يصلحون من جهتهم."
   }
  ]

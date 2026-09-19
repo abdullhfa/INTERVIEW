@@ -34,7 +34,84 @@ distinctive phrasing restored so role/result/challenges/describe each self-match
 Answers built from existing bank facts only (no invented metrics/tools).
 
 --------------------------------------------------------------------------
-RESULT (measured warm on this machine 2026-09-16)
+NOTE (2026-09-19) — LangChain.docx adopted into technical_ai_senior (+ hard checkpoint)
+  Updated what_is_langchain / what_is_langgraph / langgraph_vs_langchain /
+  hard.checkpoint_vs_memory. Added 43 LangChain/LangGraph definition entries
+  (components, create_agent, middleware, HITL, interrupt, persistence, LangSmith…).
+  Snapshot: question_bank_pre_langchain_docx/  Tech 176 → 219. Freeze ID unchanged.
+
+NOTE (2026-09-19) — AI.docx adopted into technical_ai_senior
+  Updated orchestrator answers; added orchestration, ICL, output parser (what/when),
+  Anaconda (what/tools). Snapshot: question_bank_pre_ai_docx/
+  Tech 170 → 176. Freeze ID unchanged.
+
+NOTE (2026-09-19) — AI Agent.docx adopted into technical_ai_senior
+  Updated tech.agent_autonomy answer; added 6 entries (ai_agent_what, llm_vs_agent,
+  how_works, planning, reasoning, agent_loop). Removed colliding "what is an ai agent"
+  aliases from tech.agentic_what. Snapshot: question_bank_pre_ai_agent_docx/
+  Tech 164 → 170. Freeze ID unchanged.
+
+NOTE (2026-09-19) — Agentic AI.docx adopted into technical_ai_senior
+  Updated answers only on existing similar entries (agentic_what, workflow,
+  orchestrator, guardrails, reflection, state, MCP, which_framework merged
+  with LangChain/LangGraph + platforms, retry/error). Added 20 new tech.*
+  definition entries from the doc. Snapshot: question_bank_pre_agentic_docx/
+  Tech count 144 → 164. Freeze ID unchanged.
+
+NOTE (2026-09-19) — Project narrative from مشاريع.docx adopted into cv_abdullah
+  answer_en / followup_en / answer_ar only (33 entries). Index untouched (id/question/
+  aliases/keywords identical). Snapshot: question_bank_pre_projects_docx/
+  Highlights: BTEC definition; three RAG+multi-agent systems (assessment support,
+  automated feedback, question generation); similarity/early-warning/helpdesk/
+  completion/kiosk wording aligned to the doc. Freeze ID unchanged.
+
+NOTE (2026-09-18) — English answer text only; Freeze ID unchanged
+--------------------------------------------------------------------------
+V6_5_BANK_341_COVERAGE_2026_09_16 stays valid for the matcher-index freeze.
+files5_text_only (from files77.zip): index + answer_ar identical to V6.5 original;
+English spoken rewrite only (answer_en / followup_en). Verified 341 entries.
+Backup of pre-text live bank: backend\app\data\question_bank_V6_5_backup\
+Original V6.5 JSON: backend\app\data\question_bank_V6_5_original_backup\
+
+--------------------------------------------------------------------------
+NOTE (2026-09-18) — live bank after files6_index_change (NO new freeze ID)
+--------------------------------------------------------------------------
+Loaded after text-only pack. Index changes (verified, nothing else):
+  + hard.bank_weekly_policies (63 -> 64 hard_scenarios)
+  tech.use_pgvector_production: question + aliases + answer_ar
+  tech.explain_ai_project_structure: answer_ar
+Live: 342 entries. Rollback: backend\app\data\question_bank_V6_6_backup\
+Gates measured 2026-09-18 (NOT a freeze):
+  load: 342 entries, 2599 aliases (loader); T3 raw aliases 2500/2501
+  strong_and_wrong = 0
+  questions 342/342
+  pytest 277 passed / 4 failed (same four known; 277 = 269 + follow-up tests)
+
+--------------------------------------------------------------------------
+NOTE (2026-09-18) — agentic platforms: strengthen which_framework, no 9th entry
+--------------------------------------------------------------------------
+Live lineage: files5_text_only -> files6_index_change -> brief tech.agentic_platforms
+experiment -> REMOVED. Strengthened tech.which_framework instead (crowded agent
+family; sibling risk). Collision precheck: platforms surfaces clear; bare
+"what is an orchestrator" COLLIDES with tech.agent_orchestrator so deleted from
+hard.agent_terms_difference listen_for and NOT re-added elsewhere.
+Also removed bare listen_for "are those terms the same".
+Backup before platforms experiment: question_bank_pre_agentic_platforms\
+T3 after merge (342): strong_and_wrong=0 — see reports/_t3_which_framework_platforms.txt
+pytest after merge: 277/4 (same four known).
+
+--------------------------------------------------------------------------
+NOTE (2026-09-19) — text hygiene only (no index change)
+--------------------------------------------------------------------------
+tech.evaluate_embedding_quality answer_ar: replaced contaminated field (Q646–Q649
+glued in) with spoken Arabic matching files5 English.
+tech.cosine_semantic_search followup_en: added dot-product vs cosine note
+(no new entry — avoids sibling of tech.cosine_semantic_search).
+Deferred: three new entries (384 vs 1536, Euclidean vs Manhattan, semantic vs
+keyword) until spoken drafts + collision recheck; bank stays clean at 342.
+
+--------------------------------------------------------------------------
+RESULT (measured warm on this machine 2026-09-16) — V6.5 freeze baseline
 --------------------------------------------------------------------------
   entries                 341
   raw aliases             2494
@@ -57,9 +134,30 @@ KNOWN DEBT (carried forward)
 6. Compound stage latency; L2 sub-question cache when it matters.
 7. V7 retrieval prefilter redesign (IDF / less generic skeleton) — gate failed at
    1.56x; 696 source questions still blocked by scan cost, not by bank quality.
-8. Conversational follow-ups ("Are you use in your project?" after agentic) —
-   needs design before code; not opened here.
+8. Conversational follow-ups (LIVE_FOLLOW_UP_EXPAND) — built, measured, default OFF.
+   Primary blocker: ON deleted answers (live 2/4 vs OFF 4/4; NON_QUESTION_IGNORED).
+   Spec + exit gates أ–د: backend/reports/DEBT_FOLLOW_UP_EXPAND.md
+   Do not default on / freeze V7_FOLLOW_UP until that file's gates pass.
 9. Update CV text with LangGraph / FAISS / pgvector — human, not bank.
+10. Bank entries missing followup_en — empty UI on interviewer follow-up for those.
+    Measured on live 342 bank: 36 ids (author said ~27; count rose with recent imports).
+    Full-session authoring, not started.
+11. display: spoken transcript stays in «السؤال» (fixed 2026-09-19)
+    Was: apply_bank_guided_transcript returned canonical bank title when confident,
+    so the pane hid STT truth (same blind spot as agantic / rug defense).
+    Now: display keeps recovered/raw spoken text; matching still uses BGU inside
+    question_bank.match (unchanged thresholds). Secondary “matched title” line
+    still optional later — not required for interview defense.
+12. HIGHEST remaining: Whisper mangled tech acronyms escape technical_term_repair
+    Family (same shape): r-e (pre holdout v3) · agantic · rug (for RAG).
+    Measured 2026-09-19 live: raw='What is the rug?' → phrase/BGU no lock →
+    bank match None → ANSWER_GENERATION_SUCCESS answer_source=deepseek
+    (numbered 7-step answer ≠ bank tech.rag_what). Model guessed RAG this time;
+    next time it may answer about carpets — unconstrained hallucination path.
+    Display correctly showed «rug» (not canonical What is RAG?) — confirms #11
+    and that rescue was NOT bank. Do not patch repair lexicon before interview
+    without a dedicated gate; interview: if pane shows a weird word where an
+    acronym should be, treat answer as model not bank — or type the acronym.
 
 --------------------------------------------------------------------------
 STANDING GATES FOR EVERY FUTURE FREEZE

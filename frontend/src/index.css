@@ -1805,16 +1805,16 @@ body::after {
   align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
-  padding: 22px 28px 16px;
+  padding: 14px 22px 10px;
   border-bottom: 1px solid var(--color-olive-border);
   background: #eef1e4;
 }
 
 .answer-popup__header h3 {
-  margin-top: 4px;
+  margin-top: 2px;
   color: var(--color-accent-primary);
-  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
-  line-height: 1.5;
+  font-size: clamp(1.02rem, 1.8vw, 1.28rem);
+  line-height: 1.4;
   font-weight: 700;
 }
 
@@ -1838,7 +1838,7 @@ body::after {
 }
 
 .answer-popup__body {
-  padding: 22px 28px 28px;
+  padding: 14px 22px 18px;
   overflow-y: auto;
   overscroll-behavior: contain;
 }
@@ -1846,11 +1846,24 @@ body::after {
 .answer-popup .teleprompter {
   max-height: none;
   overflow: visible;
-  padding: var(--space-8) var(--space-10);
+  padding: var(--space-5) var(--space-6);
 }
 
 .answer-popup .teleprompter__text {
-  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-size: clamp(0.92rem, 1.35vw, 1.08rem);
+  line-height: 1.55;
+}
+
+.answer-popup .teleprompter__text--en {
+  line-height: 1.5;
+}
+
+.answer-popup .teleprompter__text--ar {
+  line-height: 1.62;
+}
+
+.answer-popup .teleprompter__pause {
+  height: var(--space-2);
 }
 
 .modal-card {

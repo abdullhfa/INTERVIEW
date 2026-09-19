@@ -353,7 +353,7 @@ class AnswerGenerator:
             logger.info(
                 "bank_lookup_ms=%.0f strong=%s",
                 self._last_bank_lookup_ms,
-                bool(bank_match is not None and bank_match.is_strong),
+                (bank_match is not None and bank_match.is_strong),
             )
         if bank_match is not None:
             question_bank.remember(asked or question, bank_match.entry.id)
@@ -368,6 +368,22 @@ class AnswerGenerator:
         # returning a strong single-intent bank answer (so all parts get covered).
         if settings.question_bank_enabled:
             _t_stage = time.perf_counter()
+            # Prefer strong single-intent bank immediately on the live path when the
+            # utterance is not compound — avoids an extra detect/resolve hop.
+            if prefer_speed and bank_match is not None and bank_match.is_strong:
+                from app.services.compound_question_detector import detect_question_complexity
+
+                if detect_question_complexity(asked or question).question_type == "single":
+                    self._last_compound_ms = (time.perf_counter() - _t_stage) * 1000
+                    self._last_answer_source = "bank"
+                    return self._answer_from_bank(
+                        match=bank_match,
+                        question=question,
+                        asked=classification.raw_utterance or question,
+                        question_id=question_id,
+                        length_mode=length_mode,
+                        elapsed_ms=(time.perf_counter() - start_time) * 1000,
+                    )
             compound_answer = await self._maybe_compound_answer(
                 asked or question,
                 conversation_history=conversation_history,

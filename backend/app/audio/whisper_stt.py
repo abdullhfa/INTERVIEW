@@ -157,27 +157,13 @@ def repair_live_transcript(text: str) -> str:
     except Exception:
         pass
     try:
-        from app.services.bank_guided_understanding import (
-            apply_bank_guided_transcript,
-            last_understanding,
-        )
+        from app.services.bank_guided_understanding import apply_bank_guided_transcript
 
-        # Bank-primary rewrite from the original STT hypothesis.
+        # Display path only — no bank search (match runs later once).
         guided = apply_bank_guided_transcript(raw_stt)
         if guided != cleaned:
             logger.info("STT bank-guided display: %r -> %r", cleaned, guided)
             cleaned = guided
-        und = last_understanding()
-        if und is not None:
-            logger.info(
-                "STT bank-guided raw=%r recovered=%r canonical=%r intent=%s conf=%.3f amb=%s",
-                und.raw_transcript,
-                und.recovered_transcript,
-                und.canonical_question,
-                und.intent_id or "-",
-                und.confidence,
-                und.ambiguous,
-            )
     except Exception:
         pass
     repaired = canonicalize_display(cleaned)

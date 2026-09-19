@@ -409,9 +409,20 @@ class LiveAudioOrchestrator:
             text = ""
 
         # Latency-cut simple STT: at most one accurate retry; never raw third pass.
-        prelim = question_bank.match(text) if (text or "").strip() else None
-        risk = assess_match_risk(text, prelim)
-        need_second, _reason, _strong = simple_need_second_pass(text, prelim, risk=risk)
+        # Fluent transcripts skip the prelim bank match (saves BGU on every turn);
+        # answer generation still matches once.
+        from app.services.stt_confidence import word_count as _wc
+
+        text_clean = (text or "").strip()
+        if text_clean and not transcript_looks_weak(text_clean) and _wc(text_clean) >= 6:
+            prelim = None
+            need_second = False
+        else:
+            prelim = question_bank.match(text) if text_clean else None
+            risk = assess_match_risk(text, prelim)
+            need_second, _reason, _strong = simple_need_second_pass(
+                text, prelim, risk=risk
+            )
         if need_second:
             await self._send_ws({
                 "type": "STT_RETRYING",
